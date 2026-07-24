@@ -1,0 +1,36 @@
+# 初老テスト
+
+反射神経、記憶力、言語力、空間認識、未来予知などを、次に何が来るかわからない12問のミニゲームで競うモバイル向けウェブアプリです。
+
+- 静的なHTML/CSS/JavaScriptのみ（ビルド不要）
+- 1セッション12問（約5分）、終了後20時間のクールダウン
+- v1.0問題パックは52タイプ。最初は簡単なTier 1だけで、脳レベルに応じてTier 2・3を解放
+- 無難・爽快・変化球・「これ脳トレ？」の4つの遊び味を、毎セッションに混ぜて出題
+- 回答ごとにXPと得意度を保存。途中で抜けても同じ問題セットを再開
+- 正解で経験値を獲得。レベルには経験値と幅広い問題タイプの習熟が必要
+- 結果は「処老 / 初老 / 中老 / 大老」の4段階と100点満点のゲームスコア
+- Web Share APIまたはコピーによる結果共有
+- 最大6人の端末内プロファイルと、ユーザー間番付・各ユーザーのベスト10
+- 成績・進行・履歴はブラウザのlocalStorageだけに保存
+- 外部通信、広告、テレメトリ、オンラインランキングなし
+- CSS 3D・ベクター主体。乙女ゲーム風・パートナー会話問題だけ生成画像4枚を同梱し、音声は不使用
+
+このアプリの格付けとスコアはゲーム内の成績です。医療検査ではなく、認知症を含む特定の病気や現実の認知能力を判定しません。
+
+## Deploy
+
+公開URL: https://northwood1834.github.io/AgeTest/
+
+リポジトリのルートをそのままGitHub Pagesで公開できます。GitHubの **Settings → Pages** で公開ブランチと `/(root)` を選択してください。ローカル確認は次で行えます。
+
+```bash
+python3 -m http.server 8080
+```
+
+データ形式は [`DATA_FORMAT.md`](DATA_FORMAT.md)、問題追加とレベル設計は [`QUESTION_PACKS.md`](QUESTION_PACKS.md)、3D問題の共通基盤は [`SCENE_3D.md`](SCENE_3D.md)、保存と通信の境界は [`SECURITY.md`](SECURITY.md)、将来のオンラインランキング案は [`RANKING_DESIGN.md`](RANKING_DESIGN.md)、クールダウンの根拠と限界は [`TRAINING_DESIGN.md`](TRAINING_DESIGN.md)、パイロット後に作者が見直す項目は [`PILOT_DECISIONS.md`](PILOT_DECISIONS.md)、ローカル検証結果と未実施の実機範囲は [`QA_REPORT.md`](QA_REPORT.md) を参照してください。
+
+姉妹プロジェクトと視覚言語・公開方針を共有しますが、アプリ間リンクやデータ連携はありません。
+
+## License
+
+`author.png` を除きMIT Licenseです。画像の扱いと公式公開先は [`NOTICE.md`](NOTICE.md)、出自情報は [`PROVENANCE.md`](PROVENANCE.md) を参照してください。

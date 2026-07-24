@@ -1,0 +1,169 @@
+<!doctype html>
+<!-- Copyright (c) 2026 mumupoikatsu · MIT License; author.png is excluded. See NOTICE.md. -->
+<!-- Origin marker: st-origin-a14e26e54afe71e2c53b2f8eee2c87ad · See PROVENANCE.md. -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#F6F1FA">
+<meta name="shoro-test-origin" content="st-origin-a14e26e54afe71e2c53b2f8eee2c87ad">
+<link rel="canonical" href="https://northwood1834.github.io/AgeTest/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northwood1834.github.io/AgeTest/">
+<meta property="og:title" content="初老テスト。">
+<meta property="og:description" content="12問だけの脳トレ×おバカゲー。あなたの本日の格付けは？">
+<meta property="og:image" content="https://northwood1834.github.io/AgeTest/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="反射神経、記憶力、言語力、空間認識、未来予知などを12問のミニゲームで競う、1日1セットの初老テストです。">
+<title>初老テスト。</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=1.0.0-pilot14">
+</head>
+<body>
+<main data-origin="st-origin-a14e26e54afe71e2c53b2f8eee2c87ad">
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><path d="M13 30c-5-2-7-7-4-11-2-4 1-9 6-9 2-5 9-5 11-1 5-1 8 4 6 8 4 4 1 11-5 12-3 4-10 4-14 1Z" fill="#D9B7EB"/><path d="M20 9v22M14 13c3 1 5 3 6 6m7-6c-4 1-6 3-7 6m-9 3c4-1 7 1 9 4m10-4c-4-1-8 1-10 4" fill="none" stroke="#8B5CA3" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </span>
+      <div><h1>初老テスト<span class="dot">。</span></h1><p>脳みそ、今日も出勤していますか？</p></div>
+    </div>
+    <span class="local-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10V7a5 5 0 0 1 10 0v3"/><rect x="4" y="10" width="16" height="11" rx="3"/></svg>この端末だけ</span>
+  </header>
+
+  <section id="home-view" class="view" aria-labelledby="home-title">
+    <div class="hero-card card">
+      <div class="brain-stage" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="brain-3d"><span class="lobe a"></span><span class="lobe b"></span><span class="lobe c"></span><span class="lobe d"></span><i></i></div>
+        <span class="spark s1">✦</span><span class="spark s2">?</span><span class="spark s3">＋</span>
+      </div>
+      <p class="eyebrow">本日の脳内業務</p>
+      <h2 id="home-title">何が来るかは、<br>脳も知りません。</h2>
+      <p class="hero-copy">反射・記憶・ことば・空間・未来予知。<br>12問だけ、集中して逃げ切りましょう。</p>
+      <div class="session-facts" aria-label="セッション概要">
+        <span><strong>12</strong> 問</span><span><strong>約5</strong> 分</span><span><strong>1日1</strong> セット</span>
+      </div>
+      <button id="start-button" class="primary big" type="button">本日の老いを測る</button>
+      <p id="cooldown-text" class="cooldown" aria-live="polite"></p>
+    </div>
+
+    <div class="level-card card">
+      <div class="level-top">
+        <div><span class="section-label">あなたの脳レベル</span><div class="level-number">Lv.<strong id="level-value">1</strong></div></div>
+        <div class="xp-total"><span>総経験値</span><strong id="xp-value">0 XP</strong></div>
+      </div>
+      <div class="dual-progress">
+        <div><div class="progress-label"><span>経験</span><span id="xp-next">0 / 120</span></div><div class="mini-track"><i id="xp-bar"></i></div></div>
+        <div><div class="progress-label"><span>問題の幅</span><span id="breadth-next">0 / 6</span></div><div class="mini-track variety"><i id="breadth-bar"></i></div></div>
+      </div>
+      <p id="unlock-note" class="tiny-note">Tier 1のやさしい問題から始まります。</p>
+    </div>
+
+    <div class="home-actions">
+      <button id="profile-open" class="soft-button" type="button"><span id="profile-avatar" aria-hidden="true">🤓</span><b id="profile-name">プレイヤー1</b></button>
+      <button id="records-open" class="soft-button" type="button"><span aria-hidden="true">♛</span> 番付</button>
+      <button id="about-open" class="soft-button" type="button"><span aria-hidden="true">?</span> 遊び方</button>
+    </div>
+    <section id="category-card" class="card category-card" hidden>
+      <div class="card-heading"><div><span class="section-label">ゲーム内の得意度</span><h2>脳内人事評価</h2></div><span id="session-count" class="pill"></span></div>
+      <div id="category-bars" class="category-bars"></div>
+    </section>
+  </section>
+
+  <section id="game-view" class="view" hidden aria-labelledby="question-prompt">
+    <div class="game-head">
+      <button id="quit-button" class="round-button" type="button" aria-label="ホームに戻る">×</button>
+      <div class="game-progress-wrap"><div class="game-progress-copy"><span id="question-count">1 / 12</span><span id="game-xp">+0 XP</span></div><div class="game-progress"><i id="game-progress-bar"></i></div></div>
+      <span id="game-level" class="level-chip">Lv.1</span>
+    </div>
+    <div id="category-reveal" class="category-reveal" aria-live="polite"><span id="category-icon">⚡</span><strong id="category-name">反射神経</strong><em id="task-tier">Tier 1</em></div>
+    <section id="question-card" class="question-card card">
+      <div class="timer-track" aria-hidden="true"><i id="timer-bar"></i></div>
+      <p id="question-kicker" class="question-kicker">問題</p>
+      <h2 id="question-prompt">準備中…</h2>
+      <p id="question-help" class="question-help"></p>
+      <div id="challenge" class="challenge" aria-live="polite"></div>
+    </section>
+    <p class="game-note">正しさ優先。速さは、ちょっとだけ加点。</p>
+  </section>
+
+  <section id="result-view" class="view" hidden aria-labelledby="grade-name">
+    <div id="result-card" class="result-card card">
+      <p class="eyebrow">本日の格付け</p>
+      <div class="seal-wrap"><div class="seal-ring"><span>格付け</span><strong id="grade-name">処老</strong></div></div>
+      <p id="grade-message" class="grade-message"></p>
+      <div class="score-line"><strong id="result-score">0</strong><span>/ 100<br><small>脳力スコア</small></span></div>
+      <div class="result-stats">
+        <div><span>正解</span><strong id="result-correct">0 / 12</strong></div>
+        <div><span>獲得</span><strong id="result-xp">+0 XP</strong></div>
+        <div><span>レベル</span><strong id="result-level">Lv.1</strong></div>
+      </div>
+      <div id="result-breakdown" class="result-breakdown"></div>
+    </div>
+    <button id="share-button" class="primary share" type="button"><span aria-hidden="true">↗</span> この老いを世に放つ</button>
+    <button id="home-button" class="soft-button wide" type="button">結果を受け入れて戻る</button>
+    <p id="next-session-text" class="cooldown"></p>
+    <p class="medical-note">これはゲームの成績であり、医療検査・診断ではありません。日常生活で気になる変化がある場合は、ゲームの格付けではなく専門家へご相談ください。</p>
+  </section>
+
+  <footer>
+    <div class="panda" aria-hidden="true"><span class="zzz">ふむ…</span><svg viewBox="0 0 86 62">
+      <ellipse cx="43" cy="48" rx="29" ry="13" fill="#F7F4F8"/>
+      <circle cx="23" cy="16" r="10" fill="#493B52"/><circle cx="63" cy="16" r="10" fill="#493B52"/>
+      <circle cx="43" cy="27" r="23" fill="#FAF8FB" stroke="#D8C8DF" stroke-width="1.5"/>
+      <ellipse cx="31" cy="27" rx="8" ry="10" fill="#493B52" transform="rotate(18 31 27)"/>
+      <ellipse cx="55" cy="27" rx="8" ry="10" fill="#493B52" transform="rotate(-18 55 27)"/>
+      <circle cx="32" cy="27" r="2.2" fill="#fff"/><circle cx="54" cy="27" r="2.2" fill="#fff"/>
+      <circle cx="43" cy="36" r="3" fill="#493B52"/><path d="M39 41q4 3 8 0" fill="none" stroke="#493B52" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="31" cy="27" r="10" fill="none" stroke="#A66DC2" stroke-width="2"/><circle cx="55" cy="27" r="10" fill="none" stroke="#A66DC2" stroke-width="2"/><path d="M41 27h4M21 25l-6-2m50 2 6-2" fill="none" stroke="#A66DC2" stroke-width="2" stroke-linecap="round"/>
+      <path d="M23 51v7m40-7v7" stroke="#493B52" stroke-width="7" stroke-linecap="round"/>
+    </svg></div>
+    <span>記録はこの端末の中だけに保存されます。</span>
+    <span class="credit"><img src="author.png" alt="" width="20" height="20">作者: <a href="https://instagram.com/mumupoikatsu" target="_blank" rel="noopener noreferrer">mumupoikatsu</a></span>
+    <span>© mumupoikatsu · 初老テスト v1.0.0</span>
+    <button type="button" class="reload-link" id="reload-latest">最新版を読み込む</button>
+  </footer>
+</main>
+
+<dialog id="profiles-dialog">
+  <div class="dialog-shell">
+    <div class="dialog-head"><div><span class="section-label">この端末だけ</span><h2>ユーザープロファイル</h2></div><button class="close-button" type="button" data-close="profiles-dialog" aria-label="閉じる">×</button></div>
+    <div class="dialog-body">
+      <div id="profiles-list" class="profiles-list"></div>
+      <form id="profile-form" class="profile-form">
+        <strong>新しいユーザー</strong>
+        <div id="avatar-picker" class="avatar-picker" aria-label="アイコンを選ぶ"></div>
+        <div class="profile-create-row"><input id="profile-input" type="text" maxlength="12" autocomplete="off" placeholder="名前（12文字まで）" aria-label="新しいユーザー名"><button type="submit">追加</button></div>
+        <p id="profile-error" class="inline-error" role="alert"></p>
+      </form>
+      <p class="dialog-note">プロファイルごとに、途中の問題・クールダウン・レベル・記録をこの端末内で分けて保存します。</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="records-dialog">
+  <div class="dialog-shell"><div class="dialog-head"><div><span class="section-label">この端末だけ</span><h2>初老テスト番付</h2></div><button class="close-button" type="button" data-close="records-dialog" aria-label="閉じる">×</button></div><div class="dialog-body"><div id="record-summary" class="record-summary"></div><h3 class="dialog-subhead">ユーザーランキング</h3><ol id="profile-ranking" class="records-list ranking-list"></ol><h3 class="dialog-subhead">選択中ユーザーのベスト10</h3><ol id="records-list" class="records-list"></ol><p class="dialog-note">この端末に作ったユーザーだけのランキングです。オンライン送信や他端末との集計はありません。</p></div></div>
+</dialog>
+
+<dialog id="about-dialog">
+  <div class="dialog-shell"><div class="dialog-head"><div><span class="section-label">遊び方</span><h2>短く、広く、欲張らず。</h2></div><button class="close-button" type="button" data-close="about-dialog" aria-label="閉じる">×</button></div><div class="dialog-body prose">
+    <section><strong>突然はじまる12問</strong><p>次の問題は予告されません。表示された指示を読み、タップや選択で答えます。</p></section>
+    <section><strong>1日1セット</strong><p>12問を終えると20時間の休憩です。詰め込みを避けるためのゲーム上の制限で、医学的に確立した正解の間隔を意味しません。</p></section>
+    <section><strong>レベルは幅で上がる</strong><p>最初は簡単なTier 1だけ。脳レベルが上がるとTier 2、Tier 3の問題が解放されます。正解ごとに経験値と脳内人事評価へ反映され、途中で抜けても残りから再開できます。最終スコアと格付けは12問完了後です。</p></section>
+    <section><strong>格付けはブラックユーモア</strong><p>結果はこのゲーム内だけの呼び名です。認知症など特定の病気や、現実の認知能力を判定しません。</p></section>
+    <section><strong>刺激について</strong><p>音声は使わず、強い点滅はありません。端末の「視差効果を減らす」設定にも対応します。</p></section>
+  </div></div>
+</dialog>
+
+<div id="feedback" class="feedback" hidden role="dialog" aria-modal="true" aria-labelledby="feedback-title">
+  <div id="feedback-panel" class="feedback-panel"><span id="feedback-mark" aria-hidden="true">○</span><h2 id="feedback-title">正解</h2><p id="feedback-detail"></p><button id="next-button" class="primary" type="button">次の問題</button></div>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js?v=1.0.0-pilot16" defer></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "初老テスト。",
+  "short_name": "初老テスト",
+  "description": "反射神経、記憶力、言語力、空間認識、未来予知などを12問のミニゲームで競う、1日1セットの脳トレゲームです。",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F6F1FA",
+  "theme_color": "#F6F1FA",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#FAF7FC"/><stop offset="1" stop-color="#E9D6F2"/></linearGradient><linearGradient id="b" x2="1" y2="1"><stop stop-color="#E9CCF5"/><stop offset="1" stop-color="#A66DC2"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="940" cy="310" r="225" fill="#fff" opacity=".6"/>
+  <path d="M808 366c-56-34-43-123 15-138-9-61 61-98 104-55 40-49 119-18 114 45 68 10 83 105 25 137 22 66-56 114-105 73-49 50-129 15-119-49-12-2-23-6-34-13Z" fill="url(#b)" stroke="#80519A" stroke-width="15" stroke-linejoin="round"/>
+  <path d="M938 174v252M850 223c48 8 77 39 88 84m87-83c-46 9-76 39-87 83m-114 43c52-15 92 7 114 44m120-47c-54-12-95 11-120 47" fill="none" stroke="#80519A" stroke-width="12" stroke-linecap="round" opacity=".62"/>
+  <text x="95" y="190" fill="#80519A" font-family="Noto Sans CJK JP, sans-serif" font-weight="900" font-size="38" letter-spacing="6">12問だけの脳トレ×おバカゲー</text>
+  <text x="90" y="310" fill="#493B52" font-family="Noto Sans CJK JP, sans-serif" font-weight="900" font-size="104" letter-spacing="5">初老テスト。</text>
+  <text x="97" y="390" fill="#8E7E98" font-family="Noto Sans CJK JP, sans-serif" font-weight="700" font-size="35">あなたの本日の格付けは？</text>
+  <rect x="96" y="447" width="360" height="74" rx="37" fill="#A66DC2"/>
+  <text x="276" y="496" text-anchor="middle" fill="#fff" font-family="Noto Sans CJK JP, sans-serif" font-weight="900" font-size="29" letter-spacing="3"># 初老テスト</text>
+</svg>
