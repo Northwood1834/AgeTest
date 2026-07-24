@@ -11,9 +11,10 @@ Environment: local static server, desktop Chromium browser automation, headless 
 - Randomized generator check: 300 generations per factory (15,600 generated tasks) produced no missing answer, duplicate option, unknown category, invalid tier, or generator error.
 - Session selector check: 3,000 generated sessions across brain levels 1–3 had 12 unique tasks, no tier leak, category count at most two, all four play flavors, no Tier-1 boss, and the author boss at position 6 for levels 2–3.
 - Grade boundaries verified: 85/84 → 処老/初老, 60/59 → 初老/中老, 40/39 → 中老/大老.
-- A real 12-task Tier-1 session completed 12/12 correct, produced 100 points / 処老, one history entry, no active session, and an active 20-hour cooldown.
-- Partial-session exit, profile switch, and return preserved the answered index and remaining generated task set.
-- Single-profile pilot data migrated to `profiles[]`; legacy root session fields were removed on writeback and an unknown additive top-level field survived normalization.
+- A real 12-task Tier-1 session completed 12/12 correct, produced 100 points / 処老, one history entry, and no active session. A subsequent full v1.1 session registered completion as set 1/4 and started an approximately five-minute break.
+- v1.1 pacing cycle verified with four completed synthetic sets: sets 1–3 each produced an approximately five-minute break; set 4 blocked play until the first set's rolling 20-hour window ended; one second before expiry remained blocked, one second after expiry exposed four fresh sets, and starting created a new window.
+- Partial-session exit, profile switch, and return preserved the answered index and remaining generated task set without consuming a completed-set allowance.
+- Single-profile pilot data migrated to `profiles[]`; legacy root session fields were removed on writeback and an unknown additive top-level field survived normalization. A v1.0 profile with a future one-set cooldown migrated to v1.1 with four available sets and a fresh window on start.
 - Six-profile cap, active profile switching, per-profile history, per-profile best ten, and six-entry local leaderboard rendered correctly.
 - Emoji runner: production `travelMs: 2800` succeeded with one jump at about 1.62 seconds and finished at about 2.38 seconds. The reduced-motion static alternative also succeeded.
 - Author boss, emoji FPS, lane choice, golf drag, golf Enter-key fallback, date conversation, partner conversation, and English-only question paths succeeded.

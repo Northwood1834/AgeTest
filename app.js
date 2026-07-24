@@ -5,10 +5,12 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.0.0";
+const APP_VERSION = "1.1.0";
 const CONTENT_PACK = "1.0";
 const STORAGE_KEY = "shoro-test-state-v1";
-const COOLDOWN_MS = 20 * 60 * 60 * 1000;
+const TRAINING_WINDOW_MS = 20 * 60 * 60 * 1000;
+const BETWEEN_SET_BREAK_MS = 5 * 60 * 1000;
+const MAX_SETS_PER_WINDOW = 4;
 const SESSION_SIZE = 12;
 const HISTORY_LIMIT = 30;
 const $ = id => document.getElementById(id);
@@ -44,8 +46,8 @@ const clamp = (n,min,max) => Math.max(min,Math.min(max,n));
 const uuid = () => crypto.randomUUID?.() || `s-${Date.now().toString(36)}-${randomInt(0,0xffffff).toString(36)}`;
 
 const PROFILE_AVATARS=["🤓","😀","🤑","🐼","🐶","🐱"];
-function defaultProfile(name="プレイヤー1",avatar="🤓"){return{id:uuid(),name,avatar,xp:0,sessionsCompleted:0,bestScore:0,templateWins:{},recentTemplates:[],categoryStats:{},history:[],activeSession:null,cooldownUntil:0,lastResult:null,pendingResult:false,createdAt:Date.now(),updatedAt:Date.now()};}
-function normalizeProfile(value,index=0){const base=defaultProfile(`プレイヤー${index+1}`,PROFILE_AVATARS[index%PROFILE_AVATARS.length]),p=value||{};return{...base,...p,id:typeof p.id==="string"&&p.id?p.id:base.id,name:typeof p.name==="string"&&p.name.trim()?p.name.trim().slice(0,12):base.name,avatar:PROFILE_AVATARS.includes(p.avatar)?p.avatar:base.avatar,templateWins:p.templateWins&&typeof p.templateWins==="object"?p.templateWins:{},recentTemplates:Array.isArray(p.recentTemplates)?p.recentTemplates.slice(0,30):[],categoryStats:p.categoryStats&&typeof p.categoryStats==="object"?p.categoryStats:{},history:Array.isArray(p.history)?p.history.slice(0,HISTORY_LIMIT):[],activeSession:p.activeSession&&Array.isArray(p.activeSession.tasks)?p.activeSession:null,cooldownUntil:Number(p.cooldownUntil)||0,lastResult:p.lastResult||null,pendingResult:!!p.pendingResult};}
+function defaultProfile(name="プレイヤー1",avatar="🤓"){return{id:uuid(),name,avatar,xp:0,sessionsCompleted:0,bestScore:0,templateWins:{},recentTemplates:[],categoryStats:{},history:[],activeSession:null,trainingWindowStartedAt:0,setsInWindow:0,cooldownUntil:0,lastResult:null,pendingResult:false,createdAt:Date.now(),updatedAt:Date.now()};}
+function normalizeProfile(value,index=0){const base=defaultProfile(`プレイヤー${index+1}`,PROFILE_AVATARS[index%PROFILE_AVATARS.length]),p=value||{};return{...base,...p,id:typeof p.id==="string"&&p.id?p.id:base.id,name:typeof p.name==="string"&&p.name.trim()?p.name.trim().slice(0,12):base.name,avatar:PROFILE_AVATARS.includes(p.avatar)?p.avatar:base.avatar,templateWins:p.templateWins&&typeof p.templateWins==="object"?p.templateWins:{},recentTemplates:Array.isArray(p.recentTemplates)?p.recentTemplates.slice(0,30):[],categoryStats:p.categoryStats&&typeof p.categoryStats==="object"?p.categoryStats:{},history:Array.isArray(p.history)?p.history.slice(0,HISTORY_LIMIT):[],activeSession:p.activeSession&&Array.isArray(p.activeSession.tasks)?p.activeSession:null,trainingWindowStartedAt:Number(p.trainingWindowStartedAt)||0,setsInWindow:clamp(Number(p.setsInWindow)||0,0,MAX_SETS_PER_WINDOW),cooldownUntil:(Number(p.trainingWindowStartedAt)||Number(p.setsInWindow))?Number(p.cooldownUntil)||0:0,lastResult:p.lastResult||null,pendingResult:!!p.pendingResult};}
 function attachStateAccessors(target){
   Object.defineProperty(target,"profile",{configurable:true,enumerable:false,get(){return target.profiles.find(profile=>profile.id===target.activeProfileId)||target.profiles[0]}});
   ["activeSession","cooldownUntil","lastResult","pendingResult"].forEach(field=>Object.defineProperty(target,field,{configurable:true,enumerable:false,get(){return target.profile[field]},set(value){target.profile[field]=value;target.profile.updatedAt=Date.now()}}));
@@ -67,6 +69,10 @@ let state=loadState();
 function saveState(){state.appVersion=APP_VERSION;state.contentPack=CONTENT_PACK;state.updatedAt=Date.now();try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));return true}catch{toast("記録を保存できませんでした");return false}}
 const breadthPoints = (profile=state.profile) => Object.values(profile.templateWins).reduce((sum,n)=>sum+Math.min(3,Number(n)||0),0);
 const currentLevel = (profile=state.profile) => 1+Math.min(Math.floor(profile.xp/120),Math.floor(breadthPoints(profile)/6));
+function trainingWindowStatus(profile=state.profile,now=Date.now()){
+  const startedAt=Number(profile.trainingWindowStartedAt)||0,sets=clamp(Number(profile.setsInWindow)||0,0,MAX_SETS_PER_WINDOW),endsAt=startedAt+TRAINING_WINDOW_MS,expired=!startedAt||now>=endsAt;
+  return expired?{startedAt:0,endsAt:0,sets:0,remaining:MAX_SETS_PER_WINDOW,expired:true}:{startedAt,endsAt,sets,remaining:MAX_SETS_PER_WINDOW-sets,expired:false};
+}
 
 const COLOR_NAMES=["むらさき","みどり","オレンジ","あお"];
 const COLOR_CLASSES={"むらさき":"ink-purple","みどり":"ink-green","オレンジ":"ink-orange","あお":"ink-blue"};
@@ -228,9 +234,9 @@ function renderHome(){
 function refreshHomeButton(){
   const button=$("start-button"),text=$("cooldown-text");
   if(state.activeSession){button.disabled=false;button.textContent=`${state.activeSession.currentIndex+1}問目からつづける`;text.textContent=`回答済み${state.activeSession.currentIndex}問の経験値と得意度は反映済み。残りの問題は保存されています。`;text.className="cooldown";return}
-  const remaining=(state.cooldownUntil||0)-Date.now();
-  if(remaining<=0){button.disabled=false;button.textContent=state.profile.sessionsCompleted?"本日の老いを測る":"はじめての老いを測る";text.textContent="脳の休憩は完了しています";text.className="cooldown ready"}
-  else{button.disabled=true;button.textContent="脳を休ませています";text.textContent=`次のセッションまで ${formatRemaining(remaining)}`;text.className="cooldown"}
+  const now=Date.now(),window=trainingWindowStatus(state.profile,now),remaining=(state.cooldownUntil||0)-now,completed=window.sets;
+  if(remaining<=0&&window.remaining>0){button.disabled=false;button.textContent=state.profile.sessionsCompleted?"次の老いを測る":"はじめての老いを測る";text.textContent=`20時間枠：${completed}/${MAX_SETS_PER_WINDOW}セット完了・残り${window.remaining}セット`;text.className="cooldown ready"}
+  else{button.disabled=true;button.textContent=completed>=MAX_SETS_PER_WINDOW?"4セット完了":"脳を休ませています";text.textContent=completed>=MAX_SETS_PER_WINDOW?`次の20時間枠まで ${formatRemaining(Math.max(0,window.endsAt-now))}`:`次のセットまで ${formatRemaining(Math.max(0,remaining))}・残り${window.remaining}セット`;text.className="cooldown"}
 }
 function renderCategoryStats(){
   const stats=state.profile.categoryStats,card=$("category-card"),root=$("category-bars");root.replaceChildren();
@@ -242,8 +248,11 @@ function renderCategoryStats(){
 
 function startOrResume(){
   if(state.activeSession){renderCurrentTask();return}
-  if((state.cooldownUntil||0)>Date.now())return;
-  state.activeSession={id:uuid(),startedAt:Date.now(),contentPack:CONTENT_PACK,tasks:buildTasks(),currentIndex:0,answers:[],earnedXp:0};
+  const now=Date.now(),window=trainingWindowStatus();
+  if(window.expired){state.profile.trainingWindowStartedAt=0;state.profile.setsInWindow=0;state.cooldownUntil=0}
+  if((state.cooldownUntil||0)>now||state.profile.setsInWindow>=MAX_SETS_PER_WINDOW)return;
+  if(!state.profile.trainingWindowStartedAt)state.profile.trainingWindowStartedAt=now;
+  state.activeSession={id:uuid(),startedAt:now,trainingWindowStartedAt:state.profile.trainingWindowStartedAt,contentPack:CONTENT_PACK,tasks:buildTasks(),currentIndex:0,answers:[],earnedXp:0};
   state.pendingResult=false;saveState();renderCurrentTask();
 }
 function renderCurrentTask(){
@@ -382,13 +391,15 @@ function finalizeSession(){
   const total=session.tasks.length,answers=session.answers.slice(0,total),correct=answers.filter(a=>a.correct).length,avgQuality=answers.reduce((sum,a)=>sum+a.quality,0)/Math.max(1,answers.length),categories=new Set(answers.map(a=>a.category)).size;
   const score=clamp(Math.round(correct/total*75+avgQuality*15+Math.min(1,categories/8)*10),0,100),grade=gradeFor(score),completedAt=Date.now();
   const result={id:session.id,profileId:state.profile.id,profileName:state.profile.name,profileAvatar:state.profile.avatar,score,grade:grade.name,message:grade.message,correct,total,xp:session.earnedXp||0,level:currentLevel(),startedAt:session.startedAt,completedAt,categories:[...new Set(answers.filter(a=>a.correct).map(a=>a.category))]};
-  state.profile.sessionsCompleted++;state.profile.bestScore=Math.max(state.profile.bestScore||0,score);state.profile.history=[result,...state.profile.history].slice(0,HISTORY_LIMIT);state.lastResult=result;state.pendingResult=true;state.cooldownUntil=completedAt+COOLDOWN_MS;state.activeSession=null;saveState();renderResult(result);
+  state.profile.sessionsCompleted++;state.profile.bestScore=Math.max(state.profile.bestScore||0,score);state.profile.history=[result,...state.profile.history].slice(0,HISTORY_LIMIT);state.lastResult=result;state.pendingResult=true;
+  const windowStart=Number(session.trainingWindowStartedAt)||Number(state.profile.trainingWindowStartedAt)||completedAt;state.profile.trainingWindowStartedAt=windowStart;state.profile.setsInWindow=clamp((Number(state.profile.setsInWindow)||0)+1,1,MAX_SETS_PER_WINDOW);state.cooldownUntil=state.profile.setsInWindow>=MAX_SETS_PER_WINDOW?windowStart+TRAINING_WINDOW_MS:Math.min(completedAt+BETWEEN_SET_BREAK_MS,windowStart+TRAINING_WINDOW_MS);
+  state.activeSession=null;saveState();renderResult(result);
 }
 function renderResult(result){
   showView("result-view");const grade=GRADES.find(g=>g.name===result.grade)||gradeFor(result.score);$("grade-name").textContent=grade.name;$("grade-message").textContent=grade.message;$("result-score").textContent=result.score;$("result-correct").textContent=`${result.correct} / ${result.total}`;$("result-xp").textContent=`+${result.xp} XP`;$("result-level").textContent=`Lv.${result.level}`;
   const root=$("result-breakdown");root.replaceChildren();(result.categories||[]).forEach(key=>{const s=document.createElement("span");s.textContent=`${CATEGORIES[key]?.icon||"•"} ${CATEGORIES[key]?.label||key} 正解`;root.append(s)});refreshResultCooldown();clearInterval(cooldownTicker);cooldownTicker=setInterval(refreshResultCooldown,1000);
 }
-function refreshResultCooldown(){const left=(state.cooldownUntil||0)-Date.now();$("next-session-text").textContent=left>0?`次の${SESSION_SIZE}問まで ${formatRemaining(left)}`:`次の${SESSION_SIZE}問を遊べます`}
+function refreshResultCooldown(){const now=Date.now(),window=trainingWindowStatus(state.profile,now),left=(state.cooldownUntil||0)-now;$("next-session-text").textContent=window.sets>=MAX_SETS_PER_WINDOW?`4セット完了。次の20時間枠まで ${formatRemaining(Math.max(0,window.endsAt-now))}`:left>0?`セット ${window.sets}/${MAX_SETS_PER_WINDOW} 完了。次の${SESSION_SIZE}問まで ${formatRemaining(left)}`:`残り${window.remaining}セットを遊べます`}
 
 let profileAvatarChoice="🤓";
 function renderProfiles(){
