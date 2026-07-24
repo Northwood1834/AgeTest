@@ -24,8 +24,8 @@ state
 │     ├ history          at most 30 completed-session summaries
 │     ├ activeSession    unfinished generated 12-question set or null
 │     ├ trainingWindowStartedAt  start of rolling 20-hour window
-│     ├ setsInWindow     completed sets in that window (0–4)
-│     ├ cooldownUntil    end of five-minute break or training window
+│     ├ setsInWindow     completed sets in that window (0–6)
+│     ├ cooldownUntil    end of ten-minute midpoint break or training window
 │     ├ lastResult       most recent completed summary or null
 │     └ pendingResult    whether to reopen that result after reload
 └ activeProfileId        profile selected in the UI
@@ -33,7 +33,7 @@ state
 
 Each profile owns its progress, cooldown, unfinished session, and history. Switching profiles never merges those records. An active session stores its generated task descriptors and answers so a reload or temporary exit cannot produce a different question set or award the same answered question twice. XP and category statistics are written after each answer. Incomplete sessions remain resumable and do not receive a final score, grade, or history entry.
 
-The normalizer migrates the earlier pilot's single `profile` plus root-level session fields into a one-entry `profiles` array. At most six normalized profiles are retained. Profiles saved before v1.1 have no training-window fields; their old one-set cooldown is cleared once during normalization, and they begin with four available sets under the new rule.
+The normalizer migrates the earlier pilot's single `profile` plus root-level session fields into a one-entry `profiles` array. At most six normalized profiles are retained. Profiles saved before v1.1 have no training-window fields; their old one-set cooldown is cleared once during normalization. When a v1.1 profile first loads in v1.2, sets 1–2 and set 4 are released immediately under the new two-block rule; a profile stopped after set 3 receives the remaining five minutes needed to make the midpoint break ten minutes.
 
 ## Compatibility rules
 
