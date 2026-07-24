@@ -5,7 +5,7 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.2.1";
+const APP_VERSION = "1.2.2";
 const CONTENT_PACK = "1.0";
 const STORAGE_KEY = "shoro-test-state-v1";
 const TRAINING_WINDOW_MS = 20 * 60 * 60 * 1000;
@@ -14,8 +14,11 @@ const SETS_PER_BLOCK = 3;
 const MAX_SETS_PER_WINDOW = 6;
 const SESSION_SIZE = 12;
 const HISTORY_LIMIT = 30;
-const FLASH_EXPOSURE_MS = 3000;
-const MEMORY_PATH_RECALL_MS = 3200;
+const FLASH_EXPOSURE_MS = 5000;
+const MEMORY_PATH_RECALL_MS = 5000;
+const MEMORY_PATH_FLASH_START_MS = 600;
+const MEMORY_PATH_FLASH_STEP_MS = 1300;
+const MEMORY_PATH_FLASH_ON_MS = 750;
 const $ = id => document.getElementById(id);
 
 const CATEGORIES = {
@@ -328,7 +331,7 @@ function renderTask(task){
 }
 function renderMemoryPath(task){
   const grid=document.createElement("div");grid.className="memory-grid";const buttons=[];for(let i=0;i<9;i++){const b=document.createElement("button");b.type="button";b.className="memory-tile";b.disabled=true;b.setAttribute("aria-label",`${i+1}番のマス`);grid.append(b);buttons.push(b)}$("challenge").append(grid);
-  task.path.forEach((index,step)=>{later(()=>buttons[index].classList.add("flash"),450+step*520);later(()=>buttons[index].classList.remove("flash"),780+step*520)});
+  task.path.forEach((index,step)=>{const startsAt=MEMORY_PATH_FLASH_START_MS+step*MEMORY_PATH_FLASH_STEP_MS;later(()=>buttons[index].classList.add("flash"),startsAt);later(()=>buttons[index].classList.remove("flash"),startsAt+MEMORY_PATH_FLASH_ON_MS)});
   later(()=>{let cursor=0;$("question-help").textContent="同じ順番でタップしてください。";buttons.forEach((button,index)=>{button.disabled=false;button.addEventListener("click",()=>{if(index!==task.path[cursor]){button.classList.add("wrong");finishTask(false,{detail:"順番が迷子になりました。"});return}button.classList.add("chosen");later(()=>button.classList.remove("chosen"),180);cursor++;if(cursor===task.path.length)finishTask(true,{quality:clamp(1-(performance.now()-questionStartedAt)/9000,0,1),detail:"順番どおりです。"})})});startDeadline(task.duration,()=>finishTask(false,{detail:"記憶が時間切れになりました。"}))},task.recallAfterMs||MEMORY_PATH_RECALL_MS);
 }
 function renderFlashChoice(task){
