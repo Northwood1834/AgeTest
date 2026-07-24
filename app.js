@@ -5,7 +5,7 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.2.0";
+const APP_VERSION = "1.2.1";
 const CONTENT_PACK = "1.0";
 const STORAGE_KEY = "shoro-test-state-v1";
 const TRAINING_WINDOW_MS = 20 * 60 * 60 * 1000;
@@ -14,6 +14,8 @@ const SETS_PER_BLOCK = 3;
 const MAX_SETS_PER_WINDOW = 6;
 const SESSION_SIZE = 12;
 const HISTORY_LIMIT = 30;
+const FLASH_EXPOSURE_MS = 3000;
+const MEMORY_PATH_RECALL_MS = 3200;
 const $ = id => document.getElementById(id);
 
 const CATEGORIES = {
@@ -191,8 +193,8 @@ const TASK_FACTORIES = [
     {prompt:"Which word is closest in meaning to “brief”?",help:"Choose the nearest meaning.",answer:"short",wrong:["noisy","ancient","heavy"]},
     {prompt:"Choose the most natural reply: “Would you like some tea?”",help:"Pick the best response.",answer:"Yes, please.",wrong:["Yes, I like.","Tea is a leaf.","I would some."]}
   ],r=pick(rows);return{kind:"choice",prompt:r.prompt,help:r.help,options:shuffle([r.answer,...r.wrong]),answer:r.answer,duration:8500}}},
-  {id:"social-date-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(pick(DATE_SCENARIOS));scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"会話をつないで、デートに誘って",help:"相手の話を受けて、3回選びます。",scenario,duration:28000}}},
-  {id:"social-partner-mood-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(PARTNER_MOOD_SCENARIO);scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"不機嫌なパートナーと話して",help:"火に油を注がず、3回会話をつなぎます。",scenario,duration:30000}}}
+  {id:"social-date-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(pick(DATE_SCENARIOS));scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"会話をつないで、デートに誘って",help:"相手の話を受けて、3回選びます。",scenario,duration:18000}}},
+  {id:"social-partner-mood-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(PARTNER_MOOD_SCENARIO);scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"不機嫌なパートナーと話して",help:"火に油を注がず、3回会話をつなぎます。",scenario,duration:20000}}}
 ];
 
 function buildTasks(profile=state.profile){
@@ -327,11 +329,11 @@ function renderTask(task){
 function renderMemoryPath(task){
   const grid=document.createElement("div");grid.className="memory-grid";const buttons=[];for(let i=0;i<9;i++){const b=document.createElement("button");b.type="button";b.className="memory-tile";b.disabled=true;b.setAttribute("aria-label",`${i+1}番のマス`);grid.append(b);buttons.push(b)}$("challenge").append(grid);
   task.path.forEach((index,step)=>{later(()=>buttons[index].classList.add("flash"),450+step*520);later(()=>buttons[index].classList.remove("flash"),780+step*520)});
-  later(()=>{let cursor=0;$("question-help").textContent="同じ順番でタップしてください。";buttons.forEach((button,index)=>{button.disabled=false;button.addEventListener("click",()=>{if(index!==task.path[cursor]){button.classList.add("wrong");finishTask(false,{detail:"順番が迷子になりました。"});return}button.classList.add("chosen");later(()=>button.classList.remove("chosen"),180);cursor++;if(cursor===task.path.length)finishTask(true,{quality:clamp(1-(performance.now()-questionStartedAt)/9000,0,1),detail:"順番どおりです。"})})});startDeadline(task.duration,()=>finishTask(false,{detail:"記憶が時間切れになりました。"}))},2800);
+  later(()=>{let cursor=0;$("question-help").textContent="同じ順番でタップしてください。";buttons.forEach((button,index)=>{button.disabled=false;button.addEventListener("click",()=>{if(index!==task.path[cursor]){button.classList.add("wrong");finishTask(false,{detail:"順番が迷子になりました。"});return}button.classList.add("chosen");later(()=>button.classList.remove("chosen"),180);cursor++;if(cursor===task.path.length)finishTask(true,{quality:clamp(1-(performance.now()-questionStartedAt)/9000,0,1),detail:"順番どおりです。"})})});startDeadline(task.duration,()=>finishTask(false,{detail:"記憶が時間切れになりました。"}))},task.recallAfterMs||MEMORY_PATH_RECALL_MS);
 }
 function renderFlashChoice(task){
   const items=document.createElement("div");items.className="flash-items";task.shown.forEach(value=>{const s=document.createElement("span");s.textContent=value;items.append(s)});$("challenge").append(items);const choices=makeChoices(task,{disabled:true,symbol:true});choices.hidden=true;
-  later(()=>{items.classList.add("covered");$("question-help").textContent=task.afterHelp||"さっき、なかったものは？";choices.hidden=false;choices.querySelectorAll("button").forEach(b=>b.disabled=false);startDeadline(task.duration,()=>genericTimeout(task))},1900);
+  later(()=>{items.classList.add("covered");$("question-help").textContent=task.afterHelp||"さっき、なかったものは？";choices.hidden=false;choices.querySelectorAll("button").forEach(b=>b.disabled=false);startDeadline(task.duration,()=>genericTimeout(task))},task.exposureMs||FLASH_EXPOSURE_MS);
 }
 function renderCube(task){
   const scene=createStage3D("cube-scene","回転する色つき立方体"),cube=document.createElement("div");cube.className="cube";const names=["front","right","back","left","top","bottom"];names.forEach((name,index)=>{const face=document.createElement("div");face.className=`cube-face cube-${name}`;face.style.background=task.colors[index].hex;face.textContent=task.colors[index].name;cube.append(face)});scene.world.append(cube);$("challenge").append(scene.root);const choices=makeChoices(task,{disabled:true});later(()=>cube.classList.add("turned"),450);later(()=>{choices.querySelectorAll("button").forEach(b=>b.disabled=false);$("question-help").textContent="いま正面にある色を選んで。";startDeadline(task.duration,()=>genericTimeout(task))},1500);

@@ -18,6 +18,7 @@ Environment: local static server, desktop Chromium browser automation, headless 
 - Six-profile cap, active profile switching, per-profile history, per-profile best ten, and six-entry local leaderboard rendered correctly.
 - Emoji runner: production `travelMs: 2800` succeeded with one jump at about 1.62 seconds and finished at about 2.38 seconds. The reduced-motion static alternative also succeeded.
 - Author boss, emoji FPS, lane choice, golf drag, golf Enter-key fallback, date conversation, partner conversation, and English-only question paths succeeded.
+- v1.2.1 timing feedback verified in-browser: flash-memory choices remained hidden at 2.0 seconds and appeared after 3.0 seconds; memory-path input remained disabled at 2.9 seconds and enabled after 3.2 seconds; date and partner conversations generated with 18-second and 20-second limits and both completed correctly.
 - The four Krea2 WebP assets load at 768×960; direct visual review found the intended distinct adult/SFW characters and no text/watermark defects.
 - 320×900 headless Chrome capture showed no horizontal clipping on the home screen.
 - Initial-load network capture contained only same-origin app requests; no app XHR/fetch/WebSocket/telemetry was present. CSP retains `connect-src 'none'`.
