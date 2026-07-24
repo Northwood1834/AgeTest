@@ -5,9 +5,12 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.2.2";
+const APP_VERSION = "1.2.3";
 const CONTENT_PACK = "1.0";
 const STORAGE_KEY = "shoro-test-state-v1";
+const PACE_STANDARD = "standard";
+const PACE_RELAXED = "relaxed";
+const RELAXED_DURATION_MULTIPLIER = 1.5;
 const TRAINING_WINDOW_MS = 20 * 60 * 60 * 1000;
 const MID_BLOCK_BREAK_MS = 10 * 60 * 1000;
 const SETS_PER_BLOCK = 3;
@@ -52,8 +55,8 @@ const clamp = (n,min,max) => Math.max(min,Math.min(max,n));
 const uuid = () => crypto.randomUUID?.() || `s-${Date.now().toString(36)}-${randomInt(0,0xffffff).toString(36)}`;
 
 const PROFILE_AVATARS=["🤓","😀","🤑","🐼","🐶","🐱"];
-function defaultProfile(name="プレイヤー1",avatar="🤓"){return{id:uuid(),name,avatar,xp:0,sessionsCompleted:0,bestScore:0,templateWins:{},recentTemplates:[],categoryStats:{},history:[],activeSession:null,trainingWindowStartedAt:0,setsInWindow:0,cooldownUntil:0,lastResult:null,pendingResult:false,createdAt:Date.now(),updatedAt:Date.now()};}
-function normalizeProfile(value,index=0){const base=defaultProfile(`プレイヤー${index+1}`,PROFILE_AVATARS[index%PROFILE_AVATARS.length]),p=value||{};return{...base,...p,id:typeof p.id==="string"&&p.id?p.id:base.id,name:typeof p.name==="string"&&p.name.trim()?p.name.trim().slice(0,12):base.name,avatar:PROFILE_AVATARS.includes(p.avatar)?p.avatar:base.avatar,templateWins:p.templateWins&&typeof p.templateWins==="object"?p.templateWins:{},recentTemplates:Array.isArray(p.recentTemplates)?p.recentTemplates.slice(0,30):[],categoryStats:p.categoryStats&&typeof p.categoryStats==="object"?p.categoryStats:{},history:Array.isArray(p.history)?p.history.slice(0,HISTORY_LIMIT):[],activeSession:p.activeSession&&Array.isArray(p.activeSession.tasks)?p.activeSession:null,trainingWindowStartedAt:Number(p.trainingWindowStartedAt)||0,setsInWindow:clamp(Number(p.setsInWindow)||0,0,MAX_SETS_PER_WINDOW),cooldownUntil:(Number(p.trainingWindowStartedAt)||Number(p.setsInWindow))?Number(p.cooldownUntil)||0:0,lastResult:p.lastResult||null,pendingResult:!!p.pendingResult};}
+function defaultProfile(name="プレイヤー1",avatar="🤓"){return{id:uuid(),name,avatar,paceMode:PACE_STANDARD,xp:0,sessionsCompleted:0,bestScore:0,templateWins:{},recentTemplates:[],categoryStats:{},history:[],activeSession:null,trainingWindowStartedAt:0,setsInWindow:0,cooldownUntil:0,lastResult:null,pendingResult:false,createdAt:Date.now(),updatedAt:Date.now()};}
+function normalizeProfile(value,index=0){const base=defaultProfile(`プレイヤー${index+1}`,PROFILE_AVATARS[index%PROFILE_AVATARS.length]),p=value||{};return{...base,...p,id:typeof p.id==="string"&&p.id?p.id:base.id,name:typeof p.name==="string"&&p.name.trim()?p.name.trim().slice(0,12):base.name,avatar:PROFILE_AVATARS.includes(p.avatar)?p.avatar:base.avatar,paceMode:p.paceMode===PACE_RELAXED?PACE_RELAXED:PACE_STANDARD,templateWins:p.templateWins&&typeof p.templateWins==="object"?p.templateWins:{},recentTemplates:Array.isArray(p.recentTemplates)?p.recentTemplates.slice(0,30):[],categoryStats:p.categoryStats&&typeof p.categoryStats==="object"?p.categoryStats:{},history:Array.isArray(p.history)?p.history.slice(0,HISTORY_LIMIT):[],activeSession:p.activeSession&&Array.isArray(p.activeSession.tasks)?p.activeSession:null,trainingWindowStartedAt:Number(p.trainingWindowStartedAt)||0,setsInWindow:clamp(Number(p.setsInWindow)||0,0,MAX_SETS_PER_WINDOW),cooldownUntil:(Number(p.trainingWindowStartedAt)||Number(p.setsInWindow))?Number(p.cooldownUntil)||0:0,lastResult:p.lastResult||null,pendingResult:!!p.pendingResult};}
 function attachStateAccessors(target){
   Object.defineProperty(target,"profile",{configurable:true,enumerable:false,get(){return target.profiles.find(profile=>profile.id===target.activeProfileId)||target.profiles[0]}});
   ["activeSession","cooldownUntil","lastResult","pendingResult"].forEach(field=>Object.defineProperty(target,field,{configurable:true,enumerable:false,get(){return target.profile[field]},set(value){target.profile[field]=value;target.profile.updatedAt=Date.now()}}));
@@ -127,6 +130,13 @@ const TEMPLATE_FLAVORS={
   "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
 };
 const flavorFor = templateId => TEMPLATE_FLAVORS[templateId]||"classic";
+const PACE_FIXED_KINDS = new Set(["signal","target","timing","runner"]);
+function tuneTaskForPace(task,paceMode){
+  if(paceMode!==PACE_RELAXED)return task;
+  if(task.kind==="runner")return{...task,runnerClearance:26};
+  if(PACE_FIXED_KINDS.has(task.kind))return task;
+  return{...task,standardDuration:task.duration,duration:Math.round(task.duration*RELAXED_DURATION_MULTIPLIER)};
+}
 
 const TASK_FACTORIES = [
   {id:"reaction-signal-v1",version:"1.0",category:"reaction",make:()=>({kind:"signal",prompt:"合図が出たら、すぐタップ",help:"フライングは不正解です。",delay:randomInt(900,2200),duration:4300})},
@@ -200,7 +210,7 @@ const TASK_FACTORIES = [
   {id:"social-partner-mood-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(PARTNER_MOOD_SCENARIO);scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"不機嫌なパートナーと話して",help:"火に油を注がず、3回会話をつなぎます。",scenario,duration:20000}}}
 ];
 
-function buildTasks(profile=state.profile){
+function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
   const recent=new Set(profile.recentTemplates.slice(0,10)),level=currentLevel(profile);
   const available=TASK_FACTORIES.filter(factory=>tierFor(factory.id)<=level);
   const ranked=available.map(factory=>{
@@ -216,7 +226,7 @@ function buildTasks(profile=state.profile){
   if(boss&&!chosen.includes(boss)){const same=chosen.map((factory,index)=>factory.category===boss.category?index:-1).filter(index=>index>=0),wild=chosen.findIndex(factory=>flavorFor(factory.id)==="wild"),replace=same.length>=2?same.at(-1):wild>=0?wild:chosen.length-1;chosen[replace]=boss}
   let ordered=shuffle(chosen);
   if(boss&&ordered.includes(boss)){ordered=shuffle(ordered.filter(factory=>factory!==boss));ordered.splice(Math.min(5,ordered.length),0,boss)}
-  return ordered.map(factory=>({templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),category:factory.category,...factory.make()}));
+  return ordered.map(factory=>tuneTaskForPace({templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),category:factory.category,...factory.make()},paceMode));
 }
 
 let cooldownTicker=null,questionTimers=[],timerRaf=null,extraRafs=[],deadlineTimeout=null,questionAnswered=false,questionStartedAt=0;
@@ -229,6 +239,8 @@ function gradeFor(score){return GRADES.find(g=>score>=g.min)||GRADES.at(-1)}
 function renderHome(){
   clearQuestionTimers();$("feedback").hidden=true;showView("home-view");
   $("profile-avatar").textContent=state.profile.avatar;$("profile-name").textContent=state.profile.name;
+  const selectedPace=state.profile.paceMode===PACE_RELAXED?PACE_RELAXED:PACE_STANDARD,sessionPace=state.activeSession?.paceMode||PACE_STANDARD;
+  $("pace-note").textContent=state.activeSession&&sessionPace!==selectedPace?`進行中は${sessionPace===PACE_RELAXED?"ゆったり":"標準"}。次のセットから${selectedPace===PACE_RELAXED?"ゆったり":"標準"}です。`:selectedPace===PACE_RELAXED?"ゆったりモード（番付対象外）":"標準モード（番付対象）";
   const level=currentLevel(),breadth=breadthPoints(),xpTarget=level*120,breadthTarget=level*6;
   $("level-value").textContent=level;$("xp-value").textContent=`${state.profile.xp.toLocaleString("ja-JP")} XP`;
   $("xp-next").textContent=`${Math.min(state.profile.xp,xpTarget)} / ${xpTarget}`;$("breadth-next").textContent=`${Math.min(breadth,breadthTarget)} / ${breadthTarget}`;
@@ -259,7 +271,8 @@ function startOrResume(){
   if(window.expired){state.profile.trainingWindowStartedAt=0;state.profile.setsInWindow=0;state.cooldownUntil=0}
   if((state.cooldownUntil||0)>now||state.profile.setsInWindow>=MAX_SETS_PER_WINDOW)return;
   if(!state.profile.trainingWindowStartedAt)state.profile.trainingWindowStartedAt=now;
-  state.activeSession={id:uuid(),startedAt:now,trainingWindowStartedAt:state.profile.trainingWindowStartedAt,contentPack:CONTENT_PACK,tasks:buildTasks(),currentIndex:0,answers:[],earnedXp:0};
+  const paceMode=state.profile.paceMode===PACE_RELAXED?PACE_RELAXED:PACE_STANDARD;
+  state.activeSession={id:uuid(),startedAt:now,trainingWindowStartedAt:state.profile.trainingWindowStartedAt,contentPack:CONTENT_PACK,paceMode,tasks:buildTasks(state.profile,paceMode),currentIndex:0,answers:[],earnedXp:0};
   state.pendingResult=false;saveState();renderCurrentTask();
 }
 function renderCurrentTask(){
@@ -272,7 +285,7 @@ function renderCurrentTask(){
   $("game-progress-bar").style.width=`${(index+1)/session.tasks.length*100}%`;
   $("category-icon").textContent=meta.icon;$("category-name").textContent=meta.label;$("task-tier").textContent=`Tier ${task.tier||1}`;
   const reveal=$("category-reveal");reveal.classList.remove("category-reveal");void reveal.offsetWidth;reveal.classList.add("category-reveal");
-  $("question-kicker").textContent=`問題タイプ · ${meta.label}`;$("question-prompt").textContent=task.prompt;$("question-help").textContent=task.help||"";$("challenge").replaceChildren();
+  $("question-kicker").textContent=`問題タイプ · ${meta.label}${session.paceMode===PACE_RELAXED?" · ゆったり":""}`;$("question-prompt").textContent=task.prompt;$("question-help").textContent=task.help||"";$("challenge").replaceChildren();
   renderTask(task);
 }
 function startDeadline(duration,onExpire){
@@ -355,7 +368,8 @@ function renderRunner(task){
   const scene=document.createElement("div"),hero=document.createElement("span"),obstacle=document.createElement("span"),ground=document.createElement("div");scene.className="runner-stage";scene.setAttribute("role","button");scene.tabIndex=0;scene.setAttribute("aria-label","タップでジャンプ");hero.className="runner-hero";hero.textContent=task.hero;obstacle.className="runner-obstacle";obstacle.textContent="🪵";ground.className="runner-ground";ground.innerHTML="<span>🌳</span><span>🐿️</span><span>🌲</span><span>🐢</span>";scene.append(ground,hero,obstacle);$("challenge").append(scene);
   if(matchMedia("(prefers-reduced-motion: reduce)").matches){let ready=false;obstacle.hidden=true;const dodge=()=>finishTask(ready,{detail:ready?"静止画モードで、丸太を回避しました。":"丸太が来る前でした。"});scene.addEventListener("click",dodge);scene.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();dodge()}});later(()=>{if(questionAnswered)return;ready=true;obstacle.hidden=false;obstacle.style.left="24%";$("question-help").textContent="丸太が現れました。タップで回避。"},900);startDeadline(task.duration,()=>finishTask(false,{detail:"丸太が待ちくたびれました。"}));return}
   let jumpAt=0,start=performance.now(),token={id:null},travel=task.travelMs||2800,jumpDuration=780*Math.max(1,travel/2800);extraRafs.push(token);const jump=()=>{const now=performance.now();if(!jumpAt||now-jumpAt>jumpDuration)jumpAt=now};scene.addEventListener("click",jump);scene.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();jump()}});
-  const tick=now=>{if(questionAnswered)return;const elapsed=now-start,x=110-elapsed/travel*125,jumpElapsed=now-jumpAt,y=jumpAt&&jumpElapsed<jumpDuration?Math.sin(jumpElapsed/jumpDuration*Math.PI)*76:0;hero.style.transform=`translateY(${-y}px)`;obstacle.style.left=`${x}%`;if(x<30&&x>14&&y<38){finishTask(false,{detail:"丸太に老いを置いてきました。"});return}if(x<4){finishTask(true,{quality:clamp(1-elapsed/6000,0,1),detail:"華麗なひと跳びです。"});return}token.id=requestAnimationFrame(tick)};token.id=requestAnimationFrame(tick);startDeadline(task.duration,()=>finishTask(false,{detail:"ゴールが先に帰りました。"}));
+  const requiredClearance=task.runnerClearance||38;
+  const tick=now=>{if(questionAnswered)return;const elapsed=now-start,x=110-elapsed/travel*125,jumpElapsed=now-jumpAt,y=jumpAt&&jumpElapsed<jumpDuration?Math.sin(jumpElapsed/jumpDuration*Math.PI)*76:0;hero.style.transform=`translateY(${-y}px)`;obstacle.style.left=`${x}%`;if(x<30&&x>14&&y<requiredClearance){finishTask(false,{detail:"丸太に老いを置いてきました。"});return}if(x<4){finishTask(true,{quality:clamp(1-elapsed/6000,0,1),detail:"華麗なひと跳びです。"});return}token.id=requestAnimationFrame(tick)};token.id=requestAnimationFrame(tick);startDeadline(task.duration,()=>finishTask(false,{detail:"ゴールが先に帰りました。"}));
 }
 function renderAuthorBoss(task){
   const scene=createStage3D("boss-stage","中ボスの作者アイコン"),button=document.createElement("button"),img=document.createElement("img"),counter=document.createElement("span");button.type="button";button.className="boss-target";button.setAttribute("aria-label","中ボスの作者");img.src="author.png";img.alt="";counter.className="boss-counter";counter.textContent=`0 / ${task.hits}`;button.append(img);scene.world.append(button,counter);$("challenge").append(scene.root);let hits=0;const move=()=>{button.style.left=`${randomInt(8,72)}%`;button.style.top=`${randomInt(8,58)}%`;button.style.setProperty("--boss-turn",`${randomInt(-14,14)}deg`)};move();button.addEventListener("click",()=>{hits++;counter.textContent=`${hits} / ${task.hits}`;button.classList.remove("bonk");void button.offsetWidth;button.classList.add("bonk");if(hits>=task.hits){finishTask(true,{quality:clamp(1-(performance.now()-questionStartedAt)/task.duration,0,1),detail:"作者を締切へ戻しました。"});return}move()});startDeadline(task.duration,()=>finishTask(false,{detail:"作者は締切の向こうへ逃げました。"}));
@@ -396,24 +410,25 @@ function finalizeSession(){
   const session=state.activeSession;if(!session)return state.pendingResult&&state.lastResult?renderResult(state.lastResult):renderHome();
   if(session.currentIndex<session.tasks.length)return renderCurrentTask();
   const total=session.tasks.length,answers=session.answers.slice(0,total),correct=answers.filter(a=>a.correct).length,avgQuality=answers.reduce((sum,a)=>sum+a.quality,0)/Math.max(1,answers.length),categories=new Set(answers.map(a=>a.category)).size;
-  const score=clamp(Math.round(correct/total*75+avgQuality*15+Math.min(1,categories/8)*10),0,100),grade=gradeFor(score),completedAt=Date.now();
-  const result={id:session.id,profileId:state.profile.id,profileName:state.profile.name,profileAvatar:state.profile.avatar,score,grade:grade.name,message:grade.message,correct,total,xp:session.earnedXp||0,level:currentLevel(),startedAt:session.startedAt,completedAt,categories:[...new Set(answers.filter(a=>a.correct).map(a=>a.category))]};
-  state.profile.sessionsCompleted++;state.profile.bestScore=Math.max(state.profile.bestScore||0,score);state.profile.history=[result,...state.profile.history].slice(0,HISTORY_LIMIT);state.lastResult=result;state.pendingResult=true;
+  const score=clamp(Math.round(correct/total*75+avgQuality*15+Math.min(1,categories/8)*10),0,100),grade=gradeFor(score),completedAt=Date.now(),paceMode=session.paceMode===PACE_RELAXED?PACE_RELAXED:PACE_STANDARD,ranked=paceMode===PACE_STANDARD;
+  const result={id:session.id,profileId:state.profile.id,profileName:state.profile.name,profileAvatar:state.profile.avatar,paceMode,ranked,score,grade:grade.name,message:grade.message,correct,total,xp:session.earnedXp||0,level:currentLevel(),startedAt:session.startedAt,completedAt,categories:[...new Set(answers.filter(a=>a.correct).map(a=>a.category))]};
+  state.profile.sessionsCompleted++;if(ranked){state.profile.bestScore=Math.max(state.profile.bestScore||0,score);state.profile.history=[result,...state.profile.history].slice(0,HISTORY_LIMIT)}state.lastResult=result;state.pendingResult=true;
   const windowStart=Number(session.trainingWindowStartedAt)||Number(state.profile.trainingWindowStartedAt)||completedAt;state.profile.trainingWindowStartedAt=windowStart;state.profile.setsInWindow=clamp((Number(state.profile.setsInWindow)||0)+1,1,MAX_SETS_PER_WINDOW);state.cooldownUntil=state.profile.setsInWindow>=MAX_SETS_PER_WINDOW?windowStart+TRAINING_WINDOW_MS:state.profile.setsInWindow===SETS_PER_BLOCK?Math.min(completedAt+MID_BLOCK_BREAK_MS,windowStart+TRAINING_WINDOW_MS):0;
   state.activeSession=null;saveState();renderResult(result);
 }
 function renderResult(result){
-  showView("result-view");const grade=GRADES.find(g=>g.name===result.grade)||gradeFor(result.score);$("grade-name").textContent=grade.name;$("grade-message").textContent=grade.message;$("result-score").textContent=result.score;$("result-correct").textContent=`${result.correct} / ${result.total}`;$("result-xp").textContent=`+${result.xp} XP`;$("result-level").textContent=`Lv.${result.level}`;
+  showView("result-view");const grade=GRADES.find(g=>g.name===result.grade)||gradeFor(result.score),relaxed=result.paceMode===PACE_RELAXED;$("grade-name").textContent=grade.name;$("grade-message").textContent=grade.message;$("result-mode").textContent=relaxed?"ゆったりモード · 番付対象外":"標準モード · 番付対象";$("result-score").textContent=result.score;$("result-correct").textContent=`${result.correct} / ${result.total}`;$("result-xp").textContent=`+${result.xp} XP`;$("result-level").textContent=`Lv.${result.level}`;
   const root=$("result-breakdown");root.replaceChildren();(result.categories||[]).forEach(key=>{const s=document.createElement("span");s.textContent=`${CATEGORIES[key]?.icon||"•"} ${CATEGORIES[key]?.label||key} 正解`;root.append(s)});refreshResultCooldown();clearInterval(cooldownTicker);cooldownTicker=setInterval(refreshResultCooldown,1000);
 }
 function refreshResultCooldown(){const now=Date.now(),window=trainingWindowStatus(state.profile,now),left=(state.cooldownUntil||0)-now;$("next-session-text").textContent=window.sets>=MAX_SETS_PER_WINDOW?`6セット完了。次の20時間枠まで ${formatRemaining(Math.max(0,window.endsAt-now))}`:window.sets===SETS_PER_BLOCK&&left>0?`前半3セット完了。後半まで ${formatRemaining(left)}`:`セット ${window.sets}/${MAX_SETS_PER_WINDOW} 完了。残り${window.remaining}セット`}
 
 let profileAvatarChoice="🤓";
 function renderProfiles(){
-  const root=$("profiles-list");root.replaceChildren();state.profiles.forEach(profile=>{const row=document.createElement("div"),avatar=document.createElement("span"),main=document.createElement("div"),name=document.createElement("strong"),meta=document.createElement("span"),actions=document.createElement("div");row.className=`profile-row-card ${profile.id===state.activeProfileId?"active":""}`;avatar.className="profile-row-avatar";avatar.textContent=profile.avatar;main.className="profile-row-main";name.textContent=profile.name;meta.textContent=`Lv.${currentLevel(profile)} · ベスト ${profile.bestScore||0}点`;main.append(name,meta);actions.className="profile-row-actions";
+  const root=$("profiles-list");root.replaceChildren();state.profiles.forEach(profile=>{const row=document.createElement("div"),avatar=document.createElement("span"),main=document.createElement("div"),name=document.createElement("strong"),meta=document.createElement("span"),actions=document.createElement("div");row.className=`profile-row-card ${profile.id===state.activeProfileId?"active":""}`;avatar.className="profile-row-avatar";avatar.textContent=profile.avatar;main.className="profile-row-main";name.textContent=profile.name;meta.textContent=`Lv.${currentLevel(profile)} · ベスト ${profile.bestScore||0}点 · ${profile.paceMode===PACE_RELAXED?"ゆったり":"標準"}`;main.append(name,meta);actions.className="profile-row-actions";
     const select=document.createElement("button");select.type="button";select.textContent=profile.id===state.activeProfileId?"使用中":"切替";select.disabled=profile.id===state.activeProfileId;select.addEventListener("click",()=>{state.activeProfileId=profile.id;saveState();renderProfiles();renderHome()});
     const rename=document.createElement("button");rename.type="button";rename.textContent="名前";rename.addEventListener("click",()=>{const next=prompt("新しい名前（12文字まで）",profile.name)?.trim().slice(0,12);if(!next)return;if(state.profiles.some(other=>other.id!==profile.id&&other.name===next)){toast("同じ名前があります");return}profile.name=next;profile.updatedAt=Date.now();saveState();renderProfiles();renderHome()});actions.append(select,rename);
     if(state.profiles.length>1){const del=document.createElement("button");del.type="button";del.className="danger";del.textContent="削除";del.addEventListener("click",()=>{if(!confirm(`「${profile.name}」のレベル・記録・途中の問題を削除しますか？`))return;state.profiles=state.profiles.filter(item=>item.id!==profile.id);if(state.activeProfileId===profile.id)state.activeProfileId=state.profiles[0].id;saveState();renderProfiles();renderHome()});actions.append(del)}row.append(avatar,main,actions);root.append(row)});
+  const paceMode=state.profile.paceMode===PACE_RELAXED?PACE_RELAXED:PACE_STANDARD;[["pace-standard",PACE_STANDARD],["pace-relaxed",PACE_RELAXED]].forEach(([id,value])=>{const button=$(id),active=paceMode===value;button.classList.toggle("active",active);button.setAttribute("aria-pressed",String(active))});$("pace-current").textContent=paceMode===PACE_RELAXED?"ゆったり":"標準";$("pace-apply-note").textContent=state.activeSession?"変更は保存中のセットではなく、次のセットから反映されます。":"次に始めるセットから反映されます。";
   const picker=$("avatar-picker");picker.replaceChildren();PROFILE_AVATARS.forEach(value=>{const button=document.createElement("button");button.type="button";button.textContent=value;button.className=value===profileAvatarChoice?"active":"";button.setAttribute("aria-label",`${value}を選ぶ`);button.addEventListener("click",()=>{profileAvatarChoice=value;renderProfiles()});picker.append(button)});$("profile-error").textContent=state.profiles.length>=6?"この端末では6人までです。":"";
 }
 function renderRecords(){
@@ -422,7 +437,7 @@ function renderRecords(){
   const list=$("records-list");list.replaceChildren();if(!history.length){const li=document.createElement("li"),b=document.createElement("b"),span=document.createElement("span");b.textContent="記録なし";span.textContent="最初の老いを測りましょう";li.append(b,span);list.append(li)}else history.slice(0,10).forEach(r=>{const li=document.createElement("li"),b=document.createElement("b"),span=document.createElement("span");b.textContent=`${r.grade} · ${r.score}点`;span.textContent=new Date(r.completedAt).toLocaleDateString("ja-JP");li.append(b,span);list.append(li)})
 }
 async function shareResult(){
-  const r=state.lastResult;if(!r)return;const text=`初老テストで「${r.grade}」でした。\n脳力スコア ${r.score}/100｜${r.correct}/${r.total}問正解｜Lv.${r.level}\n#初老テスト`;
+  const r=state.lastResult;if(!r)return;const mode=r.paceMode===PACE_RELAXED?"｜ゆったりモード":"";const text=`初老テストで「${r.grade}」でした。\n脳力スコア ${r.score}/100｜${r.correct}/${r.total}問正解｜Lv.${r.level}${mode}\n#初老テスト`;
   try{if(navigator.share){await navigator.share({title:"初老テスト。",text,url:location.origin+location.pathname});return}await navigator.clipboard.writeText(`${text}\n${location.origin+location.pathname}`);toast("結果をコピーしました")}catch(error){if(error?.name!=="AbortError")fallbackCopy(`${text}\n${location.href}`)}
 }
 function fallbackCopy(text){const area=document.createElement("textarea");area.value=text;area.setAttribute("readonly","");area.style.position="fixed";area.style.opacity="0";document.body.append(area);area.select();const ok=document.execCommand("copy");area.remove();toast(ok?"結果をコピーしました":"共有できませんでした")}
@@ -431,7 +446,7 @@ function toast(message){const el=$("toast");el.textContent=message;el.classList.
 if(["127.0.0.1","localhost"].includes(location.hostname))window.__SHORO_QA__={
   catalog:TASK_FACTORIES.map(factory=>({id:factory.id,tier:tierFor(factory.id),flavor:flavorFor(factory.id),category:factory.category})),
   grade(score){return gradeFor(score).name},
-  sampleSession(level=1){if(![1,2,3].includes(level))throw new Error("invalid level");const profile=defaultProfile("QA","🤓");profile.xp=(level-1)*120;TASK_FACTORIES.filter(factory=>tierFor(factory.id)===1).slice(0,(level-1)*6).forEach(factory=>profile.templateWins[factory.id]=1);return buildTasks(profile)},
+  sampleSession(level=1,paceMode=PACE_STANDARD){if(![1,2,3].includes(level))throw new Error("invalid level");if(![PACE_STANDARD,PACE_RELAXED].includes(paceMode))throw new Error("invalid pace");const profile=defaultProfile("QA","🤓");profile.xp=(level-1)*120;profile.paceMode=paceMode;TASK_FACTORIES.filter(factory=>tierFor(factory.id)===1).slice(0,(level-1)*6).forEach(factory=>profile.templateWins[factory.id]=1);return buildTasks(profile,paceMode)},
   validate(iterations=20){const issues=[],ids=new Set();TASK_FACTORIES.forEach(factory=>{if(ids.has(factory.id))issues.push(`${factory.id}: duplicate id`);ids.add(factory.id);if(!CATEGORIES[factory.category])issues.push(`${factory.id}: unknown category`);if(![1,2,3].includes(tierFor(factory.id)))issues.push(`${factory.id}: invalid tier`);for(let i=0;i<iterations;i++){let task;try{task=factory.make()}catch(error){issues.push(`${factory.id}: generator ${error.message}`);break}if(!task?.kind||!Number.isFinite(task.duration))issues.push(`${factory.id}: missing kind/duration`);if(Array.isArray(task.options)){if(task.answer!=null&&!task.options.includes(task.answer))issues.push(`${factory.id}: answer absent`);if(new Set(task.options).size!==task.options.length)issues.push(`${factory.id}: duplicate option`)}}});return{factories:TASK_FACTORIES.length,iterations,issues:[...new Set(issues)]}},
   preview(templateId,duration=60000,slowRunner=true){const factory=TASK_FACTORIES.find(item=>item.id===templateId);if(!factory)throw new Error("unknown template");const task={templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),category:factory.category,...factory.make()};task.duration=Math.max(task.duration,duration);if(task.kind==="runner"&&slowRunner)task.travelMs=Math.max(task.travelMs||2800,9000);document.querySelectorAll("dialog[open]").forEach(dialog=>dialog.close());state.activeSession={id:uuid(),startedAt:Date.now(),contentPack:CONTENT_PACK,tasks:[task],currentIndex:0,answers:[],earnedXp:0};state.pendingResult=false;saveState();renderCurrentTask();return task}
 };
@@ -443,6 +458,7 @@ $("home-button").addEventListener("click",()=>{state.pendingResult=false;saveSta
 $("share-button").addEventListener("click",shareResult);
 $("profile-open").addEventListener("click",()=>{profileAvatarChoice=PROFILE_AVATARS.find(value=>!state.profiles.some(profile=>profile.avatar===value))||"🤓";$("profile-input").value="";renderProfiles();$("profiles-dialog").showModal()});
 $("profile-form").addEventListener("submit",event=>{event.preventDefault();const name=$("profile-input").value.trim().slice(0,12);if(state.profiles.length>=6){$("profile-error").textContent="この端末では6人までです。";return}if(!name){$("profile-error").textContent="名前を入力してください。";return}if(state.profiles.some(profile=>profile.name===name)){$("profile-error").textContent="同じ名前があります。";return}const profile=defaultProfile(name,profileAvatarChoice);state.profiles.push(profile);state.activeProfileId=profile.id;saveState();$("profile-input").value="";profileAvatarChoice=PROFILE_AVATARS.find(value=>!state.profiles.some(item=>item.avatar===value))||"🤓";renderProfiles();renderHome();toast(`${name}を追加しました`)});
+[["pace-standard",PACE_STANDARD],["pace-relaxed",PACE_RELAXED]].forEach(([id,value])=>$(id).addEventListener("click",()=>{state.profile.paceMode=value;state.profile.updatedAt=Date.now();saveState();renderProfiles();renderHome();toast(value===PACE_RELAXED?"次のセットをゆったりにしました":"次のセットを標準にしました")}));
 $("records-open").addEventListener("click",()=>{renderRecords();$("records-dialog").showModal()});
 $("about-open").addEventListener("click",()=>$("about-dialog").showModal());
 document.querySelectorAll("[data-close]").forEach(button=>button.addEventListener("click",()=>$(button.dataset.close).close()));

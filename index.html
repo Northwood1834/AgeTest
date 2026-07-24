@@ -21,7 +21,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=1.2.2">
+<link rel="stylesheet" href="style.css?v=1.2.3">
 </head>
 <body>
 <main data-origin="st-origin-a14e26e54afe71e2c53b2f8eee2c87ad">
@@ -49,6 +49,7 @@
         <span><strong>12</strong> 問</span><span><strong>約5</strong> 分</span><span><strong>最大6</strong> セット</span>
       </div>
       <button id="start-button" class="primary big" type="button">本日の老いを測る</button>
+      <p id="pace-note" class="pace-note">標準モード（番付対象）</p>
       <p id="cooldown-text" class="cooldown" aria-live="polite"></p>
     </div>
 
@@ -97,6 +98,7 @@
       <p class="eyebrow">本日の格付け</p>
       <div class="seal-wrap"><div class="seal-ring"><span>格付け</span><strong id="grade-name">処老</strong></div></div>
       <p id="grade-message" class="grade-message"></p>
+      <p id="result-mode" class="result-mode">標準モード · 番付対象</p>
       <div class="score-line"><strong id="result-score">0</strong><span>/ 100<br><small>脳力スコア</small></span></div>
       <div class="result-stats">
         <div><span>正解</span><strong id="result-correct">0 / 12</strong></div>
@@ -125,7 +127,7 @@
     </svg></div>
     <span>記録はこの端末の中だけに保存されます。</span>
     <span class="credit"><img src="author.png" alt="" width="20" height="20">作者: <a href="https://instagram.com/mumupoikatsu" target="_blank" rel="noopener noreferrer">mumupoikatsu</a></span>
-    <span>© mumupoikatsu · 初老テスト v1.2.2</span>
+    <span>© mumupoikatsu · 初老テスト v1.2.3</span>
     <button type="button" class="reload-link" id="reload-latest">最新版を読み込む</button>
   </footer>
 </main>
@@ -135,6 +137,15 @@
     <div class="dialog-head"><div><span class="section-label">この端末だけ</span><h2>ユーザープロファイル</h2></div><button class="close-button" type="button" data-close="profiles-dialog" aria-label="閉じる">×</button></div>
     <div class="dialog-body">
       <div id="profiles-list" class="profiles-list"></div>
+      <section class="pace-settings" aria-labelledby="pace-setting-title">
+        <div class="pace-setting-head"><strong id="pace-setting-title">問題の制限時間</strong><span id="pace-current">標準</span></div>
+        <div class="pace-options" role="group" aria-label="問題の制限時間を選ぶ">
+          <button id="pace-standard" type="button" aria-pressed="true">標準</button>
+          <button id="pace-relaxed" type="button" aria-pressed="false">ゆったり</button>
+        </div>
+        <p>ゆったりは読字・選択課題を1.5倍、会話を27秒／30秒にします。記憶の提示時間と純粋な反応・時間感覚は変えません。XPは獲得できますが番付には入りません。</p>
+        <small id="pace-apply-note">次に始めるセットから反映されます。</small>
+      </section>
       <form id="profile-form" class="profile-form">
         <strong>新しいユーザー</strong>
         <div id="avatar-picker" class="avatar-picker" aria-label="アイコンを選ぶ"></div>
@@ -147,7 +158,7 @@
 </dialog>
 
 <dialog id="records-dialog">
-  <div class="dialog-shell"><div class="dialog-head"><div><span class="section-label">この端末だけ</span><h2>初老テスト番付</h2></div><button class="close-button" type="button" data-close="records-dialog" aria-label="閉じる">×</button></div><div class="dialog-body"><div id="record-summary" class="record-summary"></div><h3 class="dialog-subhead">ユーザーランキング</h3><ol id="profile-ranking" class="records-list ranking-list"></ol><h3 class="dialog-subhead">選択中ユーザーのベスト10</h3><ol id="records-list" class="records-list"></ol><p class="dialog-note">この端末に作ったユーザーだけのランキングです。オンライン送信や他端末との集計はありません。</p></div></div>
+  <div class="dialog-shell"><div class="dialog-head"><div><span class="section-label">この端末だけ</span><h2>初老テスト番付</h2></div><button class="close-button" type="button" data-close="records-dialog" aria-label="閉じる">×</button></div><div class="dialog-body"><div id="record-summary" class="record-summary"></div><h3 class="dialog-subhead">ユーザーランキング</h3><ol id="profile-ranking" class="records-list ranking-list"></ol><h3 class="dialog-subhead">選択中ユーザー・標準モードのベスト10</h3><ol id="records-list" class="records-list"></ol><p class="dialog-note">番付は標準モードだけが対象です。ゆったりモードでもXPとレベルは進みます。記録はこの端末内だけで、オンライン送信や他端末との集計はありません。</p></div></div>
 </dialog>
 
 <dialog id="about-dialog">
@@ -156,6 +167,7 @@
     <section><strong>3セット、休憩、もう3セット</strong><p>1セットは12問。前半3セット後は10分休み、後半3セットを終えると、最初のセット開始から20時間で枠が更新されます。詰め込みを避けるゲーム上の制限で、医学的に確立した正解の間隔ではありません。</p></section>
     <section><strong>レベルは幅で上がる</strong><p>最初は簡単なTier 1だけ。脳レベルが上がるとTier 2、Tier 3の問題が解放されます。正解ごとに経験値と脳内人事評価へ反映され、途中で抜けても残りから再開できます。最終スコアと格付けは12問完了後です。</p></section>
     <section><strong>格付けはブラックユーモア</strong><p>結果はこのゲーム内だけの呼び名です。認知症など特定の病気や、現実の認知能力を判定しません。</p></section>
+    <section><strong>読みやすさと制限時間</strong><p>プロフィール画面で「ゆったり」を選ぶと、読字・選択課題の制限時間が1.5倍になります。会話は27秒／30秒です。XPとレベルは進みますが、標準モードと公平に比べられないため番付には入りません。</p></section>
     <section><strong>刺激について</strong><p>音声は使わず、強い点滅はありません。端末の「視差効果を減らす」設定にも対応します。</p></section>
   </div></div>
 </dialog>
@@ -164,6 +176,6 @@
   <div id="feedback-panel" class="feedback-panel"><span id="feedback-mark" aria-hidden="true">○</span><h2 id="feedback-title">正解</h2><p id="feedback-detail"></p><button id="next-button" class="primary" type="button">次の問題</button></div>
 </div>
 <div id="toast" class="toast" role="status"></div>
-<script src="app.js?v=1.2.2" defer></script>
+<script src="app.js?v=1.2.3" defer></script>
 </body>
 </html>

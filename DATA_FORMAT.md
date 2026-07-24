@@ -15,14 +15,15 @@ state
 ├ profiles               1–6 local user profiles
 │  └ profile
 │     ├ id, name, avatar
+│     ├ paceMode         `standard` or `relaxed`
 │     ├ xp
 │     ├ sessionsCompleted
 │     ├ bestScore
 │     ├ templateWins     stable template ID → correct count
 │     ├ recentTemplates  recent stable template IDs
 │     ├ categoryStats    asked/correct/bestMs by category
-│     ├ history          at most 30 completed-session summaries
-│     ├ activeSession    unfinished generated 12-question set or null
+│     ├ history          at most 30 ranked standard-mode summaries
+│     ├ activeSession    unfinished generated 12-question set or null; locks paceMode
 │     ├ trainingWindowStartedAt  start of rolling 20-hour window
 │     ├ setsInWindow     completed sets in that window (0–6)
 │     ├ cooldownUntil    end of ten-minute midpoint break or training window
@@ -31,7 +32,9 @@ state
 └ activeProfileId        profile selected in the UI
 ```
 
-Each profile owns its progress, cooldown, unfinished session, and history. Switching profiles never merges those records. An active session stores its generated task descriptors and answers so a reload or temporary exit cannot produce a different question set or award the same answered question twice. XP and category statistics are written after each answer. Incomplete sessions remain resumable and do not receive a final score, grade, or history entry.
+Each profile owns its progress, pace choice, cooldown, unfinished session, and history. Switching profiles never merges those records. An active session stores its selected `paceMode`, generated task descriptors, and answers so a reload or temporary exit cannot change pace, produce a different question set, or award the same answered question twice. XP and category statistics are written after each answer. Incomplete sessions remain resumable and do not receive a final score, grade, or history entry.
+
+`relaxed` multiplies deadlines for reading, selection, memory recall, and multi-step interaction tasks by 1.5, resulting in 27/30-second conversation tasks. The 5-second memory exposure, simple reaction tasks, and interval-timing targets are unchanged; the runner uses a wider clearance threshold. Relaxed sessions still award XP, update category practice statistics, count toward the six-set window, and produce an on-screen result, but their result has `ranked: false` and is not written to `bestScore` or `history`. Existing profiles and histories normalize to standard mode.
 
 The normalizer migrates the earlier pilot's single `profile` plus root-level session fields into a one-entry `profiles` array. At most six normalized profiles are retained. Profiles saved before v1.1 have no training-window fields; their old one-set cooldown is cleared once during normalization. When a v1.1 profile first loads in v1.2, sets 1–2 and set 4 are released immediately under the new two-block rule; a profile stopped after set 3 receives the remaining five minutes needed to make the midpoint break ten minutes.
 

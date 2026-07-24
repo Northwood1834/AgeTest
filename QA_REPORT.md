@@ -19,8 +19,12 @@ Environment: local static server, desktop Chromium browser automation, headless 
 - Emoji runner: production `travelMs: 2800` succeeded with one jump at about 1.62 seconds and finished at about 2.38 seconds. The reduced-motion static alternative also succeeded.
 - Author boss, emoji FPS, lane choice, golf drag, golf Enter-key fallback, date conversation, partner conversation, and English-only question paths succeeded.
 - v1.2.2 timing feedback verified in-browser: flash-memory choices remained hidden at 4.5 seconds and appeared after 5.0 seconds; memory-path input remained disabled at 4.5 seconds and enabled after 5.0 seconds; its three cells stayed lit for 750ms each across the five-second phase. Date and partner conversations retained their tightened 18-second and 20-second limits and both completed correctly.
+- v1.2.3 pace selector persisted per profile, exposed correct `aria-pressed` state, and locked the selected pace into a started set. Changing the profile while a set was saved clearly deferred the new pace until the next set.
+- 6,000 generated sessions (1,000 per level in each pace) retained 12 unique tasks, all four flavors, tier gates, and the level-2/3 boss at position 6. Every eligible relaxed deadline was exactly 1.5×; date/partner became 27/30 seconds; signal, target, and timing remained unchanged; runner used clearance 26 instead of 38 without changing travel speed.
+- An actual correct answer in relaxed mode awarded 16 XP and updated its template win and category statistics. Synthetic completion of the relaxed set produced a marked result and consumed one set while leaving `bestScore` and standard history unchanged; a following standard set updated both best score and history. The result and share paths label relaxed mode.
+- Computed styles verified 16px question help, answers, dialogue, and dialogue choices; 48px dialogue/soft/close controls; and 52px normal answers. Contrast assertions passed at 4.5:1 or higher for muted text on white/background, success/failure text, action-gradient endpoints, and question help.
 - The four Krea2 WebP assets load at 768×960; direct visual review found the intended distinct adult/SFW characters and no text/watermark defects.
-- 320×900 headless Chrome capture showed no horizontal clipping on the home screen.
+- Fresh v1.2.3 320×900 headless Chrome captures showed no horizontal clipping or overlap on the home screen or profile/pace dialog; the larger primary and pace controls remained fully visible.
 - Initial-load network capture contained only same-origin app requests; no app XHR/fetch/WebSocket/telemetry was present. CSP retains `connect-src 'none'`.
 - All published HTML/CSS/JS/manifest/icon/OG/author/conversation-image assets returned HTTP 200 from the static server.
 

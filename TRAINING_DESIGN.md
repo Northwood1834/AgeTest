@@ -12,7 +12,7 @@ A set contains exactly 12 short tasks (normally about 4–6 minutes). Each profi
 - If the window ends before all six sets are used, the next set starts a fresh window.
 - An unfinished set remains resumable and does not consume one of the six completions until all 12 answers are finished.
 
-This allows roughly 24–36 minutes of actual play at the maximum dose, split into two blocks with a deliberate recovery period. The rolling window prevents a midnight reset from granting twelve closely packed sets. The schedule is per local profile.
+This allows roughly 24–36 minutes of actual play at the maximum dose, split into two blocks with a deliberate recovery period. The rolling window prevents a midnight reset from granting twelve closely packed sets. The schedule is per local profile. From v1.2.3, each profile may choose an optional relaxed pace. It lengthens reading, selection, recall-response, and multi-step interaction deadlines without changing memory exposure, simple-reaction thresholds, the 12-task set, break, cap, or rolling window. Relaxed sets still consume a set allowance and award XP, but are excluded from the standard leaderboard.
 
 The ten-minute and 20-hour values are evidence-informed **product choices**, not medically validated optimal intervals. Published cognitive-training protocols are heterogeneous and do not establish an exact consumer-game dose or a universal minute at which “brain fatigue” begins.
 
