@@ -5,7 +5,7 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.12.0";
+const APP_VERSION = "1.13.0";
 const CONTENT_PACK = "1.9";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
@@ -966,6 +966,12 @@ const TEMPLATE_FLAVORS={
   "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","prediction-chain-puzzle-v1":"satisfying","attention-water-sort-v1":"satisfying","prediction-pin-pull-v1":"wild","attention-screw-out-v1":"quirky","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
 };
 const flavorFor = templateId => TEMPLATE_FLAVORS[templateId]||"classic";
+// Every family ships its basic form as step 1. A harder version of the same play
+// is added as a new stable ID with a higher step, never as a retune of an old ID,
+// so history and category strength keep their meaning.
+const TEMPLATE_STEPS={};
+const stepFor = templateId => TEMPLATE_STEPS[templateId]||1;
+const familyOf = templateId => templateId.replace(/-v\d+$/,"").replace(/-(hard|pro)$/,"");
 const PACE_FIXED_KINDS = new Set(["signal","target","timing","runner"]);
 function tuneTaskForPace(task,paceMode){
   if(paceMode!==PACE_RELAXED)return task;
@@ -1075,7 +1081,7 @@ function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDA
   if(boss&&!chosen.includes(boss)){const same=chosen.map((factory,index)=>factory.category===boss.category?index:-1).filter(index=>index>=0),wild=chosen.findIndex(factory=>flavorFor(factory.id)==="wild"),replace=same.length>=2?same.at(-1):wild>=0?wild:chosen.length-1;chosen[replace]=boss}
   let ordered=shuffle(chosen);
   if(boss&&ordered.includes(boss)){ordered=shuffle(ordered.filter(factory=>factory!==boss));ordered.splice(Math.min(5,ordered.length),0,boss)}
-  return ordered.map(factory=>tuneTaskForPace({templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),category:factory.category,...factory.make()},paceMode));
+  return ordered.map(factory=>tuneTaskForPace({templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category,...factory.make()},paceMode));
 }
 
 let cooldownTicker=null,questionTimers=[],timerRaf=null,extraRafs=[],deadlineTimeout=null,questionAnswered=false,questionStartedAt=0;
@@ -3939,11 +3945,11 @@ function fallbackCopy(text){const area=document.createElement("textarea");area.v
 function toast(message){const el=$("toast");el.textContent=message;el.classList.add("show");clearTimeout(el._timer);el._timer=setTimeout(()=>el.classList.remove("show"),2200)}
 
 if(["127.0.0.1","localhost"].includes(location.hostname))window.__SHORO_QA__={
-  catalog:TASK_FACTORIES.map(factory=>({id:factory.id,tier:tierFor(factory.id),flavor:flavorFor(factory.id),category:factory.category})),
+  catalog:TASK_FACTORIES.map(factory=>({id:factory.id,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category})),
   grade(score){return gradeFor(score).name},
   sampleSession(level=1,paceMode=PACE_STANDARD){if(![1,2,3].includes(level))throw new Error("invalid level");if(![PACE_STANDARD,PACE_RELAXED].includes(paceMode))throw new Error("invalid pace");const profile=defaultProfile("QA","🤓");profile.xp=(level-1)*120;profile.paceMode=paceMode;TASK_FACTORIES.filter(factory=>tierFor(factory.id)===1).slice(0,(level-1)*6).forEach(factory=>profile.templateWins[factory.id]=1);return buildTasks(profile,paceMode)},
   validate(iterations=20){const issues=[],ids=new Set();TASK_FACTORIES.forEach(factory=>{if(ids.has(factory.id))issues.push(`${factory.id}: duplicate id`);ids.add(factory.id);if(!CATEGORIES[factory.category])issues.push(`${factory.id}: unknown category`);if(![1,2,3].includes(tierFor(factory.id)))issues.push(`${factory.id}: invalid tier`);for(let i=0;i<iterations;i++){let task;try{task=factory.make()}catch(error){issues.push(`${factory.id}: generator ${error.message}`);break}if(!task?.kind||!Number.isFinite(task.duration))issues.push(`${factory.id}: missing kind/duration`);if(Array.isArray(task.options)){if(task.answer!=null&&!task.options.includes(task.answer))issues.push(`${factory.id}: answer absent`);if(new Set(task.options).size!==task.options.length)issues.push(`${factory.id}: duplicate option`)}}});return{factories:TASK_FACTORIES.length,iterations,issues:[...new Set(issues)]}},
-  preview(templateId,duration=60000,slowRunner=true){const factory=TASK_FACTORIES.find(item=>item.id===templateId);if(!factory)throw new Error("unknown template");const task={templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),category:factory.category,...factory.make()};task.duration=Math.max(task.duration,duration);if(task.kind==="runner"&&slowRunner)task.travelMs=Math.max(task.travelMs||2800,9000);document.querySelectorAll("dialog[open]").forEach(dialog=>dialog.close());state.activeSession={id:uuid(),startedAt:Date.now(),contentPack:CONTENT_PACK,tasks:[task],currentIndex:0,answers:[],earnedXp:0};state.pendingResult=false;saveState();renderCurrentTask();return task}
+  preview(templateId,duration=60000,slowRunner=true){const factory=TASK_FACTORIES.find(item=>item.id===templateId);if(!factory)throw new Error("unknown template");const task={templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category,...factory.make()};task.duration=Math.max(task.duration,duration);if(task.kind==="runner"&&slowRunner)task.travelMs=Math.max(task.travelMs||2800,9000);document.querySelectorAll("dialog[open]").forEach(dialog=>dialog.close());state.activeSession={id:uuid(),startedAt:Date.now(),contentPack:CONTENT_PACK,tasks:[task],currentIndex:0,answers:[],earnedXp:0};state.pendingResult=false;saveState();renderCurrentTask();return task}
 };
 
 $("start-button").addEventListener("click",startOrResume);
