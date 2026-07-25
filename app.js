@@ -5,8 +5,8 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.9.0";
-const CONTENT_PACK = "1.6";
+const APP_VERSION = "1.10.0";
+const CONTENT_PACK = "1.7";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
 const PACE_RELAXED = "relaxed";
@@ -780,6 +780,90 @@ function makeFlowTask(){
   return{kind:"flowLink",prompt:"同じ色をつないで",help:"色の点から指をなぞって同じ色へ。",
     endpoints,solution:[],size:FLOW_SIZE,duration:80000};
 }
+const PIPE_SIZE=4;
+const PIPE_DIRS=[{dr:-1,dc:0},{dr:0,dc:1},{dr:1,dc:0},{dr:0,dc:-1}];   // up, right, down, left
+const pipeMask=(cell)=>cell.mask;
+const pipeHas=(cell,dir)=>(cell.mask>>((dir+4-cell.turn)%4)&1)===1;
+function pipeRotate(cell){cell.turn=(cell.turn+1)%4}
+function pipeConnected(cells){
+  const start=cells.find(cell=>cell.role==="source");
+  if(!start)return{ok:false,lit:new Set()};
+  const lit=new Set([`${start.r},${start.c}`]),stack=[start];
+  while(stack.length){
+    const cell=stack.pop();
+    PIPE_DIRS.forEach((step,dir)=>{
+      if(!pipeHas(cell,dir))return;
+      const r=cell.r+step.dr,c=cell.c+step.dc;
+      if(r<0||r>=PIPE_SIZE||c<0||c>=PIPE_SIZE)return;
+      const next=cells.find(item=>item.r===r&&item.c===c);
+      if(!next||!pipeHas(next,(dir+2)%4))return;
+      const key=`${r},${c}`;
+      if(lit.has(key))return;
+      lit.add(key);stack.push(next);
+    });
+  }
+  const goal=cells.find(cell=>cell.role==="goal");
+  return{ok:lit.has(`${goal.r},${goal.c}`),lit};
+}
+function makePipeTask(){
+  for(let attempt=0;attempt<200;attempt++){
+    // lay a wandering pipe line from a source to a goal, then add a few decoy branches
+    const cells=[];
+    for(let r=0;r<PIPE_SIZE;r++)for(let c=0;c<PIPE_SIZE;c++)cells.push({r,c,mask:0,turn:0,role:"empty"});
+    const at=(r,c)=>cells.find(cell=>cell.r===r&&cell.c===c);
+    const start={r:randomInt(0,PIPE_SIZE-1),c:0},visited=new Set([`${start.r},0`]);
+    let current=start,length=0;const route=[start];
+    while(length<12){
+      const options=shuffle([0,1,1,2,3]).map(dir=>({dir,r:current.r+PIPE_DIRS[dir].dr,c:current.c+PIPE_DIRS[dir].dc}))
+        .filter(next=>next.r>=0&&next.r<PIPE_SIZE&&next.c>=0&&next.c<PIPE_SIZE&&!visited.has(`${next.r},${next.c}`));
+      if(!options.length)break;
+      const next=options[0];
+      at(current.r,current.c).mask|=1<<next.dir;
+      at(next.r,next.c).mask|=1<<((next.dir+2)%4);
+      visited.add(`${next.r},${next.c}`);
+      current={r:next.r,c:next.c};route.push(current);length++;
+      if(current.c===PIPE_SIZE-1&&route.length>=6)break;
+    }
+    if(current.c!==PIPE_SIZE-1||route.length<6)continue;
+    at(start.r,start.c).role="source";
+    at(current.r,current.c).role="goal";
+    // decoy stubs so that not every piece belongs to the answer
+    cells.filter(cell=>!cell.mask).slice(0,4).forEach(cell=>{
+      const dir=randomInt(0,3),r=cell.r+PIPE_DIRS[dir].dr,c=cell.c+PIPE_DIRS[dir].dc;
+      if(r<0||r>=PIPE_SIZE||c<0||c>=PIPE_SIZE)return;
+      const other=at(r,c);
+      if(other.role!=="empty"||!other.mask)return;
+      cell.mask|=1<<dir;
+    });
+    const solved=cells.map(cell=>({...cell}));
+    let scrambled=0;
+    cells.forEach(cell=>{
+      if(!cell.mask)return;
+      const spin=randomInt(0,3);
+      cell.turn=spin;
+      if(spin)scrambled++;
+    });
+    if(scrambled<4)continue;
+    if(pipeConnected(cells).ok)continue;                       // it must start broken
+    const check=cells.map(cell=>({...cell,turn:0}));
+    if(!pipeConnected(check).ok)continue;                      // and be fixable by rotation alone
+    return{kind:"pipeFlow",prompt:"水を通せ",
+      help:"パイプをタップすると回ります。左の水源から右のゴールまでつなげてください。",
+      cells:cells.map(cell=>({r:cell.r,c:cell.c,mask:cell.mask,turn:cell.turn,role:cell.role})),
+      size:PIPE_SIZE,duration:70000};
+  }
+  const cells=[];
+  for(let r=0;r<PIPE_SIZE;r++)for(let c=0;c<PIPE_SIZE;c++)cells.push({r,c,mask:0,turn:0,role:"empty"});
+  const row=1;
+  for(let c=0;c<PIPE_SIZE;c++){
+    const cell=cells.find(item=>item.r===row&&item.c===c);
+    cell.mask=(c>0?1<<3:0)|(c<PIPE_SIZE-1?1<<1:0);
+    cell.turn=c%2?1:0;
+    if(c===0)cell.role="source";
+    if(c===PIPE_SIZE-1)cell.role="goal";
+  }
+  return{kind:"pipeFlow",prompt:"水を通せ",help:"パイプをタップすると回ります。",cells,size:PIPE_SIZE,duration:70000};
+}
 const TEMPLATE_TIERS={
   "language-meaning-v1":2,"language-order-v1":2,"spatial-cube-v1":2,
   "prediction-symbol-v1":2,"calculation-compare-v1":2,"memory-reverse-v1":2,
@@ -792,11 +876,11 @@ const TEMPLATE_TIERS={
   "attention-search-v1":2,"timing-five-v1":2,
   "memory-nback-v1":3,"language-anagram-v1":3,"spatial-perspective-v1":3,
   "prediction-double-v1":3,"inhibition-rule-switch-v1":3,"calculation-multistep-v1":3,
-  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"spatial-flow-link-v1":3,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
+  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"spatial-flow-link-v1":3,"spatial-pipe-flow-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
 };
 const tierFor = templateId => TEMPLATE_TIERS[templateId]||1;
 const TEMPLATE_FLAVORS={
-  "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","spatial-park-jam-v1":"satisfying","spatial-flow-link-v1":"satisfying","spatial-rope-untangle-v1":"quirky","calculation-rpg-battle-v1":"wild","calculation-gate-run-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild",
+  "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","spatial-park-jam-v1":"satisfying","spatial-flow-link-v1":"satisfying","spatial-pipe-flow-v1":"satisfying","spatial-rope-untangle-v1":"quirky","calculation-rpg-battle-v1":"wild","calculation-gate-run-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild",
   "memory-missing-v1":"quirky","reaction-emoji-match-v1":"quirky","attention-animal-count-v1":"quirky","inhibition-parity-v1":"quirky","attention-kana-count-v1":"quirky","attention-dual-v1":"quirky","language-anagram-v1":"quirky","social-partner-mood-v1":"quirky","social-date-v1":"wild",
   "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","prediction-chain-puzzle-v1":"satisfying","attention-water-sort-v1":"satisfying","prediction-pin-pull-v1":"wild","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
 };
@@ -888,7 +972,8 @@ const TASK_FACTORIES = [
   {id:"calculation-gate-run-v1",version:"1.6",category:"calculation",make:()=>makeGateTask()},
   {id:"spatial-park-jam-v1",version:"1.7",category:"spatial",make:()=>makeParkTask()},
   {id:"spatial-rope-untangle-v1",version:"1.8",category:"spatial",make:()=>makeRopeTask()},
-  {id:"spatial-flow-link-v1",version:"1.9",category:"spatial",make:()=>makeFlowTask()}
+  {id:"spatial-flow-link-v1",version:"1.9",category:"spatial",make:()=>makeFlowTask()},
+  {id:"spatial-pipe-flow-v1",version:"1.10",category:"spatial",make:()=>makePipeTask()}
 ];
 
 function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
@@ -1032,6 +1117,7 @@ function renderTask(task){
   if(task.kind==="parkJam"){renderParkJam(task);return}
   if(task.kind==="ropeUntangle"){renderRopeUntangle(task);return}
   if(task.kind==="flowLink"){renderFlowLink(task);return}
+  if(task.kind==="pipeFlow"){renderPipeFlow(task);return}
 }
 function renderMemoryPath(task){
   const grid=document.createElement("div");grid.className="memory-grid";const buttons=[];for(let i=0;i<9;i++){const b=document.createElement("button");b.type="button";b.className="memory-tile";b.disabled=true;b.setAttribute("aria-label",`${i+1}番のマス`);grid.append(b);buttons.push(b)}$("challenge").append(grid);
@@ -3230,6 +3316,148 @@ function renderFlowLink(task){
     if(state.done||questionAnswered)return;state.done=true;
     const done=task.endpoints.filter((pair,index)=>connected(index)).length;
     finishTask(false,{detail:`時間切れ。${done}色までつながりました。`});
+  });
+}
+function renderPipeFlow(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="pipe-stage";
+  const canvas=document.createElement("canvas");canvas.className="pipe-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","パイプを回して水を通すパズル");
+  const hint=document.createElement("p");hint.className="pipe-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const size=task.size||PIPE_SIZE;
+  const cells=task.cells.map(cell=>({...cell,spin:0}));
+  const state={done:false,glow:0,taps:0};
+  const sparks=[];
+  let W=0,H=0,cell=0,padX=0,padY=0,clock=0,lit=new Set();
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*1.02);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    cell=Math.floor(Math.min(W*.9,H*.86)/size);
+    padX=Math.round((W-cell*size)/2);padY=Math.round((H-cell*size)/2);
+  };
+  const recount=()=>{lit=pipeConnected(cells).lit};
+  const cellCentre=item=>({x:padX+item.c*cell+cell/2,y:padY+item.r*cell+cell/2});
+  const drawCell=item=>{
+    const{x,y}=cellCentre(item),isLit=lit.has(`${item.r},${item.c}`);
+    ctx.fillStyle=(item.r+item.c)%2?"#EFE6F8":"#F6F0FB";
+    ctx.beginPath();ctx.roundRect(padX+item.c*cell+cell*.04,padY+item.r*cell+cell*.04,cell*.92,cell*.92,cell*.14);ctx.fill();
+    if(!item.mask)return;
+    ctx.save();ctx.translate(x,y);ctx.rotate((item.turn+item.spin)*Math.PI/2);
+    const arm=cell*.5,thick=cell*.3;
+    ctx.strokeStyle="#7C7589";ctx.lineWidth=thick;ctx.lineCap="round";
+    PIPE_DIRS.forEach((step,dir)=>{
+      if(!(item.mask>>dir&1))return;
+      ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(step.dc*arm,step.dr*arm);ctx.stroke();
+    });
+    ctx.strokeStyle=isLit?"#5FB6E0":"#B4AFC2";ctx.lineWidth=thick*.62;
+    PIPE_DIRS.forEach((step,dir)=>{
+      if(!(item.mask>>dir&1))return;
+      ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(step.dc*arm,step.dr*arm);ctx.stroke();
+    });
+    if(isLit){
+      ctx.strokeStyle="rgba(255,255,255,.6)";ctx.lineWidth=thick*.2;
+      PIPE_DIRS.forEach((step,dir)=>{
+        if(!(item.mask>>dir&1))return;
+        ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(step.dc*arm*.8,step.dr*arm*.8);ctx.stroke();
+      });
+    }
+    ctx.fillStyle=isLit?"#2E9BD6":"#8B8698";
+    ctx.beginPath();ctx.arc(0,0,thick*.42,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+    if(item.role==="source"){
+      ctx.fillStyle="#2E9BD6";ctx.beginPath();ctx.roundRect(x-cell*.26,y-cell*.26,cell*.52,cell*.52,cell*.12);ctx.fill();
+      ctx.fillStyle="#BDE4F8";ctx.beginPath();ctx.arc(x,y,cell*.13,0,Math.PI*2);ctx.fill();
+    }
+    if(item.role==="goal"){
+      const done=lit.has(`${item.r},${item.c}`);
+      ctx.fillStyle=done?"#66C08C":"#B4AFC2";
+      ctx.beginPath();ctx.arc(x,y,cell*.24,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle="#FFFFFF";ctx.font=`900 ${Math.round(cell*.26)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(done?"◎":"？",x,y);ctx.textAlign="left";
+    }
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle="#FBF7FE";ctx.fillRect(0,0,W,H);
+    cells.forEach(drawCell);
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    if(state.glow>0){ctx.fillStyle=`rgba(191,224,242,${state.glow*.5})`;ctx.fillRect(0,0,W,H)}
+    ctx.fillStyle="rgba(73,59,82,.9)";ctx.font=`800 ${Math.round(W*.045)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(`回した回数 ${state.taps}`,W*.05,H*.02);
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=cell*(1+randomFloat()*3);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-cell,size:cell*(.03+randomFloat()*.05),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?200:900);
+  };
+  const rotate=item=>{
+    if(state.done||questionAnswered||!item.mask)return;
+    state.taps++;
+    const started=performance.now(),duration=reduced?60:170;
+    const step=now=>{
+      if(questionAnswered)return;
+      const t=clamp((now-started)/duration,0,1),ease=1-(1-t)*(1-t);
+      item.spin=ease;
+      if(t<1){requestAnimationFrame(step);return}
+      item.spin=0;item.turn=(item.turn+1)%4;
+      recount();
+      const goal=cells.find(entry=>entry.role==="goal");
+      if(lit.has(`${goal.r},${goal.c}`)){
+        state.glow=1;
+        cells.filter(entry=>lit.has(`${entry.r},${entry.c}`)).forEach(entry=>{
+          const point=cellCentre(entry);burst(point.x,point.y,"#BDE4F8",8);
+        });
+        finish(true,`${state.taps}回まわして水を通しました。`);
+      }
+    };
+    requestAnimationFrame(step);
+  };
+  canvas.addEventListener("pointerdown",event=>{
+    if(state.done||questionAnswered)return;
+    event.preventDefault();
+    const rect=canvas.getBoundingClientRect();
+    const c=Math.floor((event.clientX-rect.left-padX)/cell),r=Math.floor((event.clientY-rect.top-padY)/cell);
+    const item=cells.find(entry=>entry.r===r&&entry.c===c);
+    if(item)rotate(item);
+  });
+  wrap.tabIndex=0;wrap.focus({preventScroll:true});
+  hint.textContent="パイプをタップして回します";
+  recount();
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.glow=Math.max(0,state.glow-dt*1.4);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.7;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=cell*5*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.pipe={state,cells,task,rotate,recount,lit:()=>lit};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:"時間切れ。水はゴールまで届きませんでした。"});
   });
 }
 function finishTask(correct,meta={}){
