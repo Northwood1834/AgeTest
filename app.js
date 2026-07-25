@@ -5,8 +5,8 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.7.0";
-const CONTENT_PACK = "1.4";
+const APP_VERSION = "1.8.0";
+const CONTENT_PACK = "1.5";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
 const PACE_RELAXED = "relaxed";
@@ -459,6 +459,255 @@ function pinPullSteps(chambers,targets,index){
   }
   return steps;
 }
+const WATER_COLORS=[
+  {key:"orange",light:"#FFC98A",base:"#F2953F",dark:"#B4611F"},
+  {key:"pink",light:"#FFC3D6",base:"#EA7E9B",dark:"#A8416A"},
+  {key:"blue",light:"#BDE4F8",base:"#5FB6E0",dark:"#2A6E97"},
+  {key:"green",light:"#C6EFD6",base:"#66C08C",dark:"#2E7A54"},
+  {key:"yellow",light:"#FFEDA8",base:"#F2CE4B",dark:"#A98A1A"},
+  {key:"purple",light:"#DCC8F2",base:"#A66DC2","dark":"#65407C"}
+];
+const WATER_DEPTH=4;
+const waterColor=key=>WATER_COLORS.find(color=>color.key===key);
+const waterKey=tubes=>tubes.map(tube=>tube.join("")).join("|");
+const waterDone=tubes=>tubes.every(tube=>!tube.length||(tube.length===WATER_DEPTH&&tube.every(unit=>unit===tube[0])));
+function waterPourable(tubes,from,to){
+  if(from===to)return 0;
+  const source=tubes[from],target=tubes[to];
+  if(!source.length||target.length>=WATER_DEPTH)return 0;
+  const unit=source.at(-1);
+  if(target.length&&target.at(-1)!==unit)return 0;
+  let count=0;
+  for(let i=source.length-1;i>=0&&source[i]===unit;i--)count++;
+  if(!target.length&&count===source.length)return 0;              // pointless move between two idle tubes
+  return Math.min(count,WATER_DEPTH-target.length);
+}
+function waterPour(tubes,from,to){
+  const count=waterPourable(tubes,from,to);
+  if(!count)return null;
+  const next=tubes.map(tube=>[...tube]);
+  next[to].push(...next[from].splice(next[from].length-count,count));
+  return next;
+}
+function waterSolve(tubes,limit=9,nodeCap=40000){
+  const start=waterKey(tubes);
+  let frontier=[tubes],seen=new Set([start]),depth=0,nodes=0;
+  if(waterDone(tubes))return 0;
+  while(frontier.length&&depth<limit&&nodes<nodeCap){
+    const next=[];
+    for(const state of frontier){
+      for(let from=0;from<state.length;from++)for(let to=0;to<state.length;to++){
+        const poured=waterPour(state,from,to);
+        if(!poured)continue;
+        nodes++;
+        const key=waterKey(poured);
+        if(seen.has(key))continue;
+        seen.add(key);
+        if(waterDone(poured))return depth+1;
+        next.push(poured);
+      }
+    }
+    frontier=next;depth++;
+  }
+  return -1;
+}
+function makeWaterTask(){
+  for(let attempt=0;attempt<300;attempt++){
+    const colors=shuffle(WATER_COLORS).slice(0,3).map(color=>color.key);
+    const units=shuffle(colors.flatMap(color=>Array(WATER_DEPTH).fill(color)));
+    const tubes=[[],[],[],[],[]];
+    units.forEach((unit,index)=>tubes[Math.floor(index/WATER_DEPTH)].push(unit));
+    if(tubes.some(tube=>tube.length&&tube.every(unit=>unit===tube[0])))continue;   // no colour is already finished
+    const moves=waterSolve(tubes);
+    if(moves<4||moves>7)continue;
+    return{kind:"waterSort",prompt:"色ごとに分けて",
+      help:"ボトルを2つタップして注ぎます。同じ色の上にだけ注げます。手数に限りがあります。",
+      tubes,minMoves:moves,moveLimit:moves+3,colors,duration:75000};
+  }
+  const colors=WATER_COLORS.slice(0,3).map(color=>color.key);
+  const tubes=[[colors[0],colors[1],colors[0],colors[1]],[colors[1],colors[0],colors[1],colors[0]],
+    [colors[2],colors[2],colors[2],colors[2]],[],[]];
+  return{kind:"waterSort",prompt:"色ごとに分けて",help:"ボトルを2つタップして注ぎます。同じ色の上にだけ注げます。",
+    tubes,minMoves:6,moveLimit:9,colors,duration:75000};
+}
+const GATE_OPS=[
+  {kind:"add",make:()=>({kind:"add",value:randomInt(4,18)})},
+  {kind:"mul",make:()=>({kind:"mul",value:randomInt(2,3)})},
+  {kind:"sub",make:()=>({kind:"sub",value:randomInt(3,14)})},
+  {kind:"div",make:()=>({kind:"div",value:2})}
+];
+const gateLabel=op=>op.kind==="add"?`＋${op.value}`:op.kind==="mul"?`×${op.value}`:op.kind==="sub"?`−${op.value}`:`÷${op.value}`;
+const gateApply=(count,op)=>{
+  if(op.kind==="add")return count+op.value;
+  if(op.kind==="mul")return count*op.value;
+  if(op.kind==="sub")return Math.max(0,count-op.value);
+  return Math.floor(count/op.value);
+};
+function makeGateTask(){
+  for(let attempt=0;attempt<400;attempt++){
+    const start=randomInt(6,14),rows=3;
+    const gates=Array.from({length:rows},()=>{
+      const pair=shuffle(GATE_OPS).slice(0,2).map(op=>op.make());
+      return pair;
+    });
+    const paths=[];
+    for(let mask=0;mask<(1<<rows);mask++){
+      let count=start;const choice=[];
+      for(let row=0;row<rows;row++){
+        const lane=(mask>>row)&1;choice.push(lane);
+        count=gateApply(count,gates[row][lane]);
+      }
+      paths.push({choice,count});
+    }
+    const best=Math.max(...paths.map(path=>path.count));
+    const worst=Math.min(...paths.map(path=>path.count));
+    if(best<12||best-worst<10)continue;
+    const enemy=Math.round(best*.72);
+    const winners=paths.filter(path=>path.count>enemy);
+    if(winners.length<1||winners.length>2)continue;
+    if(paths.filter(path=>path.count<=enemy).length<5)continue;
+    return{kind:"gateRun",prompt:"軍団を増やして敵を倒せ",
+      help:"門を選ぶと兵の数が変わります。最後の敵より多ければ勝ちです。",
+      start,gates,enemy,best,answer:winners[0].choice,duration:35000};
+  }
+  const gates=[[{kind:"mul",value:3},{kind:"sub",value:5}],[{kind:"add",value:12},{kind:"div",value:2}],[{kind:"mul",value:2},{kind:"add",value:4}]];
+  return{kind:"gateRun",prompt:"軍団を増やして敵を倒せ",help:"門を選ぶと兵の数が変わります。最後の敵より多ければ勝ちです。",
+    start:8,gates,enemy:40,best:72,answer:[0,0,0],duration:35000};
+}
+const PARK_SIZE=5,PARK_EXIT=2;
+const PARK_COLORS=["#EA6A5C","#5FB6E0","#66C08C","#F2CE4B","#A66DC2","#F2953F","#7C8CC4"];
+const parkKey=cars=>cars.map(car=>`${car.r},${car.c}`).join("|");
+function parkGrid(cars){
+  const grid=Array.from({length:PARK_SIZE},()=>Array(PARK_SIZE).fill(-1));
+  cars.forEach((car,index)=>{
+    for(let i=0;i<car.len;i++){
+      const r=car.r+(car.dir==="v"?i:0),c=car.c+(car.dir==="h"?i:0);
+      if(r<0||r>=PARK_SIZE||c<0||c>=PARK_SIZE)return null;
+      grid[r][c]=index;
+    }
+  });
+  return grid;
+}
+function parkMoves(cars){
+  const grid=parkGrid(cars),moves=[];
+  cars.forEach((car,index)=>{
+    [-1,1].forEach(step=>{
+      let distance=0;
+      for(;;){
+        const shift=(distance+1)*step;
+        const r=car.r+(car.dir==="v"?shift:0),c=car.c+(car.dir==="h"?shift:0);
+        const tail=car.dir==="v"?r+(step>0?car.len-1:0):r;
+        const head=car.dir==="h"?c+(step>0?car.len-1:0):c;
+        const cellR=car.dir==="v"?(step>0?car.r+car.len-1+shift:r):r;
+        const cellC=car.dir==="h"?(step>0?car.c+car.len-1+shift:c):c;
+        if(cellR<0||cellR>=PARK_SIZE||cellC<0||cellC>=PARK_SIZE)break;
+        if(grid[cellR][cellC]!==-1&&grid[cellR][cellC]!==index)break;
+        distance++;
+        moves.push({index,step,distance});
+        if(distance>=PARK_SIZE)break;
+      }
+    });
+  });
+  return moves;
+}
+function parkApply(cars,move){
+  const next=cars.map(car=>({...car}));
+  const car=next[move.index],shift=move.step*move.distance;
+  if(car.dir==="h")car.c+=shift;else car.r+=shift;
+  return next;
+}
+const parkSolved=cars=>cars[0].c+cars[0].len-1>=PARK_SIZE-1;
+function parkSolve(cars,limit=10,cap=60000){
+  if(parkSolved(cars))return 0;
+  let frontier=[cars],seen=new Set([parkKey(cars)]),depth=0,nodes=0;
+  while(frontier.length&&depth<limit&&nodes<cap){
+    const next=[];
+    for(const state of frontier){
+      for(const move of parkMoves(state)){
+        const moved=parkApply(state,move);nodes++;
+        const key=parkKey(moved);
+        if(seen.has(key))continue;
+        seen.add(key);
+        if(parkSolved(moved))return depth+1;
+        next.push(moved);
+      }
+    }
+    frontier=next;depth++;
+  }
+  return -1;
+}
+function makeParkTask(){
+  for(let attempt=0;attempt<600;attempt++){
+    const cars=[{r:PARK_EXIT,c:randomInt(0,1),len:2,dir:"h",color:PARK_COLORS[0],hero:true}];
+    const count=randomInt(4,6);
+    for(let i=0;i<count;i++){
+      for(let tries=0;tries<24;tries++){
+        const dir=randomFloat()<.55?"v":"h",len=randomInt(2,3);
+        const r=dir==="v"?randomInt(0,PARK_SIZE-len):randomInt(0,PARK_SIZE-1);
+        const c=dir==="h"?randomInt(0,PARK_SIZE-len):randomInt(0,PARK_SIZE-1);
+        if(dir==="h"&&r===PARK_EXIT)continue;                    // keep the exit row for the hero only
+        const candidate={r,c,len,dir,color:PARK_COLORS[(i+1)%PARK_COLORS.length]};
+        const grid=parkGrid([...cars,candidate]);
+        if(!grid)continue;
+        const cells=new Set();let clash=false;
+        [...cars,candidate].forEach(car=>{
+          for(let k=0;k<car.len;k++){
+            const key=`${car.r+(car.dir==="v"?k:0)},${car.c+(car.dir==="h"?k:0)}`;
+            if(cells.has(key))clash=true;cells.add(key);
+          }
+        });
+        if(clash)continue;
+        cars.push(candidate);break;
+      }
+    }
+    const moves=parkSolve(cars);
+    if(moves<4||moves>8)continue;
+    return{kind:"parkJam",prompt:"赤い車を出口へ",
+      help:"車をタップして、動かしたいマスをタップ。前後にしか動きません。手数に限りがあります。",
+      cars,minMoves:moves,moveLimit:moves+3,duration:75000};
+  }
+  const cars=[{r:PARK_EXIT,c:0,len:2,dir:"h",color:PARK_COLORS[0],hero:true},
+    {r:0,c:3,len:3,dir:"v",color:PARK_COLORS[1]},{r:3,c:1,len:2,dir:"h",color:PARK_COLORS[2]}];
+  return{kind:"parkJam",prompt:"赤い車を出口へ",help:"車をタップして、動かしたいマスをタップ。",
+    cars,minMoves:2,moveLimit:5,duration:75000};
+}
+const ROPE_COLORS=["#F2953F","#EA7E9B","#5FB6E0","#66C08C","#F2CE4B","#A66DC2","#7C8CC4"];
+function ropeCross(a,b,c,d){
+  const side=(p,q,r)=>Math.sign((q.x-p.x)*(r.y-p.y)-(q.y-p.y)*(r.x-p.x));
+  const s1=side(a,b,c),s2=side(a,b,d),s3=side(c,d,a),s4=side(c,d,b);
+  return s1!==s2&&s3!==s4&&s1!==0&&s2!==0&&s3!==0&&s4!==0;
+}
+function ropeCrossings(points,edges){
+  let count=0;const pairs=[];
+  for(let i=0;i<edges.length;i++)for(let j=i+1;j<edges.length;j++){
+    const [a,b]=edges[i],[c,d]=edges[j];
+    if(a===c||a===d||b===c||b===d)continue;
+    if(ropeCross(points[a],points[b],points[c],points[d])){count++;pairs.push([i,j])}
+  }
+  return{count,pairs};
+}
+function makeRopeTask(){
+  for(let attempt=0;attempt<400;attempt++){
+    const nodes=randomInt(6,7);
+    const edges=[];
+    for(let i=0;i<nodes;i++)edges.push([i,(i+1)%nodes]);
+    if(nodes===7&&randomFloat()<.5)edges.push([0,3]);            // one chord makes the tangle richer
+    const points=Array.from({length:nodes},()=>({x:randomInt(18,82)/100,y:randomInt(16,84)/100}));
+    let tooClose=false;
+    points.forEach((p,i)=>points.forEach((q,j)=>{if(i<j&&Math.hypot(p.x-q.x,p.y-q.y)<.16)tooClose=true}));
+    if(tooClose)continue;
+    const{count}=ropeCrossings(points,edges);
+    if(count<3||count>7)continue;
+    return{kind:"ropeUntangle",prompt:"ロープの交差をゼロに",
+      help:"杭をドラッグして動かします。交差した赤いロープがなくなれば成功です。",
+      points,edges,start:count,nodes,duration:70000};
+  }
+  const nodes=6,edges=[];
+  for(let i=0;i<nodes;i++)edges.push([i,(i+1)%nodes]);
+  const points=[{x:.2,y:.2},{x:.8,y:.3},{x:.3,y:.8},{x:.75,y:.75},{x:.2,y:.5},{x:.55,y:.15}];
+  return{kind:"ropeUntangle",prompt:"ロープの交差をゼロに",help:"杭をドラッグして動かします。",
+    points,edges,start:ropeCrossings(points,edges).count,nodes,duration:70000};
+}
 const TEMPLATE_TIERS={
   "language-meaning-v1":2,"language-order-v1":2,"spatial-cube-v1":2,
   "prediction-symbol-v1":2,"calculation-compare-v1":2,"memory-reverse-v1":2,
@@ -471,13 +720,13 @@ const TEMPLATE_TIERS={
   "attention-search-v1":2,"timing-five-v1":2,
   "memory-nback-v1":3,"language-anagram-v1":3,"spatial-perspective-v1":3,
   "prediction-double-v1":3,"inhibition-rule-switch-v1":3,"calculation-multistep-v1":3,
-  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
+  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
 };
 const tierFor = templateId => TEMPLATE_TIERS[templateId]||1;
 const TEMPLATE_FLAVORS={
-  "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","calculation-rpg-battle-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild",
+  "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","spatial-park-jam-v1":"satisfying","spatial-rope-untangle-v1":"quirky","calculation-rpg-battle-v1":"wild","calculation-gate-run-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild",
   "memory-missing-v1":"quirky","reaction-emoji-match-v1":"quirky","attention-animal-count-v1":"quirky","inhibition-parity-v1":"quirky","attention-kana-count-v1":"quirky","attention-dual-v1":"quirky","language-anagram-v1":"quirky","social-partner-mood-v1":"quirky","social-date-v1":"wild",
-  "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","prediction-chain-puzzle-v1":"satisfying","prediction-pin-pull-v1":"wild","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
+  "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","prediction-chain-puzzle-v1":"satisfying","attention-water-sort-v1":"satisfying","prediction-pin-pull-v1":"wild","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
 };
 const flavorFor = templateId => TEMPLATE_FLAVORS[templateId]||"classic";
 const PACE_FIXED_KINDS = new Set(["signal","target","timing","runner"]);
@@ -562,7 +811,11 @@ const TASK_FACTORIES = [
   {id:"calculation-rpg-battle-v1",version:"1.1",category:"calculation",make:()=>makeBattleTask()},
   {id:"spatial-lane-run-v1",version:"1.2",category:"spatial",make:()=>makeRunStage()},
   {id:"prediction-chain-puzzle-v1",version:"1.3",category:"prediction",make:()=>makePuzzleTask()},
-  {id:"prediction-pin-pull-v1",version:"1.4",category:"prediction",make:()=>makePinTask()}
+  {id:"prediction-pin-pull-v1",version:"1.4",category:"prediction",make:()=>makePinTask()},
+  {id:"attention-water-sort-v1",version:"1.5",category:"attention",make:()=>makeWaterTask()},
+  {id:"calculation-gate-run-v1",version:"1.6",category:"calculation",make:()=>makeGateTask()},
+  {id:"spatial-park-jam-v1",version:"1.7",category:"spatial",make:()=>makeParkTask()},
+  {id:"spatial-rope-untangle-v1",version:"1.8",category:"spatial",make:()=>makeRopeTask()}
 ];
 
 function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
@@ -701,6 +954,10 @@ function renderTask(task){
   if(task.kind==="laneRun"){renderLaneRun(task);return}
   if(task.kind==="chainPuzzle"){renderChainPuzzle(task);return}
   if(task.kind==="pinPull"){renderPinPull(task);return}
+  if(task.kind==="waterSort"){renderWaterSort(task);return}
+  if(task.kind==="gateRun"){renderGateRun(task);return}
+  if(task.kind==="parkJam"){renderParkJam(task);return}
+  if(task.kind==="ropeUntangle"){renderRopeUntangle(task);return}
 }
 function renderMemoryPath(task){
   const grid=document.createElement("div");grid.className="memory-grid";const buttons=[];for(let i=0;i<9;i++){const b=document.createElement("button");b.type="button";b.className="memory-tile";b.disabled=true;b.setAttribute("aria-label",`${i+1}番のマス`);grid.append(b);buttons.push(b)}$("challenge").append(grid);
@@ -1969,6 +2226,693 @@ function renderPinPull(task){
   startDeadline(task.duration,()=>{
     if(state.done||questionAnswered)return;state.done=true;
     finishTask(false,{detail:`時間切れ。正解の順番は ${task.answer.map(i=>i+1).join(" → ")} でした。`});
+  });
+}
+function renderWaterSort(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="water-stage";
+  const canvas=document.createElement("canvas");canvas.className="water-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","5本のボトルの色分けパズル");
+  const hint=document.createElement("p");hint.className="water-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const tubes=task.tubes.map(tube=>[...tube]);
+  const state={selected:-1,moves:0,busy:false,done:false,shake:0,pour:null};
+  const sparks=[];
+  let W=0,H=0,tubeW=0,tubeH=0,baseY=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*.92);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    tubeW=W/(tubes.length+1.6);tubeH=Math.min(H*.62,tubeW*3.1);baseY=H*.82;
+  };
+  const tubeX=index=>W/2+(index-(tubes.length-1)/2)*(tubeW*1.22);
+  const layerH=()=>tubeH/WATER_DEPTH;
+  const drawTube=(index)=>{
+    const x=tubeX(index),lift=state.selected===index?-tubeH*.09:0;
+    const pour=state.pour,tilt=pour&&pour.from===index?pour.tilt:0;
+    ctx.save();
+    ctx.translate(x,baseY+lift);
+    if(tilt){ctx.translate(0,-tubeH);ctx.rotate(tilt);ctx.translate(0,tubeH)}
+    const w=tubeW*.72,r=w*.5;
+    ctx.beginPath();
+    ctx.moveTo(-w/2,-tubeH);ctx.lineTo(-w/2,-r);ctx.quadraticCurveTo(-w/2,0,0,0);
+    ctx.quadraticCurveTo(w/2,0,w/2,-r);ctx.lineTo(w/2,-tubeH);
+    ctx.save();ctx.clip();
+    const content=pour&&pour.from===index?pour.sourceView:tubes[index];
+    content.forEach((unit,level)=>{
+      const color=waterColor(unit),h=layerH(),y=-h*(level+1);
+      const fill=ctx.createLinearGradient(-w/2,y,w/2,y+h);
+      fill.addColorStop(0,color.light);fill.addColorStop(.45,color.base);fill.addColorStop(1,color.dark);
+      ctx.fillStyle=fill;ctx.fillRect(-w/2,y,w,h+1);
+      ctx.fillStyle="rgba(255,255,255,.22)";ctx.fillRect(-w/2,y,w*.22,h);
+    });
+    if(pour&&pour.to===index){
+      const color=waterColor(pour.unit),h=layerH()*pour.filled;
+      const base=-layerH()*pour.baseLevel;
+      const fill=ctx.createLinearGradient(-w/2,base-h,w/2,base);
+      fill.addColorStop(0,color.light);fill.addColorStop(1,color.dark);
+      ctx.fillStyle=fill;ctx.fillRect(-w/2,base-h,w,h+1);
+    }
+    ctx.restore();
+    ctx.strokeStyle="rgba(255,255,255,.85)";ctx.lineWidth=Math.max(2,w*.07);
+    ctx.stroke();
+    ctx.strokeStyle="rgba(160,140,190,.45)";ctx.lineWidth=Math.max(1,w*.03);ctx.stroke();
+    ctx.fillStyle="rgba(255,255,255,.35)";
+    ctx.beginPath();ctx.roundRect(-w*.36,-tubeH+w*.12,w*.13,tubeH*.72,w*.07);ctx.fill();
+    ctx.restore();
+    const sorted=tubes[index].length===WATER_DEPTH&&tubes[index].every(unit=>unit===tubes[index][0]);
+    if(sorted){
+      ctx.fillStyle="rgba(255,255,255,.9)";
+      ctx.font=`900 ${Math.round(tubeW*.42)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.fillText("✓",x,baseY-tubeH-tubeW*.18);ctx.textAlign="left";
+    }
+  };
+  const drawStream=()=>{
+    const pour=state.pour;if(!pour||pour.phase!=="flow")return;
+    const color=waterColor(pour.unit);
+    const from={x:tubeX(pour.from)+tubeW*.34,y:baseY-tubeH*1.02};
+    const to={x:tubeX(pour.to),y:baseY-layerH()*pour.baseLevel-layerH()*pour.filled};
+    ctx.strokeStyle=color.base;ctx.lineWidth=tubeW*.16;ctx.lineCap="round";
+    ctx.beginPath();ctx.moveTo(from.x,from.y);
+    ctx.quadraticCurveTo((from.x+to.x)/2,from.y-tubeH*.06,to.x,to.y);ctx.stroke();
+    ctx.strokeStyle=color.light;ctx.lineWidth=tubeW*.06;
+    ctx.beginPath();ctx.moveTo(from.x,from.y);
+    ctx.quadraticCurveTo((from.x+to.x)/2,from.y-tubeH*.06,to.x,to.y);ctx.stroke();
+  };
+  const drawHud=()=>{
+    const left=task.moveLimit-state.moves;
+    ctx.fillStyle="rgba(73,59,82,.9)";
+    ctx.font=`800 ${Math.round(W*.045)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(`のこり ${left}手`,W*.05,H*.05);
+    const done=tubes.filter(tube=>tube.length===WATER_DEPTH&&tube.every(unit=>unit===tube[0])).length;
+    ctx.textAlign="right";ctx.fillStyle=left<=1?"#A64763":"rgba(111,96,120,.9)";
+    ctx.fillText(`そろった ${done} / ${task.colors.length}`,W*.95,H*.05);ctx.textAlign="left";
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    if(state.shake>0){const power=state.shake*W*.012;ctx.translate((randomFloat()-.5)*power,(randomFloat()-.5)*power)}
+    const shelf=ctx.createLinearGradient(0,baseY-4,0,baseY+H*.08);
+    shelf.addColorStop(0,"rgba(166,109,194,.22)");shelf.addColorStop(1,"rgba(166,109,194,0)");
+    ctx.fillStyle=shelf;ctx.fillRect(0,baseY,W,H*.08);
+    tubes.forEach((tube,index)=>drawTube(index));
+    drawStream();
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    ctx.restore();drawHud();
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=W*(.03+randomFloat()*.09);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-W*.04,size:W*(.006+randomFloat()*.01),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.55+(task.moveLimit-state.moves)*.08-elapsed/task.duration*.25,0,1):0,detail}),reduced?200:800);
+  };
+  const pour=(from,to)=>{
+    const count=waterPourable(tubes,from,to);
+    if(!count){state.shake=.5;state.selected=-1;return}
+    state.busy=true;state.moves++;
+    const unit=tubes[from].at(-1),baseLevel=tubes[to].length;
+    const sourceView=[...tubes[from]];
+    state.pour={from,to,unit,count,baseLevel,filled:0,tilt:0,phase:"tilt",sourceView};
+    const started=performance.now(),tiltMs=reduced?80:220,flowMs=reduced?120:120+count*160;
+    const step=now=>{
+      if(questionAnswered)return;
+      const pourState=state.pour;if(!pourState)return;
+      const elapsed=now-started;
+      const direction=tubeX(to)>tubeX(from)?1:-1;
+      if(elapsed<tiltMs){
+        pourState.tilt=direction*(elapsed/tiltMs)*.5;
+        requestAnimationFrame(step);return;
+      }
+      pourState.phase="flow";pourState.tilt=direction*.5;
+      const progress=clamp((elapsed-tiltMs)/flowMs,0,1);
+      pourState.filled=progress*count;
+      pourState.sourceView=sourceView.slice(0,sourceView.length-Math.round(progress*count));
+      if(progress<1){requestAnimationFrame(step);return}
+      tubes[to].push(...tubes[from].splice(tubes[from].length-count,count));
+      burst(tubeX(to),baseY-layerH()*tubes[to].length,waterColor(unit).light,12);
+      state.pour=null;state.selected=-1;state.busy=false;
+      if(waterDone(tubes)){
+        tubes.forEach((tube,index)=>{if(tube.length)burst(tubeX(index),baseY-tubeH*.5,waterColor(tube[0]).base,14)});
+        finish(true,`${state.moves}手でそろえました。最短は${task.minMoves}手です。`);
+        return;
+      }
+      if(state.moves>=task.moveLimit)finish(false,`手数を使い切りました。最短${task.minMoves}手の手順があります。`);
+    };
+    requestAnimationFrame(step);
+  };
+  const tubeAt=event=>{
+    const rect=canvas.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;
+    if(y<baseY-tubeH*1.3||y>baseY+tubeH*.2)return -1;
+    let best=-1,bestDistance=tubeW*.75;
+    tubes.forEach((tube,index)=>{const distance=Math.abs(x-tubeX(index));if(distance<bestDistance){bestDistance=distance;best=index}});
+    return best;
+  };
+  const choose=index=>{
+    if(state.busy||state.done||questionAnswered||index<0)return;
+    if(state.selected<0){
+      if(!tubes[index].length)return;
+      state.selected=index;hint.textContent="注ぎ先のボトルをタップ";
+      return;
+    }
+    if(state.selected===index){state.selected=-1;hint.textContent="動かすボトルをタップ";return}
+    pour(state.selected,index);
+    hint.textContent="動かすボトルをタップ";
+  };
+  canvas.addEventListener("pointerdown",event=>{event.preventDefault();choose(tubeAt(event))});
+  wrap.tabIndex=0;
+  wrap.addEventListener("keydown",event=>{
+    const index=Number(event.key)-1;
+    if(index>=0&&index<tubes.length){event.preventDefault();choose(index)}
+  });
+  wrap.focus({preventScroll:true});
+  hint.textContent="動かすボトルをタップ";
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.shake=Math.max(0,state.shake-dt*2.5);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.8;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=W*.5*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.water={state,tubes,task,pour,choose};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`時間切れ。最短${task.minMoves}手でそろう並びでした。`});
+  });
+}
+function renderGateRun(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="gate-stage";
+  const canvas=document.createElement("canvas");canvas.className="gate-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","上下の門を選んで軍団を増やす");
+  const pad=document.createElement("div");pad.className="gate-pad";
+  const up=document.createElement("button"),down=document.createElement("button");
+  [[up,"▲ 上の門","上の門を選ぶ"],[down,"▼ 下の門","下の門を選ぶ"]].forEach(([button,text,label])=>{
+    button.type="button";button.className="gate-key";button.textContent=text;button.setAttribute("aria-label",label);
+    pad.append(button);
+  });
+  wrap.append(canvas,pad);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const state={count:task.start,lane:0,x:0,done:false,row:0,shake:0,flash:0,clash:0,result:null,pop:0};
+  const troops=Array.from({length:60},()=>({ox:randomFloat(),oy:randomFloat(),phase:randomFloat()*6.28}));
+  const sparks=[];
+  let W=0,H=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*.78);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  };
+  const laneY=lane=>H*(lane?.68:.36);
+  const gateX=row=>W*(1.05+row*.66)-state.x;
+  const enemyX=()=>W*(1.05+task.gates.length*.66+.38)-state.x;
+  const drawCrowd=(x,y,count,color,scale)=>{
+    const shown=Math.min(count,60),unit=W*.026*scale;
+    for(let i=0;i<shown;i++){
+      const troop=troops[i];
+      const spread=Math.min(1,.35+shown/60)*W*.075*scale;
+      const cx=x+(troop.ox-.5)*spread*1.5,cy=y+(troop.oy-.5)*spread+Math.sin(clock*7+troop.phase)*unit*.25;
+      ctx.fillStyle="rgba(30,18,44,.18)";
+      ctx.beginPath();ctx.ellipse(cx,cy+unit*1.1,unit*.8,unit*.28,0,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle=color.body;
+      ctx.beginPath();ctx.ellipse(cx,cy,unit*.72,unit*.9,0,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle=color.head;
+      ctx.beginPath();ctx.arc(cx,cy-unit*1.05,unit*.62,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle="#241814";
+      ctx.beginPath();ctx.arc(cx-unit*.2,cy-unit*1.1,unit*.12,0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.arc(cx+unit*.2,cy-unit*1.1,unit*.12,0,Math.PI*2);ctx.fill();
+    }
+  };
+  const drawBadge=(x,y,text,colors,size)=>{
+    ctx.fillStyle=colors[0];
+    ctx.beginPath();ctx.roundRect(x-size*1.5,y-size*.6,size*3,size*1.2,size*.6);ctx.fill();
+    ctx.strokeStyle=colors[1];ctx.lineWidth=Math.max(1,size*.12);ctx.stroke();
+    ctx.fillStyle="#FFFFFF";ctx.font=`900 ${Math.round(size*.95)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(text,x,y);ctx.textAlign="left";
+  };
+  const drawGate=(row)=>{
+    const x=gateX(row);if(x<-W*.3||x>W*1.4)return;
+    task.gates[row].forEach((op,lane)=>{
+      const y=laneY(lane),h=H*.26,w=W*.16;
+      const positive=op.kind==="add"||op.kind==="mul";
+      const fill=ctx.createLinearGradient(x-w/2,y-h/2,x+w/2,y+h/2);
+      if(positive){fill.addColorStop(0,"rgba(102,192,140,.85)");fill.addColorStop(1,"rgba(46,122,84,.9)")}
+      else{fill.addColorStop(0,"rgba(234,126,155,.85)");fill.addColorStop(1,"rgba(168,65,106,.9)")}
+      ctx.fillStyle=fill;
+      ctx.beginPath();ctx.roundRect(x-w/2,y-h/2,w,h,W*.02);ctx.fill();
+      ctx.strokeStyle="rgba(255,255,255,.75)";ctx.lineWidth=Math.max(2,W*.008);ctx.stroke();
+      ctx.fillStyle="#FFFFFF";ctx.font=`900 ${Math.round(W*.075)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(gateLabel(op),x,y);ctx.textAlign="left";
+    });
+  };
+  const drawEnemy=()=>{
+    const x=enemyX();if(x>W*1.5)return;
+    drawCrowd(x,H*.52,task.enemy,{body:"#6B4E8F",head:"#8E6BD0"},1);
+    drawBadge(x,H*.16,`${task.enemy}`,["#4A2A72","#B79BE0"],W*.06);
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    if(state.shake>0){const power=state.shake*W*.02;ctx.translate((randomFloat()-.5)*power,(randomFloat()-.5)*power)}
+    const sky=ctx.createLinearGradient(0,0,0,H);
+    sky.addColorStop(0,"#DCEBFA");sky.addColorStop(.5,"#EFE4F8");sky.addColorStop(1,"#CDE6D6");
+    ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
+    ctx.fillStyle="rgba(255,255,255,.5)";ctx.fillRect(0,H*.5-2,W,4);
+    for(let i=0;i<12;i++){
+      const x=(i*W*.24-state.x*.6)%(W*1.4)-W*.2;
+      ctx.fillStyle="rgba(122,84,150,.08)";
+      ctx.beginPath();ctx.ellipse(x,H*.5,W*.09,H*.03,0,0,Math.PI*2);ctx.fill();
+    }
+    task.gates.forEach((pair,row)=>drawGate(row));
+    drawEnemy();
+    const heroX=W*.22,heroY=laneY(state.lane);
+    drawCrowd(heroX,heroY,state.count,{body:"#C06A26",head:"#F0A25A"},1+state.pop*.15);
+    drawBadge(heroX,heroY-H*.16,`${state.count}`,["#8C5A1E","#FFD9A0"],W*.06);
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    if(state.flash>0){ctx.fillStyle=`rgba(255,255,255,${state.flash*.6})`;ctx.fillRect(0,0,W,H)}
+    ctx.restore();
+    if(state.result){
+      ctx.fillStyle=state.result==="win"?"rgba(46,122,84,.9)":"rgba(168,65,106,.9)";
+      ctx.font=`900 ${Math.round(W*.12)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.textBaseline="middle";
+      ctx.fillText(state.result==="win"?"勝った！":"負け…",W/2,H*.5);ctx.textAlign="left";
+    }
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=W*(.05+randomFloat()*.12);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-W*.05,size:W*(.006+randomFloat()*.012),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    state.result=won?"win":"lose";
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?300:1100);
+  };
+  const setLane=lane=>{if(!state.done)state.lane=lane};
+  up.addEventListener("pointerdown",event=>{event.preventDefault();setLane(0)});
+  down.addEventListener("pointerdown",event=>{event.preventDefault();setLane(1)});
+  up.addEventListener("click",event=>{if(event.detail===0)setLane(0)});
+  down.addEventListener("click",event=>{if(event.detail===0)setLane(1)});
+  canvas.addEventListener("pointerdown",event=>{
+    event.preventDefault();
+    const rect=canvas.getBoundingClientRect();
+    setLane(event.clientY-rect.top<rect.height/2?0:1);
+  });
+  wrap.tabIndex=0;
+  wrap.addEventListener("keydown",event=>{
+    if(event.key==="ArrowUp"){event.preventDefault();setLane(0)}
+    else if(event.key==="ArrowDown"){event.preventDefault();setLane(1)}
+  });
+  wrap.focus({preventScroll:true});
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const speed=()=>W*(reduced?.16:.22);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.shake=Math.max(0,state.shake-dt*2.5);
+    state.flash=Math.max(0,state.flash-dt*2);
+    state.pop=Math.max(0,state.pop-dt*3);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.6;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=W*.6*dt;
+    }
+    if(!state.done){
+      state.x+=speed()*dt;
+      if(state.row<task.gates.length&&gateX(state.row)<=W*.22){
+        const op=task.gates[state.row][state.lane],before=state.count;
+        state.count=gateApply(state.count,op);
+        state.pop=1;state.flash=.5;state.shake=.4;
+        burst(W*.22,laneY(state.lane),state.count>=before?"#7FD08C":"#EA7E9B",18);
+        state.row++;
+      }
+      if(state.row>=task.gates.length&&enemyX()<=W*.28){
+        state.shake=1;state.flash=.7;
+        burst(W*.3,H*.5,"#FFD9A0",30);
+        const won=state.count>task.enemy;
+        finish(won,won?`${state.count}対${task.enemy}で勝利。最大は${task.best}人でした。`
+          :`${state.count}対${task.enemy}で敗北。${task.best}人まで増やせる道がありました。`);
+      }
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.gate={state,task,setLane};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:"時間切れです。"});
+  });
+}
+function renderParkJam(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="park-stage";
+  const canvas=document.createElement("canvas");canvas.className="park-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","駐車場の脱出パズル");
+  const hint=document.createElement("p");hint.className="park-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const cars=task.cars.map(car=>({...car,ox:car.c,oy:car.r}));
+  const state={selected:-1,moves:0,done:false,shake:0,exit:0};
+  const sparks=[];
+  let W=0,H=0,cell=0,padX=0,padY=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*1.02);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    cell=Math.floor(Math.min(W*.86,H*.84)/PARK_SIZE);
+    padX=Math.round((W-cell*PARK_SIZE)/2);padY=Math.round(H*.12);
+  };
+  const cx=c=>padX+c*cell,cy=r=>padY+r*cell;
+  const drawLot=()=>{
+    ctx.fillStyle="#4A4356";
+    ctx.beginPath();ctx.roundRect(padX-cell*.16,padY-cell*.16,cell*PARK_SIZE+cell*.32,cell*PARK_SIZE+cell*.32,cell*.22);ctx.fill();
+    ctx.fillStyle="#5B5468";
+    ctx.beginPath();ctx.roundRect(padX,padY,cell*PARK_SIZE,cell*PARK_SIZE,cell*.12);ctx.fill();
+    ctx.strokeStyle="rgba(255,255,255,.22)";ctx.lineWidth=Math.max(1,cell*.04);
+    for(let i=1;i<PARK_SIZE;i++){
+      ctx.beginPath();ctx.moveTo(cx(i),padY+cell*.12);ctx.lineTo(cx(i),padY+cell*PARK_SIZE-cell*.12);ctx.stroke();
+    }
+    const exitY=cy(PARK_EXIT);
+    ctx.fillStyle="#F2CE4B";
+    ctx.beginPath();ctx.roundRect(cx(PARK_SIZE)+cell*.06,exitY+cell*.18,cell*.5,cell*.64,cell*.1);ctx.fill();
+    ctx.fillStyle="#5A3B1C";ctx.font=`900 ${Math.round(cell*.3)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("出口",cx(PARK_SIZE)+cell*.31,exitY+cell*.5);ctx.textAlign="left";
+  };
+  const drawCar=(car,index)=>{
+    const x=cx(car.ox),y=cy(car.oy);
+    const w=(car.dir==="h"?car.len:1)*cell,h=(car.dir==="v"?car.len:1)*cell;
+    const inset=cell*.1,selected=state.selected===index;
+    ctx.fillStyle="rgba(20,14,26,.3)";
+    ctx.beginPath();ctx.roundRect(x+inset,y+inset+cell*.06,w-inset*2,h-inset*2,cell*.2);ctx.fill();
+    const body=ctx.createLinearGradient(x,y,x+w,y+h);
+    body.addColorStop(0,car.color);body.addColorStop(1,shadeColor(car.color,-.28));
+    ctx.fillStyle=body;
+    ctx.beginPath();ctx.roundRect(x+inset,y+inset,w-inset*2,h-inset*2,cell*.2);ctx.fill();
+    ctx.fillStyle="rgba(255,255,255,.72)";
+    if(car.dir==="h"){
+      ctx.beginPath();ctx.roundRect(x+w*.24,y+cell*.26,w*.5,h-cell*.52,cell*.12);ctx.fill();
+      ctx.fillStyle="rgba(30,20,40,.55)";
+      ctx.beginPath();ctx.roundRect(x+w*.28,y+cell*.32,w*.42,h-cell*.64,cell*.1);ctx.fill();
+    }else{
+      ctx.beginPath();ctx.roundRect(x+cell*.26,y+h*.24,w-cell*.52,h*.5,cell*.12);ctx.fill();
+      ctx.fillStyle="rgba(30,20,40,.55)";
+      ctx.beginPath();ctx.roundRect(x+cell*.32,y+h*.28,w-cell*.64,h*.42,cell*.1);ctx.fill();
+    }
+    if(car.hero){
+      ctx.fillStyle="#FFFFFF";ctx.font=`900 ${Math.round(cell*.34)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("GO",x+w/2,y+h/2);ctx.textAlign="left";
+    }
+    if(selected){
+      ctx.strokeStyle=`rgba(255,255,255,${.6+Math.sin(clock*6)*.3})`;ctx.lineWidth=Math.max(2,cell*.08);
+      ctx.beginPath();ctx.roundRect(x+inset*.4,y+inset*.4,w-inset*.8,h-inset*.8,cell*.24);ctx.stroke();
+    }
+  };
+  const shadeColor=(color,amount)=>{
+    const n=parseInt(color.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;
+    const mix=v=>Math.round(clamp(amount<0?v*(1+amount):v+(255-v)*amount,0,255));
+    return `rgb(${mix(r)},${mix(g)},${mix(b)})`;
+  };
+  const drawHud=()=>{
+    const left=task.moveLimit-state.moves;
+    ctx.fillStyle="rgba(73,59,82,.9)";ctx.font=`800 ${Math.round(W*.045)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(`のこり ${left}手`,W*.06,H*.03);
+    ctx.textAlign="right";ctx.fillStyle="rgba(111,96,120,.9)";
+    ctx.fillText(`最短 ${task.minMoves}手`,W*.94,H*.03);ctx.textAlign="left";
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    if(state.shake>0){const power=state.shake*cell*.14;ctx.translate((randomFloat()-.5)*power,(randomFloat()-.5)*power)}
+    drawLot();
+    cars.forEach((car,index)=>drawCar(car,index));
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    ctx.restore();drawHud();
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=cell*(1+randomFloat()*3);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-cell,size:cell*(.03+randomFloat()*.05),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.55+(task.moveLimit-state.moves)*.08-elapsed/task.duration*.25,0,1):0,detail}),reduced?200:900);
+  };
+  const settle=(index,targetR,targetC)=>{
+    const car=cars[index];
+    const step=car.dir==="h"?Math.sign(targetC-car.c):Math.sign(targetR-car.r);
+    if(!step)return false;
+    const options=parkMoves(cars).filter(move=>move.index===index&&move.step===step);
+    if(!options.length){state.shake=.45;return false}
+    const wanted=car.dir==="h"?Math.abs(targetC-car.c):Math.abs(targetR-car.r);
+    const best=options.reduce((chosen,move)=>Math.abs(move.distance-wanted)<Math.abs(chosen.distance-wanted)?move:chosen,options[0]);
+    const shift=best.step*best.distance;
+    if(car.dir==="h")car.c+=shift;else car.r+=shift;
+    state.moves++;
+    const started=performance.now(),from={x:car.ox,y:car.oy},to={x:car.c,y:car.r};
+    const duration=reduced?60:180;
+    const animate=now=>{
+      if(questionAnswered)return;
+      const t=clamp((now-started)/duration,0,1),ease=1-(1-t)*(1-t);
+      car.ox=from.x+(to.x-from.x)*ease;car.oy=from.y+(to.y-from.y)*ease;
+      if(t<1){requestAnimationFrame(animate);return}
+      car.ox=to.x;car.oy=to.y;
+      if(parkSolved(cars)){
+        burst(cx(PARK_SIZE),cy(PARK_EXIT)+cell*.5,"#F2CE4B",26);
+        finish(true,`${state.moves}手で脱出。最短は${task.minMoves}手です。`);
+        return;
+      }
+      if(state.moves>=task.moveLimit)finish(false,`手数を使い切りました。最短${task.minMoves}手の手順があります。`);
+    };
+    requestAnimationFrame(animate);
+    return true;
+  };
+  const cellAt=event=>{
+    const rect=canvas.getBoundingClientRect();
+    const c=Math.floor((event.clientX-rect.left-padX)/cell),r=Math.floor((event.clientY-rect.top-padY)/cell);
+    if(r<0||r>=PARK_SIZE||c<0||c>=PARK_SIZE)return null;
+    return{r,c};
+  };
+  canvas.addEventListener("pointerdown",event=>{
+    event.preventDefault();
+    if(state.done||questionAnswered)return;
+    const spot=cellAt(event);if(!spot)return;
+    const grid=parkGrid(cars),index=grid[spot.r][spot.c];
+    if(index!==-1){
+      state.selected=state.selected===index?-1:index;
+      hint.textContent=state.selected<0?"車をタップして選びます":"動かしたいマスをタップ";
+      return;
+    }
+    if(state.selected<0)return;
+    const car=cars[state.selected];
+    if(car.dir==="h"&&spot.r!==car.r){state.shake=.4;return}
+    if(car.dir==="v"&&spot.c!==car.c){state.shake=.4;return}
+    settle(state.selected,spot.r,spot.c);
+  });
+  wrap.tabIndex=0;wrap.focus({preventScroll:true});
+  hint.textContent="車をタップして選びます";
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.shake=Math.max(0,state.shake-dt*2.5);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.7;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=cell*6*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.park={state,cars,task,settle};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`時間切れ。最短${task.minMoves}手で出せる配置でした。`});
+  });
+}
+function renderRopeUntangle(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="rope-stage";
+  const canvas=document.createElement("canvas");canvas.className="rope-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","杭をドラッグしてロープの交差をなくす");
+  const hint=document.createElement("p");hint.className="rope-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const points=task.points.map(point=>({...point}));
+  const state={drag:-1,done:false,best:task.start,glow:0};
+  const sparks=[];
+  let W=0,H=0,clock=0,crossing={count:task.start,pairs:[]};
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*.96);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  };
+  const px=point=>point.x*W,py=point=>point.y*H;
+  const recount=()=>{crossing=ropeCrossings(points,task.edges)};
+  const drawRope=(edge,index)=>{
+    const a=points[edge[0]],b=points[edge[1]];
+    const tangled=crossing.pairs.some(pair=>pair.includes(index));
+    const color=tangled?"#E4574F":ROPE_COLORS[index%ROPE_COLORS.length];
+    const width=W*.026;
+    ctx.lineCap="round";
+    ctx.strokeStyle="rgba(30,18,44,.18)";ctx.lineWidth=width*1.5;
+    ctx.beginPath();ctx.moveTo(px(a),py(a)+width*.4);ctx.lineTo(px(b),py(b)+width*.4);ctx.stroke();
+    ctx.strokeStyle=color;ctx.lineWidth=width;
+    ctx.beginPath();ctx.moveTo(px(a),py(a));ctx.lineTo(px(b),py(b));ctx.stroke();
+    ctx.strokeStyle="rgba(255,255,255,.45)";ctx.lineWidth=width*.3;
+    ctx.beginPath();ctx.moveTo(px(a),py(a));ctx.lineTo(px(b),py(b));ctx.stroke();
+    if(tangled){
+      ctx.strokeStyle=`rgba(228,87,79,${.35+Math.sin(clock*5)*.25})`;ctx.lineWidth=width*1.9;
+      ctx.beginPath();ctx.moveTo(px(a),py(a));ctx.lineTo(px(b),py(b));ctx.stroke();
+    }
+  };
+  const drawNode=(point,index)=>{
+    const x=px(point),y=py(point),r=W*.05,active=state.drag===index;
+    ctx.fillStyle="rgba(30,18,44,.22)";
+    ctx.beginPath();ctx.ellipse(x,y+r*.5,r*.9,r*.32,0,0,Math.PI*2);ctx.fill();
+    const body=ctx.createRadialGradient(x-r*.3,y-r*.4,r*.1,x,y,r);
+    body.addColorStop(0,"#FFF6E4");body.addColorStop(.55,"#E9D6B8");body.addColorStop(1,"#A8895F");
+    ctx.fillStyle=body;ctx.beginPath();ctx.arc(x,y,r*(active?1.12:1),0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle="rgba(120,90,60,.6)";ctx.lineWidth=Math.max(1,r*.12);ctx.stroke();
+    ctx.fillStyle="#5A4632";
+    ctx.beginPath();ctx.arc(x-r*.22,y-r*.08,r*.13,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.arc(x+r*.22,y-r*.08,r*.13,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle="#5A4632";ctx.lineWidth=Math.max(1,r*.09);
+    ctx.beginPath();ctx.arc(x,y+r*.12,r*.24,.15*Math.PI,.85*Math.PI);ctx.stroke();
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    const back=ctx.createLinearGradient(0,0,W,H);
+    back.addColorStop(0,"#F7F1FB");back.addColorStop(1,"#E4EFF6");
+    ctx.fillStyle=back;ctx.fillRect(0,0,W,H);
+    task.edges.forEach(drawRope);
+    points.forEach(drawNode);
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    ctx.fillStyle=crossing.count?"rgba(166,71,99,.95)":"rgba(61,120,95,.95)";
+    ctx.font=`900 ${Math.round(W*.055)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(crossing.count?`交差 ${crossing.count}`:"交差なし！",W*.05,H*.035);
+    if(state.glow>0){
+      ctx.fillStyle=`rgba(255,255,255,${state.glow*.5})`;ctx.fillRect(0,0,W,H);
+    }
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=W*(.04+randomFloat()*.1);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-W*.03,size:W*(.005+randomFloat()*.01),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?200:900);
+  };
+  const nodeAt=event=>{
+    const rect=canvas.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;
+    let best=-1,bestDistance=W*.09;
+    points.forEach((point,index)=>{
+      const distance=Math.hypot(x-px(point),y-py(point));
+      if(distance<bestDistance){bestDistance=distance;best=index}
+    });
+    return{index:best,x,y};
+  };
+  canvas.addEventListener("pointerdown",event=>{
+    if(state.done||questionAnswered)return;
+    event.preventDefault();
+    const hit=nodeAt(event);
+    if(hit.index<0)return;
+    state.drag=hit.index;
+    try{canvas.setPointerCapture?.(event.pointerId)}catch{}
+    hint.textContent="動かして交差をほどきます";
+  });
+  canvas.addEventListener("pointermove",event=>{
+    if(state.drag<0||state.done)return;
+    event.preventDefault();
+    const rect=canvas.getBoundingClientRect();
+    points[state.drag].x=clamp((event.clientX-rect.left)/W,.06,.94);
+    points[state.drag].y=clamp((event.clientY-rect.top)/H,.08,.94);
+    recount();
+  });
+  const release=()=>{
+    if(state.drag<0)return;
+    state.drag=-1;recount();
+    state.best=Math.min(state.best,crossing.count);
+    if(!crossing.count&&!state.done){
+      state.glow=1;
+      points.forEach(point=>burst(px(point),py(point),"#7FD08C",14));
+      finish(true,`交差${task.start}本をほどきました。`);
+    }
+  };
+  canvas.addEventListener("pointerup",release);
+  canvas.addEventListener("pointercancel",release);
+  wrap.tabIndex=0;wrap.focus({preventScroll:true});
+  hint.textContent="杭をドラッグしてほどきます";
+  recount();
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.glow=Math.max(0,state.glow-dt*1.4);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.6;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=W*.4*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.rope={state,points,task,recount,crossing:()=>crossing,release};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`時間切れ。交差は${crossing.count}本残っていました。`});
   });
 }
 function finishTask(correct,meta={}){
