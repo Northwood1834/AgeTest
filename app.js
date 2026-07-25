@@ -5,8 +5,8 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.8.0";
-const CONTENT_PACK = "1.5";
+const APP_VERSION = "1.9.0";
+const CONTENT_PACK = "1.6";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
 const PACE_RELAXED = "relaxed";
@@ -708,6 +708,78 @@ function makeRopeTask(){
   return{kind:"ropeUntangle",prompt:"ロープの交差をゼロに",help:"杭をドラッグして動かします。",
     points,edges,start:ropeCrossings(points,edges).count,nodes,duration:70000};
 }
+const FLOW_SIZE=5;
+const FLOW_COLORS=[
+  {key:"orange",base:"#F2953F",light:"#FFD0A0"},
+  {key:"pink",base:"#EA7E9B",light:"#FFC7DA"},
+  {key:"blue",base:"#5FB6E0",light:"#C0E6F8"},
+  {key:"green",base:"#66C08C",light:"#C4EFD5"},
+  {key:"purple",base:"#A66DC2",light:"#E0CBF0"},
+  {key:"yellow",base:"#F2CE4B",light:"#FFEDA8"}
+];
+const flowColor=index=>FLOW_COLORS[index%FLOW_COLORS.length];
+const flowId=(r,c)=>r*FLOW_SIZE+c;
+function flowHamiltonian(){
+  // start from a serpentine path, then randomise it with backbite moves,
+  // which keep the path Hamiltonian and cost only a reversal each time
+  const path=[];
+  for(let r=0;r<FLOW_SIZE;r++)for(let i=0;i<FLOW_SIZE;i++){
+    const c=r%2?FLOW_SIZE-1-i:i;path.push({r,c});
+  }
+  const index=new Map(path.map((cell,i)=>[flowId(cell.r,cell.c),i]));
+  const rebuild=()=>{index.clear();path.forEach((cell,i)=>index.set(flowId(cell.r,cell.c),i))};
+  for(let step=0;step<420;step++){
+    const fromTail=randomFloat()<.5;
+    const end=fromTail?path.at(-1):path[0];
+    const neighbours=[[1,0],[-1,0],[0,1],[0,-1]]
+      .map(([dr,dc])=>({r:end.r+dr,c:end.c+dc}))
+      .filter(cell=>cell.r>=0&&cell.r<FLOW_SIZE&&cell.c>=0&&cell.c<FLOW_SIZE)
+      .map(cell=>index.get(flowId(cell.r,cell.c)))
+      .filter(i=>i!==undefined&&(fromTail?i<path.length-2:i>1));
+    if(!neighbours.length)continue;
+    const pivot=pick(neighbours);
+    if(fromTail){
+      const tail=path.splice(pivot+1);tail.reverse();path.push(...tail);
+    }else{
+      const head=path.splice(0,pivot);head.reverse();path.unshift(...head);
+    }
+    rebuild();
+  }
+  return path;
+}
+function makeFlowTask(){
+  for(let attempt=0;attempt<40;attempt++){
+    const path=flowHamiltonian();
+    if(!path)continue;
+    const pairs=randomInt(4,5),cuts=[];
+    const minLength=3,total=path.length;
+    let remaining=total,index=0,ok=true;
+    for(let i=0;i<pairs;i++){
+      const left=pairs-i-1;
+      const maxLength=remaining-left*minLength;
+      if(maxLength<minLength){ok=false;break}
+      const length=i===pairs-1?remaining:randomInt(minLength,Math.min(maxLength,7));
+      cuts.push(path.slice(index,index+length));
+      index+=length;remaining-=length;
+    }
+    if(!ok||remaining!==0)continue;
+    if(cuts.some(segment=>segment.length<minLength))continue;
+    const endpoints=cuts.map((segment,i)=>({color:i,a:segment[0],b:segment.at(-1)}));
+    // endpoints of different pairs must not sit on top of each other
+    const seen=new Set();let clash=false;
+    endpoints.forEach(pair=>{[pair.a,pair.b].forEach(cell=>{
+      const id=flowId(cell.r,cell.c);if(seen.has(id))clash=true;seen.add(id);
+    })});
+    if(clash)continue;
+    return{kind:"flowLink",prompt:"同じ色をつないで",
+      help:"色の点から指をなぞって同じ色へ。すべての色をつなぎ、全部のマスを埋めれば成功です。",
+      endpoints,solution:cuts,size:FLOW_SIZE,duration:80000};
+  }
+  const endpoints=[{color:0,a:{r:0,c:0},b:{r:0,c:4}},{color:1,a:{r:2,c:0},b:{r:2,c:4}},
+    {color:2,a:{r:4,c:0},b:{r:4,c:4}},{color:3,a:{r:1,c:0},b:{r:3,c:4}}];
+  return{kind:"flowLink",prompt:"同じ色をつないで",help:"色の点から指をなぞって同じ色へ。",
+    endpoints,solution:[],size:FLOW_SIZE,duration:80000};
+}
 const TEMPLATE_TIERS={
   "language-meaning-v1":2,"language-order-v1":2,"spatial-cube-v1":2,
   "prediction-symbol-v1":2,"calculation-compare-v1":2,"memory-reverse-v1":2,
@@ -720,11 +792,11 @@ const TEMPLATE_TIERS={
   "attention-search-v1":2,"timing-five-v1":2,
   "memory-nback-v1":3,"language-anagram-v1":3,"spatial-perspective-v1":3,
   "prediction-double-v1":3,"inhibition-rule-switch-v1":3,"calculation-multistep-v1":3,
-  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
+  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"spatial-flow-link-v1":3,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
 };
 const tierFor = templateId => TEMPLATE_TIERS[templateId]||1;
 const TEMPLATE_FLAVORS={
-  "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","spatial-park-jam-v1":"satisfying","spatial-rope-untangle-v1":"quirky","calculation-rpg-battle-v1":"wild","calculation-gate-run-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild",
+  "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","spatial-park-jam-v1":"satisfying","spatial-flow-link-v1":"satisfying","spatial-rope-untangle-v1":"quirky","calculation-rpg-battle-v1":"wild","calculation-gate-run-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild",
   "memory-missing-v1":"quirky","reaction-emoji-match-v1":"quirky","attention-animal-count-v1":"quirky","inhibition-parity-v1":"quirky","attention-kana-count-v1":"quirky","attention-dual-v1":"quirky","language-anagram-v1":"quirky","social-partner-mood-v1":"quirky","social-date-v1":"wild",
   "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","prediction-chain-puzzle-v1":"satisfying","attention-water-sort-v1":"satisfying","prediction-pin-pull-v1":"wild","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
 };
@@ -815,7 +887,8 @@ const TASK_FACTORIES = [
   {id:"attention-water-sort-v1",version:"1.5",category:"attention",make:()=>makeWaterTask()},
   {id:"calculation-gate-run-v1",version:"1.6",category:"calculation",make:()=>makeGateTask()},
   {id:"spatial-park-jam-v1",version:"1.7",category:"spatial",make:()=>makeParkTask()},
-  {id:"spatial-rope-untangle-v1",version:"1.8",category:"spatial",make:()=>makeRopeTask()}
+  {id:"spatial-rope-untangle-v1",version:"1.8",category:"spatial",make:()=>makeRopeTask()},
+  {id:"spatial-flow-link-v1",version:"1.9",category:"spatial",make:()=>makeFlowTask()}
 ];
 
 function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
@@ -958,6 +1031,7 @@ function renderTask(task){
   if(task.kind==="gateRun"){renderGateRun(task);return}
   if(task.kind==="parkJam"){renderParkJam(task);return}
   if(task.kind==="ropeUntangle"){renderRopeUntangle(task);return}
+  if(task.kind==="flowLink"){renderFlowLink(task);return}
 }
 function renderMemoryPath(task){
   const grid=document.createElement("div");grid.className="memory-grid";const buttons=[];for(let i=0;i<9;i++){const b=document.createElement("button");b.type="button";b.className="memory-tile";b.disabled=true;b.setAttribute("aria-label",`${i+1}番のマス`);grid.append(b);buttons.push(b)}$("challenge").append(grid);
@@ -2913,6 +2987,249 @@ function renderRopeUntangle(task){
   startDeadline(task.duration,()=>{
     if(state.done||questionAnswered)return;state.done=true;
     finishTask(false,{detail:`時間切れ。交差は${crossing.count}本残っていました。`});
+  });
+}
+function renderFlowLink(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="flow-stage";
+  const canvas=document.createElement("canvas");canvas.className="flow-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","同じ色の点を線でつなぐパズル");
+  const hint=document.createElement("p");hint.className="flow-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const size=task.size||FLOW_SIZE;
+  const paths=task.endpoints.map(pair=>[{...pair.a}]);
+  const state={drag:-1,done:false,glow:0};
+  const sparks=[];
+  let W=0,H=0,cell=0,padX=0,padY=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*1.02);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    cell=Math.floor(Math.min(W*.92,H*.9)/size);
+    padX=Math.round((W-cell*size)/2);padY=Math.round((H-cell*size)/2);
+  };
+  const cxOf=c=>padX+c*cell+cell/2,cyOf=r=>padY+r*cell+cell/2;
+  const owner=(r,c)=>{
+    for(let index=0;index<paths.length;index++)
+      if(paths[index].some(cellPoint=>cellPoint.r===r&&cellPoint.c===c))return index;
+    return -1;
+  };
+  const isEndpoint=(r,c)=>{
+    for(let index=0;index<task.endpoints.length;index++){
+      const pair=task.endpoints[index];
+      if((pair.a.r===r&&pair.a.c===c)||(pair.b.r===r&&pair.b.c===c))return index;
+    }
+    return -1;
+  };
+  const same=(a,b)=>a.r===b.r&&a.c===b.c;
+  const connected=index=>{
+    const path=paths[index],pair=task.endpoints[index];
+    if(path.length<2)return false;
+    const head=path[0],tail=path.at(-1);
+    return (same(head,pair.a)&&same(tail,pair.b))||(same(head,pair.b)&&same(tail,pair.a));
+  };
+  const filled=()=>{
+    const used=new Set();
+    paths.forEach(path=>path.forEach(point=>used.add(flowId(point.r,point.c))));
+    return used.size;
+  };
+  const drawGrid=()=>{
+    ctx.fillStyle="#F7F1FB";
+    ctx.beginPath();ctx.roundRect(padX-cell*.1,padY-cell*.1,cell*size+cell*.2,cell*size+cell*.2,cell*.22);ctx.fill();
+    for(let r=0;r<size;r++)for(let c=0;c<size;c++){
+      ctx.fillStyle=(r+c)%2?"#EFE6F8":"#F5EEFA";
+      ctx.beginPath();ctx.roundRect(padX+c*cell+cell*.06,padY+r*cell+cell*.06,cell*.88,cell*.88,cell*.16);ctx.fill();
+    }
+  };
+  const drawPath=(index)=>{
+    const path=paths[index],color=flowColor(index);
+    if(path.length<2)return;
+    ctx.lineCap="round";ctx.lineJoin="round";
+    ctx.strokeStyle=color.base;ctx.lineWidth=cell*.42;
+    ctx.beginPath();
+    path.forEach((point,i)=>{const x=cxOf(point.c),y=cyOf(point.r);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});
+    ctx.stroke();
+    ctx.strokeStyle=color.light;ctx.lineWidth=cell*.16;
+    ctx.beginPath();
+    path.forEach((point,i)=>{const x=cxOf(point.c),y=cyOf(point.r);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});
+    ctx.stroke();
+  };
+  const drawEndpoints=()=>{
+    task.endpoints.forEach((pair,index)=>{
+      const color=flowColor(index),done=connected(index);
+      [pair.a,pair.b].forEach(point=>{
+        const x=cxOf(point.c),y=cyOf(point.r),r=cell*.31;
+        ctx.fillStyle="rgba(40,24,52,.18)";
+        ctx.beginPath();ctx.ellipse(x,y+r*.36,r*.9,r*.3,0,0,Math.PI*2);ctx.fill();
+        const body=ctx.createRadialGradient(x-r*.3,y-r*.35,r*.1,x,y,r);
+        body.addColorStop(0,color.light);body.addColorStop(1,color.base);
+        ctx.fillStyle=body;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle=done?"rgba(255,255,255,.95)":"rgba(255,255,255,.7)";
+        ctx.lineWidth=Math.max(2,cell*.06);ctx.stroke();
+        if(done){
+          ctx.strokeStyle=`rgba(255,255,255,${.4+Math.sin(clock*5)*.3})`;ctx.lineWidth=Math.max(1,cell*.05);
+          ctx.beginPath();ctx.arc(x,y,r*1.28,0,Math.PI*2);ctx.stroke();
+        }
+      });
+    });
+  };
+  const drawHud=()=>{
+    const done=task.endpoints.filter((pair,index)=>connected(index)).length;
+    ctx.fillStyle="rgba(73,59,82,.9)";ctx.font=`800 ${Math.round(W*.045)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(`つながった ${done} / ${task.endpoints.length}`,W*.05,H*.015);
+    ctx.textAlign="right";ctx.fillStyle="rgba(111,96,120,.9)";
+    ctx.fillText(`マス ${filled()} / ${size*size}`,W*.95,H*.015);ctx.textAlign="left";
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    drawGrid();
+    paths.forEach((path,index)=>drawPath(index));
+    drawEndpoints();
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    if(state.glow>0){ctx.fillStyle=`rgba(255,255,255,${state.glow*.45})`;ctx.fillRect(0,0,W,H)}
+    drawHud();
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=cell*(1+randomFloat()*3);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-cell,size:cell*(.03+randomFloat()*.05),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?200:900);
+  };
+  const checkWin=()=>{
+    const allConnected=task.endpoints.every((pair,index)=>connected(index));
+    if(!allConnected)return;
+    if(filled()<size*size){hint.textContent="全部のマスを通してください";return}
+    state.glow=1;
+    task.endpoints.forEach((pair,index)=>burst(cxOf(pair.b.c),cyOf(pair.b.r),flowColor(index).light,14));
+    finish(true,`${task.endpoints.length}色すべてをつなぎました。`);
+  };
+  const cellAt=event=>{
+    const rect=canvas.getBoundingClientRect();
+    const c=Math.floor((event.clientX-rect.left-padX)/cell),r=Math.floor((event.clientY-rect.top-padY)/cell);
+    if(r<0||r>=size||c<0||c>=size)return null;
+    return{r,c};
+  };
+  const startDrag=spot=>{
+    const endpointIndex=isEndpoint(spot.r,spot.c);
+    if(endpointIndex>=0){
+      const pair=task.endpoints[endpointIndex];
+      paths[endpointIndex]=[{r:spot.r,c:spot.c}];
+      // dragging from the far end simply walks the path the other way
+      if(pair.b.r===spot.r&&pair.b.c===spot.c)paths[endpointIndex]=[{r:pair.b.r,c:pair.b.c}];
+      state.drag=endpointIndex;return;
+    }
+    const index=owner(spot.r,spot.c);
+    if(index<0)return;
+    const path=paths[index],position=path.findIndex(point=>point.r===spot.r&&point.c===spot.c);
+    paths[index]=path.slice(0,position+1);
+    state.drag=index;
+  };
+  const extend=spot=>{
+    const index=state.drag;if(index<0)return;
+    const path=paths[index],last=path.at(-1);
+    if(last.r===spot.r&&last.c===spot.c)return;
+    if(Math.abs(last.r-spot.r)+Math.abs(last.c-spot.c)!==1)return;
+    const own=path.findIndex(point=>point.r===spot.r&&point.c===spot.c);
+    if(own>=0){paths[index]=path.slice(0,own+1);return}
+    const endpointIndex=isEndpoint(spot.r,spot.c);
+    if(endpointIndex>=0&&endpointIndex!==index)return;                     // never run over another colour's dot
+    const other=owner(spot.r,spot.c);
+    if(other>=0&&other!==index){
+      const otherPath=paths[other],position=otherPath.findIndex(point=>point.r===spot.r&&point.c===spot.c);
+      paths[other]=otherPath.slice(0,Math.max(1,position));
+    }
+    const pair=task.endpoints[index];
+    const target=(pair.b.r===path[0].r&&pair.b.c===path[0].c)?pair.a:pair.b;
+    const wasDone=connected(index);
+    path.push({r:spot.r,c:spot.c});
+    if(!wasDone&&spot.r===target.r&&spot.c===target.c){
+      burst(cxOf(spot.c),cyOf(spot.r),flowColor(index).light,12);
+    }
+  };
+  canvas.addEventListener("pointerdown",event=>{
+    if(state.done||questionAnswered)return;
+    event.preventDefault();
+    const spot=cellAt(event);if(!spot)return;
+    startDrag(spot);
+    try{canvas.setPointerCapture?.(event.pointerId)}catch{}
+  });
+  const moveTo=spot=>{
+    // a fast finger skips cells, so walk the gap one cell at a time
+    for(let guard=0;guard<size*size;guard++){
+      const index=state.drag;if(index<0)return;
+      const last=paths[index].at(-1);
+      if(last.r===spot.r&&last.c===spot.c)return;
+      const dr=Math.sign(spot.r-last.r),dc=Math.sign(spot.c-last.c);
+      const options=[];
+      if(Math.abs(spot.r-last.r)>=Math.abs(spot.c-last.c)){
+        if(dr)options.push({r:last.r+dr,c:last.c});
+        if(dc)options.push({r:last.r,c:last.c+dc});
+      }else{
+        if(dc)options.push({r:last.r,c:last.c+dc});
+        if(dr)options.push({r:last.r+dr,c:last.c});
+      }
+      if(!options.length)return;
+      const before=paths[index].length;
+      let moved=false;
+      for(const step of options){
+        extend(step);
+        const after=paths[index].at(-1);
+        if(after.r===step.r&&after.c===step.c||paths[index].length!==before){moved=true;break}
+      }
+      if(!moved)return;
+    }
+  };
+  canvas.addEventListener("pointermove",event=>{
+    if(state.drag<0||state.done)return;
+    event.preventDefault();
+    const spot=cellAt(event);if(!spot)return;
+    moveTo(spot);
+  });
+  const release=()=>{
+    if(state.drag<0)return;
+    const index=state.drag;state.drag=-1;
+    const path=paths[index];
+    if(!connected(index)&&path.length>1)hint.textContent="同じ色の点まで届かせてください";
+    else hint.textContent="色の点から指をなぞってつなぎます";
+    checkWin();
+  };
+  canvas.addEventListener("pointerup",release);
+  canvas.addEventListener("pointercancel",release);
+  wrap.tabIndex=0;wrap.focus({preventScroll:true});
+  hint.textContent="色の点から指をなぞってつなぎます";
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.glow=Math.max(0,state.glow-dt*1.4);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.7;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=cell*5*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.flow={state,paths,task,startDrag,extend,moveTo,release,checkWin};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const done=task.endpoints.filter((pair,index)=>connected(index)).length;
+    finishTask(false,{detail:`時間切れ。${done}色までつながりました。`});
   });
 }
 function finishTask(correct,meta={}){
