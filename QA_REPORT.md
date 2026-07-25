@@ -5,9 +5,9 @@ Environment: local static server, desktop Chromium browser automation, headless 
 
 ## Verified
 
-- `app.js` parses successfully and the catalog contains 60 unique factory IDs (52 in v1.0, one each in v1.4.0/v1.5.0/v1.6.0/v1.7.0, four in v1.8.0, one in v1.9.0, one in v1.10.0, one in v1.11.0).
+- `app.js` parses successfully and the catalog contains 60 unique factory IDs (52 in v1.0, one each in v1.4.0/v1.5.0/v1.6.0/v1.7.0, four in v1.8.0, one in v1.9.0, one in v1.10.0, one in v1.11.0, one in v1.12.0).
 - Every one of the first 50 factories was played through its correct interaction path in five browser batches; the two later additions (`language-english-v1`, `social-partner-mood-v1`) were then played correctly as well.
-- Final build: all 63 factories generated and rendered without an exception across 32 renderer kinds.
+- Final build: all 64 factories generated and rendered without an exception across 33 renderer kinds.
 - Randomized generator check: 300 generations per factory (15,600 generated tasks) produced no missing answer, duplicate option, unknown category, invalid tier, or generator error.
 - Session selector check: 3,000 generated sessions across brain levels 1–3 had 12 unique tasks, no tier leak, category count at most two, all four play flavors, no Tier-1 boss, and the author boss at position 6 for levels 2–3.
 - Grade boundaries verified: 85/84 → 処老/初老, 60/59 → 初老/中老, 40/39 → 中老/大老.
@@ -42,6 +42,7 @@ Environment: local static server, desktop Chromium browser automation, headless 
 - v1.9.0 colour-linking testing generated 200 boards headlessly: every one carried a full-coverage solution across 4–5 colour pairs with contiguous paths and no overlap, and the slowest generation was 5ms after the Hamiltonian search was replaced with backbite randomisation (it had peaked at 3,066ms). In the browser at 390×900, dispatching real pointer drags along the solution completed the board from either end — 25/25 squares, all pairs linked, `正解` — where the earlier one-directional check had left reverse-drawn lines unconnected; a deliberately coarse drag that skips cells still extended the line without stalling. No page or console error appeared.
 - v1.10.0 pipe-rotation testing generated 200 boards headlessly: none started connected, an exhaustive rotation search found a solution for every one, and the slowest generation was 1ms. In the browser at 390×900, rotating each piece back to its generated orientation opened the flow in 12 taps for `正解`, with no page or console error.
 - v1.11.0 bolt-removal testing kept only layouts where at most 20% of the 720 orders succeed (a sampled board scored 80/720 = 11%). In the browser at 390×900 the winning order removed all three bars for `正解` and a wrong order ended on a buried bolt for `残念`, with no page or console error. The first build drew each bar at its own height, so a bolt could be scored as buried while looking clear; bars now cross on one plane and buried bolts show through as shadows.
+- v1.12.0 block-stacking testing in the browser at 390×900 landed five of five levels for `正解` with five clean drops when the drop was timed against the stack below, and missed at two levels for `残念` when dropped at random, with no page or console error.
 - The four Krea2 WebP assets load at 768×960; direct visual review found the intended distinct adult/SFW characters and no text/watermark defects.
 - Fresh v1.2.3 320×900 headless Chrome captures showed no horizontal clipping or overlap on the home screen or profile/pace dialog; the larger primary and pace controls remained fully visible.
 - Initial-load network capture contained only same-origin app requests; no app XHR/fetch/WebSocket/telemetry was present. CSP retains `connect-src 'none'`.
