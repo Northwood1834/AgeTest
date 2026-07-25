@@ -1,11 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#FAF6FC"/><stop offset="1" stop-color="#E9D8F1"/></linearGradient><linearGradient id="brain" x2="1" y2="1"><stop stop-color="#E9CCF5"/><stop offset="1" stop-color="#A66DC2"/></linearGradient></defs>
-  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
-  <circle cx="256" cy="244" r="167" fill="#fff" opacity=".72"/>
-  <path d="M151 282c-45-27-34-98 12-110-7-49 49-78 83-44 32-39 95-14 91 36 54 8 66 84 20 110 17 52-45 91-84 58-39 40-103 12-95-39-9-1-18-5-27-11Z" fill="url(#brain)" stroke="#80519A" stroke-width="12" stroke-linejoin="round"/>
-  <path d="M255 130v200M185 169c38 6 61 31 70 67m69-68c-36 7-60 31-69 68m-91 34c42-12 74 6 91 35m96-37c-43-10-76 8-96 37" fill="none" stroke="#80519A" stroke-width="10" stroke-linecap="round" opacity=".65"/>
-  <circle cx="180" cy="239" r="19" fill="#F9F3FC"/><circle cx="331" cy="239" r="19" fill="#F9F3FC"/>
-  <path d="M219 276q37 39 74 0" fill="none" stroke="#624C6E" stroke-width="11" stroke-linecap="round"/>
-  <path d="M100 108l14 27 30 5-22 21 5 31-27-15-28 15 6-31-23-21 31-5Z" fill="#CF9D3A"/>
-  <circle cx="402" cy="129" r="40" fill="#fff" stroke="#A66DC2" stroke-width="9"/><path d="M402 107v25l17 10" fill="none" stroke="#80519A" stroke-width="9" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="にっこり笑って杖をつく作者マスコット">
+  <image href="icon-512.png" width="512" height="512" preserveAspectRatio="xMidYMid slice"/>
 </svg>
