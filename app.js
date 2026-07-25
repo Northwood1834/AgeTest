@@ -5,8 +5,8 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.13.0";
-const CONTENT_PACK = "1.9";
+const APP_VERSION = "1.14.0";
+const CONTENT_PACK = "1.10";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
 const PACE_RELAXED = "relaxed";
@@ -945,6 +945,66 @@ function makeTowerTask(){
     target,speed:randomInt(58,74)/100,startWidth:randomInt(52,62)/100,
     hue:randomInt(0,TOWER_COLORS.length-1),duration:40000};
 }
+const WORD_ORDER_ITEMS=[
+  {chunks:["I","have lived","in this town","for","twenty years"],
+   accepted:[["I","have lived","in this town","for","twenty years"]],
+   note:"Present perfect with a length of time."},
+  {chunks:["She","asked me","to call her","after","the meeting"],
+   accepted:[["She","asked me","to call her","after","the meeting"]],
+   note:"ask + person + to do."},
+  {chunks:["The train","was","so crowded","that","I could not sit down"],
+   accepted:[["The train","was","so crowded","that","I could not sit down"]],
+   note:"so ... that ..."},
+  {chunks:["Could you","tell me","where","the station","is"],
+   accepted:[["Could you","tell me","where","the station","is"]],
+   note:"Indirect question keeps subject before verb."},
+  {chunks:["I","am looking forward to","seeing","you","again"],
+   accepted:[["I","am looking forward to","seeing","you","again"]],
+   note:"look forward to + -ing."},
+  {chunks:["He","has been","working here","since","last spring"],
+   accepted:[["He","has been","working here","since","last spring"]],
+   note:"since + a point in time."},
+  {chunks:["This is","the book","that","my sister","recommended"],
+   accepted:[["This is","the book","that","my sister","recommended"]],
+   note:"Relative clause as object."},
+  {chunks:["I","would rather","stay home","than","go out tonight"],
+   accepted:[["I","would rather","stay home","than","go out tonight"]],
+   note:"would rather A than B."},
+  {chunks:["Please","let me know","if","you need","any help"],
+   accepted:[["Please","let me know","if","you need","any help"]],
+   note:"let + person + know."},
+  {chunks:["It","took me","three hours","to finish","the report"],
+   accepted:[["It","took me","three hours","to finish","the report"]],
+   note:"It takes + person + time + to do."},
+  {chunks:["I","have never","been","to","Okinawa"],
+   accepted:[["I","have never","been","to","Okinawa"]],
+   note:"Experience with the present perfect."},
+  {chunks:["The doctor","told him","not to","drink","too much coffee"],
+   accepted:[["The doctor","told him","not to","drink","too much coffee"]],
+   note:"tell + person + not to do."},
+  {chunks:["Do you know","how long","the museum","stays","open"],
+   accepted:[["Do you know","how long","the museum","stays","open"]],
+   note:"Embedded question after do you know."},
+  {chunks:["I","was too tired","to","cook","dinner last night"],
+   accepted:[["I","was too tired","to","cook","dinner last night"]],
+   note:"too ... to do."},
+  {chunks:["My glasses","are","not","where","I left them"],
+   accepted:[["My glasses","are","not","where","I left them"]],
+   note:"where clause as a complement."},
+  {chunks:["If","it rains tomorrow","we","will stay","at home"],
+   accepted:[["If","it rains tomorrow","we","will stay","at home"]],
+   note:"First conditional: present in the if clause."}
+];
+function makeWordOrderTask(){
+  const item=pick(WORD_ORDER_ITEMS);
+  const answer=item.accepted[0];
+  let chunks=shuffle(item.chunks);
+  for(let guard=0;guard<20&&chunks.join("|")===answer.join("|");guard++)chunks=shuffle(item.chunks);
+  return{kind:"wordOrder",
+    prompt:"Put the words in the right order",
+    help:"Tap the words one by one to build the sentence. Tap a word you placed to take it back.",
+    chunks,accepted:item.accepted,answer,note:item.note,duration:45000};
+}
 const TEMPLATE_TIERS={
   "language-meaning-v1":2,"language-order-v1":2,"spatial-cube-v1":2,
   "prediction-symbol-v1":2,"calculation-compare-v1":2,"memory-reverse-v1":2,
@@ -957,12 +1017,12 @@ const TEMPLATE_TIERS={
   "attention-search-v1":2,"timing-five-v1":2,
   "memory-nback-v1":3,"language-anagram-v1":3,"spatial-perspective-v1":3,
   "prediction-double-v1":3,"inhibition-rule-switch-v1":3,"calculation-multistep-v1":3,
-  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"spatial-flow-link-v1":3,"spatial-pipe-flow-v1":2,"attention-screw-out-v1":2,"timing-tower-stack-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
+  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"spatial-flow-link-v1":3,"spatial-pipe-flow-v1":2,"attention-screw-out-v1":2,"timing-tower-stack-v1":2,"language-word-order-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
 };
 const tierFor = templateId => TEMPLATE_TIERS[templateId]||1;
 const TEMPLATE_FLAVORS={
   "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","spatial-park-jam-v1":"satisfying","spatial-flow-link-v1":"satisfying","spatial-pipe-flow-v1":"satisfying","spatial-rope-untangle-v1":"quirky","calculation-rpg-battle-v1":"wild","calculation-gate-run-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild","timing-tower-stack-v1":"wild",
-  "memory-missing-v1":"quirky","reaction-emoji-match-v1":"quirky","attention-animal-count-v1":"quirky","inhibition-parity-v1":"quirky","attention-kana-count-v1":"quirky","attention-dual-v1":"quirky","language-anagram-v1":"quirky","social-partner-mood-v1":"quirky","social-date-v1":"wild",
+  "memory-missing-v1":"quirky","reaction-emoji-match-v1":"quirky","attention-animal-count-v1":"quirky","inhibition-parity-v1":"quirky","attention-kana-count-v1":"quirky","attention-dual-v1":"quirky","language-anagram-v1":"quirky","language-word-order-v1":"satisfying","social-partner-mood-v1":"quirky","social-date-v1":"wild",
   "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","prediction-chain-puzzle-v1":"satisfying","attention-water-sort-v1":"satisfying","prediction-pin-pull-v1":"wild","attention-screw-out-v1":"quirky","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
 };
 const flavorFor = templateId => TEMPLATE_FLAVORS[templateId]||"classic";
@@ -1062,7 +1122,8 @@ const TASK_FACTORIES = [
   {id:"spatial-flow-link-v1",version:"1.9",category:"spatial",make:()=>makeFlowTask()},
   {id:"spatial-pipe-flow-v1",version:"1.10",category:"spatial",make:()=>makePipeTask()},
   {id:"attention-screw-out-v1",version:"1.11",category:"attention",make:()=>makeScrewTask()},
-  {id:"timing-tower-stack-v1",version:"1.12",category:"timing",make:()=>makeTowerTask()}
+  {id:"timing-tower-stack-v1",version:"1.12",category:"timing",make:()=>makeTowerTask()},
+  {id:"language-word-order-v1",version:"1.13",category:"language",make:()=>makeWordOrderTask()}
 ];
 
 function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
@@ -1209,6 +1270,7 @@ function renderTask(task){
   if(task.kind==="pipeFlow"){renderPipeFlow(task);return}
   if(task.kind==="screwOut"){renderScrewOut(task);return}
   if(task.kind==="towerStack"){renderTowerStack(task);return}
+  if(task.kind==="wordOrder"){renderWordOrder(task);return}
 }
 function renderMemoryPath(task){
   const grid=document.createElement("div");grid.className="memory-grid";const buttons=[];for(let i=0;i<9;i++){const b=document.createElement("button");b.type="button";b.className="memory-tile";b.disabled=true;b.setAttribute("aria-label",`${i+1}番のマス`);grid.append(b);buttons.push(b)}$("challenge").append(grid);
@@ -3893,6 +3955,66 @@ function renderTowerStack(task){
   startDeadline(task.duration,()=>{
     if(state.done||questionAnswered)return;state.done=true;
     finishTask(false,{detail:`時間切れ。${stack.length-1}段まででした。`});
+  });
+}
+function renderWordOrder(task){
+  const wrap=document.createElement("div");wrap.className="order-stage";
+  const line=document.createElement("div");line.className="order-line";line.setAttribute("aria-live","polite");
+  const pool=document.createElement("div");pool.className="order-pool";
+  const actions=document.createElement("div");actions.className="order-actions";
+  const clear=document.createElement("button");clear.type="button";clear.className="order-clear";clear.textContent="Clear";
+  actions.append(clear);
+  wrap.append(line,pool,actions);$("challenge").append(wrap);
+  const placed=[],state={done:false};
+  const draw=()=>{
+    line.replaceChildren();
+    if(!placed.length){
+      const ghost=document.createElement("span");ghost.className="order-ghost";
+      ghost.textContent="Your sentence appears here";line.append(ghost);
+    }
+    placed.forEach((entry,index)=>{
+      const chip=document.createElement("button");chip.type="button";chip.className="order-chip placed";
+      chip.textContent=entry.text;chip.setAttribute("aria-label",`Remove ${entry.text}`);
+      chip.addEventListener("click",()=>{
+        if(state.done)return;
+        placed.splice(index,1);entry.button.disabled=false;entry.button.classList.remove("used");draw();
+      });
+      line.append(chip);
+    });
+    clear.disabled=!placed.length||state.done;
+  };
+  const check=()=>{
+    const sentence=placed.map(entry=>entry.text);
+    const ok=task.accepted.some(option=>option.length===sentence.length&&option.every((word,index)=>word===sentence[index]));
+    state.done=true;
+    pool.querySelectorAll("button").forEach(button=>{button.disabled=true});
+    clear.disabled=true;
+    line.classList.add(ok?"correct":"wrong");
+    later(()=>finishTask(ok,{
+      quality:clamp(1-(performance.now()-questionStartedAt)/task.duration,0,1),
+      detail:ok?`“${task.answer.join(" ")}” — ${task.note}`:`Correct: “${task.answer.join(" ")}” — ${task.note}`
+    }),ok?420:520);
+  };
+  task.chunks.forEach(text=>{
+    const button=document.createElement("button");button.type="button";button.className="order-chip";
+    button.textContent=text;
+    button.addEventListener("click",()=>{
+      if(state.done||button.disabled)return;
+      button.disabled=true;button.classList.add("used");
+      placed.push({text,button});draw();
+      if(placed.length===task.chunks.length)later(check,220);
+    });
+    pool.append(button);
+  });
+  clear.addEventListener("click",()=>{
+    if(state.done)return;
+    placed.splice(0).forEach(entry=>{entry.button.disabled=false;entry.button.classList.remove("used")});
+    draw();
+  });
+  draw();
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`Time is up. Correct: “${task.answer.join(" ")}”`});
   });
 }
 function finishTask(correct,meta={}){

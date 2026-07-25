@@ -5,9 +5,9 @@ Environment: local static server, desktop Chromium browser automation, headless 
 
 ## Verified
 
-- `app.js` parses successfully and the catalog contains 60 unique factory IDs (52 in v1.0, one each in v1.4.0/v1.5.0/v1.6.0/v1.7.0, four in v1.8.0, one in v1.9.0, one in v1.10.0, one in v1.11.0, one in v1.12.0).
+- `app.js` parses successfully and the catalog contains 60 unique factory IDs (52 in v1.0, one each in v1.4.0/v1.5.0/v1.6.0/v1.7.0, four in v1.8.0, one in v1.9.0, one in v1.10.0, one in v1.11.0, one in v1.12.0, one in v1.14.0).
 - Every one of the first 50 factories was played through its correct interaction path in five browser batches; the two later additions (`language-english-v1`, `social-partner-mood-v1`) were then played correctly as well.
-- Final build: all 64 factories generated and rendered without an exception across 33 renderer kinds.
+- Final build: all 65 factories generated and rendered without an exception across 34 renderer kinds.
 - Randomized generator check: 300 generations per factory (15,600 generated tasks) produced no missing answer, duplicate option, unknown category, invalid tier, or generator error.
 - Session selector check: 3,000 generated sessions across brain levels 1–3 had 12 unique tasks, no tier leak, category count at most two, all four play flavors, no Tier-1 boss, and the author boss at position 6 for levels 2–3.
 - Grade boundaries verified: 85/84 → 処老/初老, 60/59 → 初老/中老, 40/39 → 中老/大老.
@@ -44,6 +44,7 @@ Environment: local static server, desktop Chromium browser automation, headless 
 - v1.11.0 bolt-removal testing kept only layouts where at most 20% of the 720 orders succeed (a sampled board scored 80/720 = 11%). In the browser at 390×900 the winning order removed all three bars for `正解` and a wrong order ended on a buried bolt for `残念`, with no page or console error. The first build drew each bar at its own height, so a bolt could be scored as buried while looking clear; bars now cross on one plane and buried bolts show through as shadows.
 - v1.12.0 block-stacking testing in the browser at 390×900 landed five of five levels for `正解` with five clean drops when the drop was timed against the stack below, and missed at two levels for `残念` when dropped at random, with no page or console error.
 - v1.13.0 added difficulty-step metadata only: the catalogue reports 64 families, every one at step 1, with no duplicate family and no step-2 template in existence. The validator passed at 20 iterations over all 64 factories, a sampled session carried the new `step` and `family` fields on each task, and nothing changed in what a player sees.
+- v1.14.0 English word-order testing in the browser at 390×900 built the target sentence chunk by chunk for `正解` and the reversed order for `残念`, with the correct sentence and its grammar note shown in English, and no page or console error.
 - The four Krea2 WebP assets load at 768×960; direct visual review found the intended distinct adult/SFW characters and no text/watermark defects.
 - Fresh v1.2.3 320×900 headless Chrome captures showed no horizontal clipping or overlap on the home screen or profile/pace dialog; the larger primary and pace controls remained fully visible.
 - Initial-load network capture contained only same-origin app requests; no app XHR/fetch/WebSocket/telemetry was present. CSP retains `connect-src 'none'`.
