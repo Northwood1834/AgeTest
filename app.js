@@ -5,7 +5,7 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.3.1";
+const APP_VERSION = "1.3.2";
 const CONTENT_PACK = "1.0";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
@@ -90,6 +90,17 @@ const CUBE_COLORS=[
   {name:"むらさき",hex:"#A66DC2"},{name:"みどり",hex:"#6BAE8E"},{name:"きいろ",hex:"#D5A93F"},
   {name:"あお",hex:"#5A88BE"},{name:"ピンク",hex:"#D983A0"},{name:"しろ",hex:"#D8D4DC"}
 ];
+const CUBE_TURN_LABELS={right:"右面→正面",left:"左面→正面",up:"上面→正面",down:"下面→正面"};
+const CUBE_TURN_SEQUENCES=[
+  ["right","up"],["up","right"],["right","left"],["up","down"],
+  ["right","up","left"],["up","right","down"],["right","left","up"],["up","down","right"],
+  ["right","left","right"],["up","down","up"]
+];
+function cubeFaceAfterTurns(turns){
+  let state=[0,1,2,3,4,5];
+  turns.forEach(turn=>{const [front,right,back,left,top,bottom]=state;if(turn==="right")state=[right,back,left,front,top,bottom];else if(turn==="left")state=[left,front,right,back,top,bottom];else if(turn==="up")state=[top,right,bottom,left,back,front];else state=[bottom,right,top,left,front,back]});
+  return state[0]
+}
 const DATE_SCENARIOS=[
   {name:"蒼真",age:26,role:"ブックカフェで会った青年",image:"assets/date-anime.webp",alt:"夕方のブックカフェにいる架空の成人男性",closing:"その誘い、うれしい。次の休みに行こう。",steps:[
     {line:"この店、静かで落ち着くんだ。よく来るの？",answer:"初めて。おすすめの本、教えてくれる？",choices:["初めて。おすすめの本、教えてくれる？","静かすぎて眠くなりそう","本よりスマホのほうが好き"]},
@@ -160,7 +171,7 @@ const TASK_FACTORIES = [
   ],r=pick(rows);return{kind:"choice",prompt:"五十音順で2番目は？",help:r[0].join("・"),options:shuffle(r[0]),answer:r[1],duration:9000}}},
   {id:"inhibition-stroop-v1",version:"1.0",category:"inhibition",make:()=>{const word=pick(COLOR_NAMES),ink=pick(COLOR_NAMES.filter(x=>x!==word));return{kind:"stroop",prompt:"文字ではなく、インクの色は？",help:"読んだら負け。見てください。",word,ink,options:shuffle(COLOR_NAMES),answer:ink,duration:6500}}},
   {id:"inhibition-flanker-v1",version:"1.0",category:"inhibition",make:()=>{const answer=pick(["左","右"]),center=answer==="左"?"←":"→",outer=answer==="左"?"→":"←";return{kind:"flanker",prompt:"真ん中の矢印はどっち？",help:"外野の声は無視。",line:`${outer} ${outer} ${center} ${outer} ${outer}`,options:["左","右"],answer,duration:5500}}},
-  {id:"spatial-cube-v1",version:"1.0",category:"spatial",make:()=>{const colors=shuffle(CUBE_COLORS);return{kind:"cube",prompt:"回転後、正面に来る色は？",help:"立方体が右の面を見せます。",colors,answer:colors[1].name,options:shuffle(colors.slice(0,4).map(x=>x.name)),duration:8500}}},
+  {id:"spatial-cube-v1",version:"1.0",category:"spatial",make:()=>{const colors=shuffle(CUBE_COLORS),turns=pick(CUBE_TURN_SEQUENCES),answer=colors[cubeFaceAfterTurns(turns)].name;return{kind:"cube",prompt:"色の位置を覚えて、最後の正面は？",help:"見えている3面を覚えてください。回転すると色が隠れます。",colors,turns,answer,options:shuffle([answer,...shuffle(colors.filter(color=>color.name!==answer)).slice(0,3).map(color=>color.name)]),duration:8500}}},
   {id:"spatial-rotation-v1",version:"1.0",category:"spatial",make:()=>{const degrees=pick([90,180,270]),arrows=["↑","→","↓","←"],answer=arrows[(degrees/90)%4];return{kind:"rotation",prompt:`この矢印を右に${degrees}度回すと？`,help:"首は回さなくて大丈夫です。",symbol:"↑",options:shuffle(arrows),answer,duration:6500}}},
   {id:"prediction-number-v1",version:"1.0",category:"prediction",make:()=>{const start=randomInt(1,6),step=randomInt(2,5),seq=[0,1,2,3].map(i=>start+i*step),answer=start+4*step;return{kind:"pattern",prompt:"次に来る数を未来予知",help:"法則はひとつだけ。たぶん。",sequence:seq,options:shuffle([answer,answer+step,answer-1,answer+1]).map(String),answer:String(answer),duration:7500}}},
   {id:"prediction-symbol-v1",version:"1.0",category:"prediction",make:()=>{const rows=[[["○","△","○","△"],"○",["△","□","☆"]],[["↑","→","↓","←"],"↑",["→","↓","←"]],[["●","●","○","●","●"],"○",["●","△","□"]]],r=pick(rows);return{kind:"pattern",prompt:"？に入るものを未来予知",help:"水晶玉は使用禁止です。",sequence:r[0],options:shuffle([r[1],...r[2]]),answer:r[1],duration:7000}}},
@@ -353,7 +364,8 @@ function renderFlashChoice(task){
   later(()=>{items.classList.add("covered");$("question-help").textContent=task.afterHelp||"さっき、なかったものは？";choices.hidden=false;choices.querySelectorAll("button").forEach(b=>b.disabled=false);startDeadline(task.duration,()=>genericTimeout(task))},task.exposureMs||FLASH_EXPOSURE_MS);
 }
 function renderCube(task){
-  const scene=createStage3D("cube-scene","回転する色つき立方体"),cube=document.createElement("div");cube.className="cube";const names=["front","right","back","left","top","bottom"];names.forEach((name,index)=>{const face=document.createElement("div");face.className=`cube-face cube-${name}`;face.style.background=task.colors[index].hex;face.textContent=task.colors[index].name;cube.append(face)});scene.world.append(cube);$("challenge").append(scene.root);const choices=makeChoices(task,{disabled:true});later(()=>cube.classList.add("turned"),450);later(()=>{choices.querySelectorAll("button").forEach(b=>b.disabled=false);$("question-help").textContent="いま正面にある色を選んで。";startDeadline(task.duration,()=>genericTimeout(task))},1500);
+  const scene=createStage3D("cube-scene","色を隠して順番に回転する立方体"),view=document.createElement("div"),cube=document.createElement("div"),turns=document.createElement("div");view.className="cube-view";cube.className="cube";turns.className="cube-turns";turns.hidden=true;turns.setAttribute("aria-label",`回転順: ${task.turns.map(turn=>CUBE_TURN_LABELS[turn]).join("、")}`);const badges=task.turns.map((turn,index)=>{const badge=document.createElement("span");badge.textContent=`${index+1}. ${CUBE_TURN_LABELS[turn]}`;turns.append(badge);return badge}),names=["front","right","back","left","top","bottom"];names.forEach((name,index)=>{const face=document.createElement("div");face.className=`cube-face cube-${name}`;face.style.background=task.colors[index].hex;face.textContent=task.colors[index].name;face.setAttribute("aria-hidden","true");cube.append(face)});view.append(cube);scene.world.append(view);$("challenge").append(scene.root,turns);const choices=makeChoices(task,{disabled:true}),reducedMotion=matchMedia("(prefers-reduced-motion: reduce)").matches,turnDelay=reducedMotion?320:700,rotations={right:[0,1,0,-90],left:[0,1,0,90],up:[1,0,0,-90],down:[1,0,0,90]};
+  later(()=>{if(questionAnswered)return;cube.classList.add("masked");turns.hidden=false;$("question-help").textContent=`色は隠れました。${task.turns.map(turn=>CUBE_TURN_LABELS[turn]).join(" → ")} の順です。`;let matrix=new DOMMatrix(),step=0;const advance=()=>{if(questionAnswered)return;if(step>=task.turns.length){badges.forEach(badge=>{badge.classList.remove("active");badge.classList.add("done")});choices.querySelectorAll("button").forEach(button=>button.disabled=false);$("question-help").textContent="最後に正面へ来た色を、記憶で選んで。";startDeadline(task.duration,()=>genericTimeout(task));return}badges.forEach((badge,index)=>{badge.classList.toggle("active",index===step);badge.classList.toggle("done",index<step)});const [x,y,z,degrees]=rotations[task.turns[step]];matrix=new DOMMatrix().rotateAxisAngle(x,y,z,degrees).multiply(matrix);cube.style.transform=matrix.toString();step++;later(advance,turnDelay)};later(advance,reducedMotion?120:260)},2400);
 }
 function renderCountShapes(task){
   const colors={purple:"#A66DC2",green:"#62A384",orange:"#D88745"},grid=document.createElement("div");grid.className="shape-grid";task.cells.forEach(cell=>{const s=document.createElement("span");s.className=`shape ${cell.shape}`;s.style.setProperty("--shape-color",colors[cell.color]);grid.append(s)});$("challenge").append(grid);makeChoices(task);startDeadline(task.duration,()=>genericTimeout(task));
