@@ -101,10 +101,11 @@ main{width:100%;max-width:29rem;min-height:100dvh;padding:1.65rem 1.15rem 2.2rem
 @keyframes run-crash{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
 
 /* chain puzzle */
-.puzzle-stage{display:grid;gap:.5rem}
+.puzzle-stage{display:grid;gap:.5rem;justify-items:center}
 .puzzle-stage:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:1rem}
-.puzzle-canvas{width:100%;display:block;border-radius:1rem;background:linear-gradient(160deg,#FBF7FE,#EFE6F8);box-shadow:0 10px 26px rgba(49,30,58,.16);touch-action:manipulation;cursor:pointer}
-.puzzle-pad{display:grid;grid-template-columns:repeat(6,1fr);gap:.3rem}
+.puzzle-canvas{display:block;max-width:100%;border-radius:1rem;background:linear-gradient(160deg,#FBF7FE,#EFE6F8);box-shadow:0 10px 26px rgba(49,30,58,.16);touch-action:manipulation;cursor:pointer}
+.puzzle-pad{display:grid;gap:0;width:var(--board-width,100%)}
+.puzzle-key{margin:0 .11rem}
 .puzzle-key{min-height:2.7rem;border:1.5px solid var(--line);border-radius:.7rem;background:#fff;color:var(--accent-deep);font-size:.95rem;font-weight:900;box-shadow:0 2px 8px rgba(49,30,58,.07)}
 .puzzle-key:active{transform:translateY(2px);box-shadow:none}
 

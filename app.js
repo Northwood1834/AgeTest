@@ -222,7 +222,7 @@ const PUZZLE_KINDS=[
   {key:"glasses",emoji:"🤓",color:"#66C08C",light:"#C4EFD5"},
   {key:"money",emoji:"🤑",color:"#5FB6E0",light:"#C3E8F8"}
 ];
-const PUZZLE_COLS=6,PUZZLE_ROWS=9,PUZZLE_MATCH=4,PUZZLE_DROPS=3;
+const PUZZLE_COLS=7,PUZZLE_ROWS=9,PUZZLE_MATCH=4,PUZZLE_DROPS=1;
 const puzzleKind=key=>PUZZLE_KINDS.find(kind=>kind.key===key);
 const puzzleClone=board=>board.map(row=>[...row]);
 const puzzleEmpty=()=>Array.from({length:PUZZLE_ROWS},()=>Array(PUZZLE_COLS).fill(null));
@@ -295,10 +295,10 @@ function puzzleComponent(board,r,c){
 }
 function makePuzzleTask(){
   const target=3;
-  for(let attempt=0;attempt<900;attempt++){
+  for(let attempt=0;attempt<4000;attempt++){
     const palette=shuffle(PUZZLE_KINDS).slice(0,4).map(kind=>kind.key),[k1,k2,k3]=palette;
     const board=puzzleEmpty();
-    const mirrored=randomFloat()<.5,offset=randomInt(0,1);
+    const mirrored=randomFloat()<.5,offset=randomInt(0,PUZZLE_COLS-5);
     const lane=index=>{const raw=offset+index;return mirrored?PUZZLE_COLS-1-raw:raw};
     const [a,b,c,d,e]=[0,1,2,3,4].map(lane);
     const hA=randomInt(2,3),row2=hA+1,row3=row2+1;
@@ -307,7 +307,23 @@ function makePuzzleTask(){
     heights[a]=hA;reserve(a,hA-1,k1);
     heights[b]=row3+4;reserve(b,hA-1,k1);reserve(b,hA,k1);reserve(b,row2+2,k2);reserve(b,row3+3,k3);
     [c,d,e].forEach(col=>{heights[col]=row3+2;reserve(col,row2,k2);reserve(col,row3+1,k3)});
-    [...Array(PUZZLE_COLS).keys()].filter(col=>![a,b,c,d,e].includes(col)).forEach(col=>{heights[col]=randomInt(2,row2+1)});
+    // decoys: three of the same face stacked on open columns. Dropping there clears,
+    // but nothing sits above them, so the clear stops at one step.
+    const spare=[...Array(PUZZLE_COLS).keys()].filter(col=>![a,b,c,d,e].includes(col));
+    const used=[];
+    shuffle(spare).forEach(col=>{
+      // a decoy stack must not touch the k1 trigger in a or b, nor the other decoy
+      const nearTrigger=Math.abs(col-a)<=1||Math.abs(col-b)<=1;
+      const low=nearTrigger?hA+5:3,high=nearTrigger?PUZZLE_ROWS:6;
+      const options=[];
+      for(let height=low;height<=high;height++){
+        if(used.some(other=>Math.abs(other-height)<4&&spare.some(s=>Math.abs(s-col)===1)))continue;
+        options.push(height);
+      }
+      if(!options.length){heights[col]=randomInt(2,3);return}
+      const height=pick(options);used.push(height);heights[col]=height;
+      for(let i=1;i<=3;i++)reserve(col,height-i,k1);
+    });
     let ok=true;
     for(let index=0;index<PUZZLE_ROWS&&ok;index++){
       for(let col=0;col<PUZZLE_COLS&&ok;col++){
@@ -326,20 +342,24 @@ function makePuzzleTask(){
       }
     }
     if(!ok||puzzleGroups(board).length)continue;
-    const probe=puzzleClone(board);
-    if(puzzleDrop(probe,a,k1)<0)continue;
-    if(puzzleResolve(probe).chain<target)continue;
-    const{best,bestCol}=puzzleBestChain(board,k1);
-    if(best<target)continue;
-    return{kind:"chainPuzzle",prompt:`${target}連鎖以上を決めて`,
-      help:"落とす列をタップ。同じ顔が縦横に4つつながると消え、上のブロックが落ちて連鎖します。",
-      board,queue:[k1,pick(palette),pick(palette)],target,best,bestCol,palette,duration:60000};
+    const outcome=[];
+    for(let col=0;col<PUZZLE_COLS;col++){
+      const probe=puzzleClone(board);
+      if(puzzleDrop(probe,col,k1)<0){outcome.push(-1);continue}
+      outcome.push(puzzleResolve(probe).chain);
+    }
+    const solutions=outcome.filter(chain=>chain>=target).length;
+    const decoys=outcome.filter(chain=>chain>=1&&chain<target).length;
+    if(solutions!==1||outcome[a]<target||decoys<2)continue;      // one answer, several tempting traps
+    return{kind:"chainPuzzle",prompt:`1手で${target}連鎖を決めて`,
+      help:"落とす列をタップ。同じ顔が4つつながると消え、その上のブロックが落ちて次が揃うと連鎖します。消えるだけの場所もあります。",
+      board,queue:[k1,pick(palette),pick(palette)],target,best:Math.max(...outcome),bestCol:a,decoys,palette,duration:60000};
   }
   const board=puzzleEmpty(),palette=PUZZLE_KINDS.slice(0,4).map(kind=>kind.key);
   [0,1,2].forEach(index=>{board[PUZZLE_ROWS-1-index][0]=palette[0]});
   [0,1,2].forEach(index=>{board[PUZZLE_ROWS-1-index][1]=palette[1]});
-  return{kind:"chainPuzzle",prompt:"ブロックを消して",help:"落とす列をタップ。同じ顔が縦横に4つつながると消えます。",
-    board,queue:[palette[0],palette[1],palette[1]],target:1,best:1,bestCol:0,palette,duration:60000};
+  return{kind:"chainPuzzle",prompt:"ブロックを消して",help:"落とす列をタップ。同じ顔が4つつながると消えます。",
+    board,queue:[palette[0],palette[1],palette[1]],target:1,best:1,bestCol:0,decoys:0,palette,duration:60000};
 }
 const TEMPLATE_TIERS={
   "language-meaning-v1":2,"language-order-v1":2,"spatial-cube-v1":2,
@@ -1260,6 +1280,7 @@ function renderChainPuzzle(task){
   const canvas=document.createElement("canvas");canvas.className="puzzle-canvas";
   canvas.setAttribute("role","img");canvas.setAttribute("aria-label",`${PUZZLE_COLS}列の連鎖パズル`);
   const pad=document.createElement("div");pad.className="puzzle-pad";
+  pad.style.gridTemplateColumns=`repeat(${PUZZLE_COLS},1fr)`;
   const buttons=[];
   for(let col=0;col<PUZZLE_COLS;col++){
     const button=document.createElement("button");button.type="button";button.className="puzzle-key";
@@ -1275,13 +1296,15 @@ function renderChainPuzzle(task){
   let W=0,H=0,cell=0,boardX=0,boardY=0,headH=0,clock=0;
   const resize=()=>{
     const dpr=Math.min(window.devicePixelRatio||1,3);
-    W=Math.max(240,Math.round(canvas.clientWidth||wrap.clientWidth||320));
-    headH=Math.round(W*.17);
-    cell=Math.min((W-12)/PUZZLE_COLS,(Math.min(430,W*1.32)-headH)/PUZZLE_ROWS);
-    H=Math.round(headH+cell*PUZZLE_ROWS+6);
-    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);canvas.style.height=`${H}px`;
+    const avail=Math.max(240,Math.round(wrap.clientWidth||canvas.clientWidth||320));
+    headH=Math.round(avail*.17);
+    cell=Math.floor(Math.min(avail/PUZZLE_COLS,(Math.min(438,avail*1.34)-headH)/PUZZLE_ROWS));
+    W=cell*PUZZLE_COLS;H=headH+cell*PUZZLE_ROWS;
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
     ctx.setTransform(dpr,0,0,dpr,0,0);
-    boardX=Math.round((W-cell*PUZZLE_COLS)/2);boardY=headH;
+    boardX=0;boardY=headH;
+    wrap.style.setProperty("--board-width",`${W}px`);
   };
   const key=(r,c)=>`${r},${c}`;
   const cellX=c=>boardX+c*cell,cellY=r=>boardY+r*cell;
@@ -1318,7 +1341,7 @@ function renderChainPuzzle(task){
     const bw=cell*PUZZLE_COLS,bh=cell*PUZZLE_ROWS;
     const back=ctx.createLinearGradient(boardX,boardY,boardX+bw,boardY+bh);
     back.addColorStop(0,"#F7F1FB");back.addColorStop(1,"#E9DFF4");
-    ctx.fillStyle=back;ctx.beginPath();ctx.roundRect(boardX-4,boardY-4,bw+8,bh+8,14);ctx.fill();
+    ctx.fillStyle=back;ctx.beginPath();ctx.roundRect(boardX,boardY,bw,bh,12);ctx.fill();
     ctx.strokeStyle="rgba(122,84,150,.22)";ctx.lineWidth=1;
     for(let c=0;c<=PUZZLE_COLS;c++){ctx.beginPath();ctx.moveTo(cellX(c),boardY);ctx.lineTo(cellX(c),boardY+bh);ctx.stroke()}
     for(let r=0;r<=PUZZLE_ROWS;r++){ctx.beginPath();ctx.moveTo(boardX,cellY(r));ctx.lineTo(boardX+bw,cellY(r));ctx.stroke()}
@@ -1340,21 +1363,21 @@ function renderChainPuzzle(task){
   };
   const drawHead=()=>{
     ctx.fillStyle="rgba(255,255,255,.92)";
-    ctx.beginPath();ctx.roundRect(6,4,W-12,headH-12,14);ctx.fill();
+    ctx.beginPath();ctx.roundRect(0,2,W,headH-10,12);ctx.fill();
     ctx.strokeStyle="rgba(122,84,150,.18)";ctx.lineWidth=1;
-    ctx.beginPath();ctx.roundRect(6,4,W-12,headH-12,14);ctx.stroke();
-    const size=headH*.58,y=4+(headH-12-size)/2;
+    ctx.beginPath();ctx.roundRect(.5,2.5,W-1,headH-11,12);ctx.stroke();
+    const size=headH*.58,y=2+(headH-10-size)/2;
     ctx.fillStyle="#6F6078";ctx.font=`800 ${Math.round(headH*.2)}px "Hiragino Maru Gothic ProN",sans-serif`;
-    ctx.textBaseline="middle";ctx.fillText("つぎ",16,4+(headH-12)/2);
-    queue.slice(0,2).forEach((kindKey,index)=>{
-      drawGem(58+index*(size*.92),y,size*(index?.72:1),kindKey,{alpha:index?.75:1});
+    ctx.textBaseline="middle";ctx.fillText("つぎ",10,2+(headH-10)/2);
+    queue.slice(0,PUZZLE_DROPS>1?2:1).forEach((kindKey,index)=>{
+      drawGem(46+index*(size*.92),y,size*(index?.72:1),kindKey,{alpha:index?.75:1});
     });
-    const right=W-16;
+    const right=W-10;
     ctx.textAlign="right";
     ctx.fillStyle="#493B52";ctx.font=`900 ${Math.round(headH*.26)}px "Hiragino Maru Gothic ProN",sans-serif`;
-    ctx.fillText(`${task.target}連鎖`,right,4+(headH-12)*.36);
+    ctx.fillText(`${task.target}連鎖`,right,2+(headH-10)*.36);
     ctx.fillStyle=state.drops<=1?"#A64763":"#6F6078";ctx.font=`800 ${Math.round(headH*.2)}px "Hiragino Maru Gothic ProN",sans-serif`;
-    ctx.fillText(`のこり ${state.drops}手`,right,4+(headH-12)*.72);
+    ctx.fillText(state.drops>0?`のこり ${state.drops}手`:"けっか",right,2+(headH-10)*.72);
     ctx.textAlign="left";
   };
   const drawEffects=()=>{
