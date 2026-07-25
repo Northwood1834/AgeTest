@@ -5,8 +5,8 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.5.0";
-const CONTENT_PACK = "1.2";
+const APP_VERSION = "1.6.0";
+const CONTENT_PACK = "1.3";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
 const PACE_RELAXED = "relaxed";
@@ -214,6 +214,133 @@ function makeRunStage(){
   return{kind:"laneRun",prompt:"走るコースをタップで切り抜けて",help:"左右ボタンで位置、画面タップでジャンプ。穴と木箱は跳ぶ。岩と赤いTNTは跳ばずによける。",
     theme:theme.key,obstacles,scenery,stageLength:z+70,speed:36,duration:45000};
 }
+const PUZZLE_KINDS=[
+  {key:"dog",emoji:"🐶",color:"#F5A94E",light:"#FFD9A0"},
+  {key:"cat",emoji:"🐱",color:"#EA7E9B",light:"#FFD1DF"},
+  {key:"panda",emoji:"🐼",color:"#8E9BC4",light:"#D6DCF2"},
+  {key:"smile",emoji:"😀",color:"#F2CE4B",light:"#FFF0B0"},
+  {key:"glasses",emoji:"🤓",color:"#66C08C",light:"#C4EFD5"},
+  {key:"money",emoji:"🤑",color:"#5FB6E0",light:"#C3E8F8"}
+];
+const PUZZLE_COLS=6,PUZZLE_ROWS=9,PUZZLE_MATCH=4,PUZZLE_DROPS=3;
+const puzzleKind=key=>PUZZLE_KINDS.find(kind=>kind.key===key);
+const puzzleClone=board=>board.map(row=>[...row]);
+const puzzleEmpty=()=>Array.from({length:PUZZLE_ROWS},()=>Array(PUZZLE_COLS).fill(null));
+function puzzleSettle(board){
+  const moves=[];
+  for(let c=0;c<PUZZLE_COLS;c++){
+    let write=PUZZLE_ROWS-1;
+    for(let r=PUZZLE_ROWS-1;r>=0;r--){
+      if(!board[r][c])continue;
+      if(r!==write){board[write][c]=board[r][c];board[r][c]=null;moves.push({from:r,to:write,col:c})}
+      write--;
+    }
+  }
+  return moves;
+}
+function puzzleGroups(board){
+  const seen=Array.from({length:PUZZLE_ROWS},()=>Array(PUZZLE_COLS).fill(false)),groups=[];
+  for(let r=0;r<PUZZLE_ROWS;r++)for(let c=0;c<PUZZLE_COLS;c++){
+    const kind=board[r][c];if(!kind||seen[r][c])continue;
+    const stack=[[r,c]],cells=[];seen[r][c]=true;
+    while(stack.length){
+      const [cr,cc]=stack.pop();cells.push([cr,cc]);
+      [[1,0],[-1,0],[0,1],[0,-1]].forEach(([dr,dc])=>{
+        const nr=cr+dr,nc=cc+dc;
+        if(nr<0||nr>=PUZZLE_ROWS||nc<0||nc>=PUZZLE_COLS||seen[nr][nc]||board[nr][nc]!==kind)return;
+        seen[nr][nc]=true;stack.push([nr,nc]);
+      });
+    }
+    if(cells.length>=PUZZLE_MATCH)groups.push(cells);
+  }
+  return groups;
+}
+function puzzleResolve(board){
+  let chain=0,cleared=0;
+  for(;;){
+    puzzleSettle(board);
+    const groups=puzzleGroups(board);
+    if(!groups.length)break;
+    chain++;
+    groups.forEach(cells=>cells.forEach(([r,c])=>{board[r][c]=null;cleared++}));
+  }
+  return{chain,cleared};
+}
+function puzzleDrop(board,col,kind){
+  for(let r=PUZZLE_ROWS-1;r>=0;r--)if(!board[r][col]){board[r][col]=kind;return r}
+  return -1;
+}
+function puzzleBestChain(board,kind){
+  let best=0,bestCol=0;
+  for(let col=0;col<PUZZLE_COLS;col++){
+    const copy=puzzleClone(board);
+    if(puzzleDrop(copy,col,kind)<0)continue;
+    const{chain}=puzzleResolve(copy);
+    if(chain>best){best=chain;bestCol=col}
+  }
+  return{best,bestCol};
+}
+function puzzleComponent(board,r,c){
+  const kind=board[r][c];if(!kind)return 0;
+  const seen=new Set([`${r},${c}`]),stack=[[r,c]];let size=0;
+  while(stack.length){
+    const[cr,cc]=stack.pop();size++;
+    [[1,0],[-1,0],[0,1],[0,-1]].forEach(([dr,dc])=>{
+      const nr=cr+dr,nc=cc+dc,id=`${nr},${nc}`;
+      if(nr<0||nr>=PUZZLE_ROWS||nc<0||nc>=PUZZLE_COLS||seen.has(id)||board[nr][nc]!==kind)return;
+      seen.add(id);stack.push([nr,nc]);
+    });
+  }
+  return size;
+}
+function makePuzzleTask(){
+  const target=3;
+  for(let attempt=0;attempt<900;attempt++){
+    const palette=shuffle(PUZZLE_KINDS).slice(0,4).map(kind=>kind.key),[k1,k2,k3]=palette;
+    const board=puzzleEmpty();
+    const mirrored=randomFloat()<.5,offset=randomInt(0,1);
+    const lane=index=>{const raw=offset+index;return mirrored?PUZZLE_COLS-1-raw:raw};
+    const [a,b,c,d,e]=[0,1,2,3,4].map(lane);
+    const hA=randomInt(2,3),row2=hA+1,row3=row2+1;
+    const heights={},fixed={};
+    const reserve=(col,index,kind)=>{fixed[`${col},${index}`]=kind};
+    heights[a]=hA;reserve(a,hA-1,k1);
+    heights[b]=row3+4;reserve(b,hA-1,k1);reserve(b,hA,k1);reserve(b,row2+2,k2);reserve(b,row3+3,k3);
+    [c,d,e].forEach(col=>{heights[col]=row3+2;reserve(col,row2,k2);reserve(col,row3+1,k3)});
+    [...Array(PUZZLE_COLS).keys()].filter(col=>![a,b,c,d,e].includes(col)).forEach(col=>{heights[col]=randomInt(2,row2+1)});
+    let ok=true;
+    for(let index=0;index<PUZZLE_ROWS&&ok;index++){
+      for(let col=0;col<PUZZLE_COLS&&ok;col++){
+        if(index>=heights[col])continue;
+        const row=PUZZLE_ROWS-1-index,forced=fixed[`${col},${index}`];
+        if(forced){
+          board[row][col]=forced;
+          if(puzzleComponent(board,row,col)>=PUZZLE_MATCH)ok=false;
+          continue;
+        }
+        const choice=shuffle(palette).find(kind=>{
+          board[row][col]=kind;
+          return puzzleComponent(board,row,col)<PUZZLE_MATCH;
+        });
+        if(!choice)ok=false;else board[row][col]=choice;
+      }
+    }
+    if(!ok||puzzleGroups(board).length)continue;
+    const probe=puzzleClone(board);
+    if(puzzleDrop(probe,a,k1)<0)continue;
+    if(puzzleResolve(probe).chain<target)continue;
+    const{best,bestCol}=puzzleBestChain(board,k1);
+    if(best<target)continue;
+    return{kind:"chainPuzzle",prompt:`${target}連鎖以上を決めて`,
+      help:"落とす列をタップ。同じ顔が縦横に4つつながると消え、上のブロックが落ちて連鎖します。",
+      board,queue:[k1,pick(palette),pick(palette)],target,best,bestCol,palette,duration:60000};
+  }
+  const board=puzzleEmpty(),palette=PUZZLE_KINDS.slice(0,4).map(kind=>kind.key);
+  [0,1,2].forEach(index=>{board[PUZZLE_ROWS-1-index][0]=palette[0]});
+  [0,1,2].forEach(index=>{board[PUZZLE_ROWS-1-index][1]=palette[1]});
+  return{kind:"chainPuzzle",prompt:"ブロックを消して",help:"落とす列をタップ。同じ顔が縦横に4つつながると消えます。",
+    board,queue:[palette[0],palette[1],palette[1]],target:1,best:1,bestCol:0,palette,duration:60000};
+}
 const TEMPLATE_TIERS={
   "language-meaning-v1":2,"language-order-v1":2,"spatial-cube-v1":2,
   "prediction-symbol-v1":2,"calculation-compare-v1":2,"memory-reverse-v1":2,
@@ -226,13 +353,13 @@ const TEMPLATE_TIERS={
   "attention-search-v1":2,"timing-five-v1":2,
   "memory-nback-v1":3,"language-anagram-v1":3,"spatial-perspective-v1":3,
   "prediction-double-v1":3,"inhibition-rule-switch-v1":3,"calculation-multistep-v1":3,
-  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
+  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
 };
 const tierFor = templateId => TEMPLATE_TIERS[templateId]||1;
 const TEMPLATE_FLAVORS={
   "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","calculation-rpg-battle-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild",
   "memory-missing-v1":"quirky","reaction-emoji-match-v1":"quirky","attention-animal-count-v1":"quirky","inhibition-parity-v1":"quirky","attention-kana-count-v1":"quirky","attention-dual-v1":"quirky","language-anagram-v1":"quirky","social-partner-mood-v1":"quirky","social-date-v1":"wild",
-  "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
+  "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","prediction-chain-puzzle-v1":"satisfying","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
 };
 const flavorFor = templateId => TEMPLATE_FLAVORS[templateId]||"classic";
 const PACE_FIXED_KINDS = new Set(["signal","target","timing","runner"]);
@@ -315,7 +442,8 @@ const TASK_FACTORIES = [
   {id:"social-date-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(pick(DATE_SCENARIOS));scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"会話をつないで、デートに誘って",help:"相手の話を受けて、3回選びます。",scenario,duration:18000}}},
   {id:"social-partner-mood-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(PARTNER_MOOD_SCENARIO);scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"不機嫌なパートナーと話して",help:"火に油を注がず、3回会話をつなぎます。",scenario,duration:20000}}},
   {id:"calculation-rpg-battle-v1",version:"1.1",category:"calculation",make:()=>makeBattleTask()},
-  {id:"spatial-lane-run-v1",version:"1.2",category:"spatial",make:()=>makeRunStage()}
+  {id:"spatial-lane-run-v1",version:"1.2",category:"spatial",make:()=>makeRunStage()},
+  {id:"prediction-chain-puzzle-v1",version:"1.3",category:"prediction",make:()=>makePuzzleTask()}
 ];
 
 function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
@@ -452,6 +580,7 @@ function renderTask(task){
   if(task.kind==="dateSim"){renderDateSim(task);return}
   if(task.kind==="rpgBattle"){renderRpgBattle(task);return}
   if(task.kind==="laneRun"){renderLaneRun(task);return}
+  if(task.kind==="chainPuzzle"){renderChainPuzzle(task);return}
 }
 function renderMemoryPath(task){
   const grid=document.createElement("div");grid.className="memory-grid";const buttons=[];for(let i=0;i<9;i++){const b=document.createElement("button");b.type="button";b.className="memory-tile";b.disabled=true;b.setAttribute("aria-label",`${i+1}番のマス`);grid.append(b);buttons.push(b)}$("challenge").append(grid);
@@ -1124,6 +1253,274 @@ function renderLaneRun(task){
   if(window.__SHORO_QA__)window.__SHORO_QA__.run={state,items,task,move,jump:doJump};
   paint(0);token.id=requestAnimationFrame(tick);
   startDeadline(task.duration,()=>stop(false,"時間内にゴールできませんでした。"));
+}
+function renderChainPuzzle(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="puzzle-stage";
+  const canvas=document.createElement("canvas");canvas.className="puzzle-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label",`${PUZZLE_COLS}列の連鎖パズル`);
+  const pad=document.createElement("div");pad.className="puzzle-pad";
+  const buttons=[];
+  for(let col=0;col<PUZZLE_COLS;col++){
+    const button=document.createElement("button");button.type="button";button.className="puzzle-key";
+    button.textContent="▼";button.setAttribute("aria-label",`${col+1}列目に落とす`);
+    pad.append(button);buttons.push(button);
+  }
+  wrap.append(canvas,pad);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const board=task.board.map(row=>[...row]);
+  const queue=[...task.queue];
+  const offsets=new Map(),pops=[],particles=[],rings=[];
+  const state={busy:false,drops:PUZZLE_DROPS,chain:0,bestChain:0,cursor:task.bestCol??2,shake:0,banner:null,clear:0,done:false};
+  let W=0,H=0,cell=0,boardX=0,boardY=0,headH=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(canvas.clientWidth||wrap.clientWidth||320));
+    headH=Math.round(W*.17);
+    cell=Math.min((W-12)/PUZZLE_COLS,(Math.min(430,W*1.32)-headH)/PUZZLE_ROWS);
+    H=Math.round(headH+cell*PUZZLE_ROWS+6);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    boardX=Math.round((W-cell*PUZZLE_COLS)/2);boardY=headH;
+  };
+  const key=(r,c)=>`${r},${c}`;
+  const cellX=c=>boardX+c*cell,cellY=r=>boardY+r*cell;
+  const drawGem=(x,y,size,kindKey,{scale=1,alpha=1,glow=0}={})=>{
+    const kind=puzzleKind(kindKey);if(!kind)return;
+    const s=size*scale,cx=x+size/2,cy=y+size/2,r=s*.42;
+    ctx.save();ctx.globalAlpha=alpha;
+    ctx.fillStyle="rgba(40,24,52,.16)";
+    ctx.beginPath();ctx.ellipse(cx,cy+r*.86,r*.86,r*.28,0,0,Math.PI*2);ctx.fill();
+    if(glow>0){
+      const halo=ctx.createRadialGradient(cx,cy,r*.3,cx,cy,r*2.1);
+      halo.addColorStop(0,`${kind.light}ee`);halo.addColorStop(1,"#ffffff00");
+      ctx.fillStyle=halo;ctx.beginPath();ctx.arc(cx,cy,r*2.1*glow,0,Math.PI*2);ctx.fill();
+    }
+    const body=ctx.createRadialGradient(cx-r*.35,cy-r*.45,r*.15,cx,cy,r*1.15);
+    body.addColorStop(0,kind.light);body.addColorStop(.55,kind.color);body.addColorStop(1,shadeHex(kind.color,-.22));
+    ctx.fillStyle=body;
+    ctx.beginPath();ctx.roundRect(cx-r,cy-r,r*2,r*2,r*.55);ctx.fill();
+    ctx.strokeStyle="rgba(255,255,255,.65)";ctx.lineWidth=Math.max(1,s*.035);
+    ctx.beginPath();ctx.roundRect(cx-r*.97,cy-r*.97,r*1.94,r*1.94,r*.52);ctx.stroke();
+    ctx.fillStyle="rgba(255,255,255,.55)";
+    ctx.beginPath();ctx.ellipse(cx-r*.36,cy-r*.52,r*.4,r*.22,-.5,0,Math.PI*2);ctx.fill();
+    ctx.font=`${Math.round(s*.52)}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
+    ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText(kind.emoji,cx,cy+s*.03);
+    ctx.textAlign="left";ctx.restore();
+  };
+  const shadeHex=(color,amount)=>{
+    const n=parseInt(color.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;
+    const mix=v=>Math.round(clamp(amount<0?v*(1+amount):v+(255-v)*amount,0,255));
+    return `rgb(${mix(r)},${mix(g)},${mix(b)})`;
+  };
+  const drawBoard=()=>{
+    const bw=cell*PUZZLE_COLS,bh=cell*PUZZLE_ROWS;
+    const back=ctx.createLinearGradient(boardX,boardY,boardX+bw,boardY+bh);
+    back.addColorStop(0,"#F7F1FB");back.addColorStop(1,"#E9DFF4");
+    ctx.fillStyle=back;ctx.beginPath();ctx.roundRect(boardX-4,boardY-4,bw+8,bh+8,14);ctx.fill();
+    ctx.strokeStyle="rgba(122,84,150,.22)";ctx.lineWidth=1;
+    for(let c=0;c<=PUZZLE_COLS;c++){ctx.beginPath();ctx.moveTo(cellX(c),boardY);ctx.lineTo(cellX(c),boardY+bh);ctx.stroke()}
+    for(let r=0;r<=PUZZLE_ROWS;r++){ctx.beginPath();ctx.moveTo(boardX,cellY(r));ctx.lineTo(boardX+bw,cellY(r));ctx.stroke()}
+    if(!state.busy&&!state.done){
+      ctx.fillStyle="rgba(166,109,194,.16)";
+      ctx.fillRect(cellX(state.cursor),boardY,cell,bh);
+    }
+  };
+  const drawPieces=()=>{
+    for(let r=0;r<PUZZLE_ROWS;r++)for(let c=0;c<PUZZLE_COLS;c++){
+      const kindKey=board[r][c];if(!kindKey)continue;
+      const offset=offsets.get(key(r,c));
+      drawGem(cellX(c),cellY(r)+(offset?.dy||0),cell,kindKey);
+    }
+    pops.forEach(pop=>{
+      const life=clamp(pop.life,0,1),scale=1+(1-life)*.85;
+      drawGem(cellX(pop.c),cellY(pop.r),cell,pop.kind,{scale,alpha:life,glow:1-life});
+    });
+  };
+  const drawHead=()=>{
+    ctx.fillStyle="rgba(255,255,255,.92)";
+    ctx.beginPath();ctx.roundRect(6,4,W-12,headH-12,14);ctx.fill();
+    ctx.strokeStyle="rgba(122,84,150,.18)";ctx.lineWidth=1;
+    ctx.beginPath();ctx.roundRect(6,4,W-12,headH-12,14);ctx.stroke();
+    const size=headH*.58,y=4+(headH-12-size)/2;
+    ctx.fillStyle="#6F6078";ctx.font=`800 ${Math.round(headH*.2)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="middle";ctx.fillText("つぎ",16,4+(headH-12)/2);
+    queue.slice(0,2).forEach((kindKey,index)=>{
+      drawGem(58+index*(size*.92),y,size*(index?.72:1),kindKey,{alpha:index?.75:1});
+    });
+    const right=W-16;
+    ctx.textAlign="right";
+    ctx.fillStyle="#493B52";ctx.font=`900 ${Math.round(headH*.26)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.fillText(`${task.target}連鎖`,right,4+(headH-12)*.36);
+    ctx.fillStyle=state.drops<=1?"#A64763":"#6F6078";ctx.font=`800 ${Math.round(headH*.2)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.fillText(`のこり ${state.drops}手`,right,4+(headH-12)*.72);
+    ctx.textAlign="left";
+  };
+  const drawEffects=()=>{
+    rings.forEach(ring=>{
+      const life=clamp(ring.life,0,1);
+      ctx.strokeStyle=`${ring.color}${Math.round(life*180).toString(16).padStart(2,"0")}`;
+      ctx.lineWidth=Math.max(2,cell*.12*life);
+      ctx.beginPath();ctx.arc(ring.x,ring.y,cell*(.3+(1-life)*1.5),0,Math.PI*2);ctx.stroke();
+    });
+    particles.forEach(p=>{
+      const life=clamp(p.life,0,1);
+      ctx.globalAlpha=life;ctx.fillStyle=p.color;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.size*(.4+life*.6),0,Math.PI*2);ctx.fill();
+      ctx.globalAlpha=1;
+    });
+    if(state.banner){
+      const banner=state.banner,life=clamp(banner.life,0,1),pop=1+Math.max(0,(1-life)-.7)*2;
+      const scale=life>.8?(1-(life-.8)*4):1;
+      ctx.save();
+      ctx.translate(W/2,boardY+cell*PUZZLE_ROWS*.42);
+      ctx.scale(clamp(scale*pop,.2,1.6),clamp(scale*pop,.2,1.6));
+      ctx.globalAlpha=clamp(life*1.6,0,1);
+      const text=banner.text;
+      ctx.font=`900 ${Math.round(cell*1.15)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.textBaseline="middle";
+      ctx.lineWidth=cell*.28;ctx.strokeStyle="#FFFFFF";ctx.strokeText(text,0,0);
+      const fill=ctx.createLinearGradient(0,-cell*.6,0,cell*.6);
+      fill.addColorStop(0,banner.color[0]);fill.addColorStop(1,banner.color[1]);
+      ctx.fillStyle=fill;ctx.fillText(text,0,0);
+      ctx.restore();ctx.textAlign="left";ctx.globalAlpha=1;
+    }
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    if(state.shake>0){
+      const power=state.shake*cell*.22;
+      ctx.translate((randomFloat()-.5)*power,(randomFloat()-.5)*power);
+    }
+    drawBoard();drawPieces();drawEffects();ctx.restore();drawHead();
+  };
+  const burst=(r,c,kindKey,power)=>{
+    const kind=puzzleKind(kindKey),cx=cellX(c)+cell/2,cy=cellY(r)+cell/2;
+    rings.push({x:cx,y:cy,life:1,color:kind.light});
+    for(let i=0;i<(reduced?4:12);i++){
+      const angle=randomFloat()*Math.PI*2,speed=cell*(2+randomFloat()*4)*(1+power*.15);
+      particles.push({x:cx,y:cy,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-cell*2,
+        size:cell*(.06+randomFloat()*.1),color:randomFloat()<.5?kind.color:kind.light,life:1});
+    }
+  };
+  const chainBanner=chain=>{
+    const palette=[["#8E6BD0","#5B3E9E"],["#4FA3D1","#2E6FA8"],["#4FB07A","#2C7A52"],["#E8A33C","#C06A1E"],["#E5573F","#A8241F"]];
+    state.banner={text:`${chain}連鎖！`,life:1,color:palette[Math.min(chain,5)-1]};
+    state.shake=Math.min(1,.35+chain*.22);
+  };
+  const animateSettle=done=>{
+    const moves=puzzleSettle(board);
+    if(!moves.length){done();return}
+    offsets.clear();
+    moves.forEach(move=>{const dy=(move.from-move.to)*cell;offsets.set(key(move.to,move.col),{dy,dy0:dy})});
+    const duration=reduced?60:210,started=performance.now();
+    const step=now=>{
+      if(questionAnswered)return;
+      const t=clamp((now-started)/duration,0,1),ease=1-(1-t)*(1-t);
+      offsets.forEach(offset=>{offset.dy=offset.dy0*(1-ease)});
+      if(t<1){requestAnimationFrame(step);return}
+      offsets.clear();done();
+    };
+    requestAnimationFrame(step);
+  };
+  const resolveLoop=()=>{
+    if(questionAnswered)return;
+    animateSettle(()=>{
+      const groups=puzzleGroups(board);
+      if(!groups.length){endTurn();return}
+      state.chain++;state.bestChain=Math.max(state.bestChain,state.chain);
+      chainBanner(state.chain);
+      groups.forEach(cells=>cells.forEach(([r,c])=>{
+        pops.push({r,c,kind:board[r][c],life:1});
+        burst(r,c,board[r][c],state.chain);
+        board[r][c]=null;
+      }));
+      later(resolveLoop,reduced?90:300);
+    });
+  };
+  const endTurn=()=>{
+    if(questionAnswered||state.done)return;
+    if(state.chain>=task.target){
+      state.done=true;state.clear=1;
+      state.banner={text:"CLEAR!",life:1.6,color:["#F0C24E","#D9803C"]};
+      for(let i=0;i<(reduced?6:26);i++)later(()=>burst(randomInt(2,PUZZLE_ROWS-1),randomInt(0,PUZZLE_COLS-1),pick(task.palette),4),i*40);
+      const elapsed=performance.now()-questionStartedAt;
+      later(()=>finishTask(true,{quality:clamp(.55+(state.bestChain-task.target)*.12-elapsed/task.duration*.25,0,1),
+        detail:`${state.bestChain}連鎖！ ${PUZZLE_DROPS-state.drops}手で決めました。`}),reduced?300:1100);
+      return;
+    }
+    state.chain=0;
+    if(state.drops<=0){
+      state.done=true;
+      later(()=>finishTask(false,{detail:`最高${state.bestChain}連鎖でした。最大${task.best}連鎖の置き場所があります。`}),reduced?150:500);
+      return;
+    }
+    state.busy=false;
+  };
+  const drop=col=>{
+    if(state.busy||state.done||questionAnswered)return;
+    const row=puzzleDrop(board,col,queue[0]);
+    if(row<0)return;
+    state.busy=true;state.drops--;state.chain=0;
+    queue.shift();queue.push(pick(task.palette));
+    offsets.set(key(row,col),{dy:-(row+1)*cell,dy0:-(row+1)*cell});
+    const duration=reduced?70:170+row*14,started=performance.now(),from=-(row+1)*cell;
+    const step=now=>{
+      if(questionAnswered)return;
+      const t=clamp((now-started)/duration,0,1),ease=t*t;
+      const offset=offsets.get(key(row,col));
+      if(offset)offset.dy=from*(1-ease);
+      if(t<1){requestAnimationFrame(step);return}
+      offsets.clear();state.shake=Math.max(state.shake,.25);
+      later(resolveLoop,reduced?40:90);
+    };
+    requestAnimationFrame(step);
+  };
+  buttons.forEach((button,col)=>{
+    button.addEventListener("pointerdown",event=>{event.preventDefault();state.cursor=col;drop(col)});
+    button.addEventListener("click",event=>{if(event.detail===0){state.cursor=col;drop(col)}});
+  });
+  const columnAt=event=>{
+    const rect=canvas.getBoundingClientRect();
+    return clamp(Math.floor((event.clientX-rect.left-boardX)/cell),0,PUZZLE_COLS-1);
+  };
+  canvas.addEventListener("pointermove",event=>{if(!state.busy)state.cursor=columnAt(event)});
+  canvas.addEventListener("pointerdown",event=>{event.preventDefault();const col=columnAt(event);state.cursor=col;drop(col)});
+  wrap.tabIndex=0;
+  wrap.addEventListener("keydown",event=>{
+    if(event.key==="ArrowLeft"){event.preventDefault();state.cursor=clamp(state.cursor-1,0,PUZZLE_COLS-1)}
+    else if(event.key==="ArrowRight"){event.preventDefault();state.cursor=clamp(state.cursor+1,0,PUZZLE_COLS-1)}
+    else if(event.key===" "||event.key==="Enter"){event.preventDefault();drop(state.cursor)}
+  });
+  wrap.focus({preventScroll:true});
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.shake=Math.max(0,state.shake-dt*3);
+    if(state.banner){state.banner.life-=dt*1.25;if(state.banner.life<=0)state.banner=null}
+    for(let i=pops.length-1;i>=0;i--){pops[i].life-=dt*3.4;if(pops[i].life<=0)pops.splice(i,1)}
+    for(let i=rings.length-1;i>=0;i--){rings[i].life-=dt*2.2;if(rings[i].life<=0)rings.splice(i,1)}
+    for(let i=particles.length-1;i>=0;i--){
+      const p=particles[i];p.life-=dt*1.5;
+      if(p.life<=0){particles.splice(i,1);continue}
+      p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=cell*14*dt;
+    }
+    paint();
+    token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.puzzle={state,board,queue,task,drop};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`時間切れ。最大${task.best}連鎖の置き場所がありました。`});
+  });
 }
 function finishTask(correct,meta={}){
   if(questionAnswered||!state.activeSession)return;questionAnswered=true;clearQuestionTimers();
