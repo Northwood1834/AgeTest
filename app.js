@@ -5,8 +5,8 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.14.0";
-const CONTENT_PACK = "1.10";
+const APP_VERSION = "1.15.0";
+const CONTENT_PACK = "1.11";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
 const PACE_RELAXED = "relaxed";
@@ -1005,6 +1005,32 @@ function makeWordOrderTask(){
     help:"Tap the words one by one to build the sentence. Tap a word you placed to take it back.",
     chunks,accepted:item.accepted,answer,note:item.note,duration:45000};
 }
+const ENGLISH_GAPS=[
+  {sentence:["We have known each other ___ we were children."],answer:"since",wrong:["for","when","during"],note:"since + a point in the past."},
+  {sentence:["I will call you as soon as I ___ home."],answer:"get",wrong:["will get","got","am getting"],note:"Present tense after as soon as."},
+  {sentence:["She is very good ___ remembering names."],answer:"at",wrong:["in","on","for"],note:"be good at + -ing."},
+  {sentence:["There is ___ milk left in the bottle."],answer:"little",wrong:["few","a few","many"],note:"little for uncountable nouns."},
+  {sentence:["He apologised ___ being late."],answer:"for",wrong:["to","of","with"],note:"apologise for + -ing."},
+  {sentence:["Would you mind ___ the window?"],answer:"opening",wrong:["to open","open","opened"],note:"mind + -ing."},
+  {sentence:["This is the ___ film I have ever seen."],answer:"best",wrong:["better","well","most"],note:"Superlative with have ever seen."},
+  {sentence:["If I ___ you, I would take the earlier train."],answer:"were",wrong:["am","will be","have been"],note:"Second conditional: if I were you."}
+];
+const ENGLISH_ERRORS=[
+  {answer:"He don't like coffee.",wrong:["He doesn't like coffee.","She doesn't drink tea.","They don't like milk."],note:"Third person singular takes doesn't."},
+  {answer:"I have seen him yesterday.",wrong:["I saw him yesterday.","I have seen him before.","I met him last week."],note:"The present perfect cannot take yesterday."},
+  {answer:"She suggested to go to the museum.",wrong:["She suggested going to the museum.","She offered to go to the museum.","She wanted to go to the museum."],note:"suggest takes -ing, not to."},
+  {answer:"There is many people in the hall.",wrong:["There are many people in the hall.","There is a lot of noise in the hall.","There are few people in the hall."],note:"people is plural, so are."},
+  {answer:"I look forward to see you.",wrong:["I look forward to seeing you.","I want to see you.","I hope to see you."],note:"look forward to + -ing."},
+  {answer:"He is married with a doctor.",wrong:["He is married to a doctor.","He is friendly with a doctor.","He works with a doctor."],note:"married to, not married with."}
+];
+const ENGLISH_FORMS=[
+  {sentence:"Yesterday she ___ three letters. (write)",answer:"wrote",wrong:["writes","has written","was writing"],note:"Simple past with yesterday."},
+  {sentence:"By the time we arrived, the show ___. (start)",answer:"had started",wrong:["starts","has started","was starting"],note:"Past perfect for the earlier action."},
+  {sentence:"He promised ___ me tomorrow. (help)",answer:"to help",wrong:["helping","helped","help"],note:"promise + to do."},
+  {sentence:"I do not mind ___ a few minutes. (wait)",answer:"waiting",wrong:["to wait","waited","wait"],note:"mind + -ing."},
+  {sentence:"The room ___ every morning. (clean)",answer:"is cleaned",wrong:["cleans","is cleaning","has cleaned"],note:"Passive: the room does not clean itself."},
+  {sentence:"If it ___ sunny tomorrow, we will walk. (be)",answer:"is",wrong:["will be","would be","was"],note:"Present tense in the if clause."}
+];
 const TEMPLATE_TIERS={
   "language-meaning-v1":2,"language-order-v1":2,"spatial-cube-v1":2,
   "prediction-symbol-v1":2,"calculation-compare-v1":2,"memory-reverse-v1":2,
@@ -1017,7 +1043,7 @@ const TEMPLATE_TIERS={
   "attention-search-v1":2,"timing-five-v1":2,
   "memory-nback-v1":3,"language-anagram-v1":3,"spatial-perspective-v1":3,
   "prediction-double-v1":3,"inhibition-rule-switch-v1":3,"calculation-multistep-v1":3,
-  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"spatial-flow-link-v1":3,"spatial-pipe-flow-v1":2,"attention-screw-out-v1":2,"timing-tower-stack-v1":2,"language-word-order-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
+  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"spatial-flow-link-v1":3,"spatial-pipe-flow-v1":2,"attention-screw-out-v1":2,"timing-tower-stack-v1":2,"language-word-order-v1":2,"language-english-gap-v1":2,"language-english-error-v1":3,"language-english-form-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
 };
 const tierFor = templateId => TEMPLATE_TIERS[templateId]||1;
 const TEMPLATE_FLAVORS={
@@ -1123,7 +1149,10 @@ const TASK_FACTORIES = [
   {id:"spatial-pipe-flow-v1",version:"1.10",category:"spatial",make:()=>makePipeTask()},
   {id:"attention-screw-out-v1",version:"1.11",category:"attention",make:()=>makeScrewTask()},
   {id:"timing-tower-stack-v1",version:"1.12",category:"timing",make:()=>makeTowerTask()},
-  {id:"language-word-order-v1",version:"1.13",category:"language",make:()=>makeWordOrderTask()}
+  {id:"language-word-order-v1",version:"1.13",category:"language",make:()=>makeWordOrderTask()},
+  {id:"language-english-gap-v1",version:"1.14",category:"language",make:()=>{const row=pick(ENGLISH_GAPS);return{kind:"expression",prompt:"Choose the best word for the blank",help:"Read the whole sentence first.",expression:row.sentence[0],options:shuffle([row.answer,...row.wrong]),answer:row.answer,duration:9000}}},
+  {id:"language-english-error-v1",version:"1.14",category:"language",make:()=>{const row=pick(ENGLISH_ERRORS);return{kind:"choice",prompt:"Which sentence is wrong?",help:"Three of them are correct English.",options:shuffle([row.answer,...row.wrong]),answer:row.answer,duration:11000}}},
+  {id:"language-english-form-v1",version:"1.14",category:"language",make:()=>{const row=pick(ENGLISH_FORMS);return{kind:"expression",prompt:"Put the verb in the right form",help:"The verb is given in brackets.",expression:row.sentence,options:shuffle([row.answer,...row.wrong]),answer:row.answer,duration:9500}}}
 ];
 
 function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
