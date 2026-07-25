@@ -48,6 +48,47 @@ main{width:100%;max-width:29rem;min-height:100dvh;padding:1.65rem 1.15rem 2.2rem
 /* otome-style conversation */
 .date-scene{display:grid;grid-template-columns:42% 58%;min-height:12rem;margin-bottom:.65rem;overflow:hidden;border:1.5px solid var(--line);border-radius:1.15rem;background:linear-gradient(145deg,#FFF9FC,#F0E5F5);text-align:left}.date-portrait{position:relative;min-height:12rem;overflow:hidden;background:linear-gradient(160deg,#D8B9E7,#7E5790)}.date-portrait img{width:100%;height:100%;position:absolute;inset:0;display:block;object-fit:cover;object-position:center top}.date-portrait.fallback::after{content:"🤵";position:absolute;inset:0;display:grid;place-items:center;font-size:4rem}.date-copy{display:flex;min-width:0;flex-direction:column;padding:.65rem}.date-badge{color:var(--accent-deep);font-size:.58rem;font-weight:900;line-height:1.4}.date-speech{display:flex;flex:1;align-items:center;margin-top:.35rem;color:var(--ink);font-size:.75rem;font-weight:750;line-height:1.65}.date-hearts{color:#C85E89;font-size:1rem;letter-spacing:.18em}.date-choices{display:grid;gap:.4rem}.date-choices button{width:100%;min-height:2.55rem;padding:.46rem .65rem;border:1.5px solid #E7D5EA;border-radius:.85rem;background:#FFFBFD;color:#5A465F;font-size:.68rem;font-weight:750;text-align:left;box-shadow:0 2px 6px rgba(92,55,105,.05)}.date-choices button:active{transform:scale(.985);background:#F4E5F7;border-color:#CDA9DC}
 .timing-display{min-height:7rem;display:grid;place-items:center;margin-bottom:.8rem}.timing-orb{width:5.5rem;height:5.5rem;border-radius:50%;background:radial-gradient(circle at 35% 28%,#F4E3FA,#B478D0 55%,#80519A);box-shadow:0 10px 24px rgba(128,81,154,.22);transition:filter .2s,box-shadow .2s}.timing-orb.running{filter:saturate(1.15);box-shadow:0 0 0 7px rgba(166,109,194,.2),0 10px 24px rgba(128,81,154,.22)}
+/* dot-art command battle */
+.rpg-battle{display:grid;gap:.5rem;position:relative;text-align:left;font-family:"SFMono-Regular",Menlo,Consolas,"Noto Sans Mono CJK JP",monospace}
+.rpg-field{position:relative;min-height:9.6rem;display:flex;align-items:flex-end;justify-content:center;gap:.55rem;padding:.7rem .5rem .8rem;border-radius:.9rem;background:linear-gradient(#1B1430 0 52%,#2E2246 52% 68%,#3B2C55 68%);box-shadow:inset 0 0 0 3px #F6F1E4,inset 0 0 0 6px #1B1430;overflow:hidden}
+.rpg-field::after{content:"";position:absolute;inset:auto 0 0;height:32%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 6px,transparent 6px 12px);pointer-events:none}
+.rpg-enemy{position:relative;display:grid;justify-items:center;gap:.18rem;flex:0 1 auto;transition:opacity .4s ease}
+.rpg-enemy.down{opacity:0;pointer-events:none}
+.rpg-enemy.dying .rpg-sprite,.rpg-enemy.fled .rpg-sprite{animation:rpg-vanish .5s steps(4) forwards}
+.rpg-sprite{border:0;background:none;padding:0;line-height:0;border-radius:.4rem}
+.rpg-sprite:disabled{cursor:default}
+.rpg-sprite canvas{width:clamp(3.4rem,20vw,4.9rem);height:auto;image-rendering:pixelated;display:block}
+.rpg-enemy.selectable .rpg-sprite{outline:3px solid #F5D76E;outline-offset:2px;animation:rpg-pick 1s ease-in-out infinite}
+.rpg-enemy-name{color:#F6F1E4;font-size:.62rem;font-weight:700;letter-spacing:.02em;text-shadow:1px 1px 0 #1B1430;white-space:nowrap}
+.rpg-enemy-hp{width:3.1rem;height:.32rem;border:1px solid #F6F1E4;background:#1B1430}
+.rpg-enemy-hp i{display:block;height:100%;background:#7FD08C;transition:width .3s ease}
+.rpg-damage{position:absolute;top:.4rem;left:50%;transform:translateX(-50%);color:#FFF0F0;font-weight:900;font-size:1.05rem;text-shadow:2px 2px 0 #7A1F35;animation:rpg-pop .9s ease-out forwards;pointer-events:none}
+.rpg-damage.heal{color:#DFFBE6;text-shadow:2px 2px 0 #1E5C39}
+.rpg-flash{position:absolute;inset:0;border-radius:.9rem;background:var(--flash-color,#fff);opacity:0;pointer-events:none}
+.rpg-flash.on{animation:rpg-flash .5s ease-out}
+.rpg-window{border:3px solid #F6F1E4;border-radius:.35rem;background:#171126;color:#F6F1E4;padding:.5rem .6rem;font-size:.8rem;line-height:1.5}
+.rpg-status-row{display:flex;justify-content:space-between;gap:.4rem;font-weight:700;font-size:.78rem}
+.rpg-status-row.low b{color:#FF9AA8}
+.rpg-hero-name{max-width:8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rpg-log{min-height:4.4rem;display:flex;flex-direction:column;justify-content:flex-end;gap:.1rem}
+.rpg-log p{margin:0}
+.rpg-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:.32rem;padding:.4rem}
+.rpg-command{min-height:2.9rem;display:grid;align-content:center;gap:.05rem;border:2px solid transparent;border-radius:.3rem;background:#241B3B;color:#F6F1E4;font-size:.82rem;font-weight:800;padding:.25rem .2rem;font-family:inherit}
+.rpg-command small{font-size:.6rem;font-weight:600;color:#C6B7DD}
+.rpg-command:hover:not(:disabled),.rpg-command:focus-visible{border-color:#F5D76E;background:#332649}
+.rpg-command:disabled{opacity:.42;cursor:default}
+.rpg-command.back{grid-column:1/-1;background:#3A2C4F}
+.rpg-sprite.hit{animation:rpg-hit .42s steps(2) 2}
+.rpg-sprite.lunge{animation:rpg-lunge .6s ease-in-out}
+.rpg-battle.quake{animation:rpg-quake .34s steps(2) 2}
+@keyframes rpg-hit{0%,100%{filter:none;transform:translateX(0)}50%{filter:brightness(0) invert(1);transform:translateX(4px)}}
+@keyframes rpg-lunge{0%,100%{transform:translate(0,0) scale(1)}45%{transform:translate(0,14px) scale(1.12)}}
+@keyframes rpg-quake{0%,100%{transform:translateX(0)}50%{transform:translateX(-5px)}}
+@keyframes rpg-pop{0%{opacity:0;transform:translate(-50%,6px)}25%{opacity:1}100%{opacity:0;transform:translate(-50%,-22px)}}
+@keyframes rpg-flash{0%{opacity:0}35%{opacity:.72}100%{opacity:0}}
+@keyframes rpg-vanish{0%{opacity:1}50%{opacity:.35;filter:brightness(0) invert(1)}100%{opacity:0;transform:scale(.7)}}
+@keyframes rpg-pick{0%,100%{outline-color:#F5D76E}50%{outline-color:#FFF6D6}}
+
 /* feedback + result */
 .feedback{position:fixed;z-index:20;inset:0;background:rgba(57,39,66,.34);backdrop-filter:blur(4px);display:grid;place-items:end center;padding:1rem}.feedback-panel{width:min(100%,27rem);padding:1.35rem 1.2rem calc(1.1rem + env(safe-area-inset-bottom));border-radius:1.5rem;background:#fff;text-align:center;box-shadow:0 18px 60px rgba(49,30,58,.25);animation:panel-up .25s both}.feedback-panel>span{display:grid;place-items:center;width:3.7rem;height:3.7rem;margin:0 auto .45rem;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-size:2rem;font-weight:900}.feedback-panel.bad>span{background:var(--bad-soft);color:var(--bad)}.feedback-panel h2{font-size:1.35rem}.feedback-panel p{min-height:1.6rem;margin:.25rem 0 .8rem;color:var(--muted);font-size:.74rem}.feedback-panel .primary{max-width:19rem}@keyframes panel-up{from{transform:translateY(2rem);opacity:0}}
 .result-card{text-align:center;padding:1.35rem 1rem 1.1rem;overflow:hidden;background:radial-gradient(circle at 50% 17%,#FAF3FD 0,transparent 10rem),#fff}.seal-wrap{height:11.2rem;display:grid;place-items:center}.seal-ring{width:9.5rem;height:9.5rem;border-radius:50%;border:.33rem double var(--accent);outline:1px solid #D4B2E4;outline-offset:.35rem;background:rgba(255,255,255,.75);display:grid;place-content:center;transform:rotate(-3deg);box-shadow:0 10px 26px rgba(128,81,154,.13)}.seal-ring span{font-size:.63rem;font-weight:900;letter-spacing:.18em;color:var(--accent-deep)}.seal-ring strong{font-size:2.25rem;line-height:1.2;color:var(--accent-deep);letter-spacing:.15em;margin-left:.15em}.grade-message{max-width:21rem;margin:-.25rem auto 0;min-height:3.2rem;font-size:.8rem;line-height:1.7}.score-line{display:flex;justify-content:center;align-items:center;gap:.4rem;margin:.65rem 0}.score-line>strong{font-size:3.4rem;line-height:1;font-variant-numeric:tabular-nums}.score-line>span{text-align:left;color:var(--muted);font-size:.72rem;line-height:1.2}.score-line small{font-size:.62rem}.result-stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:1rem;overflow:hidden;background:#FCFAFD}.result-stats div{padding:.6rem .2rem}.result-stats div+div{border-left:1px solid var(--line)}.result-stats span{display:block;color:var(--muted);font-size:.59rem}.result-stats strong{display:block;font-size:.78rem}.result-breakdown{display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem;margin-top:.75rem}.result-breakdown span{padding:.25rem .48rem;border-radius:999px;background:var(--accent-soft);color:var(--accent-deep);font-size:.59rem;font-weight:800}.primary.share{font-size:.86rem}.medical-note{padding:.8rem .9rem;border:1px solid #E8DFEC;border-radius:.9rem;background:rgba(255,255,255,.52);color:var(--muted);font-size:.61rem;line-height:1.6}

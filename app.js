@@ -5,8 +5,8 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.3.3";
-const CONTENT_PACK = "1.0";
+const APP_VERSION = "1.4.0";
+const CONTENT_PACK = "1.1";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
 const PACE_RELAXED = "relaxed";
@@ -120,6 +120,60 @@ const PARTNER_MOOD_SCENARIO={name:"直樹",age:36,role:"少し不機嫌なパー
   {line:"楽しみにしてたから、置いていかれた気がした。",answer:"楽しみにしてた気持ちを、軽く扱ってしまったね",choices:["楽しみにしてた気持ちを、軽く扱ってしまったね","でも仕事だから仕方ないよ","代わりに何か買えばいい？"]},
   {line:"埋め合わせって、どう考えてる？",answer:"都合を聞いて、二人で次の予定を決めたい",choices:["都合を聞いて、二人で次の予定を決めたい","今すぐ機嫌を直して","同じ予定を勝手に予約しておく"]}
 ]};
+const MONSTER_SPRITES={
+  blob:[["........................","........................","........................","........................","........................","........................","........................",".........111111.........","......111222222111......",".....13332222222221.....","....1332422222242221....","...122244422224442221...","..12224554422445542221..","..12222554222245522221..","..12222242222224222221..",".1222222222222222222221.","..12222225222252222221..","..12222222555522222221..","..12222222222222222221..","..12222222222222222221..","..12222222222222222221..","...111222222222222111...","......111222222111......",".........111111........."],["........................","........................","........................","........................","........................","........................","........................","........................","........................","......1111111111........",".....1333222222211......","....133242222224221.....","....1224442222444221....","...122455442244554221...","..12222554222245522221..","..12222242222224222221..",".1222222222222222222221.","..12222225222252222221..","..12222222555522222221..","...122222222222222221...","..12222222222222222221..","..12222222222222222221..","...111112222222211111...","........11111111........"]],
+  bat:[["..1..................1..",".161................161.",".1661....1....1....1661.",".16661..121..121..16661.",".166661.12111121.166661.",".1666611222222221166661.",".1666661222222221666661.",".1666666442222446666661.",".1666666554224556666661.","..16666644222244666661..","...111661222222166111...","......161244442161......",".......1233443321.......",".......1233333321.......",".......1233333321.......",".......1233333321.......","........13333331........","........12222221........",".........122221.........","........16222261........",".........161161.........","..........1..1..........","........................","........................"],["........................","........................",".........1....1.........","........121..121........","........12111121........",".......1222222221.......",".......1222222221.......",".......1442222441.......","......145542245541......",".......1442222441.......","........12222221........","........12444421........","......112334433211......",".....16623333332661.....","....1666233333326661....","..11666623333332666611..",".1666666133333316666661.",".1666666122222216666661.",".1666611.122221.1166661.",".166661.16222261.166661.",".16661...161161...16661.",".16661....1..1....16661.",".1661..............1661.",".1661..............1661."]],
+  skeleton:[["........................","........................","...........11...........",".........113311.........","........13333331........",".......1555335551.......",".......1555335551.......","......135553355531......",".......1355335531.......",".......1333553331.......",".......1331313131..1....",".......1311111131.161...","........11333311..161...",".......111333311116661..","......133333333331161...",".......11111111111161...","........1133331113161...",".......13333333313361...",".......11133331111361...","......1333333333317771..",".......1113333111.171...",".......1333333331..1....","........11111111........","........13333331........"],["........................","........................","...........11......1....",".........113311...161...","........13333331..161...",".......155533555116661..",".......1555335551.161...","......135553355531161...",".......1355335531.161...",".......1333553331.161...",".......1331313131.161...",".......131111113117771..","........11333311..171...",".......1113333111.131...","......133333333331331...",".......1111111111331....","........11333311131.....",".......13333333311......",".......1113333111.......","......133333333331......",".......1113333111.......",".......1333333331.......","........11111111........","........13333331........"]],
+  mage:[["........................","........................","........................","...........11...........","...1......1661..........","..141....166661.........",".14441..16666661........","..141..1666666661.......","...1..166666666661......","..17116666666666661.....","..171655555555555561....","..1766554455554455661...","..1766555555555555661...","..1766666666666666661...","..171222222222222221....","..171222222222222221....","..1722222222222222221...","..1722222222222222221...","..17222222333332222221..","..17222222333332222221..",".1272222223333322222221.",".1272222223333322222221.","..12222222333332222221..","...111111111111111111..."],["........................","........................","........................","...........11...........","....1.....1661..........","...141...166661.........","..14441.16666661........","...141.1666666661.......","....1.166666666661......","...1716666666666661.....","...17655555555555561....","...176554455554455661...","...176555555555555661...","...176666666666666661...","...17222222222222221....","...17122222222222211....","...172222222222222221...","...172222222222222211...","..12722222333332222221..","..11722222333332222211..",".1227222223333322222221.","..12722222333332222221..","..12222222333332222221..","...111111111111111111..."]],
+  ghost:[["........................","........................","........................",".......11111111.........","......1333222221........",".....133222222221.......","......122222222221......",".....12222222222221.....",".....12555222255521.....","....1225452222545221....","....1225552222555221....","...112255522225552211...","..12222222222222222221..","..12222222255222222221..","..12222222555522222221..",".1222222222552222222221.","..11122222222222222111..","....1222222222222221....","....1222222222222221....","....1222222222222221....","....1221122112211221....","....1221122112211221....",".....11..11..11..11.....","........................"],["........................","........................","........................","........................",".......11111111.........","......1333222221........",".....133222222221.......","......122222222221......",".....12222222222221.....",".....12555222255521.....","....1225452222545221....","....1225552222555221....","...112255522225552211...","..12222222222222222221..","..12222222255222222221..","..12222222555522222221..",".1222222222552222222221.","..11122222222222222111..","....1222222222222221....","....1222222222222221....","....1222222222222221....",".....11221122112211.....","......122112211221......",".......11..11..11......."]]
+};
+const MONSTER_SPECIES=[
+  {key:"blob",names:["どろまんじゅう","ぬまスライム","はいいろゼリー"],hp:[15,21],atk:[2,4],hue:[95,215],acts:["attack","attack","guard","call"]},
+  {key:"bat",names:["よなきコウモリ","ゆうやみバット","つじぎりコウモリ"],hp:[13,19],atk:[2,5],hue:[250,330],acts:["attack","attack","call","flee"]},
+  {key:"skeleton",names:["ほねのけんし","かれこつへい","さびたつわもの"],hp:[18,25],atk:[3,6],hue:[30,60],acts:["attack","attack","charge","guard"]},
+  {key:"mage",names:["ずきんのまどうし","くろローブ","よまわりの導師"],hp:[14,19],atk:[2,4],hue:[260,300],acts:["spell","heal","sleep","attack"]},
+  {key:"ghost",names:["さまよう亡霊","うらみの影","よふけの霊"],hp:[19,26],atk:[3,6],hue:[170,300],acts:["attack","breath","charge","attack"]}
+];
+const BATTLE_ELEMENTS={fire:{label:"炎",spell:"かえん",color:"#E4643C"},ice:{label:"氷",spell:"ひょうけつ",color:"#4FA3D1"},wind:{label:"風",spell:"かまいたち",color:"#6FBE86"}};
+const BATTLE_ALLIES=[
+  {name:"ムームー",icon:"🐮",text:"たいあたり",kind:"strike",power:[9,13]},
+  {name:"ポイント",icon:"✨",text:"ポイントかんげん",kind:"heal",power:[12,16]},
+  {name:"日本円",icon:"💴",text:"こばん投げ",kind:"sweep",power:[5,8]},
+  {name:"メガネ",icon:"🤓",text:"じゃくてん解析",kind:"scan"},
+  {name:"スマイル",icon:"😀",text:"えがおの声援",kind:"cheer"},
+  {name:"パンダ",icon:"🐼",text:"ささ竹うち",kind:"strike",power:[10,15]},
+  {name:"イヌ",icon:"🐶",text:"かみつき",kind:"strike",power:[8,12]},
+  {name:"ネコ",icon:"🐱",text:"ねこだまし",kind:"stun"}
+];
+function makeBattleTask(){
+  const size=randomInt(2,3),used=new Set(),enemies=[];
+  for(let i=0;i<size;i++){
+    const species=pick(MONSTER_SPECIES.filter(s=>!used.has(s.key)||MONSTER_SPECIES.every(x=>used.has(x.key))));used.add(species.key);
+    const monster=makeMonster(species);
+    if(size===3){monster.maxHp=Math.round(monster.maxHp*.8);monster.atk=Math.max(2,monster.atk-1)}
+    enemies.push(monster);
+  }
+  const suffix=["Ａ","Ｂ","Ｃ","Ｄ"];
+  MONSTER_SPECIES.forEach(species=>{const same=enemies.filter(e=>e.species===species.key);if(same.length>1)same.forEach((e,i)=>e.name=`${e.name}${suffix[i]}`)});
+  return{kind:"rpgBattle",prompt:"まものを ぜんめつさせよ",help:"コマンドをえらんで たたかいます。「にげる」は その場で不正解です。",
+    enemies,heroHp:60,heroMp:12,allies:shuffle(BATTLE_ALLIES).slice(0,2).map(a=>({...a})),
+    items:{herb:2,water:1,wand:1},duration:90000};
+}
+function makeMonster(species){
+  const element=pick(Object.keys(BATTLE_ELEMENTS));
+  return{species:species.key,name:pick(species.names),maxHp:randomInt(species.hp[0],species.hp[1]),
+    atk:randomInt(species.atk[0],species.atk[1]),weak:element,hue:randomInt(species.hue[0],species.hue[1]),
+    acts:shuffle(species.acts)};
+}
+function monsterPalette(hue){
+  return{"1":`hsl(${hue} 45% 13%)`,"2":`hsl(${hue} 48% 45%)`,"3":`hsl(${hue} 55% 63%)`,"4":"#F6F1E4",
+    "5":`hsl(${hue} 45% 18%)`,"6":`hsl(${(hue+165)%360} 52% 52%)`,"7":`hsl(${(hue+165)%360} 45% 33%)`};
+}
+function paintSprite(canvas,species,frame,hue){
+  const rows=MONSTER_SPRITES[species][frame],palette=monsterPalette(hue),ctx=canvas.getContext("2d");
+  ctx.clearRect(0,0,24,24);
+  rows.forEach((row,y)=>{for(let x=0;x<row.length;x++){const c=row[x];if(c===".")continue;ctx.fillStyle=palette[c]||"#000";ctx.fillRect(x,y,1,1)}});
+}
 const TEMPLATE_TIERS={
   "language-meaning-v1":2,"language-order-v1":2,"spatial-cube-v1":2,
   "prediction-symbol-v1":2,"calculation-compare-v1":2,"memory-reverse-v1":2,
@@ -132,11 +186,11 @@ const TEMPLATE_TIERS={
   "attention-search-v1":2,"timing-five-v1":2,
   "memory-nback-v1":3,"language-anagram-v1":3,"spatial-perspective-v1":3,
   "prediction-double-v1":3,"inhibition-rule-switch-v1":3,"calculation-multistep-v1":3,
-  "attention-dual-v1":3,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
+  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
 };
 const tierFor = templateId => TEMPLATE_TIERS[templateId]||1;
 const TEMPLATE_FLAVORS={
-  "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild",
+  "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","calculation-rpg-battle-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild",
   "memory-missing-v1":"quirky","reaction-emoji-match-v1":"quirky","attention-animal-count-v1":"quirky","inhibition-parity-v1":"quirky","attention-kana-count-v1":"quirky","attention-dual-v1":"quirky","language-anagram-v1":"quirky","social-partner-mood-v1":"quirky","social-date-v1":"wild",
   "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
 };
@@ -218,7 +272,8 @@ const TASK_FACTORIES = [
     {prompt:"Choose the most natural reply: “Would you like some tea?”",help:"Pick the best response.",answer:"Yes, please.",wrong:["Yes, I like.","Tea is a leaf.","I would some."]}
   ],r=pick(rows);return{kind:"choice",prompt:r.prompt,help:r.help,options:shuffle([r.answer,...r.wrong]),answer:r.answer,duration:8500}}},
   {id:"social-date-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(pick(DATE_SCENARIOS));scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"会話をつないで、デートに誘って",help:"相手の話を受けて、3回選びます。",scenario,duration:18000}}},
-  {id:"social-partner-mood-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(PARTNER_MOOD_SCENARIO);scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"不機嫌なパートナーと話して",help:"火に油を注がず、3回会話をつなぎます。",scenario,duration:20000}}}
+  {id:"social-partner-mood-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(PARTNER_MOOD_SCENARIO);scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"不機嫌なパートナーと話して",help:"火に油を注がず、3回会話をつなぎます。",scenario,duration:20000}}},
+  {id:"calculation-rpg-battle-v1",version:"1.1",category:"calculation",make:()=>makeBattleTask()}
 ];
 
 function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
@@ -353,6 +408,7 @@ function renderTask(task){
   if(task.kind==="lane3d"){renderLane3D(task);return}
   if(task.kind==="golfPutt"){renderGolfPutt(task);return}
   if(task.kind==="dateSim"){renderDateSim(task);return}
+  if(task.kind==="rpgBattle"){renderRpgBattle(task);return}
 }
 function renderMemoryPath(task){
   const grid=document.createElement("div");grid.className="memory-grid";const buttons=[];for(let i=0;i<9;i++){const b=document.createElement("button");b.type="button";b.className="memory-tile";b.disabled=true;b.setAttribute("aria-label",`${i+1}番のマス`);grid.append(b);buttons.push(b)}$("challenge").append(grid);
@@ -411,6 +467,224 @@ function renderGolfPutt(task){
   green.addEventListener("pointerdown",event=>{if(played)return;const b=ball.getBoundingClientRect(),cx=b.left+b.width/2,cy=b.top+b.height/2;if(Math.hypot(event.clientX-cx,event.clientY-cy)>48){$("question-help").textContent="白いボールを押さえ、打ちたい方向と反対へ引きます。";return}event.preventDefault();dragging=true;start={x:event.clientX,y:event.clientY};pull={x:0,y:0};try{green.setPointerCapture?.(event.pointerId)}catch{}aim.hidden=false;aim.style.left=`${task.ball.x}%`;aim.style.top=`${task.ball.y}%`});
   green.addEventListener("pointermove",event=>{if(!dragging)return;event.preventDefault();pull=vector(event.clientX-start.x,event.clientY-start.y);const shotX=-pull.x*powerScale,shotY=-pull.y*powerScale;aim.style.width=`${Math.min(170,pull.length*powerScale)}px`;aim.style.transform=`rotate(${Math.atan2(shotY,shotX)*180/Math.PI}deg)`;paintPutter(shotX,shotY);$("question-help").textContent="引いた反対方向へ飛びます。長く引くほど強く。"});
   const reset=()=>{dragging=false;aim.hidden=true;const shot=ideal();paintPutter(shot.x,shot.y)};const release=()=>{if(!dragging)return;dragging=false;if(pull.length<18){reset();$("question-help").textContent="もう少し後ろへ引いてから離します。";return}putt(-pull.x*powerScale,-pull.y*powerScale)};green.addEventListener("pointerup",release);green.addEventListener("pointercancel",reset);startDeadline(task.duration,()=>finishTask(false,{detail:"芝を読んでいる間に日が暮れました。"}));
+}
+
+function renderRpgBattle(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const box=document.createElement("div");box.className="rpg-battle";
+  const field=document.createElement("div");field.className="rpg-field";
+  const flash=document.createElement("div");flash.className="rpg-flash";
+  const status=document.createElement("div");status.className="rpg-window rpg-status";
+  const log=document.createElement("div");log.className="rpg-window rpg-log";log.setAttribute("aria-live","polite");
+  const menu=document.createElement("div");menu.className="rpg-window rpg-menu";
+  box.append(field,flash,status,log,menu);$("challenge").append(box);
+  const hero={name:state.profile.name,hp:task.heroHp,maxHp:task.heroHp,mp:task.heroMp,maxMp:task.heroMp,charge:false,cheer:false,sleep:0};
+  const enemies=task.enemies.map(source=>({...source,hp:source.maxHp,alive:true,guard:false,charge:false,stunned:0,revealed:false,called:false}));
+  const items={...task.items},allies=task.allies.map(ally=>({...ally,used:false}));
+  let turnLock=false,ended=false;
+  const living=()=>enemies.filter(enemy=>enemy.alive);
+  const buildEnemy=enemy=>{
+    const cell=document.createElement("div");cell.className="rpg-enemy";
+    const button=document.createElement("button");button.type="button";button.className="rpg-sprite";button.disabled=true;
+    const canvas=document.createElement("canvas");canvas.width=24;canvas.height=24;canvas.setAttribute("role","img");
+    button.append(canvas);
+    const name=document.createElement("span");name.className="rpg-enemy-name";
+    const bar=document.createElement("span");bar.className="rpg-enemy-hp";const fill=document.createElement("i");bar.append(fill);
+    cell.append(button,name,bar);field.append(cell);
+    enemy.dom={cell,button,canvas,name,fill};enemy.frame=0;
+    paintSprite(canvas,enemy.species,0,enemy.hue);
+    canvas.setAttribute("aria-label",enemy.name);
+    const idle=()=>{if(ended||questionAnswered||!enemy.alive)return;enemy.frame=enemy.frame?0:1;paintSprite(canvas,enemy.species,enemy.frame,enemy.hue);later(idle,reduced?900:randomInt(420,620))};
+    later(idle,randomInt(120,700));
+    return cell;
+  };
+  enemies.forEach(buildEnemy);
+  const paint=()=>{
+    status.innerHTML="";
+    const line=document.createElement("div");line.className="rpg-status-row";
+    line.innerHTML=`<span class="rpg-hero-name"></span><span>HP <b class="rpg-hp-value"></b>/${hero.maxHp}</span><span>MP <b class="rpg-mp-value"></b>/${hero.maxMp}</span>`;
+    line.querySelector(".rpg-hero-name").textContent=hero.name;
+    line.querySelector(".rpg-hp-value").textContent=hero.hp;
+    line.querySelector(".rpg-mp-value").textContent=hero.mp;
+    line.classList.toggle("low",hero.hp<=hero.maxHp*.3);
+    status.append(line);
+    enemies.forEach(enemy=>{
+      if(!enemy.dom)return;
+      enemy.dom.cell.classList.toggle("down",!enemy.alive);
+      enemy.dom.name.textContent=enemy.revealed?`${enemy.name} 弱点${BATTLE_ELEMENTS[enemy.weak].label}`:enemy.name;
+      enemy.dom.fill.style.width=`${clamp(enemy.hp/enemy.maxHp*100,0,100)}%`;
+    });
+  };
+  const say=(lines,done)=>{
+    const queue=[...lines];log.replaceChildren();
+    const step=()=>{
+      if(ended||questionAnswered)return;
+      if(!queue.length){done?.();return}
+      const p=document.createElement("p");p.textContent=queue.shift();log.append(p);
+      while(log.children.length>3)log.firstChild.remove();
+      later(step,reduced?380:520);
+    };step();
+  };
+  const shake=(element,cls)=>{if(reduced||!element)return;element.classList.remove(cls);void element.offsetWidth;element.classList.add(cls);later(()=>element.classList.remove(cls),700)};
+  const spellFlash=color=>{if(reduced)return;flash.style.setProperty("--flash-color",color);flash.classList.remove("on");void flash.offsetWidth;flash.classList.add("on");later(()=>flash.classList.remove("on"),520)};
+  const popDamage=(enemy,text,cls="")=>{
+    if(!enemy.dom)return;const tag=document.createElement("span");tag.className=`rpg-damage ${cls}`;tag.textContent=text;enemy.dom.cell.append(tag);later(()=>tag.remove(),900);
+  };
+  const damageEnemy=(enemy,amount)=>{
+    enemy.hp=Math.max(0,enemy.hp-amount);popDamage(enemy,`${amount}`);shake(enemy.dom?.button,"hit");
+    if(enemy.hp===0){enemy.alive=false;enemy.dom?.cell.classList.add("dying");later(()=>enemy.dom?.cell.classList.add("down"),reduced?0:520)}
+    paint();
+  };
+  const damageHero=(amount,label)=>{
+    hero.hp=Math.max(0,hero.hp-amount);shake(box,"quake");paint();return label;
+  };
+  const finish=(won,detail)=>{
+    if(ended||questionAnswered)return;ended=true;
+    finishTask(won,{quality:clamp(1-(performance.now()-questionStartedAt)/task.duration,0,1),detail});
+  };
+  const afterAction=()=>{
+    if(ended||questionAnswered)return;
+    if(!living().length){say([`まものを ぜんめつさせた！`],()=>finish(true,`${hero.name}たちは たたかいに かった！`));return}
+    if(hero.hp<=0){finish(false,`${hero.name}は ちからつきた…`);return}
+    later(enemyPhase,reduced?260:420);
+  };
+  const enemyPhase=()=>{
+    if(ended||questionAnswered)return;
+    const actors=living().slice();
+    const step=()=>{
+      if(ended||questionAnswered)return;
+      const enemy=actors.shift();
+      if(!enemy){paint();if(hero.hp<=0){finish(false,`${hero.name}は ちからつきた…`);return}later(playerTurn,reduced?200:320);return}
+      if(!enemy.alive){step();return}
+      enemy.guard=false;
+      if(enemy.stunned>0){enemy.stunned--;say([`${enemy.name}は ようすを 見ている。`],()=>later(step,reduced?150:260));return}
+      resolveEnemy(enemy,()=>later(step,reduced?180:320));
+    };step();
+  };
+  const lunge=enemy=>{if(reduced||!enemy.dom)return;enemy.dom.button.classList.remove("lunge");void enemy.dom.button.offsetWidth;enemy.dom.button.classList.add("lunge");later(()=>enemy.dom.button.classList.remove("lunge"),620)};
+  const resolveEnemy=(enemy,done)=>{
+    const pool=enemy.acts.filter(act=>{
+      if(act==="call")return !enemy.called&&enemies.length<4;
+      if(act==="heal")return living().some(other=>other.hp<other.maxHp);
+      if(act==="sleep")return hero.sleep<=0;
+      if(act==="flee")return living().length>1&&randomFloat()<.35;
+      return true;
+    }),act=pool.length?pick(pool):"attack";
+    if(act==="attack"){
+      lunge(enemy);const power=enemy.charge?2:1;enemy.charge=false;
+      const amount=Math.max(1,randomInt(enemy.atk,enemy.atk+2)*power);
+      say([`${enemy.name}の こうげき！`,`${hero.name}は ${amount}の ダメージを うけた！`],()=>{damageHero(amount);done()});
+      return;
+    }
+    if(act==="spell"||act==="breath"){
+      const element=enemy.weak==="fire"?"ice":"fire",label=act==="breath"?(enemy.species==="ghost"?"つめたい息":"かえんのいき"):BATTLE_ELEMENTS[element].spell;
+      lunge(enemy);spellFlash(BATTLE_ELEMENTS[element].color);
+      const amount=randomInt(enemy.atk+1,enemy.atk+4);
+      say([`${enemy.name}は ${label}を はなった！`,`${hero.name}は ${amount}の ダメージを うけた！`],()=>{damageHero(amount);done()});
+      return;
+    }
+    if(act==="heal"){
+      const target=pick(living().filter(other=>other.hp<other.maxHp))||enemy,amount=randomInt(8,14);
+      target.hp=Math.min(target.maxHp,target.hp+amount);popDamage(target,`+${amount}`,"heal");paint();
+      say([`${enemy.name}は いやしの光を となえた！`,`${target.name}の きずが かいふくした。`],done);return;
+    }
+    if(act==="sleep"){
+      spellFlash("#8E7BD0");hero.sleep=randomInt(1,2);
+      say([`${enemy.name}は ねむりのうたを うたった！`,`${hero.name}は ねむってしまった！`],done);return;
+    }
+    if(act==="charge"){enemy.charge=true;say([`${enemy.name}は ちからを ためている！`],done);return}
+    if(act==="guard"){enemy.guard=true;say([`${enemy.name}は 身をまもっている。`],done);return}
+    if(act==="call"){
+      enemy.called=true;const species=MONSTER_SPECIES.find(item=>item.key===enemy.species),fresh={...makeMonster(species),hp:0,alive:true,guard:false,charge:false,stunned:1,revealed:false,called:true};
+      fresh.hp=fresh.maxHp;enemies.push(fresh);buildEnemy(fresh);paint();
+      say([`${enemy.name}は なかまを よんだ！`,`${fresh.name}が あらわれた！`],done);return;
+    }
+    enemy.alive=false;enemy.dom?.cell.classList.add("fled");later(()=>enemy.dom?.cell.classList.add("down"),reduced?0:400);paint();
+    say([`${enemy.name}は にげだした！`],()=>{if(!living().length){say(["まものは いなくなった！"],()=>finish(true,"まものを 追いはらいました。"));return}done()});
+  };
+  const buttons=(list,{back=null}={})=>{
+    menu.replaceChildren();menu.hidden=false;
+    list.forEach(entry=>{
+      const button=document.createElement("button");button.type="button";button.className="rpg-command";
+      button.textContent=entry.label;button.disabled=!!entry.disabled;
+      if(entry.note){const note=document.createElement("small");note.textContent=entry.note;button.append(note)}
+      button.addEventListener("click",()=>{if(turnLock)return;entry.run()});menu.append(button);
+    });
+    if(back){const button=document.createElement("button");button.type="button";button.className="rpg-command back";button.textContent="もどる";button.addEventListener("click",back);menu.append(button)}
+  };
+  const chooseTarget=(label,run)=>{
+    say([`${label}　だれに？`]);
+    menu.replaceChildren();menu.hidden=false;
+    const cancel=document.createElement("button");cancel.type="button";cancel.className="rpg-command back";cancel.textContent="やめる";
+    cancel.addEventListener("click",()=>{clearTargets();playerTurn()});menu.append(cancel);
+    const clearTargets=()=>enemies.forEach(enemy=>{if(!enemy.dom)return;enemy.dom.button.disabled=true;enemy.dom.cell.classList.remove("selectable");enemy.dom.button.onclick=null});
+    living().forEach(enemy=>{
+      enemy.dom.button.disabled=false;enemy.dom.cell.classList.add("selectable");
+      enemy.dom.button.onclick=()=>{if(turnLock)return;clearTargets();run(enemy)};
+    });
+  };
+  const act=(lines,effect)=>{
+    turnLock=true;menu.replaceChildren();menu.hidden=true;
+    say(lines,()=>{effect?.();later(()=>{turnLock=false;afterAction()},reduced?120:260)});
+  };
+  const playerTurn=()=>{
+    if(ended||questionAnswered)return;
+    turnLock=false;paint();
+    if(hero.sleep>0){hero.sleep--;act([`${hero.name}は ねむっている…`]);return}
+    say([`${hero.name}の ターン。コマンドを えらんで。`]);
+    buttons([
+      {label:"たたかう",run:()=>chooseTarget("たたかう",target=>{
+        const power=(hero.charge?2:1)*(hero.cheer?1.5:1);hero.charge=false;hero.cheer=false;
+        const amount=Math.max(1,Math.round(randomInt(6,9)*power/(target.guard?2:1)));
+        act([`${hero.name}の こうげき！`,`${target.name}に ${amount}の ダメージ！`,...(target.hp-amount<=0?[`${target.name}を たおした！`]:[])],()=>damageEnemy(target,amount));
+      })},
+      {label:"まほう",run:()=>buttons(Object.entries(BATTLE_ELEMENTS).map(([key,element])=>({
+        label:element.spell,note:`MP3 ${element.label}`,disabled:hero.mp<3,
+        run:()=>chooseTarget(element.spell,target=>{
+          hero.mp-=3;paint();const weak=target.weak===key,amount=Math.round(randomInt(10,13)*(weak?2:1)/(target.guard?2:1));
+          target.revealed=true;spellFlash(element.color);
+          act([`${hero.name}は ${element.spell}を となえた！`,weak?`${target.name}に ${amount}の 大ダメージ！ 弱点だ！`:`${target.name}に ${amount}の ダメージ！`,...(target.hp-amount<=0?[`${target.name}を たおした！`]:[])],()=>damageEnemy(target,amount));
+        })
+      })),{back:playerTurn})},
+      {label:"とくぎ",run:()=>buttons([
+        {label:"みやぶる",note:"弱点を しらべる",run:()=>act([`${hero.name}は まものを みやぶった！`],()=>{enemies.forEach(enemy=>enemy.revealed=true);paint()})},
+        {label:"ちからため",note:"次の攻撃2倍",run:()=>act([`${hero.name}は ちからを ためた！`],()=>{hero.charge=true})},
+        {label:"さみだれ斬り",note:"MP2 全体",disabled:hero.mp<2,run:()=>{
+          hero.mp-=2;paint();const rolls=living().map(enemy=>({enemy,amount:randomInt(3,6)}));
+          act([`${hero.name}の さみだれ斬り！`,...rolls.map(roll=>`${roll.enemy.name}に ${roll.amount}の ダメージ！`)],()=>rolls.forEach(roll=>damageEnemy(roll.enemy,roll.amount)));
+        }}
+      ],{back:playerTurn})},
+      {label:"どうぐ",run:()=>buttons([
+        {label:`やくそう ×${items.herb}`,disabled:!items.herb,run:()=>{items.herb--;const amount=randomInt(18,24);
+          act([`${hero.name}は やくそうを つかった！`,`HPが ${amount} かいふくした。`],()=>{hero.hp=Math.min(hero.maxHp,hero.hp+amount);paint()})}},
+        {label:`まりょくの水 ×${items.water}`,disabled:!items.water,run:()=>{items.water--;
+          act([`${hero.name}は まりょくの水を のんだ！`,"MPが 6 かいふくした。"],()=>{hero.mp=Math.min(hero.maxMp,hero.mp+6);paint()})}},
+        {label:`いかずちの杖 ×${items.wand}`,disabled:!items.wand,run:()=>{items.wand--;spellFlash("#E8C766");
+          const rolls=living().map(enemy=>({enemy,amount:randomInt(9,13)}));
+          act([`${hero.name}は いかずちの杖を かかげた！`,...rolls.map(roll=>`${roll.enemy.name}に ${roll.amount}の ダメージ！`)],()=>rolls.forEach(roll=>damageEnemy(roll.enemy,roll.amount)))}}
+      ],{back:playerTurn})},
+      {label:"なかま",run:()=>buttons(allies.map(ally=>({
+        label:`${ally.icon} ${ally.name}`,note:ally.used?"使用ずみ":ally.text,disabled:ally.used,
+        run:()=>runAlly(ally)
+      })),{back:playerTurn})},
+      {label:"にげる",run:()=>{turnLock=true;menu.replaceChildren();menu.hidden=true;say([`${hero.name}は にげだした！`],()=>finish(false,"背中を見せた者に 勝利はありません。"))}}
+    ]);
+  };
+  const runAlly=ally=>{
+    if(ally.kind==="strike"){chooseTarget(ally.name,target=>{ally.used=true;const amount=randomInt(ally.power[0],ally.power[1]);
+      act([`${ally.name}の ${ally.text}！`,`${target.name}に ${amount}の ダメージ！`,...(target.hp-amount<=0?[`${target.name}を たおした！`]:[])],()=>damageEnemy(target,amount))});return}
+    if(ally.kind==="stun"){chooseTarget(ally.name,target=>{ally.used=true;target.stunned=1;
+      act([`${ally.name}の ${ally.text}！`,`${target.name}は ひるんでいる！`])});return}
+    ally.used=true;
+    if(ally.kind==="heal"){const amount=randomInt(ally.power[0],ally.power[1]);
+      act([`${ally.name}の ${ally.text}！`,`${hero.name}の HPが ${amount} かいふくした。`],()=>{hero.hp=Math.min(hero.maxHp,hero.hp+amount);paint()});return}
+    if(ally.kind==="sweep"){const rolls=living().map(enemy=>({enemy,amount:randomInt(ally.power[0],ally.power[1])}));
+      act([`${ally.name}の ${ally.text}！`,...rolls.map(roll=>`${roll.enemy.name}に ${roll.amount}の ダメージ！`)],()=>rolls.forEach(roll=>damageEnemy(roll.enemy,roll.amount)));return}
+    if(ally.kind==="scan"){act([`${ally.name}の ${ally.text}！`,"まものの 弱点が わかった！"],()=>{enemies.forEach(enemy=>enemy.revealed=true);paint()});return}
+    act([`${ally.name}の ${ally.text}！`,`${hero.name}の 次の こうげきが 強くなった！`],()=>{hero.cheer=true});
+  };
+  paint();playerTurn();
+  startDeadline(task.duration,()=>{if(!ended)finish(false,"日が暮れて まものは 去っていきました。")});
 }
 
 function finishTask(correct,meta={}){
@@ -493,4 +767,9 @@ if(!window.crypto?.getRandomValues||!window.localStorage){$("start-button").disa
 else if(state.activeSession&&Array.isArray(state.activeSession.tasks)&&state.activeSession.tasks.length>0){renderCurrentTask()}
 else if(state.pendingResult&&state.lastResult){renderResult(state.lastResult)}
 else{state.activeSession=null;renderHome()}
+
+if(window.__SHORO_QA__){
+  const params=new URLSearchParams(location.search),templateId=params.get("preview");
+  if(templateId){try{window.__SHORO_QA__.preview(templateId,Number(params.get("ms"))||600000)}catch(error){console.warn("preview:",error.message)}}
+}
 })();
