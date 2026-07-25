@@ -5,9 +5,9 @@ Environment: local static server, desktop Chromium browser automation, headless 
 
 ## Verified
 
-- `app.js` parses successfully and the catalog contains 60 unique factory IDs (52 in v1.0, one each in v1.4.0/v1.5.0/v1.6.0/v1.7.0, four in v1.8.0, one in v1.9.0, one in v1.10.0, one in v1.11.0, one in v1.12.0, one in v1.14.0, three in v1.15.0).
+- `app.js` parses successfully and the catalog contains 60 unique factory IDs (52 in v1.0, one each in v1.4.0/v1.5.0/v1.6.0/v1.7.0, four in v1.8.0, one in v1.9.0, one in v1.10.0, one in v1.11.0, one in v1.12.0, one in v1.14.0, three in v1.15.0, eleven in v1.16.0).
 - Every one of the first 50 factories was played through its correct interaction path in five browser batches; the two later additions (`language-english-v1`, `social-partner-mood-v1`) were then played correctly as well.
-- Final build: all 68 factories generated and rendered without an exception across 34 renderer kinds.
+- Final build: all 79 factories generated and rendered without an exception across 34 renderer kinds.
 - Randomized generator check: 300 generations per factory (15,600 generated tasks) produced no missing answer, duplicate option, unknown category, invalid tier, or generator error.
 - Session selector check: 3,000 generated sessions across brain levels 1–3 had 12 unique tasks, no tier leak, category count at most two, all four play flavors, no Tier-1 boss, and the author boss at position 6 for levels 2–3.
 - Grade boundaries verified: 85/84 → 処老/初老, 60/59 → 初老/中老, 40/39 → 中老/大老.
@@ -46,6 +46,7 @@ Environment: local static server, desktop Chromium browser automation, headless 
 - v1.13.0 added difficulty-step metadata only: the catalogue reports 64 families, every one at step 1, with no duplicate family and no step-2 template in existence. The validator passed at 20 iterations over all 64 factories, a sampled session carried the new `step` and `family` fields on each task, and nothing changed in what a player sees.
 - v1.14.0 English word-order testing in the browser at 390×900 built the target sentence chunk by chunk for `正解` and the reversed order for `残念`, with the correct sentence and its grammar note shown in English, and no page or console error.
 - v1.15.0 English gap-fill, verb-form and error-spotting questions were each played in the browser at 390×900: the prompt, help and every option rendered in English, the correct option produced `正解`, and no page or console error appeared.
+- v1.16.0 widened Tier 1 from 18 to 29 families and raised the tier ceiling to 5 with nothing assigned above 3. The generator validator passed over all 79 factories at 25 iterations, and a level-1 sample session drew twelve ordinary questions. Two of the new factories were fixed before release: counting marks could loop forever when the board held no target, and the mirrored-arrow options could repeat an option; both were then run 3,000 times each with no duplicate option and no missing answer.
 - The four Krea2 WebP assets load at 768×960; direct visual review found the intended distinct adult/SFW characters and no text/watermark defects.
 - Fresh v1.2.3 320×900 headless Chrome captures showed no horizontal clipping or overlap on the home screen or profile/pace dialog; the larger primary and pace controls remained fully visible.
 - Initial-load network capture contained only same-origin app requests; no app XHR/fetch/WebSocket/telemetry was present. CSP retains `connect-src 'none'`.
