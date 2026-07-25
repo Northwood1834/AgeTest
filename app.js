@@ -5,7 +5,7 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.6.0";
+const APP_VERSION = "1.6.1";
 const CONTENT_PACK = "1.3";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
