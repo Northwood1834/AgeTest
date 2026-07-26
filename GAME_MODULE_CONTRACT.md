@@ -80,6 +80,24 @@ An active session continues to store plain generated task data with its stable `
 
 The kernel owns answer commit, XP, history, cooldown, profile switching, and generic feedback. A disposed game cannot commit an answer. This is a release-blocking invariant.
 
+## Visual and interaction quality
+
+The published `a8761a1` game is the visual baseline, not merely a source of rules. A port must preserve or improve its visual identity, material depth, hierarchy, interaction feedback, causal animation, terminal states, and celebration. A technically correct but flatter, generic, simplified, or template-like rendering is a regression and is not accepted.
+
+Every owner supplies legacy/module side-by-side captures at 393×852 and 402×874 CSS pixels at DPR 3. The comparison must use the same authored task and include at least six representative states: initial, active input or motion, meaningful progress, invalid or incorrect input, success, and timeout/failure. Games with additional decisive states include those as well. Captures are made from the final implementation with cache disabled; contact sheets never substitute for inspecting full-resolution source frames.
+
+Visual review checks, as applicable:
+
+- foreground/background separation, texture, shading, joints, shadows, and convincing material treatment;
+- readable cause and effect through staged motion rather than an unexplained state jump;
+- visible pressed, selected, dragging, disabled, invalid, focus, and reduced-motion states;
+- touch targets, labels, status text, safe-area spacing, and no clipping or horizontal overflow;
+- distinct success and failure hierarchy, with a celebration or impact at least as strong as the published game;
+- Canvas/SVG output at the requested DPR without blur, seams, accidental gaps, stale frames, or edge artifacts; and
+- consistent quality at both comparison widths without relying on emoji as a replacement for authored visual material.
+
+Independent review by someone other than the game owner is required. Any material downgrade remains a blocking failure until the implementation and the complete comparison set are regenerated and reviewed again.
+
 ## Acceptance for one game
 
 A game is accepted only when its branch supplies evidence for:
@@ -91,7 +109,8 @@ A game is accepted only when its branch supplies evidence for:
 5. 390×844, 393×852, 402×874, and 430×932 CSS viewports at DPR 2 or 3;
 6. pointer/touch operation, keyboard path where applicable, focus, reduced motion, and no horizontal overflow;
 7. no console/page error and no external network request; and
-8. one stable-ID-scoped Git branch whose diff does not alter another game's semantics.
+8. one stable-ID-scoped Git branch whose diff does not alter another game's semantics; and
+9. final same-task legacy/module comparison sheets that pass the independent visual review above.
 
 The author supplies the evidence. Integration acceptance remains with the director.
 
