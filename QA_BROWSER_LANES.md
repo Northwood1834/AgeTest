@@ -16,9 +16,10 @@ Commands:
 ```sh
 node tools/qa-browser-lanes.mjs start director
 node tools/qa-browser-lanes.mjs status
-node tools/qa-browser-lanes.mjs navigate director http://127.0.0.1:8860/
-node tools/qa-browser-lanes.mjs eval director '({ready:document.readyState,width:innerWidth})'
+node tools/qa-browser-lanes.mjs navigate director http://127.0.0.1:8860/ 393 852 3
+node tools/qa-browser-lanes.mjs eval director '({ready:document.readyState,width:innerWidth,dpr:devicePixelRatio})'
 node tools/qa-browser-lanes.mjs screenshot director /tmp/agetest-director.png
+node tools/qa-browser-lanes.mjs navigate director http://127.0.0.1:8860/ 402 874 3
 ```
 
 There is intentionally no stop or kill command. A lane never attaches to an existing unowned port and never performs recovery actions against another browser. If ownership verification fails, work stops rather than falling back to Vivaldi or another process.
