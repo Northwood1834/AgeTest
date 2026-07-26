@@ -28,6 +28,20 @@ No production unit may combine several stable IDs into a generic game module. Sh
 
 The 79 published IDs are compatibility work, not automatically the final public selection. They are ported faithfully first so quality can be judged module by module. New concepts then fill category gaps without weakening the acceptance gate.
 
+## Creative direction
+
+New games are conceived one owner and one game at a time. The director does not generate a bulk list of 221 shallow ideas. When a lane becomes available, its owner first proposes one best concept; implementation begins only after that single brief is accepted.
+
+Preferred sources of playful recognition are:
+
+- the memorable few seconds or mechanical beat people remember from a classic game, rebuilt as an original homage;
+- the satisfying interaction promised by mobile-game advertising, developed into the complete game rather than used as bait; and
+- nostalgic physical play from school, parks, or home, such as ruler flicking or battle pencils, translated into touch interaction.
+
+An homage preserves the structure of the remembered moment, not another work's protected name, characters, artwork, map, copy, music, or screen composition. Every concept must have its own visual identity and a meaningful mechanical difference rather than a cosmetic reskin.
+
+A concept brief contains one provisional stable ID, category/tier/flavor, a 20–60 second core loop, win and failure conditions, touch and accessible controls, visual identity and celebration, generation/validation invariants, and the reason it is not redundant with an accepted game. Multiple alternatives and speculative idea dumps are rejected as the wrong work granularity.
+
 ## Production cadence
 
 Work proceeds in waves of at most three games, matching the three isolated QA lanes. Each owner receives one complete game only. A lane does not receive its next game until its current game passes independent visual review, tests, browser integration, manifest generation, and legacy removal where applicable.
@@ -75,6 +89,6 @@ Later published waves are selected from the remaining legacy IDs in threes. Prio
 
 ## New-game programme (IDs 80–300)
 
-New games are conceived in waves of three only after an owner is available. Each concept brief must state the mechanic, success condition, failure condition, accessibility path, visual identity, generation proof, and why it is not a cosmetic variant of an existing game. Stable IDs are assigned when that brief is accepted, not in a speculative 221-ID dump.
+New games enter production only after an owner is available and that owner has proposed one accepted brief. Stable IDs are assigned when the individual brief is accepted, never through a speculative 221-ID dump.
 
 New waves preferentially fill the largest category gaps (`social`, `timing`, `reaction`, `inhibition`, and `memory`) while maintaining quality and mechanic diversity. Milestone reviews occur at 120, 180, 240, and 300 accepted modules. At each milestone, weak modules may be withheld through `RETIRED_GAME_IDS` without affecting resume compatibility or the production count ledger.
