@@ -1,0 +1,84 @@
+{
+  "game": "reaction-emoji-match-v1",
+  "status": "pass",
+  "reviewDate": "2026-07-27",
+  "reviewer": {
+    "method": "independent vision review of full-resolution current-app/module parity matrix",
+    "tool": "read_image",
+    "backend": "gpt"
+  },
+  "evidence": {
+    "browserReport": "test/reaction-emoji-match-v1.browser-evidence.json",
+    "captureDirectory": "test/reaction-emoji-match-v1-visual",
+    "captureTool": "tools/qa-browser-lanes.mjs",
+    "lane": "flow CDP9331 / HTTP8861",
+    "sourceScreenshots": 264,
+    "sideBySideParityPlates": 132,
+    "totalPng": 396,
+    "canonicalSourceSizes": [
+      "1179x2556 (393x852 CSS DPR3)",
+      "1206x2622 (402x874 CSS DPR3)"
+    ],
+    "canonicalParityPlateSizes": [
+      "2390x2644 (393 current app + module)",
+      "2444x2710 (402 current app + module)"
+    ],
+    "responsiveBoundaries": [
+      "390x844 DPR3",
+      "430x932 DPR3"
+    ]
+  },
+  "audits": [
+    {
+      "set": "393x852 normal current-app/module — all six answers × initial/focus/wrong/success/timeout",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "393x852 reduced current-app/module — all six answers × initial/focus/wrong/success/timeout",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "402x874 normal current-app/module — all six answers × initial/focus/wrong/success/timeout",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "402x874 reduced current-app/module — all six answers × initial/focus/wrong/success/timeout",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "390x844 and 430x932 current-app/module — all six answer boundaries",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "full-resolution module target, focus, wrong, success, and timeout details across face and animal glyphs",
+      "status": "pass",
+      "blockers": []
+    }
+  ],
+  "finalFindings": {
+    "allSixNativeGlyphsVerbatim": true,
+    "promptTargetAndOptionOrderExact": true,
+    "exactFourCandidates": true,
+    "noReplacementIconOrAsset": true,
+    "noPreHighlight": true,
+    "noEmojiNameOrDescription": true,
+    "noExtraDecorativeEmoji": true,
+    "equalInitialOptionMaterials": true,
+    "focusIsolated": true,
+    "touchTargetsLarge": true,
+    "wrongDistinct": true,
+    "successDistinct": true,
+    "timeoutDistinctWithoutNewAnswerCue": true,
+    "normalReducedInformationEqual": true,
+    "noClippingOrOverflow": true,
+    "noDefaultFocusArtifact": true,
+    "productionPolish": true
+  },
+  "resolvedDuringReview": [],
+  "remainingBlockers": []
+}
