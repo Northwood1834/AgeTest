@@ -1,0 +1,717 @@
+{
+  "canonicalViewports": [
+    {
+      "width": 393,
+      "height": 852,
+      "dpr": 3
+    },
+    {
+      "width": 402,
+      "height": 874,
+      "dpr": 3
+    }
+  ],
+  "variants": [
+    "legacy",
+    "module"
+  ],
+  "degrees": [
+    90,
+    180,
+    270
+  ],
+  "states": [
+    "initial",
+    "focus",
+    "wrong",
+    "success",
+    "timeout"
+  ],
+  "comparisons": 60,
+  "screenshots": 120,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "meanMAE": 0.0,
+  "maxMAE": 0.0,
+  "maxNormalizedRMSE": 0.0,
+  "meanChanged": 0.0,
+  "rows": [
+    {
+      "key": "legacy-90-393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-90-393x852-focus",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-90-393x852-wrong",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-90-393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-90-393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-90-402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-90-402x874-focus",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-90-402x874-wrong",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-90-402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-90-402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-180-393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-180-393x852-focus",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-180-393x852-wrong",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-180-393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-180-393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-180-402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-180-402x874-focus",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-180-402x874-wrong",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-180-402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-180-402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-270-393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-270-393x852-focus",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-270-393x852-wrong",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-270-393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-270-393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-270-402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-270-402x874-focus",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-270-402x874-wrong",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-270-402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "legacy-270-402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-90-393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-90-393x852-focus",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-90-393x852-wrong",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-90-393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-90-393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-90-402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-90-402x874-focus",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-90-402x874-wrong",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-90-402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-90-402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-180-393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-180-393x852-focus",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-180-393x852-wrong",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-180-393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-180-393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-180-402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-180-402x874-focus",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-180-402x874-wrong",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-180-402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-180-402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-270-393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-270-393x852-focus",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-270-393x852-wrong",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-270-393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-270-393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-270-402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-270-402x874-focus",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-270-402x874-wrong",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-270-402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "module-270-402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    }
+  ],
+  "visualQc": {
+    "status": "pass",
+    "method": "legacy/module 402 DPR3 all-degree normal/reduced contact sheets plus 390/430 success review",
+    "checks": {
+      "exactStartArrowAndDegrees": true,
+      "exactFourOptions": true,
+      "initialHasNoSelectionOrFocus": true,
+      "focusDistinctFromSelection": true,
+      "wrongSuccessAnswersExact": true,
+      "timeoutHasNoSelection": true,
+      "stationaryPreSolution": true,
+      "finalEndpointPreview": false,
+      "extraVisibleDirectionLabelInsideCard": false,
+      "moduleProductionFinishWithoutHint": true,
+      "clippingOrOverflow": false
+    }
+  }
+}
