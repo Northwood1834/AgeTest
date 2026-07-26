@@ -529,6 +529,17 @@ export const gameManifest=Object.freeze([
     "hash": "902d9daf766fcd81"
   },
   {
+    "id": "timing-three-v1",
+    "introducedIn": "1.0",
+    "tier": 2,
+    "flavor": "wild",
+    "step": 1,
+    "family": "timing-three",
+    "category": "timing",
+    "module": "./games/timing-three-v1.js",
+    "hash": "95328f104bd16219"
+  },
+  {
     "id": "timing-tower-stack-v1",
     "introducedIn": "1.12",
     "tier": 2,

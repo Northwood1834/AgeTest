@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "timing-three-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "fc2a418ca57d1dc0a0d6e44c019c7964f15f6ef8",
+  "test": "test/timing-three-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
