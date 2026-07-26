@@ -34,6 +34,17 @@ export const gameManifest=Object.freeze([
     "hash": "7a2ca22474468fae"
   },
   {
+    "id": "calculation-rpg-battle-v1",
+    "introducedIn": "1.1",
+    "tier": 2,
+    "flavor": "wild",
+    "step": 1,
+    "family": "calculation-rpg-battle",
+    "category": "calculation",
+    "module": "./games/calculation-rpg-battle-v1.js",
+    "hash": "fd52fd1abe123e27"
+  },
+  {
     "id": "prediction-card-combo-v1",
     "introducedIn": "2.0",
     "tier": 3,
@@ -43,6 +54,17 @@ export const gameManifest=Object.freeze([
     "category": "prediction",
     "module": "./games/prediction-card-combo-v1.js",
     "hash": "54148b9bc8cd38c3"
+  },
+  {
+    "id": "prediction-chain-puzzle-v1",
+    "introducedIn": "1.3",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "prediction-chain-puzzle",
+    "category": "prediction",
+    "module": "./games/prediction-chain-puzzle-v1.js",
+    "hash": "7e7151f4716e9d64"
   },
   {
     "id": "prediction-desk-ruler-duel-v1",
@@ -87,6 +109,17 @@ export const gameManifest=Object.freeze([
     "category": "spatial",
     "module": "./games/spatial-flow-link-v1.js",
     "hash": "9639bc42e36cdb81"
+  },
+  {
+    "id": "spatial-lane-run-v1",
+    "introducedIn": "1.2",
+    "tier": 2,
+    "flavor": "wild",
+    "step": 1,
+    "family": "spatial-lane-run",
+    "category": "spatial",
+    "module": "./games/spatial-lane-run-v1.js",
+    "hash": "2718d177ce56d563"
   },
   {
     "id": "spatial-park-jam-v1",
