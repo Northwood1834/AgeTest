@@ -738,6 +738,17 @@ export const gameManifest=Object.freeze([
     "hash": "f58e08859e945ada"
   },
   {
+    "id": "spatial-suitcase-pack-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "spatial-suitcase-pack",
+    "category": "spatial",
+    "module": "./games/spatial-suitcase-pack-v1.js",
+    "hash": "54e1b4e413203167"
+  },
+  {
     "id": "timing-fish-grill-v1",
     "introducedIn": "2.0",
     "tier": 2,

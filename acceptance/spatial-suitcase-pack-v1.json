@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "spatial-suitcase-pack-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "9d3b716250ed85bda67c05071e0e231e8c5bc0d7",
+  "test": "test/spatial-suitcase-pack-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
