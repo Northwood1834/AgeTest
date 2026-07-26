@@ -1,5 +1,5 @@
 import {createGameRuntime} from "./src/game-kernel.js";
-import {generateGameTask,isModularGame,loadGame,manifestEntry,selectableGameCatalog} from "./src/game-loader.js";
+import {generateGameTask,isModularGame,loadGame,manifestEntry,selectableGameCatalog,stripGameTaskEnvelope} from "./src/game-loader.js";
 
 (() => {
 "use strict";
@@ -567,7 +567,7 @@ async function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_
     const task=factory.modular
       ?await generateGameTask(factory.id,{random:randomFloat,randomInt,pick,shuffle})
       :{templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category,...factory.make()};
-    return tuneTaskForPace(task,paceMode);
+    return factory.modular?task:tuneTaskForPace(task,paceMode);
   }));
 }
 
@@ -644,7 +644,7 @@ async function renderCurrentTask(){
     if(renderToken!==questionRenderToken||state.activeSession!==session||session.currentIndex!==index)return;
     let runtime=null;
     runtime=createGameRuntime({host:$("challenge"),timerBar:$("timer-bar"),onFinish:(correct,result)=>{lastGameRuntimeState=runtime.inspect();if(activeGameRuntime===runtime)activeGameRuntime=null;finishTask(correct,result)},qa:window.__SHORO_QA__?gameQaHooks:null});
-    activeGameRuntime=runtime;lastGameRuntimeState=null;game.render(task,runtime.context);
+    activeGameRuntime=runtime;lastGameRuntimeState=null;game.render(stripGameTaskEnvelope(task),runtime.context);
   }catch(error){
     if(renderToken!==questionRenderToken)return;
     releaseGameRuntime();console.error("game compatibility error",error);

@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
 import {gameManifest} from "../src/game-manifest.js";
-import {gameCatalog,selectableGameCatalog,loadGame} from "../src/game-loader.js";
+import {gameCatalog,selectableGameCatalog,generateGameTask,loadGame,stripGameTaskEnvelope} from "../src/game-loader.js";
 
 const appSource=await readFile(new URL("../app.js",import.meta.url),"utf8");
 const publishedIds=JSON.parse(await readFile(new URL("./published-game-ids.json",import.meta.url),"utf8"));
@@ -34,4 +34,21 @@ test("every accepted manifest entry loads its own matching game module",async()=
       assert.equal(game.metadata[field],entry[field],`${entry.id} ${field}`);
     }
   }
+});
+
+test("production envelopes strip to exact valid game data for every manifest module",async()=>{
+  const envelopeKeys=["templateId","introducedIn","tier","flavor","step","family","category"],envelopeSet=new Set(envelopeKeys),helpers={random:()=>.25,randomInt:min=>min,pick:values=>values[0],shuffle:values=>[...values]};
+  for(const entry of gameManifest){
+    const game=await loadGame(entry.id),stored=await generateGameTask(entry.id,helpers),before=structuredClone(stored),data=stripGameTaskEnvelope(stored),expected=Object.fromEntries(Object.entries(stored).filter(([key])=>!envelopeSet.has(key)));
+    assert.notEqual(data,stored,`${entry.id} returns a fresh object`);
+    assert.equal(Object.getPrototypeOf(data),Object.prototype,`${entry.id} returns a plain object`);
+    assert.deepEqual(envelopeKeys.filter(key=>Object.hasOwn(data,key)),[],`${entry.id} removes all envelope keys`);
+    assert.deepEqual(data,expected,`${entry.id} retains every game-data field`);
+    assert.deepEqual(stored,before,`${entry.id} stored task is not mutated`);
+    assert.deepEqual(game.validate(data),[],`${entry.id} stripped data validates`);
+  }
+  const retained=stripGameTaskEnvelope({templateId:"x",introducedIn:"1",tier:1,flavor:"f",step:1,family:"x",category:"reaction",kind:"demo",unexpected:"game-data"});
+  assert.deepEqual(retained,{kind:"demo",unexpected:"game-data"},"only the seven known envelope keys are removed");
+  assert.match(appSource,/game\.render\(stripGameTaskEnvelope\(task\),runtime\.context\)/,"production render strips metadata before calling the module");
+  assert.match(appSource,/return factory\.modular\?task:tuneTaskForPace\(task,paceMode\)/,"standard and relaxed modular sessions retain identical authored task data");
 });

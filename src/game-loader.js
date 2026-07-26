@@ -38,6 +38,11 @@ export async function loadGame(templateId){
   return moduleCache.get(templateId);
 }
 
+export function stripGameTaskEnvelope(task){
+  const {templateId,introducedIn,tier,flavor,step,family,category,...data}=task;
+  return data;
+}
+
 export async function generateGameTask(templateId,randomHelpers){
   const entry=manifestEntry(templateId),game=await loadGame(templateId);
   const data=game.generate(randomHelpers),issues=game.validate(data);
