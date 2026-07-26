@@ -364,6 +364,17 @@ export const gameManifest=Object.freeze([
     "hash": "9205eddeb9225623"
   },
   {
+    "id": "prediction-domino-relay-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "wild",
+    "step": 1,
+    "family": "prediction-domino-relay",
+    "category": "prediction",
+    "module": "./games/prediction-domino-relay-v1.js",
+    "hash": "d3c2bb66cbd22054"
+  },
+  {
     "id": "prediction-lane3d-v1",
     "introducedIn": "1.0",
     "tier": 3,

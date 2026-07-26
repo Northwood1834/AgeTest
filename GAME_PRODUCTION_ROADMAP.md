@@ -174,7 +174,8 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `attention-lint-shaver-v1` — accepted and integrated
 - `timing-mochi-pound-v1` — accepted and integrated
 - `language-particle-scene-v1` — accepted and integrated
-- `prediction-domino-relay-v1` — screw lane
+- `prediction-domino-relay-v1` — accepted and integrated
+- `reaction-cupboard-catch-v1` — screw lane
 
 ### N07 — completed original
 

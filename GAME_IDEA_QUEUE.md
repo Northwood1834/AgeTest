@@ -10,7 +10,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `prediction-domino-relay-v1` | former Memory Reverse owner | N08; screw lane | Limited-height placement drives one deterministic retained domino cascade |
+| `reaction-cupboard-catch-v1` | former Domino Relay owner | N10; screw lane | Catch eight visibly tipping fictional cupboard items using two independently occupied hand slots |
 | `language-notice-trim-v1` | former Balance Scale owner | N10; audit lane | Trim a fictional notice to width while retaining only task-authored required slots and tone |
 | `social-shared-umbrella-v1` | former Quiet Tidy owner | N10; flow lane | Balance two visible coverage regions through wind, puddles, and sheltered resets |
 
