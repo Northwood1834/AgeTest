@@ -11,13 +11,50 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
 | `attention-driving-safety-v1` | former Chain Puzzle owner | browser/visual, flow lane | Five original exam-format safety questions verified against current official Japanese primary sources |
-| `spatial-screen-protector-v1` | former Lane Run owner | browser/visual, audit lane | Press a protector from the phone's bottom edge, physically vent bubbles, peel back when needed, finish bubble-free |
-| `social-thread-vibe-v1` | former RPG Battle owner | browser/visual, screw lane | Keep an original anonymous-board thread in its context-appropriate temperature for three replies |
+| `social-care-package-v1` | former Screen Protector owner | pre-browser; waits for audit | Pack practical supplies without intruding on an adult son's personal or social life |
+| `spatial-draw-shelter-v1` | former Thread Vibe owner | pre-browser; waits for screw | Draw one anchored physical barrier that must survive a real hornet-swarm hazard phase |
 | `attention-laundry-rescue-v1` | former Sheep Home owner | pre-browser; waits for flow | Drag only laundry into a top-loader; wife or dog is an immediate comic failure |
 | `calculation-change-smart-v1` | former Farm Close owner | pre-browser; waits for audit | Build a payment whose returned change uses the fewest coins |
 | `memory-phone-pin-v1` | former Commuter Seat owner | pre-browser; waits for screw | Recall one fictional four-digit PIN from meaningful floating cues in three attempts |
 
 ## Waiting queue
+
+### Q5 — `calculation-number-tower-route-v1`
+
+- Category/tier/flavor: calculation / tier 3 / wild
+- Core: route a numbered hero through a tower, absorbing weaker encounters and applying visible `+`, `−`, and multiplier rewards so the running value can defeat the final floor.
+- Required distinction: the whole room order changes later comparisons; this is not another one-step gate runner or command RPG.
+- Proof: finite tower graph, exhaustive route outcomes, at least two plausible losing branches, one bounded winning route, plain-data resume.
+
+### Q6 — `attention-goods-shelf-sort-v1`
+
+- Category/tier/flavor: attention / tier 3 / satisfying
+- Core: move visible shop goods from layered shelves into a limited staging rail; three matching products clear and reveal occluded goods behind them.
+- Required distinction: shelf depth, temporary-slot congestion, and reveal order matter. It must not collapse into a flat match-three grid.
+- Proof: finite authored shelves, exact triple-clear simulation, reachable recovery from near-full staging, distinct jam/success/timeout.
+
+### Q7 — `spatial-sand-channel-v1`
+
+- Category/tier/flavor: spatial / tier 3 / satisfying
+- Core: scrape a bounded channel through sand, then release water or balls and let the drawn terrain route them to the target while drains and hazards remain separated.
+- Required distinction: continuous excavation changes actual deterministic flow and erosion; no prerecorded path reveal or discrete pipe rotation.
+- Proof: bounded stroke sampling, terrain mask validation, conserved material count, canonical successful channel and reachable leak/block failures.
+
+### Q8 — `prediction-ricochet-knockback-v1`
+
+- Category/tier/flavor: prediction / tier 3 / wild
+- Core: aim one projectile through visible wall bounces to knock targets from platforms while avoiding a protected bystander and dangerous rebound into the shooter.
+- Required distinction: incidence angle, remaining energy, impact direction, and changed platform occupancy remain causal and visible; not another golf putt.
+- Proof: quantized deterministic trajectories, bounded bounce count, canonical shot, near miss, collateral hit, self-hit, and success.
+
+### Q9 — `spatial-draw-bridge-v1`
+
+- Category/tier/flavor: spatial / tier 3 / satisfying
+- Core: draw a load-bearing bridge between legal anchors with a limited material budget, release it, and watch a vehicle cross under real sag and joint stress.
+- Required distinction: unlike Draw Shelter, the line supports a moving load across a gap rather than deflecting a swarm.
+- Proof: bounded stroke graph and supports, deterministic load steps, canonical viable span, bottom-out, snap, rollover, success, and timeout.
+
+## Dispatched brief archive
 
 ### Q4 — `social-care-package-v1`
 
@@ -30,8 +67,6 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Visual identity: tactile cardboard box, packing paper, pantry and clothing materials, shipping label, and a restrained original chat interface. Do not copy LINE branding, logos, screen composition, or assets; the culturally recognizable `既読` behavior is enough.
 - Art path: the owner may request an original Utage Sol brief for the successful video-call still. The son must read as an adult university student, not a child; the gravure-book cover remains non-explicit and abstract.
 - Non-goals: moralizing quiz, “all male students are the same” stereotype, rapid good/bad tap grid, real messaging/network access, or treating a lack of reply as punishment by the son.
-
-## Dispatched brief archive
 
 ### Q1 — `calculation-change-smart-v1`
 
