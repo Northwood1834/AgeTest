@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "artifactDirectory": "/tmp/agetest-language-notice-trim-v1-audit-final2",
+  "canonicalViewports": [{"width":393,"height":852,"dpr":3},{"width":402,"height":874,"dpr":3}],
+  "boundaryViewports": [{"width":390,"height":844,"dpr":3},{"width":430,"height":932,"dpr":3}],
+  "notices": [0,1,2,3],
+  "states": ["initial","one-over","editing","exact-fit","overflow","missing-place-time","lost-condition","meaningless-deletion","authored-tone-miss","success","timeout"],
+  "canonicalScreenshots": 176,
+  "focusScreenshots": 16,
+  "boundaryScreenshots": 32,
+  "normalReducedComparisons": 88,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "minimumInteractiveWidthPx": 104,
+  "minimumInteractiveHeightPx": 49.59375,
+  "maxMAE": 0.0,
+  "maxNormalizedRMSE": 0.000001,
+  "visualQc": {
+    "status": "pass",
+    "oneLineExactFitFullyVisible": true,
+    "widthAndOverhangCausal": true,
+    "recipientPreviewCausal": true,
+    "rackOrderDoesNotRevealSentenceOrder": true,
+    "focusVisible": true,
+    "controlsDoNotWrapOrOverflow": true,
+    "fictionalStorefrontOnly": true,
+    "materialDefects": []
+  }
+}

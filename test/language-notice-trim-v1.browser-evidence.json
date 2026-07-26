@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "lane": {"name":"audit","cdp":9332,"http":8862,"isolated":true},
+  "artifactDirectory": "/tmp/agetest-language-notice-trim-v1-audit-final2",
+  "coverage": {
+    "authoredNotices": 4,
+    "subsetsPerNotice": 2048,
+    "exhaustiveNodeSubsets": 8192,
+    "validSolutionsPerNotice": 2,
+    "canonicalScreenshots": 176,
+    "focusScreenshots": 16,
+    "boundaryScreenshots": 32,
+    "touchSolutionRoutes": 8,
+    "keyboardSolutionRoutes": 2,
+    "deadlineRoutes": 2,
+    "disposeRoutes": 2,
+    "performanceRoutes": 4,
+    "noCueInspections": 4
+  },
+  "interaction": {
+    "allTouchRoutesExactFitAndSuccessOnce": true,
+    "keyboardNormalAndReducedExactFitAndSuccessOnce": true,
+    "removeRestoreUndoCausal": true,
+    "recipientPreviewChangedFromFiniteAuthority": true,
+    "minimumTargetWidthPx": 104,
+    "minimumTargetHeightPx": 49.59375,
+    "allTargetsAtLeast44PxAcross390To430": true,
+    "focusVisible": true
+  },
+  "authority": {
+    "realEtiquetteAuthorityUsed": false,
+    "finiteTaskSlotToneAuthorityOnly": true,
+    "solutionCountsVerified": true,
+    "exactFitVerified": true,
+    "oneOverVerified": true,
+    "rackOrderSentenceOrderCue": false,
+    "answerStyleDataCue": false
+  },
+  "lifecycle": {
+    "deadlineRetainedActiveSelectionHistoryWidthPreview": true,
+    "deadlineFinishedOnce": true,
+    "disposeClearedTimeoutsListenersQa": true,
+    "disposeLateFinishCalls": 0,
+    "gameOwnedPerformanceFrames": 0,
+    "performanceAverageFrameMsRange": [16.61,16.63],
+    "performanceMaxFrameMs": 16.8,
+    "externalRequests": 0,
+    "browserErrors": 0,
+    "horizontalOverflowCases": 0
+  },
+  "parity": {"comparisons":88,"maxNormalizedRMSE":0.000001,"allDpr3":true,"allFullResolution":true},
+  "node": {"focusedTests":{"passed":21,"failed":0},"fullSuite":{"passed":1234,"failed":0,"durationMs":21202.15536}},
+  "visualReport": "test/language-notice-trim-v1.visual-report.json"
+}
