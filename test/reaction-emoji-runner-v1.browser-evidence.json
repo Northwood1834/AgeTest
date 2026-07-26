@@ -1,0 +1,771 @@
+{
+  "game": "reaction-emoji-runner-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "checks": {
+    "realTouch": true,
+    "earlyTouchIgnored": true,
+    "legacyTimingWindow": true,
+    "successAndInputLock": true,
+    "keyboardSpace": true,
+    "focus": true,
+    "width390And430": true,
+    "reducedStatic24": true,
+    "reducedNoRaf": true,
+    "reducedTouch": true,
+    "actualDeadline": true,
+    "dispose": true,
+    "singleFinish": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "noErrorsOrExternal": true,
+    "performance": true
+  },
+  "touch": {
+    "earlyPoint": {
+      "x": 195,
+      "y": 311.75,
+      "width": 332,
+      "height": 343.1875,
+      "focused": true
+    },
+    "livePoint": {
+      "x": 195,
+      "y": 311.75,
+      "width": 332,
+      "height": 343.1875,
+      "focused": true
+    },
+    "timing": {
+      "phase": "APPROACH",
+      "ready": true,
+      "running": true,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "detail": "",
+      "elapsed": 1512.5999999523165,
+      "x": 42.47321428784301,
+      "y": 0,
+      "jumpAt": null,
+      "jumps": 0,
+      "frames": 92,
+      "finishCalls": 0,
+      "jumpDuration": 780,
+      "clearance": 38,
+      "canvas": {
+        "cssWidth": 332,
+        "cssHeight": 272,
+        "pixelWidth": 996,
+        "pixelHeight": 816,
+        "dpr": 3
+      },
+      "status": "丸太が走り出しました。タイミングを見てタップ。",
+      "reduced": false
+    },
+    "final": {
+      "before": {
+        "phase": "SUCCESS",
+        "ready": true,
+        "running": true,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "detail": "華麗なひと跳びです。",
+        "elapsed": 2379.1999999523164,
+        "x": 3.785714287843021,
+        "y": 4.09980121754418,
+        "jumpAt": 1612.5999999523165,
+        "jumps": 1,
+        "frames": 144,
+        "finishCalls": 1,
+        "jumpDuration": 780,
+        "clearance": 38,
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 272,
+          "pixelWidth": 996,
+          "pixelHeight": 816,
+          "dpr": 3
+        },
+        "status": "華麗なひと跳びです。",
+        "reduced": false
+      },
+      "after": {
+        "phase": "SUCCESS",
+        "ready": true,
+        "running": true,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "detail": "華麗なひと跳びです。",
+        "elapsed": 2379.1999999523164,
+        "x": 3.785714287843021,
+        "y": 4.09980121754418,
+        "jumpAt": 1612.5999999523165,
+        "jumps": 1,
+        "frames": 144,
+        "finishCalls": 1,
+        "jumpDuration": 780,
+        "clearance": 38,
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 272,
+          "pixelWidth": 996,
+          "pixelHeight": 816,
+          "dpr": 3
+        },
+        "status": "華麗なひと跳びです。",
+        "reduced": false
+      },
+      "jumpsBeforeLock": 1,
+      "finishes": [],
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "ready",
+        "renderedScene": "ready",
+        "atomicReducedJump": false,
+        "live": true,
+        "motion": "normal",
+        "width": 390,
+        "dpr": 3,
+        "task": {
+          "kind": "runner",
+          "prompt": "タップでジャンプ！丸太を越えて",
+          "help": "「よーい…」のあと、横から来る 🪵 に合わせて1回タップ。",
+          "hero": "🤓",
+          "leadInMs": 1500,
+          "travelMs": 2800,
+          "duration": 4800
+        },
+        "timing": {
+          "leadInMs": 1500,
+          "travelMs": 2800,
+          "duration": 4800,
+          "jumpDuration": 780,
+          "collision": {
+            "xMin": 14,
+            "xMax": 30,
+            "clearance": 38
+          },
+          "successX": 4,
+          "reducedX": 24
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "ready": true,
+          "running": true,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "detail": "華麗なひと跳びです。",
+          "elapsed": 2379.1999999523164,
+          "x": 3.785714287843021,
+          "y": 4.09980121754418,
+          "jumpAt": 1612.5999999523165,
+          "jumps": 1,
+          "frames": 144,
+          "finishCalls": 1,
+          "jumpDuration": 780,
+          "clearance": 38,
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 272,
+            "pixelWidth": 996,
+            "pixelHeight": 816,
+            "dpr": 3
+          },
+          "status": "華麗なひと跳びです。",
+          "reduced": false
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "detail": "華麗なひと跳びです。",
+              "quality": 0.603466666674614
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 272,
+            "pixelWidth": 996,
+            "pixelHeight": 816,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/reaction-emoji-runner-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/reaction-emoji-runner-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "longTasks": [],
+      "navigationMs": 15.600000023841858,
+      "nodeCount": 20
+    }
+  },
+  "keyboard": {
+    "start": {
+      "state": {
+        "phase": "APPROACH",
+        "ready": true,
+        "running": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "detail": "",
+        "elapsed": 1519.3999999761581,
+        "x": 42.169642858207226,
+        "y": 0,
+        "jumpAt": null,
+        "jumps": 0,
+        "frames": 93,
+        "finishCalls": 0,
+        "jumpDuration": 780,
+        "clearance": 38,
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 305,
+          "pixelWidth": 1116,
+          "pixelHeight": 915,
+          "dpr": 3
+        },
+        "status": "丸太が走り出しました。タイミングを見てタップ。",
+        "reduced": false
+      },
+      "scrollY": 0,
+      "focused": true
+    },
+    "final": {
+      "state": {
+        "phase": "SUCCESS",
+        "ready": true,
+        "running": true,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "detail": "華麗なひと跳びです。",
+        "elapsed": 2385.999999976158,
+        "x": 3.48214285820724,
+        "y": 0,
+        "jumpAt": 1519.3999999761581,
+        "jumps": 1,
+        "frames": 145,
+        "finishCalls": 1,
+        "jumpDuration": 780,
+        "clearance": 38,
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 305,
+          "pixelWidth": 1116,
+          "pixelHeight": 915,
+          "dpr": 3
+        },
+        "status": "華麗なひと跳びです。",
+        "reduced": false
+      },
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "ready",
+        "renderedScene": "ready",
+        "atomicReducedJump": false,
+        "live": true,
+        "motion": "normal",
+        "width": 430,
+        "dpr": 3,
+        "task": {
+          "kind": "runner",
+          "prompt": "タップでジャンプ！丸太を越えて",
+          "help": "「よーい…」のあと、横から来る 🪵 に合わせて1回タップ。",
+          "hero": "🤓",
+          "leadInMs": 1500,
+          "travelMs": 2800,
+          "duration": 4800
+        },
+        "timing": {
+          "leadInMs": 1500,
+          "travelMs": 2800,
+          "duration": 4800,
+          "jumpDuration": 780,
+          "collision": {
+            "xMin": 14,
+            "xMax": 30,
+            "clearance": 38
+          },
+          "successX": 4,
+          "reducedX": 24
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "ready": true,
+          "running": true,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "detail": "華麗なひと跳びです。",
+          "elapsed": 2385.999999976158,
+          "x": 3.48214285820724,
+          "y": 0,
+          "jumpAt": 1519.3999999761581,
+          "jumps": 1,
+          "frames": 145,
+          "finishCalls": 1,
+          "jumpDuration": 780,
+          "clearance": 38,
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 305,
+            "pixelWidth": 1116,
+            "pixelHeight": 915,
+            "dpr": 3
+          },
+          "status": "華麗なひと跳びです。",
+          "reduced": false
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "detail": "華麗なひと跳びです。",
+              "quality": 0.602333333337307
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 430,
+          "innerWidth": 430,
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 305,
+            "pixelWidth": 1116,
+            "pixelHeight": 915,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/reaction-emoji-runner-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/reaction-emoji-runner-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "scrollY": 0,
+      "active": "er-stage"
+    }
+  },
+  "reduced": {
+    "state": {
+      "phase": "SUCCESS",
+      "ready": true,
+      "running": true,
+      "done": true,
+      "disposed": true,
+      "result": "success",
+      "detail": "静止画モードで、丸太を回避しました。",
+      "elapsed": 0,
+      "x": 24,
+      "y": 76,
+      "jumpAt": 0,
+      "jumps": 1,
+      "frames": 0,
+      "finishCalls": 1,
+      "jumpDuration": 780,
+      "clearance": 38,
+      "canvas": {
+        "cssWidth": 335,
+        "cssHeight": 275,
+        "pixelWidth": 1005,
+        "pixelHeight": 825,
+        "dpr": 3
+      },
+      "status": "静止画モードで、丸太を回避しました。",
+      "reduced": true
+    },
+    "evidence": {
+      "variant": "module",
+      "requestedScene": "ready",
+      "renderedScene": "ready",
+      "atomicReducedJump": false,
+      "live": true,
+      "motion": "reduced",
+      "width": 393,
+      "dpr": 3,
+      "task": {
+        "kind": "runner",
+        "prompt": "タップでジャンプ！丸太を越えて",
+        "help": "「よーい…」のあと、横から来る 🪵 に合わせて1回タップ。",
+        "hero": "🤓",
+        "leadInMs": 1500,
+        "travelMs": 2800,
+        "duration": 4800
+      },
+      "timing": {
+        "leadInMs": 1500,
+        "travelMs": 2800,
+        "duration": 4800,
+        "jumpDuration": 780,
+        "collision": {
+          "xMin": 14,
+          "xMax": 30,
+          "clearance": 38
+        },
+        "successX": 4,
+        "reducedX": 24
+      },
+      "state": {
+        "phase": "SUCCESS",
+        "ready": true,
+        "running": true,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "detail": "静止画モードで、丸太を回避しました。",
+        "elapsed": 0,
+        "x": 24,
+        "y": 76,
+        "jumpAt": 0,
+        "jumps": 1,
+        "frames": 0,
+        "finishCalls": 1,
+        "jumpDuration": 780,
+        "clearance": 38,
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 275,
+          "pixelWidth": 1005,
+          "pixelHeight": 825,
+          "dpr": 3
+        },
+        "status": "静止画モードで、丸太を回避しました。",
+        "reduced": true
+      },
+      "finishes": [
+        {
+          "correct": true,
+          "result": {
+            "detail": "静止画モードで、丸太を回避しました。"
+          }
+        }
+      ],
+      "layout": {
+        "scrollWidth": 393,
+        "innerWidth": 393,
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 275,
+          "pixelWidth": 1005,
+          "pixelHeight": 825,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/reaction-emoji-runner-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/reaction-emoji-runner-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    }
+  },
+  "deadline": {
+    "state": {
+      "phase": "TIMEOUT",
+      "ready": true,
+      "running": true,
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "detail": "丸太が待ちくたびれました。",
+      "elapsed": 0,
+      "x": 24,
+      "y": 0,
+      "jumpAt": null,
+      "jumps": 0,
+      "frames": 0,
+      "finishCalls": 1,
+      "jumpDuration": 780,
+      "clearance": 38,
+      "canvas": {
+        "cssWidth": 335,
+        "cssHeight": 275,
+        "pixelWidth": 1005,
+        "pixelHeight": 825,
+        "dpr": 3
+      },
+      "status": "丸太が待ちくたびれました。",
+      "reduced": true
+    },
+    "evidence": {
+      "variant": "module",
+      "requestedScene": "ready",
+      "renderedScene": "ready",
+      "atomicReducedJump": false,
+      "live": true,
+      "motion": "reduced",
+      "width": 393,
+      "dpr": 3,
+      "task": {
+        "kind": "runner",
+        "prompt": "タップでジャンプ！丸太を越えて",
+        "help": "「よーい…」のあと、横から来る 🪵 に合わせて1回タップ。",
+        "hero": "🤓",
+        "leadInMs": 1500,
+        "travelMs": 2800,
+        "duration": 4800
+      },
+      "timing": {
+        "leadInMs": 1500,
+        "travelMs": 2800,
+        "duration": 4800,
+        "jumpDuration": 780,
+        "collision": {
+          "xMin": 14,
+          "xMax": 30,
+          "clearance": 38
+        },
+        "successX": 4,
+        "reducedX": 24
+      },
+      "state": {
+        "phase": "TIMEOUT",
+        "ready": true,
+        "running": true,
+        "done": true,
+        "disposed": true,
+        "result": "timeout",
+        "detail": "丸太が待ちくたびれました。",
+        "elapsed": 0,
+        "x": 24,
+        "y": 0,
+        "jumpAt": null,
+        "jumps": 0,
+        "frames": 0,
+        "finishCalls": 1,
+        "jumpDuration": 780,
+        "clearance": 38,
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 275,
+          "pixelWidth": 1005,
+          "pixelHeight": 825,
+          "dpr": 3
+        },
+        "status": "丸太が待ちくたびれました。",
+        "reduced": true
+      },
+      "finishes": [
+        {
+          "correct": false,
+          "result": {
+            "detail": "丸太が待ちくたびれました。"
+          }
+        }
+      ],
+      "layout": {
+        "scrollWidth": 393,
+        "innerWidth": 393,
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 275,
+          "pixelWidth": 1005,
+          "pixelHeight": 825,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/reaction-emoji-runner-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/reaction-emoji-runner-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    }
+  },
+  "disposed": {
+    "before": {
+      "phase": "READY",
+      "ready": false,
+      "running": false,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "detail": "",
+      "elapsed": 0,
+      "x": 110,
+      "y": 0,
+      "jumpAt": null,
+      "jumps": 0,
+      "frames": 0,
+      "finishCalls": 0,
+      "jumpDuration": 780,
+      "clearance": 38,
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 282,
+        "pixelWidth": 1032,
+        "pixelHeight": 846,
+        "dpr": 3
+      },
+      "status": "よーい… 丸太が走り出すまで待って",
+      "reduced": false
+    },
+    "after": {
+      "phase": "READY",
+      "ready": false,
+      "running": false,
+      "done": false,
+      "disposed": true,
+      "result": null,
+      "detail": "",
+      "elapsed": 0,
+      "x": 110,
+      "y": 0,
+      "jumpAt": null,
+      "jumps": 0,
+      "frames": 0,
+      "finishCalls": 0,
+      "jumpDuration": 780,
+      "clearance": 38,
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 282,
+        "pixelWidth": 1032,
+        "pixelHeight": 846,
+        "dpr": 3
+      },
+      "status": "よーい… 丸太が走り出すまで待って",
+      "reduced": false
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": false,
+      "finishCalls": 0,
+      "commits": 0,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "qaRemoved": true,
+    "evidence": {
+      "variant": "module",
+      "requestedScene": "ready",
+      "renderedScene": "ready",
+      "atomicReducedJump": false,
+      "live": true,
+      "motion": "normal",
+      "width": 402,
+      "dpr": 3,
+      "task": {
+        "kind": "runner",
+        "prompt": "タップでジャンプ！丸太を越えて",
+        "help": "「よーい…」のあと、横から来る 🪵 に合わせて1回タップ。",
+        "hero": "🤓",
+        "leadInMs": 1500,
+        "travelMs": 2800,
+        "duration": 4800
+      },
+      "timing": {
+        "leadInMs": 1500,
+        "travelMs": 2800,
+        "duration": 4800,
+        "jumpDuration": 780,
+        "collision": {
+          "xMin": 14,
+          "xMax": 30,
+          "clearance": 38
+        },
+        "successX": 4,
+        "reducedX": 24
+      },
+      "state": {
+        "phase": "READY",
+        "ready": false,
+        "running": false,
+        "done": false,
+        "disposed": true,
+        "result": null,
+        "detail": "",
+        "elapsed": 0,
+        "x": 110,
+        "y": 0,
+        "jumpAt": null,
+        "jumps": 0,
+        "frames": 0,
+        "finishCalls": 0,
+        "jumpDuration": 780,
+        "clearance": 38,
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 282,
+          "pixelWidth": 1032,
+          "pixelHeight": 846,
+          "dpr": 3
+        },
+        "status": "よーい… 丸太が走り出すまで待って",
+        "reduced": false
+      },
+      "finishes": [],
+      "layout": {
+        "scrollWidth": 402,
+        "innerWidth": 402,
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 282,
+          "pixelWidth": 1032,
+          "pixelHeight": 846,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/reaction-emoji-runner-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/reaction-emoji-runner-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    }
+  }
+}
