@@ -364,50 +364,6 @@ function makePuzzleTask(){
   return{kind:"chainPuzzle",prompt:"ブロックを消して",help:"落とす列をタップ。同じ顔が4つつながると消えます。",
     board,queue:[palette[0],palette[1],palette[1]],target:1,best:1,bestCol:0,decoys:0,palette,duration:60000};
 }
-const GATE_OPS=[
-  {kind:"add",make:()=>({kind:"add",value:randomInt(4,18)})},
-  {kind:"mul",make:()=>({kind:"mul",value:randomInt(2,3)})},
-  {kind:"sub",make:()=>({kind:"sub",value:randomInt(3,14)})},
-  {kind:"div",make:()=>({kind:"div",value:2})}
-];
-const gateLabel=op=>op.kind==="add"?`＋${op.value}`:op.kind==="mul"?`×${op.value}`:op.kind==="sub"?`−${op.value}`:`÷${op.value}`;
-const gateApply=(count,op)=>{
-  if(op.kind==="add")return count+op.value;
-  if(op.kind==="mul")return count*op.value;
-  if(op.kind==="sub")return Math.max(0,count-op.value);
-  return Math.floor(count/op.value);
-};
-function makeGateTask(){
-  for(let attempt=0;attempt<400;attempt++){
-    const start=randomInt(6,14),rows=3;
-    const gates=Array.from({length:rows},()=>{
-      const pair=shuffle(GATE_OPS).slice(0,2).map(op=>op.make());
-      return pair;
-    });
-    const paths=[];
-    for(let mask=0;mask<(1<<rows);mask++){
-      let count=start;const choice=[];
-      for(let row=0;row<rows;row++){
-        const lane=(mask>>row)&1;choice.push(lane);
-        count=gateApply(count,gates[row][lane]);
-      }
-      paths.push({choice,count});
-    }
-    const best=Math.max(...paths.map(path=>path.count));
-    const worst=Math.min(...paths.map(path=>path.count));
-    if(best<12||best-worst<10)continue;
-    const enemy=Math.round(best*.72);
-    const winners=paths.filter(path=>path.count>enemy);
-    if(winners.length<1||winners.length>2)continue;
-    if(paths.filter(path=>path.count<=enemy).length<5)continue;
-    return{kind:"gateRun",prompt:"軍団を増やして敵を倒せ",
-      help:"門を選ぶと兵の数が変わります。最後の敵より多ければ勝ちです。",
-      start,gates,enemy,best,answer:winners[0].choice,duration:35000};
-  }
-  const gates=[[{kind:"mul",value:3},{kind:"sub",value:5}],[{kind:"add",value:12},{kind:"div",value:2}],[{kind:"mul",value:2},{kind:"add",value:4}]];
-  return{kind:"gateRun",prompt:"軍団を増やして敵を倒せ",help:"門を選ぶと兵の数が変わります。最後の敵より多ければ勝ちです。",
-    start:8,gates,enemy:40,best:72,answer:[0,0,0],duration:35000};
-}
 const PARK_SIZE=5,PARK_EXIT=2;
 const PARK_COLORS=["#EA6A5C","#5FB6E0","#66C08C","#F2CE4B","#A66DC2","#F2953F","#7C8CC4"];
 const parkKey=cars=>cars.map(car=>`${car.r},${car.c}`).join("|");
@@ -853,7 +809,6 @@ const LEGACY_TASK_FACTORIES = [
   {id:"calculation-rpg-battle-v1",version:"1.1",category:"calculation",make:()=>makeBattleTask()},
   {id:"spatial-lane-run-v1",version:"1.2",category:"spatial",make:()=>makeRunStage()},
   {id:"prediction-chain-puzzle-v1",version:"1.3",category:"prediction",make:()=>makePuzzleTask()},
-  {id:"calculation-gate-run-v1",version:"1.6",category:"calculation",make:()=>makeGateTask()},
   {id:"spatial-park-jam-v1",version:"1.7",category:"spatial",make:()=>makeParkTask()},
   {id:"spatial-flow-link-v1",version:"1.9",category:"spatial",make:()=>makeFlowTask()},
   {id:"attention-screw-out-v1",version:"1.11",category:"attention",make:()=>makeScrewTask()},
@@ -1038,7 +993,6 @@ function renderTask(task){
   if(task.kind==="rpgBattle"){renderRpgBattle(task);return}
   if(task.kind==="laneRun"){renderLaneRun(task);return}
   if(task.kind==="chainPuzzle"){renderChainPuzzle(task);return}
-  if(task.kind==="gateRun"){renderGateRun(task);return}
   if(task.kind==="parkJam"){renderParkJam(task);return}
   if(task.kind==="flowLink"){renderFlowLink(task);return}
   if(task.kind==="screwOut"){renderScrewOut(task);return}
@@ -1986,179 +1940,6 @@ function renderChainPuzzle(task){
   startDeadline(task.duration,()=>{
     if(state.done||questionAnswered)return;state.done=true;
     finishTask(false,{detail:`時間切れ。最大${task.best}連鎖の置き場所がありました。`});
-  });
-}
-function renderGateRun(task){
-  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const wrap=document.createElement("div");wrap.className="gate-stage";
-  const canvas=document.createElement("canvas");canvas.className="gate-canvas";
-  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","上下の門を選んで軍団を増やす");
-  const pad=document.createElement("div");pad.className="gate-pad";
-  const up=document.createElement("button"),down=document.createElement("button");
-  [[up,"▲ 上の門","上の門を選ぶ"],[down,"▼ 下の門","下の門を選ぶ"]].forEach(([button,text,label])=>{
-    button.type="button";button.className="gate-key";button.textContent=text;button.setAttribute("aria-label",label);
-    pad.append(button);
-  });
-  wrap.append(canvas,pad);$("challenge").append(wrap);
-  const ctx=canvas.getContext("2d");
-  const state={count:task.start,lane:0,x:0,done:false,row:0,shake:0,flash:0,clash:0,result:null,pop:0};
-  const troops=Array.from({length:60},()=>({ox:randomFloat(),oy:randomFloat(),phase:randomFloat()*6.28}));
-  const sparks=[];
-  let W=0,H=0,clock=0;
-  const resize=()=>{
-    const dpr=Math.min(window.devicePixelRatio||1,3);
-    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*.78);
-    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
-    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  };
-  const laneY=lane=>H*(lane?.68:.36);
-  const gateX=row=>W*(1.05+row*.66)-state.x;
-  const enemyX=()=>W*(1.05+task.gates.length*.66+.38)-state.x;
-  const drawCrowd=(x,y,count,color,scale)=>{
-    const shown=Math.min(count,60),unit=W*.026*scale;
-    for(let i=0;i<shown;i++){
-      const troop=troops[i];
-      const spread=Math.min(1,.35+shown/60)*W*.075*scale;
-      const cx=x+(troop.ox-.5)*spread*1.5,cy=y+(troop.oy-.5)*spread+Math.sin(clock*7+troop.phase)*unit*.25;
-      ctx.fillStyle="rgba(30,18,44,.18)";
-      ctx.beginPath();ctx.ellipse(cx,cy+unit*1.1,unit*.8,unit*.28,0,0,Math.PI*2);ctx.fill();
-      ctx.fillStyle=color.body;
-      ctx.beginPath();ctx.ellipse(cx,cy,unit*.72,unit*.9,0,0,Math.PI*2);ctx.fill();
-      ctx.fillStyle=color.head;
-      ctx.beginPath();ctx.arc(cx,cy-unit*1.05,unit*.62,0,Math.PI*2);ctx.fill();
-      ctx.fillStyle="#241814";
-      ctx.beginPath();ctx.arc(cx-unit*.2,cy-unit*1.1,unit*.12,0,Math.PI*2);ctx.fill();
-      ctx.beginPath();ctx.arc(cx+unit*.2,cy-unit*1.1,unit*.12,0,Math.PI*2);ctx.fill();
-    }
-  };
-  const drawBadge=(x,y,text,colors,size)=>{
-    ctx.fillStyle=colors[0];
-    ctx.beginPath();ctx.roundRect(x-size*1.5,y-size*.6,size*3,size*1.2,size*.6);ctx.fill();
-    ctx.strokeStyle=colors[1];ctx.lineWidth=Math.max(1,size*.12);ctx.stroke();
-    ctx.fillStyle="#FFFFFF";ctx.font=`900 ${Math.round(size*.95)}px "Hiragino Maru Gothic ProN",sans-serif`;
-    ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(text,x,y);ctx.textAlign="left";
-  };
-  const drawGate=(row)=>{
-    const x=gateX(row);if(x<-W*.3||x>W*1.4)return;
-    task.gates[row].forEach((op,lane)=>{
-      const y=laneY(lane),h=H*.26,w=W*.16;
-      const positive=op.kind==="add"||op.kind==="mul";
-      const fill=ctx.createLinearGradient(x-w/2,y-h/2,x+w/2,y+h/2);
-      if(positive){fill.addColorStop(0,"rgba(102,192,140,.85)");fill.addColorStop(1,"rgba(46,122,84,.9)")}
-      else{fill.addColorStop(0,"rgba(234,126,155,.85)");fill.addColorStop(1,"rgba(168,65,106,.9)")}
-      ctx.fillStyle=fill;
-      ctx.beginPath();ctx.roundRect(x-w/2,y-h/2,w,h,W*.02);ctx.fill();
-      ctx.strokeStyle="rgba(255,255,255,.75)";ctx.lineWidth=Math.max(2,W*.008);ctx.stroke();
-      ctx.fillStyle="#FFFFFF";ctx.font=`900 ${Math.round(W*.075)}px "Hiragino Maru Gothic ProN",sans-serif`;
-      ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(gateLabel(op),x,y);ctx.textAlign="left";
-    });
-  };
-  const drawEnemy=()=>{
-    const x=enemyX();if(x>W*1.5)return;
-    drawCrowd(x,H*.52,task.enemy,{body:"#6B4E8F",head:"#8E6BD0"},1);
-    drawBadge(x,H*.16,`${task.enemy}`,["#4A2A72","#B79BE0"],W*.06);
-  };
-  const paint=()=>{
-    ctx.clearRect(0,0,W,H);
-    ctx.save();
-    if(state.shake>0){const power=state.shake*W*.02;ctx.translate((randomFloat()-.5)*power,(randomFloat()-.5)*power)}
-    const sky=ctx.createLinearGradient(0,0,0,H);
-    sky.addColorStop(0,"#DCEBFA");sky.addColorStop(.5,"#EFE4F8");sky.addColorStop(1,"#CDE6D6");
-    ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
-    ctx.fillStyle="rgba(255,255,255,.5)";ctx.fillRect(0,H*.5-2,W,4);
-    for(let i=0;i<12;i++){
-      const x=(i*W*.24-state.x*.6)%(W*1.4)-W*.2;
-      ctx.fillStyle="rgba(122,84,150,.08)";
-      ctx.beginPath();ctx.ellipse(x,H*.5,W*.09,H*.03,0,0,Math.PI*2);ctx.fill();
-    }
-    task.gates.forEach((pair,row)=>drawGate(row));
-    drawEnemy();
-    const heroX=W*.22,heroY=laneY(state.lane);
-    drawCrowd(heroX,heroY,state.count,{body:"#C06A26",head:"#F0A25A"},1+state.pop*.15);
-    drawBadge(heroX,heroY-H*.16,`${state.count}`,["#8C5A1E","#FFD9A0"],W*.06);
-    sparks.forEach(spark=>{
-      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
-      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
-    });
-    if(state.flash>0){ctx.fillStyle=`rgba(255,255,255,${state.flash*.6})`;ctx.fillRect(0,0,W,H)}
-    ctx.restore();
-    if(state.result){
-      ctx.fillStyle=state.result==="win"?"rgba(46,122,84,.9)":"rgba(168,65,106,.9)";
-      ctx.font=`900 ${Math.round(W*.12)}px "Hiragino Maru Gothic ProN",sans-serif`;
-      ctx.textAlign="center";ctx.textBaseline="middle";
-      ctx.fillText(state.result==="win"?"勝った！":"負け…",W/2,H*.5);ctx.textAlign="left";
-    }
-  };
-  const burst=(x,y,color,count)=>{
-    for(let i=0;i<(reduced?4:count);i++){
-      const angle=randomFloat()*Math.PI*2,speed=W*(.05+randomFloat()*.12);
-      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-W*.05,size:W*(.006+randomFloat()*.012),color,life:1});
-    }
-  };
-  const finish=(won,detail)=>{
-    if(state.done||questionAnswered)return;state.done=true;
-    state.result=won?"win":"lose";
-    const elapsed=performance.now()-questionStartedAt;
-    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?300:1100);
-  };
-  const setLane=lane=>{if(!state.done)state.lane=lane};
-  up.addEventListener("pointerdown",event=>{event.preventDefault();setLane(0)});
-  down.addEventListener("pointerdown",event=>{event.preventDefault();setLane(1)});
-  up.addEventListener("click",event=>{if(event.detail===0)setLane(0)});
-  down.addEventListener("click",event=>{if(event.detail===0)setLane(1)});
-  canvas.addEventListener("pointerdown",event=>{
-    event.preventDefault();
-    const rect=canvas.getBoundingClientRect();
-    setLane(event.clientY-rect.top<rect.height/2?0:1);
-  });
-  wrap.tabIndex=0;
-  wrap.addEventListener("keydown",event=>{
-    if(event.key==="ArrowUp"){event.preventDefault();setLane(0)}
-    else if(event.key==="ArrowDown"){event.preventDefault();setLane(1)}
-  });
-  wrap.focus({preventScroll:true});
-  let last=performance.now();const token={id:null};extraRafs.push(token);
-  const speed=()=>W*(reduced?.16:.22);
-  const tick=now=>{
-    if(questionAnswered)return;
-    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
-    state.shake=Math.max(0,state.shake-dt*2.5);
-    state.flash=Math.max(0,state.flash-dt*2);
-    state.pop=Math.max(0,state.pop-dt*3);
-    for(let i=sparks.length-1;i>=0;i--){
-      const spark=sparks[i];spark.life-=dt*1.6;
-      if(spark.life<=0){sparks.splice(i,1);continue}
-      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=W*.6*dt;
-    }
-    if(!state.done){
-      state.x+=speed()*dt;
-      if(state.row<task.gates.length&&gateX(state.row)<=W*.22){
-        const op=task.gates[state.row][state.lane],before=state.count;
-        state.count=gateApply(state.count,op);
-        state.pop=1;state.flash=.5;state.shake=.4;
-        burst(W*.22,laneY(state.lane),state.count>=before?"#7FD08C":"#EA7E9B",18);
-        state.row++;
-      }
-      if(state.row>=task.gates.length&&enemyX()<=W*.28){
-        state.shake=1;state.flash=.7;
-        burst(W*.3,H*.5,"#FFD9A0",30);
-        const won=state.count>task.enemy;
-        finish(won,won?`${state.count}対${task.enemy}で勝利。最大は${task.best}人でした。`
-          :`${state.count}対${task.enemy}で敗北。${task.best}人まで増やせる道がありました。`);
-      }
-    }
-    paint();token.id=requestAnimationFrame(tick);
-  };
-  resize();
-  const onResize=()=>{resize();paint()};
-  window.addEventListener("resize",onResize,{passive:true});
-  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
-  if(window.__SHORO_QA__)window.__SHORO_QA__.gate={state,task,setLane};
-  paint();token.id=requestAnimationFrame(tick);
-  startDeadline(task.duration,()=>{
-    if(state.done||questionAnswered)return;state.done=true;
-    finishTask(false,{detail:"時間切れです。"});
   });
 }
 function renderParkJam(task){
