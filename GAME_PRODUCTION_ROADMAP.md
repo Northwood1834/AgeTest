@@ -155,12 +155,12 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `social-greeting-v1` — accepted and integrated
 - `reaction-emoji-match-v1` — accepted and integrated
 - `attention-kana-count-v1` — accepted and integrated
-- `attention-animal-count-v1` — flow lane
+- `attention-animal-count-v1` — accepted and integrated
 - `inhibition-parity-v1` — accepted and integrated
 - `inhibition-opposite-v1` — accepted and integrated
 - `inhibition-rule-switch-v1` — accepted and integrated
 - `memory-missing-v1` — accepted and integrated
-- `memory-recipe-order-v1` — pre-browser; waits for flow lane
+- `memory-recipe-order-v1` — flow lane
 
 ### N08 — active original
 
