@@ -6,7 +6,7 @@ Status: director-owned intake ledger for `rebuild/game-modules`.
 
 The default player is not a puzzle specialist. New concepts must be understandable within three seconds, use one primary gesture/mechanic with at most one gentle twist, run 15–25 seconds, and favor tier 1–2 (at most one tier 3 per six-game batch). Favor warm, familiar original fiction and satisfying visual payoff without gender stereotypes. Keep copy short, retries forgiving, touch targets large, and visible quantities to three or fewer. Equations, rule tables, dependency graphs, branch searches, multiple clocks, and dense abstract-machine instructions are not default production material. Exhaustive proof remains internal QA, never player-facing complexity.
 
-Q75–Q116 are retained only as an advanced-concept reserve and are not the default production sequence. The original Q117–Q122 batch and its queued corrections were rejected before recording for excessive complexity; replacements must follow this accessibility lock.
+Q75–Q116 are retained only as an advanced-concept reserve and are not the default production sequence. The original complex Q117–Q122 batch and its queued corrections were rejected before recording; the accessible replacements below establish the new default.
 
 The director records and sharpens user ideas, assigns exactly one game to one available owner, reviews evidence, and integrates accepted work. The director does not implement queued game modules. A new assignment is made when an owner has completed and released a game; no owner holds two games at once. Browser work still uses only the three isolated QA lanes.
 
@@ -792,6 +792,42 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Core: rearrange a finite abstract board and issue at most three commands built from task-defined quantifier and condition chips; board edits change the set denoted by the same command, trading physical setup against linguistic specificity.
 - Proof/outcomes: exhaustive board/command histories allow 1–2 routes, require board edits and defeat quantifier-only/condition-only policies; overbroad, overlong, empty set, expanded-set error and timeout retain state.
 - Art/reduced motion: original pieces/quantifier chips/rule card/neutral affected-set hatching; sequential stills, no external language authority or correct-order styling.
+
+### Q117 — `attention-leaf-trim-v1`
+
+- Category/tier/flavor: attention / tier 1 / satisfying
+- One-line play: tap only the dry-edged leaves to brighten a warm fictional houseplant; two mistaken healthy-leaf taps remain recoverable.
+- QA/art: finite shape-and-edge distinction independent of color, all leaves visible, forgiving health meter; original pot/leaf states and static reduced glow.
+
+### Q118 — `timing-milk-pour-v1`
+
+- Category/tier/flavor: timing / tier 1 / satisfying
+- One-line play: hold to pour and release just before foam reaches the cup rim; a small visible after-flow is the only twist, with one wipe-and-retry after overflow.
+- QA/art: integer flow/after-flow and a generous target wider than after-flow; original cup/pitcher/foam stages with stepped reduced liquid and static steam.
+
+### Q119 — `spatial-shelf-balance-v1`
+
+- Category/tier/flavor: spatial / tier 2 / satisfying
+- One-line play: drag six warm decorative objects until the shelf looks balanced without a tall front object hiding anything behind it.
+- QA/art: multiple finite balanced/no-occlusion layouts and unlimited rearrangement; original wooden shelf/shape-distinct decor with snapped reduced placement and finished-window light.
+
+### Q120 — `memory-table-restore-v1`
+
+- Category/tier/flavor: memory / tier 2 / satisfying
+- One-line play: after a four-second look, drag back the three changed table details—position, direction, or open/closed state—with all accidental moves reversible.
+- QA/art: exactly three visible non-color-only changes and forgiving extra-move counter; original tabletop objects and a final before/current visual merge, six-second reduced encoding.
+
+### Q121 — `social-share-cookies-v1`
+
+- Category/tier/flavor: social / tier 1 / satisfying
+- One-line play: drag eight shape-distinct cookies into two four-slot plates, placing at least one favorite shown in each plate’s picture bubble.
+- QA/art: several valid allocations using only visible slot/favorite data—never etiquette or fairness inference; original cookies/plates/cups with snapped reduced movement and warm completed table.
+
+### Q122 — `reaction-clothesline-calm-v1`
+
+- Category/tier/flavor: reaction / tier 1 / quirky
+- One-line play: tap each visibly fluttering clothesline item before the fixed gentle wind sequence carries it down; one dropped item can be recovered.
+- QA/art: generous deterministic windows, shape/tilt strength cues and reachable complete route; original outdoor line/five garments/clearing sky with stepped non-flashing reduced flutter.
 
 ## Dispatched brief archive
 
