@@ -57,21 +57,27 @@ For each game:
 3. prove bounded generation, solvability, save/resume, outcome and disposal behavior;
 4. for a port, produce same-task legacy/module captures at 393×852 and 402×874 DPR3; for an original, produce the complete required state set at both viewports and review it against the accepted concept;
 5. obtain independent visual acceptance;
-6. commit the game, regenerate the manifest, and verify the 79/300 catalogue invariant;
-7. remove only that game's legacy implementation and verify again; and
-8. assign the lane's next single game.
+6. commit the accepted game; after a wave of up to three, regenerate the manifest and verify the published-baseline/300 catalogue invariant;
+7. for a port, remove only that game's legacy implementation and verify again; and
+8. assign the lane's next single game only after its wave is integrated.
 
 A failed game stays isolated and is revised or withheld. It never blocks accepted modules from being curated independently.
 
 ## Active and queued published-game waves
 
-### P02 — active
+### P02 — completed
 
-- `spatial-flow-link-v1` — flow lane
-- `attention-screw-out-v1` — screw lane
-- `timing-tower-stack-v1` — audit lane
+- `spatial-flow-link-v1` — accepted
+- `attention-screw-out-v1` — accepted
+- `timing-tower-stack-v1` — accepted
 
-### P03 — assign one-by-one after P02 acceptance
+### N01 originals — active
+
+- `timing-fish-grill-v1` — accepted
+- `prediction-desk-ruler-duel-v1` — acceptance revision
+- `prediction-card-combo-v1` — acceptance revision
+
+### P03 — assign one-by-one after N01 acceptance
 
 - `prediction-chain-puzzle-v1`
 - `spatial-lane-run-v1`
