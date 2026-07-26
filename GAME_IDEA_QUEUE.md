@@ -17,7 +17,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
 | `language-notice-trim-v1` | former Balance Scale owner | N10; audit lane | Trim a fictional notice to width while retaining only task-authored required slots and tone |
-| `social-shared-umbrella-v1` | former Quiet Tidy owner | N10; flow lane; visual fix | Balance two visible coverage regions through wind, puddles, and sheltered resets |
+| `attention-leaf-trim-v1` | former Shared Umbrella owner | N11; flow lane | Tap dry-edged leaves on a warm houseplant with two recoverable healthy-leaf mistakes |
 | `spatial-suitcase-pack-v1` | former Particle Scene owner | N10; screw lane | Rotate, compress, protect, and close a finite essential-item packing grid |
 
 ## Waiting queue
@@ -828,6 +828,42 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Category/tier/flavor: reaction / tier 1 / quirky
 - One-line play: tap each visibly fluttering clothesline item before the fixed gentle wind sequence carries it down; one dropped item can be recovered.
 - QA/art: generous deterministic windows, shape/tilt strength cues and reachable complete route; original outdoor line/five garments/clearing sky with stepped non-flashing reduced flutter.
+
+### Q123 — `language-label-jar-v1`
+
+- Category/tier/flavor: language / tier 2 / satisfying
+- One-line play: drag finite on-screen word labels onto warm pantry jars so their illustrated contents match the shelf samples; one compound jar needs two labels.
+- QA/art: reversible finite label/content mapping with several valid edits and no external vocabulary; original jars/cloth lids/six contents/wood shelf with gentle reduced cross-fade.
+
+### Q124 — `calculation-flower-share-v1`
+
+- Category/tier/flavor: calculation / tier 2 / satisfying
+- One-line play: drag flowers into three four-dot vases until each has equal filled capacity; ordinary stems visibly fill one dot and one large bloom fills two.
+- QA/art: reversible finite allocations and multiple balanced solutions with every capacity dot visible; original shape-distinct flowers/vases and snapped reduced placement.
+
+### Q125 — `inhibition-bubble-keep-v1`
+
+- Category/tier/flavor: inhibition / tier 1 / quirky
+- One-line play: tap all small round bubbles while leaving the larger, more attention-grabbing star bubbles; two star mistakes remain recoverable.
+- QA/art: finite all-visible shape-and-edge distinction independent of color; original round/star bubbles, non-flashing two-state pops and softly rising star finish.
+
+### Q126 — `prediction-cookie-cut-v1`
+
+- Category/tier/flavor: prediction / tier 2 / satisfying
+- One-line play: arrange cookie cutters on one dough sheet, then lift them once; overlapping or overhanging cutters do not produce cookies, but all placement is reversible before commit.
+- QA/art: multiple finite target-count layouts and a tempting edge-first near miss; original dough/three cutter shapes/cookies with a static two-state reduced reveal.
+
+### Q127 — `spatial-photo-layout-v1`
+
+- Category/tier/flavor: spatial / tier 1 / satisfying
+- One-line play: drag six original object-and-landscape photos into matching portrait or landscape album frames, rotating at least two before they fit.
+- QA/art: finite full matching, no people or personal photos, reversible placement; original album/page/images/cover with snapped reduced rotation.
+
+### Q128 — `social-postcard-send-v1`
+
+- Category/tier/flavor: social / tier 2 / satisfying
+- One-line play: drag illustrated postcards into three address boxes using only each box’s picture bubble; one dual-match card makes the remaining allocation gently consequential.
+- QA/art: reversible finite assignments with several visible-data-only routes and no etiquette/fairness inference; original four postcards/boxes/postbox sky with two-still reduced send.
 
 ## Dispatched brief archive
 
