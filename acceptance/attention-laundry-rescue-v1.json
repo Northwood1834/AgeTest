@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "attention-laundry-rescue-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "f7b326beb2d61c8ed204401b02e2a9cfd1c5c78f",
+  "test": "test/attention-laundry-rescue-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

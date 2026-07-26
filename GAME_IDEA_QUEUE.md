@@ -13,7 +13,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | `calculation-number-tower-route-v1` | former Driving Safety owner | pre-browser; waits for flow | Plan a whole numbered tower route whose running value changes every later fight |
 | `spatial-draw-bridge-v1` | former Ricochet owner | pre-browser; waits for audit | Draw a limited anchored span that must carry a real moving vehicle load |
 | `spatial-golf-putt-v1` | former Emoji Runner owner | P05 port pre-browser; waits for screw | Faithfully port the published pull-back sloped putt with computed-result parity |
-| `attention-laundry-rescue-v1` | former Sheep Home owner | browser/visual, flow lane | Drag only laundry into a top-loader; wife or dog is an immediate comic failure |
+| `attention-author-boss-v1` | former Laundry owner | P05 port pre-browser; waits for flow | Faithfully port the published three-mode moving-author hunt with parity evidence |
 | `spatial-emoji-fps-v1` | former Goods Shelf owner | P04 port pre-browser; waits for audit | Faithfully port the published three-target 3D lock-on corridor with parity evidence |
 | `prediction-lane3d-v1` | former Sand Channel owner | P04 port pre-browser; waits for screw | Faithfully port the published three-lane future-hazard choice with parity evidence |
 

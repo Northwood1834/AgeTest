@@ -91,9 +91,10 @@ A failed game stays isolated and is revised or withheld. It never blocks accepte
 
 P04 takes the next three owner slots that become free after their current ownership contracts. It precedes further waiting original-game ideas. Each port requires same-task legacy/module source captures at both canonical viewports and removes only its own accepted legacy factory after integration.
 
-### P05 — active pre-browser port
+### P05 — active pre-browser ports
 
 - `spatial-golf-putt-v1` — waits for screw lane
+- `attention-author-boss-v1` — waits for flow lane
 
 ### N02 — completed daily-ritual original series
 
@@ -109,15 +110,15 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `spatial-screen-protector-v1` — accepted
 - `social-thread-vibe-v1` — accepted
 
-### N04 — active browser/acceptance wave
+### N04 — completed
 
-- `attention-laundry-rescue-v1` — flow lane
+- `attention-laundry-rescue-v1` — accepted and integrated
 - `calculation-change-smart-v1` — accepted and integrated
 - `memory-phone-pin-v1` — accepted and integrated
 
 ### N05 — active production
 
-- `calculation-number-tower-route-v1` — pre-browser; waits for flow lane
+- `calculation-number-tower-route-v1` — flow lane
 - `social-care-package-v1` — accepted and integrated
 - `spatial-draw-shelter-v1` — accepted and integrated
 

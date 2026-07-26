@@ -34,6 +34,17 @@ export const gameManifest=Object.freeze([
     "hash": "a976a17987a8fab3"
   },
   {
+    "id": "attention-laundry-rescue-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "wild",
+    "step": 1,
+    "family": "attention-laundry-rescue",
+    "category": "attention",
+    "module": "./games/attention-laundry-rescue-v1.js",
+    "hash": "d65a38aa4d5f22d0"
+  },
+  {
     "id": "attention-screw-out-v1",
     "introducedIn": "1.11",
     "tier": 2,
