@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "inhibition-parity-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "085f40b60cca451803772fac98222698702bac38",
+  "test": "test/inhibition-parity-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

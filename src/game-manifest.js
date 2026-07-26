@@ -166,6 +166,17 @@ export const gameManifest=Object.freeze([
     "hash": "2d6a38c79b8cb166"
   },
   {
+    "id": "inhibition-parity-v1",
+    "introducedIn": "1.0",
+    "tier": 3,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "inhibition-parity",
+    "category": "inhibition",
+    "module": "./games/inhibition-parity-v1.js",
+    "hash": "2e158179c1357576"
+  },
+  {
     "id": "inhibition-stroop-v1",
     "introducedIn": "1.0",
     "tier": 1,
