@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "spatial-shelf-balance-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "431a6a9431af5b72b8bf3d98b56fc6c35650605d",
+  "test": "test/spatial-shelf-balance-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

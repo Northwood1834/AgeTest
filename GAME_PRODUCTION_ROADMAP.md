@@ -173,7 +173,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `attention-leaf-trim-v1` — accepted and integrated
 - `memory-table-restore-v1` — accepted and integrated
 - `spatial-suitcase-pack-v1` — accepted and integrated
-- `spatial-shelf-balance-v1` — screw lane
+- `spatial-shelf-balance-v1` — accepted and integrated
 
 ### N08 — active original
 

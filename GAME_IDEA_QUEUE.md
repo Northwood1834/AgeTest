@@ -16,7 +16,6 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `spatial-shelf-balance-v1` | former Suitcase Pack owner | N11; screw lane | Drag six warm decorative objects into balanced, unobscured shelf positions |
 | `social-share-cookies-v1` | former Milk Pour owner | N12; audit lane | Drag eight shape-distinct cookies into two four-slot plates using only visible favorite bubbles |
 
 ## Waiting queue
