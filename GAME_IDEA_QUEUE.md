@@ -2,6 +2,12 @@
 
 Status: director-owned intake ledger for `rebuild/game-modules`.
 
+## Audience and difficulty lock — mainstream women in their 30s–40s
+
+The default player is not a puzzle specialist. New concepts must be understandable within three seconds, use one primary gesture/mechanic with at most one gentle twist, run 15–25 seconds, and favor tier 1–2 (at most one tier 3 per six-game batch). Favor warm, familiar original fiction and satisfying visual payoff without gender stereotypes. Keep copy short, retries forgiving, touch targets large, and visible quantities to three or fewer. Equations, rule tables, dependency graphs, branch searches, multiple clocks, and dense abstract-machine instructions are not default production material. Exhaustive proof remains internal QA, never player-facing complexity.
+
+Q75–Q116 are retained only as an advanced-concept reserve and are not the default production sequence. The original Q117–Q122 batch and its queued corrections were rejected before recording for excessive complexity; replacements must follow this accessibility lock.
+
 The director records and sharpens user ideas, assigns exactly one game to one available owner, reviews evidence, and integrates accepted work. The director does not implement queued game modules. A new assignment is made when an owner has completed and released a game; no owner holds two games at once. Browser work still uses only the three isolated QA lanes.
 
 Queue order follows user intake unless a category/lane dependency makes the next item temporarily impossible. A handoff contract locks the stable ID, scope, mechanic, acceptance states, and non-goals. Owners may improve the brief but may not replace its defining interaction with a generic quiz, tap target, or progress bar.
