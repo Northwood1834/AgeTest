@@ -745,6 +745,41 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Proof/outcomes: exhaustive finite reconstructions guarantee one integration and deceptive alignments while independent placement exceeds the action budget; shift, omission, duplicate overlap, conflict and timeout retain placement.
 - Art/reduced motion: original grid fragments/elements/tray; snapped placement and three-second reduced fragments, no target whole or order cue.
 
+### Q111 — `social-deadlock-break-v1`
+
+- Category/tier/flavor: social / tier 3 / satisfying
+- Core: use only two task-authorized override tokens to break a visible circular dependency among three autonomous abstract agents whose different durations make the first intervention reshape the best second intervention.
+- Proof/outcomes: exhaustive integer targets/ticks yield 1–2 deadline-valid break plans, prove one break insufficient and defeat shortest-agent greed; wrong-side, repeated break, duplicate execution, late break and timeout retain all states.
+- Art/reduced motion: original abstract three-agent dependency ring; discrete progress and static waiting/override marks, no people-management norm beyond the displayed fictional protocol.
+
+### Q112 — `attention-aperture-track-v1`
+
+- Category/tier/flavor: attention / tier 3 / wild
+- Core: track eight deterministic moving tokens through a variable aperture whose wider views preserve location but hide edge-notch identity while narrow views reveal shape details but risk losing moving targets.
+- Proof/outcomes: exhaustive integer aperture/track histories defeat fixed widest/narrowest policies and require shape-not-color identification; coarse uncertainty, narrow loss, resize waste, lookalike mark and timeout retain trajectories.
+- Art/reduced motion: original abstract notched tokens/aperture/markers; discrete trajectories and stepped aperture sizes, no hidden random identity.
+
+### Q113 — `prediction-early-intervene-v1`
+
+- Category/tier/flavor: prediction / tier 3 / satisfying
+- Core: infer from fully visible deterministic rules which one of three simultaneous abstract progressions will fail, spending one intervention whose displayed effect declines while later evidence becomes easier to read.
+- Proof/outcomes: enumerate targets/ticks to guarantee an initial-state-solvable ≥3-tick success window and ineffective final intervention; late, wrong-lane, induced-other-failure, no-action and timeout retain all tracks.
+- Art/reduced motion: original three-lane state board/rule card/effect curve; stepped progress and two-state intervention, no real rescue or risk procedure.
+
+### Q114 — `reaction-deferred-return-v1`
+
+- Category/tier/flavor: reaction / tier 3 / wild
+- Core: each scheduled pair permits only one immediate reaction; the deferred member returns after a visible fixed delay with a shorter window that can collide with later pairs, so present choice creates future load.
+- Proof/outcomes: exhaustive integer choices defeat simple long-window defer greed and include ≥2 return collisions; exact window edges cover easy-first pileup, hard-first miss, collision loss, max-shortening and timeout.
+- Art/reduced motion: original abstract paired requests/inlet/return timeline; immediate arrivals and static return previews, no real queue procedure.
+
+### Q116 — `language-quantifier-scope-v1`
+
+- Category/tier/flavor: language / tier 3 / satisfying
+- Core: rearrange a finite abstract board and issue at most three commands built from task-defined quantifier and condition chips; board edits change the set denoted by the same command, trading physical setup against linguistic specificity.
+- Proof/outcomes: exhaustive board/command histories allow 1–2 routes, require board edits and defeat quantifier-only/condition-only policies; overbroad, overlong, empty set, expanded-set error and timeout retain state.
+- Art/reduced motion: original pieces/quantifier chips/rule card/neutral affected-set hatching; sequential stills, no external language authority or correct-order styling.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
