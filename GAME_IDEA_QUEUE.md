@@ -16,7 +16,6 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `social-share-cookies-v1` | former Milk Pour owner | N12; audit lane | Drag eight shape-distinct cookies into two four-slot plates using only visible favorite bubbles |
 | `reaction-clothesline-calm-v1` | former Table Restore owner | N12; flow lane | Tap each visibly fluttering clothesline item, with one gentle basket recovery |
 | `calculation-flower-share-v1` | former Label Jar owner | N12; screw lane | Drag one-dot stems and two-dot double blooms until three vases are visibly full |
 

@@ -573,6 +573,17 @@ export const gameManifest=Object.freeze([
     "hash": "6ad33b68af75eb8e"
   },
   {
+    "id": "social-share-cookies-v1",
+    "introducedIn": "2.0",
+    "tier": 1,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "social-share-cookies",
+    "category": "social",
+    "module": "./games/social-share-cookies-v1.js",
+    "hash": "147837b733e99017"
+  },
+  {
     "id": "social-shared-umbrella-v1",
     "introducedIn": "2.0",
     "tier": 3,

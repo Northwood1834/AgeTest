@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "social-share-cookies-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "dd4b96a755efd71b877f27b0d3df8fa3f9fa96c3",
+  "test": "test/social-share-cookies-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
