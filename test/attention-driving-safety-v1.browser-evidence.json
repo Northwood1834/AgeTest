@@ -1,0 +1,2879 @@
+{
+  "game": "attention-driving-safety-v1",
+  "lane": {
+    "name": "flow",
+    "cdp": 9331,
+    "http": 8861,
+    "tool": "tools/qa-browser-lanes.mjs"
+  },
+  "captured": "2026-07-26",
+  "viewports": [
+    "393x852 DPR3",
+    "402x874 DPR3"
+  ],
+  "scenarioNames": [
+    "initial/crosswalk",
+    "selected",
+    "crosswalk-feedback",
+    "phone",
+    "phone-feedback",
+    "railway",
+    "railway-feedback",
+    "alcohol",
+    "alcohol-feedback",
+    "fatigue",
+    "fatigue-feedback",
+    "success/all-correct",
+    "mixed",
+    "all-wrong",
+    "timeout",
+    "focus",
+    "reduced-feedback",
+    "touch",
+    "keyboard"
+  ],
+  "checks": {
+    "scenarioCount": 38,
+    "requiredScenarioSet": true,
+    "behaviorPass": true,
+    "allErrorsEmpty": true,
+    "allExternalEmpty": true,
+    "allNoOverflow": true,
+    "allDpr3": true,
+    "sourceLabelExact": true,
+    "sourceOfficialUrl": true,
+    "sourceConfirmed": true,
+    "noPastQuestionClaim": true,
+    "performancePass": true,
+    "disposePass": true
+  },
+  "performance": {
+    "393x852": {
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "frames": 115,
+      "averageFrameMs": 16.666086956521735,
+      "maxFrameMs": 16.799999999999955,
+      "over25ms": 0,
+      "gameFrames": 130,
+      "canvas": {
+        "width": 1044,
+        "height": 753,
+        "cssWidth": 348,
+        "cssHeight": 251,
+        "dpr": 3
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false
+    },
+    "402x874": {
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "frames": 115,
+      "averageFrameMs": 16.665217391304346,
+      "maxFrameMs": 16.800000000000182,
+      "over25ms": 0,
+      "gameFrames": 130,
+      "canvas": {
+        "width": 1071,
+        "height": 771,
+        "cssWidth": 357,
+        "cssHeight": 257,
+        "dpr": 3
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false
+    }
+  },
+  "dispose": {
+    "393x852": {
+      "before": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "after": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "game": null,
+      "errors": []
+    },
+    "402x874": {
+      "before": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "after": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "game": null,
+      "errors": []
+    }
+  },
+  "scenarios": [
+    {
+      "scenario": "alcohol-feedback",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 3,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "alcohol",
+            "choice": false,
+            "correct": true
+          }
+        ],
+        "selected": false,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "alcohol",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "alcohol",
+      "canvasAria": "翌朝七時十分。机に車の鍵と前夜のグラスがある。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第4章 第1節 4・30頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "alcohol",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 3,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "飲酒：場面を見て○か×を判断",
+        "question": "alcohol",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "alcohol",
+      "canvasAria": "翌朝七時十分。机に車の鍵と前夜のグラスがある",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版4 / 5飲酒：場面を見て○か×を判断前夜に酒を飲んでも、眠って目が覚めれば朝は運転してよい。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "all-wrong",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 4,
+        "phase": "final",
+        "score": 0,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": false,
+            "correct": false
+          },
+          {
+            "id": "phone",
+            "choice": true,
+            "correct": false
+          },
+          {
+            "id": "railway",
+            "choice": true,
+            "correct": false
+          },
+          {
+            "id": "alcohol",
+            "choice": true,
+            "correct": false
+          },
+          {
+            "id": "fatigue",
+            "choice": false,
+            "correct": false
+          }
+        ],
+        "selected": false,
+        "busy": false,
+        "transition": null,
+        "done": true,
+        "disposed": false,
+        "result": "complete",
+        "frames": 0,
+        "status": "答えを安全行動と一緒に振り返りましょう",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 2,
+        "frames": 0,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "最終結果、5問中0問正解。成績：横断歩道 不正解、携帯電話 不正解、踏切 不正解、飲酒 不正解、眠気・疲労 不正解",
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "text": "初老テスト。安全知識393×852 DPR3危険を読む運転席五つの道路場面を読み、○か×で安全判断。\n.ads-stage{box-sizing:border-box;width:100%;max-width:430px;margin-inline:auto;display:grid;gap:.48rem;color:#26333a;contain:layout paint}.ads-stage:focus{outline:none}.ads-stage [hidden]{display:none!important}.ads-head{display:flex;align-items:center;justify-content:space-between;gap:.45rem;padding:0 .12rem}.ads-source{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#6b6258;font-size:.64rem;font-weight:900;letter-spacing:.025em}.ads-count{flex:none;padding:.22rem .48rem;border:1px solid #d6c8b4;border-radius:999px;background:#fffaf0;color:#634f3b;font-size:.68rem;font-weight:1000}.ads-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.28rem}.ads-mark{display:grid;place-items:center;height:.42rem;border-radius:999px;background:#d9d4ca;box-shadow:inset 0 1px 2px rgba(43,47,48,.16)}.ads-mark[data-current=true]{background:linear-gradient(90deg,#d99d38,#f3c869);box-shadow:inset 0 1px rgba(255,255,255,.48),0 0 0 1px #9f7029}.ads-mark[data-state=right]{background:#b54436}.ads-mark[data-state=wrong]{background:repeating-linear-gradient(135deg,#354b59 0 4px,#d9c9b0 4px 8px)}.ads-status{min-height:2.55em;margin:0;padding:.48rem .7rem;border:1px solid #d9d0c1;border-radius:.78rem;background:linear-gradient(180deg,#fffdf8,#f2ece1);color:#4f4941;text-align:center;font-size:clamp(.79rem,3.35vw,.93rem);font-weight:900;line-height:1.38;box-shadow:inset 0 1px #fff}.ads-board{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.7);border-radius:1.08rem;background:#26333a;box-shadow:0 11px 26px rgba(35,43,47,.22),inset 0 0 0 1px rgba(35,43,47,.3);isolation:isolate}.ads-canvas{display:block;width:100%;height:auto;touch-action:manipulation}.ads-canvas:focus-visible{outline:4px solid #f0c74f;outline-offset:-7px;border-radius:1rem}.ads-paper{position:relative;z-index:2;min-height:5.25rem;margin-top:-.15rem;padding:.58rem .78rem .64rem;border-top:3px double #c8b99f;background:linear-gradient(96deg,#fffdf4,#f3ead8);box-shadow:0 -5px 14px rgba(32,37,39,.23);color:#332f2b;font-size:clamp(.82rem,3.55vw,.98rem);font-weight:900;line-height:1.45}.ads-paper::before{content:\"判断\";display:inline-block;margin-right:.48rem;padding:.12rem .34rem;border:1px solid #ab4b3d;border-radius:.22rem;color:#9c3d32;font-size:.61rem;letter-spacing:.1em;vertical-align:.09em}.ads-controls{display:grid;grid-template-columns:1fr 1fr;gap:.58rem}.ads-answer{min-height:4.15rem;border:1px solid #c8b79e;border-radius:1rem;background:linear-gradient(155deg,#fffefb,#eee5d7);color:#3d4a50;font-weight:1000;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px #fff,0 5px 11px rgba(50,44,37,.14)}.ads-answer strong{display:block;font-family:serif;font-size:2rem;line-height:1}.ads-answer small{display:block;margin-top:.15rem;font-size:.67rem}.ads-answer[data-value=true]{border-bottom:5px solid #af4639}.ads-answer[data-value=false]{border-bottom:5px solid #385868}.ads-answer[data-selected=true]{transform:translateY(3px);border-color:#596970;background:linear-gradient(155deg,#e8e4dc,#d6d0c6);outline:none;box-shadow:inset 0 5px 10px rgba(38,46,49,.28)}.ads-answer[data-selected=true] strong{transform:scale(.92)}.ads-answer:focus-visible{outline:3px dashed #1682a0;outline-offset:3px}.ads-next:focus-visible{outline:3px solid #f0c55a;outline-offset:-5px}.ads-answer:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(46,42,38,.18)}.ads-answer:disabled{opacity:.62;cursor:default}.ads-feedback{display:grid;gap:.34rem;padding:.58rem .68rem .68rem;border:1px solid #c9bda9;border-radius:.95rem;background:linear-gradient(145deg,#fffdf8,#eee7da);box-shadow:0 5px 13px rgba(57,48,38,.1)}.ads-verdict{margin:0;padding:.3rem .48rem;border-radius:.5rem;text-align:center;font-size:.82rem;font-weight:1000;letter-spacing:.025em}.ads-feedback[data-correct=true]{border-left:6px solid #478858}.ads-feedback[data-correct=false]{border-left:6px double #9d443b}.ads-feedback[data-correct=true] .ads-verdict{background:#e3f0de;color:#2e6537}.ads-feedback[data-correct=false] .ads-verdict{background:#f5dfda;color:#8b352e}.ads-line{margin:0;color:#534b42;font-size:.7rem;font-weight:760;line-height:1.42}.ads-line strong{color:#2c3940}.ads-line:last-of-type{padding-top:.25rem;border-top:1px solid #d7ccbb;color:#675f58;font-size:.64rem;line-height:1.35}.ads-next{min-height:3rem;border:1px solid #294a58;border-radius:.76rem;background:linear-gradient(155deg,#527484,#304f5d);color:#fff;font-size:.82rem;font-weight:1000;letter-spacing:.04em;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px rgba(255,255,255,.35),0 4px 9px rgba(29,51,61,.2)}.ads-next:disabled{opacity:.5}.ads-hint{margin:0;color:#756d65;text-align:center;font-size:.66rem;font-weight:750;line-height:1.35}.ads-stage[data-phase=review] .ads-status{border-color:#c6b690;background:#fff7df}.ads-stage[data-phase=final] .ads-status{border-color:#b9944c;background:#fff3c7;color:#624b1e}.ads-stage[data-phase=timeout] .ads-status{border-color:#bd8f6f;background:#f6e4d9;color:#783d2c}.ads-stage[data-reduced=true] .ads-answer,.ads-stage[data-reduced=true] .ads-next{transition:none!important}\n本試験形式・警察庁教則準拠・2024年11月版完了答えを安全行動と一緒に振り返りましょう五問中0問を正しく判断しました。○正しいと思う×誤りと思う判定：不正解　｜　あなたの回答 ×　／　正答 ○正しい行動：安全な場所へ入り、眠気が覚めるまで休息する。理由：眠気は判断や発見を遅らせます。長時間運転では定期的に休み、眠くなったら速やかに休息します。出典：警察庁教則 2024年11月版・第4章 第1節 2–3・29–30頁／第6章 第3節 1(5)・66頁（2026-07-26確認）結果を見る← → で選択・Enterで決定　O / X キーでも回答\n\nimport game from \"../src/games/attention-driving-safety-v1.js\";\nimport {createGameRuntime} from \"../src/game-kernel.js\";\nconst FIXED_TASK=game.generate({randomInt:min=>min}),host=document.querySelector(\"#game-host\"),label=document.querySelector(\"#fixture-label\"),prompt=document.querySelector(\"#prompt\"),help=document.querySelector(\"#help\"),resultNode=document.querySelector(\"#fixture-result\"),errors=[];\nlet runtime=null,qa=null,result=null,lastTask=null;\naddEventListener(\"error\",event=>errors.push(String(event.error?.stack||event.message)));addEventListener(\"unhandledrejection\",event=>errors.push(String(event.reason?.stack||event.reason)));\nconst wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));\nfunction start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){\n  runtime?.dispose();host.replaceChildren();qa={};result=null;resultNode.textContent=\"\";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;\n  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?\"全問正解\":\"確認終了\"} · ${detail.detail||detail.reason||\"\"}`}});\n  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);label.textContent=`${width}×${height} DPR${dpr}${reduced?\" reduced\":\"\"}`;return structuredClone(lastTask);\n}\nconst api=()=>qa?.[game.metadata.id],settle=()=>api()?.completeTransition?.(),questionIndex=id=>lastTask.questions.findIndex(question=>question.id===id);\nconst review=id=>{const index=questionIndex(id);api().showScene(index,\"question\");api().answer(lastTask.questions[index].answer);settle()};\nconst finishWith=choices=>{for(let index=0;index<lastTask.questions.length;index++){api().answer(choices[index]);settle();api().next()}};\nasync function scenario(name,reduced){\n  if(name===\"selected\")api().preview(true);\n  else if(name===\"crosswalk-feedback\")review(\"crosswalk\");\n  else if(name===\"phone\")api().showScene(questionIndex(\"phone\"),\"question\");\n  else if(name===\"phone-feedback\")review(\"phone\");\n  else if(name===\"railway\")api().showScene(questionIndex(\"railway\"),\"question\");\n  else if(name===\"railway-feedback\")review(\"railway\");\n  else if(name===\"alcohol\")api().showScene(questionIndex(\"alcohol\"),\"question\");\n  else if(name===\"alcohol-feedback\")review(\"alcohol\");\n  else if(name===\"fatigue\")api().showScene(questionIndex(\"fatigue\"),\"question\");\n  else if(name===\"fatigue-feedback\"||name===\"reduced-feedback\")review(\"fatigue\");\n  else if(name===\"success\")finishWith(lastTask.proof.answers);\n  else if(name===\"mixed\")finishWith(lastTask.proof.answers.map((answer,index)=>index===1||index===3?!answer:answer));\n  else if(name===\"all-wrong\")finishWith(lastTask.proof.answers.map(answer=>!answer));\n  else if(name===\"touch\"){const button=host.querySelector?.('.ads-answer[data-value=\"true\"]')||host.children[1].children[4].children[0];button.dispatchEvent(new PointerEvent(\"pointerdown\",{pointerType:\"touch\",bubbles:true,cancelable:true}));button.dispatchEvent(new MouseEvent(\"click\",{bubbles:true,cancelable:true,detail:1}))}\n  else if(name===\"keyboard\"){host.children[1].dispatchEvent(new KeyboardEvent(\"keydown\",{key:\"O\",bubbles:true,cancelable:true}))}\n  else if(name===\"focus\"){const stage=host.children[1],controls=stage.children[4];controls.children[1].focus()}\n  if(reduced)await wait(235);else if(name===\"selected\")await wait(80);else if(name===\"touch\"||name===\"keyboard\")await wait(460);else await wait(40);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name;\n}\nwindow.drivingSafetyFixture={game,start,scenario:name=>scenario(name,false),dispose(){runtime?.dispose()},inspect(){return api()?.inspect?.()||null},preview(value){return api()?.preview?.(value)},answer(value){return api()?.answer?.(value)},next(){return api()?.next?.()},complete(){return settle()},show(id,phase=\"question\"){return api()?.showScene?.(questionIndex(id),phase)},timeout(){return api()?.timeout?.()},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]},evidence(){const width=innerWidth,resources=performance.getEntriesByType(\"resource\").map(entry=>entry.name),external=resources.filter(name=>new URL(name,location.href).origin!==location.origin);return{scenario:document.body.dataset.scenario||\"\",viewport:{width,height:innerHeight,dpr:devicePixelRatio,scrollWidth:document.body.scrollWidth},task:structuredClone(lastTask),game:api()?.inspect?.()||null,result:result?structuredClone(result):null,runtime:runtime?.inspect?.()||null,errors:[...errors],resources,external,overflow:document.body.scrollWidth>width}}};\nconst query=new URLSearchParams(location.search),name=query.get(\"scenario\")||\"initial\",reduced=query.get(\"reduced\")===\"1\"||name===\"reduced-feedback\",deadline=name===\"timeout\"?120:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name===\"timeout\"){api().answer(lastTask.questions[0].answer);settle();api().next();await wait(180);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name}else await scenario(name,reduced);"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "crosswalk-feedback",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 0,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第5章 第3節 2(2)・46–47頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "fatigue-feedback",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 4,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "fatigue",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "夜の道路。眠気を感じ、左前方に休憩施設の案内がある。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "結果を見る"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第4章 第1節 2–3・29–30頁／第6章 第3節 1(5)・66頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "fatigue",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 4,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "眠気・疲労：場面を見て○か×を判断",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "夜の道路。眠気を感じ、左前方に休憩施設の案内がある",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版5 / 5眠気・疲労：場面を見て○か×を判断少しでも眠気を感じたら、安全な場所に止め、休息して眠気を覚ましてから運転する。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "focus",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 0,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "横断歩道：場面を見て○か×を判断",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-answer",
+        "text": "×誤りと思う"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "initial",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 0,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "横断歩道：場面を見て○か×を判断",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版1 / 5横断歩道：場面を見て○か×を判断横断しようとしている人がいる。横断歩道の手前で止まり、先に渡ってもらう。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "keyboard",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 0,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 33,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第5章 第3節 2(2)・46–47頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "mixed",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 4,
+        "phase": "final",
+        "score": 3,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": true,
+            "correct": true
+          },
+          {
+            "id": "phone",
+            "choice": true,
+            "correct": false
+          },
+          {
+            "id": "railway",
+            "choice": false,
+            "correct": true
+          },
+          {
+            "id": "alcohol",
+            "choice": true,
+            "correct": false
+          },
+          {
+            "id": "fatigue",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": true,
+        "disposed": false,
+        "result": "complete",
+        "frames": 0,
+        "status": "答えを安全行動と一緒に振り返りましょう",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 2,
+        "frames": 0,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "最終結果、5問中3問正解。成績：横断歩道 正解、携帯電話 不正解、踏切 正解、飲酒 不正解、眠気・疲労 正解",
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "text": "初老テスト。安全知識393×852 DPR3危険を読む運転席五つの道路場面を読み、○か×で安全判断。\n.ads-stage{box-sizing:border-box;width:100%;max-width:430px;margin-inline:auto;display:grid;gap:.48rem;color:#26333a;contain:layout paint}.ads-stage:focus{outline:none}.ads-stage [hidden]{display:none!important}.ads-head{display:flex;align-items:center;justify-content:space-between;gap:.45rem;padding:0 .12rem}.ads-source{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#6b6258;font-size:.64rem;font-weight:900;letter-spacing:.025em}.ads-count{flex:none;padding:.22rem .48rem;border:1px solid #d6c8b4;border-radius:999px;background:#fffaf0;color:#634f3b;font-size:.68rem;font-weight:1000}.ads-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.28rem}.ads-mark{display:grid;place-items:center;height:.42rem;border-radius:999px;background:#d9d4ca;box-shadow:inset 0 1px 2px rgba(43,47,48,.16)}.ads-mark[data-current=true]{background:linear-gradient(90deg,#d99d38,#f3c869);box-shadow:inset 0 1px rgba(255,255,255,.48),0 0 0 1px #9f7029}.ads-mark[data-state=right]{background:#b54436}.ads-mark[data-state=wrong]{background:repeating-linear-gradient(135deg,#354b59 0 4px,#d9c9b0 4px 8px)}.ads-status{min-height:2.55em;margin:0;padding:.48rem .7rem;border:1px solid #d9d0c1;border-radius:.78rem;background:linear-gradient(180deg,#fffdf8,#f2ece1);color:#4f4941;text-align:center;font-size:clamp(.79rem,3.35vw,.93rem);font-weight:900;line-height:1.38;box-shadow:inset 0 1px #fff}.ads-board{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.7);border-radius:1.08rem;background:#26333a;box-shadow:0 11px 26px rgba(35,43,47,.22),inset 0 0 0 1px rgba(35,43,47,.3);isolation:isolate}.ads-canvas{display:block;width:100%;height:auto;touch-action:manipulation}.ads-canvas:focus-visible{outline:4px solid #f0c74f;outline-offset:-7px;border-radius:1rem}.ads-paper{position:relative;z-index:2;min-height:5.25rem;margin-top:-.15rem;padding:.58rem .78rem .64rem;border-top:3px double #c8b99f;background:linear-gradient(96deg,#fffdf4,#f3ead8);box-shadow:0 -5px 14px rgba(32,37,39,.23);color:#332f2b;font-size:clamp(.82rem,3.55vw,.98rem);font-weight:900;line-height:1.45}.ads-paper::before{content:\"判断\";display:inline-block;margin-right:.48rem;padding:.12rem .34rem;border:1px solid #ab4b3d;border-radius:.22rem;color:#9c3d32;font-size:.61rem;letter-spacing:.1em;vertical-align:.09em}.ads-controls{display:grid;grid-template-columns:1fr 1fr;gap:.58rem}.ads-answer{min-height:4.15rem;border:1px solid #c8b79e;border-radius:1rem;background:linear-gradient(155deg,#fffefb,#eee5d7);color:#3d4a50;font-weight:1000;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px #fff,0 5px 11px rgba(50,44,37,.14)}.ads-answer strong{display:block;font-family:serif;font-size:2rem;line-height:1}.ads-answer small{display:block;margin-top:.15rem;font-size:.67rem}.ads-answer[data-value=true]{border-bottom:5px solid #af4639}.ads-answer[data-value=false]{border-bottom:5px solid #385868}.ads-answer[data-selected=true]{transform:translateY(3px);border-color:#596970;background:linear-gradient(155deg,#e8e4dc,#d6d0c6);outline:none;box-shadow:inset 0 5px 10px rgba(38,46,49,.28)}.ads-answer[data-selected=true] strong{transform:scale(.92)}.ads-answer:focus-visible{outline:3px dashed #1682a0;outline-offset:3px}.ads-next:focus-visible{outline:3px solid #f0c55a;outline-offset:-5px}.ads-answer:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(46,42,38,.18)}.ads-answer:disabled{opacity:.62;cursor:default}.ads-feedback{display:grid;gap:.34rem;padding:.58rem .68rem .68rem;border:1px solid #c9bda9;border-radius:.95rem;background:linear-gradient(145deg,#fffdf8,#eee7da);box-shadow:0 5px 13px rgba(57,48,38,.1)}.ads-verdict{margin:0;padding:.3rem .48rem;border-radius:.5rem;text-align:center;font-size:.82rem;font-weight:1000;letter-spacing:.025em}.ads-feedback[data-correct=true]{border-left:6px solid #478858}.ads-feedback[data-correct=false]{border-left:6px double #9d443b}.ads-feedback[data-correct=true] .ads-verdict{background:#e3f0de;color:#2e6537}.ads-feedback[data-correct=false] .ads-verdict{background:#f5dfda;color:#8b352e}.ads-line{margin:0;color:#534b42;font-size:.7rem;font-weight:760;line-height:1.42}.ads-line strong{color:#2c3940}.ads-line:last-of-type{padding-top:.25rem;border-top:1px solid #d7ccbb;color:#675f58;font-size:.64rem;line-height:1.35}.ads-next{min-height:3rem;border:1px solid #294a58;border-radius:.76rem;background:linear-gradient(155deg,#527484,#304f5d);color:#fff;font-size:.82rem;font-weight:1000;letter-spacing:.04em;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px rgba(255,255,255,.35),0 4px 9px rgba(29,51,61,.2)}.ads-next:disabled{opacity:.5}.ads-hint{margin:0;color:#756d65;text-align:center;font-size:.66rem;font-weight:750;line-height:1.35}.ads-stage[data-phase=review] .ads-status{border-color:#c6b690;background:#fff7df}.ads-stage[data-phase=final] .ads-status{border-color:#b9944c;background:#fff3c7;color:#624b1e}.ads-stage[data-phase=timeout] .ads-status{border-color:#bd8f6f;background:#f6e4d9;color:#783d2c}.ads-stage[data-reduced=true] .ads-answer,.ads-stage[data-reduced=true] .ads-next{transition:none!important}\n本試験形式・警察庁教則準拠・2024年11月版完了答えを安全行動と一緒に振り返りましょう五問中3問を正しく判断しました。○正しいと思う×誤りと思う判定：正解　｜　あなたの回答 ○　／　正答 ○正しい行動：安全な場所へ入り、眠気が覚めるまで休息する。理由：眠気は判断や発見を遅らせます。長時間運転では定期的に休み、眠くなったら速やかに休息します。出典：警察庁教則 2024年11月版・第4章 第1節 2–3・29–30頁／第6章 第3節 1(5)・66頁（2026-07-26確認）結果を見る← → で選択・Enterで決定　O / X キーでも回答\n\nimport game from \"../src/games/attention-driving-safety-v1.js\";\nimport {createGameRuntime} from \"../src/game-kernel.js\";\nconst FIXED_TASK=game.generate({randomInt:min=>min}),host=document.querySelector(\"#game-host\"),label=document.querySelector(\"#fixture-label\"),prompt=document.querySelector(\"#prompt\"),help=document.querySelector(\"#help\"),resultNode=document.querySelector(\"#fixture-result\"),errors=[];\nlet runtime=null,qa=null,result=null,lastTask=null;\naddEventListener(\"error\",event=>errors.push(String(event.error?.stack||event.message)));addEventListener(\"unhandledrejection\",event=>errors.push(String(event.reason?.stack||event.reason)));\nconst wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));\nfunction start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){\n  runtime?.dispose();host.replaceChildren();qa={};result=null;resultNode.textContent=\"\";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;\n  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?\"全問正解\":\"確認終了\"} · ${detail.detail||detail.reason||\"\"}`}});\n  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);label.textContent=`${width}×${height} DPR${dpr}${reduced?\" reduced\":\"\"}`;return structuredClone(lastTask);\n}\nconst api=()=>qa?.[game.metadata.id],settle=()=>api()?.completeTransition?.(),questionIndex=id=>lastTask.questions.findIndex(question=>question.id===id);\nconst review=id=>{const index=questionIndex(id);api().showScene(index,\"question\");api().answer(lastTask.questions[index].answer);settle()};\nconst finishWith=choices=>{for(let index=0;index<lastTask.questions.length;index++){api().answer(choices[index]);settle();api().next()}};\nasync function scenario(name,reduced){\n  if(name===\"selected\")api().preview(true);\n  else if(name===\"crosswalk-feedback\")review(\"crosswalk\");\n  else if(name===\"phone\")api().showScene(questionIndex(\"phone\"),\"question\");\n  else if(name===\"phone-feedback\")review(\"phone\");\n  else if(name===\"railway\")api().showScene(questionIndex(\"railway\"),\"question\");\n  else if(name===\"railway-feedback\")review(\"railway\");\n  else if(name===\"alcohol\")api().showScene(questionIndex(\"alcohol\"),\"question\");\n  else if(name===\"alcohol-feedback\")review(\"alcohol\");\n  else if(name===\"fatigue\")api().showScene(questionIndex(\"fatigue\"),\"question\");\n  else if(name===\"fatigue-feedback\"||name===\"reduced-feedback\")review(\"fatigue\");\n  else if(name===\"success\")finishWith(lastTask.proof.answers);\n  else if(name===\"mixed\")finishWith(lastTask.proof.answers.map((answer,index)=>index===1||index===3?!answer:answer));\n  else if(name===\"all-wrong\")finishWith(lastTask.proof.answers.map(answer=>!answer));\n  else if(name===\"touch\"){const button=host.querySelector?.('.ads-answer[data-value=\"true\"]')||host.children[1].children[4].children[0];button.dispatchEvent(new PointerEvent(\"pointerdown\",{pointerType:\"touch\",bubbles:true,cancelable:true}));button.dispatchEvent(new MouseEvent(\"click\",{bubbles:true,cancelable:true,detail:1}))}\n  else if(name===\"keyboard\"){host.children[1].dispatchEvent(new KeyboardEvent(\"keydown\",{key:\"O\",bubbles:true,cancelable:true}))}\n  else if(name===\"focus\"){const stage=host.children[1],controls=stage.children[4];controls.children[1].focus()}\n  if(reduced)await wait(235);else if(name===\"selected\")await wait(80);else if(name===\"touch\"||name===\"keyboard\")await wait(460);else await wait(40);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name;\n}\nwindow.drivingSafetyFixture={game,start,scenario:name=>scenario(name,false),dispose(){runtime?.dispose()},inspect(){return api()?.inspect?.()||null},preview(value){return api()?.preview?.(value)},answer(value){return api()?.answer?.(value)},next(){return api()?.next?.()},complete(){return settle()},show(id,phase=\"question\"){return api()?.showScene?.(questionIndex(id),phase)},timeout(){return api()?.timeout?.()},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]},evidence(){const width=innerWidth,resources=performance.getEntriesByType(\"resource\").map(entry=>entry.name),external=resources.filter(name=>new URL(name,location.href).origin!==location.origin);return{scenario:document.body.dataset.scenario||\"\",viewport:{width,height:innerHeight,dpr:devicePixelRatio,scrollWidth:document.body.scrollWidth},task:structuredClone(lastTask),game:api()?.inspect?.()||null,result:result?structuredClone(result):null,runtime:runtime?.inspect?.()||null,errors:[...errors],resources,external,overflow:document.body.scrollWidth>width}}};\nconst query=new URLSearchParams(location.search),name=query.get(\"scenario\")||\"initial\",reduced=query.get(\"reduced\")===\"1\"||name===\"reduced-feedback\",deadline=name===\"timeout\"?120:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name===\"timeout\"){api().answer(lastTask.questions[0].answer);settle();api().next();await wait(180);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name}else await scenario(name,reduced);"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "phone-feedback",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 1,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "phone",
+            "choice": false,
+            "correct": true
+          }
+        ],
+        "selected": false,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "phone",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "phone",
+      "canvasAria": "低速で動く車内。通知画面と前方の自転車が見える。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第5章 第1節 2(4)・41頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "phone",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 1,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "携帯電話：場面を見て○か×を判断",
+        "question": "phone",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "phone",
+      "canvasAria": "低速で動く車内。通知画面と前方の自転車が見える",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版2 / 5携帯電話：場面を見て○か×を判断車がゆっくり動いている間なら、短い通知だけ画面で確認してもよい。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "railway-feedback",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 2,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "railway",
+            "choice": false,
+            "correct": true
+          }
+        ],
+        "selected": false,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "railway",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "railway",
+      "canvasAria": "遮断機が上がった踏切。前の車は通過した。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第6章 第1節 1(1)(4)・64–65頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "railway",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 2,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "踏切：場面を見て○か×を判断",
+        "question": "railway",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "railway",
+      "canvasAria": "遮断機が上がった踏切。前の車は通過した",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版3 / 5踏切：場面を見て○か×を判断警報機が鳴っておらず、前の車も渡ったので、自分は止まらず続いてよい。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "reduced-feedback",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 4,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "fatigue",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 0,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "夜の道路。眠気を感じ、左前方に休憩施設の案内がある。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "結果を見る"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第4章 第1節 2–3・29–30頁／第6章 第3節 1(5)・66頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "selected",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 0,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "○を選択。離すと回答します",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版1 / 5○を選択。離すと回答します横断しようとしている人がいる。横断歩道の手前で止まり、先に渡ってもらう。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "success",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 4,
+        "phase": "final",
+        "score": 5,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": true,
+            "correct": true
+          },
+          {
+            "id": "phone",
+            "choice": false,
+            "correct": true
+          },
+          {
+            "id": "railway",
+            "choice": false,
+            "correct": true
+          },
+          {
+            "id": "alcohol",
+            "choice": false,
+            "correct": true
+          },
+          {
+            "id": "fatigue",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": true,
+        "disposed": false,
+        "result": "complete",
+        "frames": 0,
+        "status": "五つすべて正しく判断しました",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 2,
+        "frames": 0,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "最終結果、5問中5問正解。成績：横断歩道 正解、携帯電話 正解、踏切 正解、飲酒 正解、眠気・疲労 正解",
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "text": "初老テスト。安全知識393×852 DPR3危険を読む運転席五つの道路場面を読み、○か×で安全判断。\n.ads-stage{box-sizing:border-box;width:100%;max-width:430px;margin-inline:auto;display:grid;gap:.48rem;color:#26333a;contain:layout paint}.ads-stage:focus{outline:none}.ads-stage [hidden]{display:none!important}.ads-head{display:flex;align-items:center;justify-content:space-between;gap:.45rem;padding:0 .12rem}.ads-source{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#6b6258;font-size:.64rem;font-weight:900;letter-spacing:.025em}.ads-count{flex:none;padding:.22rem .48rem;border:1px solid #d6c8b4;border-radius:999px;background:#fffaf0;color:#634f3b;font-size:.68rem;font-weight:1000}.ads-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.28rem}.ads-mark{display:grid;place-items:center;height:.42rem;border-radius:999px;background:#d9d4ca;box-shadow:inset 0 1px 2px rgba(43,47,48,.16)}.ads-mark[data-current=true]{background:linear-gradient(90deg,#d99d38,#f3c869);box-shadow:inset 0 1px rgba(255,255,255,.48),0 0 0 1px #9f7029}.ads-mark[data-state=right]{background:#b54436}.ads-mark[data-state=wrong]{background:repeating-linear-gradient(135deg,#354b59 0 4px,#d9c9b0 4px 8px)}.ads-status{min-height:2.55em;margin:0;padding:.48rem .7rem;border:1px solid #d9d0c1;border-radius:.78rem;background:linear-gradient(180deg,#fffdf8,#f2ece1);color:#4f4941;text-align:center;font-size:clamp(.79rem,3.35vw,.93rem);font-weight:900;line-height:1.38;box-shadow:inset 0 1px #fff}.ads-board{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.7);border-radius:1.08rem;background:#26333a;box-shadow:0 11px 26px rgba(35,43,47,.22),inset 0 0 0 1px rgba(35,43,47,.3);isolation:isolate}.ads-canvas{display:block;width:100%;height:auto;touch-action:manipulation}.ads-canvas:focus-visible{outline:4px solid #f0c74f;outline-offset:-7px;border-radius:1rem}.ads-paper{position:relative;z-index:2;min-height:5.25rem;margin-top:-.15rem;padding:.58rem .78rem .64rem;border-top:3px double #c8b99f;background:linear-gradient(96deg,#fffdf4,#f3ead8);box-shadow:0 -5px 14px rgba(32,37,39,.23);color:#332f2b;font-size:clamp(.82rem,3.55vw,.98rem);font-weight:900;line-height:1.45}.ads-paper::before{content:\"判断\";display:inline-block;margin-right:.48rem;padding:.12rem .34rem;border:1px solid #ab4b3d;border-radius:.22rem;color:#9c3d32;font-size:.61rem;letter-spacing:.1em;vertical-align:.09em}.ads-controls{display:grid;grid-template-columns:1fr 1fr;gap:.58rem}.ads-answer{min-height:4.15rem;border:1px solid #c8b79e;border-radius:1rem;background:linear-gradient(155deg,#fffefb,#eee5d7);color:#3d4a50;font-weight:1000;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px #fff,0 5px 11px rgba(50,44,37,.14)}.ads-answer strong{display:block;font-family:serif;font-size:2rem;line-height:1}.ads-answer small{display:block;margin-top:.15rem;font-size:.67rem}.ads-answer[data-value=true]{border-bottom:5px solid #af4639}.ads-answer[data-value=false]{border-bottom:5px solid #385868}.ads-answer[data-selected=true]{transform:translateY(3px);border-color:#596970;background:linear-gradient(155deg,#e8e4dc,#d6d0c6);outline:none;box-shadow:inset 0 5px 10px rgba(38,46,49,.28)}.ads-answer[data-selected=true] strong{transform:scale(.92)}.ads-answer:focus-visible{outline:3px dashed #1682a0;outline-offset:3px}.ads-next:focus-visible{outline:3px solid #f0c55a;outline-offset:-5px}.ads-answer:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(46,42,38,.18)}.ads-answer:disabled{opacity:.62;cursor:default}.ads-feedback{display:grid;gap:.34rem;padding:.58rem .68rem .68rem;border:1px solid #c9bda9;border-radius:.95rem;background:linear-gradient(145deg,#fffdf8,#eee7da);box-shadow:0 5px 13px rgba(57,48,38,.1)}.ads-verdict{margin:0;padding:.3rem .48rem;border-radius:.5rem;text-align:center;font-size:.82rem;font-weight:1000;letter-spacing:.025em}.ads-feedback[data-correct=true]{border-left:6px solid #478858}.ads-feedback[data-correct=false]{border-left:6px double #9d443b}.ads-feedback[data-correct=true] .ads-verdict{background:#e3f0de;color:#2e6537}.ads-feedback[data-correct=false] .ads-verdict{background:#f5dfda;color:#8b352e}.ads-line{margin:0;color:#534b42;font-size:.7rem;font-weight:760;line-height:1.42}.ads-line strong{color:#2c3940}.ads-line:last-of-type{padding-top:.25rem;border-top:1px solid #d7ccbb;color:#675f58;font-size:.64rem;line-height:1.35}.ads-next{min-height:3rem;border:1px solid #294a58;border-radius:.76rem;background:linear-gradient(155deg,#527484,#304f5d);color:#fff;font-size:.82rem;font-weight:1000;letter-spacing:.04em;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px rgba(255,255,255,.35),0 4px 9px rgba(29,51,61,.2)}.ads-next:disabled{opacity:.5}.ads-hint{margin:0;color:#756d65;text-align:center;font-size:.66rem;font-weight:750;line-height:1.35}.ads-stage[data-phase=review] .ads-status{border-color:#c6b690;background:#fff7df}.ads-stage[data-phase=final] .ads-status{border-color:#b9944c;background:#fff3c7;color:#624b1e}.ads-stage[data-phase=timeout] .ads-status{border-color:#bd8f6f;background:#f6e4d9;color:#783d2c}.ads-stage[data-reduced=true] .ads-answer,.ads-stage[data-reduced=true] .ads-next{transition:none!important}\n本試験形式・警察庁教則準拠・2024年11月版完了五つすべて正しく判断しました五問中5問を正しく判断しました。○正しいと思う×誤りと思う判定：正解　｜　あなたの回答 ○　／　正答 ○正しい行動：安全な場所へ入り、眠気が覚めるまで休息する。理由：眠気は判断や発見を遅らせます。長時間運転では定期的に休み、眠くなったら速やかに休息します。出典：警察庁教則 2024年11月版・第4章 第1節 2–3・29–30頁／第6章 第3節 1(5)・66頁（2026-07-26確認）結果を見る← → で選択・Enterで決定　O / X キーでも回答\n\nimport game from \"../src/games/attention-driving-safety-v1.js\";\nimport {createGameRuntime} from \"../src/game-kernel.js\";\nconst FIXED_TASK=game.generate({randomInt:min=>min}),host=document.querySelector(\"#game-host\"),label=document.querySelector(\"#fixture-label\"),prompt=document.querySelector(\"#prompt\"),help=document.querySelector(\"#help\"),resultNode=document.querySelector(\"#fixture-result\"),errors=[];\nlet runtime=null,qa=null,result=null,lastTask=null;\naddEventListener(\"error\",event=>errors.push(String(event.error?.stack||event.message)));addEventListener(\"unhandledrejection\",event=>errors.push(String(event.reason?.stack||event.reason)));\nconst wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));\nfunction start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){\n  runtime?.dispose();host.replaceChildren();qa={};result=null;resultNode.textContent=\"\";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;\n  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?\"全問正解\":\"確認終了\"} · ${detail.detail||detail.reason||\"\"}`}});\n  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);label.textContent=`${width}×${height} DPR${dpr}${reduced?\" reduced\":\"\"}`;return structuredClone(lastTask);\n}\nconst api=()=>qa?.[game.metadata.id],settle=()=>api()?.completeTransition?.(),questionIndex=id=>lastTask.questions.findIndex(question=>question.id===id);\nconst review=id=>{const index=questionIndex(id);api().showScene(index,\"question\");api().answer(lastTask.questions[index].answer);settle()};\nconst finishWith=choices=>{for(let index=0;index<lastTask.questions.length;index++){api().answer(choices[index]);settle();api().next()}};\nasync function scenario(name,reduced){\n  if(name===\"selected\")api().preview(true);\n  else if(name===\"crosswalk-feedback\")review(\"crosswalk\");\n  else if(name===\"phone\")api().showScene(questionIndex(\"phone\"),\"question\");\n  else if(name===\"phone-feedback\")review(\"phone\");\n  else if(name===\"railway\")api().showScene(questionIndex(\"railway\"),\"question\");\n  else if(name===\"railway-feedback\")review(\"railway\");\n  else if(name===\"alcohol\")api().showScene(questionIndex(\"alcohol\"),\"question\");\n  else if(name===\"alcohol-feedback\")review(\"alcohol\");\n  else if(name===\"fatigue\")api().showScene(questionIndex(\"fatigue\"),\"question\");\n  else if(name===\"fatigue-feedback\"||name===\"reduced-feedback\")review(\"fatigue\");\n  else if(name===\"success\")finishWith(lastTask.proof.answers);\n  else if(name===\"mixed\")finishWith(lastTask.proof.answers.map((answer,index)=>index===1||index===3?!answer:answer));\n  else if(name===\"all-wrong\")finishWith(lastTask.proof.answers.map(answer=>!answer));\n  else if(name===\"touch\"){const button=host.querySelector?.('.ads-answer[data-value=\"true\"]')||host.children[1].children[4].children[0];button.dispatchEvent(new PointerEvent(\"pointerdown\",{pointerType:\"touch\",bubbles:true,cancelable:true}));button.dispatchEvent(new MouseEvent(\"click\",{bubbles:true,cancelable:true,detail:1}))}\n  else if(name===\"keyboard\"){host.children[1].dispatchEvent(new KeyboardEvent(\"keydown\",{key:\"O\",bubbles:true,cancelable:true}))}\n  else if(name===\"focus\"){const stage=host.children[1],controls=stage.children[4];controls.children[1].focus()}\n  if(reduced)await wait(235);else if(name===\"selected\")await wait(80);else if(name===\"touch\"||name===\"keyboard\")await wait(460);else await wait(40);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name;\n}\nwindow.drivingSafetyFixture={game,start,scenario:name=>scenario(name,false),dispose(){runtime?.dispose()},inspect(){return api()?.inspect?.()||null},preview(value){return api()?.preview?.(value)},answer(value){return api()?.answer?.(value)},next(){return api()?.next?.()},complete(){return settle()},show(id,phase=\"question\"){return api()?.showScene?.(questionIndex(id),phase)},timeout(){return api()?.timeout?.()},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]},evidence(){const width=innerWidth,resources=performance.getEntriesByType(\"resource\").map(entry=>entry.name),external=resources.filter(name=>new URL(name,location.href).origin!==location.origin);return{scenario:document.body.dataset.scenario||\"\",viewport:{width,height:innerHeight,dpr:devicePixelRatio,scrollWidth:document.body.scrollWidth},task:structuredClone(lastTask),game:api()?.inspect?.()||null,result:result?structuredClone(result):null,runtime:runtime?.inspect?.()||null,errors:[...errors],resources,external,overflow:document.body.scrollWidth>width}}};\nconst query=new URLSearchParams(location.search),name=query.get(\"scenario\")||\"initial\",reduced=query.get(\"reduced\")===\"1\"||name===\"reduced-feedback\",deadline=name===\"timeout\"?120:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name===\"timeout\"){api().answer(lastTask.questions[0].answer);settle();api().next();await wait(180);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name}else await scenario(name,reduced);"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "timeout",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": null,
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "score": 1,
+          "total": 5,
+          "answered": 1,
+          "detail": "1問回答したところで時間切れになりました。"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": null,
+      "canvasAria": "時間切れ、1問回答",
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "text": "初老テスト。安全知識393×852 DPR3危険を読む運転席五つの道路場面を読み、○か×で安全判断。\n.ads-stage{box-sizing:border-box;width:100%;max-width:430px;margin-inline:auto;display:grid;gap:.48rem;color:#26333a;contain:layout paint}.ads-stage:focus{outline:none}.ads-stage [hidden]{display:none!important}.ads-head{display:flex;align-items:center;justify-content:space-between;gap:.45rem;padding:0 .12rem}.ads-source{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#6b6258;font-size:.64rem;font-weight:900;letter-spacing:.025em}.ads-count{flex:none;padding:.22rem .48rem;border:1px solid #d6c8b4;border-radius:999px;background:#fffaf0;color:#634f3b;font-size:.68rem;font-weight:1000}.ads-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.28rem}.ads-mark{display:grid;place-items:center;height:.42rem;border-radius:999px;background:#d9d4ca;box-shadow:inset 0 1px 2px rgba(43,47,48,.16)}.ads-mark[data-current=true]{background:linear-gradient(90deg,#d99d38,#f3c869);box-shadow:inset 0 1px rgba(255,255,255,.48),0 0 0 1px #9f7029}.ads-mark[data-state=right]{background:#b54436}.ads-mark[data-state=wrong]{background:repeating-linear-gradient(135deg,#354b59 0 4px,#d9c9b0 4px 8px)}.ads-status{min-height:2.55em;margin:0;padding:.48rem .7rem;border:1px solid #d9d0c1;border-radius:.78rem;background:linear-gradient(180deg,#fffdf8,#f2ece1);color:#4f4941;text-align:center;font-size:clamp(.79rem,3.35vw,.93rem);font-weight:900;line-height:1.38;box-shadow:inset 0 1px #fff}.ads-board{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.7);border-radius:1.08rem;background:#26333a;box-shadow:0 11px 26px rgba(35,43,47,.22),inset 0 0 0 1px rgba(35,43,47,.3);isolation:isolate}.ads-canvas{display:block;width:100%;height:auto;touch-action:manipulation}.ads-canvas:focus-visible{outline:4px solid #f0c74f;outline-offset:-7px;border-radius:1rem}.ads-paper{position:relative;z-index:2;min-height:5.25rem;margin-top:-.15rem;padding:.58rem .78rem .64rem;border-top:3px double #c8b99f;background:linear-gradient(96deg,#fffdf4,#f3ead8);box-shadow:0 -5px 14px rgba(32,37,39,.23);color:#332f2b;font-size:clamp(.82rem,3.55vw,.98rem);font-weight:900;line-height:1.45}.ads-paper::before{content:\"判断\";display:inline-block;margin-right:.48rem;padding:.12rem .34rem;border:1px solid #ab4b3d;border-radius:.22rem;color:#9c3d32;font-size:.61rem;letter-spacing:.1em;vertical-align:.09em}.ads-controls{display:grid;grid-template-columns:1fr 1fr;gap:.58rem}.ads-answer{min-height:4.15rem;border:1px solid #c8b79e;border-radius:1rem;background:linear-gradient(155deg,#fffefb,#eee5d7);color:#3d4a50;font-weight:1000;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px #fff,0 5px 11px rgba(50,44,37,.14)}.ads-answer strong{display:block;font-family:serif;font-size:2rem;line-height:1}.ads-answer small{display:block;margin-top:.15rem;font-size:.67rem}.ads-answer[data-value=true]{border-bottom:5px solid #af4639}.ads-answer[data-value=false]{border-bottom:5px solid #385868}.ads-answer[data-selected=true]{transform:translateY(3px);border-color:#596970;background:linear-gradient(155deg,#e8e4dc,#d6d0c6);outline:none;box-shadow:inset 0 5px 10px rgba(38,46,49,.28)}.ads-answer[data-selected=true] strong{transform:scale(.92)}.ads-answer:focus-visible{outline:3px dashed #1682a0;outline-offset:3px}.ads-next:focus-visible{outline:3px solid #f0c55a;outline-offset:-5px}.ads-answer:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(46,42,38,.18)}.ads-answer:disabled{opacity:.62;cursor:default}.ads-feedback{display:grid;gap:.34rem;padding:.58rem .68rem .68rem;border:1px solid #c9bda9;border-radius:.95rem;background:linear-gradient(145deg,#fffdf8,#eee7da);box-shadow:0 5px 13px rgba(57,48,38,.1)}.ads-verdict{margin:0;padding:.3rem .48rem;border-radius:.5rem;text-align:center;font-size:.82rem;font-weight:1000;letter-spacing:.025em}.ads-feedback[data-correct=true]{border-left:6px solid #478858}.ads-feedback[data-correct=false]{border-left:6px double #9d443b}.ads-feedback[data-correct=true] .ads-verdict{background:#e3f0de;color:#2e6537}.ads-feedback[data-correct=false] .ads-verdict{background:#f5dfda;color:#8b352e}.ads-line{margin:0;color:#534b42;font-size:.7rem;font-weight:760;line-height:1.42}.ads-line strong{color:#2c3940}.ads-line:last-of-type{padding-top:.25rem;border-top:1px solid #d7ccbb;color:#675f58;font-size:.64rem;line-height:1.35}.ads-next{min-height:3rem;border:1px solid #294a58;border-radius:.76rem;background:linear-gradient(155deg,#527484,#304f5d);color:#fff;font-size:.82rem;font-weight:1000;letter-spacing:.04em;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px rgba(255,255,255,.35),0 4px 9px rgba(29,51,61,.2)}.ads-next:disabled{opacity:.5}.ads-hint{margin:0;color:#756d65;text-align:center;font-size:.66rem;font-weight:750;line-height:1.35}.ads-stage[data-phase=review] .ads-status{border-color:#c6b690;background:#fff7df}.ads-stage[data-phase=final] .ads-status{border-color:#b9944c;background:#fff3c7;color:#624b1e}.ads-stage[data-phase=timeout] .ads-status{border-color:#bd8f6f;background:#f6e4d9;color:#783d2c}.ads-stage[data-reduced=true] .ads-answer,.ads-stage[data-reduced=true] .ads-next{transition:none!important}\n本試験形式・警察庁教則準拠・2024年11月版終了時間切れ。停止して、確認できた場面までを記録しました1問回答、正しい判断は1問でした。○正しいと思う×誤りと思う判定：正解　｜　あなたの回答 ○　／　正答 ○正しい行動：横断歩道の手前で一時停止し、歩行者に道を譲る。理由：横断中または横断しようとする人がいるときは、手前で止まって通行を妨げないことが必要です。出典：警察庁教則 2024年11月版・第5章 第3節 2(2)・46–47頁（2026-07-26確認）次の場面← → で選択・Enterで決定　O / X キーでも回答確認終了 · 1問回答したところで時間切れになりました。\n\nimport game from \"../src/games/attention-driving-safety-v1.js\";\nimport {createGameRuntime} from \"../src/game-kernel.js\";\nconst FIXED_TASK=game.generate({randomInt:min=>min}),host=document.querySelector(\"#game-host\"),label=document.querySelector(\"#fixture-label\"),prompt=document.querySelector(\"#prompt\"),help=document.querySelector(\"#help\"),resultNode=document.querySelector(\"#fixture-result\"),errors=[];\nlet runtime=null,qa=null,result=null,lastTask=null;\naddEventListener(\"error\",event=>errors.push(String(event.error?.stack||event.message)));addEventListener(\"unhandledrejection\",event=>errors.push(String(event.reason?.stack||event.reason)));\nconst wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));\nfunction start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){\n  runtime?.dispose();host.replaceChildren();qa={};result=null;resultNode.textContent=\"\";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;\n  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?\"全問正解\":\"確認終了\"} · ${detail.detail||detail.reason||\"\"}`}});\n  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);label.textContent=`${width}×${height} DPR${dpr}${reduced?\" reduced\":\"\"}`;return structuredClone(lastTask);\n}\nconst api=()=>qa?.[game.metadata.id],settle=()=>api()?.completeTransition?.(),questionIndex=id=>lastTask.questions.findIndex(question=>question.id===id);\nconst review=id=>{const index=questionIndex(id);api().showScene(index,\"question\");api().answer(lastTask.questions[index].answer);settle()};\nconst finishWith=choices=>{for(let index=0;index<lastTask.questions.length;index++){api().answer(choices[index]);settle();api().next()}};\nasync function scenario(name,reduced){\n  if(name===\"selected\")api().preview(true);\n  else if(name===\"crosswalk-feedback\")review(\"crosswalk\");\n  else if(name===\"phone\")api().showScene(questionIndex(\"phone\"),\"question\");\n  else if(name===\"phone-feedback\")review(\"phone\");\n  else if(name===\"railway\")api().showScene(questionIndex(\"railway\"),\"question\");\n  else if(name===\"railway-feedback\")review(\"railway\");\n  else if(name===\"alcohol\")api().showScene(questionIndex(\"alcohol\"),\"question\");\n  else if(name===\"alcohol-feedback\")review(\"alcohol\");\n  else if(name===\"fatigue\")api().showScene(questionIndex(\"fatigue\"),\"question\");\n  else if(name===\"fatigue-feedback\"||name===\"reduced-feedback\")review(\"fatigue\");\n  else if(name===\"success\")finishWith(lastTask.proof.answers);\n  else if(name===\"mixed\")finishWith(lastTask.proof.answers.map((answer,index)=>index===1||index===3?!answer:answer));\n  else if(name===\"all-wrong\")finishWith(lastTask.proof.answers.map(answer=>!answer));\n  else if(name===\"touch\"){const button=host.querySelector?.('.ads-answer[data-value=\"true\"]')||host.children[1].children[4].children[0];button.dispatchEvent(new PointerEvent(\"pointerdown\",{pointerType:\"touch\",bubbles:true,cancelable:true}));button.dispatchEvent(new MouseEvent(\"click\",{bubbles:true,cancelable:true,detail:1}))}\n  else if(name===\"keyboard\"){host.children[1].dispatchEvent(new KeyboardEvent(\"keydown\",{key:\"O\",bubbles:true,cancelable:true}))}\n  else if(name===\"focus\"){const stage=host.children[1],controls=stage.children[4];controls.children[1].focus()}\n  if(reduced)await wait(235);else if(name===\"selected\")await wait(80);else if(name===\"touch\"||name===\"keyboard\")await wait(460);else await wait(40);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name;\n}\nwindow.drivingSafetyFixture={game,start,scenario:name=>scenario(name,false),dispose(){runtime?.dispose()},inspect(){return api()?.inspect?.()||null},preview(value){return api()?.preview?.(value)},answer(value){return api()?.answer?.(value)},next(){return api()?.next?.()},complete(){return settle()},show(id,phase=\"question\"){return api()?.showScene?.(questionIndex(id),phase)},timeout(){return api()?.timeout?.()},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]},evidence(){const width=innerWidth,resources=performance.getEntriesByType(\"resource\").map(entry=>entry.name),external=resources.filter(name=>new URL(name,location.href).origin!==location.origin);return{scenario:document.body.dataset.scenario||\"\",viewport:{width,height:innerHeight,dpr:devicePixelRatio,scrollWidth:document.body.scrollWidth},task:structuredClone(lastTask),game:api()?.inspect?.()||null,result:result?structuredClone(result):null,runtime:runtime?.inspect?.()||null,errors:[...errors],resources,external,overflow:document.body.scrollWidth>width}}};\nconst query=new URLSearchParams(location.search),name=query.get(\"scenario\")||\"initial\",reduced=query.get(\"reduced\")===\"1\"||name===\"reduced-feedback\",deadline=name===\"timeout\"?120:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name===\"timeout\"){api().answer(lastTask.questions[0].answer);settle();api().next();await wait(180);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name}else await scenario(name,reduced);"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "touch",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "index": 0,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 34,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1044,
+          "height": 753,
+          "cssWidth": 348,
+          "cssHeight": 251,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第5章 第3節 2(2)・46–47頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "alcohol-feedback",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 3,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "alcohol",
+            "choice": false,
+            "correct": true
+          }
+        ],
+        "selected": false,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "alcohol",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "alcohol",
+      "canvasAria": "翌朝七時十分。机に車の鍵と前夜のグラスがある。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第4章 第1節 4・30頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "alcohol",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 3,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "飲酒：場面を見て○か×を判断",
+        "question": "alcohol",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "alcohol",
+      "canvasAria": "翌朝七時十分。机に車の鍵と前夜のグラスがある",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版4 / 5飲酒：場面を見て○か×を判断前夜に酒を飲んでも、眠って目が覚めれば朝は運転してよい。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "all-wrong",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 4,
+        "phase": "final",
+        "score": 0,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": false,
+            "correct": false
+          },
+          {
+            "id": "phone",
+            "choice": true,
+            "correct": false
+          },
+          {
+            "id": "railway",
+            "choice": true,
+            "correct": false
+          },
+          {
+            "id": "alcohol",
+            "choice": true,
+            "correct": false
+          },
+          {
+            "id": "fatigue",
+            "choice": false,
+            "correct": false
+          }
+        ],
+        "selected": false,
+        "busy": false,
+        "transition": null,
+        "done": true,
+        "disposed": false,
+        "result": "complete",
+        "frames": 0,
+        "status": "答えを安全行動と一緒に振り返りましょう",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 2,
+        "frames": 0,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "最終結果、5問中0問正解。成績：横断歩道 不正解、携帯電話 不正解、踏切 不正解、飲酒 不正解、眠気・疲労 不正解",
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "text": "初老テスト。安全知識402×874 DPR3危険を読む運転席五つの道路場面を読み、○か×で安全判断。\n.ads-stage{box-sizing:border-box;width:100%;max-width:430px;margin-inline:auto;display:grid;gap:.48rem;color:#26333a;contain:layout paint}.ads-stage:focus{outline:none}.ads-stage [hidden]{display:none!important}.ads-head{display:flex;align-items:center;justify-content:space-between;gap:.45rem;padding:0 .12rem}.ads-source{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#6b6258;font-size:.64rem;font-weight:900;letter-spacing:.025em}.ads-count{flex:none;padding:.22rem .48rem;border:1px solid #d6c8b4;border-radius:999px;background:#fffaf0;color:#634f3b;font-size:.68rem;font-weight:1000}.ads-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.28rem}.ads-mark{display:grid;place-items:center;height:.42rem;border-radius:999px;background:#d9d4ca;box-shadow:inset 0 1px 2px rgba(43,47,48,.16)}.ads-mark[data-current=true]{background:linear-gradient(90deg,#d99d38,#f3c869);box-shadow:inset 0 1px rgba(255,255,255,.48),0 0 0 1px #9f7029}.ads-mark[data-state=right]{background:#b54436}.ads-mark[data-state=wrong]{background:repeating-linear-gradient(135deg,#354b59 0 4px,#d9c9b0 4px 8px)}.ads-status{min-height:2.55em;margin:0;padding:.48rem .7rem;border:1px solid #d9d0c1;border-radius:.78rem;background:linear-gradient(180deg,#fffdf8,#f2ece1);color:#4f4941;text-align:center;font-size:clamp(.79rem,3.35vw,.93rem);font-weight:900;line-height:1.38;box-shadow:inset 0 1px #fff}.ads-board{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.7);border-radius:1.08rem;background:#26333a;box-shadow:0 11px 26px rgba(35,43,47,.22),inset 0 0 0 1px rgba(35,43,47,.3);isolation:isolate}.ads-canvas{display:block;width:100%;height:auto;touch-action:manipulation}.ads-canvas:focus-visible{outline:4px solid #f0c74f;outline-offset:-7px;border-radius:1rem}.ads-paper{position:relative;z-index:2;min-height:5.25rem;margin-top:-.15rem;padding:.58rem .78rem .64rem;border-top:3px double #c8b99f;background:linear-gradient(96deg,#fffdf4,#f3ead8);box-shadow:0 -5px 14px rgba(32,37,39,.23);color:#332f2b;font-size:clamp(.82rem,3.55vw,.98rem);font-weight:900;line-height:1.45}.ads-paper::before{content:\"判断\";display:inline-block;margin-right:.48rem;padding:.12rem .34rem;border:1px solid #ab4b3d;border-radius:.22rem;color:#9c3d32;font-size:.61rem;letter-spacing:.1em;vertical-align:.09em}.ads-controls{display:grid;grid-template-columns:1fr 1fr;gap:.58rem}.ads-answer{min-height:4.15rem;border:1px solid #c8b79e;border-radius:1rem;background:linear-gradient(155deg,#fffefb,#eee5d7);color:#3d4a50;font-weight:1000;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px #fff,0 5px 11px rgba(50,44,37,.14)}.ads-answer strong{display:block;font-family:serif;font-size:2rem;line-height:1}.ads-answer small{display:block;margin-top:.15rem;font-size:.67rem}.ads-answer[data-value=true]{border-bottom:5px solid #af4639}.ads-answer[data-value=false]{border-bottom:5px solid #385868}.ads-answer[data-selected=true]{transform:translateY(3px);border-color:#596970;background:linear-gradient(155deg,#e8e4dc,#d6d0c6);outline:none;box-shadow:inset 0 5px 10px rgba(38,46,49,.28)}.ads-answer[data-selected=true] strong{transform:scale(.92)}.ads-answer:focus-visible{outline:3px dashed #1682a0;outline-offset:3px}.ads-next:focus-visible{outline:3px solid #f0c55a;outline-offset:-5px}.ads-answer:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(46,42,38,.18)}.ads-answer:disabled{opacity:.62;cursor:default}.ads-feedback{display:grid;gap:.34rem;padding:.58rem .68rem .68rem;border:1px solid #c9bda9;border-radius:.95rem;background:linear-gradient(145deg,#fffdf8,#eee7da);box-shadow:0 5px 13px rgba(57,48,38,.1)}.ads-verdict{margin:0;padding:.3rem .48rem;border-radius:.5rem;text-align:center;font-size:.82rem;font-weight:1000;letter-spacing:.025em}.ads-feedback[data-correct=true]{border-left:6px solid #478858}.ads-feedback[data-correct=false]{border-left:6px double #9d443b}.ads-feedback[data-correct=true] .ads-verdict{background:#e3f0de;color:#2e6537}.ads-feedback[data-correct=false] .ads-verdict{background:#f5dfda;color:#8b352e}.ads-line{margin:0;color:#534b42;font-size:.7rem;font-weight:760;line-height:1.42}.ads-line strong{color:#2c3940}.ads-line:last-of-type{padding-top:.25rem;border-top:1px solid #d7ccbb;color:#675f58;font-size:.64rem;line-height:1.35}.ads-next{min-height:3rem;border:1px solid #294a58;border-radius:.76rem;background:linear-gradient(155deg,#527484,#304f5d);color:#fff;font-size:.82rem;font-weight:1000;letter-spacing:.04em;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px rgba(255,255,255,.35),0 4px 9px rgba(29,51,61,.2)}.ads-next:disabled{opacity:.5}.ads-hint{margin:0;color:#756d65;text-align:center;font-size:.66rem;font-weight:750;line-height:1.35}.ads-stage[data-phase=review] .ads-status{border-color:#c6b690;background:#fff7df}.ads-stage[data-phase=final] .ads-status{border-color:#b9944c;background:#fff3c7;color:#624b1e}.ads-stage[data-phase=timeout] .ads-status{border-color:#bd8f6f;background:#f6e4d9;color:#783d2c}.ads-stage[data-reduced=true] .ads-answer,.ads-stage[data-reduced=true] .ads-next{transition:none!important}\n本試験形式・警察庁教則準拠・2024年11月版完了答えを安全行動と一緒に振り返りましょう五問中0問を正しく判断しました。○正しいと思う×誤りと思う判定：不正解　｜　あなたの回答 ×　／　正答 ○正しい行動：安全な場所へ入り、眠気が覚めるまで休息する。理由：眠気は判断や発見を遅らせます。長時間運転では定期的に休み、眠くなったら速やかに休息します。出典：警察庁教則 2024年11月版・第4章 第1節 2–3・29–30頁／第6章 第3節 1(5)・66頁（2026-07-26確認）結果を見る← → で選択・Enterで決定　O / X キーでも回答\n\nimport game from \"../src/games/attention-driving-safety-v1.js\";\nimport {createGameRuntime} from \"../src/game-kernel.js\";\nconst FIXED_TASK=game.generate({randomInt:min=>min}),host=document.querySelector(\"#game-host\"),label=document.querySelector(\"#fixture-label\"),prompt=document.querySelector(\"#prompt\"),help=document.querySelector(\"#help\"),resultNode=document.querySelector(\"#fixture-result\"),errors=[];\nlet runtime=null,qa=null,result=null,lastTask=null;\naddEventListener(\"error\",event=>errors.push(String(event.error?.stack||event.message)));addEventListener(\"unhandledrejection\",event=>errors.push(String(event.reason?.stack||event.reason)));\nconst wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));\nfunction start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){\n  runtime?.dispose();host.replaceChildren();qa={};result=null;resultNode.textContent=\"\";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;\n  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?\"全問正解\":\"確認終了\"} · ${detail.detail||detail.reason||\"\"}`}});\n  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);label.textContent=`${width}×${height} DPR${dpr}${reduced?\" reduced\":\"\"}`;return structuredClone(lastTask);\n}\nconst api=()=>qa?.[game.metadata.id],settle=()=>api()?.completeTransition?.(),questionIndex=id=>lastTask.questions.findIndex(question=>question.id===id);\nconst review=id=>{const index=questionIndex(id);api().showScene(index,\"question\");api().answer(lastTask.questions[index].answer);settle()};\nconst finishWith=choices=>{for(let index=0;index<lastTask.questions.length;index++){api().answer(choices[index]);settle();api().next()}};\nasync function scenario(name,reduced){\n  if(name===\"selected\")api().preview(true);\n  else if(name===\"crosswalk-feedback\")review(\"crosswalk\");\n  else if(name===\"phone\")api().showScene(questionIndex(\"phone\"),\"question\");\n  else if(name===\"phone-feedback\")review(\"phone\");\n  else if(name===\"railway\")api().showScene(questionIndex(\"railway\"),\"question\");\n  else if(name===\"railway-feedback\")review(\"railway\");\n  else if(name===\"alcohol\")api().showScene(questionIndex(\"alcohol\"),\"question\");\n  else if(name===\"alcohol-feedback\")review(\"alcohol\");\n  else if(name===\"fatigue\")api().showScene(questionIndex(\"fatigue\"),\"question\");\n  else if(name===\"fatigue-feedback\"||name===\"reduced-feedback\")review(\"fatigue\");\n  else if(name===\"success\")finishWith(lastTask.proof.answers);\n  else if(name===\"mixed\")finishWith(lastTask.proof.answers.map((answer,index)=>index===1||index===3?!answer:answer));\n  else if(name===\"all-wrong\")finishWith(lastTask.proof.answers.map(answer=>!answer));\n  else if(name===\"touch\"){const button=host.querySelector?.('.ads-answer[data-value=\"true\"]')||host.children[1].children[4].children[0];button.dispatchEvent(new PointerEvent(\"pointerdown\",{pointerType:\"touch\",bubbles:true,cancelable:true}));button.dispatchEvent(new MouseEvent(\"click\",{bubbles:true,cancelable:true,detail:1}))}\n  else if(name===\"keyboard\"){host.children[1].dispatchEvent(new KeyboardEvent(\"keydown\",{key:\"O\",bubbles:true,cancelable:true}))}\n  else if(name===\"focus\"){const stage=host.children[1],controls=stage.children[4];controls.children[1].focus()}\n  if(reduced)await wait(235);else if(name===\"selected\")await wait(80);else if(name===\"touch\"||name===\"keyboard\")await wait(460);else await wait(40);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name;\n}\nwindow.drivingSafetyFixture={game,start,scenario:name=>scenario(name,false),dispose(){runtime?.dispose()},inspect(){return api()?.inspect?.()||null},preview(value){return api()?.preview?.(value)},answer(value){return api()?.answer?.(value)},next(){return api()?.next?.()},complete(){return settle()},show(id,phase=\"question\"){return api()?.showScene?.(questionIndex(id),phase)},timeout(){return api()?.timeout?.()},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]},evidence(){const width=innerWidth,resources=performance.getEntriesByType(\"resource\").map(entry=>entry.name),external=resources.filter(name=>new URL(name,location.href).origin!==location.origin);return{scenario:document.body.dataset.scenario||\"\",viewport:{width,height:innerHeight,dpr:devicePixelRatio,scrollWidth:document.body.scrollWidth},task:structuredClone(lastTask),game:api()?.inspect?.()||null,result:result?structuredClone(result):null,runtime:runtime?.inspect?.()||null,errors:[...errors],resources,external,overflow:document.body.scrollWidth>width}}};\nconst query=new URLSearchParams(location.search),name=query.get(\"scenario\")||\"initial\",reduced=query.get(\"reduced\")===\"1\"||name===\"reduced-feedback\",deadline=name===\"timeout\"?120:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name===\"timeout\"){api().answer(lastTask.questions[0].answer);settle();api().next();await wait(180);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name}else await scenario(name,reduced);"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "crosswalk-feedback",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 0,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第5章 第3節 2(2)・46–47頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "fatigue-feedback",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 4,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "fatigue",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "夜の道路。眠気を感じ、左前方に休憩施設の案内がある。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "結果を見る"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第4章 第1節 2–3・29–30頁／第6章 第3節 1(5)・66頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "fatigue",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 4,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "眠気・疲労：場面を見て○か×を判断",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "夜の道路。眠気を感じ、左前方に休憩施設の案内がある",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版5 / 5眠気・疲労：場面を見て○か×を判断少しでも眠気を感じたら、安全な場所に止め、休息して眠気を覚ましてから運転する。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "focus",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 0,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "横断歩道：場面を見て○か×を判断",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-answer",
+        "text": "×誤りと思う"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "initial",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 0,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "横断歩道：場面を見て○か×を判断",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版1 / 5横断歩道：場面を見て○か×を判断横断しようとしている人がいる。横断歩道の手前で止まり、先に渡ってもらう。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "keyboard",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 0,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 33,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第5章 第3節 2(2)・46–47頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "mixed",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 4,
+        "phase": "final",
+        "score": 3,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": true,
+            "correct": true
+          },
+          {
+            "id": "phone",
+            "choice": true,
+            "correct": false
+          },
+          {
+            "id": "railway",
+            "choice": false,
+            "correct": true
+          },
+          {
+            "id": "alcohol",
+            "choice": true,
+            "correct": false
+          },
+          {
+            "id": "fatigue",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": true,
+        "disposed": false,
+        "result": "complete",
+        "frames": 0,
+        "status": "答えを安全行動と一緒に振り返りましょう",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 2,
+        "frames": 0,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "最終結果、5問中3問正解。成績：横断歩道 正解、携帯電話 不正解、踏切 正解、飲酒 不正解、眠気・疲労 正解",
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "text": "初老テスト。安全知識402×874 DPR3危険を読む運転席五つの道路場面を読み、○か×で安全判断。\n.ads-stage{box-sizing:border-box;width:100%;max-width:430px;margin-inline:auto;display:grid;gap:.48rem;color:#26333a;contain:layout paint}.ads-stage:focus{outline:none}.ads-stage [hidden]{display:none!important}.ads-head{display:flex;align-items:center;justify-content:space-between;gap:.45rem;padding:0 .12rem}.ads-source{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#6b6258;font-size:.64rem;font-weight:900;letter-spacing:.025em}.ads-count{flex:none;padding:.22rem .48rem;border:1px solid #d6c8b4;border-radius:999px;background:#fffaf0;color:#634f3b;font-size:.68rem;font-weight:1000}.ads-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.28rem}.ads-mark{display:grid;place-items:center;height:.42rem;border-radius:999px;background:#d9d4ca;box-shadow:inset 0 1px 2px rgba(43,47,48,.16)}.ads-mark[data-current=true]{background:linear-gradient(90deg,#d99d38,#f3c869);box-shadow:inset 0 1px rgba(255,255,255,.48),0 0 0 1px #9f7029}.ads-mark[data-state=right]{background:#b54436}.ads-mark[data-state=wrong]{background:repeating-linear-gradient(135deg,#354b59 0 4px,#d9c9b0 4px 8px)}.ads-status{min-height:2.55em;margin:0;padding:.48rem .7rem;border:1px solid #d9d0c1;border-radius:.78rem;background:linear-gradient(180deg,#fffdf8,#f2ece1);color:#4f4941;text-align:center;font-size:clamp(.79rem,3.35vw,.93rem);font-weight:900;line-height:1.38;box-shadow:inset 0 1px #fff}.ads-board{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.7);border-radius:1.08rem;background:#26333a;box-shadow:0 11px 26px rgba(35,43,47,.22),inset 0 0 0 1px rgba(35,43,47,.3);isolation:isolate}.ads-canvas{display:block;width:100%;height:auto;touch-action:manipulation}.ads-canvas:focus-visible{outline:4px solid #f0c74f;outline-offset:-7px;border-radius:1rem}.ads-paper{position:relative;z-index:2;min-height:5.25rem;margin-top:-.15rem;padding:.58rem .78rem .64rem;border-top:3px double #c8b99f;background:linear-gradient(96deg,#fffdf4,#f3ead8);box-shadow:0 -5px 14px rgba(32,37,39,.23);color:#332f2b;font-size:clamp(.82rem,3.55vw,.98rem);font-weight:900;line-height:1.45}.ads-paper::before{content:\"判断\";display:inline-block;margin-right:.48rem;padding:.12rem .34rem;border:1px solid #ab4b3d;border-radius:.22rem;color:#9c3d32;font-size:.61rem;letter-spacing:.1em;vertical-align:.09em}.ads-controls{display:grid;grid-template-columns:1fr 1fr;gap:.58rem}.ads-answer{min-height:4.15rem;border:1px solid #c8b79e;border-radius:1rem;background:linear-gradient(155deg,#fffefb,#eee5d7);color:#3d4a50;font-weight:1000;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px #fff,0 5px 11px rgba(50,44,37,.14)}.ads-answer strong{display:block;font-family:serif;font-size:2rem;line-height:1}.ads-answer small{display:block;margin-top:.15rem;font-size:.67rem}.ads-answer[data-value=true]{border-bottom:5px solid #af4639}.ads-answer[data-value=false]{border-bottom:5px solid #385868}.ads-answer[data-selected=true]{transform:translateY(3px);border-color:#596970;background:linear-gradient(155deg,#e8e4dc,#d6d0c6);outline:none;box-shadow:inset 0 5px 10px rgba(38,46,49,.28)}.ads-answer[data-selected=true] strong{transform:scale(.92)}.ads-answer:focus-visible{outline:3px dashed #1682a0;outline-offset:3px}.ads-next:focus-visible{outline:3px solid #f0c55a;outline-offset:-5px}.ads-answer:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(46,42,38,.18)}.ads-answer:disabled{opacity:.62;cursor:default}.ads-feedback{display:grid;gap:.34rem;padding:.58rem .68rem .68rem;border:1px solid #c9bda9;border-radius:.95rem;background:linear-gradient(145deg,#fffdf8,#eee7da);box-shadow:0 5px 13px rgba(57,48,38,.1)}.ads-verdict{margin:0;padding:.3rem .48rem;border-radius:.5rem;text-align:center;font-size:.82rem;font-weight:1000;letter-spacing:.025em}.ads-feedback[data-correct=true]{border-left:6px solid #478858}.ads-feedback[data-correct=false]{border-left:6px double #9d443b}.ads-feedback[data-correct=true] .ads-verdict{background:#e3f0de;color:#2e6537}.ads-feedback[data-correct=false] .ads-verdict{background:#f5dfda;color:#8b352e}.ads-line{margin:0;color:#534b42;font-size:.7rem;font-weight:760;line-height:1.42}.ads-line strong{color:#2c3940}.ads-line:last-of-type{padding-top:.25rem;border-top:1px solid #d7ccbb;color:#675f58;font-size:.64rem;line-height:1.35}.ads-next{min-height:3rem;border:1px solid #294a58;border-radius:.76rem;background:linear-gradient(155deg,#527484,#304f5d);color:#fff;font-size:.82rem;font-weight:1000;letter-spacing:.04em;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px rgba(255,255,255,.35),0 4px 9px rgba(29,51,61,.2)}.ads-next:disabled{opacity:.5}.ads-hint{margin:0;color:#756d65;text-align:center;font-size:.66rem;font-weight:750;line-height:1.35}.ads-stage[data-phase=review] .ads-status{border-color:#c6b690;background:#fff7df}.ads-stage[data-phase=final] .ads-status{border-color:#b9944c;background:#fff3c7;color:#624b1e}.ads-stage[data-phase=timeout] .ads-status{border-color:#bd8f6f;background:#f6e4d9;color:#783d2c}.ads-stage[data-reduced=true] .ads-answer,.ads-stage[data-reduced=true] .ads-next{transition:none!important}\n本試験形式・警察庁教則準拠・2024年11月版完了答えを安全行動と一緒に振り返りましょう五問中3問を正しく判断しました。○正しいと思う×誤りと思う判定：正解　｜　あなたの回答 ○　／　正答 ○正しい行動：安全な場所へ入り、眠気が覚めるまで休息する。理由：眠気は判断や発見を遅らせます。長時間運転では定期的に休み、眠くなったら速やかに休息します。出典：警察庁教則 2024年11月版・第4章 第1節 2–3・29–30頁／第6章 第3節 1(5)・66頁（2026-07-26確認）結果を見る← → で選択・Enterで決定　O / X キーでも回答\n\nimport game from \"../src/games/attention-driving-safety-v1.js\";\nimport {createGameRuntime} from \"../src/game-kernel.js\";\nconst FIXED_TASK=game.generate({randomInt:min=>min}),host=document.querySelector(\"#game-host\"),label=document.querySelector(\"#fixture-label\"),prompt=document.querySelector(\"#prompt\"),help=document.querySelector(\"#help\"),resultNode=document.querySelector(\"#fixture-result\"),errors=[];\nlet runtime=null,qa=null,result=null,lastTask=null;\naddEventListener(\"error\",event=>errors.push(String(event.error?.stack||event.message)));addEventListener(\"unhandledrejection\",event=>errors.push(String(event.reason?.stack||event.reason)));\nconst wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));\nfunction start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){\n  runtime?.dispose();host.replaceChildren();qa={};result=null;resultNode.textContent=\"\";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;\n  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?\"全問正解\":\"確認終了\"} · ${detail.detail||detail.reason||\"\"}`}});\n  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);label.textContent=`${width}×${height} DPR${dpr}${reduced?\" reduced\":\"\"}`;return structuredClone(lastTask);\n}\nconst api=()=>qa?.[game.metadata.id],settle=()=>api()?.completeTransition?.(),questionIndex=id=>lastTask.questions.findIndex(question=>question.id===id);\nconst review=id=>{const index=questionIndex(id);api().showScene(index,\"question\");api().answer(lastTask.questions[index].answer);settle()};\nconst finishWith=choices=>{for(let index=0;index<lastTask.questions.length;index++){api().answer(choices[index]);settle();api().next()}};\nasync function scenario(name,reduced){\n  if(name===\"selected\")api().preview(true);\n  else if(name===\"crosswalk-feedback\")review(\"crosswalk\");\n  else if(name===\"phone\")api().showScene(questionIndex(\"phone\"),\"question\");\n  else if(name===\"phone-feedback\")review(\"phone\");\n  else if(name===\"railway\")api().showScene(questionIndex(\"railway\"),\"question\");\n  else if(name===\"railway-feedback\")review(\"railway\");\n  else if(name===\"alcohol\")api().showScene(questionIndex(\"alcohol\"),\"question\");\n  else if(name===\"alcohol-feedback\")review(\"alcohol\");\n  else if(name===\"fatigue\")api().showScene(questionIndex(\"fatigue\"),\"question\");\n  else if(name===\"fatigue-feedback\"||name===\"reduced-feedback\")review(\"fatigue\");\n  else if(name===\"success\")finishWith(lastTask.proof.answers);\n  else if(name===\"mixed\")finishWith(lastTask.proof.answers.map((answer,index)=>index===1||index===3?!answer:answer));\n  else if(name===\"all-wrong\")finishWith(lastTask.proof.answers.map(answer=>!answer));\n  else if(name===\"touch\"){const button=host.querySelector?.('.ads-answer[data-value=\"true\"]')||host.children[1].children[4].children[0];button.dispatchEvent(new PointerEvent(\"pointerdown\",{pointerType:\"touch\",bubbles:true,cancelable:true}));button.dispatchEvent(new MouseEvent(\"click\",{bubbles:true,cancelable:true,detail:1}))}\n  else if(name===\"keyboard\"){host.children[1].dispatchEvent(new KeyboardEvent(\"keydown\",{key:\"O\",bubbles:true,cancelable:true}))}\n  else if(name===\"focus\"){const stage=host.children[1],controls=stage.children[4];controls.children[1].focus()}\n  if(reduced)await wait(235);else if(name===\"selected\")await wait(80);else if(name===\"touch\"||name===\"keyboard\")await wait(460);else await wait(40);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name;\n}\nwindow.drivingSafetyFixture={game,start,scenario:name=>scenario(name,false),dispose(){runtime?.dispose()},inspect(){return api()?.inspect?.()||null},preview(value){return api()?.preview?.(value)},answer(value){return api()?.answer?.(value)},next(){return api()?.next?.()},complete(){return settle()},show(id,phase=\"question\"){return api()?.showScene?.(questionIndex(id),phase)},timeout(){return api()?.timeout?.()},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]},evidence(){const width=innerWidth,resources=performance.getEntriesByType(\"resource\").map(entry=>entry.name),external=resources.filter(name=>new URL(name,location.href).origin!==location.origin);return{scenario:document.body.dataset.scenario||\"\",viewport:{width,height:innerHeight,dpr:devicePixelRatio,scrollWidth:document.body.scrollWidth},task:structuredClone(lastTask),game:api()?.inspect?.()||null,result:result?structuredClone(result):null,runtime:runtime?.inspect?.()||null,errors:[...errors],resources,external,overflow:document.body.scrollWidth>width}}};\nconst query=new URLSearchParams(location.search),name=query.get(\"scenario\")||\"initial\",reduced=query.get(\"reduced\")===\"1\"||name===\"reduced-feedback\",deadline=name===\"timeout\"?120:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name===\"timeout\"){api().answer(lastTask.questions[0].answer);settle();api().next();await wait(180);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name}else await scenario(name,reduced);"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "phone-feedback",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 1,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "phone",
+            "choice": false,
+            "correct": true
+          }
+        ],
+        "selected": false,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "phone",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "phone",
+      "canvasAria": "低速で動く車内。通知画面と前方の自転車が見える。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第5章 第1節 2(4)・41頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "phone",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 1,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "携帯電話：場面を見て○か×を判断",
+        "question": "phone",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "phone",
+      "canvasAria": "低速で動く車内。通知画面と前方の自転車が見える",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版2 / 5携帯電話：場面を見て○か×を判断車がゆっくり動いている間なら、短い通知だけ画面で確認してもよい。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "railway-feedback",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 2,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "railway",
+            "choice": false,
+            "correct": true
+          }
+        ],
+        "selected": false,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "railway",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "railway",
+      "canvasAria": "遮断機が上がった踏切。前の車は通過した。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第6章 第1節 1(1)(4)・64–65頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "railway",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 2,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": null,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "踏切：場面を見て○か×を判断",
+        "question": "railway",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "railway",
+      "canvasAria": "遮断機が上がった踏切。前の車は通過した",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版3 / 5踏切：場面を見て○か×を判断警報機が鳴っておらず、前の車も渡ったので、自分は止まらず続いてよい。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "reduced-feedback",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 4,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "fatigue",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 0,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "夜の道路。眠気を感じ、左前方に休憩施設の案内がある。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "結果を見る"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第4章 第1節 2–3・29–30頁／第6章 第3節 1(5)・66頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "selected",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 0,
+        "phase": "question",
+        "score": 0,
+        "answers": [],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "○を選択。離すと回答します",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる",
+      "active": {
+        "tag": "SECTION",
+        "className": "ads-stage",
+        "text": "本試験形式・警察庁教則準拠・2024年11月版1 / 5○を選択。離すと回答します横断しようとしている人がいる。横断歩道の手前で止まり、先に渡ってもらう。○正しいと思う×誤りと思う← → で選択・Enterで決定　O / X キーでも回答"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "success",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 4,
+        "phase": "final",
+        "score": 5,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": true,
+            "correct": true
+          },
+          {
+            "id": "phone",
+            "choice": false,
+            "correct": true
+          },
+          {
+            "id": "railway",
+            "choice": false,
+            "correct": true
+          },
+          {
+            "id": "alcohol",
+            "choice": false,
+            "correct": true
+          },
+          {
+            "id": "fatigue",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": true,
+        "disposed": false,
+        "result": "complete",
+        "frames": 0,
+        "status": "五つすべて正しく判断しました",
+        "question": "fatigue",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 2,
+        "frames": 0,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "fatigue",
+      "canvasAria": "最終結果、5問中5問正解。成績：横断歩道 正解、携帯電話 正解、踏切 正解、飲酒 正解、眠気・疲労 正解",
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "text": "初老テスト。安全知識402×874 DPR3危険を読む運転席五つの道路場面を読み、○か×で安全判断。\n.ads-stage{box-sizing:border-box;width:100%;max-width:430px;margin-inline:auto;display:grid;gap:.48rem;color:#26333a;contain:layout paint}.ads-stage:focus{outline:none}.ads-stage [hidden]{display:none!important}.ads-head{display:flex;align-items:center;justify-content:space-between;gap:.45rem;padding:0 .12rem}.ads-source{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#6b6258;font-size:.64rem;font-weight:900;letter-spacing:.025em}.ads-count{flex:none;padding:.22rem .48rem;border:1px solid #d6c8b4;border-radius:999px;background:#fffaf0;color:#634f3b;font-size:.68rem;font-weight:1000}.ads-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.28rem}.ads-mark{display:grid;place-items:center;height:.42rem;border-radius:999px;background:#d9d4ca;box-shadow:inset 0 1px 2px rgba(43,47,48,.16)}.ads-mark[data-current=true]{background:linear-gradient(90deg,#d99d38,#f3c869);box-shadow:inset 0 1px rgba(255,255,255,.48),0 0 0 1px #9f7029}.ads-mark[data-state=right]{background:#b54436}.ads-mark[data-state=wrong]{background:repeating-linear-gradient(135deg,#354b59 0 4px,#d9c9b0 4px 8px)}.ads-status{min-height:2.55em;margin:0;padding:.48rem .7rem;border:1px solid #d9d0c1;border-radius:.78rem;background:linear-gradient(180deg,#fffdf8,#f2ece1);color:#4f4941;text-align:center;font-size:clamp(.79rem,3.35vw,.93rem);font-weight:900;line-height:1.38;box-shadow:inset 0 1px #fff}.ads-board{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.7);border-radius:1.08rem;background:#26333a;box-shadow:0 11px 26px rgba(35,43,47,.22),inset 0 0 0 1px rgba(35,43,47,.3);isolation:isolate}.ads-canvas{display:block;width:100%;height:auto;touch-action:manipulation}.ads-canvas:focus-visible{outline:4px solid #f0c74f;outline-offset:-7px;border-radius:1rem}.ads-paper{position:relative;z-index:2;min-height:5.25rem;margin-top:-.15rem;padding:.58rem .78rem .64rem;border-top:3px double #c8b99f;background:linear-gradient(96deg,#fffdf4,#f3ead8);box-shadow:0 -5px 14px rgba(32,37,39,.23);color:#332f2b;font-size:clamp(.82rem,3.55vw,.98rem);font-weight:900;line-height:1.45}.ads-paper::before{content:\"判断\";display:inline-block;margin-right:.48rem;padding:.12rem .34rem;border:1px solid #ab4b3d;border-radius:.22rem;color:#9c3d32;font-size:.61rem;letter-spacing:.1em;vertical-align:.09em}.ads-controls{display:grid;grid-template-columns:1fr 1fr;gap:.58rem}.ads-answer{min-height:4.15rem;border:1px solid #c8b79e;border-radius:1rem;background:linear-gradient(155deg,#fffefb,#eee5d7);color:#3d4a50;font-weight:1000;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px #fff,0 5px 11px rgba(50,44,37,.14)}.ads-answer strong{display:block;font-family:serif;font-size:2rem;line-height:1}.ads-answer small{display:block;margin-top:.15rem;font-size:.67rem}.ads-answer[data-value=true]{border-bottom:5px solid #af4639}.ads-answer[data-value=false]{border-bottom:5px solid #385868}.ads-answer[data-selected=true]{transform:translateY(3px);border-color:#596970;background:linear-gradient(155deg,#e8e4dc,#d6d0c6);outline:none;box-shadow:inset 0 5px 10px rgba(38,46,49,.28)}.ads-answer[data-selected=true] strong{transform:scale(.92)}.ads-answer:focus-visible{outline:3px dashed #1682a0;outline-offset:3px}.ads-next:focus-visible{outline:3px solid #f0c55a;outline-offset:-5px}.ads-answer:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(46,42,38,.18)}.ads-answer:disabled{opacity:.62;cursor:default}.ads-feedback{display:grid;gap:.34rem;padding:.58rem .68rem .68rem;border:1px solid #c9bda9;border-radius:.95rem;background:linear-gradient(145deg,#fffdf8,#eee7da);box-shadow:0 5px 13px rgba(57,48,38,.1)}.ads-verdict{margin:0;padding:.3rem .48rem;border-radius:.5rem;text-align:center;font-size:.82rem;font-weight:1000;letter-spacing:.025em}.ads-feedback[data-correct=true]{border-left:6px solid #478858}.ads-feedback[data-correct=false]{border-left:6px double #9d443b}.ads-feedback[data-correct=true] .ads-verdict{background:#e3f0de;color:#2e6537}.ads-feedback[data-correct=false] .ads-verdict{background:#f5dfda;color:#8b352e}.ads-line{margin:0;color:#534b42;font-size:.7rem;font-weight:760;line-height:1.42}.ads-line strong{color:#2c3940}.ads-line:last-of-type{padding-top:.25rem;border-top:1px solid #d7ccbb;color:#675f58;font-size:.64rem;line-height:1.35}.ads-next{min-height:3rem;border:1px solid #294a58;border-radius:.76rem;background:linear-gradient(155deg,#527484,#304f5d);color:#fff;font-size:.82rem;font-weight:1000;letter-spacing:.04em;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px rgba(255,255,255,.35),0 4px 9px rgba(29,51,61,.2)}.ads-next:disabled{opacity:.5}.ads-hint{margin:0;color:#756d65;text-align:center;font-size:.66rem;font-weight:750;line-height:1.35}.ads-stage[data-phase=review] .ads-status{border-color:#c6b690;background:#fff7df}.ads-stage[data-phase=final] .ads-status{border-color:#b9944c;background:#fff3c7;color:#624b1e}.ads-stage[data-phase=timeout] .ads-status{border-color:#bd8f6f;background:#f6e4d9;color:#783d2c}.ads-stage[data-reduced=true] .ads-answer,.ads-stage[data-reduced=true] .ads-next{transition:none!important}\n本試験形式・警察庁教則準拠・2024年11月版完了五つすべて正しく判断しました五問中5問を正しく判断しました。○正しいと思う×誤りと思う判定：正解　｜　あなたの回答 ○　／　正答 ○正しい行動：安全な場所へ入り、眠気が覚めるまで休息する。理由：眠気は判断や発見を遅らせます。長時間運転では定期的に休み、眠くなったら速やかに休息します。出典：警察庁教則 2024年11月版・第4章 第1節 2–3・29–30頁／第6章 第3節 1(5)・66頁（2026-07-26確認）結果を見る← → で選択・Enterで決定　O / X キーでも回答\n\nimport game from \"../src/games/attention-driving-safety-v1.js\";\nimport {createGameRuntime} from \"../src/game-kernel.js\";\nconst FIXED_TASK=game.generate({randomInt:min=>min}),host=document.querySelector(\"#game-host\"),label=document.querySelector(\"#fixture-label\"),prompt=document.querySelector(\"#prompt\"),help=document.querySelector(\"#help\"),resultNode=document.querySelector(\"#fixture-result\"),errors=[];\nlet runtime=null,qa=null,result=null,lastTask=null;\naddEventListener(\"error\",event=>errors.push(String(event.error?.stack||event.message)));addEventListener(\"unhandledrejection\",event=>errors.push(String(event.reason?.stack||event.reason)));\nconst wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));\nfunction start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){\n  runtime?.dispose();host.replaceChildren();qa={};result=null;resultNode.textContent=\"\";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;\n  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?\"全問正解\":\"確認終了\"} · ${detail.detail||detail.reason||\"\"}`}});\n  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);label.textContent=`${width}×${height} DPR${dpr}${reduced?\" reduced\":\"\"}`;return structuredClone(lastTask);\n}\nconst api=()=>qa?.[game.metadata.id],settle=()=>api()?.completeTransition?.(),questionIndex=id=>lastTask.questions.findIndex(question=>question.id===id);\nconst review=id=>{const index=questionIndex(id);api().showScene(index,\"question\");api().answer(lastTask.questions[index].answer);settle()};\nconst finishWith=choices=>{for(let index=0;index<lastTask.questions.length;index++){api().answer(choices[index]);settle();api().next()}};\nasync function scenario(name,reduced){\n  if(name===\"selected\")api().preview(true);\n  else if(name===\"crosswalk-feedback\")review(\"crosswalk\");\n  else if(name===\"phone\")api().showScene(questionIndex(\"phone\"),\"question\");\n  else if(name===\"phone-feedback\")review(\"phone\");\n  else if(name===\"railway\")api().showScene(questionIndex(\"railway\"),\"question\");\n  else if(name===\"railway-feedback\")review(\"railway\");\n  else if(name===\"alcohol\")api().showScene(questionIndex(\"alcohol\"),\"question\");\n  else if(name===\"alcohol-feedback\")review(\"alcohol\");\n  else if(name===\"fatigue\")api().showScene(questionIndex(\"fatigue\"),\"question\");\n  else if(name===\"fatigue-feedback\"||name===\"reduced-feedback\")review(\"fatigue\");\n  else if(name===\"success\")finishWith(lastTask.proof.answers);\n  else if(name===\"mixed\")finishWith(lastTask.proof.answers.map((answer,index)=>index===1||index===3?!answer:answer));\n  else if(name===\"all-wrong\")finishWith(lastTask.proof.answers.map(answer=>!answer));\n  else if(name===\"touch\"){const button=host.querySelector?.('.ads-answer[data-value=\"true\"]')||host.children[1].children[4].children[0];button.dispatchEvent(new PointerEvent(\"pointerdown\",{pointerType:\"touch\",bubbles:true,cancelable:true}));button.dispatchEvent(new MouseEvent(\"click\",{bubbles:true,cancelable:true,detail:1}))}\n  else if(name===\"keyboard\"){host.children[1].dispatchEvent(new KeyboardEvent(\"keydown\",{key:\"O\",bubbles:true,cancelable:true}))}\n  else if(name===\"focus\"){const stage=host.children[1],controls=stage.children[4];controls.children[1].focus()}\n  if(reduced)await wait(235);else if(name===\"selected\")await wait(80);else if(name===\"touch\"||name===\"keyboard\")await wait(460);else await wait(40);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name;\n}\nwindow.drivingSafetyFixture={game,start,scenario:name=>scenario(name,false),dispose(){runtime?.dispose()},inspect(){return api()?.inspect?.()||null},preview(value){return api()?.preview?.(value)},answer(value){return api()?.answer?.(value)},next(){return api()?.next?.()},complete(){return settle()},show(id,phase=\"question\"){return api()?.showScene?.(questionIndex(id),phase)},timeout(){return api()?.timeout?.()},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]},evidence(){const width=innerWidth,resources=performance.getEntriesByType(\"resource\").map(entry=>entry.name),external=resources.filter(name=>new URL(name,location.href).origin!==location.origin);return{scenario:document.body.dataset.scenario||\"\",viewport:{width,height:innerHeight,dpr:devicePixelRatio,scrollWidth:document.body.scrollWidth},task:structuredClone(lastTask),game:api()?.inspect?.()||null,result:result?structuredClone(result):null,runtime:runtime?.inspect?.()||null,errors:[...errors],resources,external,overflow:document.body.scrollWidth>width}}};\nconst query=new URLSearchParams(location.search),name=query.get(\"scenario\")||\"initial\",reduced=query.get(\"reduced\")===\"1\"||name===\"reduced-feedback\",deadline=name===\"timeout\"?120:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name===\"timeout\"){api().answer(lastTask.questions[0].answer);settle();api().next();await wait(180);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name}else await scenario(name,reduced);"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "timeout",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": null,
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "score": 1,
+          "total": 5,
+          "answered": 1,
+          "detail": "1問回答したところで時間切れになりました。"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": null,
+      "canvasAria": "時間切れ、1問回答",
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "text": "初老テスト。安全知識402×874 DPR3危険を読む運転席五つの道路場面を読み、○か×で安全判断。\n.ads-stage{box-sizing:border-box;width:100%;max-width:430px;margin-inline:auto;display:grid;gap:.48rem;color:#26333a;contain:layout paint}.ads-stage:focus{outline:none}.ads-stage [hidden]{display:none!important}.ads-head{display:flex;align-items:center;justify-content:space-between;gap:.45rem;padding:0 .12rem}.ads-source{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#6b6258;font-size:.64rem;font-weight:900;letter-spacing:.025em}.ads-count{flex:none;padding:.22rem .48rem;border:1px solid #d6c8b4;border-radius:999px;background:#fffaf0;color:#634f3b;font-size:.68rem;font-weight:1000}.ads-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.28rem}.ads-mark{display:grid;place-items:center;height:.42rem;border-radius:999px;background:#d9d4ca;box-shadow:inset 0 1px 2px rgba(43,47,48,.16)}.ads-mark[data-current=true]{background:linear-gradient(90deg,#d99d38,#f3c869);box-shadow:inset 0 1px rgba(255,255,255,.48),0 0 0 1px #9f7029}.ads-mark[data-state=right]{background:#b54436}.ads-mark[data-state=wrong]{background:repeating-linear-gradient(135deg,#354b59 0 4px,#d9c9b0 4px 8px)}.ads-status{min-height:2.55em;margin:0;padding:.48rem .7rem;border:1px solid #d9d0c1;border-radius:.78rem;background:linear-gradient(180deg,#fffdf8,#f2ece1);color:#4f4941;text-align:center;font-size:clamp(.79rem,3.35vw,.93rem);font-weight:900;line-height:1.38;box-shadow:inset 0 1px #fff}.ads-board{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.7);border-radius:1.08rem;background:#26333a;box-shadow:0 11px 26px rgba(35,43,47,.22),inset 0 0 0 1px rgba(35,43,47,.3);isolation:isolate}.ads-canvas{display:block;width:100%;height:auto;touch-action:manipulation}.ads-canvas:focus-visible{outline:4px solid #f0c74f;outline-offset:-7px;border-radius:1rem}.ads-paper{position:relative;z-index:2;min-height:5.25rem;margin-top:-.15rem;padding:.58rem .78rem .64rem;border-top:3px double #c8b99f;background:linear-gradient(96deg,#fffdf4,#f3ead8);box-shadow:0 -5px 14px rgba(32,37,39,.23);color:#332f2b;font-size:clamp(.82rem,3.55vw,.98rem);font-weight:900;line-height:1.45}.ads-paper::before{content:\"判断\";display:inline-block;margin-right:.48rem;padding:.12rem .34rem;border:1px solid #ab4b3d;border-radius:.22rem;color:#9c3d32;font-size:.61rem;letter-spacing:.1em;vertical-align:.09em}.ads-controls{display:grid;grid-template-columns:1fr 1fr;gap:.58rem}.ads-answer{min-height:4.15rem;border:1px solid #c8b79e;border-radius:1rem;background:linear-gradient(155deg,#fffefb,#eee5d7);color:#3d4a50;font-weight:1000;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px #fff,0 5px 11px rgba(50,44,37,.14)}.ads-answer strong{display:block;font-family:serif;font-size:2rem;line-height:1}.ads-answer small{display:block;margin-top:.15rem;font-size:.67rem}.ads-answer[data-value=true]{border-bottom:5px solid #af4639}.ads-answer[data-value=false]{border-bottom:5px solid #385868}.ads-answer[data-selected=true]{transform:translateY(3px);border-color:#596970;background:linear-gradient(155deg,#e8e4dc,#d6d0c6);outline:none;box-shadow:inset 0 5px 10px rgba(38,46,49,.28)}.ads-answer[data-selected=true] strong{transform:scale(.92)}.ads-answer:focus-visible{outline:3px dashed #1682a0;outline-offset:3px}.ads-next:focus-visible{outline:3px solid #f0c55a;outline-offset:-5px}.ads-answer:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(46,42,38,.18)}.ads-answer:disabled{opacity:.62;cursor:default}.ads-feedback{display:grid;gap:.34rem;padding:.58rem .68rem .68rem;border:1px solid #c9bda9;border-radius:.95rem;background:linear-gradient(145deg,#fffdf8,#eee7da);box-shadow:0 5px 13px rgba(57,48,38,.1)}.ads-verdict{margin:0;padding:.3rem .48rem;border-radius:.5rem;text-align:center;font-size:.82rem;font-weight:1000;letter-spacing:.025em}.ads-feedback[data-correct=true]{border-left:6px solid #478858}.ads-feedback[data-correct=false]{border-left:6px double #9d443b}.ads-feedback[data-correct=true] .ads-verdict{background:#e3f0de;color:#2e6537}.ads-feedback[data-correct=false] .ads-verdict{background:#f5dfda;color:#8b352e}.ads-line{margin:0;color:#534b42;font-size:.7rem;font-weight:760;line-height:1.42}.ads-line strong{color:#2c3940}.ads-line:last-of-type{padding-top:.25rem;border-top:1px solid #d7ccbb;color:#675f58;font-size:.64rem;line-height:1.35}.ads-next{min-height:3rem;border:1px solid #294a58;border-radius:.76rem;background:linear-gradient(155deg,#527484,#304f5d);color:#fff;font-size:.82rem;font-weight:1000;letter-spacing:.04em;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px rgba(255,255,255,.35),0 4px 9px rgba(29,51,61,.2)}.ads-next:disabled{opacity:.5}.ads-hint{margin:0;color:#756d65;text-align:center;font-size:.66rem;font-weight:750;line-height:1.35}.ads-stage[data-phase=review] .ads-status{border-color:#c6b690;background:#fff7df}.ads-stage[data-phase=final] .ads-status{border-color:#b9944c;background:#fff3c7;color:#624b1e}.ads-stage[data-phase=timeout] .ads-status{border-color:#bd8f6f;background:#f6e4d9;color:#783d2c}.ads-stage[data-reduced=true] .ads-answer,.ads-stage[data-reduced=true] .ads-next{transition:none!important}\n本試験形式・警察庁教則準拠・2024年11月版終了時間切れ。停止して、確認できた場面までを記録しました1問回答、正しい判断は1問でした。○正しいと思う×誤りと思う判定：正解　｜　あなたの回答 ○　／　正答 ○正しい行動：横断歩道の手前で一時停止し、歩行者に道を譲る。理由：横断中または横断しようとする人がいるときは、手前で止まって通行を妨げないことが必要です。出典：警察庁教則 2024年11月版・第5章 第3節 2(2)・46–47頁（2026-07-26確認）次の場面← → で選択・Enterで決定　O / X キーでも回答確認終了 · 1問回答したところで時間切れになりました。\n\nimport game from \"../src/games/attention-driving-safety-v1.js\";\nimport {createGameRuntime} from \"../src/game-kernel.js\";\nconst FIXED_TASK=game.generate({randomInt:min=>min}),host=document.querySelector(\"#game-host\"),label=document.querySelector(\"#fixture-label\"),prompt=document.querySelector(\"#prompt\"),help=document.querySelector(\"#help\"),resultNode=document.querySelector(\"#fixture-result\"),errors=[];\nlet runtime=null,qa=null,result=null,lastTask=null;\naddEventListener(\"error\",event=>errors.push(String(event.error?.stack||event.message)));addEventListener(\"unhandledrejection\",event=>errors.push(String(event.reason?.stack||event.reason)));\nconst wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));\nfunction start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){\n  runtime?.dispose();host.replaceChildren();qa={};result=null;resultNode.textContent=\"\";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;\n  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?\"全問正解\":\"確認終了\"} · ${detail.detail||detail.reason||\"\"}`}});\n  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);label.textContent=`${width}×${height} DPR${dpr}${reduced?\" reduced\":\"\"}`;return structuredClone(lastTask);\n}\nconst api=()=>qa?.[game.metadata.id],settle=()=>api()?.completeTransition?.(),questionIndex=id=>lastTask.questions.findIndex(question=>question.id===id);\nconst review=id=>{const index=questionIndex(id);api().showScene(index,\"question\");api().answer(lastTask.questions[index].answer);settle()};\nconst finishWith=choices=>{for(let index=0;index<lastTask.questions.length;index++){api().answer(choices[index]);settle();api().next()}};\nasync function scenario(name,reduced){\n  if(name===\"selected\")api().preview(true);\n  else if(name===\"crosswalk-feedback\")review(\"crosswalk\");\n  else if(name===\"phone\")api().showScene(questionIndex(\"phone\"),\"question\");\n  else if(name===\"phone-feedback\")review(\"phone\");\n  else if(name===\"railway\")api().showScene(questionIndex(\"railway\"),\"question\");\n  else if(name===\"railway-feedback\")review(\"railway\");\n  else if(name===\"alcohol\")api().showScene(questionIndex(\"alcohol\"),\"question\");\n  else if(name===\"alcohol-feedback\")review(\"alcohol\");\n  else if(name===\"fatigue\")api().showScene(questionIndex(\"fatigue\"),\"question\");\n  else if(name===\"fatigue-feedback\"||name===\"reduced-feedback\")review(\"fatigue\");\n  else if(name===\"success\")finishWith(lastTask.proof.answers);\n  else if(name===\"mixed\")finishWith(lastTask.proof.answers.map((answer,index)=>index===1||index===3?!answer:answer));\n  else if(name===\"all-wrong\")finishWith(lastTask.proof.answers.map(answer=>!answer));\n  else if(name===\"touch\"){const button=host.querySelector?.('.ads-answer[data-value=\"true\"]')||host.children[1].children[4].children[0];button.dispatchEvent(new PointerEvent(\"pointerdown\",{pointerType:\"touch\",bubbles:true,cancelable:true}));button.dispatchEvent(new MouseEvent(\"click\",{bubbles:true,cancelable:true,detail:1}))}\n  else if(name===\"keyboard\"){host.children[1].dispatchEvent(new KeyboardEvent(\"keydown\",{key:\"O\",bubbles:true,cancelable:true}))}\n  else if(name===\"focus\"){const stage=host.children[1],controls=stage.children[4];controls.children[1].focus()}\n  if(reduced)await wait(235);else if(name===\"selected\")await wait(80);else if(name===\"touch\"||name===\"keyboard\")await wait(460);else await wait(40);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name;\n}\nwindow.drivingSafetyFixture={game,start,scenario:name=>scenario(name,false),dispose(){runtime?.dispose()},inspect(){return api()?.inspect?.()||null},preview(value){return api()?.preview?.(value)},answer(value){return api()?.answer?.(value)},next(){return api()?.next?.()},complete(){return settle()},show(id,phase=\"question\"){return api()?.showScene?.(questionIndex(id),phase)},timeout(){return api()?.timeout?.()},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]},evidence(){const width=innerWidth,resources=performance.getEntriesByType(\"resource\").map(entry=>entry.name),external=resources.filter(name=>new URL(name,location.href).origin!==location.origin);return{scenario:document.body.dataset.scenario||\"\",viewport:{width,height:innerHeight,dpr:devicePixelRatio,scrollWidth:document.body.scrollWidth},task:structuredClone(lastTask),game:api()?.inspect?.()||null,result:result?structuredClone(result):null,runtime:runtime?.inspect?.()||null,errors:[...errors],resources,external,overflow:document.body.scrollWidth>width}}};\nconst query=new URLSearchParams(location.search),name=query.get(\"scenario\")||\"initial\",reduced=query.get(\"reduced\")===\"1\"||name===\"reduced-feedback\",deadline=name===\"timeout\"?120:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name===\"timeout\"){api().answer(lastTask.questions[0].answer);settle();api().next();await wait(180);document.documentElement.dataset.ready=\"true\";document.body.dataset.scenario=name}else await scenario(name,reduced);"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": null,
+      "pastQuestionClaim": false
+    },
+    {
+      "scenario": "touch",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "index": 0,
+        "phase": "review",
+        "score": 1,
+        "answers": [
+          {
+            "id": "crosswalk",
+            "choice": true,
+            "correct": true
+          }
+        ],
+        "selected": true,
+        "busy": false,
+        "transition": null,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 34,
+        "status": "正解。正しい行動と理由を確認",
+        "question": "crosswalk",
+        "canvas": {
+          "width": 1071,
+          "height": 771,
+          "cssWidth": 357,
+          "cssHeight": 257,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 10,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "source": {
+        "label": "本試験形式・警察庁教則準拠",
+        "url": "https://www.npa.go.jp/bureau/traffic/20241113kyousoku.pdf",
+        "confirmed": "2026-07-26"
+      },
+      "question": "crosswalk",
+      "canvasAria": "雨上がりの横断歩道。歩道に横断しようとする人がいる。正しい行動を表示中",
+      "active": {
+        "tag": "BUTTON",
+        "className": "ads-next",
+        "text": "次の場面"
+      },
+      "provenance": "本試験形式・警察庁教則準拠・2024年11月版",
+      "citation": "出典：警察庁教則 2024年11月版・第5章 第3節 2(2)・46–47頁（2026-07-26確認）",
+      "pastQuestionClaim": false
+    }
+  ],
+  "screenshots": [
+    "393x852-alcohol-feedback.png",
+    "393x852-alcohol.png",
+    "393x852-all-wrong.png",
+    "393x852-crosswalk-feedback.png",
+    "393x852-fatigue-feedback.png",
+    "393x852-fatigue.png",
+    "393x852-focus.png",
+    "393x852-initial.png",
+    "393x852-keyboard.png",
+    "393x852-mixed.png",
+    "393x852-phone-feedback.png",
+    "393x852-phone.png",
+    "393x852-railway-feedback.png",
+    "393x852-railway.png",
+    "393x852-reduced-feedback.png",
+    "393x852-selected.png",
+    "393x852-success.png",
+    "393x852-timeout.png",
+    "393x852-touch.png",
+    "402x874-alcohol-feedback.png",
+    "402x874-alcohol.png",
+    "402x874-all-wrong.png",
+    "402x874-crosswalk-feedback.png",
+    "402x874-fatigue-feedback.png",
+    "402x874-fatigue.png",
+    "402x874-focus.png",
+    "402x874-initial.png",
+    "402x874-keyboard.png",
+    "402x874-mixed.png",
+    "402x874-phone-feedback.png",
+    "402x874-phone.png",
+    "402x874-railway-feedback.png",
+    "402x874-railway.png",
+    "402x874-reduced-feedback.png",
+    "402x874-selected.png",
+    "402x874-success.png",
+    "402x874-timeout.png",
+    "402x874-touch.png"
+  ],
+  "status": "pass"
+}

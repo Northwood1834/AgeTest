@@ -1,0 +1,130 @@
+{
+  "game": "attention-driving-safety-v1",
+  "status": "pass",
+  "reviewDate": "2026-07-26",
+  "reviewer": {
+    "method": "independent vision review",
+    "tool": "read_image",
+    "backend": "gpt"
+  },
+  "evidence": {
+    "browserReport": "test/attention-driving-safety-v1.browser-evidence.json",
+    "captureDirectory": "test/attention-driving-safety-v1-visual",
+    "captureTool": "tools/qa-browser-lanes.mjs",
+    "lane": "flow CDP9331 / HTTP8861",
+    "fullResolutionScreenshots": 38,
+    "sizes": [
+      "1179x2556 (393x852 CSS DPR3)",
+      "1206x2622 (402x874 CSS DPR3)"
+    ]
+  },
+  "audits": [
+    {
+      "set": "all five authored initial scenes at 393x852 DPR3",
+      "files": [
+        "393x852-initial.png",
+        "393x852-phone.png",
+        "393x852-railway.png",
+        "393x852-alcohol.png",
+        "393x852-fatigue.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "all five authored correction scenes at 393x852 DPR3",
+      "files": [
+        "393x852-crosswalk-feedback.png",
+        "393x852-phone-feedback.png",
+        "393x852-railway-feedback.png",
+        "393x852-alcohol-feedback.png",
+        "393x852-fatigue-feedback.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "all five authored initial scenes at 402x874 DPR3",
+      "files": [
+        "402x874-initial.png",
+        "402x874-phone.png",
+        "402x874-railway.png",
+        "402x874-alcohol.png",
+        "402x874-fatigue.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "all five authored correction scenes at 402x874 DPR3",
+      "files": [
+        "402x874-crosswalk-feedback.png",
+        "402x874-phone-feedback.png",
+        "402x874-railway-feedback.png",
+        "402x874-alcohol-feedback.png",
+        "402x874-fatigue-feedback.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "all-correct, mixed, all-wrong outcomes with per-topic 正解 / 不正解 badges at both viewports",
+      "files": [
+        "393x852-success.png",
+        "393x852-mixed.png",
+        "393x852-all-wrong.png",
+        "402x874-success.png",
+        "402x874-mixed.png",
+        "402x874-all-wrong.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "partial timeout at both viewports",
+      "files": [
+        "393x852-timeout.png",
+        "402x874-timeout.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "pressed selection, keyboard focus, reduced feedback at both viewports",
+      "files": [
+        "393x852-selected.png",
+        "393x852-focus.png",
+        "393x852-reduced-feedback.png",
+        "402x874-selected.png",
+        "402x874-focus.png",
+        "402x874-reduced-feedback.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    }
+  ],
+  "finalFindings": {
+    "fiveScenesDistinct": true,
+    "correctiveArtCausal": true,
+    "choiceAndCorrectAnswerExplicit": true,
+    "sourceCitationVisible": true,
+    "noPastQuestionClaim": true,
+    "pressedFocusAndCorrectnessDistinct": true,
+    "reducedMotionReadableWithoutColorAlone": true,
+    "outcomesDistinct": true,
+    "terminalPerformanceWordsUnambiguous": true,
+    "terminalPerformanceNeverReusesPropositionSymbols": true,
+    "timeoutPreservesProgress": true,
+    "noClippingOrOverflow": true,
+    "noCanvasArtifacts": true,
+    "productionPolish": true
+  },
+  "resolvedDuringReview": [
+    "clarified driver cockpit and the crosswalk stopping position",
+    "made phone attention diversion and road refocus explicit",
+    "added railway stop-line braking and left-right confirmation",
+    "made prior-night alcohol and next-morning residual risk unmistakable",
+    "separated pressed selection, dashed keyboard focus, and correctness semantics",
+    "replaced ambiguous terminal ○/× performance marks with explicit 正解 / 不正解 badges and matching DOM ARIA text"
+  ]
+}

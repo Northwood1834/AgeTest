@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>attention-driving-safety-v1 evidence fixture</title>
+<style>*{box-sizing:border-box}html,body{margin:0;min-height:100%;overflow-x:hidden;background:radial-gradient(circle at 50% 0,#faf6ed,#e7e2d9 58%,#d9d5ce);color:#30383b;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif}body{display:flex;justify-content:center}main{width:100%;max-width:29rem;min-height:100dvh;padding:max(.72rem,env(safe-area-inset-top)) .72rem max(1.4rem,env(safe-area-inset-bottom))}.fixture-head{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin:0 0 .42rem;padding:0 .12rem;color:#6a5a4b;font-size:.66rem;font-weight:900}.fixture-card{padding:.72rem .64rem .82rem;border:1px solid #d7cfc3;border-radius:1.28rem;background:rgba(255,255,255,.96);box-shadow:0 10px 29px rgba(57,50,43,.14)}h1{margin:0 0 .12rem;text-align:center;color:#2e414a;font-size:1.05rem;line-height:1.3}.help{margin:0 0 .48rem;color:#746b63;text-align:center;font-size:.68rem;font-weight:750;line-height:1.38}.result{min-height:1.25rem;margin:.4rem 0 0;color:#3d5c4a;text-align:center;font-size:.7rem;font-weight:900}</style></head>
+<body><main><header class="fixture-head"><span>初老テスト。安全知識</span><span id="fixture-label"></span></header><section class="fixture-card"><h1 id="prompt"></h1><p class="help" id="help"></p><div id="game-host"></div><p class="result" id="fixture-result" aria-live="polite"></p></section></main>
+<script type="module">
+import game from "../src/games/attention-driving-safety-v1.js";
+import {createGameRuntime} from "../src/game-kernel.js";
+const FIXED_TASK=game.generate({randomInt:min=>min}),host=document.querySelector("#game-host"),label=document.querySelector("#fixture-label"),prompt=document.querySelector("#prompt"),help=document.querySelector("#help"),resultNode=document.querySelector("#fixture-result"),errors=[];
+let runtime=null,qa=null,result=null,lastTask=null;
+addEventListener("error",event=>errors.push(String(event.error?.stack||event.message)));addEventListener("unhandledrejection",event=>errors.push(String(event.reason?.stack||event.reason)));
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+function start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){
+  runtime?.dispose();host.replaceChildren();qa={};result=null;resultNode.textContent="";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;
+  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?"全問正解":"確認終了"} · ${detail.detail||detail.reason||""}`}});
+  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);label.textContent=`${width}×${height} DPR${dpr}${reduced?" reduced":""}`;return structuredClone(lastTask);
+}
+const api=()=>qa?.[game.metadata.id],settle=()=>api()?.completeTransition?.(),questionIndex=id=>lastTask.questions.findIndex(question=>question.id===id);
+const review=id=>{const index=questionIndex(id);api().showScene(index,"question");api().answer(lastTask.questions[index].answer);settle()};
+const finishWith=choices=>{for(let index=0;index<lastTask.questions.length;index++){api().answer(choices[index]);settle();api().next()}};
+async function scenario(name,reduced){
+  if(name==="selected")api().preview(true);
+  else if(name==="crosswalk-feedback")review("crosswalk");
+  else if(name==="phone")api().showScene(questionIndex("phone"),"question");
+  else if(name==="phone-feedback")review("phone");
+  else if(name==="railway")api().showScene(questionIndex("railway"),"question");
+  else if(name==="railway-feedback")review("railway");
+  else if(name==="alcohol")api().showScene(questionIndex("alcohol"),"question");
+  else if(name==="alcohol-feedback")review("alcohol");
+  else if(name==="fatigue")api().showScene(questionIndex("fatigue"),"question");
+  else if(name==="fatigue-feedback"||name==="reduced-feedback")review("fatigue");
+  else if(name==="success")finishWith(lastTask.proof.answers);
+  else if(name==="mixed")finishWith(lastTask.proof.answers.map((answer,index)=>index===1||index===3?!answer:answer));
+  else if(name==="all-wrong")finishWith(lastTask.proof.answers.map(answer=>!answer));
+  else if(name==="touch"){const button=host.querySelector?.('.ads-answer[data-value="true"]')||host.children[1].children[4].children[0];button.dispatchEvent(new PointerEvent("pointerdown",{pointerType:"touch",bubbles:true,cancelable:true}));button.dispatchEvent(new MouseEvent("click",{bubbles:true,cancelable:true,detail:1}))}
+  else if(name==="keyboard"){host.children[1].dispatchEvent(new KeyboardEvent("keydown",{key:"O",bubbles:true,cancelable:true}))}
+  else if(name==="focus"){const stage=host.children[1],controls=stage.children[4];controls.children[1].focus()}
+  if(reduced)await wait(235);else if(name==="selected")await wait(80);else if(name==="touch"||name==="keyboard")await wait(460);else await wait(40);document.documentElement.dataset.ready="true";document.body.dataset.scenario=name;
+}
+window.drivingSafetyFixture={game,start,scenario:name=>scenario(name,false),dispose(){runtime?.dispose()},inspect(){return api()?.inspect?.()||null},preview(value){return api()?.preview?.(value)},answer(value){return api()?.answer?.(value)},next(){return api()?.next?.()},complete(){return settle()},show(id,phase="question"){return api()?.showScene?.(questionIndex(id),phase)},timeout(){return api()?.timeout?.()},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]},evidence(){const width=innerWidth,resources=performance.getEntriesByType("resource").map(entry=>entry.name),external=resources.filter(name=>new URL(name,location.href).origin!==location.origin);return{scenario:document.body.dataset.scenario||"",viewport:{width,height:innerHeight,dpr:devicePixelRatio,scrollWidth:document.body.scrollWidth},task:structuredClone(lastTask),game:api()?.inspect?.()||null,result:result?structuredClone(result):null,runtime:runtime?.inspect?.()||null,errors:[...errors],resources,external,overflow:document.body.scrollWidth>width}}};
+const query=new URLSearchParams(location.search),name=query.get("scenario")||"initial",reduced=query.get("reduced")==="1"||name==="reduced-feedback",deadline=name==="timeout"?120:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name==="timeout"){api().answer(lastTask.questions[0].answer);settle();api().next();await wait(180);document.documentElement.dataset.ready="true";document.body.dataset.scenario=name}else await scenario(name,reduced);
+</script></body></html>
