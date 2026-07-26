@@ -1,6 +1,6 @@
 # フォイル・ストライク
 
-Status: accepted concept; implementation waits for the current migration wave to integrate.
+Status: implemented and independently accepted (`e348f4d`).
 
 - Provisional stable ID: `prediction-card-combo-v1`
 - Category: `prediction`

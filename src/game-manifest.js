@@ -34,6 +34,28 @@ export const gameManifest=Object.freeze([
     "hash": "7a2ca22474468fae"
   },
   {
+    "id": "prediction-card-combo-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "wild",
+    "step": 1,
+    "family": "prediction-card-combo",
+    "category": "prediction",
+    "module": "./games/prediction-card-combo-v1.js",
+    "hash": "54148b9bc8cd38c3"
+  },
+  {
+    "id": "prediction-desk-ruler-duel-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "prediction-desk-ruler-duel",
+    "category": "prediction",
+    "module": "./games/prediction-desk-ruler-duel-v1.js",
+    "hash": "9205eddeb9225623"
+  },
+  {
     "id": "prediction-pin-pull-v1",
     "introducedIn": "1.4",
     "tier": 2,
@@ -100,6 +122,17 @@ export const gameManifest=Object.freeze([
     "hash": "ac2ae41e76a1864f"
   },
   {
+    "id": "timing-fish-grill-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "timing-fish-grill",
+    "category": "timing",
+    "module": "./games/timing-fish-grill-v1.js",
+    "hash": "779f7b808c843880"
+  },
+  {
     "id": "timing-tower-stack-v1",
     "introducedIn": "1.12",
     "tier": 2,
@@ -108,6 +141,6 @@ export const gameManifest=Object.freeze([
     "family": "timing-tower-stack",
     "category": "timing",
     "module": "./games/timing-tower-stack-v1.js",
-    "hash": "61bb05dd748a1efc"
+    "hash": "9bb1df6b58f2eb4f"
   }
 ].map(Object.freeze));

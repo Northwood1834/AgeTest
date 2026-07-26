@@ -71,13 +71,13 @@ A failed game stays isolated and is revised or withheld. It never blocks accepte
 - `attention-screw-out-v1` — accepted
 - `timing-tower-stack-v1` — accepted
 
-### N01 originals — active
+### N01 originals — completed
 
 - `timing-fish-grill-v1` — accepted
 - `prediction-desk-ruler-duel-v1` — accepted
-- `prediction-card-combo-v1` — acceptance revision
+- `prediction-card-combo-v1` — accepted
 
-### P03 — assign one-by-one after N01 acceptance
+### P03 — next published-game wave
 
 - `prediction-chain-puzzle-v1`
 - `spatial-lane-run-v1`
