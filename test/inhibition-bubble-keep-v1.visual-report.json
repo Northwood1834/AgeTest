@@ -1,0 +1,37 @@
+{
+  "status": "pass",
+  "gameId": "inhibition-bubble-keep-v1",
+  "lane": {"cdp": 9332, "http": 8862},
+  "artifactRoot": "/tmp/agetest-inhibition-bubble-keep-v1-audit-final",
+  "canonicalViewports": [
+    {"width": 393, "height": 852, "dpr": 3},
+    {"width": 402, "height": 874, "dpr": 3}
+  ],
+  "boundaryViewports": [
+    {"width": 390, "height": 844, "dpr": 3},
+    {"width": 430, "height": 932, "dpr": 3}
+  ],
+  "variants": 4,
+  "states": ["initial", "round-pop", "partial", "meter-1", "meter-2", "success", "exhausted", "timeout"],
+  "canonicalScreenshots": 128,
+  "normalReducedPairs": 64,
+  "maxPairMAE": 0.0,
+  "maxPairNormalizedRMSE": 0.00012,
+  "focusScreenshots": 16,
+  "boundaryScreenshots": 32,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "minimumInteractiveTargetPx": 88.71875,
+  "overflowFree": true,
+  "externalRequests": 0,
+  "consoleErrors": 0,
+  "directorContactSheet": {
+    "path": "/tmp/agetest-inhibition-bubble-keep-v1-audit-final/director-contact-sheet.png",
+    "sha256": "3d3723a75829601f48b2867d4e7f6f94c04cb4e2d6407082bef2087398473121",
+    "review": "pass",
+    "finding": "Five small circles and three larger edge-notched stars, two recoverable meter states, static-star success, neutral exhaustion, and timeout retention remain clear at contact size."
+  },
+  "finalVisualQc": "pass: no material visual defects",
+  "comparisonReportSha256": "62ae98edb28912a18628e5a9563f1ccb8a8e982c0007846f971baa13bb5e7e16",
+  "failures": []
+}

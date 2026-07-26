@@ -1,0 +1,64 @@
+{
+  "status": "pass",
+  "gameId": "inhibition-bubble-keep-v1",
+  "artifactRoot": "/tmp/agetest-inhibition-bubble-keep-v1-audit-final",
+  "node": {
+    "focused": {"tests": 22, "passed": 22},
+    "full": {"tests": 1413, "passed": 1413, "durationMs": 20540.852755}
+  },
+  "browser": {
+    "touchSuccessRoutes": {"count": 8, "passed": 8, "variants": 4, "motions": ["normal", "reduced"], "viewport": "390x844"},
+    "keyboardSuccessRoutes": {"count": 2, "passed": 2, "usedArrows": true, "usedSpace": true, "viewport": "430x932"},
+    "recoverThenSuccessRoutes": {"count": 2, "passed": 2, "meterOnePlayable": true, "meterTwoPlayable": true, "starsRetained": true},
+    "thirdStarExhaustionRoutes": {"count": 2, "passed": 2, "neutral": true, "singleFinish": true},
+    "deadlineRoutes": {
+      "count": 2,
+      "passed": 2,
+      "deadlineMs": 18000,
+      "observedMs": [18008.899999976158, 18003.5],
+      "retained": ["tappedRoundIds", "remainingRoundIds", "starTaps"],
+      "singleFinish": true
+    },
+    "disposeRoutes": {"count": 2, "passed": 2, "remainingTimeouts": 0, "remainingFrames": 0, "remainingListeners": 0, "finishCalls": 0},
+    "performanceRoutes": {
+      "count": 2,
+      "passed": 2,
+      "framesPerRoute": 90,
+      "averageFrameMsRange": [16.45111111111111, 16.615555555555556],
+      "maxFrameMs": 16.800000000000068,
+      "normalOwnedFramesAtPop": 1,
+      "reducedOwnedFramesAtPop": 0,
+      "ownedFramesAfterSettle": 0
+    },
+    "minimumInteractiveTargetPx": 88.71875,
+    "sourcePolicy": {"ownerDocumentOnly": true, "contextTracked": true, "network": false, "audio": false, "rawTimers": false, "rawRaf": false, "rawListeners": false, "emoji": false, "externalAssets": false},
+    "externalRequests": 0,
+    "consoleErrors": 0,
+    "horizontalOverflow": false
+  },
+  "mechanic": {
+    "targetsVisibleAtOpening": 8,
+    "smallRoundTargets": 5,
+    "largeStarTargets": 3,
+    "distinction": ["size", "silhouette", "edge"],
+    "colorOnlyMatching": false,
+    "playableStableStates": 93,
+    "roundOnlySuccessOrders": 120,
+    "recoverableStarTaps": 2,
+    "exhaustionAtStarTap": 3,
+    "movingTargets": false,
+    "ruleSwitch": false,
+    "strictFreshModuleResume": true,
+    "reducedMotionTrackedStaticPop": true,
+    "reducedMotionFrames": 0
+  },
+  "files": {
+    "concepts/inhibition-bubble-keep-v1.md": "f1e7b2715439e68ce46691c7fbef4d6d32ca63144ba49ce9b981849f534a2e97",
+    "src/games/inhibition-bubble-keep-v1.js": "325bb31b005c6a85ea68d2ace73b4fea2513a4ebdf57165ec64104226f869f6f",
+    "test/inhibition-bubble-keep-v1.test.mjs": "8223e54d1643f46baa6ea4663aeffcfb716a792ecabd7327223d4f7765f3a052",
+    "test/inhibition-bubble-keep-v1.fixture.html": "e9c6745885af9e387b44c5e1b945a45247eab425b7bf9d6d2efe5d73a9abae3b",
+    "test/inhibition-bubble-keep-v1.fixture.mjs": "deed4d43065314eec8725f01357341fa906c435e8831e03372c52b735f678bed",
+    "test/inhibition-bubble-keep-v1.browser-capture.sh": "6221d811475664d65bdb18639d6937e14ca04f3141c22d68650e05c9570319fd"
+  },
+  "failures": []
+}
