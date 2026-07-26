@@ -55,7 +55,7 @@ For each game:
 1. write its specific concept/rules and lock its stable ID;
 2. author only `src/games/<id>.js` and `test/<id>*`;
 3. prove bounded generation, solvability, save/resume, outcome and disposal behavior;
-4. produce same-task legacy/module captures at 393×852 and 402×874 DPR3;
+4. for a port, produce same-task legacy/module captures at 393×852 and 402×874 DPR3; for an original, produce the complete required state set at both viewports and review it against the accepted concept;
 5. obtain independent visual acceptance;
 6. commit the game, regenerate the manifest, and verify the 79/300 catalogue invariant;
 7. remove only that game's legacy implementation and verify again; and
