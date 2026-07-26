@@ -1,0 +1,4834 @@
+{
+  "lane": {
+    "name": "audit",
+    "cdp": 9332,
+    "http": 8862
+  },
+  "canonical": {
+    "viewports": [
+      {
+        "width": 393,
+        "height": 852,
+        "dpr": 3
+      },
+      {
+        "width": 402,
+        "height": 874,
+        "dpr": 3
+      }
+    ],
+    "states": [
+      "initial",
+      "drag",
+      "packed",
+      "repacked",
+      "capacity-invalid",
+      "mixed",
+      "intrusive-photo",
+      "intrusive-friends",
+      "success-reply",
+      "success-video",
+      "timeout"
+    ],
+    "screenshots": 44
+  },
+  "matrix": {
+    "393x852": {
+      "normal": {
+        "initial": {
+          "status": "pass",
+          "scene": "initial",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [],
+              "size": 0,
+              "supportive": 0,
+              "intrusive": 0,
+              "base": 0,
+              "timely": 0,
+              "score": 0,
+              "outcome": "invalid"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "物資を箱へドラッグしてください",
+            "capacityText": "容量 0 / 8",
+            "scoreText": "実用score +0",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 804
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 59.09375
+          },
+          "external": [],
+          "errors": []
+        },
+        "drag": {
+          "status": "pass",
+          "scene": "drag",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice"
+            ],
+            "busy": true,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "rice"
+              ],
+              "size": 3,
+              "supportive": 1,
+              "intrusive": 0,
+              "base": 4,
+              "timely": 2,
+              "score": 6,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "薄紙へ落ち着かせています",
+            "capacityText": "容量 3 / 8",
+            "scoreText": "実用score +6",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 731
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 46.7718505859375
+          },
+          "external": [],
+          "errors": []
+        },
+        "packed": {
+          "status": "pass",
+          "scene": "packed",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice",
+              "canned",
+              "gift"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "canned",
+                "gift",
+                "rice"
+              ],
+              "size": 5,
+              "supportive": 3,
+              "intrusive": 0,
+              "base": 10,
+              "timely": 2,
+              "score": 12,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "3品を梱包中。取り出して詰め直せます",
+            "capacityText": "容量 5 / 8",
+            "scoreText": "実用score +12",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 731
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.96875
+          },
+          "external": [],
+          "errors": []
+        },
+        "repacked": {
+          "status": "pass",
+          "scene": "repacked",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice",
+              "socks",
+              "gift"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 5,
+              "supportive": 3,
+              "intrusive": 0,
+              "base": 10,
+              "timely": 2,
+              "score": 12,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "3品を梱包中。取り出して詰め直せます",
+            "capacityText": "容量 5 / 8",
+            "scoreText": "実用score +12",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 731
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.96875
+          },
+          "external": [],
+          "errors": []
+        },
+        "capacity-invalid": {
+          "status": "pass",
+          "scene": "capacity-invalid",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice",
+              "noodles",
+              "pasta",
+              "canned"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": true,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "noodles",
+                "pasta",
+                "canned",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 4,
+              "intrusive": 0,
+              "base": 12,
+              "timely": 4,
+              "score": 16,
+              "outcome": "success"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "Amazonギフトカードを入れると容量8を超えます",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +16",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 731
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "mixed": {
+          "status": "pass",
+          "scene": "mixed",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [
+              "canned",
+              "socks"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "mixed",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "canned",
+                "socks"
+              ],
+              "size": 2,
+              "supportive": 2,
+              "intrusive": 0,
+              "base": 4,
+              "timely": 0,
+              "score": 4,
+              "outcome": "mixed"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 2 / 8",
+            "scoreText": "実用score +4",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "mixed",
+              "score": 4,
+              "items": [
+                "canned",
+                "socks"
+              ],
+              "detail": "実用品2品、score 4。害のある品はありませんが、箱の種類がまだ少なめです。"
+            }
+          },
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 777
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "intrusive-photo": {
+          "status": "pass",
+          "scene": "intrusive-photo",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [
+              "noodles",
+              "pasta",
+              "gravure"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "intrusive",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "noodles",
+                "pasta",
+                "gravure"
+              ],
+              "size": 6,
+              "supportive": 2,
+              "intrusive": 1,
+              "base": -8,
+              "timely": 2,
+              "score": -6,
+              "outcome": "intrusive"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 6 / 8",
+            "scoreText": "実用score -6",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "intrusive",
+              "score": -6,
+              "items": [
+                "noodles",
+                "pasta",
+                "gravure"
+              ],
+              "detail": "水着グラビア写真集は、性的・交友面を親が選ぶ品です。実用品があっても境界への大きいpenaltyになります。"
+            }
+          },
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 768
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "intrusive-friends": {
+          "status": "pass",
+          "scene": "intrusive-friends",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice",
+              "gift",
+              "friends"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "intrusive",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "rice",
+                "friends"
+              ],
+              "size": 6,
+              "supportive": 2,
+              "intrusive": 1,
+              "base": -6,
+              "timely": 2,
+              "score": -4,
+              "outcome": "intrusive"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 6 / 8",
+            "scoreText": "実用score -4",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "intrusive",
+              "score": -4,
+              "items": [
+                "rice",
+                "gift",
+                "friends"
+              ],
+              "detail": "「友達の作り方」本は、性的・交友面を親が選ぶ品です。実用品があっても境界への大きいpenaltyになります。"
+            }
+          },
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 768
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 57.5
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-reply": {
+          "status": "pass",
+          "scene": "success-reply",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": false,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": false,
+            "status": "発送済み。短い返信を待っています",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 637
+          },
+          "minimumVisibleTarget": {
+            "width": 56.09375,
+            "height": 59.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-video": {
+          "status": "pass",
+          "scene": "success-video",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": true,
+            "status": "短い返信のあと、落ち着いたビデオ通話になりました",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": true,
+            "detail": {
+              "outcome": "success",
+              "score": 19,
+              "items": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "detail": "生活物資が本人の暮らしを支え、短い返信とビデオ通話につながりました。"
+            }
+          },
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 785
+          },
+          "minimumVisibleTarget": {
+            "width": 56.09375,
+            "height": 59.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "timeout": {
+          "status": "pass",
+          "scene": "timeout",
+          "reduced": false,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice",
+              "gift"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "timeout",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "rice"
+              ],
+              "size": 4,
+              "supportive": 2,
+              "intrusive": 0,
+              "base": 8,
+              "timely": 2,
+              "score": 10,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "未発送のまま時間切れです",
+            "capacityText": "容量 4 / 8",
+            "scoreText": "実用score +10",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "timeout",
+              "score": 10,
+              "items": [
+                "rice",
+                "gift"
+              ],
+              "detail": "容量4/8、2品のまま未発送です。"
+            }
+          },
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 748
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 57.5
+          },
+          "external": [],
+          "errors": []
+        }
+      },
+      "reduced": {
+        "initial": {
+          "status": "pass",
+          "scene": "initial",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [],
+              "size": 0,
+              "supportive": 0,
+              "intrusive": 0,
+              "base": 0,
+              "timely": 0,
+              "score": 0,
+              "outcome": "invalid"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "物資を箱へドラッグしてください",
+            "capacityText": "容量 0 / 8",
+            "scoreText": "実用score +0",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 804
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 59.09375
+          },
+          "external": [],
+          "errors": []
+        },
+        "drag": {
+          "status": "pass",
+          "scene": "drag",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "rice"
+              ],
+              "size": 3,
+              "supportive": 1,
+              "intrusive": 0,
+              "base": 4,
+              "timely": 2,
+              "score": 6,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "1品を梱包中。取り出して詰め直せます",
+            "capacityText": "容量 3 / 8",
+            "scoreText": "実用score +6",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 731
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.96875
+          },
+          "external": [],
+          "errors": []
+        },
+        "packed": {
+          "status": "pass",
+          "scene": "packed",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice",
+              "canned",
+              "gift"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "canned",
+                "gift",
+                "rice"
+              ],
+              "size": 5,
+              "supportive": 3,
+              "intrusive": 0,
+              "base": 10,
+              "timely": 2,
+              "score": 12,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "3品を梱包中。取り出して詰め直せます",
+            "capacityText": "容量 5 / 8",
+            "scoreText": "実用score +12",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 731
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.96875
+          },
+          "external": [],
+          "errors": []
+        },
+        "repacked": {
+          "status": "pass",
+          "scene": "repacked",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice",
+              "socks",
+              "gift"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 5,
+              "supportive": 3,
+              "intrusive": 0,
+              "base": 10,
+              "timely": 2,
+              "score": 12,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "3品を梱包中。取り出して詰め直せます",
+            "capacityText": "容量 5 / 8",
+            "scoreText": "実用score +12",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 731
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.96875
+          },
+          "external": [],
+          "errors": []
+        },
+        "capacity-invalid": {
+          "status": "pass",
+          "scene": "capacity-invalid",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice",
+              "noodles",
+              "pasta",
+              "canned"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": true,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "noodles",
+                "pasta",
+                "canned",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 4,
+              "intrusive": 0,
+              "base": 12,
+              "timely": 4,
+              "score": 16,
+              "outcome": "success"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "Amazonギフトカードを入れると容量8を超えます",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +16",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 731
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "mixed": {
+          "status": "pass",
+          "scene": "mixed",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [
+              "canned",
+              "socks"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "mixed",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "canned",
+                "socks"
+              ],
+              "size": 2,
+              "supportive": 2,
+              "intrusive": 0,
+              "base": 4,
+              "timely": 0,
+              "score": 4,
+              "outcome": "mixed"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 2 / 8",
+            "scoreText": "実用score +4",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "mixed",
+              "score": 4,
+              "items": [
+                "canned",
+                "socks"
+              ],
+              "detail": "実用品2品、score 4。害のある品はありませんが、箱の種類がまだ少なめです。"
+            }
+          },
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 777
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "intrusive-photo": {
+          "status": "pass",
+          "scene": "intrusive-photo",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [
+              "noodles",
+              "pasta",
+              "gravure"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "intrusive",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "noodles",
+                "pasta",
+                "gravure"
+              ],
+              "size": 6,
+              "supportive": 2,
+              "intrusive": 1,
+              "base": -8,
+              "timely": 2,
+              "score": -6,
+              "outcome": "intrusive"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 6 / 8",
+            "scoreText": "実用score -6",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "intrusive",
+              "score": -6,
+              "items": [
+                "noodles",
+                "pasta",
+                "gravure"
+              ],
+              "detail": "水着グラビア写真集は、性的・交友面を親が選ぶ品です。実用品があっても境界への大きいpenaltyになります。"
+            }
+          },
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 768
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "intrusive-friends": {
+          "status": "pass",
+          "scene": "intrusive-friends",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice",
+              "gift",
+              "friends"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "intrusive",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "rice",
+                "friends"
+              ],
+              "size": 6,
+              "supportive": 2,
+              "intrusive": 1,
+              "base": -6,
+              "timely": 2,
+              "score": -4,
+              "outcome": "intrusive"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 6 / 8",
+            "scoreText": "実用score -4",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "intrusive",
+              "score": -4,
+              "items": [
+                "rice",
+                "gift",
+                "friends"
+              ],
+              "detail": "「友達の作り方」本は、性的・交友面を親が選ぶ品です。実用品があっても境界への大きいpenaltyになります。"
+            }
+          },
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 768
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 57.5
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-reply": {
+          "status": "pass",
+          "scene": "success-reply",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": false,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": false,
+            "status": "発送済み。短い返信を待っています",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 637
+          },
+          "minimumVisibleTarget": {
+            "width": 56.09375,
+            "height": 59.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-video": {
+          "status": "pass",
+          "scene": "success-video",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": false,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": true,
+            "status": "短い返信のあと、落ち着いたビデオ通話になりました",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 785
+          },
+          "minimumVisibleTarget": {
+            "width": 56.09375,
+            "height": 59.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "timeout": {
+          "status": "pass",
+          "scene": "timeout",
+          "reduced": true,
+          "width": 393,
+          "game": {
+            "selected": [
+              "rice",
+              "gift"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "timeout",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "rice"
+              ],
+              "size": 4,
+              "supportive": 2,
+              "intrusive": 0,
+              "base": 8,
+              "timely": 2,
+              "score": 10,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "未発送のまま時間切れです",
+            "capacityText": "容量 4 / 8",
+            "scoreText": "実用score +10",
+            "dpr": 3,
+            "viewport": {
+              "width": 393,
+              "height": 852,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "timeout",
+              "score": 10,
+              "items": [
+                "rice",
+                "gift"
+              ],
+              "detail": "容量4/8、2品のまま未発送です。"
+            }
+          },
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "bodyScrollWidth": 393,
+            "bodyScrollHeight": 748
+          },
+          "minimumVisibleTarget": {
+            "width": 54.03125,
+            "height": 57.5
+          },
+          "external": [],
+          "errors": []
+        }
+      }
+    },
+    "402x874": {
+      "normal": {
+        "initial": {
+          "status": "pass",
+          "scene": "initial",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [],
+              "size": 0,
+              "supportive": 0,
+              "intrusive": 0,
+              "base": 0,
+              "timely": 0,
+              "score": 0,
+              "outcome": "invalid"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "物資を箱へドラッグしてください",
+            "capacityText": "容量 0 / 8",
+            "scoreText": "実用score +0",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 818
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 60.65625
+          },
+          "external": [],
+          "errors": []
+        },
+        "drag": {
+          "status": "pass",
+          "scene": "drag",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice"
+            ],
+            "busy": true,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "rice"
+              ],
+              "size": 3,
+              "supportive": 1,
+              "intrusive": 0,
+              "base": 4,
+              "timely": 2,
+              "score": 6,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "薄紙へ落ち着かせています",
+            "capacityText": "容量 3 / 8",
+            "scoreText": "実用score +6",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 736
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 47.4749755859375
+          },
+          "external": [],
+          "errors": []
+        },
+        "packed": {
+          "status": "pass",
+          "scene": "packed",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice",
+              "canned",
+              "gift"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "canned",
+                "gift",
+                "rice"
+              ],
+              "size": 5,
+              "supportive": 3,
+              "intrusive": 0,
+              "base": 10,
+              "timely": 2,
+              "score": 12,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "3品を梱包中。取り出して詰め直せます",
+            "capacityText": "容量 5 / 8",
+            "scoreText": "実用score +12",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 736
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 52.75
+          },
+          "external": [],
+          "errors": []
+        },
+        "repacked": {
+          "status": "pass",
+          "scene": "repacked",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice",
+              "socks",
+              "gift"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 5,
+              "supportive": 3,
+              "intrusive": 0,
+              "base": 10,
+              "timely": 2,
+              "score": 12,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "3品を梱包中。取り出して詰め直せます",
+            "capacityText": "容量 5 / 8",
+            "scoreText": "実用score +12",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 736
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 52.75
+          },
+          "external": [],
+          "errors": []
+        },
+        "capacity-invalid": {
+          "status": "pass",
+          "scene": "capacity-invalid",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice",
+              "noodles",
+              "pasta",
+              "canned"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": true,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "noodles",
+                "pasta",
+                "canned",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 4,
+              "intrusive": 0,
+              "base": 12,
+              "timely": 4,
+              "score": 16,
+              "outcome": "success"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "Amazonギフトカードを入れると容量8を超えます",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +16",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 736
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "mixed": {
+          "status": "pass",
+          "scene": "mixed",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [
+              "canned",
+              "socks"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "mixed",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "canned",
+                "socks"
+              ],
+              "size": 2,
+              "supportive": 2,
+              "intrusive": 0,
+              "base": 4,
+              "timely": 0,
+              "score": 4,
+              "outcome": "mixed"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 2 / 8",
+            "scoreText": "実用score +4",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "mixed",
+              "score": 4,
+              "items": [
+                "canned",
+                "socks"
+              ],
+              "detail": "実用品2品、score 4。害のある品はありませんが、箱の種類がまだ少なめです。"
+            }
+          },
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 789
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "intrusive-photo": {
+          "status": "pass",
+          "scene": "intrusive-photo",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [
+              "noodles",
+              "pasta",
+              "gravure"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "intrusive",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "noodles",
+                "pasta",
+                "gravure"
+              ],
+              "size": 6,
+              "supportive": 2,
+              "intrusive": 1,
+              "base": -8,
+              "timely": 2,
+              "score": -6,
+              "outcome": "intrusive"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 6 / 8",
+            "scoreText": "実用score -6",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "intrusive",
+              "score": -6,
+              "items": [
+                "noodles",
+                "pasta",
+                "gravure"
+              ],
+              "detail": "水着グラビア写真集は、性的・交友面を親が選ぶ品です。実用品があっても境界への大きいpenaltyになります。"
+            }
+          },
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 773
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "intrusive-friends": {
+          "status": "pass",
+          "scene": "intrusive-friends",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice",
+              "gift",
+              "friends"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "intrusive",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "rice",
+                "friends"
+              ],
+              "size": 6,
+              "supportive": 2,
+              "intrusive": 1,
+              "base": -6,
+              "timely": 2,
+              "score": -4,
+              "outcome": "intrusive"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 6 / 8",
+            "scoreText": "実用score -4",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "intrusive",
+              "score": -4,
+              "items": [
+                "rice",
+                "gift",
+                "friends"
+              ],
+              "detail": "「友達の作り方」本は、性的・交友面を親が選ぶ品です。実用品があっても境界への大きいpenaltyになります。"
+            }
+          },
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 773
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 59.0625
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-reply": {
+          "status": "pass",
+          "scene": "success-reply",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": false,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": false,
+            "status": "発送済み。短い返信を待っています",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 641
+          },
+          "minimumVisibleTarget": {
+            "width": 57.25,
+            "height": 59.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-video": {
+          "status": "pass",
+          "scene": "success-video",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": true,
+            "status": "短い返信のあと、落ち着いたビデオ通話になりました",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": true,
+            "detail": {
+              "outcome": "success",
+              "score": 19,
+              "items": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "detail": "生活物資が本人の暮らしを支え、短い返信とビデオ通話につながりました。"
+            }
+          },
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 789
+          },
+          "minimumVisibleTarget": {
+            "width": 57.25,
+            "height": 59.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "timeout": {
+          "status": "pass",
+          "scene": "timeout",
+          "reduced": false,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice",
+              "gift"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "timeout",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "rice"
+              ],
+              "size": 4,
+              "supportive": 2,
+              "intrusive": 0,
+              "base": 8,
+              "timely": 2,
+              "score": 10,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "未発送のまま時間切れです",
+            "capacityText": "容量 4 / 8",
+            "scoreText": "実用score +10",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "timeout",
+              "score": 10,
+              "items": [
+                "rice",
+                "gift"
+              ],
+              "detail": "容量4/8、2品のまま未発送です。"
+            }
+          },
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 758
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 59.0625
+          },
+          "external": [],
+          "errors": []
+        }
+      },
+      "reduced": {
+        "initial": {
+          "status": "pass",
+          "scene": "initial",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [],
+              "size": 0,
+              "supportive": 0,
+              "intrusive": 0,
+              "base": 0,
+              "timely": 0,
+              "score": 0,
+              "outcome": "invalid"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "物資を箱へドラッグしてください",
+            "capacityText": "容量 0 / 8",
+            "scoreText": "実用score +0",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 818
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 60.65625
+          },
+          "external": [],
+          "errors": []
+        },
+        "drag": {
+          "status": "pass",
+          "scene": "drag",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "rice"
+              ],
+              "size": 3,
+              "supportive": 1,
+              "intrusive": 0,
+              "base": 4,
+              "timely": 2,
+              "score": 6,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "1品を梱包中。取り出して詰め直せます",
+            "capacityText": "容量 3 / 8",
+            "scoreText": "実用score +6",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 736
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 52.75
+          },
+          "external": [],
+          "errors": []
+        },
+        "packed": {
+          "status": "pass",
+          "scene": "packed",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice",
+              "canned",
+              "gift"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "canned",
+                "gift",
+                "rice"
+              ],
+              "size": 5,
+              "supportive": 3,
+              "intrusive": 0,
+              "base": 10,
+              "timely": 2,
+              "score": 12,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "3品を梱包中。取り出して詰め直せます",
+            "capacityText": "容量 5 / 8",
+            "scoreText": "実用score +12",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 736
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 52.75
+          },
+          "external": [],
+          "errors": []
+        },
+        "repacked": {
+          "status": "pass",
+          "scene": "repacked",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice",
+              "socks",
+              "gift"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 5,
+              "supportive": 3,
+              "intrusive": 0,
+              "base": 10,
+              "timely": 2,
+              "score": 12,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "3品を梱包中。取り出して詰め直せます",
+            "capacityText": "容量 5 / 8",
+            "scoreText": "実用score +12",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 1,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 736
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 52.75
+          },
+          "external": [],
+          "errors": []
+        },
+        "capacity-invalid": {
+          "status": "pass",
+          "scene": "capacity-invalid",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice",
+              "noodles",
+              "pasta",
+              "canned"
+            ],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": true,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [
+                "noodles",
+                "pasta",
+                "canned",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 4,
+              "intrusive": 0,
+              "base": 12,
+              "timely": 4,
+              "score": 16,
+              "outcome": "success"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "Amazonギフトカードを入れると容量8を超えます",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +16",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 736
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "mixed": {
+          "status": "pass",
+          "scene": "mixed",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [
+              "canned",
+              "socks"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "mixed",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "canned",
+                "socks"
+              ],
+              "size": 2,
+              "supportive": 2,
+              "intrusive": 0,
+              "base": 4,
+              "timely": 0,
+              "score": 4,
+              "outcome": "mixed"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 2 / 8",
+            "scoreText": "実用score +4",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "mixed",
+              "score": 4,
+              "items": [
+                "canned",
+                "socks"
+              ],
+              "detail": "実用品2品、score 4。害のある品はありませんが、箱の種類がまだ少なめです。"
+            }
+          },
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 789
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "intrusive-photo": {
+          "status": "pass",
+          "scene": "intrusive-photo",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [
+              "noodles",
+              "pasta",
+              "gravure"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "intrusive",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "noodles",
+                "pasta",
+                "gravure"
+              ],
+              "size": 6,
+              "supportive": 2,
+              "intrusive": 1,
+              "base": -8,
+              "timely": 2,
+              "score": -6,
+              "outcome": "intrusive"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 6 / 8",
+            "scoreText": "実用score -6",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "intrusive",
+              "score": -6,
+              "items": [
+                "noodles",
+                "pasta",
+                "gravure"
+              ],
+              "detail": "水着グラビア写真集は、性的・交友面を親が選ぶ品です。実用品があっても境界への大きいpenaltyになります。"
+            }
+          },
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 773
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 51.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "intrusive-friends": {
+          "status": "pass",
+          "scene": "intrusive-friends",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice",
+              "gift",
+              "friends"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "intrusive",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "rice",
+                "friends"
+              ],
+              "size": 6,
+              "supportive": 2,
+              "intrusive": 1,
+              "base": -6,
+              "timely": 2,
+              "score": -4,
+              "outcome": "intrusive"
+            },
+            "receipt": "既読",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "発送後の家族メモを確認します",
+            "capacityText": "容量 6 / 8",
+            "scoreText": "実用score -4",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "intrusive",
+              "score": -4,
+              "items": [
+                "rice",
+                "gift",
+                "friends"
+              ],
+              "detail": "「友達の作り方」本は、性的・交友面を親が選ぶ品です。実用品があっても境界への大きいpenaltyになります。"
+            }
+          },
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 773
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 59.0625
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-reply": {
+          "status": "pass",
+          "scene": "success-reply",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": false,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": false,
+            "status": "発送済み。短い返信を待っています",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 641
+          },
+          "minimumVisibleTarget": {
+            "width": 57.25,
+            "height": 59.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-video": {
+          "status": "pass",
+          "scene": "success-video",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": false,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": true,
+            "status": "短い返信のあと、落ち着いたビデオ通話になりました",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": false,
+            "finished": false,
+            "finishCalls": 0,
+            "commits": 0,
+            "timeouts": 2,
+            "frames": 0,
+            "listeners": 58,
+            "aborted": false
+          },
+          "outcome": null,
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 789
+          },
+          "minimumVisibleTarget": {
+            "width": 57.25,
+            "height": 59.1875
+          },
+          "external": [],
+          "errors": []
+        },
+        "timeout": {
+          "status": "pass",
+          "scene": "timeout",
+          "reduced": true,
+          "width": 402,
+          "game": {
+            "selected": [
+              "rice",
+              "gift"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "timeout",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "gift",
+                "rice"
+              ],
+              "size": 4,
+              "supportive": 2,
+              "intrusive": 0,
+              "base": 8,
+              "timely": 2,
+              "score": 10,
+              "outcome": "mixed"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "未発送のまま時間切れです",
+            "capacityText": "容量 4 / 8",
+            "scoreText": "実用score +10",
+            "dpr": 3,
+            "viewport": {
+              "width": 402,
+              "height": 874,
+              "dpr": 3
+            }
+          },
+          "runtime": {
+            "disposed": true,
+            "finished": true,
+            "finishCalls": 1,
+            "commits": 1,
+            "timeouts": 0,
+            "frames": 0,
+            "listeners": 0,
+            "aborted": true
+          },
+          "outcome": {
+            "correct": false,
+            "detail": {
+              "outcome": "timeout",
+              "score": 10,
+              "items": [
+                "rice",
+                "gift"
+              ],
+              "detail": "容量4/8、2品のまま未発送です。"
+            }
+          },
+          "viewport": {
+            "width": 402,
+            "height": 874,
+            "dpr": 3,
+            "bodyScrollWidth": 402,
+            "bodyScrollHeight": 758
+          },
+          "minimumVisibleTarget": {
+            "width": 54.859375,
+            "height": 59.0625
+          },
+          "external": [],
+          "errors": []
+        }
+      }
+    }
+  },
+  "scoreFamilies": [
+    {
+      "scenarioId": "rice-low",
+      "message": {
+        "from": "息子・20歳",
+        "time": "19:42",
+        "text": "米があと一回分。靴下はまだ平気。"
+      },
+      "timely": [
+        "rice",
+        "pasta"
+      ],
+      "proof": {
+        "totalSubsets": 512,
+        "counts": {
+          "invalid": 186,
+          "mixed": 64,
+          "intrusive": 212,
+          "success": 50
+        },
+        "bestScore": 19,
+        "answer": [
+          "pasta",
+          "canned",
+          "gift",
+          "socks",
+          "rice"
+        ],
+        "capacity": 8,
+        "minItems": 4,
+        "minScore": 10,
+        "timelyBonus": 2
+      },
+      "canonical": {
+        "ids": [
+          "pasta",
+          "canned",
+          "gift",
+          "socks",
+          "rice"
+        ],
+        "size": 8,
+        "supportive": 5,
+        "intrusive": 0,
+        "base": 15,
+        "timely": 4,
+        "score": 19,
+        "outcome": "success"
+      },
+      "mixed": {
+        "ids": [
+          "canned",
+          "socks"
+        ],
+        "size": 2,
+        "supportive": 2,
+        "intrusive": 0,
+        "base": 4,
+        "timely": 0,
+        "score": 4,
+        "outcome": "mixed"
+      },
+      "photo": {
+        "ids": [
+          "noodles",
+          "pasta",
+          "gravure"
+        ],
+        "size": 6,
+        "supportive": 2,
+        "intrusive": 1,
+        "base": -8,
+        "timely": 2,
+        "score": -6,
+        "outcome": "intrusive"
+      },
+      "friends": {
+        "ids": [
+          "gift",
+          "rice",
+          "friends"
+        ],
+        "size": 6,
+        "supportive": 2,
+        "intrusive": 1,
+        "base": -6,
+        "timely": 2,
+        "score": -4,
+        "outcome": "intrusive"
+      },
+      "classifications": [
+        {
+          "id": "noodles",
+          "kind": "supportive",
+          "score": 3
+        },
+        {
+          "id": "pasta",
+          "kind": "supportive",
+          "score": 5
+        },
+        {
+          "id": "canned",
+          "kind": "supportive",
+          "score": 2
+        },
+        {
+          "id": "gift",
+          "kind": "supportive",
+          "score": 4
+        },
+        {
+          "id": "underwear",
+          "kind": "supportive",
+          "score": 2
+        },
+        {
+          "id": "socks",
+          "kind": "supportive",
+          "score": 2
+        },
+        {
+          "id": "rice",
+          "kind": "supportive",
+          "score": 6
+        },
+        {
+          "id": "gravure",
+          "kind": "intrusive",
+          "score": -14
+        },
+        {
+          "id": "friends",
+          "kind": "intrusive",
+          "score": -14
+        }
+      ],
+      "errors": []
+    },
+    {
+      "scenarioId": "report-week",
+      "message": {
+        "from": "息子・20歳",
+        "time": "22:18",
+        "text": "レポート続きで、今週は買い物の時間なさそう。"
+      },
+      "timely": [
+        "noodles",
+        "gift"
+      ],
+      "proof": {
+        "totalSubsets": 512,
+        "counts": {
+          "invalid": 186,
+          "mixed": 64,
+          "intrusive": 212,
+          "success": 50
+        },
+        "bestScore": 20,
+        "answer": [
+          "noodles",
+          "pasta",
+          "canned",
+          "gift",
+          "underwear",
+          "socks"
+        ],
+        "capacity": 8,
+        "minItems": 4,
+        "minScore": 10,
+        "timelyBonus": 2
+      },
+      "canonical": {
+        "ids": [
+          "noodles",
+          "pasta",
+          "canned",
+          "gift",
+          "underwear",
+          "socks"
+        ],
+        "size": 8,
+        "supportive": 6,
+        "intrusive": 0,
+        "base": 16,
+        "timely": 4,
+        "score": 20,
+        "outcome": "success"
+      },
+      "mixed": {
+        "ids": [
+          "canned",
+          "socks"
+        ],
+        "size": 2,
+        "supportive": 2,
+        "intrusive": 0,
+        "base": 4,
+        "timely": 0,
+        "score": 4,
+        "outcome": "mixed"
+      },
+      "photo": {
+        "ids": [
+          "noodles",
+          "pasta",
+          "gravure"
+        ],
+        "size": 6,
+        "supportive": 2,
+        "intrusive": 1,
+        "base": -8,
+        "timely": 2,
+        "score": -6,
+        "outcome": "intrusive"
+      },
+      "friends": {
+        "ids": [
+          "gift",
+          "rice",
+          "friends"
+        ],
+        "size": 6,
+        "supportive": 2,
+        "intrusive": 1,
+        "base": -6,
+        "timely": 2,
+        "score": -4,
+        "outcome": "intrusive"
+      },
+      "classifications": [
+        {
+          "id": "noodles",
+          "kind": "supportive",
+          "score": 5
+        },
+        {
+          "id": "pasta",
+          "kind": "supportive",
+          "score": 3
+        },
+        {
+          "id": "canned",
+          "kind": "supportive",
+          "score": 2
+        },
+        {
+          "id": "gift",
+          "kind": "supportive",
+          "score": 6
+        },
+        {
+          "id": "underwear",
+          "kind": "supportive",
+          "score": 2
+        },
+        {
+          "id": "socks",
+          "kind": "supportive",
+          "score": 2
+        },
+        {
+          "id": "rice",
+          "kind": "supportive",
+          "score": 4
+        },
+        {
+          "id": "gravure",
+          "kind": "intrusive",
+          "score": -14
+        },
+        {
+          "id": "friends",
+          "kind": "intrusive",
+          "score": -14
+        }
+      ],
+      "errors": []
+    },
+    {
+      "scenarioId": "rain-laundry",
+      "message": {
+        "from": "息子・20歳",
+        "time": "18:06",
+        "text": "雨続きで洗濯が追いつかない。食べ物は少しある。"
+      },
+      "timely": [
+        "underwear",
+        "socks"
+      ],
+      "proof": {
+        "totalSubsets": 512,
+        "counts": {
+          "invalid": 186,
+          "mixed": 63,
+          "intrusive": 212,
+          "success": 51
+        },
+        "bestScore": 20,
+        "answer": [
+          "noodles",
+          "pasta",
+          "canned",
+          "gift",
+          "underwear",
+          "socks"
+        ],
+        "capacity": 8,
+        "minItems": 4,
+        "minScore": 10,
+        "timelyBonus": 2
+      },
+      "canonical": {
+        "ids": [
+          "noodles",
+          "pasta",
+          "canned",
+          "gift",
+          "underwear",
+          "socks"
+        ],
+        "size": 8,
+        "supportive": 6,
+        "intrusive": 0,
+        "base": 16,
+        "timely": 4,
+        "score": 20,
+        "outcome": "success"
+      },
+      "mixed": {
+        "ids": [
+          "canned",
+          "socks"
+        ],
+        "size": 2,
+        "supportive": 2,
+        "intrusive": 0,
+        "base": 4,
+        "timely": 2,
+        "score": 6,
+        "outcome": "mixed"
+      },
+      "photo": {
+        "ids": [
+          "noodles",
+          "pasta",
+          "gravure"
+        ],
+        "size": 6,
+        "supportive": 2,
+        "intrusive": 1,
+        "base": -8,
+        "timely": 0,
+        "score": -8,
+        "outcome": "intrusive"
+      },
+      "friends": {
+        "ids": [
+          "gift",
+          "rice",
+          "friends"
+        ],
+        "size": 6,
+        "supportive": 2,
+        "intrusive": 1,
+        "base": -6,
+        "timely": 0,
+        "score": -6,
+        "outcome": "intrusive"
+      },
+      "classifications": [
+        {
+          "id": "noodles",
+          "kind": "supportive",
+          "score": 3
+        },
+        {
+          "id": "pasta",
+          "kind": "supportive",
+          "score": 3
+        },
+        {
+          "id": "canned",
+          "kind": "supportive",
+          "score": 2
+        },
+        {
+          "id": "gift",
+          "kind": "supportive",
+          "score": 4
+        },
+        {
+          "id": "underwear",
+          "kind": "supportive",
+          "score": 4
+        },
+        {
+          "id": "socks",
+          "kind": "supportive",
+          "score": 4
+        },
+        {
+          "id": "rice",
+          "kind": "supportive",
+          "score": 4
+        },
+        {
+          "id": "gravure",
+          "kind": "intrusive",
+          "score": -14
+        },
+        {
+          "id": "friends",
+          "kind": "intrusive",
+          "score": -14
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "interaction402": {
+    "normal": {
+      "motion": "normal",
+      "packed": {
+        "selected": [
+          "rice"
+        ],
+        "busy": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 0,
+        "evaluation": {
+          "ids": [
+            "rice"
+          ],
+          "size": 3,
+          "supportive": 1,
+          "intrusive": 0,
+          "base": 4,
+          "timely": 2,
+          "score": 6,
+          "outcome": "mixed"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "1品を梱包中。取り出して詰め直せます",
+        "capacityText": "容量 3 / 8",
+        "scoreText": "実用score +6",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "removed": {
+        "selected": [],
+        "busy": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 0,
+        "evaluation": {
+          "ids": [],
+          "size": 0,
+          "supportive": 0,
+          "intrusive": 0,
+          "base": 0,
+          "timely": 0,
+          "score": 0,
+          "outcome": "invalid"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "物資を箱へドラッグしてください",
+        "capacityText": "容量 0 / 8",
+        "scoreText": "実用score +0",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "repacked": {
+        "selected": [
+          "noodles"
+        ],
+        "busy": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 0,
+        "evaluation": {
+          "ids": [
+            "noodles"
+          ],
+          "size": 2,
+          "supportive": 1,
+          "intrusive": 0,
+          "base": 3,
+          "timely": 0,
+          "score": 3,
+          "outcome": "mixed"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "1品を梱包中。取り出して詰め直せます",
+        "capacityText": "容量 2 / 8",
+        "scoreText": "実用score +3",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "keyboardPacked": {
+        "selected": [
+          "noodles",
+          "gift"
+        ],
+        "busy": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 0,
+        "evaluation": {
+          "ids": [
+            "noodles",
+            "gift"
+          ],
+          "size": 3,
+          "supportive": 2,
+          "intrusive": 0,
+          "base": 7,
+          "timely": 0,
+          "score": 7,
+          "outcome": "mixed"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "2品を梱包中。取り出して詰め直せます",
+        "capacityText": "容量 3 / 8",
+        "scoreText": "実用score +7",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "keyboardRemoved": {
+        "selected": [
+          "noodles"
+        ],
+        "busy": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 0,
+        "evaluation": {
+          "ids": [
+            "noodles"
+          ],
+          "size": 2,
+          "supportive": 1,
+          "intrusive": 0,
+          "base": 3,
+          "timely": 0,
+          "score": 3,
+          "outcome": "mixed"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "1品を梱包中。取り出して詰め直せます",
+        "capacityText": "容量 2 / 8",
+        "scoreText": "実用score +3",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "focusedId": "gift",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 58,
+        "aborted": false
+      },
+      "overflow": false,
+      "external": [],
+      "errors": []
+    },
+    "reduced": {
+      "motion": "reduced",
+      "packed": {
+        "selected": [
+          "rice"
+        ],
+        "busy": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 0,
+        "evaluation": {
+          "ids": [
+            "rice"
+          ],
+          "size": 3,
+          "supportive": 1,
+          "intrusive": 0,
+          "base": 4,
+          "timely": 2,
+          "score": 6,
+          "outcome": "mixed"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "1品を梱包中。取り出して詰め直せます",
+        "capacityText": "容量 3 / 8",
+        "scoreText": "実用score +6",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "removed": {
+        "selected": [],
+        "busy": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 0,
+        "evaluation": {
+          "ids": [],
+          "size": 0,
+          "supportive": 0,
+          "intrusive": 0,
+          "base": 0,
+          "timely": 0,
+          "score": 0,
+          "outcome": "invalid"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "物資を箱へドラッグしてください",
+        "capacityText": "容量 0 / 8",
+        "scoreText": "実用score +0",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "repacked": {
+        "selected": [
+          "noodles"
+        ],
+        "busy": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 0,
+        "evaluation": {
+          "ids": [
+            "noodles"
+          ],
+          "size": 2,
+          "supportive": 1,
+          "intrusive": 0,
+          "base": 3,
+          "timely": 0,
+          "score": 3,
+          "outcome": "mixed"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "1品を梱包中。取り出して詰め直せます",
+        "capacityText": "容量 2 / 8",
+        "scoreText": "実用score +3",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "keyboardPacked": {
+        "selected": [
+          "noodles",
+          "gift"
+        ],
+        "busy": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 0,
+        "evaluation": {
+          "ids": [
+            "noodles",
+            "gift"
+          ],
+          "size": 3,
+          "supportive": 2,
+          "intrusive": 0,
+          "base": 7,
+          "timely": 0,
+          "score": 7,
+          "outcome": "mixed"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "2品を梱包中。取り出して詰め直せます",
+        "capacityText": "容量 3 / 8",
+        "scoreText": "実用score +7",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "keyboardRemoved": {
+        "selected": [
+          "noodles"
+        ],
+        "busy": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 0,
+        "evaluation": {
+          "ids": [
+            "noodles"
+          ],
+          "size": 2,
+          "supportive": 1,
+          "intrusive": 0,
+          "base": 3,
+          "timely": 0,
+          "score": 3,
+          "outcome": "mixed"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "1品を梱包中。取り出して詰め直せます",
+        "capacityText": "容量 2 / 8",
+        "scoreText": "実用score +3",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "focusedId": "gift",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 58,
+        "aborted": false
+      },
+      "overflow": false,
+      "external": [],
+      "errors": []
+    }
+  },
+  "deadline402": {
+    "normal": {
+      "motion": "normal",
+      "selected": [
+        "rice",
+        "canned",
+        "gift"
+      ],
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "outcome": "timeout",
+          "score": 12,
+          "items": [
+            "rice",
+            "canned",
+            "gift"
+          ],
+          "detail": "容量5/8、3品のまま未発送です。"
+        }
+      },
+      "game": {
+        "selected": [
+          "rice",
+          "canned",
+          "gift"
+        ],
+        "busy": false,
+        "done": true,
+        "disposed": true,
+        "result": "timeout",
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 1,
+        "evaluation": {
+          "ids": [
+            "canned",
+            "gift",
+            "rice"
+          ],
+          "size": 5,
+          "supportive": 3,
+          "intrusive": 0,
+          "base": 10,
+          "timely": 2,
+          "score": 12,
+          "outcome": "mixed"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "未発送のまま時間切れです",
+        "capacityText": "容量 5 / 8",
+        "scoreText": "実用score +12",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 752
+      },
+      "external": [],
+      "errors": []
+    },
+    "reduced": {
+      "motion": "reduced",
+      "selected": [
+        "rice",
+        "canned",
+        "gift"
+      ],
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "outcome": "timeout",
+          "score": 12,
+          "items": [
+            "rice",
+            "canned",
+            "gift"
+          ],
+          "detail": "容量5/8、3品のまま未発送です。"
+        }
+      },
+      "game": {
+        "selected": [
+          "rice",
+          "canned",
+          "gift"
+        ],
+        "busy": false,
+        "done": true,
+        "disposed": true,
+        "result": "timeout",
+        "invalid": false,
+        "drag": null,
+        "finishCalls": 1,
+        "evaluation": {
+          "ids": [
+            "canned",
+            "gift",
+            "rice"
+          ],
+          "size": 5,
+          "supportive": 3,
+          "intrusive": 0,
+          "base": 10,
+          "timely": 2,
+          "score": 12,
+          "outcome": "mixed"
+        },
+        "receipt": "",
+        "replyVisible": false,
+        "videoVisible": false,
+        "status": "未発送のまま時間切れです",
+        "capacityText": "容量 5 / 8",
+        "scoreText": "実用score +12",
+        "dpr": 3,
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 752
+      },
+      "external": [],
+      "errors": []
+    }
+  },
+  "dispose402": {
+    "normal": {
+      "motion": "normal",
+      "before": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 3,
+        "frames": 0,
+        "listeners": 58,
+        "aborted": false
+      },
+      "after": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "qaPresent": false,
+      "overflow": false,
+      "external": [],
+      "errors": []
+    },
+    "reduced": {
+      "motion": "reduced",
+      "before": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 3,
+        "frames": 0,
+        "listeners": 58,
+        "aborted": false
+      },
+      "after": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "qaPresent": false,
+      "overflow": false,
+      "external": [],
+      "errors": []
+    }
+  },
+  "performance": {
+    "393x852": {
+      "status": "pass",
+      "frames": 90,
+      "averageFrameMs": 16.645555556350285,
+      "maxFrameMs": 16.799999999999955,
+      "gameOwnedFrames": 0,
+      "overflow": false,
+      "external": [],
+      "errors": [],
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 804
+      }
+    },
+    "402x874": {
+      "status": "pass",
+      "frames": 90,
+      "averageFrameMs": 16.532222221957312,
+      "maxFrameMs": 16.800000000000182,
+      "gameOwnedFrames": 0,
+      "overflow": false,
+      "external": [],
+      "errors": [],
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 818
+      }
+    }
+  },
+  "supplemental": {
+    "390x844": {
+      "normal": {
+        "initial": {
+          "status": "pass",
+          "scene": "initial",
+          "reduced": false,
+          "width": 390,
+          "game": {
+            "selected": [],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [],
+              "size": 0,
+              "supportive": 0,
+              "intrusive": 0,
+              "base": 0,
+              "timely": 0,
+              "score": 0,
+              "outcome": "invalid"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "物資を箱へドラッグしてください",
+            "capacityText": "容量 0 / 8",
+            "scoreText": "実用score +0",
+            "dpr": 3,
+            "viewport": {
+              "width": 390,
+              "height": 844,
+              "dpr": 3
+            }
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "dpr": 3,
+            "bodyScrollWidth": 390,
+            "bodyScrollHeight": 804
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-video": {
+          "status": "pass",
+          "scene": "success-video",
+          "reduced": false,
+          "width": 390,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": true,
+            "status": "短い返信のあと、落ち着いたビデオ通話になりました",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 390,
+              "height": 844,
+              "dpr": 3
+            }
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "dpr": 3,
+            "bodyScrollWidth": 390,
+            "bodyScrollHeight": 785
+          },
+          "external": [],
+          "errors": []
+        }
+      },
+      "reduced": {
+        "initial": {
+          "status": "pass",
+          "scene": "initial",
+          "reduced": true,
+          "width": 390,
+          "game": {
+            "selected": [],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [],
+              "size": 0,
+              "supportive": 0,
+              "intrusive": 0,
+              "base": 0,
+              "timely": 0,
+              "score": 0,
+              "outcome": "invalid"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "物資を箱へドラッグしてください",
+            "capacityText": "容量 0 / 8",
+            "scoreText": "実用score +0",
+            "dpr": 3,
+            "viewport": {
+              "width": 390,
+              "height": 844,
+              "dpr": 3
+            }
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "dpr": 3,
+            "bodyScrollWidth": 390,
+            "bodyScrollHeight": 804
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-video": {
+          "status": "pass",
+          "scene": "success-video",
+          "reduced": true,
+          "width": 390,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": false,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": true,
+            "status": "短い返信のあと、落ち着いたビデオ通話になりました",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 390,
+              "height": 844,
+              "dpr": 3
+            }
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "dpr": 3,
+            "bodyScrollWidth": 390,
+            "bodyScrollHeight": 785
+          },
+          "external": [],
+          "errors": []
+        }
+      }
+    },
+    "430x932": {
+      "normal": {
+        "initial": {
+          "status": "pass",
+          "scene": "initial",
+          "reduced": false,
+          "width": 430,
+          "game": {
+            "selected": [],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [],
+              "size": 0,
+              "supportive": 0,
+              "intrusive": 0,
+              "base": 0,
+              "timely": 0,
+              "score": 0,
+              "outcome": "invalid"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "物資を箱へドラッグしてください",
+            "capacityText": "容量 0 / 8",
+            "scoreText": "実用score +0",
+            "dpr": 3,
+            "viewport": {
+              "width": 430,
+              "height": 932,
+              "dpr": 3
+            }
+          },
+          "viewport": {
+            "width": 430,
+            "height": 932,
+            "dpr": 3,
+            "bodyScrollWidth": 430,
+            "bodyScrollHeight": 764
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-video": {
+          "status": "pass",
+          "scene": "success-video",
+          "reduced": false,
+          "width": 430,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": true,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": true,
+            "status": "短い返信のあと、落ち着いたビデオ通話になりました",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 430,
+              "height": 932,
+              "dpr": 3
+            }
+          },
+          "viewport": {
+            "width": 430,
+            "height": 932,
+            "dpr": 3,
+            "bodyScrollWidth": 430,
+            "bodyScrollHeight": 758
+          },
+          "external": [],
+          "errors": []
+        }
+      },
+      "reduced": {
+        "initial": {
+          "status": "pass",
+          "scene": "initial",
+          "reduced": true,
+          "width": 430,
+          "game": {
+            "selected": [],
+            "busy": false,
+            "done": false,
+            "disposed": false,
+            "result": null,
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 0,
+            "evaluation": {
+              "ids": [],
+              "size": 0,
+              "supportive": 0,
+              "intrusive": 0,
+              "base": 0,
+              "timely": 0,
+              "score": 0,
+              "outcome": "invalid"
+            },
+            "receipt": "",
+            "replyVisible": false,
+            "videoVisible": false,
+            "status": "物資を箱へドラッグしてください",
+            "capacityText": "容量 0 / 8",
+            "scoreText": "実用score +0",
+            "dpr": 3,
+            "viewport": {
+              "width": 430,
+              "height": 932,
+              "dpr": 3
+            }
+          },
+          "viewport": {
+            "width": 430,
+            "height": 932,
+            "dpr": 3,
+            "bodyScrollWidth": 430,
+            "bodyScrollHeight": 764
+          },
+          "external": [],
+          "errors": []
+        },
+        "success-video": {
+          "status": "pass",
+          "scene": "success-video",
+          "reduced": true,
+          "width": 430,
+          "game": {
+            "selected": [
+              "pasta",
+              "canned",
+              "gift",
+              "socks",
+              "rice"
+            ],
+            "busy": false,
+            "done": true,
+            "disposed": false,
+            "result": "success",
+            "invalid": false,
+            "drag": null,
+            "finishCalls": 1,
+            "evaluation": {
+              "ids": [
+                "pasta",
+                "canned",
+                "gift",
+                "socks",
+                "rice"
+              ],
+              "size": 8,
+              "supportive": 5,
+              "intrusive": 0,
+              "base": 15,
+              "timely": 4,
+              "score": 19,
+              "outcome": "success"
+            },
+            "receipt": "既読",
+            "replyVisible": true,
+            "videoVisible": true,
+            "status": "短い返信のあと、落ち着いたビデオ通話になりました",
+            "capacityText": "容量 8 / 8",
+            "scoreText": "実用score +19",
+            "dpr": 3,
+            "viewport": {
+              "width": 430,
+              "height": 932,
+              "dpr": 3
+            }
+          },
+          "viewport": {
+            "width": 430,
+            "height": 932,
+            "dpr": 3,
+            "bodyScrollWidth": 430,
+            "bodyScrollHeight": 758
+          },
+          "external": [],
+          "errors": []
+        }
+      }
+    }
+  },
+  "visualQc": {
+    "status": "pass",
+    "method": "canonical 402 DPR3 normal/reduced contact sheets plus targeted 390/430 success-still review",
+    "checks": {
+      "tactileMaterialAndPhysicalBox": true,
+      "selectedContentsAndScoresVisible": true,
+      "badParcelReadNoReply": true,
+      "bothIntrusiveReasonsDistinct": true,
+      "successReplyBeforeVideo": true,
+      "adultSonStillAndSuppliesVisible": true,
+      "clippingOrOverflow": false
+    }
+  }
+}
