@@ -1,5 +1,21 @@
 # Modular runtime performance baseline
 
+## Post-N09 70-module milestone cold check
+
+Rechecked at `fd55895` on the owned `director` lane (393×852, DPR 3, cache disabled) after completing the saved QA session so the home load began with no active task. The catalogue contained 106 IDs and the generated manifest contained 70 accepted modules: 43 published ports and 27 originals.
+
+| Metric | Result |
+|---|---:|
+| Cold requests | 10 |
+| Cold transfer / response bodies | 327,211 / 324,211 B |
+| Cold JavaScript transfer | 200,537 B |
+| `app.js` transfer / body | 174,244 / 173,944 B |
+| DOMContentLoaded / load | 25.6 / 27.3 ms |
+| Cold game-module fetches | 0 |
+| External requests / horizontal overflow | 0 / 0 |
+
+The request set was limited to the document, stylesheet, local images/icons, `app.js`, install metadata, kernel, loader, and generated manifest. No `src/games/*.js` resource was fetched. Clean integration completed with 1,155 tests passing and 70 acceptance records verified.
+
 ## Post-P10 42-port milestone cold check
 
 Rechecked at `dada3f7` on the owned `director` lane (393×852, DPR 3). The catalogue remained 98 IDs and the generated manifest contained 61 accepted modules: 42 published ports and 19 originals. This passes the first-half legacy-port milestone while preserving a zero-module cold home.
