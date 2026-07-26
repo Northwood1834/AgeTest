@@ -1,5 +1,25 @@
 # Modular runtime performance baseline
 
+## Post-N02 integration check
+
+Rechecked at `19508a7` on the owned `director` lane (393×852, DPR 3, cache disabled). The catalogue contained 85 IDs and the generated manifest contained 19 accepted modules.
+
+| Metric | Result |
+|---|---:|
+| Cold requests | 10 |
+| Cold transfer / response bodies | 325,310 / 322,310 B |
+| Cold JavaScript transfer | 198,636 B |
+| `app.js` transfer / body | 186,228 / 185,928 B |
+| DOMContentLoaded / load | 23.1 / 24.0 ms |
+| Cold game-module fetches | 0 |
+| External requests / horizontal overflow | 0 / 0 |
+| Level 1 session build / first frame | 5.8 / 21.4 ms |
+| Level 1 modular fetches | 1, 2,797 B |
+| Level 5 session build / first frame | 11.3 / 20.8 ms |
+| Level 5 modular fetches | 2, 48,211 B |
+
+Both sampled sessions contained exactly 12 tasks. The Level 1 sample fetched only `reaction-signal-v1`; the Level 5 sample fetched only its selected `attention-farm-close-v1` and `reaction-signal-v1` modules. Cold home fetched no game module. The clean N02 integration run completed with 277 tests passing, generated-manifest agreement, and 19 acceptance records verified.
+
 ## Post-N01 integration check
 
 Rechecked at `566a55d` on the owned `audit` lane (393×852, DPR 3, cache disabled). The catalogue contained 82 IDs: every published baseline ID plus the three accepted original games.
