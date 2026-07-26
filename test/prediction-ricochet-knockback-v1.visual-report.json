@@ -1,0 +1,272 @@
+{
+  "canonicalViewports": [
+    {
+      "width": 393,
+      "height": 852,
+      "dpr": 3
+    },
+    {
+      "width": 402,
+      "height": 874,
+      "dpr": 3
+    }
+  ],
+  "states": [
+    "initial",
+    "aim",
+    "bounce",
+    "impact",
+    "nearMiss",
+    "insufficient",
+    "collateral",
+    "selfHit",
+    "success",
+    "timeout"
+  ],
+  "comparisons": 20,
+  "screenshots": 40,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "meanMAE": 0.015,
+  "maxMAE": 0.153,
+  "maxNormalizedRMSE": 0.018522,
+  "meanChanged": 0.0001,
+  "rows": [
+    {
+      "key": "393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-aim",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-bounce",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-impact",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-nearMiss",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-insufficient",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-collateral",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-selfHit",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.153,
+      "rmse": 4.723,
+      "normalizedRMSE": 0.018522,
+      "changed": 0.0013
+    },
+    {
+      "key": "402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-aim",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-bounce",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-impact",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-nearMiss",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-insufficient",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-collateral",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-selfHit",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.148,
+      "rmse": 4.645,
+      "normalizedRMSE": 0.018216,
+      "changed": 0.0013
+    }
+  ],
+  "visualQc": {
+    "status": "pass",
+    "method": "canonical 402 DPR3 normal/reduced contact sheets plus targeted 390/430 success review",
+    "checks": {
+      "originalPaddedTabletopIdentity": true,
+      "boundedPreviewEndpoint": true,
+      "equalAngleBounceVisible": true,
+      "numberedImpactOrderVisible": true,
+      "knockbackDirectionVisible": true,
+      "clearedOccupancyVisible": true,
+      "protectedBystanderDistinct": true,
+      "outcomesDistinct": true,
+      "weaponRealismOrGore": false,
+      "clippingOrOverflow": false
+    }
+  }
+}
