@@ -11,8 +11,8 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
 | `prediction-domino-relay-v1` | former Memory Reverse owner | N08; screw lane | Limited-height placement drives one deterministic retained domino cascade |
-| `calculation-balance-scale-v1` | former Lint Shaver owner | N09; audit lane | Up to three composed weighings narrow exact heavy/light token hypotheses |
-| `inhibition-quiet-tidy-v1` | former Animal Count owner | N09; flow lane | Stop an active drag on visible signals while floor-dependent noise remains causal |
+| `language-notice-trim-v1` | former Balance Scale owner | N10; audit lane | Trim a fictional notice to width while retaining only task-authored required slots and tone |
+| `social-shared-umbrella-v1` | former Quiet Tidy owner | N10; flow lane | Balance two visible coverage regions through wind, puddles, and sheltered resets |
 
 ## Waiting queue
 

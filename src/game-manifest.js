@@ -144,6 +144,17 @@ export const gameManifest=Object.freeze([
     "hash": "0ef39e8837565160"
   },
   {
+    "id": "calculation-balance-scale-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "calculation-balance-scale",
+    "category": "calculation",
+    "module": "./games/calculation-balance-scale-v1.js",
+    "hash": "212ac158b8d757d3"
+  },
+  {
     "id": "calculation-change-smart-v1",
     "introducedIn": "2.0",
     "tier": 2,
@@ -219,6 +230,17 @@ export const gameManifest=Object.freeze([
     "category": "inhibition",
     "module": "./games/inhibition-parity-v1.js",
     "hash": "2e158179c1357576"
+  },
+  {
+    "id": "inhibition-quiet-tidy-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "inhibition-quiet-tidy",
+    "category": "inhibition",
+    "module": "./games/inhibition-quiet-tidy-v1.js",
+    "hash": "180c4c20d7f843b0"
   },
   {
     "id": "inhibition-rule-switch-v1",
