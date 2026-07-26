@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Screw Out module fixture</title>
+<style>*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#f8f3fa;font-family:system-ui,-apple-system,sans-serif}body{padding:max(8px,env(safe-area-inset-top)) 8px max(8px,env(safe-area-inset-bottom))}#shell{width:100%;max-width:430px;margin:auto}h1{margin:.1rem 0 .28rem;text-align:center;color:#513660;font-size:1.08rem}#result{min-height:1.3em;margin:.25rem 0;text-align:center;color:#65586d;font-size:.78rem;font-weight:800}</style></head>
+<body><main id="shell"><h1>ボルトを抜く順番を読んで</h1><div id="host"></div><p id="result"></p></main>
+<script>window.__FIXTURE_ERRORS__=[];const originalConsoleError=console.error.bind(console);console.error=(...args)=>{__FIXTURE_ERRORS__.push(args.map(String).join(" "));originalConsoleError(...args)};addEventListener("error",event=>__FIXTURE_ERRORS__.push(event.error?.stack||event.message));addEventListener("unhandledrejection",event=>__FIXTURE_ERRORS__.push(event.reason?.stack||String(event.reason)));</script>
+<script type="module">
+import game from "../src/games/attention-screw-out-v1.js";
+const params=new URLSearchParams(location.search),scenario=params.get("scenario")||"initial",seedValue=Number(params.get("seed"))||9;
+let seed=seedValue>>>0;const random=()=>((seed=(Math.imul(seed,1664525)+1013904223)>>>0)/2**32),randomInt=(min,max)=>min+Math.floor(random()*(max-min+1));
+const encoded=params.get("task"),stored=localStorage.getItem("attention-screw-out-v1-task"),storedTask=stored&&stored!=="null"?JSON.parse(stored):null,task=encoded?JSON.parse(decodeURIComponent(escape(atob(encoded.replace(/-/g,"+").replace(/_/g,"/"))))):storedTask||game.generate({random,randomInt,pick:values=>values[randomInt(0,values.length-1)],shuffle:values=>[...values]});
+const host=document.querySelector("#host"),result=document.querySelector("#result"),controller=new AbortController(),qa={},jobs=new Set(),frames=new Set();let deadline=null,finished=[];
+const context={host,signal:controller.signal,qa,reducedMotion:params.get("reduced")==="1"||matchMedia("(prefers-reduced-motion: reduce)").matches,viewport:{width:innerWidth-16,height:innerHeight,dpr:devicePixelRatio},
+ listen(target,type,fn,options){target.addEventListener(type,fn,options);return()=>target.removeEventListener(type,fn,options)},later(fn,ms){const id=setTimeout(()=>{jobs.delete(id);fn()},ms);jobs.add(id);return id},frame(fn){let id=null;const tick=time=>{frames.delete(id);if(controller.signal.aborted)return;if(fn(time)!==false){id=requestAnimationFrame(tick);frames.add(id)}};id=requestAnimationFrame(tick);frames.add(id);return()=>{cancelAnimationFrame(id);frames.delete(id)}},setDeadline(ms,fn){deadline=fn;return 1},finish(correct,detail){if(finished.length)return false;finished.push({correct,detail});result.textContent=correct?"正解":"不正解";return true}};
+game.render(task,context);const api=qa[game.metadata.id],wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const pullAndWait=async(bolt,ms=940)=>{api.pull(bolt);await wait(ms)};
+const applyScenario=async()=>{
+ if(scenario==="selected"){api.focus(task.answer[0]);await wait(60)}
+ else if(scenario==="removal"){api.pull(task.answer[0]);await wait(150)}
+ else if(scenario==="blocked"){api.pull(api.blockedBolt());await wait(140)}
+ else if(scenario==="progress"){await pullAndWait(task.answer[0]);await pullAndWait(task.answer[1]);await wait(80)}
+ else if(scenario==="success"){for(const bolt of task.answer)await pullAndWait(bolt);await wait(920)}
+ else if(scenario==="timeout"){deadline();await wait(30)}
+ else if(scenario==="reduced-progress"){for(const bolt of task.answer.slice(0,2))await pullAndWait(bolt,20)}
+ document.body.dataset.ready="true";window.__SCREW_FIXTURE__={game,task,api,context,finished,deadline,activeFrames:()=>frames.size,activeJobs:()=>jobs.size,dispose(){controller.abort();for(const id of jobs)clearTimeout(id);for(const id of frames)cancelAnimationFrame(id);jobs.clear();frames.clear()}};
+};
+await applyScenario();
+</script></body></html>
