@@ -77,11 +77,19 @@ A failed game stays isolated and is revised or withheld. It never blocks accepte
 - `prediction-desk-ruler-duel-v1` — accepted
 - `prediction-card-combo-v1` — accepted
 
-### P03 — next published-game wave
+### P03 — active published-game wave
 
-- `prediction-chain-puzzle-v1`
-- `spatial-lane-run-v1`
-- `calculation-rpg-battle-v1`
+- `prediction-chain-puzzle-v1` — flow lane
+- `spatial-lane-run-v1` — audit lane
+- `calculation-rpg-battle-v1` — screw lane
+
+### N02 — active daily-ritual original series
+
+- `spatial-sheep-home-v1` — implementation pending lane handoff
+- `attention-farm-close-v1` — implementation pending lane handoff
+- `spatial-commuter-seat-v1` — implementation pending lane handoff
+
+Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
 ### P04
 
