@@ -25,8 +25,11 @@ export function createGameRuntime({host,onFinish,timerBar=null,reducedMotion,vie
     disposed=true;clearDeadline();
     timeouts.forEach(clearTimeout);timeouts.clear();
     frames.forEach(cancelAnimationFrame);frames.clear();
-    listeners.forEach(remove=>remove());listeners.clear();
+    // Abort while signal listeners are still attached so modules get exactly one
+    // synchronous disposal callback. The disposed flag already makes every
+    // context scheduling/finish primitive inert during that callback.
     controller.abort();
+    listeners.forEach(remove=>remove());listeners.clear();
   };
   const finish=(correct,result={})=>{
     finishCalls++;
