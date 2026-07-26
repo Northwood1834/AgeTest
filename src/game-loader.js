@@ -2,6 +2,8 @@ import {gameManifest} from "./game-manifest.js";
 
 export const RETIRED_GAME_IDS=new Set([
   "prediction-card-combo-v1",
+  "social-care-package-v1",
+  "spatial-cube-v1",
 ]);
 export const gameCatalog=Object.freeze(gameManifest.map(entry=>Object.freeze({...entry})));
 export const selectableGameCatalog=Object.freeze(gameCatalog.filter(entry=>!RETIRED_GAME_IDS.has(entry.id)));

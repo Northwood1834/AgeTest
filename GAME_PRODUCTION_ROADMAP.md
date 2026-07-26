@@ -103,7 +103,7 @@ P04 takes the next three owner slots that become free after their current owners
 
 - `reaction-target-v1` — accepted and integrated
 - `memory-path-v1` — accepted and integrated
-- `spatial-cube-v1` — accepted and integrated
+- `spatial-cube-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (too difficult without a genuinely moving 3D cube)
 
 ### N02 — completed daily-ritual original series
 
@@ -128,7 +128,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 ### N05 — completed
 
 - `calculation-number-tower-route-v1` — accepted and integrated
-- `social-care-package-v1` — accepted and integrated
+- `social-care-package-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (result disappears too quickly; fixed example-like items lack variety and imagination)
 - `spatial-draw-shelter-v1` — accepted and integrated
 
 ### N06 — completed

@@ -37,11 +37,13 @@ test("every accepted manifest entry loads its own matching game module",async()=
 });
 
 test("withheld games leave new selection but remain loadable for saved sessions",async()=>{
-  const id="prediction-card-combo-v1";
-  assert.equal(RETIRED_GAME_IDS.has(id),true);
-  assert.equal(gameCatalog.some(entry=>entry.id===id),true);
-  assert.equal(selectableGameCatalog.some(entry=>entry.id===id),false);
-  assert.equal((await loadGame(id)).metadata.id,id);
+  const ids=["prediction-card-combo-v1","social-care-package-v1","spatial-cube-v1"];
+  assert.deepEqual([...RETIRED_GAME_IDS].sort(),[...ids].sort());
+  for(const id of ids){
+    assert.equal(gameCatalog.some(entry=>entry.id===id),true);
+    assert.equal(selectableGameCatalog.some(entry=>entry.id===id),false);
+    assert.equal((await loadGame(id)).metadata.id,id);
+  }
 });
 
 test("production envelopes strip to exact valid game data for every manifest module",async()=>{
