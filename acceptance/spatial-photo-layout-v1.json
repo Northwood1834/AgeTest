@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "spatial-photo-layout-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "5228a98adbbcd5ae6bd43bd11b1634697da5be7f",
+  "test": "test/spatial-photo-layout-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
