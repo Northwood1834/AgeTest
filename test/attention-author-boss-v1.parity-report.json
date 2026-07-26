@@ -1,0 +1,6995 @@
+{
+  "game": "attention-author-boss-v1",
+  "lane": {
+    "name": "flow",
+    "cdp": 9331,
+    "http": 8861,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "expectedTask": {
+    "kind": "authorBoss",
+    "prompt": "変則ムーブの作者を3回つかまえて",
+    "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+    "hits": 3,
+    "duration": 10000
+  },
+  "expectedSequence": [
+    "dance",
+    "vanish",
+    "afterimage"
+  ],
+  "expectedConstants": {
+    "hits": 3,
+    "duration": 10000,
+    "modes": [
+      "afterimage",
+      "dance",
+      "vanish"
+    ],
+    "afterimageMs": 520,
+    "vanishMs": 430,
+    "interModeMs": 240
+  },
+  "checks": {
+    "frames64": true,
+    "sameTaskJson": true,
+    "sameModeHitResultSemantics": true,
+    "normalAndReduced": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "noErrorsOrExternal": true,
+    "intentionalEnhancementDocumented": true
+  },
+  "frames": [
+    {
+      "variant": "legacy",
+      "scene": "ready",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "ready-393-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "ready",
+        "renderedScene": "ready",
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "READY",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "残像・ダンス・画面外逃走を見切ってください",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "ready",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "ready-393-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "ready",
+        "renderedScene": "ready",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "READY",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 156.69999992847443,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "残像・ダンス・画面外逃走を見切ってください",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "afterimage",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "afterimage-393-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "afterimage",
+        "renderedScene": "afterimage",
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "AFTERIMAGE",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": {
+            "visible": true
+          },
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "残像が先に現れました",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "afterimage",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "afterimage-393-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "afterimage",
+        "renderedScene": "afterimage",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "AFTERIMAGE",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": {
+            "x": 0.32,
+            "y": 0.46,
+            "alpha": 0.8
+          },
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.32,
+            "y": 0.46
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 152.40000009536743,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "残像の先を読め。本体はまだ押せません",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "dance",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "dance-393-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "dance",
+        "renderedScene": "dance",
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": true,
+          "activeMode": "dance",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "DANCE",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "フェイントダンス。本体を確保",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "dance",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "dance-393-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "dance",
+        "renderedScene": "dance",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": true,
+          "activeMode": "dance",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "DANCE",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 158.30000007152557,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "フェイントダンス。本体を追って確保",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "vanish",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "vanish-393-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "vanish",
+        "renderedScene": "vanish",
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "VANISH",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0.74,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "作者は画面外。帰還を待ちます",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "vanish",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "vanish-393-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "vanish",
+        "renderedScene": "vanish",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "VANISH",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0.74,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.92,
+            "y": 0.47
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 156.5,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "画面外へ逃走。出口はまだ空です",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "hit1",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "hit1-393-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "hit1",
+        "renderedScene": "hit1",
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "作者を確保。1 / 3",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "hit1",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "hit1-393-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "hit1",
+        "renderedScene": "hit1",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 158.89999997615814,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "作者を確保。1 / 3",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "hit2",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "hit2-393-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "hit2",
+        "renderedScene": "hit2",
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 2,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "作者を確保。2 / 3",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "hit2",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "hit2-393-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "hit2",
+        "renderedScene": "hit2",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 2,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 150.5,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "作者を確保。2 / 3",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "success",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "success-393-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "success",
+        "renderedScene": "success",
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 3,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "SUCCESS",
+          "done": true,
+          "result": "success",
+          "detail": "変則ムーブごと作者を確保しました。",
+          "quality": 0.72,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 1,
+          "status": "変則ムーブごと作者を確保しました。",
+          "reduced": false
+        },
+        "outcome": {
+          "correct": true,
+          "result": {
+            "quality": 0.72,
+            "detail": "変則ムーブごと作者を確保しました。"
+          }
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "success",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "success-393-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "success",
+        "renderedScene": "success",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 3,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "SUCCESS",
+          "done": true,
+          "disposed": false,
+          "result": "success",
+          "detail": "変則ムーブごと作者を確保しました。",
+          "quality": 0.72,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.69
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 158.30000007152557,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "変則ムーブごと作者を確保しました。",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "timeout",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "timeout-393-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "timeout",
+        "renderedScene": "timeout",
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "TIMEOUT",
+          "done": true,
+          "result": "timeout",
+          "detail": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 1,
+          "status": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "reduced": false
+        },
+        "outcome": {
+          "correct": false,
+          "result": {
+            "detail": "作者は変則ムーブで締切の向こうへ逃げました。"
+          }
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "timeout",
+      "motion": "normal",
+      "width": 393,
+      "height": 852,
+      "file": "timeout-393-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "timeout",
+        "renderedScene": "timeout",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "TIMEOUT",
+          "done": true,
+          "disposed": false,
+          "result": "timeout",
+          "detail": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 198.5,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "ready",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "ready-393-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "ready",
+        "renderedScene": "ready",
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "READY",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "残像・ダンス・画面外逃走を見切ってください",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "ready",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "ready-393-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "ready",
+        "renderedScene": "ready",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "READY",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 257.39999997615814,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "残像・ダンス・画面外逃走を見切ってください",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "afterimage",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "afterimage-393-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "afterimage",
+        "renderedScene": "afterimage",
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "AFTERIMAGE",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": {
+            "visible": true
+          },
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 2,
+          "finishCalls": 0,
+          "status": "残像が先に現れました",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "afterimage",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "afterimage-393-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "afterimage",
+        "renderedScene": "afterimage",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "AFTERIMAGE",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": {
+            "x": 0.32,
+            "y": 0.46,
+            "alpha": 0.8
+          },
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.32,
+            "y": 0.46
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 201.89999997615814,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "残像の先を読め。本体はまだ押せません",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "dance",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "dance-393-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "dance",
+        "renderedScene": "dance",
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": true,
+          "activeMode": "dance",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "DANCE",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 2,
+          "finishCalls": 0,
+          "status": "フェイントダンス。本体を確保",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "dance",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "dance-393-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "dance",
+        "renderedScene": "dance",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": true,
+          "activeMode": "dance",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "DANCE",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 169.10000002384186,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "フェイントダンス。本体を追って確保",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "vanish",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "vanish-393-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "vanish",
+        "renderedScene": "vanish",
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "VANISH",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0.74,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 2,
+          "finishCalls": 0,
+          "status": "作者は画面外。帰還を待ちます",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "vanish",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "vanish-393-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "vanish",
+        "renderedScene": "vanish",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "VANISH",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0.74,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.92,
+            "y": 0.47
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 169.30000007152557,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "画面外へ逃走。出口はまだ空です",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "hit1",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "hit1-393-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "hit1",
+        "renderedScene": "hit1",
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "作者を確保。1 / 3",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "hit1",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "hit1-393-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "hit1",
+        "renderedScene": "hit1",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 164.70000004768372,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "作者を確保。1 / 3",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "hit2",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "hit2-393-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "hit2",
+        "renderedScene": "hit2",
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 2,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "作者を確保。2 / 3",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "hit2",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "hit2-393-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "hit2",
+        "renderedScene": "hit2",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 2,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 161.29999995231628,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "作者を確保。2 / 3",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/game-kernel.js",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "success",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "success-393-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "success",
+        "renderedScene": "success",
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 3,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "SUCCESS",
+          "done": true,
+          "result": "success",
+          "detail": "変則ムーブごと作者を確保しました。",
+          "quality": 0.72,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 1,
+          "status": "変則ムーブごと作者を確保しました。",
+          "reduced": true
+        },
+        "outcome": {
+          "correct": true,
+          "result": {
+            "quality": 0.72,
+            "detail": "変則ムーブごと作者を確保しました。"
+          }
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "success",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "success-393-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "success",
+        "renderedScene": "success",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 3,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "SUCCESS",
+          "done": true,
+          "disposed": false,
+          "result": "success",
+          "detail": "変則ムーブごと作者を確保しました。",
+          "quality": 0.72,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.69
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 163.89999997615814,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "変則ムーブごと作者を確保しました。",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "timeout",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "timeout-393-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "timeout",
+        "renderedScene": "timeout",
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "TIMEOUT",
+          "done": true,
+          "result": "timeout",
+          "detail": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 1,
+          "status": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "reduced": true
+        },
+        "outcome": {
+          "correct": false,
+          "result": {
+            "detail": "作者は変則ムーブで締切の向こうへ逃げました。"
+          }
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "stage": {
+            "width": 335,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "timeout",
+      "motion": "reduced",
+      "width": 393,
+      "height": 852,
+      "file": "timeout-393-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "timeout",
+        "renderedScene": "timeout",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "TIMEOUT",
+          "done": true,
+          "disposed": false,
+          "result": "timeout",
+          "detail": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 163,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          },
+          "status": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 462,
+            "pixelWidth": 1005,
+            "pixelHeight": 1386,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "ready",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "ready-402-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "ready",
+        "renderedScene": "ready",
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "READY",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "残像・ダンス・画面外逃走を見切ってください",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "ready",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "ready-402-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "ready",
+        "renderedScene": "ready",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "READY",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 155.70000004768372,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "残像・ダンス・画面外逃走を見切ってください",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "afterimage",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "afterimage-402-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "afterimage",
+        "renderedScene": "afterimage",
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "AFTERIMAGE",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": {
+            "visible": true
+          },
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "残像が先に現れました",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "afterimage",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "afterimage-402-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "afterimage",
+        "renderedScene": "afterimage",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "AFTERIMAGE",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": {
+            "x": 0.32,
+            "y": 0.46,
+            "alpha": 0.8
+          },
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.32,
+            "y": 0.46
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 153.5,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "残像の先を読め。本体はまだ押せません",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/game-kernel.js",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "dance",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "dance-402-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "dance",
+        "renderedScene": "dance",
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": true,
+          "activeMode": "dance",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "DANCE",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "フェイントダンス。本体を確保",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "dance",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "dance-402-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "dance",
+        "renderedScene": "dance",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": true,
+          "activeMode": "dance",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "DANCE",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 161.89999997615814,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "フェイントダンス。本体を追って確保",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "vanish",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "vanish-402-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "vanish",
+        "renderedScene": "vanish",
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "VANISH",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0.74,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "作者は画面外。帰還を待ちます",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "vanish",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "vanish-402-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "vanish",
+        "renderedScene": "vanish",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "VANISH",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0.74,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.92,
+            "y": 0.47
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 159.39999997615814,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "画面外へ逃走。出口はまだ空です",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "hit1",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "hit1-402-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "hit1",
+        "renderedScene": "hit1",
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "作者を確保。1 / 3",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "hit1",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "hit1-402-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "hit1",
+        "renderedScene": "hit1",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 157.20000004768372,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "作者を確保。1 / 3",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "hit2",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "hit2-402-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "hit2",
+        "renderedScene": "hit2",
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 2,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "作者を確保。2 / 3",
+          "reduced": false
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "hit2",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "hit2-402-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "hit2",
+        "renderedScene": "hit2",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 2,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 157.70000004768372,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "作者を確保。2 / 3",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "success",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "success-402-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "success",
+        "renderedScene": "success",
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 3,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "SUCCESS",
+          "done": true,
+          "result": "success",
+          "detail": "変則ムーブごと作者を確保しました。",
+          "quality": 0.72,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 1,
+          "status": "変則ムーブごと作者を確保しました。",
+          "reduced": false
+        },
+        "outcome": {
+          "correct": true,
+          "result": {
+            "quality": 0.72,
+            "detail": "変則ムーブごと作者を確保しました。"
+          }
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "success",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "success-402-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "success",
+        "renderedScene": "success",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 3,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "SUCCESS",
+          "done": true,
+          "disposed": false,
+          "result": "success",
+          "detail": "変則ムーブごと作者を確保しました。",
+          "quality": 0.72,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.69
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 158.89999997615814,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "変則ムーブごと作者を確保しました。",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "timeout",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "timeout-402-normal-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "timeout",
+        "renderedScene": "timeout",
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "TIMEOUT",
+          "done": true,
+          "result": "timeout",
+          "detail": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 1,
+          "status": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "reduced": false
+        },
+        "outcome": {
+          "correct": false,
+          "result": {
+            "detail": "作者は変則ムーブで締切の向こうへ逃げました。"
+          }
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "timeout",
+      "motion": "normal",
+      "width": 402,
+      "height": 874,
+      "file": "timeout-402-normal-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "timeout",
+        "renderedScene": "timeout",
+        "live": false,
+        "auto": false,
+        "motion": "normal",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "TIMEOUT",
+          "done": true,
+          "disposed": false,
+          "result": "timeout",
+          "detail": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 153.30000007152557,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "reduced": false
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "ready",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "ready-402-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "ready",
+        "renderedScene": "ready",
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "READY",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "残像・ダンス・画面外逃走を見切ってください",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "ready",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "ready-402-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "ready",
+        "renderedScene": "ready",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "READY",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 153,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "残像・ダンス・画面外逃走を見切ってください",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "afterimage",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "afterimage-402-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "afterimage",
+        "renderedScene": "afterimage",
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "AFTERIMAGE",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": {
+            "visible": true
+          },
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 2,
+          "finishCalls": 0,
+          "status": "残像が先に現れました",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "afterimage",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "afterimage-402-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "afterimage",
+        "renderedScene": "afterimage",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "AFTERIMAGE",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": {
+            "x": 0.32,
+            "y": 0.46,
+            "alpha": 0.8
+          },
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.32,
+            "y": 0.46
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 157.20000004768372,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "残像の先を読め。本体はまだ押せません",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "dance",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "dance-402-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "dance",
+        "renderedScene": "dance",
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": true,
+          "activeMode": "dance",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "DANCE",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 2,
+          "finishCalls": 0,
+          "status": "フェイントダンス。本体を確保",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "dance",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "dance-402-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "dance",
+        "renderedScene": "dance",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": true,
+          "activeMode": "dance",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "DANCE",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 158.29999995231628,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "フェイントダンス。本体を追って確保",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "vanish",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "vanish-402-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "vanish",
+        "renderedScene": "vanish",
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "VANISH",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0.74,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 2,
+          "finishCalls": 0,
+          "status": "作者は画面外。帰還を待ちます",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "vanish",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "vanish-402-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "vanish",
+        "renderedScene": "vanish",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 0,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "VANISH",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0.74,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.92,
+            "y": 0.47
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 156.19999992847443,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "画面外へ逃走。出口はまだ空です",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/game-kernel.js",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "hit1",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "hit1-402-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "hit1",
+        "renderedScene": "hit1",
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "作者を確保。1 / 3",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "hit1",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "hit1-402-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "hit1",
+        "renderedScene": "hit1",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "vanish",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.61,
+            "y": 0.43
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 155.19999992847443,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "作者を確保。1 / 3",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/game-kernel.js",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "hit2",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "hit2-402-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "hit2",
+        "renderedScene": "hit2",
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 2,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "status": "作者を確保。2 / 3",
+          "reduced": true
+        },
+        "outcome": null,
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "hit2",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "hit2-402-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "hit2",
+        "renderedScene": "hit2",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 2,
+          "required": 3,
+          "ready": false,
+          "activeMode": "afterimage",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "HIT",
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "detail": "",
+          "quality": null,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 1,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.82,
+            "y": 0.39
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 159.29999995231628,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "作者を確保。2 / 3",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "success",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "success-402-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "success",
+        "renderedScene": "success",
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 3,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "SUCCESS",
+          "done": true,
+          "result": "success",
+          "detail": "変則ムーブごと作者を確保しました。",
+          "quality": 0.72,
+          "targetVisible": true,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 1,
+          "status": "変則ムーブごと作者を確保しました。",
+          "reduced": true
+        },
+        "outcome": {
+          "correct": true,
+          "result": {
+            "quality": 0.72,
+            "detail": "変則ムーブごと作者を確保しました。"
+          }
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "success",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "success-402-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "success",
+        "renderedScene": "success",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 3,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "SUCCESS",
+          "done": true,
+          "disposed": false,
+          "result": "success",
+          "detail": "変則ムーブごと作者を確保しました。",
+          "quality": 0.72,
+          "targetVisible": true,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.69
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 158.39999997615814,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "変則ムーブごと作者を確保しました。",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "legacy",
+      "scene": "timeout",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "timeout-402-reduced-legacy.png",
+      "evidence": {
+        "variant": "legacy",
+        "requestedScene": "timeout",
+        "renderedScene": "timeout",
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "TIMEOUT",
+          "done": true,
+          "result": "timeout",
+          "detail": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "quality": null,
+          "targetVisible": false,
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 1,
+          "status": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "reduced": true
+        },
+        "outcome": {
+          "correct": false,
+          "result": {
+            "detail": "作者は変則ムーブで締切の向こうへ逃げました。"
+          }
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "stage": {
+            "width": 344,
+            "height": 208
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.legacy-fixture.mjs",
+          "http://127.0.0.1:8861/author.png"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "variant": "module",
+      "scene": "timeout",
+      "motion": "reduced",
+      "width": 402,
+      "height": 874,
+      "file": "timeout-402-reduced-module.png",
+      "evidence": {
+        "variant": "module",
+        "requestedScene": "timeout",
+        "renderedScene": "timeout",
+        "live": false,
+        "auto": false,
+        "motion": "reduced",
+        "width": 402,
+        "dpr": 3,
+        "task": {
+          "kind": "authorBoss",
+          "prompt": "変則ムーブの作者を3回つかまえて",
+          "help": "残像・フェイント・画面外逃走を見切ってタップ。",
+          "hits": 3,
+          "duration": 10000
+        },
+        "constants": {
+          "hits": 3,
+          "duration": 10000,
+          "modes": [
+            "afterimage",
+            "dance",
+            "vanish"
+          ],
+          "afterimageMs": 520,
+          "vanishMs": 430,
+          "interModeMs": 240
+        },
+        "state": {
+          "hits": 1,
+          "required": 3,
+          "ready": false,
+          "activeMode": "",
+          "sequence": [
+            "dance",
+            "vanish",
+            "afterimage"
+          ],
+          "uniqueModes": 3,
+          "phase": "TIMEOUT",
+          "done": true,
+          "disposed": false,
+          "result": "timeout",
+          "detail": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "quality": null,
+          "targetVisible": false,
+          "targetPos": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "ghost": null,
+          "vanishSide": "right",
+          "vanishProgress": 0,
+          "hitEffect": 0,
+          "wrongInputs": 0,
+          "cursor": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "frames": 0,
+          "stages": 0,
+          "finishCalls": 0,
+          "modeEntries": [],
+          "elapsed": 153.09999990463257,
+          "timing": {
+            "afterimageMs": 520,
+            "reducedAfterimageMs": 650,
+            "vanishMs": 430,
+            "reducedVanishMs": 600,
+            "interModeMs": 240,
+            "danceAnimationMs": 1450,
+            "danceStepMs": 1650,
+            "reducedDanceStepMs": 1800
+          },
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          },
+          "status": "作者は変則ムーブで締切の向こうへ逃げました。",
+          "reduced": true
+        },
+        "finishes": [],
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 5,
+          "frames": 0,
+          "listeners": 7,
+          "aborted": false
+        },
+        "layout": {
+          "scrollWidth": 402,
+          "innerWidth": 402,
+          "canvas": {
+            "cssWidth": 344,
+            "cssHeight": 475,
+            "pixelWidth": 1032,
+            "pixelHeight": 1425,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8861/test/attention-author-boss-v1.fixture.mjs",
+          "http://127.0.0.1:8861/src/games/attention-author-boss-v1.js",
+          "http://127.0.0.1:8861/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "errors": [],
+      "pass": true
+    }
+  ],
+  "pairs": [
+    {
+      "scene": "ready",
+      "motion": "normal",
+      "width": 393,
+      "legacy": "ready-393-normal-legacy.png",
+      "module": "ready-393-normal-module.png",
+      "pair": "ready-393-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "afterimage",
+      "motion": "normal",
+      "width": 393,
+      "legacy": "afterimage-393-normal-legacy.png",
+      "module": "afterimage-393-normal-module.png",
+      "pair": "afterimage-393-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "dance",
+      "motion": "normal",
+      "width": 393,
+      "legacy": "dance-393-normal-legacy.png",
+      "module": "dance-393-normal-module.png",
+      "pair": "dance-393-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "vanish",
+      "motion": "normal",
+      "width": 393,
+      "legacy": "vanish-393-normal-legacy.png",
+      "module": "vanish-393-normal-module.png",
+      "pair": "vanish-393-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "hit1",
+      "motion": "normal",
+      "width": 393,
+      "legacy": "hit1-393-normal-legacy.png",
+      "module": "hit1-393-normal-module.png",
+      "pair": "hit1-393-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "hit2",
+      "motion": "normal",
+      "width": 393,
+      "legacy": "hit2-393-normal-legacy.png",
+      "module": "hit2-393-normal-module.png",
+      "pair": "hit2-393-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "success",
+      "motion": "normal",
+      "width": 393,
+      "legacy": "success-393-normal-legacy.png",
+      "module": "success-393-normal-module.png",
+      "pair": "success-393-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "timeout",
+      "motion": "normal",
+      "width": 393,
+      "legacy": "timeout-393-normal-legacy.png",
+      "module": "timeout-393-normal-module.png",
+      "pair": "timeout-393-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "ready",
+      "motion": "reduced",
+      "width": 393,
+      "legacy": "ready-393-reduced-legacy.png",
+      "module": "ready-393-reduced-module.png",
+      "pair": "ready-393-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "afterimage",
+      "motion": "reduced",
+      "width": 393,
+      "legacy": "afterimage-393-reduced-legacy.png",
+      "module": "afterimage-393-reduced-module.png",
+      "pair": "afterimage-393-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "dance",
+      "motion": "reduced",
+      "width": 393,
+      "legacy": "dance-393-reduced-legacy.png",
+      "module": "dance-393-reduced-module.png",
+      "pair": "dance-393-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "vanish",
+      "motion": "reduced",
+      "width": 393,
+      "legacy": "vanish-393-reduced-legacy.png",
+      "module": "vanish-393-reduced-module.png",
+      "pair": "vanish-393-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "hit1",
+      "motion": "reduced",
+      "width": 393,
+      "legacy": "hit1-393-reduced-legacy.png",
+      "module": "hit1-393-reduced-module.png",
+      "pair": "hit1-393-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "hit2",
+      "motion": "reduced",
+      "width": 393,
+      "legacy": "hit2-393-reduced-legacy.png",
+      "module": "hit2-393-reduced-module.png",
+      "pair": "hit2-393-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "success",
+      "motion": "reduced",
+      "width": 393,
+      "legacy": "success-393-reduced-legacy.png",
+      "module": "success-393-reduced-module.png",
+      "pair": "success-393-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "timeout",
+      "motion": "reduced",
+      "width": 393,
+      "legacy": "timeout-393-reduced-legacy.png",
+      "module": "timeout-393-reduced-module.png",
+      "pair": "timeout-393-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "ready",
+      "motion": "normal",
+      "width": 402,
+      "legacy": "ready-402-normal-legacy.png",
+      "module": "ready-402-normal-module.png",
+      "pair": "ready-402-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "afterimage",
+      "motion": "normal",
+      "width": 402,
+      "legacy": "afterimage-402-normal-legacy.png",
+      "module": "afterimage-402-normal-module.png",
+      "pair": "afterimage-402-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "dance",
+      "motion": "normal",
+      "width": 402,
+      "legacy": "dance-402-normal-legacy.png",
+      "module": "dance-402-normal-module.png",
+      "pair": "dance-402-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "vanish",
+      "motion": "normal",
+      "width": 402,
+      "legacy": "vanish-402-normal-legacy.png",
+      "module": "vanish-402-normal-module.png",
+      "pair": "vanish-402-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "hit1",
+      "motion": "normal",
+      "width": 402,
+      "legacy": "hit1-402-normal-legacy.png",
+      "module": "hit1-402-normal-module.png",
+      "pair": "hit1-402-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "hit2",
+      "motion": "normal",
+      "width": 402,
+      "legacy": "hit2-402-normal-legacy.png",
+      "module": "hit2-402-normal-module.png",
+      "pair": "hit2-402-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "success",
+      "motion": "normal",
+      "width": 402,
+      "legacy": "success-402-normal-legacy.png",
+      "module": "success-402-normal-module.png",
+      "pair": "success-402-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "timeout",
+      "motion": "normal",
+      "width": 402,
+      "legacy": "timeout-402-normal-legacy.png",
+      "module": "timeout-402-normal-module.png",
+      "pair": "timeout-402-normal-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "ready",
+      "motion": "reduced",
+      "width": 402,
+      "legacy": "ready-402-reduced-legacy.png",
+      "module": "ready-402-reduced-module.png",
+      "pair": "ready-402-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "afterimage",
+      "motion": "reduced",
+      "width": 402,
+      "legacy": "afterimage-402-reduced-legacy.png",
+      "module": "afterimage-402-reduced-module.png",
+      "pair": "afterimage-402-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "dance",
+      "motion": "reduced",
+      "width": 402,
+      "legacy": "dance-402-reduced-legacy.png",
+      "module": "dance-402-reduced-module.png",
+      "pair": "dance-402-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "vanish",
+      "motion": "reduced",
+      "width": 402,
+      "legacy": "vanish-402-reduced-legacy.png",
+      "module": "vanish-402-reduced-module.png",
+      "pair": "vanish-402-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "hit1",
+      "motion": "reduced",
+      "width": 402,
+      "legacy": "hit1-402-reduced-legacy.png",
+      "module": "hit1-402-reduced-module.png",
+      "pair": "hit1-402-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "hit2",
+      "motion": "reduced",
+      "width": 402,
+      "legacy": "hit2-402-reduced-legacy.png",
+      "module": "hit2-402-reduced-module.png",
+      "pair": "hit2-402-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "success",
+      "motion": "reduced",
+      "width": 402,
+      "legacy": "success-402-reduced-legacy.png",
+      "module": "success-402-reduced-module.png",
+      "pair": "success-402-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    },
+    {
+      "scene": "timeout",
+      "motion": "reduced",
+      "width": 402,
+      "legacy": "timeout-402-reduced-legacy.png",
+      "module": "timeout-402-reduced-module.png",
+      "pair": "timeout-402-reduced-LEGACY-MODULE.png",
+      "semanticErrors": [],
+      "semanticParity": true,
+      "intentionalVisualEnhancement": "MODULE preserves the local red helmet author identity and exact three-mode/hit/result semantics while replacing the legacy low-resolution image/radial panel with a resolution-independent DPR3 author derivative, dimensional studio arena, mode-specific causal trails, spatial reticle, richer hit accounting, and distinct terminal tableaux."
+    }
+  ]
+}
