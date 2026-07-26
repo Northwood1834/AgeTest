@@ -67,6 +67,17 @@ export const gameManifest=Object.freeze([
     "hash": "2aae0d3b5cc805db"
   },
   {
+    "id": "attention-search-v1",
+    "introducedIn": "1.0",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "attention-search",
+    "category": "attention",
+    "module": "./games/attention-search-v1.js",
+    "hash": "57b098b20ed98840"
+  },
+  {
     "id": "attention-water-sort-v1",
     "introducedIn": "1.5",
     "tier": 2,

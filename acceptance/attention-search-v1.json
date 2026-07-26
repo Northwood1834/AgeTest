@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "attention-search-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "0dabc71101de0c097a99a41ef973e461ae5d9320",
+  "test": "test/attention-search-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

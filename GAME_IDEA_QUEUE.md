@@ -10,9 +10,9 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `prediction-shape-v1` | former Memory Path owner | P07 port pre-browser; waits for flow | Faithfully port all three published alternating-shape families with exact option parity |
+| `prediction-shape-v1` | former Memory Path owner | P07 port; flow lane | Faithfully port all three published alternating-shape families with exact option parity |
 | `spatial-draw-bridge-v1` | former Ricochet owner | pre-browser; waits for audit | Draw a limited anchored span that must carry a real moving vehicle load |
-| `attention-search-v1` | former Author Boss owner | P07 port; flow lane | Faithfully port all published 5×5 lookalike-search pairs with parity evidence |
+| `attention-shape-count-v1` | former Attention Search owner | P08 port pre-browser; waits for flow | Faithfully port the published 12-glyph counting task with exact generation parity |
 | `social-date-v1` | former Emoji FPS owner | P05 port pre-browser; waits for audit | Faithfully port every published three-step date dialogue with same-task parity |
 | `timing-two-v1` | former Timing Five owner | P08 port; screw lane | Faithfully port the published hidden two-second timing test with exact timing parity |
 | `inhibition-stroop-v1` | former Flip owner | P08 port pre-browser; waits for screw | Faithfully port all published word/ink conflict combinations with exact color parity |
