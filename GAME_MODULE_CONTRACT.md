@@ -2,7 +2,7 @@
 
 Status: rebuild contract for the approximately 300-game catalogue.
 
-The trusted rebuild base is `b0b538f` (v1.6.1). Existing stable template IDs and resumable plain-data tasks remain compatible. A game is moved only after its browser behavior is verified; the current public branch is not modified during the rebuild.
+The rebuild base is the published catalogue at `a8761a1` (v1.16.0). Its published individual games and stable IDs are retained. The unpublished Claude architecture experiment at `b932e89` is not a source or implementation base. Existing resumable plain-data tasks remain compatible. A game is moved only after its browser behavior is verified; the current public branch is not modified during the rebuild.
 
 ## Ownership unit
 
@@ -98,6 +98,6 @@ The author supplies the evidence. Integration acceptance remains with the direct
 ## Migration order
 
 1. Implement the kernel, manifest builder, lifecycle tests, and one small representative game without changing stored state semantics.
-2. Keep a legacy adapter so unported v1.6.1 games remain playable during migration.
+2. Keep a legacy adapter so unported published games from `a8761a1` remain playable during migration.
 3. Move games one owner and one branch at a time. Rich Canvas games must pass dispose instrumentation before acceptance.
 4. Remove the legacy adapter only after every retained stable ID has a module and saved-session replay has been verified.
