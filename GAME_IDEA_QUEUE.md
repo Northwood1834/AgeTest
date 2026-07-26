@@ -328,6 +328,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Outcomes/proof: complete bounded trace; decoy transfer; cumulative drift; incomplete slow trace; excessive lifts; timeout retaining path. Quantized exhaustive profiles reject fastest/slowest strategies, require ≥4 crossings and prove deviation thresholds.
 - Art/reduced motion: original abstract craft paper, solid/dashed lines, chalk marker and hatching; stepped samples, no blade, cutting, real pattern, brand, or sewing procedure.
 
+### Q51 — `language-loom-pattern-v1`
+
+- Category/tier/flavor: language / tier 3 / satisfying
+- Core: resize and nest always-explained repeat/edge-condition enclosures around finite action chips, then commit once to a previously hidden fictional cloth pattern with only thread consumption as an incomplete checksum.
+- Interdependence/proof: in-task scope rules define the predicted result, while one-shot execution is the only full scope check. Exhaustive layouts guarantee 1–2 solutions, equal-consumption wrong patterns, nesting/boundary cases, finite termination and all retained outcomes.
+- Art/reduced motion: original abstract tabletop loom/chips/grid cloth; row stills, no real notation, traditional motif, or weaving instruction.
+
+### Q52 — `memory-tally-board-v1`
+
+- Category/tier/flavor: memory / tier 3 / wild
+- Core: capture eight briefly visible fictional values using only three memo slots; merging values frees capacity but irreversibly destroys marked breakdowns required alongside the final total.
+- Interdependence/proof: arithmetic strategy determines retained information while capacity forces arithmetic. Enumerate all finite slot operations, require ≥2 merges, defeat always-merge, and prove total/detail/overflow boundaries with plain resume.
+- Art/reduced motion: original abstract tally counter, notched slips, three-slot board/history and fictional units; immediate slip/slot states, no real ledger or currency.
+
+### Q53 — `attention-ring-toss-track-v1`
+
+- Category/tier/flavor: attention / tier 3 / wild
+- Core: track three briefly marked but then identical pins among eight deterministic swaps while aiming three rings at their forecast positions after a constantly displayed fixed flight delay and announced speed changes.
+- Interdependence/proof: tracking supplies extrapolation identity while speed reading competes for the same visual attention. Integer trajectories require ≥5 crossings, reject current-position aiming, provide generous windows, and retain every outcome.
+- Art/reduced motion: original creature-free fictional rotating stall, identical pins/rings/indicators; stepped rotation and three-stage flight, no weapon or brand.
+
+### Q54 — `social-two-person-carry-v1`
+
+- Category/tier/flavor: social / tier 3 / satisfying
+- Core: coordinate two neutral stagehands moving a lightweight fictional scenery prop; a visible task-specific response delay makes abrupt motion raise an abstract synchronization-load meter, while explicit signals reduce the next delay at a time cost.
+- Interdependence/proof: forecast errors increase synchronization load, which further increases delay; signalling jointly changes both. Exhaustive finite paths require signals at corners, reject always-fast/always-signal strategies and prove tilt/contact boundaries.
+- Art/reduced motion: original stage corridor, foam prop, neutral adults and task meters; stepped poses, no health/ability judgment, relationship norm, or real lifting procedure.
+
+### Q55 — `inhibition-token-swap-v1`
+
+- Category/tier/flavor: inhibition / tier 3 / quirky
+- Core: encode four shaped token-to-socket mappings for a fictional machine; after two correct insertions an always-visible notice swaps only two mappings, requiring selective suppression of learned responses while two remain unchanged.
+- Interdependence/proof: learned mapping strength creates the response that must be selectively inhibited, and wrong old-map insertions consume later time. Enumerate operations, reject global reversal/brute force, prove all error/time boundaries and plain resume.
+- Art/reduced motion: original abstract machine, four non-security tokens/sockets, mapping card and swap notice; snapped static insertion, no key, lock, door, warehouse, or bypass instruction.
+
+### Q56 — `spatial-parcel-shelf-v1`
+
+- Category/tier/flavor: spatial / tier 3 / wild
+- Core: place ten arriving abstract tokens of 1–3 cell shapes into a 3×4 fictional custody board under visible dwell windows; fragmented placement increases search/rearrangement time and marked tokens must remain retrievable later.
+- Interdependence/proof: spatial history changes later response budget while urgency tempts fragmentation. Exhaustive tick/placement search defeats nearest-slot greed, proves retrievability and exact dwell/capacity boundaries, and retains board/counter state.
+- Art/reduced motion: original unmanned token counter/board and abstract shapes; snapped updates, not a parcel, warehouse, courier, or logistics procedure.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
