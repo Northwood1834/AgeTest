@@ -166,6 +166,17 @@ export const gameManifest=Object.freeze([
     "hash": "2d6a38c79b8cb166"
   },
   {
+    "id": "inhibition-opposite-v1",
+    "introducedIn": "1.0",
+    "tier": 2,
+    "flavor": "classic",
+    "step": 1,
+    "family": "inhibition-opposite",
+    "category": "inhibition",
+    "module": "./games/inhibition-opposite-v1.js",
+    "hash": "53cf9b8fe62f25eb"
+  },
+  {
     "id": "inhibition-parity-v1",
     "introducedIn": "1.0",
     "tier": 3,

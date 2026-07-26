@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "inhibition-opposite-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "29f55e771b8b06ffb50257dde61e7c66f99bbb1a",
+  "test": "test/inhibition-opposite-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
