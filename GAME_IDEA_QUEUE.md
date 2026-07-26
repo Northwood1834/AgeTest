@@ -17,6 +17,8 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
 | `prediction-cookie-cut-v1` | former Clothesline Calm owner | N12; flow lane | Arrange three cutters on dough, then lift once to reveal only valid cookies |
+| `spatial-photo-layout-v1` | former Bubble Keep owner | N12; audit lane | Rotate and drag six original illustrated photos into matching album frames |
+| `social-postcard-send-v1` | former Flower Share owner | N12; screw lane | Drag four postcards into picture-matched address boxes using only visible motifs |
 
 ## Waiting queue
 
