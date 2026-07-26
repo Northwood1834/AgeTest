@@ -167,8 +167,8 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `calculation-balance-scale-v1` — accepted and integrated
 - `language-notice-trim-v1` — audit lane
 - `inhibition-quiet-tidy-v1` — accepted and integrated
-- `social-shared-umbrella-v1` — flow lane
-- `spatial-suitcase-pack-v1` — pre-browser; waits for first released QA lane
+- `social-shared-umbrella-v1` — flow lane; director visual-causality fix in progress
+- `spatial-suitcase-pack-v1` — screw lane
 
 ### N08 — active original
 
@@ -176,7 +176,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `timing-mochi-pound-v1` — accepted and integrated
 - `language-particle-scene-v1` — accepted and integrated
 - `prediction-domino-relay-v1` — accepted and integrated
-- `reaction-cupboard-catch-v1` — screw lane
+- `reaction-cupboard-catch-v1` — accepted and integrated
 
 ### N07 — completed original
 

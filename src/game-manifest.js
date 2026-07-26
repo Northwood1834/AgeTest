@@ -419,6 +419,17 @@ export const gameManifest=Object.freeze([
     "hash": "cbf199710ce4e75a"
   },
   {
+    "id": "reaction-cupboard-catch-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "wild",
+    "step": 1,
+    "family": "reaction-cupboard-catch",
+    "category": "reaction",
+    "module": "./games/reaction-cupboard-catch-v1.js",
+    "hash": "2b89743a1f044588"
+  },
+  {
     "id": "reaction-emoji-match-v1",
     "introducedIn": "1.0",
     "tier": 1,
