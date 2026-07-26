@@ -1,0 +1,37 @@
+{
+  "status": "pass",
+  "gameId": "timing-milk-pour-v1",
+  "lane": {"cdp": 9332, "http": 8862},
+  "artifactRoot": "/tmp/agetest-timing-milk-pour-v1-audit-final2",
+  "canonicalViewports": [
+    {"width": 393, "height": 852, "dpr": 3},
+    {"width": 402, "height": 874, "dpr": 3}
+  ],
+  "boundaryViewports": [
+    {"width": 390, "height": 844, "dpr": 3},
+    {"width": 430, "height": 932, "dpr": 3}
+  ],
+  "variants": 4,
+  "states": ["initial", "holding", "released", "after-1", "after-2", "good-foam", "underfill", "recoverable", "wiped", "overflow", "timeout"],
+  "canonicalScreenshots": 176,
+  "normalReducedPairs": 88,
+  "maxPairMAE": 0.0,
+  "maxPairNormalizedRMSE": 0.0,
+  "focusScreenshots": 16,
+  "boundaryScreenshots": 32,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "minimumInteractiveTargetPx": 53.59375,
+  "overflowFree": true,
+  "externalRequests": 0,
+  "consoleErrors": 0,
+  "directorStrip": {
+    "path": "/tmp/milk-director-strip2/state-strip.png",
+    "sha256": "034cfbfd0ccd7f727f1c2f3dc6e7c83ebac9d3b438e009c07434bec2ebba9697",
+    "review": "pass",
+    "finding": "Continuous stream, three drops, and one drop make after-flow causal; good foam, underfill, spill, and dry wiped retry remain materially distinct."
+  },
+  "finalVisualQc": "pass: no material defects",
+  "comparisonReportSha256": "c5376195f7ccf761324b1204fa39715a90c7d7707cab490f64b5dfba5f08798f",
+  "failures": []
+}

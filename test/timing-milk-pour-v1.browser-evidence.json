@@ -1,0 +1,50 @@
+{
+  "status": "pass",
+  "gameId": "timing-milk-pour-v1",
+  "artifactRoot": "/tmp/agetest-timing-milk-pour-v1-audit-final2",
+  "node": {
+    "focused": {"tests": 21, "passed": 21},
+    "full": {"tests": 1309, "passed": 1309, "durationMs": 21135.039015}
+  },
+  "browser": {
+    "touchSuccessRoutes": {"count": 8, "passed": 8, "variants": 4, "motions": ["normal", "reduced"]},
+    "keyboardSuccessRoutes": {"count": 2, "passed": 2, "routes": ["variant-0-normal", "variant-3-reduced"]},
+    "overflowWipeRetryRoutes": {"count": 2, "passed": 2, "motions": ["normal", "reduced"], "retainedAttempt": true, "singleFinish": true},
+    "deadlineRoutes": {"count": 2, "passed": 2, "deadlineMs": 15000, "retained": ["level", "wipes", "attempts", "phase"], "singleFinish": true},
+    "disposeRoutes": {"count": 2, "passed": 2, "remainingTimeouts": 0, "remainingFrames": 0, "remainingListeners": 0, "finishCalls": 0},
+    "performanceRoutes": {
+      "count": 4,
+      "passed": 4,
+      "framesPerRoute": 90,
+      "averageFrameMsRange": [16.524444443649717, 16.621111110316384],
+      "maxFrameMs": 16.80000000000001,
+      "normalGameOwnedFrames": 1,
+      "reducedGameOwnedFrames": 0
+    },
+    "sourcePolicy": {"ownerDocumentOnly": true, "contextTracked": true, "network": false, "audio": false, "rawTimers": false, "rawRaf": false, "rawListeners": false, "emoji": false},
+    "externalRequests": 0,
+    "consoleErrors": 0,
+    "horizontalOverflow": false
+  },
+  "mechanic": {
+    "integerFlow": true,
+    "integerAfterFlow": true,
+    "targetBandWiderThanAfterFlow": true,
+    "minimumValidReleaseSteps": 5,
+    "visibleAfterFlowStages": 3,
+    "firstOverflowRecoverable": true,
+    "secondOverflowIrrecoverable": true,
+    "strictFreshModuleResume": true,
+    "reducedMotionSteppedLiquid": true,
+    "reducedMotionStaticSteam": true
+  },
+  "files": {
+    "concepts/timing-milk-pour-v1.md": "315c654f96ec3f86fd98da11776b40b668de7301fe0a08414f8e14313e62e771",
+    "src/games/timing-milk-pour-v1.js": "cf33305d23514c12c2ae5cdca647af879fbbca8c2a2d2d7546042054b8497286",
+    "test/timing-milk-pour-v1.test.mjs": "17d175a9a85dc3fe858b7e93f776eb11a99febd5dde506057c929e5e28f53345",
+    "test/timing-milk-pour-v1.fixture.html": "0b2c644b9b2dfae07f53b0f370d8a8dac89fdacddfab0e153a62494654cdc4af",
+    "test/timing-milk-pour-v1.fixture.mjs": "4fee6b16ea456192ac91c3fb1c936f5550119f6ecb55ecd039b0b48141135465",
+    "test/timing-milk-pour-v1.browser-capture.sh": "8cd98169ef39c0304ca4bfcc00725209a55f12abbf45088ea95e4d79a46776d5"
+  },
+  "failures": []
+}
