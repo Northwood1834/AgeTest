@@ -704,6 +704,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Proof/outcomes: exhaustive integer choices require ≥2 locally slower choices and defeat nearest-point greed; exact window edges cover near-greed, overplanning, rule error, far-chain and retained timeout.
 - Art/reduced motion: original abstract point board/arm/request/rule card; discrete travel and static next-position preview, no real apparatus.
 
+### Q105 — `language-dual-reading-v1`
+
+- Category/tier/flavor: language / tier 3 / quirky
+- Core: arrange one finite chip sentence for two abstract units whose distinct, always-visible task interpretation tables apply simultaneously; both neutral consequence previews update without styling the correct order.
+- Proof/outcomes: exhaustive ≤6-edit arrangements permit 1–2 dual solutions and many one-sided readings; exact ambiguity, invalidity, one-sided, move exhaustion and timeout retain order with no external grammar knowledge.
+- Art/reduced motion: original two-unit board/chips/rule cards/targets; simultaneous static previews and sequential stills, no real language authority.
+
+### Q106 — `calculation-threshold-converge-v1`
+
+- Category/tier/flavor: calculation / tier 3 / satisfying
+- Core: propose finite integer allocations to two abstract calibrators with visible lower/upper thresholds; each mismatched proposal deterministically loosens that machine’s bound one step, coupling threshold arithmetic to a five-proposal budget.
+- Proof/outcomes: exhaustive proposals require at least one planned mismatch, prohibit first-proposal success and reach exact bound limits; over-loosening, early mismatch, incompatible bounds, attempt exhaustion and timeout retain threshold history.
+- Art/reduced motion: original abstract calibrators/dials/history; immediate threshold states, no people, offer/refusal, negotiation, fairness norm or manipulation framing.
+
+### Q107 — `timing-schedule-window-v1`
+
+- Category/tier/flavor: timing / tier 3 / satisfying
+- Core: schedule five single-machine abstract tasks with visible acyclic dependencies/deadlines where each task’s deterministic duration shortens at later start ticks, making order determine starts and starts determine duration.
+- Proof/outcomes: enumerate orders/start ticks for only 1–2 schedules, defeating earliest/latest strategies; exact deadline, too-early-long, too-late, dependency, idle-gap and timeout states retain clock/history.
+- Art/reduced motion: original abstract task board/timeline/duration table; sequential stills, no real operations procedure.
+
+### Q108 — `inhibition-defer-batch-v1`
+
+- Category/tier/flavor: inhibition / tier 3 / satisfying
+- Core: suppress immediate handling of scheduled abstract requests to fill a four-slot buffer and perform larger batches, while batching has fixed dead time during which later arrivals can be missed.
+- Proof/outcomes: exhaustive integer histories require two batches of ≥3, defeat all-immediate and always-hold strategies, and prove capacity/dead-time edges; low total, overflow reset, batch miss, late batch and timeout retain buffer.
+- Art/reduced motion: original abstract inlet/buffer/batch counter; static batch progress and immediate arrivals, no reward/payout or real intake process.
+
+### Q109 — `spatial-scale-zone-v1`
+
+- Category/tier/flavor: spatial / tier 3 / wild
+- Core: route through three gaps across abstract zones whose visible integer scale maps the same quantized drag to fast-coarse or slow-fine movement; route choice sets precision, which sets travel time.
+- Proof/outcomes: exhaustive quantized routes defeat all-coarse and all-fine strategies and prove exact gap/boundary edges; contact-stop, slow timeout, scale overshoot, dead route and timeout retain position/scale.
+- Art/reduced motion: original texture-banded board/gaps/token; discrete scale steps, no real control sensitivity instruction.
+
+### Q110 — `memory-overlap-merge-v1`
+
+- Category/tier/flavor: memory / tier 3 / satisfying
+- Core: encode three sequential partial abstract diagrams with deterministic overlaps, then reconstruct their never-shown whole; recognizing overlap reduces the number of distinct remembered elements and available placement time.
+- Proof/outcomes: exhaustive finite reconstructions guarantee one integration and deceptive alignments while independent placement exceeds the action budget; shift, omission, duplicate overlap, conflict and timeout retain placement.
+- Art/reduced motion: original grid fragments/elements/tray; snapped placement and three-second reduced fragments, no target whole or order cue.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
