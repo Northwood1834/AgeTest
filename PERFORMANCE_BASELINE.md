@@ -1,5 +1,21 @@
 # Modular runtime performance baseline
 
+## Post-P10 42-port milestone cold check
+
+Rechecked at `dada3f7` on the owned `director` lane (393×852, DPR 3). The catalogue remained 98 IDs and the generated manifest contained 61 accepted modules: 42 published ports and 19 originals. This passes the first-half legacy-port milestone while preserving a zero-module cold home.
+
+| Metric | Result |
+|---|---:|
+| Cold requests | 10 |
+| Cold transfer / response bodies | 325,662 / 322,662 B |
+| Cold JavaScript transfer | 198,988 B |
+| `app.js` transfer / body | 175,209 / 174,909 B |
+| DOMContentLoaded / load | 40.6 / 43.1 ms |
+| Cold game-module fetches | 0 |
+| External requests / horizontal overflow / long tasks | 0 / 0 / 0 |
+
+The cold request set was only the document, stylesheet, local images/icons, `app.js`, static metadata, kernel, loader, and generated manifest; no `src/games/*.js` resource was fetched. The app body is 6,635 B smaller than the prior P08 baseline because each accepted port removes its legacy factory. Clean integration completed with 970 tests passing and 61 acceptance records verified; session import cardinality remains enforced by the catalogue integration suite.
+
 ## Post-P08/N07 integration check
 
 Rechecked at `f81bcf9` on the owned `director` lane (393×852, DPR 3, cache disabled). The catalogue contained 98 IDs and the generated manifest contained 45 accepted modules: 26 published ports and 19 originals.
