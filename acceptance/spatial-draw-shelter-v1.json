@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "spatial-draw-shelter-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "be101d9cc1d4fee7224b1bee44423709be985d49",
+  "test": "test/spatial-draw-shelter-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

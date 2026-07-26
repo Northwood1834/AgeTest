@@ -11,34 +11,13 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
 | `calculation-number-tower-route-v1` | former Driving Safety owner | pre-browser; waits for flow | Plan a whole numbered tower route whose running value changes every later fight |
-| `social-care-package-v1` | former Screen Protector owner | pre-browser; waits for audit | Pack practical supplies without intruding on an adult son's personal or social life |
-| `spatial-draw-shelter-v1` | former Thread Vibe owner | pre-browser; waits for screw | Draw one anchored physical barrier that must survive a real hornet-swarm hazard phase |
+| `prediction-ricochet-knockback-v1` | former Care Package owner | pre-browser; waits for audit | Predict bounded wall bounces and knock hostile figures from platforms without collateral |
+| `reaction-emoji-runner-v1` | former Draw Shelter owner | P04 port pre-browser; waits for screw | Faithfully port the published one-jump log runner with same-task visual parity |
 | `attention-laundry-rescue-v1` | former Sheep Home owner | browser/visual, flow lane | Drag only laundry into a top-loader; wife or dog is an immediate comic failure |
-| `calculation-change-smart-v1` | former Farm Close owner | browser/visual, audit lane | Build a payment whose returned change uses the fewest coins |
-| `memory-phone-pin-v1` | former Commuter Seat owner | browser/visual, screw lane | Recall one fictional four-digit PIN from meaningful floating cues in three attempts |
+| `spatial-emoji-fps-v1` | former Goods Shelf owner | P04 port pre-browser; waits for audit | Faithfully port the published three-target 3D lock-on corridor with parity evidence |
+| `prediction-lane3d-v1` | former Sand Channel owner | P04 port pre-browser; waits for screw | Faithfully port the published three-lane future-hazard choice with parity evidence |
 
 ## Waiting queue
-
-### Q6 — `attention-goods-shelf-sort-v1`
-
-- Category/tier/flavor: attention / tier 3 / satisfying
-- Core: move visible shop goods from layered shelves into a limited staging rail; three matching products clear and reveal occluded goods behind them.
-- Required distinction: shelf depth, temporary-slot congestion, and reveal order matter. It must not collapse into a flat match-three grid.
-- Proof: finite authored shelves, exact triple-clear simulation, reachable recovery from near-full staging, distinct jam/success/timeout.
-
-### Q7 — `spatial-sand-channel-v1`
-
-- Category/tier/flavor: spatial / tier 3 / satisfying
-- Core: scrape a bounded channel through sand, then release water or balls and let the drawn terrain route them to the target while drains and hazards remain separated.
-- Required distinction: continuous excavation changes actual deterministic flow and erosion; no prerecorded path reveal or discrete pipe rotation.
-- Proof: bounded stroke sampling, terrain mask validation, conserved material count, canonical successful channel and reachable leak/block failures.
-
-### Q8 — `prediction-ricochet-knockback-v1`
-
-- Category/tier/flavor: prediction / tier 3 / wild
-- Core: aim one projectile through visible wall bounces to knock targets from platforms while avoiding a protected bystander and dangerous rebound into the shooter.
-- Required distinction: incidence angle, remaining energy, impact direction, and changed platform occupancy remain causal and visible; not another golf putt.
-- Proof: quantized deterministic trajectories, bounded bounce count, canonical shot, near miss, collateral hit, self-hit, and success.
 
 ### Q9 — `spatial-draw-bridge-v1`
 
@@ -57,6 +36,27 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Proof: finite bounded facial control geometry, explicit tolerance bands, canonical correction, near-threshold pass/fail cases, overcorrection, single shutter/finish, and deterministic reduced-motion countdown/flash.
 
 ## Dispatched brief archive
+
+### Q8 — `prediction-ricochet-knockback-v1`
+
+- Category/tier/flavor: prediction / tier 3 / wild
+- Core: aim one projectile through visible wall bounces to knock targets from platforms while avoiding a protected bystander and dangerous rebound into the shooter.
+- Required distinction: incidence angle, remaining energy, impact direction, and changed platform occupancy remain causal and visible; not another golf putt.
+- Proof: quantized deterministic trajectories, bounded bounce count, canonical shot, near miss, collateral hit, self-hit, and success.
+
+### Q7 — `spatial-sand-channel-v1`
+
+- Category/tier/flavor: spatial / tier 3 / satisfying
+- Core: scrape a bounded channel through sand, then release water or balls and let the drawn terrain route them to the target while drains and hazards remain separated.
+- Required distinction: continuous excavation changes actual deterministic flow and erosion; no prerecorded path reveal or discrete pipe rotation.
+- Proof: bounded stroke sampling, terrain mask validation, conserved material count, canonical successful channel and reachable leak/block failures.
+
+### Q6 — `attention-goods-shelf-sort-v1`
+
+- Category/tier/flavor: attention / tier 3 / satisfying
+- Core: move visible shop goods from layered shelves into a limited staging rail; three matching products clear and reveal occluded goods behind them.
+- Required distinction: shelf depth, temporary-slot congestion, and reveal order matter. It must not collapse into a flat match-three grid.
+- Proof: finite authored shelves, exact triple-clear simulation, reachable recovery from near-full staging, distinct jam/success/timeout.
 
 ### Q5 — `calculation-number-tower-route-v1`
 

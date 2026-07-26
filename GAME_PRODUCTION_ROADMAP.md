@@ -83,6 +83,14 @@ A failed game stays isolated and is revised or withheld. It never blocks accepte
 - `spatial-lane-run-v1` — accepted
 - `calculation-rpg-battle-v1` — accepted
 
+### P04 — active port wave
+
+- `reaction-emoji-runner-v1` — screw lane
+- `spatial-emoji-fps-v1` — pre-browser; waits for audit lane
+- `prediction-lane3d-v1` — pre-browser; waits for screw lane
+
+P04 takes the next three owner slots that become free after their current ownership contracts. It precedes further waiting original-game ideas. Each port requires same-task legacy/module source captures at both canonical viewports and removes only its own accepted legacy factory after integration.
+
 ### N02 — completed daily-ritual original series
 
 - `spatial-sheep-home-v1` — accepted
@@ -100,14 +108,20 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 ### N04 — active browser/acceptance wave
 
 - `attention-laundry-rescue-v1` — flow lane
-- `calculation-change-smart-v1` — audit lane
-- `memory-phone-pin-v1` — screw lane
+- `calculation-change-smart-v1` — accepted and integrated
+- `memory-phone-pin-v1` — accepted and integrated
 
-### N05 — active pre-browser production
+### N05 — active production
 
-- `calculation-number-tower-route-v1` — waits for flow lane
-- `social-care-package-v1` — waits for audit lane
-- `spatial-draw-shelter-v1` — waits for screw lane
+- `calculation-number-tower-route-v1` — pre-browser; waits for flow lane
+- `social-care-package-v1` — accepted and integrated
+- `spatial-draw-shelter-v1` — accepted and integrated
+
+### N06 — active production
+
+- `attention-goods-shelf-sort-v1` — accepted and integrated
+- `spatial-sand-channel-v1` — accepted and integrated
+- `prediction-ricochet-knockback-v1` — audit lane
 
 ### P04
 

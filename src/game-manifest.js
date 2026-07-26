@@ -23,6 +23,17 @@ export const gameManifest=Object.freeze([
     "hash": "9385c91e3792bfa7"
   },
   {
+    "id": "attention-goods-shelf-sort-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "attention-goods-shelf-sort",
+    "category": "attention",
+    "module": "./games/attention-goods-shelf-sort-v1.js",
+    "hash": "a976a17987a8fab3"
+  },
+  {
     "id": "attention-screw-out-v1",
     "introducedIn": "1.11",
     "tier": 2,
@@ -45,6 +56,17 @@ export const gameManifest=Object.freeze([
     "hash": "0ef39e8837565160"
   },
   {
+    "id": "calculation-change-smart-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "calculation-change-smart",
+    "category": "calculation",
+    "module": "./games/calculation-change-smart-v1.js",
+    "hash": "8ee9595356d661ed"
+  },
+  {
     "id": "calculation-gate-run-v1",
     "introducedIn": "1.6",
     "tier": 2,
@@ -65,6 +87,17 @@ export const gameManifest=Object.freeze([
     "category": "calculation",
     "module": "./games/calculation-rpg-battle-v1.js",
     "hash": "fd52fd1abe123e27"
+  },
+  {
+    "id": "memory-phone-pin-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "memory-phone-pin",
+    "category": "memory",
+    "module": "./games/memory-phone-pin-v1.js",
+    "hash": "820127ee1dc81716"
   },
   {
     "id": "prediction-card-combo-v1",
@@ -122,6 +155,17 @@ export const gameManifest=Object.freeze([
     "hash": "0a96503ee559c499"
   },
   {
+    "id": "social-care-package-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "social-care-package",
+    "category": "social",
+    "module": "./games/social-care-package-v1.js",
+    "hash": "b8c0fd64da02238c"
+  },
+  {
     "id": "social-thread-vibe-v1",
     "introducedIn": "2.0",
     "tier": 3,
@@ -142,6 +186,17 @@ export const gameManifest=Object.freeze([
     "category": "spatial",
     "module": "./games/spatial-commuter-seat-v1.js",
     "hash": "eec74779cdce8384"
+  },
+  {
+    "id": "spatial-draw-shelter-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "wild",
+    "step": 1,
+    "family": "spatial-draw-shelter",
+    "category": "spatial",
+    "module": "./games/spatial-draw-shelter-v1.js",
+    "hash": "a68f3e501b9c5ce3"
   },
   {
     "id": "spatial-flow-link-v1",
@@ -197,6 +252,17 @@ export const gameManifest=Object.freeze([
     "category": "spatial",
     "module": "./games/spatial-rope-untangle-v1.js",
     "hash": "ac2ae41e76a1864f"
+  },
+  {
+    "id": "spatial-sand-channel-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "spatial-sand-channel",
+    "category": "spatial",
+    "module": "./games/spatial-sand-channel-v1.js",
+    "hash": "073878a901035c0b"
   },
   {
     "id": "spatial-screen-protector-v1",
