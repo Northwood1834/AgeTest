@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "reaction-emoji-match-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "eb614ab98facb79d05205dc6ce3a5f8cae42406c",
+  "test": "test/reaction-emoji-match-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

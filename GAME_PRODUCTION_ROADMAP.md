@@ -32,6 +32,8 @@ The 79 published IDs are compatibility work, not automatically the final public 
 
 New games are conceived one owner and one game at a time. The director does not generate a bulk list of 221 shallow ideas. When a lane becomes available, its owner first proposes one best concept; implementation begins only after that single brief is accepted.
 
+A dedicated Claude Opus game planner/designer expands the reviewed concept backlog but never implements code, edits shared runtime files, operates QA lanes, or performs Git integration. The director reviews and records only sufficiently distinct briefs, then assigns each accepted brief to a separate end-to-end implementation owner when a production slot is available.
+
 Preferred sources of playful recognition are:
 
 - the memorable few seconds or mechanical beat people remember from a classic game, rebuilt as an original homage;
@@ -151,8 +153,10 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `inhibition-flanker-v1` — accepted and integrated
 - `memory-reverse-v1` — accepted and integrated
 - `social-greeting-v1` — audit lane
-- `reaction-emoji-match-v1` — flow lane
-- `inhibition-parity-v1` — screw lane
+- `reaction-emoji-match-v1` — accepted and integrated
+- `attention-kana-count-v1` — flow lane
+- `inhibition-parity-v1` — accepted and integrated
+- `inhibition-opposite-v1` — screw lane
 
 ### N07 — completed original
 
