@@ -1,0 +1,1649 @@
+{
+  "game": "spatial-golf-putt-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "checks": {
+    "realTouchDrag": true,
+    "pointerGate48": true,
+    "shortPull18": true,
+    "oppositePower2": true,
+    "slopeAndIdealFinal": true,
+    "clampAndCup": true,
+    "settle950": true,
+    "successQualityAndDetail": true,
+    "inputLock": true,
+    "keyboardIdeal": true,
+    "focus": true,
+    "width390And430": true,
+    "reducedNonzeroStages": true,
+    "reducedNoRaf": true,
+    "actualDeadline": true,
+    "dispose": true,
+    "singleFinish": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "noErrorsOrExternal": true,
+    "performance": true
+  },
+  "offBall": {
+    "phase": "INITIAL",
+    "dragging": false,
+    "played": false,
+    "done": false,
+    "disposed": false,
+    "result": null,
+    "detail": "",
+    "start": {
+      "x": 0,
+      "y": 0
+    },
+    "pull": {
+      "x": 0,
+      "y": 0,
+      "length": 0
+    },
+    "shot": null,
+    "final": null,
+    "distance": null,
+    "quality": null,
+    "display": {
+      "x": 30,
+      "y": 72
+    },
+    "progress": 0,
+    "frames": 0,
+    "stages": 0,
+    "finishCalls": 0,
+    "acceptedAt": null,
+    "settledAt": null,
+    "constants": {
+      "powerScale": 2,
+      "minPull": 18,
+      "cupRadius": 7.5,
+      "settleMs": 950,
+      "clamp": [
+        3,
+        97
+      ]
+    },
+    "ideal": {
+      "x": 119.52,
+      "y": -103.32,
+      "length": 157.98750836695916
+    },
+    "geometry": {
+      "width": 332,
+      "height": 252
+    },
+    "canvas": {
+      "cssWidth": 332,
+      "cssHeight": 252,
+      "pixelWidth": 996,
+      "pixelHeight": 756,
+      "dpr": 3
+    },
+    "status": "白いボールを押さえ、打ちたい方向と反対へ引きます。",
+    "reduced": false
+  },
+  "shortPull": {
+    "phase": "INITIAL",
+    "dragging": false,
+    "played": false,
+    "done": false,
+    "disposed": false,
+    "result": null,
+    "detail": "",
+    "start": {
+      "x": 99.60000610351562,
+      "y": 181.44000244140625
+    },
+    "pull": {
+      "x": 0,
+      "y": 0,
+      "length": 0
+    },
+    "shot": null,
+    "final": null,
+    "distance": null,
+    "quality": null,
+    "display": {
+      "x": 30,
+      "y": 72
+    },
+    "progress": 0,
+    "frames": 0,
+    "stages": 0,
+    "finishCalls": 0,
+    "acceptedAt": null,
+    "settledAt": null,
+    "constants": {
+      "powerScale": 2,
+      "minPull": 18,
+      "cupRadius": 7.5,
+      "settleMs": 950,
+      "clamp": [
+        3,
+        97
+      ]
+    },
+    "ideal": {
+      "x": 119.52,
+      "y": -103.32,
+      "length": 157.98750836695916
+    },
+    "geometry": {
+      "width": 332,
+      "height": 252
+    },
+    "canvas": {
+      "cssWidth": 332,
+      "cssHeight": 252,
+      "pixelWidth": 996,
+      "pixelHeight": 756,
+      "dpr": 3
+    },
+    "status": "もう少し後ろへ引いてから離します。",
+    "reduced": false
+  },
+  "touch": {
+    "before": {
+      "phase": "SUCCESS",
+      "dragging": false,
+      "played": true,
+      "done": true,
+      "disposed": true,
+      "result": "success",
+      "detail": "ナイスイン！引きと傾斜を読み切りました。",
+      "start": {
+        "x": 99.60000610351562,
+        "y": 181.44000244140625
+      },
+      "pull": {
+        "x": -59.760009765625,
+        "y": 51.660003662109375,
+        "length": 78.99376396625716
+      },
+      "shot": {
+        "x": 119.52001953125,
+        "y": -103.32000732421875,
+        "length": 157.98752793251433
+      },
+      "final": {
+        "x": 68.00000588290663,
+        "y": 29.99999709356399
+      },
+      "distance": 0.0000065617041039996754,
+      "quality": 0.999999179786987,
+      "display": {
+        "x": 68.00000588290663,
+        "y": 29.99999709356399
+      },
+      "progress": 1,
+      "frames": 52,
+      "stages": 0,
+      "finishCalls": 1,
+      "acceptedAt": 523.8999999761581,
+      "settledAt": 1476.1000000238419,
+      "constants": {
+        "powerScale": 2,
+        "minPull": 18,
+        "cupRadius": 7.5,
+        "settleMs": 950,
+        "clamp": [
+          3,
+          97
+        ]
+      },
+      "ideal": {
+        "x": 119.52,
+        "y": -103.32,
+        "length": 157.98750836695916
+      },
+      "geometry": {
+        "width": 332,
+        "height": 252
+      },
+      "canvas": {
+        "cssWidth": 332,
+        "cssHeight": 252,
+        "pixelWidth": 996,
+        "pixelHeight": 756,
+        "dpr": 3
+      },
+      "status": "ナイスイン！引きと傾斜を読み切りました。",
+      "reduced": false
+    },
+    "after": {
+      "phase": "SUCCESS",
+      "dragging": false,
+      "played": true,
+      "done": true,
+      "disposed": true,
+      "result": "success",
+      "detail": "ナイスイン！引きと傾斜を読み切りました。",
+      "start": {
+        "x": 99.60000610351562,
+        "y": 181.44000244140625
+      },
+      "pull": {
+        "x": -59.760009765625,
+        "y": 51.660003662109375,
+        "length": 78.99376396625716
+      },
+      "shot": {
+        "x": 119.52001953125,
+        "y": -103.32000732421875,
+        "length": 157.98752793251433
+      },
+      "final": {
+        "x": 68.00000588290663,
+        "y": 29.99999709356399
+      },
+      "distance": 0.0000065617041039996754,
+      "quality": 0.999999179786987,
+      "display": {
+        "x": 68.00000588290663,
+        "y": 29.99999709356399
+      },
+      "progress": 1,
+      "frames": 52,
+      "stages": 0,
+      "finishCalls": 1,
+      "acceptedAt": 523.8999999761581,
+      "settledAt": 1476.1000000238419,
+      "constants": {
+        "powerScale": 2,
+        "minPull": 18,
+        "cupRadius": 7.5,
+        "settleMs": 950,
+        "clamp": [
+          3,
+          97
+        ]
+      },
+      "ideal": {
+        "x": 119.52,
+        "y": -103.32,
+        "length": 157.98750836695916
+      },
+      "geometry": {
+        "width": 332,
+        "height": 252
+      },
+      "canvas": {
+        "cssWidth": 332,
+        "cssHeight": 252,
+        "pixelWidth": 996,
+        "pixelHeight": 756,
+        "dpr": 3
+      },
+      "status": "ナイスイン！引きと傾斜を読み切りました。",
+      "reduced": false
+    },
+    "shot": {
+      "x": 119.52001953125,
+      "y": -103.32000732421875,
+      "length": 157.98752793251433
+    },
+    "evidence": {
+      "variant": "module",
+      "scene": "initial",
+      "live": true,
+      "motion": "normal",
+      "width": 390,
+      "dpr": 3,
+      "task": {
+        "kind": "golfPutt",
+        "prompt": "グリーンを読んでホールイン",
+        "help": "白いボールを押さえ、打ちたい方向と反対へ引いて離す。",
+        "ball": {
+          "x": 30,
+          "y": 72
+        },
+        "hole": {
+          "x": 68,
+          "y": 30
+        },
+        "slope": {
+          "x": 2,
+          "y": -1
+        },
+        "mounds": [
+          {
+            "x": 22,
+            "y": 28,
+            "size": 34
+          },
+          {
+            "x": 51,
+            "y": 49,
+            "size": 46
+          },
+          {
+            "x": 78,
+            "y": 72,
+            "size": 40
+          }
+        ],
+        "duration": 14000
+      },
+      "constants": {
+        "powerScale": 2,
+        "minPull": 18,
+        "finalClamp": [
+          3,
+          97
+        ],
+        "cupRadius": 7.5,
+        "settleMs": 950,
+        "duration": 14000,
+        "pointerGate": 48
+      },
+      "state": {
+        "phase": "SUCCESS",
+        "dragging": false,
+        "played": true,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "detail": "ナイスイン！引きと傾斜を読み切りました。",
+        "start": {
+          "x": 99.60000610351562,
+          "y": 181.44000244140625
+        },
+        "pull": {
+          "x": -59.760009765625,
+          "y": 51.660003662109375,
+          "length": 78.99376396625716
+        },
+        "shot": {
+          "x": 119.52001953125,
+          "y": -103.32000732421875,
+          "length": 157.98752793251433
+        },
+        "final": {
+          "x": 68.00000588290663,
+          "y": 29.99999709356399
+        },
+        "distance": 0.0000065617041039996754,
+        "quality": 0.999999179786987,
+        "display": {
+          "x": 68.00000588290663,
+          "y": 29.99999709356399
+        },
+        "progress": 1,
+        "frames": 52,
+        "stages": 0,
+        "finishCalls": 1,
+        "acceptedAt": 523.8999999761581,
+        "settledAt": 1476.1000000238419,
+        "constants": {
+          "powerScale": 2,
+          "minPull": 18,
+          "cupRadius": 7.5,
+          "settleMs": 950,
+          "clamp": [
+            3,
+            97
+          ]
+        },
+        "ideal": {
+          "x": 119.52,
+          "y": -103.32,
+          "length": 157.98750836695916
+        },
+        "geometry": {
+          "width": 332,
+          "height": 252
+        },
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 252,
+          "pixelWidth": 996,
+          "pixelHeight": 756,
+          "dpr": 3
+        },
+        "status": "ナイスイン！引きと傾斜を読み切りました。",
+        "reduced": false
+      },
+      "computed": {
+        "shot": {
+          "x": 119.52001953125,
+          "y": -103.32000732421875,
+          "length": 157.98752793251433
+        },
+        "final": {
+          "x": 68.00000588290663,
+          "y": 29.99999709356399
+        },
+        "distance": 0.0000065617041039996754,
+        "quality": 0.999999179786987,
+        "result": "success",
+        "detail": "ナイスイン！引きと傾斜を読み切りました。"
+      },
+      "finishes": [
+        {
+          "correct": true,
+          "result": {
+            "detail": "ナイスイン！引きと傾斜を読み切りました。",
+            "quality": 0.999999179786987
+          }
+        }
+      ],
+      "layout": {
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 252,
+          "pixelWidth": 996,
+          "pixelHeight": 756,
+          "dpr": 3
+        },
+        "geometry": {
+          "width": 332,
+          "height": 252
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/spatial-golf-putt-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/spatial-golf-putt-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "navigationMs": 20.600000023841858,
+    "longTasks": [],
+    "nodeCount": 26,
+    "focused": true
+  },
+  "keyboard": {
+    "start": {
+      "state": {
+        "phase": "INITIAL",
+        "dragging": false,
+        "played": false,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "detail": "",
+        "start": {
+          "x": 0,
+          "y": 0
+        },
+        "pull": {
+          "x": 0,
+          "y": 0,
+          "length": 0
+        },
+        "shot": null,
+        "final": null,
+        "distance": null,
+        "quality": null,
+        "display": {
+          "x": 30,
+          "y": 72
+        },
+        "progress": 0,
+        "frames": 0,
+        "stages": 0,
+        "finishCalls": 0,
+        "acceptedAt": null,
+        "settledAt": null,
+        "constants": {
+          "powerScale": 2,
+          "minPull": 18,
+          "cupRadius": 7.5,
+          "settleMs": 950,
+          "clamp": [
+            3,
+            97
+          ]
+        },
+        "ideal": {
+          "x": 133.92,
+          "y": -116.03,
+          "length": 177.19347420263534
+        },
+        "geometry": {
+          "width": 372,
+          "height": 283
+        },
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 283,
+          "pixelWidth": 1116,
+          "pixelHeight": 849,
+          "dpr": 3
+        },
+        "status": "白いボールを押さえて、狙う方向と反対へ引いてください",
+        "reduced": false
+      },
+      "scrollY": 0,
+      "focused": true
+    },
+    "final": {
+      "state": {
+        "phase": "SUCCESS",
+        "dragging": false,
+        "played": true,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "detail": "ナイスイン！引きと傾斜を読み切りました。",
+        "start": {
+          "x": 0,
+          "y": 0
+        },
+        "pull": {
+          "x": 0,
+          "y": 0,
+          "length": 0
+        },
+        "shot": {
+          "x": 133.92,
+          "y": -116.03,
+          "length": 177.19347420263534
+        },
+        "final": {
+          "x": 68,
+          "y": 30
+        },
+        "distance": 0,
+        "quality": 1,
+        "display": {
+          "x": 68,
+          "y": 30
+        },
+        "progress": 1,
+        "frames": 49,
+        "stages": 0,
+        "finishCalls": 1,
+        "acceptedAt": 246.60000002384186,
+        "settledAt": 1199,
+        "constants": {
+          "powerScale": 2,
+          "minPull": 18,
+          "cupRadius": 7.5,
+          "settleMs": 950,
+          "clamp": [
+            3,
+            97
+          ]
+        },
+        "ideal": {
+          "x": 133.92,
+          "y": -116.03,
+          "length": 177.19347420263534
+        },
+        "geometry": {
+          "width": 372,
+          "height": 283
+        },
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 283,
+          "pixelWidth": 1116,
+          "pixelHeight": 849,
+          "dpr": 3
+        },
+        "status": "ナイスイン！引きと傾斜を読み切りました。",
+        "reduced": false
+      },
+      "evidence": {
+        "variant": "module",
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 430,
+        "dpr": 3,
+        "task": {
+          "kind": "golfPutt",
+          "prompt": "グリーンを読んでホールイン",
+          "help": "白いボールを押さえ、打ちたい方向と反対へ引いて離す。",
+          "ball": {
+            "x": 30,
+            "y": 72
+          },
+          "hole": {
+            "x": 68,
+            "y": 30
+          },
+          "slope": {
+            "x": 2,
+            "y": -1
+          },
+          "mounds": [
+            {
+              "x": 22,
+              "y": 28,
+              "size": 34
+            },
+            {
+              "x": 51,
+              "y": 49,
+              "size": 46
+            },
+            {
+              "x": 78,
+              "y": 72,
+              "size": 40
+            }
+          ],
+          "duration": 14000
+        },
+        "constants": {
+          "powerScale": 2,
+          "minPull": 18,
+          "finalClamp": [
+            3,
+            97
+          ],
+          "cupRadius": 7.5,
+          "settleMs": 950,
+          "duration": 14000,
+          "pointerGate": 48
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "dragging": false,
+          "played": true,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "detail": "ナイスイン！引きと傾斜を読み切りました。",
+          "start": {
+            "x": 0,
+            "y": 0
+          },
+          "pull": {
+            "x": 0,
+            "y": 0,
+            "length": 0
+          },
+          "shot": {
+            "x": 133.92,
+            "y": -116.03,
+            "length": 177.19347420263534
+          },
+          "final": {
+            "x": 68,
+            "y": 30
+          },
+          "distance": 0,
+          "quality": 1,
+          "display": {
+            "x": 68,
+            "y": 30
+          },
+          "progress": 1,
+          "frames": 49,
+          "stages": 0,
+          "finishCalls": 1,
+          "acceptedAt": 246.60000002384186,
+          "settledAt": 1199,
+          "constants": {
+            "powerScale": 2,
+            "minPull": 18,
+            "cupRadius": 7.5,
+            "settleMs": 950,
+            "clamp": [
+              3,
+              97
+            ]
+          },
+          "ideal": {
+            "x": 133.92,
+            "y": -116.03,
+            "length": 177.19347420263534
+          },
+          "geometry": {
+            "width": 372,
+            "height": 283
+          },
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 283,
+            "pixelWidth": 1116,
+            "pixelHeight": 849,
+            "dpr": 3
+          },
+          "status": "ナイスイン！引きと傾斜を読み切りました。",
+          "reduced": false
+        },
+        "computed": {
+          "shot": {
+            "x": 133.92,
+            "y": -116.03,
+            "length": 177.19347420263534
+          },
+          "final": {
+            "x": 68,
+            "y": 30
+          },
+          "distance": 0,
+          "quality": 1,
+          "result": "success",
+          "detail": "ナイスイン！引きと傾斜を読み切りました。"
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "detail": "ナイスイン！引きと傾斜を読み切りました。",
+              "quality": 1
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 430,
+          "innerWidth": 430,
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 283,
+            "pixelWidth": 1116,
+            "pixelHeight": 849,
+            "dpr": 3
+          },
+          "geometry": {
+            "width": 372,
+            "height": 283
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-golf-putt-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-golf-putt-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0
+    }
+  },
+  "reduced": {
+    "mid": {
+      "state": {
+        "phase": "PUTTING",
+        "dragging": false,
+        "played": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "detail": "",
+        "start": {
+          "x": 100.5,
+          "y": 183.60000610351562
+        },
+        "pull": {
+          "x": -60.30000305175781,
+          "y": 52.274993896484375,
+          "length": 79.8045447009096
+        },
+        "shot": {
+          "x": 120.60000610351562,
+          "y": -104.54998779296875,
+          "length": 159.6090894018192
+        },
+        "final": {
+          "x": 68.00000182194496,
+          "y": 30.000004787071077
+        },
+        "distance": null,
+        "quality": null,
+        "display": {
+          "x": 57.07515329814308,
+          "y": 42.07483541080729
+        },
+        "progress": 0.34,
+        "frames": 0,
+        "stages": 1,
+        "finishCalls": 0,
+        "acceptedAt": 290.10000002384186,
+        "settledAt": null,
+        "constants": {
+          "powerScale": 2,
+          "minPull": 18,
+          "cupRadius": 7.5,
+          "settleMs": 950,
+          "clamp": [
+            3,
+            97
+          ]
+        },
+        "ideal": {
+          "x": 120.6,
+          "y": -104.55,
+          "length": 159.6090927860941
+        },
+        "geometry": {
+          "width": 335,
+          "height": 255
+        },
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 255,
+          "pixelWidth": 1005,
+          "pixelHeight": 765,
+          "dpr": 3
+        },
+        "status": "ボールが傾斜を転がっています",
+        "reduced": true
+      },
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 3,
+        "frames": 0,
+        "listeners": 7,
+        "aborted": false
+      }
+    },
+    "final": {
+      "state": {
+        "phase": "SUCCESS",
+        "dragging": false,
+        "played": true,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "detail": "ナイスイン！引きと傾斜を読み切りました。",
+        "start": {
+          "x": 100.5,
+          "y": 183.60000610351562
+        },
+        "pull": {
+          "x": -60.30000305175781,
+          "y": 52.274993896484375,
+          "length": 79.8045447009096
+        },
+        "shot": {
+          "x": 120.60000610351562,
+          "y": -104.54998779296875,
+          "length": 159.6090894018192
+        },
+        "final": {
+          "x": 68.00000182194496,
+          "y": 30.000004787071077
+        },
+        "distance": 0.000005122063348604234,
+        "quality": 0.9999993597420814,
+        "display": {
+          "x": 68.00000182194496,
+          "y": 30.000004787071077
+        },
+        "progress": 1,
+        "frames": 0,
+        "stages": 2,
+        "finishCalls": 1,
+        "acceptedAt": 290.10000002384186,
+        "settledAt": 1242,
+        "constants": {
+          "powerScale": 2,
+          "minPull": 18,
+          "cupRadius": 7.5,
+          "settleMs": 950,
+          "clamp": [
+            3,
+            97
+          ]
+        },
+        "ideal": {
+          "x": 120.6,
+          "y": -104.55,
+          "length": 159.6090927860941
+        },
+        "geometry": {
+          "width": 335,
+          "height": 255
+        },
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 255,
+          "pixelWidth": 1005,
+          "pixelHeight": 765,
+          "dpr": 3
+        },
+        "status": "ナイスイン！引きと傾斜を読み切りました。",
+        "reduced": true
+      },
+      "evidence": {
+        "variant": "module",
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "golfPutt",
+          "prompt": "グリーンを読んでホールイン",
+          "help": "白いボールを押さえ、打ちたい方向と反対へ引いて離す。",
+          "ball": {
+            "x": 30,
+            "y": 72
+          },
+          "hole": {
+            "x": 68,
+            "y": 30
+          },
+          "slope": {
+            "x": 2,
+            "y": -1
+          },
+          "mounds": [
+            {
+              "x": 22,
+              "y": 28,
+              "size": 34
+            },
+            {
+              "x": 51,
+              "y": 49,
+              "size": 46
+            },
+            {
+              "x": 78,
+              "y": 72,
+              "size": 40
+            }
+          ],
+          "duration": 14000
+        },
+        "constants": {
+          "powerScale": 2,
+          "minPull": 18,
+          "finalClamp": [
+            3,
+            97
+          ],
+          "cupRadius": 7.5,
+          "settleMs": 950,
+          "duration": 14000,
+          "pointerGate": 48
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "dragging": false,
+          "played": true,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "detail": "ナイスイン！引きと傾斜を読み切りました。",
+          "start": {
+            "x": 100.5,
+            "y": 183.60000610351562
+          },
+          "pull": {
+            "x": -60.30000305175781,
+            "y": 52.274993896484375,
+            "length": 79.8045447009096
+          },
+          "shot": {
+            "x": 120.60000610351562,
+            "y": -104.54998779296875,
+            "length": 159.6090894018192
+          },
+          "final": {
+            "x": 68.00000182194496,
+            "y": 30.000004787071077
+          },
+          "distance": 0.000005122063348604234,
+          "quality": 0.9999993597420814,
+          "display": {
+            "x": 68.00000182194496,
+            "y": 30.000004787071077
+          },
+          "progress": 1,
+          "frames": 0,
+          "stages": 2,
+          "finishCalls": 1,
+          "acceptedAt": 290.10000002384186,
+          "settledAt": 1242,
+          "constants": {
+            "powerScale": 2,
+            "minPull": 18,
+            "cupRadius": 7.5,
+            "settleMs": 950,
+            "clamp": [
+              3,
+              97
+            ]
+          },
+          "ideal": {
+            "x": 120.6,
+            "y": -104.55,
+            "length": 159.6090927860941
+          },
+          "geometry": {
+            "width": 335,
+            "height": 255
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 255,
+            "pixelWidth": 1005,
+            "pixelHeight": 765,
+            "dpr": 3
+          },
+          "status": "ナイスイン！引きと傾斜を読み切りました。",
+          "reduced": true
+        },
+        "computed": {
+          "shot": {
+            "x": 120.60000610351562,
+            "y": -104.54998779296875,
+            "length": 159.6090894018192
+          },
+          "final": {
+            "x": 68.00000182194496,
+            "y": 30.000004787071077
+          },
+          "distance": 0.000005122063348604234,
+          "quality": 0.9999993597420814,
+          "result": "success",
+          "detail": "ナイスイン！引きと傾斜を読み切りました。"
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "detail": "ナイスイン！引きと傾斜を読み切りました。",
+              "quality": 0.9999993597420814
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 255,
+            "pixelWidth": 1005,
+            "pixelHeight": 765,
+            "dpr": 3
+          },
+          "geometry": {
+            "width": 335,
+            "height": 255
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-golf-putt-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-golf-putt-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      }
+    }
+  },
+  "deadline": {
+    "state": {
+      "phase": "TIMEOUT",
+      "dragging": false,
+      "played": false,
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "detail": "芝を読んでいる間に日が暮れました。",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "pull": {
+        "x": 0,
+        "y": 0,
+        "length": 0
+      },
+      "shot": null,
+      "final": null,
+      "distance": null,
+      "quality": null,
+      "display": {
+        "x": 30,
+        "y": 72
+      },
+      "progress": 1,
+      "frames": 0,
+      "stages": 0,
+      "finishCalls": 1,
+      "acceptedAt": null,
+      "settledAt": null,
+      "constants": {
+        "powerScale": 2,
+        "minPull": 18,
+        "cupRadius": 7.5,
+        "settleMs": 950,
+        "clamp": [
+          3,
+          97
+        ]
+      },
+      "ideal": {
+        "x": 120.6,
+        "y": -104.55,
+        "length": 159.6090927860941
+      },
+      "geometry": {
+        "width": 335,
+        "height": 255
+      },
+      "canvas": {
+        "cssWidth": 335,
+        "cssHeight": 255,
+        "pixelWidth": 1005,
+        "pixelHeight": 765,
+        "dpr": 3
+      },
+      "status": "芝を読んでいる間に日が暮れました。",
+      "reduced": true
+    },
+    "evidence": {
+      "variant": "module",
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 393,
+      "dpr": 3,
+      "task": {
+        "kind": "golfPutt",
+        "prompt": "グリーンを読んでホールイン",
+        "help": "白いボールを押さえ、打ちたい方向と反対へ引いて離す。",
+        "ball": {
+          "x": 30,
+          "y": 72
+        },
+        "hole": {
+          "x": 68,
+          "y": 30
+        },
+        "slope": {
+          "x": 2,
+          "y": -1
+        },
+        "mounds": [
+          {
+            "x": 22,
+            "y": 28,
+            "size": 34
+          },
+          {
+            "x": 51,
+            "y": 49,
+            "size": 46
+          },
+          {
+            "x": 78,
+            "y": 72,
+            "size": 40
+          }
+        ],
+        "duration": 14000
+      },
+      "constants": {
+        "powerScale": 2,
+        "minPull": 18,
+        "finalClamp": [
+          3,
+          97
+        ],
+        "cupRadius": 7.5,
+        "settleMs": 950,
+        "duration": 14000,
+        "pointerGate": 48
+      },
+      "state": {
+        "phase": "TIMEOUT",
+        "dragging": false,
+        "played": false,
+        "done": true,
+        "disposed": true,
+        "result": "timeout",
+        "detail": "芝を読んでいる間に日が暮れました。",
+        "start": {
+          "x": 0,
+          "y": 0
+        },
+        "pull": {
+          "x": 0,
+          "y": 0,
+          "length": 0
+        },
+        "shot": null,
+        "final": null,
+        "distance": null,
+        "quality": null,
+        "display": {
+          "x": 30,
+          "y": 72
+        },
+        "progress": 1,
+        "frames": 0,
+        "stages": 0,
+        "finishCalls": 1,
+        "acceptedAt": null,
+        "settledAt": null,
+        "constants": {
+          "powerScale": 2,
+          "minPull": 18,
+          "cupRadius": 7.5,
+          "settleMs": 950,
+          "clamp": [
+            3,
+            97
+          ]
+        },
+        "ideal": {
+          "x": 120.6,
+          "y": -104.55,
+          "length": 159.6090927860941
+        },
+        "geometry": {
+          "width": 335,
+          "height": 255
+        },
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 255,
+          "pixelWidth": 1005,
+          "pixelHeight": 765,
+          "dpr": 3
+        },
+        "status": "芝を読んでいる間に日が暮れました。",
+        "reduced": true
+      },
+      "computed": {
+        "shot": null,
+        "final": null,
+        "distance": null,
+        "quality": null,
+        "result": "timeout",
+        "detail": "芝を読んでいる間に日が暮れました。"
+      },
+      "finishes": [
+        {
+          "correct": false,
+          "result": {
+            "detail": "芝を読んでいる間に日が暮れました。"
+          }
+        }
+      ],
+      "layout": {
+        "scrollWidth": 393,
+        "innerWidth": 393,
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 255,
+          "pixelWidth": 1005,
+          "pixelHeight": 765,
+          "dpr": 3
+        },
+        "geometry": {
+          "width": 335,
+          "height": 255
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/spatial-golf-putt-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/spatial-golf-putt-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    }
+  },
+  "disposed": {
+    "before": {
+      "phase": "PUTTING",
+      "dragging": false,
+      "played": true,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "detail": "",
+      "start": {
+        "x": 103.19999694824219,
+        "y": 187.92001342773438
+      },
+      "pull": {
+        "x": -61.91999816894531,
+        "y": 53.504974365234375,
+        "length": 81.83439652778397
+      },
+      "shot": {
+        "x": 123.83999633789062,
+        "y": -107.00994873046875,
+        "length": 163.66879305556793
+      },
+      "final": {
+        "x": 67.99999893543333,
+        "y": 30.00001964349856
+      },
+      "distance": null,
+      "quality": null,
+      "display": {
+        "x": 30,
+        "y": 72
+      },
+      "progress": 0,
+      "frames": 0,
+      "stages": 0,
+      "finishCalls": 0,
+      "acceptedAt": 242.39999997615814,
+      "settledAt": null,
+      "constants": {
+        "powerScale": 2,
+        "minPull": 18,
+        "cupRadius": 7.5,
+        "settleMs": 950,
+        "clamp": [
+          3,
+          97
+        ]
+      },
+      "ideal": {
+        "x": 123.84,
+        "y": -107.01,
+        "length": 163.66882934755782
+      },
+      "geometry": {
+        "width": 344,
+        "height": 261
+      },
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 261,
+        "pixelWidth": 1032,
+        "pixelHeight": 783,
+        "dpr": 3
+      },
+      "status": "ボールが傾斜を転がっています",
+      "reduced": true
+    },
+    "after": {
+      "phase": "PUTTING",
+      "dragging": false,
+      "played": true,
+      "done": false,
+      "disposed": true,
+      "result": null,
+      "detail": "",
+      "start": {
+        "x": 103.19999694824219,
+        "y": 187.92001342773438
+      },
+      "pull": {
+        "x": -61.91999816894531,
+        "y": 53.504974365234375,
+        "length": 81.83439652778397
+      },
+      "shot": {
+        "x": 123.83999633789062,
+        "y": -107.00994873046875,
+        "length": 163.66879305556793
+      },
+      "final": {
+        "x": 67.99999893543333,
+        "y": 30.00001964349856
+      },
+      "distance": null,
+      "quality": null,
+      "display": {
+        "x": 30,
+        "y": 72
+      },
+      "progress": 0,
+      "frames": 0,
+      "stages": 0,
+      "finishCalls": 0,
+      "acceptedAt": 242.39999997615814,
+      "settledAt": null,
+      "constants": {
+        "powerScale": 2,
+        "minPull": 18,
+        "cupRadius": 7.5,
+        "settleMs": 950,
+        "clamp": [
+          3,
+          97
+        ]
+      },
+      "ideal": {
+        "x": 123.84,
+        "y": -107.01,
+        "length": 163.66882934755782
+      },
+      "geometry": {
+        "width": 344,
+        "height": 261
+      },
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 261,
+        "pixelWidth": 1032,
+        "pixelHeight": 783,
+        "dpr": 3
+      },
+      "status": "ボールが傾斜を転がっています",
+      "reduced": true
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": false,
+      "finishCalls": 0,
+      "commits": 0,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "qaRemoved": true,
+    "evidence": {
+      "variant": "module",
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 402,
+      "dpr": 3,
+      "task": {
+        "kind": "golfPutt",
+        "prompt": "グリーンを読んでホールイン",
+        "help": "白いボールを押さえ、打ちたい方向と反対へ引いて離す。",
+        "ball": {
+          "x": 30,
+          "y": 72
+        },
+        "hole": {
+          "x": 68,
+          "y": 30
+        },
+        "slope": {
+          "x": 2,
+          "y": -1
+        },
+        "mounds": [
+          {
+            "x": 22,
+            "y": 28,
+            "size": 34
+          },
+          {
+            "x": 51,
+            "y": 49,
+            "size": 46
+          },
+          {
+            "x": 78,
+            "y": 72,
+            "size": 40
+          }
+        ],
+        "duration": 14000
+      },
+      "constants": {
+        "powerScale": 2,
+        "minPull": 18,
+        "finalClamp": [
+          3,
+          97
+        ],
+        "cupRadius": 7.5,
+        "settleMs": 950,
+        "duration": 14000,
+        "pointerGate": 48
+      },
+      "state": {
+        "phase": "PUTTING",
+        "dragging": false,
+        "played": true,
+        "done": false,
+        "disposed": true,
+        "result": null,
+        "detail": "",
+        "start": {
+          "x": 103.19999694824219,
+          "y": 187.92001342773438
+        },
+        "pull": {
+          "x": -61.91999816894531,
+          "y": 53.504974365234375,
+          "length": 81.83439652778397
+        },
+        "shot": {
+          "x": 123.83999633789062,
+          "y": -107.00994873046875,
+          "length": 163.66879305556793
+        },
+        "final": {
+          "x": 67.99999893543333,
+          "y": 30.00001964349856
+        },
+        "distance": null,
+        "quality": null,
+        "display": {
+          "x": 30,
+          "y": 72
+        },
+        "progress": 0,
+        "frames": 0,
+        "stages": 0,
+        "finishCalls": 0,
+        "acceptedAt": 242.39999997615814,
+        "settledAt": null,
+        "constants": {
+          "powerScale": 2,
+          "minPull": 18,
+          "cupRadius": 7.5,
+          "settleMs": 950,
+          "clamp": [
+            3,
+            97
+          ]
+        },
+        "ideal": {
+          "x": 123.84,
+          "y": -107.01,
+          "length": 163.66882934755782
+        },
+        "geometry": {
+          "width": 344,
+          "height": 261
+        },
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 261,
+          "pixelWidth": 1032,
+          "pixelHeight": 783,
+          "dpr": 3
+        },
+        "status": "ボールが傾斜を転がっています",
+        "reduced": true
+      },
+      "computed": {
+        "shot": {
+          "x": 123.83999633789062,
+          "y": -107.00994873046875,
+          "length": 163.66879305556793
+        },
+        "final": {
+          "x": 67.99999893543333,
+          "y": 30.00001964349856
+        },
+        "distance": null,
+        "quality": null,
+        "result": null,
+        "detail": ""
+      },
+      "finishes": [],
+      "layout": {
+        "scrollWidth": 402,
+        "innerWidth": 402,
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 261,
+          "pixelWidth": 1032,
+          "pixelHeight": 783,
+          "dpr": 3
+        },
+        "geometry": {
+          "width": 344,
+          "height": 261
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/spatial-golf-putt-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/spatial-golf-putt-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    }
+  }
+}
