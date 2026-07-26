@@ -662,6 +662,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Proof/outcomes: exhaustive integer switch histories require a bounded cadence and defeat never-switch/max-switch policies; exact switch-cost edges cover neglected channel, switch-loss, dense-return, sparse-late and retained timeout.
 - Art/reduced motion: original abstract dual-channel gate/head/tokens; immediate arrivals and static switch state, no real processing device.
 
+### Q99 — `memory-running-update-v1`
+
+- Category/tier/flavor: memory / tier 3 / satisfying
+- Core: encode eight visible initial cell values together, then apply required board operations whose always-visible integer rules each change ≥2 now-hidden values, updating the remembered state through at least five actions.
+- Proof/outcomes: exhaustive histories guarantee a solution and defeat unchanged/double/wrong-target updates; exact under-action, stale-state, overcorrection and retained timeout states preserve operation history.
+- Art/reduced motion: original abstract eight-cell board/rule card/history; instant changes and eight-second reduced encoding, no hidden initial data.
+
+### Q100 — `spatial-overlay-shift-v1`
+
+- Category/tier/flavor: spatial / tier 3 / wild
+- Core: shift one perforated abstract layer over another so coincident holes create routes; every global shift opens some passages while closing others as a harmless token visits four intermediate nodes.
+- Proof/outcomes: enumerate integer offsets and visit orders to allow 1–2 routes, defeat the obvious order and prove exact-width/one-offset boundaries; blocked, excessive-shift, harmless pinch-stop, dead-end and timeout retain layer position.
+- Art/reduced motion: original two-layer board/hole patterns/token/nodes; snapped shifts and static overlap hatching, no real material or damage.
+
+### Q101 — `calculation-noncommutative-chain-v1`
+
+- Category/tier/flavor: calculation / tier 3 / satisfying
+- Core: order four applications chosen from five visible integer operation tiles, with one required reuse whose effect deterministically changes after first use; tile validity and current effect remain visible before every application.
+- Proof/outcomes: enumerate all permutations/reuses, allowing only 1–2 integer-safe target routes and no no-reuse route; wrong order, stale reuse, invalid division, hand exhaustion and timeout retain current value/history.
+- Art/reduced motion: original abstract operation tiles/value window/history; sequential stills, no currency or external arithmetic trick.
+
+### Q102 — `prediction-echo-replay-v1`
+
+- Category/tier/flavor: prediction / tier 3 / wild
+- Core: move through a finite abstract grid while every input is visibly recorded and deterministically replayed after a fixed delay, turning today’s shortest movement into tomorrow’s obstacle unless planned in a harmless position/order.
+- Proof/outcomes: exhaustive histories prove a route, impossible pre-replay finish and shortest-route failure; replay block, slow detour, simultaneous conflict, move excess and timeout retain record/replay positions.
+- Art/reduced motion: original grid/token/distinct replay token/record strip; discrete moves and static replay preview, no hidden echo.
+
+### Q103 — `attention-merge-origin-v1`
+
+- Category/tier/flavor: attention / tier 3 / wild
+- Core: visually track ten identical tokens from two clearly distinct entry channels through a merge, then route each by remembered origin; processing delay increases deterministic merge density and further tracking load.
+- Proof/outcomes: exhaustive integer schedules guarantee a clean route and ≥2 maximum-density moments; exact processing-cost edges cover lost origin, overflow, overcaution, return-loop and timeout. No post-merge hidden marker substitutes for tracking.
+- Art/reduced motion: original two-channel merge board/identical tokens/two exits; discrete steps and static queue hatching, shape/position rather than color alone.
+
+### Q104 — `reaction-chain-position-v1`
+
+- Category/tier/flavor: reaction / tier 3 / satisfying
+- Core: react to twelve requests, each serviceable at multiple points; the chosen point and always-visible deterministic rule create the next request position, coupling immediate travel cost to future reachability.
+- Proof/outcomes: exhaustive integer choices require ≥2 locally slower choices and defeat nearest-point greed; exact window edges cover near-greed, overplanning, rule error, far-chain and retained timeout.
+- Art/reduced motion: original abstract point board/arm/request/rule card; discrete travel and static next-position preview, no real apparatus.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
