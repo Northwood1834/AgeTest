@@ -160,6 +160,10 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `inhibition-opposite-v1` — accepted and integrated
 - `inhibition-rule-switch-v1` — screw lane
 
+### N08 — active original
+
+- `attention-lint-shaver-v1` — pre-browser; waits for audit lane
+
 ### N07 — completed original
 
 - `spatial-draw-bridge-v1` — accepted and integrated

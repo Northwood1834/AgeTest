@@ -13,6 +13,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | `attention-animal-count-v1` | former Kana Count owner | P10 port pre-browser; waits for flow | Faithfully port the published 14-animal count task without target cues |
 | `social-greeting-v1` | former Social Date owner | P09 port; audit lane | Faithfully port all three published greeting scenarios and exact etiquette choices |
 | `inhibition-rule-switch-v1` | former Opposite owner | P10 port; screw lane | Faithfully port the published reversed parity rule without odd/even visual cues |
+| `attention-lint-shaver-v1` | original implementation owner | N08 pre-browser; waits for audit | Quantized continuous lint removal with speed, dwell, hazards, and dust-cup causality |
 
 ## Waiting queue
 
