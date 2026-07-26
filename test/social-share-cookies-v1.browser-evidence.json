@@ -1,0 +1,62 @@
+{
+  "status": "pass",
+  "gameId": "social-share-cookies-v1",
+  "artifactRoot": "/tmp/agetest-social-share-cookies-v1-audit-final4",
+  "node": {
+    "focused": {"tests": 21, "passed": 21},
+    "full": {"tests": 1372, "passed": 1372, "durationMs": 22752.102315}
+  },
+  "browser": {
+    "touchSuccessRoutes": {"count": 8, "passed": 8, "variants": 4, "motions": ["normal", "reduced"], "viewport": "390x844"},
+    "keyboardSuccessRoutes": {"count": 2, "passed": 2, "usedArrows": true, "usedSpacePickupDrop": true, "viewport": "430x932"},
+    "invalidCorrectionRoutes": {"count": 2, "passed": 2, "motions": ["normal", "reduced"], "fullInvalidStayedPlayable": true, "singleSwapSucceeded": true},
+    "deadlineRoutes": {
+      "count": 2,
+      "passed": 2,
+      "deadlineMs": 20000,
+      "observedMs": [20027.299999952316, 20020],
+      "retained": ["locations", "missing favorite evidence"],
+      "singleFinish": true
+    },
+    "disposeRoutes": {"count": 2, "passed": 2, "remainingTimeouts": 0, "remainingFrames": 0, "remainingListeners": 0, "finishCalls": 0},
+    "performanceRoutes": {
+      "count": 2,
+      "passed": 2,
+      "framesPerRoute": 90,
+      "averageFrameMsRange": [16.590000000794728, 16.621111111640932],
+      "maxFrameMs": 16.800000000000182,
+      "normalGameOwnedFrames": 1,
+      "reducedGameOwnedFrames": 0
+    },
+    "minimumInteractiveTargetPx": 53.09375,
+    "sourcePolicy": {"ownerDocumentOnly": true, "contextTracked": true, "network": false, "audio": false, "rawTimers": false, "rawRaf": false, "rawListeners": false, "emoji": false, "externalAssets": false},
+    "externalRequests": 0,
+    "consoleErrors": 0,
+    "horizontalOverflow": false
+  },
+  "mechanic": {
+    "cookies": 8,
+    "plates": 2,
+    "slotsPerPlate": 4,
+    "shapeFamilies": 3,
+    "colorOnlyMatching": false,
+    "fullAllocationsPerVariant": 70,
+    "proofExhaustive": true,
+    "invalidFullLayoutsPlayable": true,
+    "automaticSuccessOnlyWhenValid": true,
+    "unlimitedReversibleSwapAndTrayReturn": true,
+    "strictFreshModuleResume": true,
+    "reducedMotionTwoStillPlacement": true,
+    "reducedMotionFrames": 0,
+    "peopleOrFairnessAuthority": false
+  },
+  "files": {
+    "concepts/social-share-cookies-v1.md": "ed6224b6887c823b9e0abd7fbf383e1ad58e8aa971e26ea94614cdc9e26f63cb",
+    "src/games/social-share-cookies-v1.js": "147837b733e99017f30f39ed36fe9997392d202c419c40bfc419e693482914fb",
+    "test/social-share-cookies-v1.test.mjs": "f74be97e56ae35bc811cb9fedff53fd1bb4a583b2e149bc30b7b950987fa0eeb",
+    "test/social-share-cookies-v1.fixture.html": "9f8445b1507b9dc28fb0f1cc1267f0af0ca291e4857b0e43d69ed145cf3e6c0f",
+    "test/social-share-cookies-v1.fixture.mjs": "b4d418486ccff36db3bbdf53d80e0d515fe651ee9ca4de7458264451497783ef",
+    "test/social-share-cookies-v1.browser-capture.sh": "a9240af534bb9f6bb7d8c4a6147755dab1703e3e8ff085b7013973673d703ff9"
+  },
+  "failures": []
+}

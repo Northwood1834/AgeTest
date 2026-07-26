@@ -1,0 +1,37 @@
+{
+  "status": "pass",
+  "gameId": "social-share-cookies-v1",
+  "lane": {"cdp": 9332, "http": 8862},
+  "artifactRoot": "/tmp/agetest-social-share-cookies-v1-audit-final4",
+  "canonicalViewports": [
+    {"width": 393, "height": 852, "dpr": 3},
+    {"width": 402, "height": 874, "dpr": 3}
+  ],
+  "boundaryViewports": [
+    {"width": 390, "height": 844, "dpr": 3},
+    {"width": 430, "height": 932, "dpr": 3}
+  ],
+  "variants": 4,
+  "states": ["initial", "carried", "partial", "full-invalid-left", "full-invalid-right", "success", "timeout"],
+  "canonicalScreenshots": 112,
+  "normalReducedPairs": 56,
+  "maxPairMAE": 0.0,
+  "maxPairNormalizedRMSE": 0.000014,
+  "focusScreenshots": 16,
+  "boundaryScreenshots": 32,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "minimumInteractiveTargetPx": 53.09375,
+  "overflowFree": true,
+  "externalRequests": 0,
+  "consoleErrors": 0,
+  "directorContactSheet": {
+    "path": "/tmp/agetest-social-share-cookies-v1-audit-final4/director-contact-sheet.png",
+    "sha256": "295a75d87ba944ce266d4831f076253e229dfcf8f6d4315d06d30930bcb49898",
+    "review": "pass",
+    "finding": "The three silhouettes, favorite bubbles, left/right missing cues, valid completion, timeout retention, and reversible correction remain clear at contact size."
+  },
+  "finalVisualQc": "pass: no artifacts, overlap, clipping, or material defects",
+  "comparisonReportSha256": "cfac18216da58ee2801dc4fe6b477002cb32f1a3986ddcd7b022e2bd2d855089",
+  "failures": []
+}
