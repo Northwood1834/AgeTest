@@ -1,6 +1,7 @@
 import {gameManifest} from "./game-manifest.js";
 
 export const RETIRED_GAME_IDS=new Set([
+  "calculation-balance-scale-v1",
   "inhibition-parity-v1",
   "memory-phone-pin-v1",
   "memory-table-restore-v1",
