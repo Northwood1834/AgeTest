@@ -672,6 +672,17 @@ export const gameManifest=Object.freeze([
     "hash": "902d9daf766fcd81"
   },
   {
+    "id": "timing-mochi-pound-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "wild",
+    "step": 1,
+    "family": "timing-mochi-pound",
+    "category": "timing",
+    "module": "./games/timing-mochi-pound-v1.js",
+    "hash": "7b1841bbfb33a0f6"
+  },
+  {
     "id": "timing-three-v1",
     "introducedIn": "1.0",
     "tier": 2,
