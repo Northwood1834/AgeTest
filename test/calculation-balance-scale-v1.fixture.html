@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<title>calculation-balance-scale-v1 fixture</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#171827;color:#302c39;font-family:system-ui,-apple-system,"Hiragino Sans","Yu Gothic UI",sans-serif}body{width:393px;min-height:100vh;overflow-x:hidden}.shell{width:100%;min-height:100vh;padding:.38rem .48rem .64rem;background:radial-gradient(circle at 82% 2%,rgba(175,135,190,.2),transparent 28%),linear-gradient(180deg,#f6f0e7,#d9d0c7)}.top{display:flex;align-items:center;justify-content:space-between;gap:.45rem;margin:0 0 .2rem}.brand{font-size:.69rem;font-weight:1000;letter-spacing:.11em;color:#62496f}.scenario{font-size:.61rem;font-weight:900;color:#756a76}.prompt{margin:.02rem 0 .12rem;text-align:center;font-size:clamp(.78rem,3.45vw,.93rem);font-weight:1000;line-height:1.22;letter-spacing:-.025em;white-space:nowrap;color:#302a38}.help{margin:0 auto .26rem;max-width:39em;text-align:center;font-size:.63rem;font-weight:760;line-height:1.28;color:#6e6571}.challenge{width:100%}body.fixture-focus .cbs-board{outline:4px solid #ffdc72!important;outline-offset:2px;box-shadow:0 0 0 7px #563d68,0 10px 24px rgba(31,26,39,.3)!important}.fixture-result{min-height:1.05rem;margin:.2rem 0 0;text-align:center;font-size:.65rem;font-weight:900;color:#44644e}
+</style>
+</head>
+<body>
+<main class="shell"><div class="top"><div class="brand">AGE TEST · BALANCE ATELIER</div><div id="scenario-label" class="scenario">fixture</div></div><h1 class="prompt">三回以内の天秤で、違う重さのトークンを特定する</h1><p class="help">左右へ自由に載せて計量します。候補ログから番号と「重い／軽い」を選び、排出してください。</p><div id="challenge" class="challenge"></div><p id="fixture-result" class="fixture-result" aria-live="polite"></p></main>
+<script type="module" src="./calculation-balance-scale-v1.fixture.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "status": "pass",
+  "lane": {"name": "audit", "cdp": 9332, "http": 8862, "isolated": true},
+  "artifactDirectory": "/tmp/agetest-calculation-balance-scale-v1-audit-final4",
+  "coverage": {
+    "authoredScenarios": 6,
+    "tokenCounts": [8, 9, 12],
+    "secretTendencies": ["heavy", "light"],
+    "canonicalScreenshots": 240,
+    "focusScreenshots": 24,
+    "boundaryScreenshots": 48,
+    "touchStrategyRoutes": 12,
+    "touchAdaptiveCommits": 36,
+    "keyboardStrategyRoutes": 2,
+    "deadlineRoutes": 2,
+    "disposeRoutes": 2,
+    "performanceRoutes": 4,
+    "noCueHashPairs": 24
+  },
+  "interaction": {
+    "allTouchRoutesFinishedSuccessOnce": true,
+    "allTouchCompositionsMatchedAdaptiveNodes": true,
+    "allObservedPosesMatchedPhysicalEquation": true,
+    "keyboardNormalAndReducedFinishedSuccessOnce": true,
+    "leftBalancedRightCovered": true,
+    "minimumTargetHeightPx": 44,
+    "focusVisibleAndRetained": true
+  },
+  "informationIntegrity": {
+    "initialAndComposedHeavyLightPairCanvasHashesMatch": true,
+    "initialAndComposedHeavyLightPairDomHashesMatch": true,
+    "precommitPoseNeutral": true,
+    "counterfeitCueDetected": false,
+    "strategyCueDetected": false,
+    "logsRetainExactPanLists": true,
+    "candidateFiltersRetained": true
+  },
+  "lifecycle": {
+    "deadlineRetainedPansLogsCandidatesUsesPoseSelection": true,
+    "deadlineFinishedOnce": true,
+    "disposeClearedTimeoutsListenersQa": true,
+    "disposeLateFinishCalls": 0,
+    "gameOwnedPerformanceFrames": 0,
+    "externalRequests": 0,
+    "browserErrors": 0,
+    "horizontalOverflowCases": 0
+  },
+  "parity": {
+    "comparisons": 120,
+    "maxNormalizedRMSE": 0.0,
+    "allDpr3": true,
+    "allFullResolution": true
+  },
+  "node": {
+    "focusedTests": {"passed": 23, "failed": 0},
+    "fullSuite": {"passed": 1155, "failed": 0, "durationMs": 16008.931858}
+  },
+  "visualReport": "test/calculation-balance-scale-v1.visual-report.json"
+}

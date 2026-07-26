@@ -1,0 +1,13 @@
+import game from "../src/games/calculation-balance-scale-v1.js";
+import {createGameRuntime} from "../src/game-kernel.js";
+
+const params=new URLSearchParams(location.search),width=Number(params.get("width"))||393,scenario=Math.max(0,Math.min(5,Number(params.get("scenario"))||0)),motion=params.get("motion")==="reduced"?"reduced":"normal",scene=params.get("scene")||"initial",live=params.get("live")==="1";document.body.style.width=`${width}px`;
+const task=game.generate({randomInt:()=>scenario}),host=document.querySelector("#challenge"),label=document.querySelector("#scenario-label"),resultNode=document.querySelector("#fixture-result"),qa={},errors=[],external=[],finishes=[];let result=null;
+addEventListener("error",event=>errors.push(String(event.error?.stack||event.message)));addEventListener("unhandledrejection",event=>errors.push(String(event.reason?.stack||event.reason)));
+const runtime=createGameRuntime({host,qa,reducedMotion:motion==="reduced",viewport:{width,height:innerHeight,dpr:devicePixelRatio},onFinish:(correct,detail)=>{result={correct,detail:structuredClone(detail)};finishes.push(result);resultNode.textContent=`${correct?"成功":"失敗"} · ${detail.detail||detail.outcome}`}});game.render(task,runtime.context);const api=qa[game.metadata.id];
+if(!live&&!api.showScene(scene))throw new Error(`unknown scene: ${scene}`);
+for(const entry of performance.getEntriesByType("resource")){const url=new URL(entry.name,location.href);if(url.origin!==location.origin)external.push(entry.name)}
+label.textContent=`${task.count} TOKENS`;document.body.dataset.scene=scene;document.body.dataset.motion=motion;document.documentElement.dataset.ready="true";
+const rect=value=>{const box=value.getBoundingClientRect();return{x:box.x,y:box.y,width:box.width,height:box.height,right:box.right,bottom:box.bottom}};
+const report=()=>{const state=api?.inspect()||null,buttons=[...document.querySelectorAll("button")],canvas=document.querySelector("canvas");return{status:errors.length||external.length||document.body.scrollWidth>width?"fail":"pass",scene,motion,scenario,live,width,dpr:devicePixelRatio,task:structuredClone(task),state,result:result?structuredClone(result):null,finishes:structuredClone(finishes),runtime:runtime.inspect(),targets:buttons.map(button=>({text:button.textContent,disabled:button.disabled,...rect(button)})),canvas:canvas?rect(canvas):null,viewport:{width:innerWidth,height:innerHeight,bodyScrollWidth:document.body.scrollWidth,bodyScrollHeight:document.body.scrollHeight},external:[...external],errors:[...errors]}};
+window.__BALANCE_SCALE_FIXTURE__={game,task,api,qa,runtime,scene,motion,scenario,report,dispose:()=>runtime.dispose()};

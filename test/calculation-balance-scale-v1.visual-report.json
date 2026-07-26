@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "artifactDirectory": "/tmp/agetest-calculation-balance-scale-v1-audit-final4",
+  "canonicalViewports": [
+    {"width": 393, "height": 852, "dpr": 3},
+    {"width": 402, "height": 874, "dpr": 3}
+  ],
+  "boundaryViewports": [
+    {"width": 390, "height": 844, "dpr": 3},
+    {"width": 430, "height": 932, "dpr": 3}
+  ],
+  "scenarios": [0, 1, 2, 3, 4, 5],
+  "states": ["initial", "composed", "first-log", "singleton", "wrong-token", "ambiguous", "poor", "empty", "success", "timeout"],
+  "canonicalScreenshots": 240,
+  "focusScreenshots": 24,
+  "boundaryScreenshots": 48,
+  "normalReducedComparisons": 120,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "maxMAE": 0.0,
+  "meanMAE": 0.0,
+  "maxNormalizedRMSE": 0.0,
+  "meanChanged": 0.0,
+  "visualQc": {
+    "status": "pass",
+    "productionPolish": true,
+    "panLoadsAndTiltReadable": true,
+    "logsAndCandidatesReadable": true,
+    "terminalEvidenceUnobscured": true,
+    "boundaryFit": true,
+    "nonCurrencyTokenAppearance": true,
+    "materialDefects": []
+  }
+}
