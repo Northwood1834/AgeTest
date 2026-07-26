@@ -1,0 +1,244 @@
+{
+  "canonicalViewports": [
+    {
+      "width": 393,
+      "height": 852,
+      "dpr": 3
+    },
+    {
+      "width": 402,
+      "height": 874,
+      "dpr": 3
+    }
+  ],
+  "comparisons": 20,
+  "screenshots": 40,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "meanMAE": 0.146,
+  "maxMAE": 0.561,
+  "maxNormalizedRMSE": 0.037412,
+  "meanChanged": 0.0044,
+  "rows": [
+    {
+      "key": "393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.054,
+      "rmse": 1.975,
+      "normalizedRMSE": 0.007744,
+      "changed": 0.0045
+    },
+    {
+      "key": "393x852-pressure",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.044,
+      "rmse": 1.644,
+      "normalizedRMSE": 0.006445,
+      "changed": 0.0045
+    },
+    {
+      "key": "393x852-progress",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.072,
+      "rmse": 2.253,
+      "normalizedRMSE": 0.008834,
+      "changed": 0.0056
+    },
+    {
+      "key": "393x852-invalid",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.054,
+      "rmse": 1.975,
+      "normalizedRMSE": 0.007745,
+      "changed": 0.0045
+    },
+    {
+      "key": "393x852-trapped",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.063,
+      "rmse": 2.11,
+      "normalizedRMSE": 0.008275,
+      "changed": 0.0045
+    },
+    {
+      "key": "393x852-peeled",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.004,
+      "rmse": 0.209,
+      "normalizedRMSE": 0.000818,
+      "changed": 0.0011
+    },
+    {
+      "key": "393x852-resealed",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.083,
+      "rmse": 2.486,
+      "normalizedRMSE": 0.00975,
+      "changed": 0.006
+    },
+    {
+      "key": "393x852-overpeel",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.551,
+      "rmse": 9.54,
+      "normalizedRMSE": 0.037412,
+      "changed": 0.0046
+    },
+    {
+      "key": "393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.561,
+      "rmse": 9.377,
+      "normalizedRMSE": 0.036772,
+      "changed": 0.0079
+    },
+    {
+      "key": "402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.069,
+      "rmse": 2.337,
+      "normalizedRMSE": 0.009164,
+      "changed": 0.0049
+    },
+    {
+      "key": "402x874-pressure",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.041,
+      "rmse": 1.55,
+      "normalizedRMSE": 0.006077,
+      "changed": 0.0046
+    },
+    {
+      "key": "402x874-progress",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.057,
+      "rmse": 1.881,
+      "normalizedRMSE": 0.007375,
+      "changed": 0.0053
+    },
+    {
+      "key": "402x874-invalid",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.065,
+      "rmse": 2.262,
+      "normalizedRMSE": 0.00887,
+      "changed": 0.0047
+    },
+    {
+      "key": "402x874-trapped",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.064,
+      "rmse": 2.197,
+      "normalizedRMSE": 0.008616,
+      "changed": 0.0044
+    },
+    {
+      "key": "402x874-peeled",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.006,
+      "rmse": 0.251,
+      "normalizedRMSE": 0.000982,
+      "changed": 0.0019
+    },
+    {
+      "key": "402x874-resealed",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.066,
+      "rmse": 2.07,
+      "normalizedRMSE": 0.008116,
+      "changed": 0.0055
+    },
+    {
+      "key": "402x874-overpeel",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.526,
+      "rmse": 9.313,
+      "normalizedRMSE": 0.036523,
+      "changed": 0.0048
+    },
+    {
+      "key": "402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.541,
+      "rmse": 9.167,
+      "normalizedRMSE": 0.035948,
+      "changed": 0.0078
+    }
+  ]
+}

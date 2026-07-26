@@ -1,0 +1,1363 @@
+{
+  "lane": {
+    "name": "audit",
+    "cdp": 9332,
+    "http": 8862
+  },
+  "screenshots": 40,
+  "states": [
+    "initial",
+    "pressure",
+    "progress",
+    "invalid",
+    "trapped",
+    "peeled",
+    "resealed",
+    "overpeel",
+    "success",
+    "timeout"
+  ],
+  "viewports": [
+    {
+      "width": 393,
+      "height": 852,
+      "dpr": 3
+    },
+    {
+      "width": 402,
+      "height": 874,
+      "dpr": 3
+    }
+  ],
+  "touch": {
+    "393x852": {
+      "normal": {
+        "metric": "393x852",
+        "motion": "normal",
+        "overflow": false,
+        "external": [],
+        "first": {
+          "front": 1,
+          "lane": "left",
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 1.08,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058,
+              "y": 0.9,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.058,
+              "ry": 0.058
+            },
+            {
+              "id": "b",
+              "x": 0.37,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052,
+              "y": 0.7,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.052,
+              "ry": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061,
+              "y": 0.5,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.061,
+              "ry": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047,
+              "y": 0.30000000000000004,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.047,
+              "ry": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054,
+              "y": 0.09999999999999998,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.054,
+              "ry": 0.054
+            }
+          ],
+          "remaining": 4,
+          "trapped": 0,
+          "totalPeel": 0,
+          "tension": 0,
+          "justPeeled": false,
+          "busy": false,
+          "done": false,
+          "disposed": false,
+          "outcome": "active",
+          "invalidCount": 0,
+          "dragging": true,
+          "animation": null,
+          "status": "第1帯を接着。次の気泡へ",
+          "aria": "保護フィルム。接着 1/5帯、圧力 左、残り気泡 4、密閉 0、剥がし 0/1",
+          "canvas": {
+            "width": 1041,
+            "height": 1416,
+            "cssWidth": 347,
+            "cssHeight": 472,
+            "dpr": 3
+          }
+        },
+        "final": {
+          "front": 2,
+          "lane": "right",
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 1.08,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058,
+              "y": 0.9,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.058,
+              "ry": 0.058
+            },
+            {
+              "id": "b",
+              "x": -0.08,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052,
+              "y": 0.7,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.052,
+              "ry": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061,
+              "y": 0.5,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.061,
+              "ry": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047,
+              "y": 0.30000000000000004,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.047,
+              "ry": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054,
+              "y": 0.09999999999999998,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.054,
+              "ry": 0.054
+            }
+          ],
+          "remaining": 3,
+          "trapped": 0,
+          "totalPeel": 0,
+          "tension": 0,
+          "justPeeled": false,
+          "busy": false,
+          "done": false,
+          "disposed": false,
+          "outcome": "active",
+          "invalidCount": 0,
+          "dragging": false,
+          "animation": null,
+          "status": "第2帯を接着。次の気泡へ",
+          "aria": "保護フィルム。接着 2/5帯、圧力 右、残り気泡 3、密閉 0、剥がし 0/1",
+          "canvas": {
+            "width": 1041,
+            "height": 1416,
+            "cssWidth": 347,
+            "cssHeight": 472,
+            "dpr": 3
+          }
+        },
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 1,
+          "listeners": 20,
+          "aborted": false
+        },
+        "errors": []
+      },
+      "reduced": {
+        "metric": "393x852",
+        "motion": "reduced",
+        "overflow": false,
+        "external": [],
+        "first": {
+          "front": 1,
+          "lane": "left",
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 1.08,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058,
+              "y": 0.9,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.058,
+              "ry": 0.058
+            },
+            {
+              "id": "b",
+              "x": 0.37,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052,
+              "y": 0.7,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.052,
+              "ry": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061,
+              "y": 0.5,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.061,
+              "ry": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047,
+              "y": 0.30000000000000004,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.047,
+              "ry": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054,
+              "y": 0.09999999999999998,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.054,
+              "ry": 0.054
+            }
+          ],
+          "remaining": 4,
+          "trapped": 0,
+          "totalPeel": 0,
+          "tension": 0,
+          "justPeeled": false,
+          "busy": false,
+          "done": false,
+          "disposed": false,
+          "outcome": "active",
+          "invalidCount": 0,
+          "dragging": true,
+          "animation": null,
+          "status": "第1帯を接着。次の気泡へ",
+          "aria": "保護フィルム。接着 1/5帯、圧力 左、残り気泡 4、密閉 0、剥がし 0/1",
+          "canvas": {
+            "width": 1041,
+            "height": 1416,
+            "cssWidth": 347,
+            "cssHeight": 472,
+            "dpr": 3
+          }
+        },
+        "final": {
+          "front": 2,
+          "lane": "right",
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 1.08,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058,
+              "y": 0.9,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.058,
+              "ry": 0.058
+            },
+            {
+              "id": "b",
+              "x": -0.08,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052,
+              "y": 0.7,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.052,
+              "ry": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061,
+              "y": 0.5,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.061,
+              "ry": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047,
+              "y": 0.30000000000000004,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.047,
+              "ry": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054,
+              "y": 0.09999999999999998,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.054,
+              "ry": 0.054
+            }
+          ],
+          "remaining": 3,
+          "trapped": 0,
+          "totalPeel": 0,
+          "tension": 0,
+          "justPeeled": false,
+          "busy": false,
+          "done": false,
+          "disposed": false,
+          "outcome": "active",
+          "invalidCount": 0,
+          "dragging": false,
+          "animation": null,
+          "status": "第2帯を接着。次の気泡へ",
+          "aria": "保護フィルム。接着 2/5帯、圧力 右、残り気泡 3、密閉 0、剥がし 0/1",
+          "canvas": {
+            "width": 1041,
+            "height": 1416,
+            "cssWidth": 347,
+            "cssHeight": 472,
+            "dpr": 3
+          }
+        },
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 20,
+          "aborted": false
+        },
+        "errors": []
+      }
+    },
+    "402x874": {
+      "normal": {
+        "metric": "402x874",
+        "motion": "normal",
+        "overflow": false,
+        "external": [],
+        "first": {
+          "front": 1,
+          "lane": "left",
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 1.08,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058,
+              "y": 0.9,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.058,
+              "ry": 0.058
+            },
+            {
+              "id": "b",
+              "x": 0.37,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052,
+              "y": 0.7,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.052,
+              "ry": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061,
+              "y": 0.5,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.061,
+              "ry": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047,
+              "y": 0.30000000000000004,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.047,
+              "ry": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054,
+              "y": 0.09999999999999998,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.054,
+              "ry": 0.054
+            }
+          ],
+          "remaining": 4,
+          "trapped": 0,
+          "totalPeel": 0,
+          "tension": 0,
+          "justPeeled": false,
+          "busy": false,
+          "done": false,
+          "disposed": false,
+          "outcome": "active",
+          "invalidCount": 0,
+          "dragging": true,
+          "animation": null,
+          "status": "第1帯を接着。次の気泡へ",
+          "aria": "保護フィルム。接着 1/5帯、圧力 左、残り気泡 4、密閉 0、剥がし 0/1",
+          "canvas": {
+            "width": 1068,
+            "height": 1452,
+            "cssWidth": 356,
+            "cssHeight": 484,
+            "dpr": 3
+          }
+        },
+        "final": {
+          "front": 2,
+          "lane": "right",
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 1.08,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058,
+              "y": 0.9,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.058,
+              "ry": 0.058
+            },
+            {
+              "id": "b",
+              "x": -0.08,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052,
+              "y": 0.7,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.052,
+              "ry": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061,
+              "y": 0.5,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.061,
+              "ry": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047,
+              "y": 0.30000000000000004,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.047,
+              "ry": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054,
+              "y": 0.09999999999999998,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.054,
+              "ry": 0.054
+            }
+          ],
+          "remaining": 3,
+          "trapped": 0,
+          "totalPeel": 0,
+          "tension": 0,
+          "justPeeled": false,
+          "busy": false,
+          "done": false,
+          "disposed": false,
+          "outcome": "active",
+          "invalidCount": 0,
+          "dragging": false,
+          "animation": null,
+          "status": "第2帯を接着。次の気泡へ",
+          "aria": "保護フィルム。接着 2/5帯、圧力 右、残り気泡 3、密閉 0、剥がし 0/1",
+          "canvas": {
+            "width": 1068,
+            "height": 1452,
+            "cssWidth": 356,
+            "cssHeight": 484,
+            "dpr": 3
+          }
+        },
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 1,
+          "listeners": 20,
+          "aborted": false
+        },
+        "errors": []
+      },
+      "reduced": {
+        "metric": "402x874",
+        "motion": "reduced",
+        "overflow": false,
+        "external": [],
+        "first": {
+          "front": 1,
+          "lane": "left",
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 1.08,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058,
+              "y": 0.9,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.058,
+              "ry": 0.058
+            },
+            {
+              "id": "b",
+              "x": 0.37,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052,
+              "y": 0.7,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.052,
+              "ry": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061,
+              "y": 0.5,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.061,
+              "ry": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047,
+              "y": 0.30000000000000004,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.047,
+              "ry": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054,
+              "y": 0.09999999999999998,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.054,
+              "ry": 0.054
+            }
+          ],
+          "remaining": 4,
+          "trapped": 0,
+          "totalPeel": 0,
+          "tension": 0,
+          "justPeeled": false,
+          "busy": false,
+          "done": false,
+          "disposed": false,
+          "outcome": "active",
+          "invalidCount": 0,
+          "dragging": true,
+          "animation": null,
+          "status": "第1帯を接着。次の気泡へ",
+          "aria": "保護フィルム。接着 1/5帯、圧力 左、残り気泡 4、密閉 0、剥がし 0/1",
+          "canvas": {
+            "width": 1068,
+            "height": 1452,
+            "cssWidth": 356,
+            "cssHeight": 484,
+            "dpr": 3
+          }
+        },
+        "final": {
+          "front": 2,
+          "lane": "right",
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 1.08,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058,
+              "y": 0.9,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.058,
+              "ry": 0.058
+            },
+            {
+              "id": "b",
+              "x": -0.08,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052,
+              "y": 0.7,
+              "escaped": true,
+              "trapped": false,
+              "rx": 0.052,
+              "ry": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061,
+              "y": 0.5,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.061,
+              "ry": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047,
+              "y": 0.30000000000000004,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.047,
+              "ry": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054,
+              "y": 0.09999999999999998,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.054,
+              "ry": 0.054
+            }
+          ],
+          "remaining": 3,
+          "trapped": 0,
+          "totalPeel": 0,
+          "tension": 0,
+          "justPeeled": false,
+          "busy": false,
+          "done": false,
+          "disposed": false,
+          "outcome": "active",
+          "invalidCount": 0,
+          "dragging": false,
+          "animation": null,
+          "status": "第2帯を接着。次の気泡へ",
+          "aria": "保護フィルム。接着 2/5帯、圧力 右、残り気泡 3、密閉 0、剥がし 0/1",
+          "canvas": {
+            "width": 1068,
+            "height": 1452,
+            "cssWidth": 356,
+            "cssHeight": 484,
+            "dpr": 3
+          }
+        },
+        "runtime": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 20,
+          "aborted": false
+        },
+        "errors": []
+      }
+    }
+  },
+  "dispose": {
+    "393x852": {
+      "normal": {
+        "metric": "393x852",
+        "motion": "normal",
+        "overflow": false,
+        "external": [],
+        "before": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 1,
+          "listeners": 20,
+          "aborted": false
+        },
+        "after": {
+          "disposed": true,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 0,
+          "frames": 0,
+          "listeners": 0,
+          "aborted": true
+        },
+        "qaPresent": false,
+        "errors": []
+      },
+      "reduced": {
+        "metric": "393x852",
+        "motion": "reduced",
+        "overflow": false,
+        "external": [],
+        "before": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 20,
+          "aborted": false
+        },
+        "after": {
+          "disposed": true,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 0,
+          "frames": 0,
+          "listeners": 0,
+          "aborted": true
+        },
+        "qaPresent": false,
+        "errors": []
+      }
+    },
+    "402x874": {
+      "normal": {
+        "metric": "402x874",
+        "motion": "normal",
+        "overflow": false,
+        "external": [],
+        "before": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 1,
+          "listeners": 20,
+          "aborted": false
+        },
+        "after": {
+          "disposed": true,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 0,
+          "frames": 0,
+          "listeners": 0,
+          "aborted": true
+        },
+        "qaPresent": false,
+        "errors": []
+      },
+      "reduced": {
+        "metric": "402x874",
+        "motion": "reduced",
+        "overflow": false,
+        "external": [],
+        "before": {
+          "disposed": false,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 1,
+          "frames": 0,
+          "listeners": 20,
+          "aborted": false
+        },
+        "after": {
+          "disposed": true,
+          "finished": false,
+          "finishCalls": 0,
+          "commits": 0,
+          "timeouts": 0,
+          "frames": 0,
+          "listeners": 0,
+          "aborted": true
+        },
+        "qaPresent": false,
+        "errors": []
+      }
+    }
+  },
+  "performance": {
+    "393x852": {
+      "status": "pass",
+      "frames": 85,
+      "averageFrameMs": 16.66588235294118,
+      "maxFrameMs": 16.80000000000001,
+      "canvas": {
+        "width": 1041,
+        "height": 1416,
+        "cssWidth": 347,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "external": [],
+      "errors": []
+    },
+    "402x874": {
+      "status": "pass",
+      "frames": 86,
+      "averageFrameMs": 16.66627906976744,
+      "maxFrameMs": 16.800000000000182,
+      "canvas": {
+        "width": 1068,
+        "height": 1452,
+        "cssWidth": 356,
+        "cssHeight": 484,
+        "dpr": 3
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "external": [],
+      "errors": []
+    }
+  },
+  "supplementalSmoke": {
+    "viewport": {
+      "width": 430,
+      "height": 932,
+      "dpr": 3
+    },
+    "canonical": false,
+    "states": [
+      "initial"
+    ],
+    "screenshots": 2,
+    "evidence": {
+      "normal": {
+        "scene": "initial",
+        "reduced": false,
+        "width": 430,
+        "task": {
+          "kind": "screenProtector",
+          "prompt": "気泡を端へ逃がして貼る",
+          "help": "下端から押し上げます。気泡の反対側に指を置き、密閉したら一帯だけ剥がして直せます。",
+          "layout": "prism-fan",
+          "bands": 5,
+          "phone": {
+            "width": 0.78,
+            "height": 0.91,
+            "corner": 0.075
+          },
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 0.63,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058
+            },
+            {
+              "id": "b",
+              "x": 0.37,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054
+            }
+          ],
+          "maxPeel": 1,
+          "duration": 65000,
+          "solution": [
+            "left",
+            "right",
+            "center",
+            "left",
+            "center"
+          ],
+          "proof": {
+            "totalPaths": 243,
+            "successPaths": 1,
+            "trappedPaths": 242,
+            "canonical": [
+              "left",
+              "right",
+              "center",
+              "left",
+              "center"
+            ],
+            "recovery": {
+              "mistakeBand": 2,
+              "wrongLane": "left",
+              "peelBands": 1,
+              "resealLane": "right",
+              "finishesAfterReseal": true
+            }
+          }
+        },
+        "game": {
+          "front": 0,
+          "lane": "center",
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 0.63,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058,
+              "y": 0.9,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.058,
+              "ry": 0.058
+            },
+            {
+              "id": "b",
+              "x": 0.37,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052,
+              "y": 0.7,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.052,
+              "ry": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061,
+              "y": 0.5,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.061,
+              "ry": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047,
+              "y": 0.30000000000000004,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.047,
+              "ry": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054,
+              "y": 0.09999999999999998,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.054,
+              "ry": 0.054
+            }
+          ],
+          "remaining": 5,
+          "trapped": 0,
+          "totalPeel": 0,
+          "tension": 0,
+          "justPeeled": false,
+          "busy": false,
+          "done": false,
+          "disposed": false,
+          "outcome": "active",
+          "invalidCount": 0,
+          "dragging": false,
+          "animation": null,
+          "status": "下端から押し上げ、気泡を左右または上端へ逃がします",
+          "aria": "保護フィルム。接着 0/5帯、圧力 中央、残り気泡 5、密閉 0、剥がし 0/1",
+          "canvas": {
+            "width": 1152,
+            "height": 1566,
+            "cssWidth": 384,
+            "cssHeight": 522,
+            "dpr": 3
+          }
+        },
+        "result": null,
+        "frames": 6,
+        "averageFrameMs": 16.650000000000002,
+        "maxFrameMs": 16.80000000000001,
+        "resources": [
+          "http://127.0.0.1:8862/test/spatial-screen-protector-v1.fixture.mjs",
+          "http://127.0.0.1:8862/src/games/spatial-screen-protector-v1.js",
+          "http://127.0.0.1:8862/src/game-kernel.js"
+        ],
+        "errors": []
+      },
+      "reduced": {
+        "scene": "initial",
+        "reduced": true,
+        "width": 430,
+        "task": {
+          "kind": "screenProtector",
+          "prompt": "気泡を端へ逃がして貼る",
+          "help": "下端から押し上げます。気泡の反対側に指を置き、密閉したら一帯だけ剥がして直せます。",
+          "layout": "prism-fan",
+          "bands": 5,
+          "phone": {
+            "width": 0.78,
+            "height": 0.91,
+            "corner": 0.075
+          },
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 0.63,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058
+            },
+            {
+              "id": "b",
+              "x": 0.37,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054
+            }
+          ],
+          "maxPeel": 1,
+          "duration": 65000,
+          "solution": [
+            "left",
+            "right",
+            "center",
+            "left",
+            "center"
+          ],
+          "proof": {
+            "totalPaths": 243,
+            "successPaths": 1,
+            "trappedPaths": 242,
+            "canonical": [
+              "left",
+              "right",
+              "center",
+              "left",
+              "center"
+            ],
+            "recovery": {
+              "mistakeBand": 2,
+              "wrongLane": "left",
+              "peelBands": 1,
+              "resealLane": "right",
+              "finishesAfterReseal": true
+            }
+          }
+        },
+        "game": {
+          "front": 0,
+          "lane": "center",
+          "bubbles": [
+            {
+              "id": "a",
+              "x": 0.63,
+              "band": 1,
+              "exit": "right",
+              "radius": 0.058,
+              "y": 0.9,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.058,
+              "ry": 0.058
+            },
+            {
+              "id": "b",
+              "x": 0.37,
+              "band": 2,
+              "exit": "left",
+              "radius": 0.052,
+              "y": 0.7,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.052,
+              "ry": 0.052
+            },
+            {
+              "id": "c",
+              "x": 0.5,
+              "band": 3,
+              "exit": "top",
+              "radius": 0.061,
+              "y": 0.5,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.061,
+              "ry": 0.061
+            },
+            {
+              "id": "d",
+              "x": 0.62,
+              "band": 4,
+              "exit": "right",
+              "radius": 0.047,
+              "y": 0.30000000000000004,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.047,
+              "ry": 0.047
+            },
+            {
+              "id": "e",
+              "x": 0.5,
+              "band": 5,
+              "exit": "top",
+              "radius": 0.054,
+              "y": 0.09999999999999998,
+              "escaped": false,
+              "trapped": false,
+              "rx": 0.054,
+              "ry": 0.054
+            }
+          ],
+          "remaining": 5,
+          "trapped": 0,
+          "totalPeel": 0,
+          "tension": 0,
+          "justPeeled": false,
+          "busy": false,
+          "done": false,
+          "disposed": false,
+          "outcome": "active",
+          "invalidCount": 0,
+          "dragging": false,
+          "animation": null,
+          "status": "下端から押し上げ、気泡を左右または上端へ逃がします",
+          "aria": "保護フィルム。接着 0/5帯、圧力 中央、残り気泡 5、密閉 0、剥がし 0/1",
+          "canvas": {
+            "width": 1152,
+            "height": 1566,
+            "cssWidth": 384,
+            "cssHeight": 522,
+            "dpr": 3
+          }
+        },
+        "result": null,
+        "frames": 5,
+        "averageFrameMs": 16.68,
+        "maxFrameMs": 16.799999999999983,
+        "resources": [
+          "http://127.0.0.1:8862/test/spatial-screen-protector-v1.fixture.mjs",
+          "http://127.0.0.1:8862/src/games/spatial-screen-protector-v1.js",
+          "http://127.0.0.1:8862/src/game-kernel.js"
+        ],
+        "errors": []
+      }
+    }
+  },
+  "canonical402Audit": {
+    "status": "pass",
+    "sourceFrames": 20,
+    "dimensions": [
+      1206,
+      2622
+    ],
+    "touchPhysics": true,
+    "reducedContinuousFrames": 0,
+    "overflow": false,
+    "externalResources": [],
+    "runtimeErrors": [],
+    "disposeClearedOwnedWork": true
+  },
+  "visualQc": {
+    "status": "pass",
+    "method": "canonical 402x874 DPR3 full-state contact sheet plus targeted full-resolution review",
+    "checks": {
+      "allTenStatesDistinct": true,
+      "flattenedTrappedPocket": true,
+      "boundedPeelFlap": true,
+      "resealRemovesFlap": true,
+      "overpeelStress": true,
+      "cleanSuccessMaterial": true,
+      "textClippingOrOverflow": false
+    }
+  }
+}
