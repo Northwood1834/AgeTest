@@ -1,0 +1,1809 @@
+{
+  "game": "spatial-cube-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "checks": {
+    "exactInitialThreeFaces": true,
+    "maskBeforeTurn": true,
+    "exactTurnPermutation": true,
+    "normal2400_260_700": true,
+    "noRecallLeak": true,
+    "realTouchChoice": true,
+    "successPayload": true,
+    "inputLock": true,
+    "keyboardEnter": true,
+    "keyboardSpace": true,
+    "focus": true,
+    "width390And430": true,
+    "reduced120_320": true,
+    "reducedNonzeroStages": true,
+    "reducedNoRaf": true,
+    "wrongPayload": true,
+    "actualDeadline8500": true,
+    "timeoutPayload": true,
+    "dispose": true,
+    "singleFinish": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "noErrorsOrExternal": true,
+    "performance": true
+  },
+  "normal": {
+    "timeline": {
+      "seen": [
+        {
+          "phase": "ENCODE",
+          "at": 157.29999995231628,
+          "step": 0,
+          "faces": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "masked": false,
+          "choicesEnabled": false,
+          "status": "見えている正面・右面・上面の色を覚えてください"
+        },
+        {
+          "phase": "HIDDEN",
+          "at": 2411.899999976158,
+          "step": 0,
+          "faces": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "masked": true,
+          "choicesEnabled": false,
+          "status": "色は隠れました。右面→正面 → 上面→正面 の順です。"
+        },
+        {
+          "phase": "TURN1",
+          "at": 2675.5,
+          "step": 1,
+          "faces": [
+            1,
+            2,
+            3,
+            0,
+            4,
+            5
+          ],
+          "masked": true,
+          "choicesEnabled": false,
+          "status": "1手目: 右面→正面"
+        },
+        {
+          "phase": "TURN2",
+          "at": 3376.899999976158,
+          "step": 2,
+          "faces": [
+            4,
+            2,
+            5,
+            0,
+            3,
+            1
+          ],
+          "masked": true,
+          "choicesEnabled": false,
+          "status": "2手目: 上面→正面"
+        },
+        {
+          "phase": "CHOICES",
+          "at": 4077.899999976158,
+          "step": 2,
+          "faces": [
+            4,
+            2,
+            5,
+            0,
+            3,
+            1
+          ],
+          "masked": true,
+          "choicesEnabled": true,
+          "status": "最後に正面へ来た色を、記憶で選んで。"
+        }
+      ],
+      "state": {
+        "phase": "CHOICES",
+        "masked": true,
+        "step": 2,
+        "faces": [
+          4,
+          2,
+          5,
+          0,
+          3,
+          1
+        ],
+        "frontIndex": 4,
+        "frontName": "ピンク",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "finishCalls": 0,
+        "stages": 2,
+        "timing": {
+          "encodeMs": 2400,
+          "firstDelay": 260,
+          "turnDelay": 700,
+          "duration": 8500
+        },
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 189,
+          "pixelWidth": 996,
+          "pixelHeight": 567,
+          "dpr": 3
+        },
+        "status": "最後に正面へ来た色を、記憶で選んで。",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false
+          },
+          {
+            "text": "ピンク",
+            "disabled": false,
+            "selected": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false
+          },
+          {
+            "text": "しろ",
+            "disabled": false,
+            "selected": false
+          }
+        ],
+        "reduced": false
+      },
+      "focused": true,
+      "activeText": "あお",
+      "canvasLabel": "正面、右面、上面の三面が見える色付き立方体",
+      "statusText": "最後に正面へ来た色を、記憶で選んで。",
+      "options": [
+        {
+          "text": "あお",
+          "disabled": false
+        },
+        {
+          "text": "ピンク",
+          "disabled": false
+        },
+        {
+          "text": "むらさき",
+          "disabled": false
+        },
+        {
+          "text": "しろ",
+          "disabled": false
+        }
+      ],
+      "scrollY": 0
+    },
+    "touchPoint": {
+      "x": 279.6796875,
+      "y": 447.578125,
+      "width": 162.640625,
+      "height": 48,
+      "disabled": false
+    },
+    "touchResult": {
+      "before": {
+        "phase": "SUCCESS",
+        "masked": true,
+        "step": 2,
+        "faces": [
+          4,
+          2,
+          5,
+          0,
+          3,
+          1
+        ],
+        "frontIndex": 4,
+        "frontName": "ピンク",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "ピンク",
+        "detail": "正解。最後の正面はピンク",
+        "finishCalls": 1,
+        "stages": 2,
+        "timing": {
+          "encodeMs": 2400,
+          "firstDelay": 260,
+          "turnDelay": 700,
+          "duration": 8500
+        },
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 189,
+          "pixelWidth": 996,
+          "pixelHeight": 567,
+          "dpr": 3
+        },
+        "status": "正解。最後の正面はピンク",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "ピンク",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "しろ",
+            "disabled": true,
+            "selected": false
+          }
+        ],
+        "reduced": false
+      },
+      "after": {
+        "phase": "SUCCESS",
+        "masked": true,
+        "step": 2,
+        "faces": [
+          4,
+          2,
+          5,
+          0,
+          3,
+          1
+        ],
+        "frontIndex": 4,
+        "frontName": "ピンク",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "ピンク",
+        "detail": "正解。最後の正面はピンク",
+        "finishCalls": 1,
+        "stages": 2,
+        "timing": {
+          "encodeMs": 2400,
+          "firstDelay": 260,
+          "turnDelay": 700,
+          "duration": 8500
+        },
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 189,
+          "pixelWidth": 996,
+          "pixelHeight": 567,
+          "dpr": 3
+        },
+        "status": "正解。最後の正面はピンク",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "ピンク",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "しろ",
+            "disabled": true,
+            "selected": false
+          }
+        ],
+        "reduced": false
+      },
+      "finishesBefore": [
+        {
+          "correct": true,
+          "result": {
+            "answerLabel": "ピンク"
+          }
+        }
+      ],
+      "evidence": {
+        "variant": "module",
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 390,
+        "dpr": 3,
+        "task": {
+          "kind": "cube",
+          "prompt": "色の位置を覚えて、最後の正面は？",
+          "help": "見えている3面を覚えてください。回転すると色が隠れます。",
+          "colors": [
+            {
+              "name": "むらさき",
+              "hex": "#A66DC2"
+            },
+            {
+              "name": "みどり",
+              "hex": "#6BAE8E"
+            },
+            {
+              "name": "きいろ",
+              "hex": "#D5A93F"
+            },
+            {
+              "name": "あお",
+              "hex": "#5A88BE"
+            },
+            {
+              "name": "ピンク",
+              "hex": "#D983A0"
+            },
+            {
+              "name": "しろ",
+              "hex": "#D8D4DC"
+            }
+          ],
+          "turns": [
+            "right",
+            "up"
+          ],
+          "answer": "ピンク",
+          "options": [
+            "あお",
+            "ピンク",
+            "むらさき",
+            "しろ"
+          ],
+          "duration": 8500
+        },
+        "constants": {
+          "labels": {
+            "right": "右面→正面",
+            "left": "左面→正面",
+            "up": "上面→正面",
+            "down": "下面→正面"
+          },
+          "encodeMs": 2400,
+          "normal": {
+            "firstDelay": 260,
+            "turnDelay": 700
+          },
+          "reduced": {
+            "firstDelay": 120,
+            "turnDelay": 320
+          },
+          "duration": 8500
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "masked": true,
+          "step": 2,
+          "faces": [
+            4,
+            2,
+            5,
+            0,
+            3,
+            1
+          ],
+          "frontIndex": 4,
+          "frontName": "ピンク",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "selected": "ピンク",
+          "detail": "正解。最後の正面はピンク",
+          "finishCalls": 1,
+          "stages": 2,
+          "timing": {
+            "encodeMs": 2400,
+            "firstDelay": 260,
+            "turnDelay": 700,
+            "duration": 8500
+          },
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 189,
+            "pixelWidth": 996,
+            "pixelHeight": 567,
+            "dpr": 3
+          },
+          "status": "正解。最後の正面はピンク",
+          "buttons": [
+            {
+              "text": "あお",
+              "disabled": true,
+              "selected": false
+            },
+            {
+              "text": "ピンク",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "text": "むらさき",
+              "disabled": true,
+              "selected": false
+            },
+            {
+              "text": "しろ",
+              "disabled": true,
+              "selected": false
+            }
+          ],
+          "reduced": false
+        },
+        "computed": {
+          "faces": [
+            4,
+            2,
+            5,
+            0,
+            3,
+            1
+          ],
+          "frontIndex": 4,
+          "frontName": "ピンク",
+          "step": 2,
+          "masked": true,
+          "choicesEnabled": false,
+          "result": "success",
+          "selected": "ピンク",
+          "payload": {
+            "correct": true,
+            "result": {
+              "answerLabel": "ピンク"
+            }
+          }
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "answerLabel": "ピンク"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 189,
+            "pixelWidth": 996,
+            "pixelHeight": 567,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-cube-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/game-kernel.js",
+          "http://127.0.0.1:8863/src/games/spatial-cube-v1.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "navigationMs": 16.700000047683716,
+      "longTasks": [],
+      "nodeCount": 29,
+      "scrollY": 0
+    }
+  },
+  "keyboard": {
+    "ready": {
+      "state": {
+        "phase": "CHOICES",
+        "masked": true,
+        "step": 2,
+        "faces": [
+          4,
+          2,
+          5,
+          0,
+          3,
+          1
+        ],
+        "frontIndex": 4,
+        "frontName": "ピンク",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "finishCalls": 0,
+        "stages": 2,
+        "timing": {
+          "encodeMs": 2400,
+          "firstDelay": 260,
+          "turnDelay": 700,
+          "duration": 8500
+        },
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 212,
+          "pixelWidth": 1116,
+          "pixelHeight": 636,
+          "dpr": 3
+        },
+        "status": "最後に正面へ来た色を、記憶で選んで。",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false
+          },
+          {
+            "text": "ピンク",
+            "disabled": false,
+            "selected": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false
+          },
+          {
+            "text": "しろ",
+            "disabled": false,
+            "selected": false
+          }
+        ],
+        "reduced": false
+      },
+      "focused": true,
+      "activeText": "あお",
+      "scrollY": 0
+    },
+    "afterFocus": "ピンク",
+    "final": {
+      "state": {
+        "phase": "SUCCESS",
+        "masked": true,
+        "step": 2,
+        "faces": [
+          4,
+          2,
+          5,
+          0,
+          3,
+          1
+        ],
+        "frontIndex": 4,
+        "frontName": "ピンク",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "ピンク",
+        "detail": "正解。最後の正面はピンク",
+        "finishCalls": 1,
+        "stages": 2,
+        "timing": {
+          "encodeMs": 2400,
+          "firstDelay": 260,
+          "turnDelay": 700,
+          "duration": 8500
+        },
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 212,
+          "pixelWidth": 1116,
+          "pixelHeight": 636,
+          "dpr": 3
+        },
+        "status": "正解。最後の正面はピンク",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "ピンク",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "しろ",
+            "disabled": true,
+            "selected": false
+          }
+        ],
+        "reduced": false
+      },
+      "evidence": {
+        "variant": "module",
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 430,
+        "dpr": 3,
+        "task": {
+          "kind": "cube",
+          "prompt": "色の位置を覚えて、最後の正面は？",
+          "help": "見えている3面を覚えてください。回転すると色が隠れます。",
+          "colors": [
+            {
+              "name": "むらさき",
+              "hex": "#A66DC2"
+            },
+            {
+              "name": "みどり",
+              "hex": "#6BAE8E"
+            },
+            {
+              "name": "きいろ",
+              "hex": "#D5A93F"
+            },
+            {
+              "name": "あお",
+              "hex": "#5A88BE"
+            },
+            {
+              "name": "ピンク",
+              "hex": "#D983A0"
+            },
+            {
+              "name": "しろ",
+              "hex": "#D8D4DC"
+            }
+          ],
+          "turns": [
+            "right",
+            "up"
+          ],
+          "answer": "ピンク",
+          "options": [
+            "あお",
+            "ピンク",
+            "むらさき",
+            "しろ"
+          ],
+          "duration": 8500
+        },
+        "constants": {
+          "labels": {
+            "right": "右面→正面",
+            "left": "左面→正面",
+            "up": "上面→正面",
+            "down": "下面→正面"
+          },
+          "encodeMs": 2400,
+          "normal": {
+            "firstDelay": 260,
+            "turnDelay": 700
+          },
+          "reduced": {
+            "firstDelay": 120,
+            "turnDelay": 320
+          },
+          "duration": 8500
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "masked": true,
+          "step": 2,
+          "faces": [
+            4,
+            2,
+            5,
+            0,
+            3,
+            1
+          ],
+          "frontIndex": 4,
+          "frontName": "ピンク",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "selected": "ピンク",
+          "detail": "正解。最後の正面はピンク",
+          "finishCalls": 1,
+          "stages": 2,
+          "timing": {
+            "encodeMs": 2400,
+            "firstDelay": 260,
+            "turnDelay": 700,
+            "duration": 8500
+          },
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 212,
+            "pixelWidth": 1116,
+            "pixelHeight": 636,
+            "dpr": 3
+          },
+          "status": "正解。最後の正面はピンク",
+          "buttons": [
+            {
+              "text": "あお",
+              "disabled": true,
+              "selected": false
+            },
+            {
+              "text": "ピンク",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "text": "むらさき",
+              "disabled": true,
+              "selected": false
+            },
+            {
+              "text": "しろ",
+              "disabled": true,
+              "selected": false
+            }
+          ],
+          "reduced": false
+        },
+        "computed": {
+          "faces": [
+            4,
+            2,
+            5,
+            0,
+            3,
+            1
+          ],
+          "frontIndex": 4,
+          "frontName": "ピンク",
+          "step": 2,
+          "masked": true,
+          "choicesEnabled": false,
+          "result": "success",
+          "selected": "ピンク",
+          "payload": {
+            "correct": true,
+            "result": {
+              "answerLabel": "ピンク"
+            }
+          }
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "answerLabel": "ピンク"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 430,
+          "innerWidth": 430,
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 212,
+            "pixelWidth": 1116,
+            "pixelHeight": 636,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-cube-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-cube-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0,
+      "activeText": "初老テスト。parity sourceMODULE 1.0 PORT色の位置を覚えて、最後の正面は？見えている3面を覚えてください。回転すると色が隠れます。\n.cb-stage{box-sizing:border-box;width:100%;max-width:430px;margin-inline:auto;display:grid;gap:.48rem;color:#392f40;outline:none;contain:layout paint}.cb-stage:focus-visible{outline:4px solid #68447b;outline-offset:3px;border-radius:1rem}.cb-scene{position:relative;overflow:hidden;border:1px solid #d6cadc;border-radius:1rem;background:radial-gradient(circle at 50% 36%,#fff 0,#f3ebf7 58%,#e5d8eb 100%);box-shadow:0 11px 26px rgba(63,42,73,.16)}.cb-canvas{box-sizing:border-box;display:block;width:100%;height:100%}.cb-turns{display:flex;min-height:2rem;flex-wrap:wrap;justify-content:center;gap:.3rem}.cb-turns[hidden]{display:none}.cb-turn{padding:.28rem .46rem;border:1.5px solid #d6c5df;border-radius:999px;background:#f8f2fa;color:#725d7c;font:900 .66rem/1.2 system-ui;white-space:nowrap}.cb-turn.active{border-color:#75478d;background:#75478d;color:#fff;box-shadow:0 3px 9px rgba(87,50,103,.2)}.cb-turn.done{border-color:#b7c7a8;background:#e3eedb;color:#4c6c40}.cb-status{min-height:2.65rem;margin:0;padding:.48rem .65rem;border:1px solid #ddd2e2;border-radius:.72rem;background:#fff;color:#67586d;text-align:center;font:850 .74rem/1.4 system-ui}.cb-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.42rem}.cb-choice{box-sizing:border-box;min-height:3rem;border:1.5px solid #d9c9e0;border-radius:.78rem;background:#fff;color:#5b3b69;font:900 .78rem/1.2 system-ui;touch-action:manipulation}.cb-choice:disabled{background:#eee9f0;color:#918696;opacity:.75}.cb-choice:focus-visible{outline:4px solid #68447b;outline-offset:2px}.cb-choice.selected{border-color:#8b579f;box-shadow:inset 0 0 0 2px #8b579f}.cb-stage[data-result=SUCCESS] .cb-status{border-color:#88c298;background:#e3f4e7;color:#27633a}.cb-stage[data-result=WRONG] .cb-status,.cb-stage[data-result=TIMEOUT] .cb-status{border-color:#d9918b;background:#fde9e6;color:#84372f}.cb-stage[data-reduced=true] *{animation:none!important;transition:none!important}@media(prefers-reduced-motion:reduce){.cb-stage *{animation:none!important;transition:none!important}}\n1. 右面→正面2. 上面→正面正解。最後の正面はピンクあおピンクむらさきしろ\n"
+    }
+  },
+  "reduced": {
+    "timeline": {
+      "seen": [
+        {
+          "phase": "ENCODE",
+          "at": 159.60000002384186,
+          "step": 0,
+          "faces": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "stages": 0,
+          "masked": false
+        },
+        {
+          "phase": "HIDDEN",
+          "at": 2411.9000000953674,
+          "step": 0,
+          "faces": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "stages": 0,
+          "masked": true
+        },
+        {
+          "phase": "TURN1",
+          "at": 2534.100000023842,
+          "step": 1,
+          "faces": [
+            1,
+            2,
+            3,
+            0,
+            4,
+            5
+          ],
+          "stages": 1,
+          "masked": true
+        },
+        {
+          "phase": "TURN2",
+          "at": 2858.7000000476837,
+          "step": 2,
+          "faces": [
+            4,
+            2,
+            5,
+            0,
+            3,
+            1
+          ],
+          "stages": 2,
+          "masked": true
+        },
+        {
+          "phase": "CHOICES",
+          "at": 3183.7000000476837,
+          "step": 2,
+          "faces": [
+            4,
+            2,
+            5,
+            0,
+            3,
+            1
+          ],
+          "stages": 2,
+          "masked": true
+        }
+      ],
+      "state": {
+        "phase": "CHOICES",
+        "masked": true,
+        "step": 2,
+        "faces": [
+          4,
+          2,
+          5,
+          0,
+          3,
+          1
+        ],
+        "frontIndex": 4,
+        "frontName": "ピンク",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "finishCalls": 0,
+        "stages": 2,
+        "timing": {
+          "encodeMs": 2400,
+          "firstDelay": 120,
+          "turnDelay": 320,
+          "duration": 8500
+        },
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 191,
+          "pixelWidth": 1005,
+          "pixelHeight": 573,
+          "dpr": 3
+        },
+        "status": "最後に正面へ来た色を、記憶で選んで。",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false
+          },
+          {
+            "text": "ピンク",
+            "disabled": false,
+            "selected": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false
+          },
+          {
+            "text": "しろ",
+            "disabled": false,
+            "selected": false
+          }
+        ],
+        "reduced": true
+      },
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 10,
+        "aborted": false
+      },
+      "focused": true,
+      "scrollY": 0
+    },
+    "final": {
+      "state": {
+        "phase": "WRONG",
+        "masked": true,
+        "step": 2,
+        "faces": [
+          4,
+          2,
+          5,
+          0,
+          3,
+          1
+        ],
+        "frontIndex": 4,
+        "frontName": "ピンク",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "wrong",
+        "selected": "あお",
+        "detail": "残念。最後の正面はピンク",
+        "finishCalls": 1,
+        "stages": 2,
+        "timing": {
+          "encodeMs": 2400,
+          "firstDelay": 120,
+          "turnDelay": 320,
+          "duration": 8500
+        },
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 191,
+          "pixelWidth": 1005,
+          "pixelHeight": 573,
+          "dpr": 3
+        },
+        "status": "残念。最後の正面はピンク",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": true
+          },
+          {
+            "text": "ピンク",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "しろ",
+            "disabled": true,
+            "selected": false
+          }
+        ],
+        "reduced": true
+      },
+      "evidence": {
+        "variant": "module",
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "cube",
+          "prompt": "色の位置を覚えて、最後の正面は？",
+          "help": "見えている3面を覚えてください。回転すると色が隠れます。",
+          "colors": [
+            {
+              "name": "むらさき",
+              "hex": "#A66DC2"
+            },
+            {
+              "name": "みどり",
+              "hex": "#6BAE8E"
+            },
+            {
+              "name": "きいろ",
+              "hex": "#D5A93F"
+            },
+            {
+              "name": "あお",
+              "hex": "#5A88BE"
+            },
+            {
+              "name": "ピンク",
+              "hex": "#D983A0"
+            },
+            {
+              "name": "しろ",
+              "hex": "#D8D4DC"
+            }
+          ],
+          "turns": [
+            "right",
+            "up"
+          ],
+          "answer": "ピンク",
+          "options": [
+            "あお",
+            "ピンク",
+            "むらさき",
+            "しろ"
+          ],
+          "duration": 8500
+        },
+        "constants": {
+          "labels": {
+            "right": "右面→正面",
+            "left": "左面→正面",
+            "up": "上面→正面",
+            "down": "下面→正面"
+          },
+          "encodeMs": 2400,
+          "normal": {
+            "firstDelay": 260,
+            "turnDelay": 700
+          },
+          "reduced": {
+            "firstDelay": 120,
+            "turnDelay": 320
+          },
+          "duration": 8500
+        },
+        "state": {
+          "phase": "WRONG",
+          "masked": true,
+          "step": 2,
+          "faces": [
+            4,
+            2,
+            5,
+            0,
+            3,
+            1
+          ],
+          "frontIndex": 4,
+          "frontName": "ピンク",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "wrong",
+          "selected": "あお",
+          "detail": "残念。最後の正面はピンク",
+          "finishCalls": 1,
+          "stages": 2,
+          "timing": {
+            "encodeMs": 2400,
+            "firstDelay": 120,
+            "turnDelay": 320,
+            "duration": 8500
+          },
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 191,
+            "pixelWidth": 1005,
+            "pixelHeight": 573,
+            "dpr": 3
+          },
+          "status": "残念。最後の正面はピンク",
+          "buttons": [
+            {
+              "text": "あお",
+              "disabled": true,
+              "selected": true
+            },
+            {
+              "text": "ピンク",
+              "disabled": true,
+              "selected": false
+            },
+            {
+              "text": "むらさき",
+              "disabled": true,
+              "selected": false
+            },
+            {
+              "text": "しろ",
+              "disabled": true,
+              "selected": false
+            }
+          ],
+          "reduced": true
+        },
+        "computed": {
+          "faces": [
+            4,
+            2,
+            5,
+            0,
+            3,
+            1
+          ],
+          "frontIndex": 4,
+          "frontName": "ピンク",
+          "step": 2,
+          "masked": true,
+          "choicesEnabled": false,
+          "result": "wrong",
+          "selected": "あお",
+          "payload": {
+            "correct": false,
+            "result": {
+              "answerLabel": "ピンク"
+            }
+          }
+        },
+        "finishes": [
+          {
+            "correct": false,
+            "result": {
+              "answerLabel": "ピンク"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 191,
+            "pixelWidth": 1005,
+            "pixelHeight": 573,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-cube-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-cube-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0
+    }
+  },
+  "deadline": {
+    "elapsed": 11696.700000047684,
+    "state": {
+      "phase": "TIMEOUT",
+      "masked": true,
+      "step": 2,
+      "faces": [
+        4,
+        2,
+        5,
+        0,
+        3,
+        1
+      ],
+      "frontIndex": 4,
+      "frontName": "ピンク",
+      "choicesEnabled": false,
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "selected": null,
+      "detail": "時間切れです。脳は定時退社しました。",
+      "finishCalls": 1,
+      "stages": 2,
+      "timing": {
+        "encodeMs": 2400,
+        "firstDelay": 120,
+        "turnDelay": 320,
+        "duration": 8500
+      },
+      "canvas": {
+        "cssWidth": 335,
+        "cssHeight": 191,
+        "pixelWidth": 1005,
+        "pixelHeight": 573,
+        "dpr": 3
+      },
+      "status": "時間切れです。脳は定時退社しました。",
+      "buttons": [
+        {
+          "text": "あお",
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "text": "ピンク",
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "text": "むらさき",
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "text": "しろ",
+          "disabled": true,
+          "selected": false
+        }
+      ],
+      "reduced": true
+    },
+    "evidence": {
+      "variant": "module",
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 393,
+      "dpr": 3,
+      "task": {
+        "kind": "cube",
+        "prompt": "色の位置を覚えて、最後の正面は？",
+        "help": "見えている3面を覚えてください。回転すると色が隠れます。",
+        "colors": [
+          {
+            "name": "むらさき",
+            "hex": "#A66DC2"
+          },
+          {
+            "name": "みどり",
+            "hex": "#6BAE8E"
+          },
+          {
+            "name": "きいろ",
+            "hex": "#D5A93F"
+          },
+          {
+            "name": "あお",
+            "hex": "#5A88BE"
+          },
+          {
+            "name": "ピンク",
+            "hex": "#D983A0"
+          },
+          {
+            "name": "しろ",
+            "hex": "#D8D4DC"
+          }
+        ],
+        "turns": [
+          "right",
+          "up"
+        ],
+        "answer": "ピンク",
+        "options": [
+          "あお",
+          "ピンク",
+          "むらさき",
+          "しろ"
+        ],
+        "duration": 8500
+      },
+      "constants": {
+        "labels": {
+          "right": "右面→正面",
+          "left": "左面→正面",
+          "up": "上面→正面",
+          "down": "下面→正面"
+        },
+        "encodeMs": 2400,
+        "normal": {
+          "firstDelay": 260,
+          "turnDelay": 700
+        },
+        "reduced": {
+          "firstDelay": 120,
+          "turnDelay": 320
+        },
+        "duration": 8500
+      },
+      "state": {
+        "phase": "TIMEOUT",
+        "masked": true,
+        "step": 2,
+        "faces": [
+          4,
+          2,
+          5,
+          0,
+          3,
+          1
+        ],
+        "frontIndex": 4,
+        "frontName": "ピンク",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "timeout",
+        "selected": null,
+        "detail": "時間切れです。脳は定時退社しました。",
+        "finishCalls": 1,
+        "stages": 2,
+        "timing": {
+          "encodeMs": 2400,
+          "firstDelay": 120,
+          "turnDelay": 320,
+          "duration": 8500
+        },
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 191,
+          "pixelWidth": 1005,
+          "pixelHeight": 573,
+          "dpr": 3
+        },
+        "status": "時間切れです。脳は定時退社しました。",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "ピンク",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "しろ",
+            "disabled": true,
+            "selected": false
+          }
+        ],
+        "reduced": true
+      },
+      "computed": {
+        "faces": [
+          4,
+          2,
+          5,
+          0,
+          3,
+          1
+        ],
+        "frontIndex": 4,
+        "frontName": "ピンク",
+        "step": 2,
+        "masked": true,
+        "choicesEnabled": false,
+        "result": "timeout",
+        "selected": null,
+        "payload": {
+          "correct": false,
+          "result": {
+            "detail": "時間切れです。脳は定時退社しました。",
+            "answerLabel": "ピンク"
+          }
+        }
+      },
+      "finishes": [
+        {
+          "correct": false,
+          "result": {
+            "detail": "時間切れです。脳は定時退社しました。",
+            "answerLabel": "ピンク"
+          }
+        }
+      ],
+      "layout": {
+        "scrollWidth": 393,
+        "innerWidth": 393,
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 191,
+          "pixelWidth": 1005,
+          "pixelHeight": 573,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/spatial-cube-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/spatial-cube-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    }
+  },
+  "disposed": {
+    "before": {
+      "phase": "HIDDEN",
+      "masked": true,
+      "step": 0,
+      "faces": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "frontIndex": 0,
+      "frontName": "むらさき",
+      "choicesEnabled": false,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "selected": null,
+      "detail": "",
+      "finishCalls": 0,
+      "stages": 0,
+      "timing": {
+        "encodeMs": 2400,
+        "firstDelay": 260,
+        "turnDelay": 700,
+        "duration": 8500
+      },
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 196,
+        "pixelWidth": 1032,
+        "pixelHeight": 588,
+        "dpr": 3
+      },
+      "status": "色は隠れました。右面→正面 → 上面→正面 の順です。",
+      "buttons": [
+        {
+          "text": "あお",
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "text": "ピンク",
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "text": "むらさき",
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "text": "しろ",
+          "disabled": true,
+          "selected": false
+        }
+      ],
+      "reduced": false
+    },
+    "after": {
+      "phase": "HIDDEN",
+      "masked": true,
+      "step": 0,
+      "faces": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "frontIndex": 0,
+      "frontName": "むらさき",
+      "choicesEnabled": false,
+      "done": false,
+      "disposed": true,
+      "result": null,
+      "selected": null,
+      "detail": "",
+      "finishCalls": 0,
+      "stages": 0,
+      "timing": {
+        "encodeMs": 2400,
+        "firstDelay": 260,
+        "turnDelay": 700,
+        "duration": 8500
+      },
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 196,
+        "pixelWidth": 1032,
+        "pixelHeight": 588,
+        "dpr": 3
+      },
+      "status": "色は隠れました。右面→正面 → 上面→正面 の順です。",
+      "buttons": [
+        {
+          "text": "あお",
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "text": "ピンク",
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "text": "むらさき",
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "text": "しろ",
+          "disabled": true,
+          "selected": false
+        }
+      ],
+      "reduced": false
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": false,
+      "finishCalls": 0,
+      "commits": 0,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "qaRemoved": true,
+    "evidence": {
+      "variant": "module",
+      "scene": "initial",
+      "live": true,
+      "motion": "normal",
+      "width": 402,
+      "dpr": 3,
+      "task": {
+        "kind": "cube",
+        "prompt": "色の位置を覚えて、最後の正面は？",
+        "help": "見えている3面を覚えてください。回転すると色が隠れます。",
+        "colors": [
+          {
+            "name": "むらさき",
+            "hex": "#A66DC2"
+          },
+          {
+            "name": "みどり",
+            "hex": "#6BAE8E"
+          },
+          {
+            "name": "きいろ",
+            "hex": "#D5A93F"
+          },
+          {
+            "name": "あお",
+            "hex": "#5A88BE"
+          },
+          {
+            "name": "ピンク",
+            "hex": "#D983A0"
+          },
+          {
+            "name": "しろ",
+            "hex": "#D8D4DC"
+          }
+        ],
+        "turns": [
+          "right",
+          "up"
+        ],
+        "answer": "ピンク",
+        "options": [
+          "あお",
+          "ピンク",
+          "むらさき",
+          "しろ"
+        ],
+        "duration": 8500
+      },
+      "constants": {
+        "labels": {
+          "right": "右面→正面",
+          "left": "左面→正面",
+          "up": "上面→正面",
+          "down": "下面→正面"
+        },
+        "encodeMs": 2400,
+        "normal": {
+          "firstDelay": 260,
+          "turnDelay": 700
+        },
+        "reduced": {
+          "firstDelay": 120,
+          "turnDelay": 320
+        },
+        "duration": 8500
+      },
+      "state": {
+        "phase": "HIDDEN",
+        "masked": true,
+        "step": 0,
+        "faces": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "frontIndex": 0,
+        "frontName": "むらさき",
+        "choicesEnabled": false,
+        "done": false,
+        "disposed": true,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "finishCalls": 0,
+        "stages": 0,
+        "timing": {
+          "encodeMs": 2400,
+          "firstDelay": 260,
+          "turnDelay": 700,
+          "duration": 8500
+        },
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 196,
+          "pixelWidth": 1032,
+          "pixelHeight": 588,
+          "dpr": 3
+        },
+        "status": "色は隠れました。右面→正面 → 上面→正面 の順です。",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "ピンク",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": false
+          },
+          {
+            "text": "しろ",
+            "disabled": true,
+            "selected": false
+          }
+        ],
+        "reduced": false
+      },
+      "computed": {
+        "faces": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "frontIndex": 0,
+        "frontName": "むらさき",
+        "step": 0,
+        "masked": true,
+        "choicesEnabled": false,
+        "result": null,
+        "selected": null,
+        "payload": null
+      },
+      "finishes": [],
+      "layout": {
+        "scrollWidth": 402,
+        "innerWidth": 402,
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 196,
+          "pixelWidth": 1032,
+          "pixelHeight": 588,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/spatial-cube-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/game-kernel.js",
+        "http://127.0.0.1:8863/src/games/spatial-cube-v1.js"
+      ],
+      "external": [],
+      "errors": []
+    }
+  }
+}
