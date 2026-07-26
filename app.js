@@ -576,43 +576,6 @@ function makeParkTask(){
   return{kind:"parkJam",prompt:"赤い車を出口へ",help:"車をタップして、動かしたいマスをタップ。",
     cars,minMoves:2,moveLimit:5,duration:75000};
 }
-const ROPE_COLORS=["#F2953F","#EA7E9B","#5FB6E0","#66C08C","#F2CE4B","#A66DC2","#7C8CC4"];
-function ropeCross(a,b,c,d){
-  const side=(p,q,r)=>Math.sign((q.x-p.x)*(r.y-p.y)-(q.y-p.y)*(r.x-p.x));
-  const s1=side(a,b,c),s2=side(a,b,d),s3=side(c,d,a),s4=side(c,d,b);
-  return s1!==s2&&s3!==s4&&s1!==0&&s2!==0&&s3!==0&&s4!==0;
-}
-function ropeCrossings(points,edges){
-  let count=0;const pairs=[];
-  for(let i=0;i<edges.length;i++)for(let j=i+1;j<edges.length;j++){
-    const [a,b]=edges[i],[c,d]=edges[j];
-    if(a===c||a===d||b===c||b===d)continue;
-    if(ropeCross(points[a],points[b],points[c],points[d])){count++;pairs.push([i,j])}
-  }
-  return{count,pairs};
-}
-function makeRopeTask(){
-  for(let attempt=0;attempt<400;attempt++){
-    const nodes=randomInt(6,7);
-    const edges=[];
-    for(let i=0;i<nodes;i++)edges.push([i,(i+1)%nodes]);
-    if(nodes===7&&randomFloat()<.5)edges.push([0,3]);            // one chord makes the tangle richer
-    const points=Array.from({length:nodes},()=>({x:randomInt(18,82)/100,y:randomInt(16,84)/100}));
-    let tooClose=false;
-    points.forEach((p,i)=>points.forEach((q,j)=>{if(i<j&&Math.hypot(p.x-q.x,p.y-q.y)<.16)tooClose=true}));
-    if(tooClose)continue;
-    const{count}=ropeCrossings(points,edges);
-    if(count<3||count>7)continue;
-    return{kind:"ropeUntangle",prompt:"ロープの交差をゼロに",
-      help:"杭をドラッグして動かします。交差した赤いロープがなくなれば成功です。",
-      points,edges,start:count,nodes,duration:70000};
-  }
-  const nodes=6,edges=[];
-  for(let i=0;i<nodes;i++)edges.push([i,(i+1)%nodes]);
-  const points=[{x:.2,y:.2},{x:.8,y:.3},{x:.3,y:.8},{x:.75,y:.75},{x:.2,y:.5},{x:.55,y:.15}];
-  return{kind:"ropeUntangle",prompt:"ロープの交差をゼロに",help:"杭をドラッグして動かします。",
-    points,edges,start:ropeCrossings(points,edges).count,nodes,duration:70000};
-}
 const FLOW_SIZE=5;
 const FLOW_COLORS=[
   {key:"orange",base:"#F2953F",light:"#FFD0A0"},
@@ -964,7 +927,6 @@ const LEGACY_TASK_FACTORIES = [
   {id:"attention-water-sort-v1",version:"1.5",category:"attention",make:()=>makeWaterTask()},
   {id:"calculation-gate-run-v1",version:"1.6",category:"calculation",make:()=>makeGateTask()},
   {id:"spatial-park-jam-v1",version:"1.7",category:"spatial",make:()=>makeParkTask()},
-  {id:"spatial-rope-untangle-v1",version:"1.8",category:"spatial",make:()=>makeRopeTask()},
   {id:"spatial-flow-link-v1",version:"1.9",category:"spatial",make:()=>makeFlowTask()},
   {id:"attention-screw-out-v1",version:"1.11",category:"attention",make:()=>makeScrewTask()},
   {id:"timing-tower-stack-v1",version:"1.12",category:"timing",make:()=>makeTowerTask()},
@@ -1151,7 +1113,6 @@ function renderTask(task){
   if(task.kind==="waterSort"){renderWaterSort(task);return}
   if(task.kind==="gateRun"){renderGateRun(task);return}
   if(task.kind==="parkJam"){renderParkJam(task);return}
-  if(task.kind==="ropeUntangle"){renderRopeUntangle(task);return}
   if(task.kind==="flowLink"){renderFlowLink(task);return}
   if(task.kind==="screwOut"){renderScrewOut(task);return}
   if(task.kind==="towerStack"){renderTowerStack(task);return}
@@ -2640,151 +2601,6 @@ function renderParkJam(task){
   startDeadline(task.duration,()=>{
     if(state.done||questionAnswered)return;state.done=true;
     finishTask(false,{detail:`時間切れ。最短${task.minMoves}手で出せる配置でした。`});
-  });
-}
-function renderRopeUntangle(task){
-  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const wrap=document.createElement("div");wrap.className="rope-stage";
-  const canvas=document.createElement("canvas");canvas.className="rope-canvas";
-  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","杭をドラッグしてロープの交差をなくす");
-  const hint=document.createElement("p");hint.className="rope-hint";
-  wrap.append(canvas,hint);$("challenge").append(wrap);
-  const ctx=canvas.getContext("2d");
-  const points=task.points.map(point=>({...point}));
-  const state={drag:-1,done:false,best:task.start,glow:0};
-  const sparks=[];
-  let W=0,H=0,clock=0,crossing={count:task.start,pairs:[]};
-  const resize=()=>{
-    const dpr=Math.min(window.devicePixelRatio||1,3);
-    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*.96);
-    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
-    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  };
-  const px=point=>point.x*W,py=point=>point.y*H;
-  const recount=()=>{crossing=ropeCrossings(points,task.edges)};
-  const drawRope=(edge,index)=>{
-    const a=points[edge[0]],b=points[edge[1]];
-    const tangled=crossing.pairs.some(pair=>pair.includes(index));
-    const color=tangled?"#E4574F":ROPE_COLORS[index%ROPE_COLORS.length];
-    const width=W*.026;
-    ctx.lineCap="round";
-    ctx.strokeStyle="rgba(30,18,44,.18)";ctx.lineWidth=width*1.5;
-    ctx.beginPath();ctx.moveTo(px(a),py(a)+width*.4);ctx.lineTo(px(b),py(b)+width*.4);ctx.stroke();
-    ctx.strokeStyle=color;ctx.lineWidth=width;
-    ctx.beginPath();ctx.moveTo(px(a),py(a));ctx.lineTo(px(b),py(b));ctx.stroke();
-    ctx.strokeStyle="rgba(255,255,255,.45)";ctx.lineWidth=width*.3;
-    ctx.beginPath();ctx.moveTo(px(a),py(a));ctx.lineTo(px(b),py(b));ctx.stroke();
-    if(tangled){
-      ctx.strokeStyle=`rgba(228,87,79,${.35+Math.sin(clock*5)*.25})`;ctx.lineWidth=width*1.9;
-      ctx.beginPath();ctx.moveTo(px(a),py(a));ctx.lineTo(px(b),py(b));ctx.stroke();
-    }
-  };
-  const drawNode=(point,index)=>{
-    const x=px(point),y=py(point),r=W*.05,active=state.drag===index;
-    ctx.fillStyle="rgba(30,18,44,.22)";
-    ctx.beginPath();ctx.ellipse(x,y+r*.5,r*.9,r*.32,0,0,Math.PI*2);ctx.fill();
-    const body=ctx.createRadialGradient(x-r*.3,y-r*.4,r*.1,x,y,r);
-    body.addColorStop(0,"#FFF6E4");body.addColorStop(.55,"#E9D6B8");body.addColorStop(1,"#A8895F");
-    ctx.fillStyle=body;ctx.beginPath();ctx.arc(x,y,r*(active?1.12:1),0,Math.PI*2);ctx.fill();
-    ctx.strokeStyle="rgba(120,90,60,.6)";ctx.lineWidth=Math.max(1,r*.12);ctx.stroke();
-    ctx.fillStyle="#5A4632";
-    ctx.beginPath();ctx.arc(x-r*.22,y-r*.08,r*.13,0,Math.PI*2);ctx.fill();
-    ctx.beginPath();ctx.arc(x+r*.22,y-r*.08,r*.13,0,Math.PI*2);ctx.fill();
-    ctx.strokeStyle="#5A4632";ctx.lineWidth=Math.max(1,r*.09);
-    ctx.beginPath();ctx.arc(x,y+r*.12,r*.24,.15*Math.PI,.85*Math.PI);ctx.stroke();
-  };
-  const paint=()=>{
-    ctx.clearRect(0,0,W,H);
-    const back=ctx.createLinearGradient(0,0,W,H);
-    back.addColorStop(0,"#F7F1FB");back.addColorStop(1,"#E4EFF6");
-    ctx.fillStyle=back;ctx.fillRect(0,0,W,H);
-    task.edges.forEach(drawRope);
-    points.forEach(drawNode);
-    sparks.forEach(spark=>{
-      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
-      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
-    });
-    ctx.fillStyle=crossing.count?"rgba(166,71,99,.95)":"rgba(61,120,95,.95)";
-    ctx.font=`900 ${Math.round(W*.055)}px "Hiragino Maru Gothic ProN",sans-serif`;
-    ctx.textBaseline="top";ctx.fillText(crossing.count?`交差 ${crossing.count}`:"交差なし！",W*.05,H*.035);
-    if(state.glow>0){
-      ctx.fillStyle=`rgba(255,255,255,${state.glow*.5})`;ctx.fillRect(0,0,W,H);
-    }
-  };
-  const burst=(x,y,color,count)=>{
-    for(let i=0;i<(reduced?4:count);i++){
-      const angle=randomFloat()*Math.PI*2,speed=W*(.04+randomFloat()*.1);
-      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-W*.03,size:W*(.005+randomFloat()*.01),color,life:1});
-    }
-  };
-  const finish=(won,detail)=>{
-    if(state.done||questionAnswered)return;state.done=true;
-    const elapsed=performance.now()-questionStartedAt;
-    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?200:900);
-  };
-  const nodeAt=event=>{
-    const rect=canvas.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;
-    let best=-1,bestDistance=W*.09;
-    points.forEach((point,index)=>{
-      const distance=Math.hypot(x-px(point),y-py(point));
-      if(distance<bestDistance){bestDistance=distance;best=index}
-    });
-    return{index:best,x,y};
-  };
-  canvas.addEventListener("pointerdown",event=>{
-    if(state.done||questionAnswered)return;
-    event.preventDefault();
-    const hit=nodeAt(event);
-    if(hit.index<0)return;
-    state.drag=hit.index;
-    try{canvas.setPointerCapture?.(event.pointerId)}catch{}
-    hint.textContent="動かして交差をほどきます";
-  });
-  canvas.addEventListener("pointermove",event=>{
-    if(state.drag<0||state.done)return;
-    event.preventDefault();
-    const rect=canvas.getBoundingClientRect();
-    points[state.drag].x=clamp((event.clientX-rect.left)/W,.06,.94);
-    points[state.drag].y=clamp((event.clientY-rect.top)/H,.08,.94);
-    recount();
-  });
-  const release=()=>{
-    if(state.drag<0)return;
-    state.drag=-1;recount();
-    state.best=Math.min(state.best,crossing.count);
-    if(!crossing.count&&!state.done){
-      state.glow=1;
-      points.forEach(point=>burst(px(point),py(point),"#7FD08C",14));
-      finish(true,`交差${task.start}本をほどきました。`);
-    }
-  };
-  canvas.addEventListener("pointerup",release);
-  canvas.addEventListener("pointercancel",release);
-  wrap.tabIndex=0;wrap.focus({preventScroll:true});
-  hint.textContent="杭をドラッグしてほどきます";
-  recount();
-  let last=performance.now();const token={id:null};extraRafs.push(token);
-  const tick=now=>{
-    if(questionAnswered)return;
-    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
-    state.glow=Math.max(0,state.glow-dt*1.4);
-    for(let i=sparks.length-1;i>=0;i--){
-      const spark=sparks[i];spark.life-=dt*1.6;
-      if(spark.life<=0){sparks.splice(i,1);continue}
-      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=W*.4*dt;
-    }
-    paint();token.id=requestAnimationFrame(tick);
-  };
-  resize();
-  const onResize=()=>{resize();paint()};
-  window.addEventListener("resize",onResize,{passive:true});
-  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
-  if(window.__SHORO_QA__)window.__SHORO_QA__.rope={state,points,task,recount,crossing:()=>crossing,release};
-  paint();token.id=requestAnimationFrame(tick);
-  startDeadline(task.duration,()=>{
-    if(state.done||questionAnswered)return;state.done=true;
-    finishTask(false,{detail:`時間切れ。交差は${crossing.count}本残っていました。`});
   });
 }
 function renderFlowLink(task){
