@@ -278,7 +278,7 @@ function render(task,context){
   };
   const advanceSteps=count=>{let advanced=0;for(let index=0;index<Math.max(0,Math.floor(count));index++){if(!advanceOne())break;advanced++}if(!state.done){setStatus(`${state.visible===0?"表":"裏"}面は「${describe(state.visible)}」`);paint()}return advanced};
   const reducedCookStep=()=>{
-    if(state.done||state.disposed)return;const before=[material(0),material(1)];advanceOne();if(state.done||state.disposed)return;const after=[material(0),material(1)],changed=before.some((value,side)=>value!==after[side]);
+    if(state.done||state.disposed)return;const before=[material(0),material(1)];advanceOne();if(state.done||state.disposed)return;clock=state.steps*task.quantumMs;const after=[material(0),material(1)],changed=before.some((value,side)=>value!==after[side]);
     if(changed&&!state.busy)setStatus(`${state.visible===0?"表":"裏"}面は「${describe(state.visible)}」`);else if(changed||state.steps%4===0){updateMemory();paint()}
     context.later(reducedCookStep,task.quantumMs);
   };
