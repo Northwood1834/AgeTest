@@ -37,6 +37,33 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Required distinction: not a grid maze, parking reskin, or multiple-choice rotation question. The player must discover a real translate–pivot–stand-up sequence in continuous geometry.
 - Proof: finite authored floor plans, swept-polygon collision, canonical collision-free route, near-clearance boundary cases, deterministic damage accounting, plain resume, single finish, and equivalent reduced-motion geometry.
 
+### Q12 — `social-airplane-boarding-v1`
+
+- Category/tier/flavor: social / tier 3 / quirky
+- Core: read a fictional boarding pass, move down a narrow aircraft aisle, stow the correct carry-on in an available overhead space, address people blocking the row appropriately, yield the aisle when needed, and finally sit in the assigned row/letter seat.
+- Required causality: seat side and row, bin capacity, aisle occupancy, passenger position, and the order of `荷物を上げる／声を掛ける／道を譲る／座る` actions all remain visible and determine whether the assigned seat is reachable. It must not be a four-question etiquette quiz.
+- Outcomes: correctly seated with bag secured; wrong row/letter; blocked aisle from premature stowing; unsuitable request; failure to yield; oversized/full bin; and timeout retaining the actual cabin state.
+- Required distinction: unlike Commuter Seat, this is a multi-action boarding sequence with a boarding pass, overhead-bin state, and row-access negotiation—not seat availability recognition.
+- Proof: finite cabin layouts, unique legal action sequence or tightly bounded valid variants, exact bin/aisle/passenger state transitions, plain resume, single finish, and no real airline branding or security instructions.
+
+### Q13 — `memory-bus-boarding-v1`
+
+- Category/tier/flavor: memory / tier 2 / quirky
+- Core: remember a mother's short route-specific advice, then board a fictional local bus using the correct front/rear door and pay at the correct boarding/alighting phase.
+- Required sequence: encoding scene explicitly teaches two independent facts—`前乗り／後ろ乗り` and `先払い／後払い`; the advice disappears; the player chooses the door and payment timing through an actual bus-stop/door interaction.
+- Outcomes: correct boarding and payment; correct door but wrong payment phase; wrong door; attempting to sit before required prepayment; paying too early on a post-pay route; and timeout retaining progress.
+- Safety/accuracy: systems vary by operator and region, so every task is a clearly fictional route whose displayed advice is the sole authority. Do not present one convention as universal Japanese transit guidance or copy a real operator.
+- Proof: finite cue sets map uniquely to all four convention combinations, delayed recall, partial-action resume, no answer leak, three-step deterministic terminal sequence, and accessible keyboard path.
+
+### Q14 — `calculation-transfer-ticket-v1`
+
+- Category/tier/flavor: calculation / tier 3 / satisfying
+- Core: use a fictional rail map and fare table to reach a stated destination, including journeys with one transfer, then insert coins and buy the correct total-fare ticket.
+- Required causality: chosen origin/destination and transfer station determine the actual route legs; each leg's fare and any explicitly stated through-fare/transfer rule determine the payable amount. The ticket machine physically retains inserted denominations, selected fare, ticket, and change.
+- Outcomes: correct ticket and route; wrong destination branch; omitted transfer leg; fare shortfall; overpayment with correct change but wrong ticket selection; invalid transfer; and timeout retaining map/money state.
+- Required distinction: not a standalone arithmetic multiple choice or another Change Smart game. Route reading produces the amount; the objective is the correct ticket, not minimizing returned coin count.
+- Proof: finite authored networks, exhaustive simple-route enumeration, unique accepted route/fare per task, exact denomination/change accounting, plain resume, single finish, and no real railway map, logo, or live fare claim.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
