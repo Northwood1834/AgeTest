@@ -16,7 +16,6 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `calculation-flower-share-v1` | former Label Jar owner | N12; screw lane | Drag one-dot stems and two-dot double blooms until three vases are visibly full |
 | `prediction-cookie-cut-v1` | former Clothesline Calm owner | N12; flow lane | Arrange three cutters on dough, then lift once to reveal only valid cookies |
 
 ## Waiting queue

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "calculation-flower-share-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "9683070a3ac4f280d7d127d231deb6cf15fb726b",
+  "test": "test/calculation-flower-share-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

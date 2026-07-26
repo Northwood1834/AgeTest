@@ -177,6 +177,17 @@ export const gameManifest=Object.freeze([
     "hash": "8ee9595356d661ed"
   },
   {
+    "id": "calculation-flower-share-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "calculation-flower-share",
+    "category": "calculation",
+    "module": "./games/calculation-flower-share-v1.js",
+    "hash": "a8465c9b367ea8b8"
+  },
+  {
     "id": "calculation-gate-run-v1",
     "introducedIn": "1.6",
     "tier": 2,
