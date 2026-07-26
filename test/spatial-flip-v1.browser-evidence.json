@@ -1,0 +1,2726 @@
+{
+  "game": "spatial-flip-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "checks": {
+    "allSixPairsLive": true,
+    "exactFrozenOptions": true,
+    "poolExclusion": true,
+    "noAnswerPreview": true,
+    "realTouch": true,
+    "immediateResult": true,
+    "successPayload": true,
+    "inputLock": true,
+    "keyboardEnter": true,
+    "keyboardSpace": true,
+    "focus": true,
+    "width390And430": true,
+    "reducedFeedback": true,
+    "reducedNoRaf": true,
+    "wrongPayload": true,
+    "actualDeadline6500": true,
+    "timeoutPayload": true,
+    "dispose": true,
+    "singleFinish": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "noErrorsOrExternal": true,
+    "performance": true
+  },
+  "six": [
+    {
+      "pair": 0,
+      "task": {
+        "kind": "rotation",
+        "prompt": "左右をひっくり返すと？",
+        "help": "鏡に映した形です。",
+        "symbol": "→",
+        "options": [
+          "↖",
+          "←",
+          "↘",
+          "↗"
+        ],
+        "answer": "←",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "source": "→",
+        "answer": "←",
+        "buttons": [
+          {
+            "text": "↖",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "←",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↘",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↗",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 169,
+          "pixelWidth": 1005,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "左の矢印を鏡に映した向きを選んでください"
+      },
+      "focused": true,
+      "canvasLabel": "→を左右に鏡映しする問題。答え側は隠れています",
+      "status": "左の矢印を鏡に映した向きを選んでください",
+      "evidence": {
+        "variant": "module",
+        "pair": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "rotation",
+          "prompt": "左右をひっくり返すと？",
+          "help": "鏡に映した形です。",
+          "symbol": "→",
+          "options": [
+            "↖",
+            "←",
+            "↘",
+            "↗"
+          ],
+          "answer": "←",
+          "duration": 6500
+        },
+        "constants": {
+          "rows": [
+            [
+              "→",
+              "←"
+            ],
+            [
+              "←",
+              "→"
+            ],
+            [
+              "↗",
+              "↖"
+            ],
+            [
+              "↘",
+              "↙"
+            ],
+            [
+              "↖",
+              "↗"
+            ],
+            [
+              "↙",
+              "↘"
+            ]
+          ],
+          "arrows": [
+            "→",
+            "←",
+            "↗",
+            "↖",
+            "↘",
+            "↙"
+          ],
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "source": "→",
+          "answer": "←",
+          "buttons": [
+            {
+              "text": "↖",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "←",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "↘",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "↗",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "左の矢印を鏡に映した向きを選んでください"
+        },
+        "computed": {
+          "source": "→",
+          "answer": "←",
+          "options": [
+            "↖",
+            "←",
+            "↘",
+            "↗"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-flip-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "pair": 1,
+      "task": {
+        "kind": "rotation",
+        "prompt": "左右をひっくり返すと？",
+        "help": "鏡に映した形です。",
+        "symbol": "←",
+        "options": [
+          "↙",
+          "↗",
+          "→",
+          "↘"
+        ],
+        "answer": "→",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "source": "←",
+        "answer": "→",
+        "buttons": [
+          {
+            "text": "↙",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "↗",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "→",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↘",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 169,
+          "pixelWidth": 1005,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "左の矢印を鏡に映した向きを選んでください"
+      },
+      "focused": true,
+      "canvasLabel": "←を左右に鏡映しする問題。答え側は隠れています",
+      "status": "左の矢印を鏡に映した向きを選んでください",
+      "evidence": {
+        "variant": "module",
+        "pair": 1,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "rotation",
+          "prompt": "左右をひっくり返すと？",
+          "help": "鏡に映した形です。",
+          "symbol": "←",
+          "options": [
+            "↙",
+            "↗",
+            "→",
+            "↘"
+          ],
+          "answer": "→",
+          "duration": 6500
+        },
+        "constants": {
+          "rows": [
+            [
+              "→",
+              "←"
+            ],
+            [
+              "←",
+              "→"
+            ],
+            [
+              "↗",
+              "↖"
+            ],
+            [
+              "↘",
+              "↙"
+            ],
+            [
+              "↖",
+              "↗"
+            ],
+            [
+              "↙",
+              "↘"
+            ]
+          ],
+          "arrows": [
+            "→",
+            "←",
+            "↗",
+            "↖",
+            "↘",
+            "↙"
+          ],
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "source": "←",
+          "answer": "→",
+          "buttons": [
+            {
+              "text": "↙",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "↗",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "→",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "↘",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "左の矢印を鏡に映した向きを選んでください"
+        },
+        "computed": {
+          "source": "←",
+          "answer": "→",
+          "options": [
+            "↙",
+            "↗",
+            "→",
+            "↘"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/game-kernel.js",
+          "http://127.0.0.1:8863/src/games/spatial-flip-v1.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "pair": 2,
+      "task": {
+        "kind": "rotation",
+        "prompt": "左右をひっくり返すと？",
+        "help": "鏡に映した形です。",
+        "symbol": "↗",
+        "options": [
+          "↖",
+          "↙",
+          "→",
+          "↘"
+        ],
+        "answer": "↖",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "source": "↗",
+        "answer": "↖",
+        "buttons": [
+          {
+            "text": "↖",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "↙",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "→",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↘",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 169,
+          "pixelWidth": 1005,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "左の矢印を鏡に映した向きを選んでください"
+      },
+      "focused": true,
+      "canvasLabel": "↗を左右に鏡映しする問題。答え側は隠れています",
+      "status": "左の矢印を鏡に映した向きを選んでください",
+      "evidence": {
+        "variant": "module",
+        "pair": 2,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "rotation",
+          "prompt": "左右をひっくり返すと？",
+          "help": "鏡に映した形です。",
+          "symbol": "↗",
+          "options": [
+            "↖",
+            "↙",
+            "→",
+            "↘"
+          ],
+          "answer": "↖",
+          "duration": 6500
+        },
+        "constants": {
+          "rows": [
+            [
+              "→",
+              "←"
+            ],
+            [
+              "←",
+              "→"
+            ],
+            [
+              "↗",
+              "↖"
+            ],
+            [
+              "↘",
+              "↙"
+            ],
+            [
+              "↖",
+              "↗"
+            ],
+            [
+              "↙",
+              "↘"
+            ]
+          ],
+          "arrows": [
+            "→",
+            "←",
+            "↗",
+            "↖",
+            "↘",
+            "↙"
+          ],
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "source": "↗",
+          "answer": "↖",
+          "buttons": [
+            {
+              "text": "↖",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "↙",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "→",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "↘",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "左の矢印を鏡に映した向きを選んでください"
+        },
+        "computed": {
+          "source": "↗",
+          "answer": "↖",
+          "options": [
+            "↖",
+            "↙",
+            "→",
+            "↘"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-flip-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "pair": 3,
+      "task": {
+        "kind": "rotation",
+        "prompt": "左右をひっくり返すと？",
+        "help": "鏡に映した形です。",
+        "symbol": "↘",
+        "options": [
+          "←",
+          "↙",
+          "↖",
+          "→"
+        ],
+        "answer": "↙",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "source": "↘",
+        "answer": "↙",
+        "buttons": [
+          {
+            "text": "←",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "↙",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↖",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "→",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 169,
+          "pixelWidth": 1005,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "左の矢印を鏡に映した向きを選んでください"
+      },
+      "focused": true,
+      "canvasLabel": "↘を左右に鏡映しする問題。答え側は隠れています",
+      "status": "左の矢印を鏡に映した向きを選んでください",
+      "evidence": {
+        "variant": "module",
+        "pair": 3,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "rotation",
+          "prompt": "左右をひっくり返すと？",
+          "help": "鏡に映した形です。",
+          "symbol": "↘",
+          "options": [
+            "←",
+            "↙",
+            "↖",
+            "→"
+          ],
+          "answer": "↙",
+          "duration": 6500
+        },
+        "constants": {
+          "rows": [
+            [
+              "→",
+              "←"
+            ],
+            [
+              "←",
+              "→"
+            ],
+            [
+              "↗",
+              "↖"
+            ],
+            [
+              "↘",
+              "↙"
+            ],
+            [
+              "↖",
+              "↗"
+            ],
+            [
+              "↙",
+              "↘"
+            ]
+          ],
+          "arrows": [
+            "→",
+            "←",
+            "↗",
+            "↖",
+            "↘",
+            "↙"
+          ],
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "source": "↘",
+          "answer": "↙",
+          "buttons": [
+            {
+              "text": "←",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "↙",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "↖",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "→",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "左の矢印を鏡に映した向きを選んでください"
+        },
+        "computed": {
+          "source": "↘",
+          "answer": "↙",
+          "options": [
+            "←",
+            "↙",
+            "↖",
+            "→"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-flip-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "pair": 4,
+      "task": {
+        "kind": "rotation",
+        "prompt": "左右をひっくり返すと？",
+        "help": "鏡に映した形です。",
+        "symbol": "↖",
+        "options": [
+          "↘",
+          "↗",
+          "→",
+          "←"
+        ],
+        "answer": "↗",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "source": "↖",
+        "answer": "↗",
+        "buttons": [
+          {
+            "text": "↘",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "↗",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "→",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "←",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 169,
+          "pixelWidth": 1005,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "左の矢印を鏡に映した向きを選んでください"
+      },
+      "focused": true,
+      "canvasLabel": "↖を左右に鏡映しする問題。答え側は隠れています",
+      "status": "左の矢印を鏡に映した向きを選んでください",
+      "evidence": {
+        "variant": "module",
+        "pair": 4,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "rotation",
+          "prompt": "左右をひっくり返すと？",
+          "help": "鏡に映した形です。",
+          "symbol": "↖",
+          "options": [
+            "↘",
+            "↗",
+            "→",
+            "←"
+          ],
+          "answer": "↗",
+          "duration": 6500
+        },
+        "constants": {
+          "rows": [
+            [
+              "→",
+              "←"
+            ],
+            [
+              "←",
+              "→"
+            ],
+            [
+              "↗",
+              "↖"
+            ],
+            [
+              "↘",
+              "↙"
+            ],
+            [
+              "↖",
+              "↗"
+            ],
+            [
+              "↙",
+              "↘"
+            ]
+          ],
+          "arrows": [
+            "→",
+            "←",
+            "↗",
+            "↖",
+            "↘",
+            "↙"
+          ],
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "source": "↖",
+          "answer": "↗",
+          "buttons": [
+            {
+              "text": "↘",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "↗",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "→",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "←",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "左の矢印を鏡に映した向きを選んでください"
+        },
+        "computed": {
+          "source": "↖",
+          "answer": "↗",
+          "options": [
+            "↘",
+            "↗",
+            "→",
+            "←"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-flip-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "pair": 5,
+      "task": {
+        "kind": "rotation",
+        "prompt": "左右をひっくり返すと？",
+        "help": "鏡に映した形です。",
+        "symbol": "↙",
+        "options": [
+          "↘",
+          "↖",
+          "←",
+          "↗"
+        ],
+        "answer": "↘",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "source": "↙",
+        "answer": "↘",
+        "buttons": [
+          {
+            "text": "↘",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "↖",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "←",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↗",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 169,
+          "pixelWidth": 1005,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "左の矢印を鏡に映した向きを選んでください"
+      },
+      "focused": true,
+      "canvasLabel": "↙を左右に鏡映しする問題。答え側は隠れています",
+      "status": "左の矢印を鏡に映した向きを選んでください",
+      "evidence": {
+        "variant": "module",
+        "pair": 5,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "rotation",
+          "prompt": "左右をひっくり返すと？",
+          "help": "鏡に映した形です。",
+          "symbol": "↙",
+          "options": [
+            "↘",
+            "↖",
+            "←",
+            "↗"
+          ],
+          "answer": "↘",
+          "duration": 6500
+        },
+        "constants": {
+          "rows": [
+            [
+              "→",
+              "←"
+            ],
+            [
+              "←",
+              "→"
+            ],
+            [
+              "↗",
+              "↖"
+            ],
+            [
+              "↘",
+              "↙"
+            ],
+            [
+              "↖",
+              "↗"
+            ],
+            [
+              "↙",
+              "↘"
+            ]
+          ],
+          "arrows": [
+            "→",
+            "←",
+            "↗",
+            "↖",
+            "↘",
+            "↙"
+          ],
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "source": "↙",
+          "answer": "↘",
+          "buttons": [
+            {
+              "text": "↘",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "↖",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "←",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "↗",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "左の矢印を鏡に映した向きを選んでください"
+        },
+        "computed": {
+          "source": "↙",
+          "answer": "↘",
+          "options": [
+            "↘",
+            "↖",
+            "←",
+            "↗"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-flip-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    }
+  ],
+  "touch": {
+    "start": {
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "source": "→",
+        "answer": "←",
+        "buttons": [
+          {
+            "text": "↖",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "←",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↘",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↗",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 168,
+          "pixelWidth": 996,
+          "pixelHeight": 504,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "左の矢印を鏡に映した向きを選んでください"
+      },
+      "focused": true,
+      "scrollY": 0
+    },
+    "actionAt": 1723.830421,
+    "touchPoint": {
+      "x": 279.8359375,
+      "y": 373.359375,
+      "width": 162.328125,
+      "height": 51.1875,
+      "disabled": false
+    },
+    "final": {
+      "committedAt": 325.60000002384186,
+      "before": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "←",
+        "detail": "正解。鏡の向きは「←」",
+        "payload": {
+          "answerLabel": "←"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "source": "→",
+        "answer": "←",
+        "buttons": [
+          {
+            "text": "↖",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "←",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "↘",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↗",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 168,
+          "pixelWidth": 996,
+          "pixelHeight": 504,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解。鏡の向きは「←」"
+      },
+      "after": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "←",
+        "detail": "正解。鏡の向きは「←」",
+        "payload": {
+          "answerLabel": "←"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "source": "→",
+        "answer": "←",
+        "buttons": [
+          {
+            "text": "↖",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "←",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "↘",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↗",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 168,
+          "pixelWidth": 996,
+          "pixelHeight": 504,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解。鏡の向きは「←」"
+      },
+      "finishesBefore": [
+        {
+          "correct": true,
+          "result": {
+            "answerLabel": "←"
+          }
+        }
+      ],
+      "evidence": {
+        "variant": "module",
+        "pair": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 390,
+        "dpr": 3,
+        "task": {
+          "kind": "rotation",
+          "prompt": "左右をひっくり返すと？",
+          "help": "鏡に映した形です。",
+          "symbol": "→",
+          "options": [
+            "↖",
+            "←",
+            "↘",
+            "↗"
+          ],
+          "answer": "←",
+          "duration": 6500
+        },
+        "constants": {
+          "rows": [
+            [
+              "→",
+              "←"
+            ],
+            [
+              "←",
+              "→"
+            ],
+            [
+              "↗",
+              "↖"
+            ],
+            [
+              "↘",
+              "↙"
+            ],
+            [
+              "↖",
+              "↗"
+            ],
+            [
+              "↙",
+              "↘"
+            ]
+          ],
+          "arrows": [
+            "→",
+            "←",
+            "↗",
+            "↖",
+            "↘",
+            "↙"
+          ],
+          "duration": 6500
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "selected": "←",
+          "detail": "正解。鏡の向きは「←」",
+          "payload": {
+            "answerLabel": "←"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "source": "→",
+          "answer": "←",
+          "buttons": [
+            {
+              "text": "↖",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "←",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            },
+            {
+              "text": "↘",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "↗",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 168,
+            "pixelWidth": 996,
+            "pixelHeight": 504,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "正解。鏡の向きは「←」"
+        },
+        "computed": {
+          "source": "→",
+          "answer": "←",
+          "options": [
+            "↖",
+            "←",
+            "↘",
+            "↗"
+          ],
+          "choicesEnabled": false,
+          "result": "success",
+          "selected": "←",
+          "payload": {
+            "correct": true,
+            "result": {
+              "answerLabel": "←"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "answerLabel": "←"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 168,
+            "pixelWidth": 996,
+            "pixelHeight": 504,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-flip-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0,
+      "navigationMs": 19.700000047683716,
+      "longTasks": [],
+      "nodeCount": 25
+    }
+  },
+  "enter": {
+    "ready": {
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "source": "↗",
+        "answer": "↖",
+        "buttons": [
+          {
+            "text": "↖",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "↙",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "→",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↘",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 188,
+          "pixelWidth": 1116,
+          "pixelHeight": 564,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "左の矢印を鏡に映した向きを選んでください"
+      },
+      "focused": true,
+      "active": "↖",
+      "scrollY": 0
+    },
+    "final": {
+      "state": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "↖",
+        "detail": "正解。鏡の向きは「↖」",
+        "payload": {
+          "answerLabel": "↖"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "source": "↗",
+        "answer": "↖",
+        "buttons": [
+          {
+            "text": "↖",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "↙",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "→",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↘",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 188,
+          "pixelWidth": 1116,
+          "pixelHeight": 564,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解。鏡の向きは「↖」"
+      },
+      "evidence": {
+        "variant": "module",
+        "pair": 2,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 430,
+        "dpr": 3,
+        "task": {
+          "kind": "rotation",
+          "prompt": "左右をひっくり返すと？",
+          "help": "鏡に映した形です。",
+          "symbol": "↗",
+          "options": [
+            "↖",
+            "↙",
+            "→",
+            "↘"
+          ],
+          "answer": "↖",
+          "duration": 6500
+        },
+        "constants": {
+          "rows": [
+            [
+              "→",
+              "←"
+            ],
+            [
+              "←",
+              "→"
+            ],
+            [
+              "↗",
+              "↖"
+            ],
+            [
+              "↘",
+              "↙"
+            ],
+            [
+              "↖",
+              "↗"
+            ],
+            [
+              "↙",
+              "↘"
+            ]
+          ],
+          "arrows": [
+            "→",
+            "←",
+            "↗",
+            "↖",
+            "↘",
+            "↙"
+          ],
+          "duration": 6500
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "selected": "↖",
+          "detail": "正解。鏡の向きは「↖」",
+          "payload": {
+            "answerLabel": "↖"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "source": "↗",
+          "answer": "↖",
+          "buttons": [
+            {
+              "text": "↖",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            },
+            {
+              "text": "↙",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "→",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "↘",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 188,
+            "pixelWidth": 1116,
+            "pixelHeight": 564,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "正解。鏡の向きは「↖」"
+        },
+        "computed": {
+          "source": "↗",
+          "answer": "↖",
+          "options": [
+            "↖",
+            "↙",
+            "→",
+            "↘"
+          ],
+          "choicesEnabled": false,
+          "result": "success",
+          "selected": "↖",
+          "payload": {
+            "correct": true,
+            "result": {
+              "answerLabel": "↖"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "answerLabel": "↖"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 430,
+          "innerWidth": 430,
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 188,
+            "pixelWidth": 1116,
+            "pixelHeight": 564,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/game-kernel.js",
+          "http://127.0.0.1:8863/src/games/spatial-flip-v1.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0
+    }
+  },
+  "space": {
+    "ready": {
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "source": "←",
+        "answer": "→",
+        "buttons": [
+          {
+            "text": "↙",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "↗",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "→",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↘",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 169,
+          "pixelWidth": 1005,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "左の矢印を鏡に映した向きを選んでください"
+      },
+      "focused": true,
+      "active": "↙",
+      "scrollY": 0
+    },
+    "final": {
+      "state": {
+        "phase": "WRONG",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "wrong",
+        "selected": "↙",
+        "detail": "残念。正解は「→」",
+        "payload": {
+          "answerLabel": "→"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "source": "←",
+        "answer": "→",
+        "buttons": [
+          {
+            "text": "↙",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "↗",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "→",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↘",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 169,
+          "pixelWidth": 1005,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "残念。正解は「→」"
+      },
+      "evidence": {
+        "variant": "module",
+        "pair": 1,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "rotation",
+          "prompt": "左右をひっくり返すと？",
+          "help": "鏡に映した形です。",
+          "symbol": "←",
+          "options": [
+            "↙",
+            "↗",
+            "→",
+            "↘"
+          ],
+          "answer": "→",
+          "duration": 6500
+        },
+        "constants": {
+          "rows": [
+            [
+              "→",
+              "←"
+            ],
+            [
+              "←",
+              "→"
+            ],
+            [
+              "↗",
+              "↖"
+            ],
+            [
+              "↘",
+              "↙"
+            ],
+            [
+              "↖",
+              "↗"
+            ],
+            [
+              "↙",
+              "↘"
+            ]
+          ],
+          "arrows": [
+            "→",
+            "←",
+            "↗",
+            "↖",
+            "↘",
+            "↙"
+          ],
+          "duration": 6500
+        },
+        "state": {
+          "phase": "WRONG",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "wrong",
+          "selected": "↙",
+          "detail": "残念。正解は「→」",
+          "payload": {
+            "answerLabel": "→"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "source": "←",
+          "answer": "→",
+          "buttons": [
+            {
+              "text": "↙",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            },
+            {
+              "text": "↗",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "→",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "↘",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "残念。正解は「→」"
+        },
+        "computed": {
+          "source": "←",
+          "answer": "→",
+          "options": [
+            "↙",
+            "↗",
+            "→",
+            "↘"
+          ],
+          "choicesEnabled": false,
+          "result": "wrong",
+          "selected": "↙",
+          "payload": {
+            "correct": false,
+            "result": {
+              "answerLabel": "→"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1
+        },
+        "finishes": [
+          {
+            "correct": false,
+            "result": {
+              "answerLabel": "→"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 169,
+            "pixelWidth": 1005,
+            "pixelHeight": 507,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/spatial-flip-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0
+    }
+  },
+  "deadline": {
+    "elapsed": 6514.100000023842,
+    "state": {
+      "phase": "TIMEOUT",
+      "choicesEnabled": false,
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "selected": null,
+      "detail": "時間切れです。脳は定時退社しました。",
+      "payload": {
+        "detail": "時間切れです。脳は定時退社しました。",
+        "answerLabel": "↘"
+      },
+      "finishCalls": 1,
+      "feedbackStages": 1,
+      "source": "↙",
+      "answer": "↘",
+      "buttons": [
+        {
+          "text": "↘",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "↖",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "←",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "↗",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 335,
+        "cssHeight": 169,
+        "pixelWidth": 1005,
+        "pixelHeight": 507,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "時間切れです。脳は定時退社しました。 正解は「↘」"
+    },
+    "evidence": {
+      "variant": "module",
+      "pair": 5,
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 393,
+      "dpr": 3,
+      "task": {
+        "kind": "rotation",
+        "prompt": "左右をひっくり返すと？",
+        "help": "鏡に映した形です。",
+        "symbol": "↙",
+        "options": [
+          "↘",
+          "↖",
+          "←",
+          "↗"
+        ],
+        "answer": "↘",
+        "duration": 6500
+      },
+      "constants": {
+        "rows": [
+          [
+            "→",
+            "←"
+          ],
+          [
+            "←",
+            "→"
+          ],
+          [
+            "↗",
+            "↖"
+          ],
+          [
+            "↘",
+            "↙"
+          ],
+          [
+            "↖",
+            "↗"
+          ],
+          [
+            "↙",
+            "↘"
+          ]
+        ],
+        "arrows": [
+          "→",
+          "←",
+          "↗",
+          "↖",
+          "↘",
+          "↙"
+        ],
+        "duration": 6500
+      },
+      "state": {
+        "phase": "TIMEOUT",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "timeout",
+        "selected": null,
+        "detail": "時間切れです。脳は定時退社しました。",
+        "payload": {
+          "detail": "時間切れです。脳は定時退社しました。",
+          "answerLabel": "↘"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "source": "↙",
+        "answer": "↘",
+        "buttons": [
+          {
+            "text": "↘",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↖",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "←",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "↗",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 169,
+          "pixelWidth": 1005,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "時間切れです。脳は定時退社しました。 正解は「↘」"
+      },
+      "computed": {
+        "source": "↙",
+        "answer": "↘",
+        "options": [
+          "↘",
+          "↖",
+          "←",
+          "↗"
+        ],
+        "choicesEnabled": false,
+        "result": "timeout",
+        "selected": null,
+        "payload": {
+          "correct": false,
+          "result": {
+            "detail": "時間切れです。脳は定時退社しました。",
+            "answerLabel": "↘"
+          }
+        },
+        "feedbackStages": 1,
+        "focused": -1
+      },
+      "finishes": [
+        {
+          "correct": false,
+          "result": {
+            "detail": "時間切れです。脳は定時退社しました。",
+            "answerLabel": "↘"
+          }
+        }
+      ],
+      "layout": {
+        "scrollWidth": 393,
+        "innerWidth": 393,
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 169,
+          "pixelWidth": 1005,
+          "pixelHeight": 507,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/game-kernel.js",
+        "http://127.0.0.1:8863/src/games/spatial-flip-v1.js"
+      ],
+      "external": [],
+      "errors": []
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    }
+  },
+  "disposed": {
+    "before": {
+      "phase": "CHOOSING",
+      "choicesEnabled": true,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "selected": null,
+      "detail": "",
+      "payload": null,
+      "finishCalls": 0,
+      "feedbackStages": 0,
+      "source": "↖",
+      "answer": "↗",
+      "buttons": [
+        {
+          "text": "↘",
+          "disabled": false,
+          "selected": false,
+          "focused": true
+        },
+        {
+          "text": "↗",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "→",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "←",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 174,
+        "pixelWidth": 1032,
+        "pixelHeight": 522,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "左の矢印を鏡に映した向きを選んでください"
+    },
+    "after": {
+      "phase": "CHOOSING",
+      "choicesEnabled": true,
+      "done": false,
+      "disposed": true,
+      "result": null,
+      "selected": null,
+      "detail": "",
+      "payload": null,
+      "finishCalls": 0,
+      "feedbackStages": 0,
+      "source": "↖",
+      "answer": "↗",
+      "buttons": [
+        {
+          "text": "↘",
+          "disabled": false,
+          "selected": false,
+          "focused": true
+        },
+        {
+          "text": "↗",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "→",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "←",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 174,
+        "pixelWidth": 1032,
+        "pixelHeight": 522,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "左の矢印を鏡に映した向きを選んでください"
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": false,
+      "finishCalls": 0,
+      "commits": 0,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "qaRemoved": true,
+    "evidence": {
+      "variant": "module",
+      "pair": 4,
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 402,
+      "dpr": 3,
+      "task": {
+        "kind": "rotation",
+        "prompt": "左右をひっくり返すと？",
+        "help": "鏡に映した形です。",
+        "symbol": "↖",
+        "options": [
+          "↘",
+          "↗",
+          "→",
+          "←"
+        ],
+        "answer": "↗",
+        "duration": 6500
+      },
+      "constants": {
+        "rows": [
+          [
+            "→",
+            "←"
+          ],
+          [
+            "←",
+            "→"
+          ],
+          [
+            "↗",
+            "↖"
+          ],
+          [
+            "↘",
+            "↙"
+          ],
+          [
+            "↖",
+            "↗"
+          ],
+          [
+            "↙",
+            "↘"
+          ]
+        ],
+        "arrows": [
+          "→",
+          "←",
+          "↗",
+          "↖",
+          "↘",
+          "↙"
+        ],
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": true,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "source": "↖",
+        "answer": "↗",
+        "buttons": [
+          {
+            "text": "↘",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "↗",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "→",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "←",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 174,
+          "pixelWidth": 1032,
+          "pixelHeight": 522,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "左の矢印を鏡に映した向きを選んでください"
+      },
+      "computed": {
+        "source": "↖",
+        "answer": "↗",
+        "options": [
+          "↘",
+          "↗",
+          "→",
+          "←"
+        ],
+        "choicesEnabled": true,
+        "result": null,
+        "selected": null,
+        "payload": null,
+        "feedbackStages": 0,
+        "focused": 0
+      },
+      "finishes": [],
+      "layout": {
+        "scrollWidth": 402,
+        "innerWidth": 402,
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 174,
+          "pixelWidth": 1032,
+          "pixelHeight": 522,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/spatial-flip-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/game-kernel.js",
+        "http://127.0.0.1:8863/src/games/spatial-flip-v1.js"
+      ],
+      "external": [],
+      "errors": []
+    }
+  }
+}
