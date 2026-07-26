@@ -8,6 +8,7 @@ export const RETIRED_GAME_IDS=new Set([
   "social-care-package-v1",
   "social-postcard-send-v1",
   "spatial-cube-v1",
+  "spatial-draw-bridge-v1",
   "timing-mochi-pound-v1",
 ]);
 export const gameCatalog=Object.freeze(gameManifest.map(entry=>Object.freeze({...entry})));

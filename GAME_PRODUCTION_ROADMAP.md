@@ -192,7 +192,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
 ### N07 — completed original
 
-- `spatial-draw-bridge-v1` — accepted and integrated
+- `spatial-draw-bridge-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (player-facing Japanese is polluted by arbitrary English technical words)
 
 ### P08 — active pre-browser port
 
