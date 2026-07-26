@@ -93,14 +93,15 @@ P04 takes the next three owner slots that become free after their current owners
 
 ### P05 — active ports
 
-- `spatial-golf-putt-v1` — screw lane
+- `spatial-golf-putt-v1` — accepted and integrated
 - `attention-author-boss-v1` — flow lane
 - `social-date-v1` — waits for audit lane
 
-### P06 — active pre-browser ports
+### P06 — active ports
 
-- `reaction-target-v1` — waits for screw lane
+- `reaction-target-v1` — screw lane
 - `memory-path-v1` — waits for flow lane
+- `spatial-cube-v1` — waits for screw lane
 
 ### N02 — completed daily-ritual original series
 

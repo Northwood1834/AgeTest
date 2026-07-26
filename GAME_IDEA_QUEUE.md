@@ -12,7 +12,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 |---|---|---|---|
 | `memory-path-v1` | former Number Tower owner | P06 port pre-browser; waits for flow | Faithfully port the published three-step flashing grid memory path with timing parity |
 | `spatial-draw-bridge-v1` | former Ricochet owner | pre-browser; waits for audit | Draw a limited anchored span that must carry a real moving vehicle load |
-| `spatial-golf-putt-v1` | former Emoji Runner owner | P05 port pre-browser; waits for screw | Faithfully port the published pull-back sloped putt with computed-result parity |
+| `spatial-cube-v1` | former Golf Putt owner | P06 port pre-browser; waits for screw | Faithfully port the published color-memory cube rotation with parity evidence |
 | `attention-author-boss-v1` | former Laundry owner | P05 port pre-browser; waits for flow | Faithfully port the published three-mode moving-author hunt with parity evidence |
 | `social-date-v1` | former Emoji FPS owner | P05 port pre-browser; waits for audit | Faithfully port every published three-step date dialogue with same-task parity |
 | `reaction-target-v1` | former Lane3D owner | P06 port pre-browser; waits for screw | Faithfully port the published moving purple target with timing and trajectory parity |

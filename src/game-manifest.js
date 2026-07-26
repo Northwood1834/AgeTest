@@ -276,6 +276,17 @@ export const gameManifest=Object.freeze([
     "hash": "9639bc42e36cdb81"
   },
   {
+    "id": "spatial-golf-putt-v1",
+    "introducedIn": "1.0",
+    "tier": 2,
+    "flavor": "wild",
+    "step": 1,
+    "family": "spatial-golf-putt",
+    "category": "spatial",
+    "module": "./games/spatial-golf-putt-v1.js",
+    "hash": "b427a686e2aea06c"
+  },
+  {
     "id": "spatial-lane-run-v1",
     "introducedIn": "1.2",
     "tier": 2,

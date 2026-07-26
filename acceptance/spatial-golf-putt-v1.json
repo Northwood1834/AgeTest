@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "spatial-golf-putt-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "e81264c8474e2ebe7b56079c0c314a4cb18912ca",
+  "test": "test/spatial-golf-putt-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
