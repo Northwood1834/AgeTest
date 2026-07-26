@@ -89,6 +89,17 @@ export const gameManifest=Object.freeze([
     "hash": "7a2ca22474468fae"
   },
   {
+    "id": "calculation-number-tower-route-v1",
+    "introducedIn": "2.0",
+    "category": "calculation",
+    "tier": 3,
+    "flavor": "wild",
+    "step": 1,
+    "family": "calculation-number-tower-route",
+    "module": "./games/calculation-number-tower-route-v1.js",
+    "hash": "d1ccaf95182e4914"
+  },
+  {
     "id": "calculation-rpg-battle-v1",
     "introducedIn": "1.1",
     "tier": 2,

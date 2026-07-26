@@ -10,7 +10,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `calculation-number-tower-route-v1` | former Driving Safety owner | pre-browser; waits for flow | Plan a whole numbered tower route whose running value changes every later fight |
+| `memory-path-v1` | former Number Tower owner | P06 port pre-browser; waits for flow | Faithfully port the published three-step flashing grid memory path with timing parity |
 | `spatial-draw-bridge-v1` | former Ricochet owner | pre-browser; waits for audit | Draw a limited anchored span that must carry a real moving vehicle load |
 | `spatial-golf-putt-v1` | former Emoji Runner owner | P05 port pre-browser; waits for screw | Faithfully port the published pull-back sloped putt with computed-result parity |
 | `attention-author-boss-v1` | former Laundry owner | P05 port pre-browser; waits for flow | Faithfully port the published three-mode moving-author hunt with parity evidence |
