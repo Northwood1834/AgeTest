@@ -1,0 +1,183 @@
+{
+  "stableId": "prediction-chain-puzzle-v1",
+  "sourceBaseline": "a8761a1",
+  "lane": {
+    "name": "flow",
+    "cdp": 9331,
+    "http": 8861,
+    "cacheDisabled": true
+  },
+  "taskReuse": "legacy preview task persisted as pcp-qa-task and reused unchanged by module fixture; pcp-qa-baseline-state restores the same legacy task before every state",
+  "viewports": [
+    {
+      "width": 393,
+      "height": 852,
+      "dpr": 3,
+      "pixels": [
+        1179,
+        2556
+      ]
+    },
+    {
+      "width": 402,
+      "height": 874,
+      "dpr": 3,
+      "pixels": [
+        1206,
+        2622
+      ]
+    }
+  ],
+  "states": [
+    "initial",
+    "input",
+    "progress",
+    "invalid",
+    "success",
+    "failure"
+  ],
+  "captures": [
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-393x852-failure.png",
+      "bytes": 570287,
+      "sha256": "54d8d74e1f81aa26da3033080b04800ffeca3552b61340884aaeb3feaac531dc"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-393x852-initial.png",
+      "bytes": 884532,
+      "sha256": "7beacaedaef5d6115128212cbe771fae166a4947ee1f5861f9b772547b4c0a12"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-393x852-input.png",
+      "bytes": 869535,
+      "sha256": "23db9d7a8a2dc90540f95aa13386063b314f82e52af6e76a4901eaec98f0f10a"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-393x852-invalid.png",
+      "bytes": 869784,
+      "sha256": "1d00fae9e56eeaae6fcb543fdb2cca95f7f178aa7acdb36ab759797444a963e0"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-393x852-progress.png",
+      "bytes": 870000,
+      "sha256": "f2bcde76135f402c5580daf66c4096a4e9e57bd88bc12bed422ade0bce13b194"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-393x852-success.png",
+      "bytes": 839072,
+      "sha256": "f3277b92bbd1619a702eda58a379cba86799dc37a462cc767c0c1fc1e1874e1c"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-402x874-failure.png",
+      "bytes": 596939,
+      "sha256": "c056468d9353c6ec6c41ae8f587ce230081630812204cae83b6255de77c261ac"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-402x874-initial.png",
+      "bytes": 922808,
+      "sha256": "3d5e613722d1817f34a75ffa8e5ef9f13052fa725f86cac0ba5fff80b52d85a9"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-402x874-input.png",
+      "bytes": 908542,
+      "sha256": "17e8e9c67cd295cdec315a9a291759814a5eac4797e89c4d0f846f3252ad4229"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-402x874-invalid.png",
+      "bytes": 908933,
+      "sha256": "f3323b88075f7ad1ce6490c6e789a294e5067265dc224940df5d23179794fd82"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-402x874-progress.png",
+      "bytes": 926304,
+      "sha256": "2158e3ecd598272c12611826a9e8f72935ef142cda4583baa2cfd980e52b97b8"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/legacy-402x874-success.png",
+      "bytes": 735224,
+      "sha256": "ad751d85c73525e87b045cf31524883848c6c56bbeb27763736fb22893a18ec9"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-393x852-failure.png",
+      "bytes": 909017,
+      "sha256": "1b09303c4d157fb66c99638311be159e1d27c7e816b64e02884af7b3e51a6bab"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-393x852-initial.png",
+      "bytes": 974971,
+      "sha256": "2cfc9e0b6c1fa1b2b8a851ca8200fc43740a25033a5db06e5681bb264dac41ed"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-393x852-input.png",
+      "bytes": 977726,
+      "sha256": "5df4a51b51ed1199dcd11f7bb580f2f23ac7df9677561685e682f004269f99b0"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-393x852-invalid.png",
+      "bytes": 939054,
+      "sha256": "15ee18eccf47d3f8a58907a4505f41d35dc6ae5cc5fd369e98d8ee490eba2ed7"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-393x852-progress.png",
+      "bytes": 969322,
+      "sha256": "536f2dd2c4f34d234557fa1442182617681b9739bfc4a438e5e9807875fc8f22"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-393x852-success.png",
+      "bytes": 820762,
+      "sha256": "59a9bd9e1e89fbe64c5bd29037eb3ddce3aa9a27c86b9e6807054b333771e81f"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-402x874-failure.png",
+      "bytes": 884541,
+      "sha256": "dc5ffb26637200240fd9564c532dc6d0465950e2d6f42b74d72477c567474501"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-402x874-initial.png",
+      "bytes": 946609,
+      "sha256": "ffdb74e7026599a168a14561ec0198aee8b4ddc1eb48ac8c6f10b55e3c597727"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-402x874-input.png",
+      "bytes": 950075,
+      "sha256": "61640e34d4571b13b7341307419bc8dccfc5c00516b350195a2f72c6a12992e6"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-402x874-invalid.png",
+      "bytes": 913039,
+      "sha256": "1f273b0ab7a868c049b77ac1e3c3c22404779d7290cf26142ccc731d67e93a78"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-402x874-progress.png",
+      "bytes": 951638,
+      "sha256": "0c3357cc8662debfc443234c372183156b87a688e78249a03100bb2ee0932ad8"
+    },
+    {
+      "path": "test/prediction-chain-puzzle-v1-visual/module-402x874-success.png",
+      "bytes": 809136,
+      "sha256": "9d6d03381d9a5bb21ee07e5c1bc53f76fa943df61df093b9b8080de6daab5ce6"
+    }
+  ],
+  "browserChecks": {
+    "consoleErrors": [],
+    "externalRequests": [],
+    "horizontalOverflowCssPixels": 0,
+    "normalMotion": {
+      "sampleMs": 1506,
+      "frames": 91,
+      "fps": 60.4,
+      "maxGapMs": 16.8,
+      "ownedFrameLoops": 1
+    },
+    "reducedMotion": {
+      "ownedFrameLoops": 0
+    },
+    "canvasDpr": 3,
+    "timeoutResult": "timeout",
+    "dispose": {
+      "activeJobs": 0,
+      "activeFrames": 0
+    }
+  },
+  "visualReview": "Final full-resolution QC found no release-blocking defect; game-owned UI is fully visible, DPR output sharp, identity and terminal hierarchy preserved."
+}
