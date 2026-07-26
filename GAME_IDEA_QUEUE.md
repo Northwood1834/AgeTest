@@ -244,6 +244,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Outcomes/proof: stable shelf; wrong orientation; order dead-end; fastener exhaustion; unstable completion; timeout retaining assembly. Exhaustively search all poses/orders, guarantee recoverable-once but not twice, exact fit/tilt boundaries, and plain resume.
 - Art/reduced motion: wholly fictional panels/holes/fasteners and staged shelf states; snapped insert/remove and static tilt, not a real product manual or tool procedure.
 
+### Q39 — `memory-errand-cue-v1`
+
+- Category/tier/flavor: memory / tier 3 / quirky
+- Core: encode three condition-triggered errands, then keep a carried bag level while recognizing and acting only at matching fictional streetscape cues during short visible windows.
+- Outcomes/proof: all errands/bag safe; missed cue; decoy target; false condition; dropped contents; timeout. Integer-tick route search separates cue windows, guarantees recovery time and both condition branches, and preserves plain prospective-memory state.
+- Art/reduced motion: original fictional arcade/cues/bag/worker and result still; stepped travel and five tilt states, no real postal/store imagery.
+
+### Q40 — `social-turn-taking-v1`
+
+- Category/tier/flavor: social / tier 3 / quirky
+- Core: follow an explicitly displayed fictional shared-log protocol by starting after each geometric end marker and holding only enough length to preserve space for five alternating visual bands.
+- Outcomes/proof: balanced protocol log; premature overlap; excessive gap; consumed shared rows; empty bands; timeout. Exhaustive start/hold grids reject always-fast/wait/long strategies and prove one-tick boundaries, without judging real conversation style, disability, personality, or politeness.
+- Art/reduced motion: original non-branded band log and neutral fictional participants; stepped lengths, static markers/hatching, and no audio dependence.
+
+### Q41 — `calculation-soil-blend-v1`
+
+- Category/tier/flavor: calculation / tier 2 / satisfying
+- Core: scale an always-visible fictional three-component ratio to a new batch count, then irreversibly pour exact integer/rational scoop units into a measured vessel with one costly reset.
+- Outcomes/proof: exact batch; wrong ratio; correct ratio but insufficient total; overflow; unit confusion; failed reset; timeout retaining layers/history. Exhaustively generate only exactly reachable mixes, require small-scoop use in harder tasks, and prove all tolerance boundaries.
+- Art/reduced motion: original inert textured media, scoops/vessel/pots and UI tables; static layer updates, no fertilizer, brand, or cultivation advice.
+
+### Q42 — `attention-scoop-track-v1`
+
+- Category/tier/flavor: attention / tier 3 / wild
+- Core: track three briefly marked but then visually identical balls among twelve deterministic crossing trajectories while controlling scoop angle/speed and finite wet-paper durability.
+- Outcomes/proof: exact three collected; decoy captures; both scoops broken; too slow; multi-ball overload; timeout retaining trajectories/scoop/bowl. Integer-path search guarantees ≥4 crossings, safe collection, exact tear boundaries, and no post-mark identity cue.
+- Art/reduced motion: original creature-free festival basin, identical balls, mark overlay, four scoop states and bowl; stepped identical trajectories preserving crossings.
+
+### Q43 — `timing-model-coupling-v1`
+
+- Category/tier/flavor: timing / tier 2 / satisfying
+- Core: hold to set initial speed, release one fictional model wagon into deterministic friction, and couple three successively heavier consists only inside visible impact-speed bands.
+- Outcomes/proof: three couplings; too fast; short stop with costly retry; harmless static derail; repeated mass misread; timeout retaining positions/consist. Exact rational enumeration requires three distinct hold windows, each ≥3 ticks, and proves lower/upper boundaries.
+- Art/reduced motion: wholly fictional tabletop wagons/rail/markers and coupling states; stepped positions, no real railway procedure, brand, damage, or accident drama.
+
+### Q44 — `inhibition-tofu-carry-v1`
+
+- Category/tier/flavor: inhibition / tier 3 / satisfying
+- Core: use an explicit on-screen pressure slider plus plate-angle drag to carry a fragile fictional block; visible slip warnings tempt pressure increase, but success requires maintaining pressure and leveling the plate while continuing progress.
+- Outcomes/proof: intact delivery; over-pressure collapse; low-pressure wooden-plate drop; angle slide; over-cautious timeout; timeout retaining all continuous state. Quantized exhaustive control proves warning-response substitution and exact pressure/angle boundaries without unsupported touch-force APIs.
+- Art/reduced motion: original safe corridor, wooden plate/block/hands and pressure/angle UI; stepped slide/deformation, no heat, blade, broken crockery, brand, or food instruction.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
