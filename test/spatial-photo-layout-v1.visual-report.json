@@ -1,0 +1,42 @@
+{
+  "status": "pass",
+  "gameId": "spatial-photo-layout-v1",
+  "lane": {"cdp": 9332, "http": 8862},
+  "artifactRoot": "/tmp/agetest-spatial-photo-layout-v1-audit-final4",
+  "canonicalViewports": [
+    {"width": 393, "height": 852, "dpr": 3},
+    {"width": 402, "height": 874, "dpr": 3}
+  ],
+  "boundaryViewports": [
+    {"width": 390, "height": 844, "dpr": 3},
+    {"width": 430, "height": 932, "dpr": 3}
+  ],
+  "variants": 4,
+  "states": ["initial", "selected", "rotated", "partial", "wrong-frame", "wrong-orientation", "success", "timeout"],
+  "canonicalScreenshots": 128,
+  "normalReducedPairs": 64,
+  "maxPairMAE": 0.0,
+  "maxPairNormalizedRMSE": 0.00001,
+  "focusScreenshots": 16,
+  "boundaryScreenshots": 32,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "minimumInteractiveTargetPx": 44,
+  "overflowFree": true,
+  "externalRequests": 0,
+  "consoleErrors": 0,
+  "directorContactSheet": {
+    "path": "/tmp/agetest-spatial-photo-layout-v1-audit-final4/director-contact-sheet.png",
+    "sha256": "4ebf0cb2d5c2f41475da49a995630125dd16a5483b43a2860693540db02655b7",
+    "review": "pass",
+    "finding": "All eight states are causally coherent; the wrong-frame card occupies a different motif frame, the quarter-turned wrong-orientation card is separated above its matching empty frame, and success and timeout remain legible in the warm object-and-landscape album."
+  },
+  "errorSuccessContactSheet": {
+    "path": "/tmp/agetest-spatial-photo-layout-v1-audit-final4/error-success-contact-sheet.png",
+    "sha256": "03c08819c14de90a9b06afa2d91f627043d05aee3753ad2a5b6affe23cb81015",
+    "review": "pass"
+  },
+  "finalVisualQc": "pass: Japanese-only descriptive labels, no people, personal photos, brand marks, emoji, clipping, overflow, or material visual defects",
+  "comparisonReportSha256": "1671e57bfb28dc81fb48ee086fac7a62da581dbd0a57805c3ebf8f58cb7c390f",
+  "failures": []
+}

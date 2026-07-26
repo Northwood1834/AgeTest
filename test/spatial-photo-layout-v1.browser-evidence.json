@@ -1,0 +1,65 @@
+{
+  "status": "pass",
+  "gameId": "spatial-photo-layout-v1",
+  "artifactRoot": "/tmp/agetest-spatial-photo-layout-v1-audit-final4",
+  "node": {
+    "focused": {"tests": 22, "passed": 22},
+    "full": {"tests": 1456, "passed": 1456, "durationMs": 20341.543285}
+  },
+  "browser": {
+    "touchSuccessRoutes": {"count": 8, "passed": 8, "variants": 4, "motions": ["normal", "reduced"], "viewport": "390x844"},
+    "keyboardSuccessRoutes": {"count": 2, "passed": 2, "usedArrows": true, "usedSpace": true, "usedR": true, "viewport": "430x932"},
+    "rejectionReversalRoutes": {"count": 2, "passed": 2, "wrongFrameReturned": true, "wrongOrientationReturned": true, "placedPhotoReturnedToTray": true},
+    "deadlineRoutes": {
+      "count": 2,
+      "passed": 2,
+      "deadlineMs": 20000,
+      "observedMs": [20038.100000023842, 20035.100000023842],
+      "retained": ["locations", "rotations", "selectedPhotoId"],
+      "singleFinish": true
+    },
+    "disposeRoutes": {"count": 2, "passed": 2, "remainingTimeouts": 0, "remainingFrames": 0, "remainingListeners": 0, "finishCalls": 0},
+    "performanceRoutes": {
+      "count": 2,
+      "passed": 2,
+      "framesPerRoute": 90,
+      "averageFrameMsRange": [16.58111111111111, 16.607777778042685],
+      "maxFrameMs": 16.800000000000068,
+      "normalOwnedFramesDuringDrag": 1,
+      "reducedOwnedFramesDuringDrag": 0
+    },
+    "minimumInteractiveTargetPx": 44,
+    "sourcePolicy": {"ownerDocumentOnly": true, "contextTracked": true, "network": false, "audio": false, "rawTimers": false, "rawRaf": false, "rawListeners": false, "emoji": false, "externalAssets": false},
+    "externalRequests": 0,
+    "consoleErrors": 0,
+    "horizontalOverflow": false
+  },
+  "mechanic": {
+    "photos": 6,
+    "frames": 6,
+    "illustrations": ["vase", "lighthouse", "plant", "lake", "pastry", "bridge"],
+    "peopleOrPersonalPhotos": false,
+    "portraitFrames": 3,
+    "landscapeFrames": 3,
+    "minimumQuarterTurnedAtStart": 2,
+    "matchingAuthority": ["illustration watermark", "frame orientation"],
+    "colorOnlyMatching": false,
+    "authoredBoards": 4,
+    "completeAssignmentsPerBoard": 720,
+    "matchingAssignmentsPerBoard": 1,
+    "minimumActions": 8,
+    "autoSuccessAfterSixthSnap": true,
+    "strictFreshModuleResume": true,
+    "normalDragFrames": 1,
+    "reducedMotionFrames": 0
+  },
+  "files": {
+    "concepts/spatial-photo-layout-v1.md": "141334d501246e55c955622f2b82c32c6314e230ae255875eaf01ebfb0e23cf4",
+    "src/games/spatial-photo-layout-v1.js": "00bd1d7c3e9bce8fe7256e0d1a83fe4047a970333acc00c5065aecfe394431d3",
+    "test/spatial-photo-layout-v1.test.mjs": "eea067d0d6eb5cdacd99d9b56e16cd53ca7d38a120052742f85cd00f0d96aabe",
+    "test/spatial-photo-layout-v1.fixture.html": "01bbc9a365a289a7fbbe9c3b3fd2751aa04a95a0f3429dd84a315079ab72d179",
+    "test/spatial-photo-layout-v1.fixture.mjs": "5e60ec39b0d0b62a5d5107801d66ca5ef19a10353d256a2fe83146637303cec5",
+    "test/spatial-photo-layout-v1.browser-capture.sh": "ff8da435ad0a9607f1318f631aa791b3d09b16a49ee2774d7cb59302d209613c"
+  },
+  "failures": []
+}
