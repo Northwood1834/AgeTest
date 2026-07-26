@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "timing-five-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "99aaa3e204128c8809822b7faa5986dfd8172e12",
+  "test": "test/timing-five-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

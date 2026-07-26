@@ -14,8 +14,8 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | `spatial-draw-bridge-v1` | former Ricochet owner | pre-browser; waits for audit | Draw a limited anchored span that must carry a real moving vehicle load |
 | `attention-search-v1` | former Author Boss owner | P07 port; flow lane | Faithfully port all published 5×5 lookalike-search pairs with parity evidence |
 | `social-date-v1` | former Emoji FPS owner | P05 port pre-browser; waits for audit | Faithfully port every published three-step date dialogue with same-task parity |
-| `timing-five-v1` | former Reaction Target owner | P07 port; screw lane | Faithfully port the published hidden five-second timing test with exact timing parity |
-| `spatial-flip-v1` | former Cube owner | P07 port pre-browser; waits for lane | Faithfully port all six published mirror-arrow pairs with exact option parity |
+| `timing-two-v1` | former Timing Five owner | P08 port; screw lane | Faithfully port the published hidden two-second timing test with exact timing parity |
+| `inhibition-stroop-v1` | former Flip owner | P08 port pre-browser; waits for screw | Faithfully port all published word/ink conflict combinations with exact color parity |
 
 ## Waiting queue
 

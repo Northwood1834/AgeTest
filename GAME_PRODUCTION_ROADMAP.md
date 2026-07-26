@@ -137,10 +137,12 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
 ### P07 — active pre-browser ports
 
-- `timing-five-v1` — screw lane
+- `timing-five-v1` — accepted and integrated after current-source CTA correction
 - `attention-search-v1` — flow lane
-- `spatial-flip-v1` — pre-browser; waits for lane
+- `spatial-flip-v1` — accepted and integrated
 - `prediction-shape-v1` — pre-browser; waits for flow lane
+- `inhibition-stroop-v1` — pre-browser; waits for screw lane
+- `timing-two-v1` — screw lane
 
 ### N07 — active browser production
 

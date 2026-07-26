@@ -309,6 +309,17 @@ export const gameManifest=Object.freeze([
     "hash": "2d9c1bc1b5182255"
   },
   {
+    "id": "spatial-flip-v1",
+    "introducedIn": "1.15",
+    "tier": 1,
+    "flavor": "classic",
+    "step": 1,
+    "family": "spatial-flip",
+    "category": "spatial",
+    "module": "./games/spatial-flip-v1.js",
+    "hash": "044d55c74d1b0233"
+  },
+  {
     "id": "spatial-flow-link-v1",
     "introducedIn": "1.9",
     "tier": 3,
@@ -417,6 +428,17 @@ export const gameManifest=Object.freeze([
     "category": "timing",
     "module": "./games/timing-fish-grill-v1.js",
     "hash": "779f7b808c843880"
+  },
+  {
+    "id": "timing-five-v1",
+    "introducedIn": "1.0",
+    "tier": 2,
+    "flavor": "wild",
+    "step": 1,
+    "family": "timing-five",
+    "category": "timing",
+    "module": "./games/timing-five-v1.js",
+    "hash": "902d9daf766fcd81"
   },
   {
     "id": "timing-tower-stack-v1",

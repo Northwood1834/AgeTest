@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "spatial-flip-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "803f830bf942766630ad945cea76601de397edbd",
+  "test": "test/spatial-flip-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
