@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "spatial-draw-bridge-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "af473bddd93ac413df060482a8c09e21d8abb059",
+  "test": "test/spatial-draw-bridge-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

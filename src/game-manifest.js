@@ -309,6 +309,17 @@ export const gameManifest=Object.freeze([
     "hash": "a60b1cf68260ce02"
   },
   {
+    "id": "spatial-draw-bridge-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "spatial-draw-bridge",
+    "category": "spatial",
+    "module": "./games/spatial-draw-bridge-v1.js",
+    "hash": "7b4d52dff361ef9d"
+  },
+  {
     "id": "spatial-draw-shelter-v1",
     "introducedIn": "2.0",
     "tier": 3,

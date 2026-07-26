@@ -95,7 +95,7 @@ P04 takes the next three owner slots that become free after their current owners
 
 - `spatial-golf-putt-v1` — accepted and integrated
 - `attention-author-boss-v1` — accepted and integrated
-- `social-date-v1` — waits for audit lane
+- `social-date-v1` — audit lane
 
 ### P06 — active ports
 
@@ -147,9 +147,13 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `reaction-shape-v1` — pre-browser; waits for flow lane
 - `timing-three-v1` — pre-browser; waits for screw lane
 
-### N07 — active browser production
+### N07 — completed original
 
-- `spatial-draw-bridge-v1` — audit lane
+- `spatial-draw-bridge-v1` — accepted and integrated
+
+### P08 — active pre-browser port
+
+- `spatial-rotation-v1` — waits for audit lane
 
 ### P04
 

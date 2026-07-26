@@ -11,9 +11,9 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
 | `reaction-shape-v1` | former Prediction Shape owner | P08 port pre-browser; waits for flow | Faithfully port all three published shape-name reaction tasks with exact option parity |
-| `spatial-draw-bridge-v1` | former Ricochet owner | pre-browser; waits for audit | Draw a limited anchored span that must carry a real moving vehicle load |
+| `spatial-rotation-v1` | former Draw Bridge owner | P08 port pre-browser; waits for audit | Faithfully port all three published clockwise arrow-rotation angles |
 | `attention-shape-count-v1` | former Attention Search owner | P08 port; flow lane | Faithfully port the published 12-glyph counting task with exact generation parity |
-| `social-date-v1` | former Emoji FPS owner | P05 port pre-browser; waits for audit | Faithfully port every published three-step date dialogue with same-task parity |
+| `social-date-v1` | former Emoji FPS owner | P05 port; audit lane | Faithfully port every published three-step date dialogue with same-task parity |
 | `timing-three-v1` | former Timing Two owner | P08 port pre-browser; waits for screw | Faithfully port the published defaulted three-second timing test without adding task fields |
 | `inhibition-stroop-v1` | former Flip owner | P08 port; screw lane | Faithfully port all published word/ink conflict combinations with exact color parity |
 
