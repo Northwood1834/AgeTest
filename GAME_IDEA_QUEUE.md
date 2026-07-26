@@ -14,6 +14,8 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | `timing-mochi-pound-v1` | former Rule Switch owner | N08 original; screw lane | Accumulated safe-window turning against a finite accelerating mallet schedule |
 | `language-particle-scene-v1` | former Social Greeting owner | N08; audit lane | Particle and phrase edits deterministically rebuild an always-visible target scene |
 | `prediction-domino-relay-v1` | former Memory Reverse owner | N08 pre-browser; waits for screw | Limited-height placement drives one deterministic retained domino cascade |
+| `calculation-balance-scale-v1` | former Lint Shaver owner | N09 pre-browser; waits for audit | Up to three composed weighings narrow exact heavy/light token hypotheses |
+| `inhibition-quiet-tidy-v1` | former Animal Count owner | N09 pre-browser; waits for flow | Stop an active drag on visible signals while floor-dependent noise remains causal |
 
 ## Waiting queue
 

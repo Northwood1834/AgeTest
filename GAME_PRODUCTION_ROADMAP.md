@@ -160,7 +160,12 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `inhibition-opposite-v1` — accepted and integrated
 - `inhibition-rule-switch-v1` — accepted and integrated
 - `memory-missing-v1` — accepted and integrated
+
+### N09 — active original
+
 - `memory-recipe-order-v1` — flow lane
+- `calculation-balance-scale-v1` — pre-browser; waits for audit lane
+- `inhibition-quiet-tidy-v1` — pre-browser; waits for flow lane
 
 ### N08 — active original
 
