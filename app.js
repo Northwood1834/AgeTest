@@ -5,8 +5,8 @@ if (window.top !== window.self) {
   return;
 }
 
-const APP_VERSION = "1.6.1";
-const CONTENT_PACK = "1.3";
+const APP_VERSION = "1.16.0";
+const CONTENT_PACK = "1.12";
 const STORAGE_KEY = "shoro-test-state-v1";
 const PACE_STANDARD = "standard";
 const PACE_RELAXED = "relaxed";
@@ -361,6 +361,676 @@ function makePuzzleTask(){
   return{kind:"chainPuzzle",prompt:"ブロックを消して",help:"落とす列をタップ。同じ顔が4つつながると消えます。",
     board,queue:[palette[0],palette[1],palette[1]],target:1,best:1,bestCol:0,decoys:0,palette,duration:60000};
 }
+const PIN_TEMPLATES=[
+  {key:"funnel",
+   chambers:[{x:.20,y:.26},{x:.50,y:.50},{x:.80,y:.26}],
+   targets:["c1","hero","c1"],
+   hero:{x:.50,y:.86},monster:{x:.85,y:.86},
+   pipes:[[[.20,.36],[.28,.46],[.42,.50]],[[.50,.60],[.50,.70],[.50,.78]],[[.80,.36],[.72,.46],[.58,.50]]]},
+  {key:"cascade",
+   chambers:[{x:.22,y:.22},{x:.22,y:.50},{x:.74,y:.34}],
+   targets:["c1","hero","c1"],
+   hero:{x:.38,y:.86},monster:{x:.82,y:.86},
+   pipes:[[[.22,.32],[.22,.40],[.22,.40]],[[.22,.60],[.26,.72],[.36,.78]],[[.74,.44],[.60,.50],[.32,.50]]]},
+  {key:"tower",
+   chambers:[{x:.50,y:.20},{x:.50,y:.42},{x:.50,y:.64}],
+   targets:["c1","c2","hero"],
+   hero:{x:.50,y:.88},monster:{x:.84,y:.88},
+   pipes:[[[.50,.30],[.50,.34],[.50,.32]],[[.50,.52],[.50,.56],[.50,.54]],[[.50,.74],[.50,.80],[.50,.80]]]}
+];
+const PIN_STUFF=["lava","water","coin"];
+function pinMix(a,b){
+  if(!a)return b;if(!b)return a;
+  if(a==="stone"||b==="stone")return "stone";
+  if((a==="lava"&&b==="water")||(a==="water"&&b==="lava"))return "stone";
+  if(a==="lava"||b==="lava")return "lava";          // lava melts a coin it lands on
+  if(a==="coin"||b==="coin")return "coin";          // water drains away and leaves the coin
+  return "water";
+}
+function pinSimulate(template,contents,order){
+  const chambers=contents.map(content=>({content,open:false}));
+  const state={coins:0,lostCoins:0,dead:false,monster:false};
+  const totalCoins=contents.filter(content=>content==="coin").length;
+  const send=(flow,target,depth)=>{
+    if(!flow||depth>6)return;
+    if(target==="hero"){
+      if(flow==="lava")state.dead=true;
+      else if(flow==="coin")state.coins++;
+      return;
+    }
+    if(target==="monster"){
+      if(flow==="lava")state.monster=true;
+      else if(flow==="coin")state.lostCoins++;
+      return;
+    }
+    if(target==="void")return;
+    const index=Number(target.slice(1)),chamber=chambers[index];
+    if(chamber.open){                                  // its pin is already out: the flow runs straight through
+      send(flow,template.targets[index],depth+1);return;
+    }
+    chamber.content=pinMix(chamber.content,flow);
+  };
+  for(const index of order){
+    const chamber=chambers[index];
+    if(chamber.open)continue;
+    chamber.open=true;
+    const flow=chamber.content;chamber.content=null;
+    send(flow,template.targets[index],0);
+    if(state.dead)return{...state,win:false,totalCoins};
+  }
+  const win=!state.dead&&totalCoins>0&&state.coins===totalCoins;
+  return{...state,win,totalCoins};
+}
+const PIN_ORDERS=[[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]];
+function makePinTask(){
+  for(let attempt=0;attempt<600;attempt++){
+    const template=pick(PIN_TEMPLATES);
+    const contents=shuffle([...PIN_STUFF]);
+    if(randomFloat()<.35)contents[randomInt(0,2)]=pick(PIN_STUFF);
+    if(!contents.includes("lava")||!contents.includes("coin"))continue;
+    const results=PIN_ORDERS.map(order=>pinSimulate(template,contents,order));
+    const wins=results.filter(result=>result.win).length;
+    const deaths=results.filter(result=>result.dead).length;
+    if(wins!==1||deaths<2)continue;
+    const answer=PIN_ORDERS[results.findIndex(result=>result.win)];
+    return{kind:"pinPull",prompt:"ピンを抜く順番を読んで",
+      help:"順番を1つでも間違えると失敗です。溶岩は主人公にかけない、水は溶岩を固める、コインは主人公へ。",
+      template:template.key,contents,answer,duration:50000};
+  }
+  const template=PIN_TEMPLATES[0],contents=["lava","coin","water"];
+  const results=PIN_ORDERS.map(order=>pinSimulate(template,contents,order));
+  const index=Math.max(0,results.findIndex(result=>result.win));
+  return{kind:"pinPull",prompt:"ピンを抜く順番を読んで",help:"溶岩は主人公にかけない、水は溶岩を固める、コインは主人公へ。",
+    template:template.key,contents,answer:PIN_ORDERS[index],duration:50000};
+}
+function pinPullSteps(chambers,targets,index){
+  const steps=[],chamber=chambers[index];
+  if(chamber.open)return steps;
+  chamber.open=true;
+  const flow=chamber.content;chamber.content=null;
+  if(!flow)return steps;
+  let source=index,target=targets[index];
+  for(let depth=0;depth<6;depth++){
+    steps.push({from:source,to:target,flow});
+    if(!target.startsWith("c"))break;
+    const next=Number(target.slice(1));
+    if(!chambers[next].open)break;
+    source=next;target=targets[next];
+  }
+  return steps;
+}
+const WATER_COLORS=[
+  {key:"orange",light:"#FFC98A",base:"#F2953F",dark:"#B4611F"},
+  {key:"pink",light:"#FFC3D6",base:"#EA7E9B",dark:"#A8416A"},
+  {key:"blue",light:"#BDE4F8",base:"#5FB6E0",dark:"#2A6E97"},
+  {key:"green",light:"#C6EFD6",base:"#66C08C",dark:"#2E7A54"},
+  {key:"yellow",light:"#FFEDA8",base:"#F2CE4B",dark:"#A98A1A"},
+  {key:"purple",light:"#DCC8F2",base:"#A66DC2","dark":"#65407C"}
+];
+const WATER_DEPTH=4;
+const waterColor=key=>WATER_COLORS.find(color=>color.key===key);
+const waterKey=tubes=>tubes.map(tube=>tube.join("")).join("|");
+const waterDone=tubes=>tubes.every(tube=>!tube.length||(tube.length===WATER_DEPTH&&tube.every(unit=>unit===tube[0])));
+function waterPourable(tubes,from,to){
+  if(from===to)return 0;
+  const source=tubes[from],target=tubes[to];
+  if(!source.length||target.length>=WATER_DEPTH)return 0;
+  const unit=source.at(-1);
+  if(target.length&&target.at(-1)!==unit)return 0;
+  let count=0;
+  for(let i=source.length-1;i>=0&&source[i]===unit;i--)count++;
+  if(!target.length&&count===source.length)return 0;              // pointless move between two idle tubes
+  return Math.min(count,WATER_DEPTH-target.length);
+}
+function waterPour(tubes,from,to){
+  const count=waterPourable(tubes,from,to);
+  if(!count)return null;
+  const next=tubes.map(tube=>[...tube]);
+  next[to].push(...next[from].splice(next[from].length-count,count));
+  return next;
+}
+function waterSolve(tubes,limit=9,nodeCap=40000){
+  const start=waterKey(tubes);
+  let frontier=[tubes],seen=new Set([start]),depth=0,nodes=0;
+  if(waterDone(tubes))return 0;
+  while(frontier.length&&depth<limit&&nodes<nodeCap){
+    const next=[];
+    for(const state of frontier){
+      for(let from=0;from<state.length;from++)for(let to=0;to<state.length;to++){
+        const poured=waterPour(state,from,to);
+        if(!poured)continue;
+        nodes++;
+        const key=waterKey(poured);
+        if(seen.has(key))continue;
+        seen.add(key);
+        if(waterDone(poured))return depth+1;
+        next.push(poured);
+      }
+    }
+    frontier=next;depth++;
+  }
+  return -1;
+}
+function makeWaterTask(){
+  for(let attempt=0;attempt<300;attempt++){
+    const colors=shuffle(WATER_COLORS).slice(0,3).map(color=>color.key);
+    const units=shuffle(colors.flatMap(color=>Array(WATER_DEPTH).fill(color)));
+    const tubes=[[],[],[],[],[]];
+    units.forEach((unit,index)=>tubes[Math.floor(index/WATER_DEPTH)].push(unit));
+    if(tubes.some(tube=>tube.length&&tube.every(unit=>unit===tube[0])))continue;   // no colour is already finished
+    const moves=waterSolve(tubes);
+    if(moves<4||moves>7)continue;
+    return{kind:"waterSort",prompt:"色ごとに分けて",
+      help:"ボトルを2つタップして注ぎます。同じ色の上にだけ注げます。手数に限りがあります。",
+      tubes,minMoves:moves,moveLimit:moves+3,colors,duration:75000};
+  }
+  const colors=WATER_COLORS.slice(0,3).map(color=>color.key);
+  const tubes=[[colors[0],colors[1],colors[0],colors[1]],[colors[1],colors[0],colors[1],colors[0]],
+    [colors[2],colors[2],colors[2],colors[2]],[],[]];
+  return{kind:"waterSort",prompt:"色ごとに分けて",help:"ボトルを2つタップして注ぎます。同じ色の上にだけ注げます。",
+    tubes,minMoves:6,moveLimit:9,colors,duration:75000};
+}
+const GATE_OPS=[
+  {kind:"add",make:()=>({kind:"add",value:randomInt(4,18)})},
+  {kind:"mul",make:()=>({kind:"mul",value:randomInt(2,3)})},
+  {kind:"sub",make:()=>({kind:"sub",value:randomInt(3,14)})},
+  {kind:"div",make:()=>({kind:"div",value:2})}
+];
+const gateLabel=op=>op.kind==="add"?`＋${op.value}`:op.kind==="mul"?`×${op.value}`:op.kind==="sub"?`−${op.value}`:`÷${op.value}`;
+const gateApply=(count,op)=>{
+  if(op.kind==="add")return count+op.value;
+  if(op.kind==="mul")return count*op.value;
+  if(op.kind==="sub")return Math.max(0,count-op.value);
+  return Math.floor(count/op.value);
+};
+function makeGateTask(){
+  for(let attempt=0;attempt<400;attempt++){
+    const start=randomInt(6,14),rows=3;
+    const gates=Array.from({length:rows},()=>{
+      const pair=shuffle(GATE_OPS).slice(0,2).map(op=>op.make());
+      return pair;
+    });
+    const paths=[];
+    for(let mask=0;mask<(1<<rows);mask++){
+      let count=start;const choice=[];
+      for(let row=0;row<rows;row++){
+        const lane=(mask>>row)&1;choice.push(lane);
+        count=gateApply(count,gates[row][lane]);
+      }
+      paths.push({choice,count});
+    }
+    const best=Math.max(...paths.map(path=>path.count));
+    const worst=Math.min(...paths.map(path=>path.count));
+    if(best<12||best-worst<10)continue;
+    const enemy=Math.round(best*.72);
+    const winners=paths.filter(path=>path.count>enemy);
+    if(winners.length<1||winners.length>2)continue;
+    if(paths.filter(path=>path.count<=enemy).length<5)continue;
+    return{kind:"gateRun",prompt:"軍団を増やして敵を倒せ",
+      help:"門を選ぶと兵の数が変わります。最後の敵より多ければ勝ちです。",
+      start,gates,enemy,best,answer:winners[0].choice,duration:35000};
+  }
+  const gates=[[{kind:"mul",value:3},{kind:"sub",value:5}],[{kind:"add",value:12},{kind:"div",value:2}],[{kind:"mul",value:2},{kind:"add",value:4}]];
+  return{kind:"gateRun",prompt:"軍団を増やして敵を倒せ",help:"門を選ぶと兵の数が変わります。最後の敵より多ければ勝ちです。",
+    start:8,gates,enemy:40,best:72,answer:[0,0,0],duration:35000};
+}
+const PARK_SIZE=5,PARK_EXIT=2;
+const PARK_COLORS=["#EA6A5C","#5FB6E0","#66C08C","#F2CE4B","#A66DC2","#F2953F","#7C8CC4"];
+const parkKey=cars=>cars.map(car=>`${car.r},${car.c}`).join("|");
+function parkGrid(cars){
+  const grid=Array.from({length:PARK_SIZE},()=>Array(PARK_SIZE).fill(-1));
+  cars.forEach((car,index)=>{
+    for(let i=0;i<car.len;i++){
+      const r=car.r+(car.dir==="v"?i:0),c=car.c+(car.dir==="h"?i:0);
+      if(r<0||r>=PARK_SIZE||c<0||c>=PARK_SIZE)return null;
+      grid[r][c]=index;
+    }
+  });
+  return grid;
+}
+function parkMoves(cars){
+  const grid=parkGrid(cars),moves=[];
+  cars.forEach((car,index)=>{
+    [-1,1].forEach(step=>{
+      let distance=0;
+      for(;;){
+        const shift=(distance+1)*step;
+        const r=car.r+(car.dir==="v"?shift:0),c=car.c+(car.dir==="h"?shift:0);
+        const tail=car.dir==="v"?r+(step>0?car.len-1:0):r;
+        const head=car.dir==="h"?c+(step>0?car.len-1:0):c;
+        const cellR=car.dir==="v"?(step>0?car.r+car.len-1+shift:r):r;
+        const cellC=car.dir==="h"?(step>0?car.c+car.len-1+shift:c):c;
+        if(cellR<0||cellR>=PARK_SIZE||cellC<0||cellC>=PARK_SIZE)break;
+        if(grid[cellR][cellC]!==-1&&grid[cellR][cellC]!==index)break;
+        distance++;
+        moves.push({index,step,distance});
+        if(distance>=PARK_SIZE)break;
+      }
+    });
+  });
+  return moves;
+}
+function parkApply(cars,move){
+  const next=cars.map(car=>({...car}));
+  const car=next[move.index],shift=move.step*move.distance;
+  if(car.dir==="h")car.c+=shift;else car.r+=shift;
+  return next;
+}
+const parkSolved=cars=>cars[0].c+cars[0].len-1>=PARK_SIZE-1;
+function parkSolve(cars,limit=10,cap=60000){
+  if(parkSolved(cars))return 0;
+  let frontier=[cars],seen=new Set([parkKey(cars)]),depth=0,nodes=0;
+  while(frontier.length&&depth<limit&&nodes<cap){
+    const next=[];
+    for(const state of frontier){
+      for(const move of parkMoves(state)){
+        const moved=parkApply(state,move);nodes++;
+        const key=parkKey(moved);
+        if(seen.has(key))continue;
+        seen.add(key);
+        if(parkSolved(moved))return depth+1;
+        next.push(moved);
+      }
+    }
+    frontier=next;depth++;
+  }
+  return -1;
+}
+function makeParkTask(){
+  for(let attempt=0;attempt<600;attempt++){
+    const cars=[{r:PARK_EXIT,c:randomInt(0,1),len:2,dir:"h",color:PARK_COLORS[0],hero:true}];
+    const count=randomInt(4,6);
+    for(let i=0;i<count;i++){
+      for(let tries=0;tries<24;tries++){
+        const dir=randomFloat()<.55?"v":"h",len=randomInt(2,3);
+        const r=dir==="v"?randomInt(0,PARK_SIZE-len):randomInt(0,PARK_SIZE-1);
+        const c=dir==="h"?randomInt(0,PARK_SIZE-len):randomInt(0,PARK_SIZE-1);
+        if(dir==="h"&&r===PARK_EXIT)continue;                    // keep the exit row for the hero only
+        const candidate={r,c,len,dir,color:PARK_COLORS[(i+1)%PARK_COLORS.length]};
+        const grid=parkGrid([...cars,candidate]);
+        if(!grid)continue;
+        const cells=new Set();let clash=false;
+        [...cars,candidate].forEach(car=>{
+          for(let k=0;k<car.len;k++){
+            const key=`${car.r+(car.dir==="v"?k:0)},${car.c+(car.dir==="h"?k:0)}`;
+            if(cells.has(key))clash=true;cells.add(key);
+          }
+        });
+        if(clash)continue;
+        cars.push(candidate);break;
+      }
+    }
+    const moves=parkSolve(cars);
+    if(moves<4||moves>8)continue;
+    return{kind:"parkJam",prompt:"赤い車を出口へ",
+      help:"車をタップして、動かしたいマスをタップ。前後にしか動きません。手数に限りがあります。",
+      cars,minMoves:moves,moveLimit:moves+3,duration:75000};
+  }
+  const cars=[{r:PARK_EXIT,c:0,len:2,dir:"h",color:PARK_COLORS[0],hero:true},
+    {r:0,c:3,len:3,dir:"v",color:PARK_COLORS[1]},{r:3,c:1,len:2,dir:"h",color:PARK_COLORS[2]}];
+  return{kind:"parkJam",prompt:"赤い車を出口へ",help:"車をタップして、動かしたいマスをタップ。",
+    cars,minMoves:2,moveLimit:5,duration:75000};
+}
+const ROPE_COLORS=["#F2953F","#EA7E9B","#5FB6E0","#66C08C","#F2CE4B","#A66DC2","#7C8CC4"];
+function ropeCross(a,b,c,d){
+  const side=(p,q,r)=>Math.sign((q.x-p.x)*(r.y-p.y)-(q.y-p.y)*(r.x-p.x));
+  const s1=side(a,b,c),s2=side(a,b,d),s3=side(c,d,a),s4=side(c,d,b);
+  return s1!==s2&&s3!==s4&&s1!==0&&s2!==0&&s3!==0&&s4!==0;
+}
+function ropeCrossings(points,edges){
+  let count=0;const pairs=[];
+  for(let i=0;i<edges.length;i++)for(let j=i+1;j<edges.length;j++){
+    const [a,b]=edges[i],[c,d]=edges[j];
+    if(a===c||a===d||b===c||b===d)continue;
+    if(ropeCross(points[a],points[b],points[c],points[d])){count++;pairs.push([i,j])}
+  }
+  return{count,pairs};
+}
+function makeRopeTask(){
+  for(let attempt=0;attempt<400;attempt++){
+    const nodes=randomInt(6,7);
+    const edges=[];
+    for(let i=0;i<nodes;i++)edges.push([i,(i+1)%nodes]);
+    if(nodes===7&&randomFloat()<.5)edges.push([0,3]);            // one chord makes the tangle richer
+    const points=Array.from({length:nodes},()=>({x:randomInt(18,82)/100,y:randomInt(16,84)/100}));
+    let tooClose=false;
+    points.forEach((p,i)=>points.forEach((q,j)=>{if(i<j&&Math.hypot(p.x-q.x,p.y-q.y)<.16)tooClose=true}));
+    if(tooClose)continue;
+    const{count}=ropeCrossings(points,edges);
+    if(count<3||count>7)continue;
+    return{kind:"ropeUntangle",prompt:"ロープの交差をゼロに",
+      help:"杭をドラッグして動かします。交差した赤いロープがなくなれば成功です。",
+      points,edges,start:count,nodes,duration:70000};
+  }
+  const nodes=6,edges=[];
+  for(let i=0;i<nodes;i++)edges.push([i,(i+1)%nodes]);
+  const points=[{x:.2,y:.2},{x:.8,y:.3},{x:.3,y:.8},{x:.75,y:.75},{x:.2,y:.5},{x:.55,y:.15}];
+  return{kind:"ropeUntangle",prompt:"ロープの交差をゼロに",help:"杭をドラッグして動かします。",
+    points,edges,start:ropeCrossings(points,edges).count,nodes,duration:70000};
+}
+const FLOW_SIZE=5;
+const FLOW_COLORS=[
+  {key:"orange",base:"#F2953F",light:"#FFD0A0"},
+  {key:"pink",base:"#EA7E9B",light:"#FFC7DA"},
+  {key:"blue",base:"#5FB6E0",light:"#C0E6F8"},
+  {key:"green",base:"#66C08C",light:"#C4EFD5"},
+  {key:"purple",base:"#A66DC2",light:"#E0CBF0"},
+  {key:"yellow",base:"#F2CE4B",light:"#FFEDA8"}
+];
+const flowColor=index=>FLOW_COLORS[index%FLOW_COLORS.length];
+const flowId=(r,c)=>r*FLOW_SIZE+c;
+function flowHamiltonian(){
+  // start from a serpentine path, then randomise it with backbite moves,
+  // which keep the path Hamiltonian and cost only a reversal each time
+  const path=[];
+  for(let r=0;r<FLOW_SIZE;r++)for(let i=0;i<FLOW_SIZE;i++){
+    const c=r%2?FLOW_SIZE-1-i:i;path.push({r,c});
+  }
+  const index=new Map(path.map((cell,i)=>[flowId(cell.r,cell.c),i]));
+  const rebuild=()=>{index.clear();path.forEach((cell,i)=>index.set(flowId(cell.r,cell.c),i))};
+  for(let step=0;step<420;step++){
+    const fromTail=randomFloat()<.5;
+    const end=fromTail?path.at(-1):path[0];
+    const neighbours=[[1,0],[-1,0],[0,1],[0,-1]]
+      .map(([dr,dc])=>({r:end.r+dr,c:end.c+dc}))
+      .filter(cell=>cell.r>=0&&cell.r<FLOW_SIZE&&cell.c>=0&&cell.c<FLOW_SIZE)
+      .map(cell=>index.get(flowId(cell.r,cell.c)))
+      .filter(i=>i!==undefined&&(fromTail?i<path.length-2:i>1));
+    if(!neighbours.length)continue;
+    const pivot=pick(neighbours);
+    if(fromTail){
+      const tail=path.splice(pivot+1);tail.reverse();path.push(...tail);
+    }else{
+      const head=path.splice(0,pivot);head.reverse();path.unshift(...head);
+    }
+    rebuild();
+  }
+  return path;
+}
+function makeFlowTask(){
+  for(let attempt=0;attempt<40;attempt++){
+    const path=flowHamiltonian();
+    if(!path)continue;
+    const pairs=randomInt(4,5),cuts=[];
+    const minLength=3,total=path.length;
+    let remaining=total,index=0,ok=true;
+    for(let i=0;i<pairs;i++){
+      const left=pairs-i-1;
+      const maxLength=remaining-left*minLength;
+      if(maxLength<minLength){ok=false;break}
+      const length=i===pairs-1?remaining:randomInt(minLength,Math.min(maxLength,7));
+      cuts.push(path.slice(index,index+length));
+      index+=length;remaining-=length;
+    }
+    if(!ok||remaining!==0)continue;
+    if(cuts.some(segment=>segment.length<minLength))continue;
+    const endpoints=cuts.map((segment,i)=>({color:i,a:segment[0],b:segment.at(-1)}));
+    // endpoints of different pairs must not sit on top of each other
+    const seen=new Set();let clash=false;
+    endpoints.forEach(pair=>{[pair.a,pair.b].forEach(cell=>{
+      const id=flowId(cell.r,cell.c);if(seen.has(id))clash=true;seen.add(id);
+    })});
+    if(clash)continue;
+    return{kind:"flowLink",prompt:"同じ色をつないで",
+      help:"色の点から指をなぞって同じ色へ。すべての色をつなぎ、全部のマスを埋めれば成功です。",
+      endpoints,solution:cuts,size:FLOW_SIZE,duration:80000};
+  }
+  const endpoints=[{color:0,a:{r:0,c:0},b:{r:0,c:4}},{color:1,a:{r:2,c:0},b:{r:2,c:4}},
+    {color:2,a:{r:4,c:0},b:{r:4,c:4}},{color:3,a:{r:1,c:0},b:{r:3,c:4}}];
+  return{kind:"flowLink",prompt:"同じ色をつないで",help:"色の点から指をなぞって同じ色へ。",
+    endpoints,solution:[],size:FLOW_SIZE,duration:80000};
+}
+const PIPE_SIZE=4;
+const PIPE_DIRS=[{dr:-1,dc:0},{dr:0,dc:1},{dr:1,dc:0},{dr:0,dc:-1}];   // up, right, down, left
+const pipeMask=(cell)=>cell.mask;
+const pipeHas=(cell,dir)=>(cell.mask>>((dir+4-cell.turn)%4)&1)===1;
+function pipeRotate(cell){cell.turn=(cell.turn+1)%4}
+function pipeConnected(cells){
+  const start=cells.find(cell=>cell.role==="source");
+  if(!start)return{ok:false,lit:new Set()};
+  const lit=new Set([`${start.r},${start.c}`]),stack=[start];
+  while(stack.length){
+    const cell=stack.pop();
+    PIPE_DIRS.forEach((step,dir)=>{
+      if(!pipeHas(cell,dir))return;
+      const r=cell.r+step.dr,c=cell.c+step.dc;
+      if(r<0||r>=PIPE_SIZE||c<0||c>=PIPE_SIZE)return;
+      const next=cells.find(item=>item.r===r&&item.c===c);
+      if(!next||!pipeHas(next,(dir+2)%4))return;
+      const key=`${r},${c}`;
+      if(lit.has(key))return;
+      lit.add(key);stack.push(next);
+    });
+  }
+  const goal=cells.find(cell=>cell.role==="goal");
+  return{ok:lit.has(`${goal.r},${goal.c}`),lit};
+}
+function makePipeTask(){
+  for(let attempt=0;attempt<200;attempt++){
+    // lay a wandering pipe line from a source to a goal, then add a few decoy branches
+    const cells=[];
+    for(let r=0;r<PIPE_SIZE;r++)for(let c=0;c<PIPE_SIZE;c++)cells.push({r,c,mask:0,turn:0,role:"empty"});
+    const at=(r,c)=>cells.find(cell=>cell.r===r&&cell.c===c);
+    const start={r:randomInt(0,PIPE_SIZE-1),c:0},visited=new Set([`${start.r},0`]);
+    let current=start,length=0;const route=[start];
+    while(length<12){
+      const options=shuffle([0,1,1,2,3]).map(dir=>({dir,r:current.r+PIPE_DIRS[dir].dr,c:current.c+PIPE_DIRS[dir].dc}))
+        .filter(next=>next.r>=0&&next.r<PIPE_SIZE&&next.c>=0&&next.c<PIPE_SIZE&&!visited.has(`${next.r},${next.c}`));
+      if(!options.length)break;
+      const next=options[0];
+      at(current.r,current.c).mask|=1<<next.dir;
+      at(next.r,next.c).mask|=1<<((next.dir+2)%4);
+      visited.add(`${next.r},${next.c}`);
+      current={r:next.r,c:next.c};route.push(current);length++;
+      if(current.c===PIPE_SIZE-1&&route.length>=6)break;
+    }
+    if(current.c!==PIPE_SIZE-1||route.length<6)continue;
+    at(start.r,start.c).role="source";
+    at(current.r,current.c).role="goal";
+    // decoy stubs so that not every piece belongs to the answer
+    cells.filter(cell=>!cell.mask).slice(0,4).forEach(cell=>{
+      const dir=randomInt(0,3),r=cell.r+PIPE_DIRS[dir].dr,c=cell.c+PIPE_DIRS[dir].dc;
+      if(r<0||r>=PIPE_SIZE||c<0||c>=PIPE_SIZE)return;
+      const other=at(r,c);
+      if(other.role!=="empty"||!other.mask)return;
+      cell.mask|=1<<dir;
+    });
+    const solved=cells.map(cell=>({...cell}));
+    let scrambled=0;
+    cells.forEach(cell=>{
+      if(!cell.mask)return;
+      const spin=randomInt(0,3);
+      cell.turn=spin;
+      if(spin)scrambled++;
+    });
+    if(scrambled<4)continue;
+    if(pipeConnected(cells).ok)continue;                       // it must start broken
+    const check=cells.map(cell=>({...cell,turn:0}));
+    if(!pipeConnected(check).ok)continue;                      // and be fixable by rotation alone
+    return{kind:"pipeFlow",prompt:"水を通せ",
+      help:"パイプをタップすると回ります。左の水源から右のゴールまでつなげてください。",
+      cells:cells.map(cell=>({r:cell.r,c:cell.c,mask:cell.mask,turn:cell.turn,role:cell.role})),
+      size:PIPE_SIZE,duration:70000};
+  }
+  const cells=[];
+  for(let r=0;r<PIPE_SIZE;r++)for(let c=0;c<PIPE_SIZE;c++)cells.push({r,c,mask:0,turn:0,role:"empty"});
+  const row=1;
+  for(let c=0;c<PIPE_SIZE;c++){
+    const cell=cells.find(item=>item.r===row&&item.c===c);
+    cell.mask=(c>0?1<<3:0)|(c<PIPE_SIZE-1?1<<1:0);
+    cell.turn=c%2?1:0;
+    if(c===0)cell.role="source";
+    if(c===PIPE_SIZE-1)cell.role="goal";
+  }
+  return{kind:"pipeFlow",prompt:"水を通せ",help:"パイプをタップすると回ります。",cells,size:PIPE_SIZE,duration:70000};
+}
+const SCREW_COLORS=["#F2953F","#5FB6E0","#66C08C","#A66DC2","#EA7E9B","#F2CE4B"];
+const SCREW_GRID=3;
+const screwHole=(row,col)=>row*SCREW_GRID+col;
+function screwSpan(plate){
+  // every hole the bar lies over, endpoints included
+  const cells=[];
+  if(plate.dir==="h")for(let c=plate.c0;c<=plate.c1;c++)cells.push(screwHole(plate.r,c));
+  else for(let r=plate.r0;r<=plate.r1;r++)cells.push(screwHole(r,plate.c));
+  return cells;
+}
+function screwSimulate(task,order){
+  const removed=new Set(),dropped=new Set();
+  for(const bolt of order){
+    const covered=task.plates.some(plate=>!dropped.has(plate.id)&&plate.covers.includes(bolt));
+    if(covered)return{ok:false,bolt};
+    removed.add(bolt);
+    task.plates.forEach(plate=>{
+      if(dropped.has(plate.id))return;
+      if(plate.bolts.every(item=>removed.has(item)))dropped.add(plate.id);
+    });
+  }
+  return{ok:dropped.size===task.plates.length,dropped:dropped.size};
+}
+const SCREW_ORDERS=list=>{
+  if(list.length<=1)return[list];
+  const out=[];
+  list.forEach((item,index)=>{
+    const rest=[...list.slice(0,index),...list.slice(index+1)];
+    SCREW_ORDERS(rest).forEach(tail=>out.push([item,...tail]));
+  });
+  return out;
+};
+function makeScrewTask(){
+  for(let attempt=0;attempt<400;attempt++){
+    const plates=[];
+    for(let layer=0;layer<3;layer++){
+      const horizontal=randomFloat()<.5;
+      if(horizontal){
+        const r=randomInt(0,SCREW_GRID-1),c0=randomInt(0,SCREW_GRID-2),c1=randomInt(c0+1,SCREW_GRID-1);
+        plates.push({id:layer,layer,dir:"h",r,c0,c1,color:SCREW_COLORS[layer],
+          bolts:[screwHole(r,c0),screwHole(r,c1)],covers:[]});
+      }else{
+        const c=randomInt(0,SCREW_GRID-1),r0=randomInt(0,SCREW_GRID-2),r1=randomInt(r0+1,SCREW_GRID-1);
+        plates.push({id:layer,layer,dir:"v",c,r0,r1,color:SCREW_COLORS[layer],
+          bolts:[screwHole(r0,c),screwHole(r1,c)],covers:[]});
+      }
+    }
+    const bolts=[...new Set(plates.flatMap(plate=>plate.bolts))];
+    if(bolts.length!==6)continue;                                  // every bolt belongs to one plate only
+    plates.forEach((plate,index)=>{
+      const span=screwSpan(plate);
+      plates.slice(index+1).forEach(lower=>{
+        lower.bolts.forEach(bolt=>{
+          if(span.includes(bolt)&&!plate.bolts.includes(bolt)&&!plate.covers.includes(bolt))plate.covers.push(bolt);
+        });
+      });
+    });
+    if(!plates.some(plate=>plate.covers.length))continue;
+    const orders=SCREW_ORDERS(bolts);
+    const results=orders.map(order=>screwSimulate({plates},order));
+    const wins=results.filter(result=>result.ok).length;
+    const rate=wins/orders.length;
+    if(!wins||rate>.2)continue;
+    return{kind:"screwOut",prompt:"ボルトを抜く順番を読んで",
+      help:"上に乗った板の下のボルトは回せません。3枚すべて外せば成功です。",
+      plates,bolts,answer:orders[results.findIndex(result=>result.ok)],wins,total:orders.length,duration:60000};
+  }
+  const plates=[{id:0,layer:0,dir:"h",r:1,c0:0,c1:2,color:SCREW_COLORS[0],bolts:[3,5],covers:[4]},
+    {id:1,layer:1,dir:"v",c:1,r0:0,r1:2,color:SCREW_COLORS[1],bolts:[1,7],covers:[]},
+    {id:2,layer:2,dir:"h",r:2,c0:0,c1:1,color:SCREW_COLORS[2],bolts:[6,7],covers:[]}];
+  return{kind:"screwOut",prompt:"ボルトを抜く順番を読んで",help:"上に乗った板の下のボルトは回せません。",
+    plates,bolts:[3,5,1,7,6],answer:[3,5,1,7,6],wins:1,total:120,duration:60000};
+}
+const TOWER_COLORS=["#F2953F","#EA7E9B","#5FB6E0","#66C08C","#A66DC2","#F2CE4B","#7C8CC4"];
+function makeTowerTask(){
+  const target=randomInt(5,6);
+  return{kind:"towerStack",prompt:`${target}段まで積み上げて`,
+    help:"左右に動くブロックをタップで落とします。はみ出た分は切り落とされ、外すと失敗です。",
+    target,speed:randomInt(58,74)/100,startWidth:randomInt(52,62)/100,
+    hue:randomInt(0,TOWER_COLORS.length-1),duration:40000};
+}
+const WORD_ORDER_ITEMS=[
+  {chunks:["I","have lived","in this town","for","twenty years"],
+   accepted:[["I","have lived","in this town","for","twenty years"]],
+   note:"Present perfect with a length of time."},
+  {chunks:["She","asked me","to call her","after","the meeting"],
+   accepted:[["She","asked me","to call her","after","the meeting"]],
+   note:"ask + person + to do."},
+  {chunks:["The train","was","so crowded","that","I could not sit down"],
+   accepted:[["The train","was","so crowded","that","I could not sit down"]],
+   note:"so ... that ..."},
+  {chunks:["Could you","tell me","where","the station","is"],
+   accepted:[["Could you","tell me","where","the station","is"]],
+   note:"Indirect question keeps subject before verb."},
+  {chunks:["I","am looking forward to","seeing","you","again"],
+   accepted:[["I","am looking forward to","seeing","you","again"]],
+   note:"look forward to + -ing."},
+  {chunks:["He","has been","working here","since","last spring"],
+   accepted:[["He","has been","working here","since","last spring"]],
+   note:"since + a point in time."},
+  {chunks:["This is","the book","that","my sister","recommended"],
+   accepted:[["This is","the book","that","my sister","recommended"]],
+   note:"Relative clause as object."},
+  {chunks:["I","would rather","stay home","than","go out tonight"],
+   accepted:[["I","would rather","stay home","than","go out tonight"]],
+   note:"would rather A than B."},
+  {chunks:["Please","let me know","if","you need","any help"],
+   accepted:[["Please","let me know","if","you need","any help"]],
+   note:"let + person + know."},
+  {chunks:["It","took me","three hours","to finish","the report"],
+   accepted:[["It","took me","three hours","to finish","the report"]],
+   note:"It takes + person + time + to do."},
+  {chunks:["I","have never","been","to","Okinawa"],
+   accepted:[["I","have never","been","to","Okinawa"]],
+   note:"Experience with the present perfect."},
+  {chunks:["The doctor","told him","not to","drink","too much coffee"],
+   accepted:[["The doctor","told him","not to","drink","too much coffee"]],
+   note:"tell + person + not to do."},
+  {chunks:["Do you know","how long","the museum","stays","open"],
+   accepted:[["Do you know","how long","the museum","stays","open"]],
+   note:"Embedded question after do you know."},
+  {chunks:["I","was too tired","to","cook","dinner last night"],
+   accepted:[["I","was too tired","to","cook","dinner last night"]],
+   note:"too ... to do."},
+  {chunks:["My glasses","are","not","where","I left them"],
+   accepted:[["My glasses","are","not","where","I left them"]],
+   note:"where clause as a complement."},
+  {chunks:["If","it rains tomorrow","we","will stay","at home"],
+   accepted:[["If","it rains tomorrow","we","will stay","at home"]],
+   note:"First conditional: present in the if clause."}
+];
+function makeWordOrderTask(){
+  const item=pick(WORD_ORDER_ITEMS);
+  const answer=item.accepted[0];
+  let chunks=shuffle(item.chunks);
+  for(let guard=0;guard<20&&chunks.join("|")===answer.join("|");guard++)chunks=shuffle(item.chunks);
+  return{kind:"wordOrder",
+    prompt:"Put the words in the right order",
+    help:"Tap the words one by one to build the sentence. Tap a word you placed to take it back.",
+    chunks,accepted:item.accepted,answer,note:item.note,duration:45000};
+}
+const ENGLISH_GAPS=[
+  {sentence:["We have known each other ___ we were children."],answer:"since",wrong:["for","when","during"],note:"since + a point in the past."},
+  {sentence:["I will call you as soon as I ___ home."],answer:"get",wrong:["will get","got","am getting"],note:"Present tense after as soon as."},
+  {sentence:["She is very good ___ remembering names."],answer:"at",wrong:["in","on","for"],note:"be good at + -ing."},
+  {sentence:["There is ___ milk left in the bottle."],answer:"little",wrong:["few","a few","many"],note:"little for uncountable nouns."},
+  {sentence:["He apologised ___ being late."],answer:"for",wrong:["to","of","with"],note:"apologise for + -ing."},
+  {sentence:["Would you mind ___ the window?"],answer:"opening",wrong:["to open","open","opened"],note:"mind + -ing."},
+  {sentence:["This is the ___ film I have ever seen."],answer:"best",wrong:["better","well","most"],note:"Superlative with have ever seen."},
+  {sentence:["If I ___ you, I would take the earlier train."],answer:"were",wrong:["am","will be","have been"],note:"Second conditional: if I were you."}
+];
+const ENGLISH_ERRORS=[
+  {answer:"He don't like coffee.",wrong:["He doesn't like coffee.","She doesn't drink tea.","They don't like milk."],note:"Third person singular takes doesn't."},
+  {answer:"I have seen him yesterday.",wrong:["I saw him yesterday.","I have seen him before.","I met him last week."],note:"The present perfect cannot take yesterday."},
+  {answer:"She suggested to go to the museum.",wrong:["She suggested going to the museum.","She offered to go to the museum.","She wanted to go to the museum."],note:"suggest takes -ing, not to."},
+  {answer:"There is many people in the hall.",wrong:["There are many people in the hall.","There is a lot of noise in the hall.","There are few people in the hall."],note:"people is plural, so are."},
+  {answer:"I look forward to see you.",wrong:["I look forward to seeing you.","I want to see you.","I hope to see you."],note:"look forward to + -ing."},
+  {answer:"He is married with a doctor.",wrong:["He is married to a doctor.","He is friendly with a doctor.","He works with a doctor."],note:"married to, not married with."}
+];
+const ENGLISH_FORMS=[
+  {sentence:"Yesterday she ___ three letters. (write)",answer:"wrote",wrong:["writes","has written","was writing"],note:"Simple past with yesterday."},
+  {sentence:"By the time we arrived, the show ___. (start)",answer:"had started",wrong:["starts","has started","was starting"],note:"Past perfect for the earlier action."},
+  {sentence:"He promised ___ me tomorrow. (help)",answer:"to help",wrong:["helping","helped","help"],note:"promise + to do."},
+  {sentence:"I do not mind ___ a few minutes. (wait)",answer:"waiting",wrong:["to wait","waited","wait"],note:"mind + -ing."},
+  {sentence:"The room ___ every morning. (clean)",answer:"is cleaned",wrong:["cleans","is cleaning","has cleaned"],note:"Passive: the room does not clean itself."},
+  {sentence:"If it ___ sunny tomorrow, we will walk. (be)",answer:"is",wrong:["will be","would be","was"],note:"Present tense in the if clause."}
+];
 const TEMPLATE_TIERS={
   "language-meaning-v1":2,"language-order-v1":2,"spatial-cube-v1":2,
   "prediction-symbol-v1":2,"calculation-compare-v1":2,"memory-reverse-v1":2,
@@ -373,15 +1043,22 @@ const TEMPLATE_TIERS={
   "attention-search-v1":2,"timing-five-v1":2,
   "memory-nback-v1":3,"language-anagram-v1":3,"spatial-perspective-v1":3,
   "prediction-double-v1":3,"inhibition-rule-switch-v1":3,"calculation-multistep-v1":3,
-  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
+  "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"spatial-flow-link-v1":3,"spatial-pipe-flow-v1":2,"attention-screw-out-v1":2,"timing-tower-stack-v1":2,"language-word-order-v1":2,"language-english-gap-v1":2,"language-english-error-v1":3,"language-english-form-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
 };
+const MAX_TIER=5;
 const tierFor = templateId => TEMPLATE_TIERS[templateId]||1;
 const TEMPLATE_FLAVORS={
-  "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","calculation-rpg-battle-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild",
-  "memory-missing-v1":"quirky","reaction-emoji-match-v1":"quirky","attention-animal-count-v1":"quirky","inhibition-parity-v1":"quirky","attention-kana-count-v1":"quirky","attention-dual-v1":"quirky","language-anagram-v1":"quirky","social-partner-mood-v1":"quirky","social-date-v1":"wild",
-  "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","prediction-chain-puzzle-v1":"satisfying","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
+  "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","spatial-park-jam-v1":"satisfying","spatial-flow-link-v1":"satisfying","spatial-pipe-flow-v1":"satisfying","spatial-rope-untangle-v1":"quirky","calculation-rpg-battle-v1":"wild","calculation-gate-run-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild","timing-tower-stack-v1":"wild",
+  "memory-missing-v1":"quirky","reaction-emoji-match-v1":"quirky","attention-animal-count-v1":"quirky","inhibition-parity-v1":"quirky","attention-kana-count-v1":"quirky","attention-dual-v1":"quirky","language-anagram-v1":"quirky","language-word-order-v1":"satisfying","social-partner-mood-v1":"quirky","social-date-v1":"wild",
+  "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","prediction-chain-puzzle-v1":"satisfying","attention-water-sort-v1":"satisfying","prediction-pin-pull-v1":"wild","attention-screw-out-v1":"quirky","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
 };
 const flavorFor = templateId => TEMPLATE_FLAVORS[templateId]||"classic";
+// Every family ships its basic form as step 1. A harder version of the same play
+// is added as a new stable ID with a higher step, never as a retune of an old ID,
+// so history and category strength keep their meaning.
+const TEMPLATE_STEPS={};
+const stepFor = templateId => TEMPLATE_STEPS[templateId]||1;
+const familyOf = templateId => templateId.replace(/-v\d+$/,"").replace(/-(hard|pro)$/,"");
 const PACE_FIXED_KINDS = new Set(["signal","target","timing","runner"]);
 function tuneTaskForPace(task,paceMode){
   if(paceMode!==PACE_RELAXED)return task;
@@ -463,7 +1140,31 @@ const TASK_FACTORIES = [
   {id:"social-partner-mood-v1",version:"1.0",category:"social",make:()=>{const scenario=structuredClone(PARTNER_MOOD_SCENARIO);scenario.steps.forEach(step=>step.choices=shuffle(step.choices));return{kind:"dateSim",prompt:"不機嫌なパートナーと話して",help:"火に油を注がず、3回会話をつなぎます。",scenario,duration:20000}}},
   {id:"calculation-rpg-battle-v1",version:"1.1",category:"calculation",make:()=>makeBattleTask()},
   {id:"spatial-lane-run-v1",version:"1.2",category:"spatial",make:()=>makeRunStage()},
-  {id:"prediction-chain-puzzle-v1",version:"1.3",category:"prediction",make:()=>makePuzzleTask()}
+  {id:"prediction-chain-puzzle-v1",version:"1.3",category:"prediction",make:()=>makePuzzleTask()},
+  {id:"prediction-pin-pull-v1",version:"1.4",category:"prediction",make:()=>makePinTask()},
+  {id:"attention-water-sort-v1",version:"1.5",category:"attention",make:()=>makeWaterTask()},
+  {id:"calculation-gate-run-v1",version:"1.6",category:"calculation",make:()=>makeGateTask()},
+  {id:"spatial-park-jam-v1",version:"1.7",category:"spatial",make:()=>makeParkTask()},
+  {id:"spatial-rope-untangle-v1",version:"1.8",category:"spatial",make:()=>makeRopeTask()},
+  {id:"spatial-flow-link-v1",version:"1.9",category:"spatial",make:()=>makeFlowTask()},
+  {id:"spatial-pipe-flow-v1",version:"1.10",category:"spatial",make:()=>makePipeTask()},
+  {id:"attention-screw-out-v1",version:"1.11",category:"attention",make:()=>makeScrewTask()},
+  {id:"timing-tower-stack-v1",version:"1.12",category:"timing",make:()=>makeTowerTask()},
+  {id:"language-word-order-v1",version:"1.13",category:"language",make:()=>makeWordOrderTask()},
+  {id:"language-english-gap-v1",version:"1.14",category:"language",make:()=>{const row=pick(ENGLISH_GAPS);return{kind:"expression",prompt:"Choose the best word for the blank",help:"Read the whole sentence first.",expression:row.sentence[0],options:shuffle([row.answer,...row.wrong]),answer:row.answer,duration:9000}}},
+  {id:"language-english-error-v1",version:"1.14",category:"language",make:()=>{const row=pick(ENGLISH_ERRORS);return{kind:"choice",prompt:"Which sentence is wrong?",help:"Three of them are correct English.",options:shuffle([row.answer,...row.wrong]),answer:row.answer,duration:11000}}},
+  {id:"language-english-form-v1",version:"1.14",category:"language",make:()=>{const row=pick(ENGLISH_FORMS);return{kind:"expression",prompt:"Put the verb in the right form",help:"The verb is given in brackets.",expression:row.sentence,options:shuffle([row.answer,...row.wrong]),answer:row.answer,duration:9500}}},
+  {id:"calculation-subtract-v1",version:"1.15",category:"calculation",make:()=>{const a=randomInt(12,38),b=randomInt(3,11),answer=a-b;const set=new Set([answer]);while(set.size<4)set.add(Math.max(0,answer+pick([-3,-2,-1,1,2,3])));return{kind:"expression",prompt:"引き算をしてください",help:"ゆっくりで大丈夫です。",expression:`${a} − ${b}`,options:shuffle([...set].map(String)),answer:String(answer),duration:7000}}},
+  {id:"calculation-half-v1",version:"1.15",category:"calculation",make:()=>{const n=randomInt(3,19)*2,answer=n/2;return{kind:"expression",prompt:"半分にしてください",help:"2で割ります。",expression:`${n} ÷ 2`,options:shuffle([answer,answer+1,answer-1,answer+2].map(String)),answer:String(answer),duration:6500}}},
+  {id:"language-kanji-read-v1",version:"1.15",category:"language",make:()=>{const rows=[["『速い』の読みは？","はやい",["おそい","つよい","かるい"]],["『暖かい』の読みは？","あたたかい",["すずしい","つめたい","あかるい"]],["『笑顔』の読みは？","えがお",["わらいがお","しょうがん","えみかお"]],["『年賀状』の読みは？","ねんがじょう",["としがじょう","ねんかじょう","ねんがしょう"]]],r=pick(rows);return{kind:"choice",prompt:r[0],help:"よく見る漢字です。",options:shuffle([r[1],...r[2]]),answer:r[1],duration:7000}}},
+  {id:"language-katakana-v1",version:"1.15",category:"language",make:()=>{const rows=[["体温をはかる道具は？","タイオンケイ",["タイヨウケイ","タイオンキ","オンドケイキ"]],["食事の前に洗うのは？","テ",["アシ","カオ","ハ"]],["『病院で診てもらう人』は？","カンジャ",["イシャ","カンゴ","ヤクザイ"]]],r=pick(rows);return{kind:"choice",prompt:r[0],help:"素直に選んでください。",options:shuffle([r[1],...r[2]]),answer:r[1],duration:7000}}},
+  {id:"memory-color-v1",version:"1.15",category:"memory",make:()=>{const shown=shuffle(["赤","青","黄","緑","紫"]).slice(0,3);return{kind:"flashChoice",prompt:"3つの色を覚えて",help:"順番も見ておいてください。",afterHelp:"2番目の色はどれ？",shown,options:shuffle(["赤","青","黄","緑","紫"]),answer:shown[1],duration:7000}}},
+  {id:"attention-shape-count-v1",version:"1.15",category:"attention",make:()=>{const target=pick(["★","●","▲"]),others=["★","●","▲","■"].filter(x=>x!==target);const line=Array.from({length:12},()=>randomFloat()<.32?target:pick(others));if(line.filter(x=>x===target).length<2){line[randomInt(0,5)]=target;line[randomInt(6,11)]=target}const count=line.filter(x=>x===target).length;const options=[count,count+1,Math.max(0,count-1),count+2].map(String);const unique=[...new Set(options)];let extra=count+3;while(unique.length<4){if(!unique.includes(String(extra)))unique.push(String(extra));extra++}return{kind:"expression",prompt:`${target} はいくつ？`,help:"落ち着いて数えましょう。",expression:line.join(" "),options:shuffle(unique.slice(0,4)),answer:String(count),duration:8000}}},
+  {id:"prediction-shape-v1",version:"1.15",category:"prediction",make:()=>{const pair=pick([["○","△"],["●","□"],["☆","♡"]]),seq=[pair[0],pair[1],pair[0],pair[1]],answer=pair[0];return{kind:"pattern",prompt:"次に来るのは？",help:"交互にならんでいます。",sequence:seq,options:shuffle([pair[0],pair[1],"◇","▽"]),answer,duration:6500}}},
+  {id:"spatial-flip-v1",version:"1.15",category:"spatial",make:()=>{const rows=[["→","←"],["←","→"],["↗","↖"],["↘","↙"],["↖","↗"],["↙","↘"]],r=pick(rows);const pool=["→","←","↗","↖","↘","↙"].filter(value=>value!==r[0]&&value!==r[1]);return{kind:"rotation",prompt:"左右をひっくり返すと？",help:"鏡に映した形です。",symbol:r[0],options:shuffle([r[1],...shuffle(pool).slice(0,3)]),answer:r[1],duration:6500}}},
+  {id:"timing-two-v1",version:"1.15",category:"timing",make:()=>({kind:"timing",prompt:"体内時計で2秒を測って",help:"スタート後、2秒だと思ったらタップ。",targetSeconds:2,toleranceMs:600,duration:8000})},
+  {id:"reaction-shape-v1",version:"1.15",category:"reaction",make:()=>{const answer=pick(["まる","さんかく","しかく"]),marks={"まる":"●","さんかく":"▲","しかく":"■"};return{kind:"rotation",prompt:`${marks[answer]} の名前は？`,help:"見たままを選んでください。",symbol:marks[answer],options:shuffle(["まる","さんかく","しかく"]),answer,duration:5000}}},
+  {id:"social-greeting-v1",version:"1.15",category:"social",make:()=>{const rows=[["朝、近所の人に会いました。","おはようございます",["おやすみなさい","いただきます","ごちそうさま"]],["お店で先に会計を譲ってもらいました。","ありがとうございます",["いってきます","おかえりなさい","はじめまして"]],["久しぶりに友人に会いました。","お久しぶりです",["いってらっしゃい","おつかれさま、また明日","ただいま"]]],r=pick(rows);return{kind:"choice",prompt:`${r[0]} なんと言う？`,help:"いちばん自然なあいさつを。",options:shuffle([r[1],...r[2]]),answer:r[1],duration:7000}}}
 ];
 
 function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
@@ -482,7 +1183,7 @@ function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDA
   if(boss&&!chosen.includes(boss)){const same=chosen.map((factory,index)=>factory.category===boss.category?index:-1).filter(index=>index>=0),wild=chosen.findIndex(factory=>flavorFor(factory.id)==="wild"),replace=same.length>=2?same.at(-1):wild>=0?wild:chosen.length-1;chosen[replace]=boss}
   let ordered=shuffle(chosen);
   if(boss&&ordered.includes(boss)){ordered=shuffle(ordered.filter(factory=>factory!==boss));ordered.splice(Math.min(5,ordered.length),0,boss)}
-  return ordered.map(factory=>tuneTaskForPace({templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),category:factory.category,...factory.make()},paceMode));
+  return ordered.map(factory=>tuneTaskForPace({templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category,...factory.make()},paceMode));
 }
 
 let cooldownTicker=null,questionTimers=[],timerRaf=null,extraRafs=[],deadlineTimeout=null,questionAnswered=false,questionStartedAt=0;
@@ -503,7 +1204,7 @@ function renderHome(){
   $("xp-bar").style.width=`${clamp((state.profile.xp-(level-1)*120)/120*100,0,100)}%`;
   $("breadth-bar").style.width=`${clamp((breadth-(level-1)*6)/6*100,0,100)}%`;
   const unlocked=TASK_FACTORIES.filter(factory=>tierFor(factory.id)<=level).length;
-  $("unlock-note").textContent=`Tier ${Math.min(level,3)}まで ${unlocked}/${TASK_FACTORIES.length}タイプ解放中。レベルには経験値と問題の幅が必要です。`;
+  $("unlock-note").textContent=`Tier ${Math.min(level,MAX_TIER)}まで ${unlocked}/${TASK_FACTORIES.length}タイプ解放中。レベルには経験値と問題の幅が必要です。`;
   renderCategoryStats();refreshHomeButton();clearInterval(cooldownTicker);cooldownTicker=setInterval(refreshHomeButton,1000);
 }
 function refreshHomeButton(){
@@ -601,6 +1302,16 @@ function renderTask(task){
   if(task.kind==="rpgBattle"){renderRpgBattle(task);return}
   if(task.kind==="laneRun"){renderLaneRun(task);return}
   if(task.kind==="chainPuzzle"){renderChainPuzzle(task);return}
+  if(task.kind==="pinPull"){renderPinPull(task);return}
+  if(task.kind==="waterSort"){renderWaterSort(task);return}
+  if(task.kind==="gateRun"){renderGateRun(task);return}
+  if(task.kind==="parkJam"){renderParkJam(task);return}
+  if(task.kind==="ropeUntangle"){renderRopeUntangle(task);return}
+  if(task.kind==="flowLink"){renderFlowLink(task);return}
+  if(task.kind==="pipeFlow"){renderPipeFlow(task);return}
+  if(task.kind==="screwOut"){renderScrewOut(task);return}
+  if(task.kind==="towerStack"){renderTowerStack(task);return}
+  if(task.kind==="wordOrder"){renderWordOrder(task);return}
 }
 function renderMemoryPath(task){
   const grid=document.createElement("div");grid.className="memory-grid";const buttons=[];for(let i=0;i<9;i++){const b=document.createElement("button");b.type="button";b.className="memory-tile";b.disabled=true;b.setAttribute("aria-label",`${i+1}番のマス`);grid.append(b);buttons.push(b)}$("challenge").append(grid);
@@ -1545,6 +2256,1808 @@ function renderChainPuzzle(task){
     finishTask(false,{detail:`時間切れ。最大${task.best}連鎖の置き場所がありました。`});
   });
 }
+function renderPinPull(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const template=PIN_TEMPLATES.find(item=>item.key===task.template)||PIN_TEMPLATES[0];
+  const wrap=document.createElement("div");wrap.className="pin-stage";
+  const canvas=document.createElement("canvas");canvas.className="pin-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","3本のピンと溶岩・水・コインの部屋");
+  const pad=document.createElement("div");pad.className="pin-pad";
+  const buttons=[0,1,2].map(index=>{
+    const button=document.createElement("button");button.type="button";button.className="pin-key";
+    button.innerHTML=`<span>${index+1}</span>`;button.setAttribute("aria-label",`${index+1}番のピンを抜く`);
+    pad.append(button);return button;
+  });
+  wrap.append(canvas,pad);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const chambers=task.contents.map(content=>({content,open:false,pin:0}));
+  const state={busy:false,done:false,coins:0,total:task.contents.filter(c=>c==="coin").length,
+    dead:false,monsterFed:false,shake:0,flash:0,pulled:[]};
+  const drops=[],sparks=[];
+  let W=0,H=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*1.12);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  };
+  const px=p=>p.x*W,py=p=>p.y*H,unit=()=>W*.055;
+  const COLORS={lava:["#FF9A3C","#E4451F","#7A1408"],water:["#7FD8F5","#2E9BD6","#12557F"],
+    coin:["#FFE9A3","#F0C24E","#A9761A"],stone:["#B9B3C6","#7C7589","#403A4E"]};
+  const pipePoints=index=>{
+    const from=template.chambers[index],raw=template.pipes[index];
+    const target=template.targets[index];
+    const to=target==="hero"?template.hero:target==="monster"?template.monster:template.chambers[Number(target.slice(1))];
+    return{start:{x:px(from),y:py(from)+unit()*.9},
+      mid:{x:raw[1][0]*W,y:raw[1][1]*H},
+      end:{x:px(to),y:py(to)-(target.startsWith("c")?unit()*.9:unit()*.6)}};
+  };
+  const bezier=(p,t)=>({
+    x:(1-t)*(1-t)*p.start.x+2*(1-t)*t*p.mid.x+t*t*p.end.x,
+    y:(1-t)*(1-t)*p.start.y+2*(1-t)*t*p.mid.y+t*t*p.end.y
+  });
+  const drawBackground=()=>{
+    const rock=ctx.createLinearGradient(0,0,0,H);
+    rock.addColorStop(0,"#2C2338");rock.addColorStop(.55,"#3A2E48");rock.addColorStop(1,"#241C2E");
+    ctx.fillStyle=rock;ctx.fillRect(0,0,W,H);
+    ctx.strokeStyle="rgba(255,255,255,.045)";ctx.lineWidth=Math.max(1,W*.006);
+    for(let i=0;i<9;i++){
+      const x=(i*.13+.04)*W,y=(i%3)*.28*H;
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+W*.05,y+H*.1);ctx.lineTo(x-W*.02,y+H*.2);ctx.stroke();
+    }
+  };
+  const drawPipe=index=>{
+    const p=pipePoints(index),u=unit();
+    ctx.lineCap="round";
+    ctx.strokeStyle="#191322";ctx.lineWidth=u*1.15;
+    ctx.beginPath();ctx.moveTo(p.start.x,p.start.y);ctx.quadraticCurveTo(p.mid.x,p.mid.y,p.end.x,p.end.y);ctx.stroke();
+    ctx.strokeStyle="#4B3F5C";ctx.lineWidth=u*.85;
+    ctx.beginPath();ctx.moveTo(p.start.x,p.start.y);ctx.quadraticCurveTo(p.mid.x,p.mid.y,p.end.x,p.end.y);ctx.stroke();
+    ctx.strokeStyle="rgba(255,255,255,.12)";ctx.lineWidth=Math.max(1,u*.12);
+    ctx.beginPath();ctx.moveTo(p.start.x,p.start.y);ctx.quadraticCurveTo(p.mid.x,p.mid.y,p.end.x,p.end.y);ctx.stroke();
+  };
+  const drawFill=(x,y,r,content)=>{
+    if(!content)return;
+    const [light,base,dark]=COLORS[content];
+    if(content==="coin"){
+      [[0,.35],[-.42,-.05],[.42,-.02],[0,-.42]].forEach(([dx,dy],i)=>{
+        const cx=x+dx*r,cy=y+dy*r,cr=r*.42;
+        const coin=ctx.createLinearGradient(cx-cr,cy-cr,cx+cr,cy+cr);
+        coin.addColorStop(0,light);coin.addColorStop(.5,base);coin.addColorStop(1,dark);
+        ctx.fillStyle=coin;ctx.beginPath();ctx.ellipse(cx,cy,cr,cr*.86,i*.4,0,Math.PI*2);ctx.fill();
+        ctx.fillStyle="rgba(255,255,255,.5)";ctx.font=`800 ${Math.round(cr*1.1)}px "Hiragino Maru Gothic ProN",sans-serif`;
+        ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("¥",cx,cy);ctx.textAlign="left";
+      });
+      return;
+    }
+    const level=y-r*.15,wave=reduced?0:Math.sin(clock*3+x)*r*.06;
+    const fill=ctx.createLinearGradient(x,level,x,y+r);
+    fill.addColorStop(0,light);fill.addColorStop(.55,base);fill.addColorStop(1,dark);
+    ctx.save();
+    ctx.beginPath();ctx.arc(x,y,r*.92,0,Math.PI*2);ctx.clip();
+    ctx.fillStyle=fill;ctx.fillRect(x-r,level+wave,r*2,r*2);
+    if(content==="lava"){
+      ctx.fillStyle="rgba(255,220,120,.5)";
+      for(let i=0;i<3;i++){
+        const bx=x+Math.sin(clock*2+i*2)*r*.5,by=level+r*.5+Math.cos(clock*1.7+i)*r*.3;
+        ctx.beginPath();ctx.arc(bx,by,r*.12,0,Math.PI*2);ctx.fill();
+      }
+    }
+    ctx.restore();
+    if(content==="lava"){
+      const glow=ctx.createRadialGradient(x,y,r*.3,x,y,r*2);
+      glow.addColorStop(0,"rgba(255,140,60,.4)");glow.addColorStop(1,"rgba(255,140,60,0)");
+      ctx.fillStyle=glow;ctx.beginPath();ctx.arc(x,y,r*2,0,Math.PI*2);ctx.fill();
+    }
+  };
+  const drawChamber=(index)=>{
+    const spot=template.chambers[index],x=px(spot),y=py(spot),u=unit(),r=u*1.35;
+    ctx.fillStyle="#171021";ctx.beginPath();ctx.arc(x,y,r*1.1,0,Math.PI*2);ctx.fill();
+    const wall=ctx.createRadialGradient(x-r*.4,y-r*.5,r*.2,x,y,r*1.15);
+    wall.addColorStop(0,"#584A69");wall.addColorStop(1,"#2A2136");
+    ctx.fillStyle=wall;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle="#120C1B";ctx.beginPath();ctx.arc(x,y,r*.94,0,Math.PI*2);ctx.fill();
+    drawFill(x,y,r*.9,chambers[index].content);
+    ctx.strokeStyle="rgba(255,255,255,.22)";ctx.lineWidth=Math.max(1,u*.1);
+    ctx.beginPath();ctx.arc(x,y,r*.94,Math.PI*1.05,Math.PI*1.85);ctx.stroke();
+    // the pin across the outlet
+    const pin=chambers[index].pin,pinY=y+r*.86,slide=pin*u*2.6;
+    ctx.save();ctx.translate(x-slide,pinY);ctx.rotate(pin*1.1);
+    ctx.globalAlpha=clamp(1-pin*.6,0,1);
+    const metal=ctx.createLinearGradient(-u,0,u,0);
+    metal.addColorStop(0,"#F7DE9A");metal.addColorStop(.45,"#E2B44A");metal.addColorStop(1,"#9A6E1E");
+    ctx.fillStyle=metal;
+    ctx.beginPath();ctx.roundRect(-u*1.15,-u*.24,u*2.3,u*.48,u*.24);ctx.fill();
+    ctx.strokeStyle="#7A5416";ctx.lineWidth=Math.max(1,u*.08);
+    ctx.beginPath();ctx.arc(-u*1.25,0,u*.42,0,Math.PI*2);ctx.stroke();
+    ctx.fillStyle="rgba(255,255,255,.55)";
+    ctx.beginPath();ctx.roundRect(-u*.95,-u*.16,u*1.7,u*.12,u*.06);ctx.fill();
+    ctx.restore();
+    if(!chambers[index].open&&!state.busy&&!state.done){
+      ctx.strokeStyle=`rgba(245,215,110,${.5+Math.sin(clock*4+index)*.3})`;
+      ctx.lineWidth=Math.max(1,u*.14);
+      ctx.beginPath();ctx.arc(x-u*1.25,pinY,u*.72,0,Math.PI*2);ctx.stroke();
+    }
+    ctx.fillStyle="rgba(255,255,255,.85)";ctx.font=`900 ${Math.round(u*.8)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(`${index+1}`,x,y-r*1.32);ctx.textAlign="left";
+  };
+  const drawHero=()=>{
+    const spot=template.hero,x=px(spot),y=py(spot),u=unit();
+    ctx.fillStyle="rgba(0,0,0,.35)";ctx.beginPath();ctx.ellipse(x,y+u*1.15,u*1.25,u*.32,0,0,Math.PI*2);ctx.fill();
+    if(state.dead){
+      ctx.fillStyle="#2A1620";ctx.beginPath();ctx.ellipse(x,y+u*.4,u*1.15,u*.75,0,0,Math.PI*2);ctx.fill();
+      const smoke=ctx.createRadialGradient(x,y-u*.6,u*.2,x,y-u*.6,u*2);
+      smoke.addColorStop(0,"rgba(255,140,60,.5)");smoke.addColorStop(1,"rgba(255,140,60,0)");
+      ctx.fillStyle=smoke;ctx.beginPath();ctx.arc(x,y-u*.6,u*2,0,Math.PI*2);ctx.fill();
+      return;
+    }
+    const hop=state.done&&!state.dead?Math.abs(Math.sin(clock*6))*u*.35:0;
+    const fur=ctx.createLinearGradient(x-u,y-u*2.4-hop,x+u,y+u);
+    fur.addColorStop(0,"#F0A25A");fur.addColorStop(.5,"#D9803C");fur.addColorStop(1,"#A85A27");
+    ctx.fillStyle="#8E4B22";
+    [-1,1].forEach(side=>{ctx.beginPath();ctx.ellipse(x+side*u*.45,y+u*.75-hop,u*.3,u*.42,0,0,Math.PI*2);ctx.fill()});
+    ctx.fillStyle=fur;ctx.beginPath();ctx.ellipse(x,y-hop,u*.9,u*1.05,0,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle="#F5DFBE";ctx.beginPath();ctx.ellipse(x,y+u*.15-hop,u*.45,u*.62,0,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle=fur;ctx.beginPath();ctx.ellipse(x,y-u*1.35-hop,u*.85,u*.78,0,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle="#B4611F";
+    [-1,1].forEach(side=>{
+      ctx.beginPath();ctx.moveTo(x+side*u*.62,y-u*1.85-hop);ctx.lineTo(x+side*u*.28,y-u*2.5-hop);
+      ctx.lineTo(x+side*u*.05,y-u*1.8-hop);ctx.closePath();ctx.fill();
+    });
+    ctx.fillStyle="#FFFFFF";
+    [-1,1].forEach(side=>{ctx.beginPath();ctx.ellipse(x+side*u*.33,y-u*1.4-hop,u*.2,u*.24,0,0,Math.PI*2);ctx.fill()});
+    ctx.fillStyle="#241814";
+    [-1,1].forEach(side=>{ctx.beginPath();ctx.ellipse(x+side*u*.36,y-u*1.38-hop,u*.1,u*.14,0,0,Math.PI*2);ctx.fill()});
+    ctx.fillStyle="#8E4B22";ctx.beginPath();ctx.ellipse(x,y-u*1.05-hop,u*.2,u*.14,0,0,Math.PI*2);ctx.fill();
+  };
+  const drawMonster=()=>{
+    const spot=template.monster,x=px(spot),y=py(spot),u=unit();
+    if(state.monsterFed)return;
+    ctx.fillStyle="rgba(0,0,0,.32)";ctx.beginPath();ctx.ellipse(x,y+u*1.1,u*1.1,u*.3,0,0,Math.PI*2);ctx.fill();
+    const body=ctx.createRadialGradient(x-u*.3,y-u*.5,u*.2,x,y,u*1.4);
+    body.addColorStop(0,"#9B6BD6");body.addColorStop(1,"#4A2A72");
+    ctx.fillStyle=body;
+    ctx.beginPath();ctx.ellipse(x,y,u*1.05,u*.95+Math.sin(clock*3)*u*.05,0,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle="#FFFFFF";
+    [-1,1].forEach(side=>{ctx.beginPath();ctx.ellipse(x+side*u*.35,y-u*.25,u*.24,u*.28,0,0,Math.PI*2);ctx.fill()});
+    ctx.fillStyle="#241426";
+    [-1,1].forEach(side=>{ctx.beginPath();ctx.ellipse(x+side*u*.35,y-u*.22,u*.11,u*.15,0,0,Math.PI*2);ctx.fill()});
+    ctx.fillStyle="#2A1030";ctx.beginPath();ctx.ellipse(x,y+u*.42,u*.5,u*.26,0,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle="#FFFFFF";
+    [-.28,0,.28].forEach(dx=>{
+      ctx.beginPath();ctx.moveTo(x+dx*u-u*.09,y+u*.3);ctx.lineTo(x+dx*u+u*.09,y+u*.3);ctx.lineTo(x+dx*u,y+u*.52);ctx.closePath();ctx.fill();
+    });
+  };
+  const drawHud=()=>{
+    const u=unit();
+    ctx.fillStyle="rgba(20,14,26,.55)";
+    ctx.beginPath();ctx.roundRect(W*.03,H*.02,W*.36,u*1.5,u*.75);ctx.fill();
+    ctx.fillStyle="#FFE9A3";ctx.font=`800 ${Math.round(u*.78)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="middle";ctx.fillText(`¥ ${state.coins} / ${state.total}`,W*.03+u*.7,H*.02+u*.75);
+    const order=state.pulled.map(index=>index+1).join(" → ")||"—";
+    ctx.fillStyle="rgba(255,255,255,.75)";ctx.font=`700 ${Math.round(u*.66)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textAlign="right";ctx.fillText(order,W*.97,H*.02+u*.75);ctx.textAlign="left";
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    if(state.shake>0){const power=state.shake*unit()*.5;ctx.translate((randomFloat()-.5)*power,(randomFloat()-.5)*power)}
+    drawBackground();
+    [0,1,2].forEach(drawPipe);
+    drawMonster();drawHero();
+    [0,1,2].forEach(drawChamber);
+    drops.forEach(drop=>{
+      const point=bezier(drop.path,clamp(drop.t,0,1)),u=unit();
+      const [light,base]=COLORS[drop.flow];
+      const glow=ctx.createRadialGradient(point.x,point.y,0,point.x,point.y,u*.9);
+      glow.addColorStop(0,light);glow.addColorStop(1,`${base}00`);
+      ctx.fillStyle=glow;ctx.beginPath();ctx.arc(point.x,point.y,u*.9,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle=base;ctx.beginPath();ctx.arc(point.x,point.y,u*.42,0,Math.PI*2);ctx.fill();
+    });
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    if(state.flash>0){
+      ctx.fillStyle=`rgba(255,90,60,${state.flash*.5})`;ctx.fillRect(0,0,W,H);
+    }
+    ctx.restore();drawHud();
+  };
+  const spark=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=unit()*(1.5+randomFloat()*4);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-unit(),size:unit()*(.08+randomFloat()*.13),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?200:won?900:800);
+  };
+  const arrive=(step,done)=>{
+    const target=step.to,u=unit();
+    if(target==="hero"){
+      const point={x:px(template.hero),y:py(template.hero)};
+      if(step.flow==="lava"){
+        state.dead=true;state.shake=1;state.flash=1;spark(point.x,point.y-u,"#FF9A3C",26);
+        finish(false,"溶岩をかぶってしまいました。水で固めてから流そう。");return;
+      }
+      if(step.flow==="coin"){state.coins++;spark(point.x,point.y-u,"#FFE9A3",18)}
+      else spark(point.x,point.y-u,"#7FD8F5",12);
+      done();return;
+    }
+    if(target==="monster"){
+      const point={x:px(template.monster),y:py(template.monster)};
+      if(step.flow==="lava"){state.monsterFed=true;spark(point.x,point.y,"#FF9A3C",22)}
+      else if(step.flow==="coin"){spark(point.x,point.y,"#FFE9A3",14)}
+      else spark(point.x,point.y,"#7FD8F5",10);
+      done();return;
+    }
+    const index=Number(target.slice(1)),dest=chambers[index];
+    const before=dest.content;
+    dest.content=pinMix(dest.content,step.flow);
+    const spot=template.chambers[index];
+    if(before&&dest.content==="stone")spark(px(spot),py(spot),"#DCEBF5",20);
+    else spark(px(spot),py(spot),COLORS[dest.content][0],10);
+    done();
+  };
+  const runSteps=(steps,index)=>{
+    if(questionAnswered)return;
+    if(index>=steps.length){
+      state.busy=false;
+      if(state.pulled.length===3&&!state.dead){
+        if(state.coins===state.total)finish(true,`${state.coins}枚を回収。順番を読み切りました。`);
+        else finish(false,`コインを${state.total-state.coins}枚失いました。正解は ${task.answer.map(i=>i+1).join(" → ")}。`);
+      }
+      return;
+    }
+    const step=steps[index],path=pipePoints(step.from);
+    const drop={path,t:0,flow:step.flow};drops.push(drop);
+    const duration=reduced?150:520,started=performance.now();
+    const tick=now=>{
+      if(questionAnswered)return;
+      drop.t=clamp((now-started)/duration,0,1);
+      if(drop.t<1){requestAnimationFrame(tick);return}
+      drops.splice(drops.indexOf(drop),1);
+      arrive(step,()=>runSteps(steps,index+1));
+    };
+    requestAnimationFrame(tick);
+  };
+  const pull=index=>{
+    if(state.busy||state.done||questionAnswered||chambers[index].open)return;
+    state.busy=true;state.pulled.push(index);
+    const steps=pinPullSteps(chambers,template.targets,index);
+    const started=performance.now(),duration=reduced?120:280;
+    const slide=now=>{
+      if(questionAnswered)return;
+      chambers[index].pin=clamp((now-started)/duration,0,1);
+      if(chambers[index].pin<1){requestAnimationFrame(slide);return}
+      state.shake=Math.max(state.shake,.3);
+      if(!steps.length){state.busy=false;return}
+      runSteps(steps,0);
+    };
+    requestAnimationFrame(slide);
+  };
+  buttons.forEach((button,index)=>{
+    button.addEventListener("pointerdown",event=>{event.preventDefault();pull(index)});
+    button.addEventListener("click",event=>{if(event.detail===0)pull(index)});
+  });
+  canvas.addEventListener("pointerdown",event=>{
+    event.preventDefault();
+    const rect=canvas.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top,u=unit();
+    let best=-1,bestDistance=u*2.6;
+    template.chambers.forEach((spot,index)=>{
+      const distance=Math.hypot(x-px(spot),y-(py(spot)+unit()*1.16));
+      if(distance<bestDistance){bestDistance=distance;best=index}
+    });
+    if(best>=0)pull(best);
+  });
+  wrap.tabIndex=0;
+  wrap.addEventListener("keydown",event=>{
+    if(["1","2","3"].includes(event.key)){event.preventDefault();pull(Number(event.key)-1)}
+  });
+  wrap.focus({preventScroll:true});
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.shake=Math.max(0,state.shake-dt*2.4);state.flash=Math.max(0,state.flash-dt*1.6);
+    for(let i=sparks.length-1;i>=0;i--){
+      const s=sparks[i];s.life-=dt*1.6;
+      if(s.life<=0){sparks.splice(i,1);continue}
+      s.x+=s.vx*dt;s.y+=s.vy*dt;s.vy+=unit()*12*dt;
+    }
+    paint();
+    token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.pin={state,chambers,task,pull,template};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`時間切れ。正解の順番は ${task.answer.map(i=>i+1).join(" → ")} でした。`});
+  });
+}
+function renderWaterSort(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="water-stage";
+  const canvas=document.createElement("canvas");canvas.className="water-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","5本のボトルの色分けパズル");
+  const hint=document.createElement("p");hint.className="water-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const tubes=task.tubes.map(tube=>[...tube]);
+  const state={selected:-1,moves:0,busy:false,done:false,shake:0,pour:null};
+  const sparks=[];
+  let W=0,H=0,tubeW=0,tubeH=0,baseY=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*.92);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    tubeW=W/(tubes.length+1.6);tubeH=Math.min(H*.62,tubeW*3.1);baseY=H*.82;
+  };
+  const tubeX=index=>W/2+(index-(tubes.length-1)/2)*(tubeW*1.22);
+  const layerH=()=>tubeH/WATER_DEPTH;
+  const drawTube=(index)=>{
+    const x=tubeX(index),lift=state.selected===index?-tubeH*.09:0;
+    const pour=state.pour,tilt=pour&&pour.from===index?pour.tilt:0;
+    ctx.save();
+    ctx.translate(x,baseY+lift);
+    if(tilt){ctx.translate(0,-tubeH);ctx.rotate(tilt);ctx.translate(0,tubeH)}
+    const w=tubeW*.72,r=w*.5;
+    ctx.beginPath();
+    ctx.moveTo(-w/2,-tubeH);ctx.lineTo(-w/2,-r);ctx.quadraticCurveTo(-w/2,0,0,0);
+    ctx.quadraticCurveTo(w/2,0,w/2,-r);ctx.lineTo(w/2,-tubeH);
+    ctx.save();ctx.clip();
+    const content=pour&&pour.from===index?pour.sourceView:tubes[index];
+    content.forEach((unit,level)=>{
+      const color=waterColor(unit),h=layerH(),y=-h*(level+1);
+      const fill=ctx.createLinearGradient(-w/2,y,w/2,y+h);
+      fill.addColorStop(0,color.light);fill.addColorStop(.45,color.base);fill.addColorStop(1,color.dark);
+      ctx.fillStyle=fill;ctx.fillRect(-w/2,y,w,h+1);
+      ctx.fillStyle="rgba(255,255,255,.22)";ctx.fillRect(-w/2,y,w*.22,h);
+    });
+    if(pour&&pour.to===index){
+      const color=waterColor(pour.unit),h=layerH()*pour.filled;
+      const base=-layerH()*pour.baseLevel;
+      const fill=ctx.createLinearGradient(-w/2,base-h,w/2,base);
+      fill.addColorStop(0,color.light);fill.addColorStop(1,color.dark);
+      ctx.fillStyle=fill;ctx.fillRect(-w/2,base-h,w,h+1);
+    }
+    ctx.restore();
+    ctx.strokeStyle="rgba(255,255,255,.85)";ctx.lineWidth=Math.max(2,w*.07);
+    ctx.stroke();
+    ctx.strokeStyle="rgba(160,140,190,.45)";ctx.lineWidth=Math.max(1,w*.03);ctx.stroke();
+    ctx.fillStyle="rgba(255,255,255,.35)";
+    ctx.beginPath();ctx.roundRect(-w*.36,-tubeH+w*.12,w*.13,tubeH*.72,w*.07);ctx.fill();
+    ctx.restore();
+    const sorted=tubes[index].length===WATER_DEPTH&&tubes[index].every(unit=>unit===tubes[index][0]);
+    if(sorted){
+      ctx.fillStyle="rgba(255,255,255,.9)";
+      ctx.font=`900 ${Math.round(tubeW*.42)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.fillText("✓",x,baseY-tubeH-tubeW*.18);ctx.textAlign="left";
+    }
+  };
+  const drawStream=()=>{
+    const pour=state.pour;if(!pour||pour.phase!=="flow")return;
+    const color=waterColor(pour.unit);
+    const from={x:tubeX(pour.from)+tubeW*.34,y:baseY-tubeH*1.02};
+    const to={x:tubeX(pour.to),y:baseY-layerH()*pour.baseLevel-layerH()*pour.filled};
+    ctx.strokeStyle=color.base;ctx.lineWidth=tubeW*.16;ctx.lineCap="round";
+    ctx.beginPath();ctx.moveTo(from.x,from.y);
+    ctx.quadraticCurveTo((from.x+to.x)/2,from.y-tubeH*.06,to.x,to.y);ctx.stroke();
+    ctx.strokeStyle=color.light;ctx.lineWidth=tubeW*.06;
+    ctx.beginPath();ctx.moveTo(from.x,from.y);
+    ctx.quadraticCurveTo((from.x+to.x)/2,from.y-tubeH*.06,to.x,to.y);ctx.stroke();
+  };
+  const drawHud=()=>{
+    const left=task.moveLimit-state.moves;
+    ctx.fillStyle="rgba(73,59,82,.9)";
+    ctx.font=`800 ${Math.round(W*.045)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(`のこり ${left}手`,W*.05,H*.05);
+    const done=tubes.filter(tube=>tube.length===WATER_DEPTH&&tube.every(unit=>unit===tube[0])).length;
+    ctx.textAlign="right";ctx.fillStyle=left<=1?"#A64763":"rgba(111,96,120,.9)";
+    ctx.fillText(`そろった ${done} / ${task.colors.length}`,W*.95,H*.05);ctx.textAlign="left";
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    if(state.shake>0){const power=state.shake*W*.012;ctx.translate((randomFloat()-.5)*power,(randomFloat()-.5)*power)}
+    const shelf=ctx.createLinearGradient(0,baseY-4,0,baseY+H*.08);
+    shelf.addColorStop(0,"rgba(166,109,194,.22)");shelf.addColorStop(1,"rgba(166,109,194,0)");
+    ctx.fillStyle=shelf;ctx.fillRect(0,baseY,W,H*.08);
+    tubes.forEach((tube,index)=>drawTube(index));
+    drawStream();
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    ctx.restore();drawHud();
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=W*(.03+randomFloat()*.09);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-W*.04,size:W*(.006+randomFloat()*.01),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.55+(task.moveLimit-state.moves)*.08-elapsed/task.duration*.25,0,1):0,detail}),reduced?200:800);
+  };
+  const pour=(from,to)=>{
+    const count=waterPourable(tubes,from,to);
+    if(!count){state.shake=.5;state.selected=-1;return}
+    state.busy=true;state.moves++;
+    const unit=tubes[from].at(-1),baseLevel=tubes[to].length;
+    const sourceView=[...tubes[from]];
+    state.pour={from,to,unit,count,baseLevel,filled:0,tilt:0,phase:"tilt",sourceView};
+    const started=performance.now(),tiltMs=reduced?80:220,flowMs=reduced?120:120+count*160;
+    const step=now=>{
+      if(questionAnswered)return;
+      const pourState=state.pour;if(!pourState)return;
+      const elapsed=now-started;
+      const direction=tubeX(to)>tubeX(from)?1:-1;
+      if(elapsed<tiltMs){
+        pourState.tilt=direction*(elapsed/tiltMs)*.5;
+        requestAnimationFrame(step);return;
+      }
+      pourState.phase="flow";pourState.tilt=direction*.5;
+      const progress=clamp((elapsed-tiltMs)/flowMs,0,1);
+      pourState.filled=progress*count;
+      pourState.sourceView=sourceView.slice(0,sourceView.length-Math.round(progress*count));
+      if(progress<1){requestAnimationFrame(step);return}
+      tubes[to].push(...tubes[from].splice(tubes[from].length-count,count));
+      burst(tubeX(to),baseY-layerH()*tubes[to].length,waterColor(unit).light,12);
+      state.pour=null;state.selected=-1;state.busy=false;
+      if(waterDone(tubes)){
+        tubes.forEach((tube,index)=>{if(tube.length)burst(tubeX(index),baseY-tubeH*.5,waterColor(tube[0]).base,14)});
+        finish(true,`${state.moves}手でそろえました。最短は${task.minMoves}手です。`);
+        return;
+      }
+      if(state.moves>=task.moveLimit)finish(false,`手数を使い切りました。最短${task.minMoves}手の手順があります。`);
+    };
+    requestAnimationFrame(step);
+  };
+  const tubeAt=event=>{
+    const rect=canvas.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;
+    if(y<baseY-tubeH*1.3||y>baseY+tubeH*.2)return -1;
+    let best=-1,bestDistance=tubeW*.75;
+    tubes.forEach((tube,index)=>{const distance=Math.abs(x-tubeX(index));if(distance<bestDistance){bestDistance=distance;best=index}});
+    return best;
+  };
+  const choose=index=>{
+    if(state.busy||state.done||questionAnswered||index<0)return;
+    if(state.selected<0){
+      if(!tubes[index].length)return;
+      state.selected=index;hint.textContent="注ぎ先のボトルをタップ";
+      return;
+    }
+    if(state.selected===index){state.selected=-1;hint.textContent="動かすボトルをタップ";return}
+    pour(state.selected,index);
+    hint.textContent="動かすボトルをタップ";
+  };
+  canvas.addEventListener("pointerdown",event=>{event.preventDefault();choose(tubeAt(event))});
+  wrap.tabIndex=0;
+  wrap.addEventListener("keydown",event=>{
+    const index=Number(event.key)-1;
+    if(index>=0&&index<tubes.length){event.preventDefault();choose(index)}
+  });
+  wrap.focus({preventScroll:true});
+  hint.textContent="動かすボトルをタップ";
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.shake=Math.max(0,state.shake-dt*2.5);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.8;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=W*.5*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.water={state,tubes,task,pour,choose};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`時間切れ。最短${task.minMoves}手でそろう並びでした。`});
+  });
+}
+function renderGateRun(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="gate-stage";
+  const canvas=document.createElement("canvas");canvas.className="gate-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","上下の門を選んで軍団を増やす");
+  const pad=document.createElement("div");pad.className="gate-pad";
+  const up=document.createElement("button"),down=document.createElement("button");
+  [[up,"▲ 上の門","上の門を選ぶ"],[down,"▼ 下の門","下の門を選ぶ"]].forEach(([button,text,label])=>{
+    button.type="button";button.className="gate-key";button.textContent=text;button.setAttribute("aria-label",label);
+    pad.append(button);
+  });
+  wrap.append(canvas,pad);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const state={count:task.start,lane:0,x:0,done:false,row:0,shake:0,flash:0,clash:0,result:null,pop:0};
+  const troops=Array.from({length:60},()=>({ox:randomFloat(),oy:randomFloat(),phase:randomFloat()*6.28}));
+  const sparks=[];
+  let W=0,H=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*.78);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  };
+  const laneY=lane=>H*(lane?.68:.36);
+  const gateX=row=>W*(1.05+row*.66)-state.x;
+  const enemyX=()=>W*(1.05+task.gates.length*.66+.38)-state.x;
+  const drawCrowd=(x,y,count,color,scale)=>{
+    const shown=Math.min(count,60),unit=W*.026*scale;
+    for(let i=0;i<shown;i++){
+      const troop=troops[i];
+      const spread=Math.min(1,.35+shown/60)*W*.075*scale;
+      const cx=x+(troop.ox-.5)*spread*1.5,cy=y+(troop.oy-.5)*spread+Math.sin(clock*7+troop.phase)*unit*.25;
+      ctx.fillStyle="rgba(30,18,44,.18)";
+      ctx.beginPath();ctx.ellipse(cx,cy+unit*1.1,unit*.8,unit*.28,0,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle=color.body;
+      ctx.beginPath();ctx.ellipse(cx,cy,unit*.72,unit*.9,0,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle=color.head;
+      ctx.beginPath();ctx.arc(cx,cy-unit*1.05,unit*.62,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle="#241814";
+      ctx.beginPath();ctx.arc(cx-unit*.2,cy-unit*1.1,unit*.12,0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.arc(cx+unit*.2,cy-unit*1.1,unit*.12,0,Math.PI*2);ctx.fill();
+    }
+  };
+  const drawBadge=(x,y,text,colors,size)=>{
+    ctx.fillStyle=colors[0];
+    ctx.beginPath();ctx.roundRect(x-size*1.5,y-size*.6,size*3,size*1.2,size*.6);ctx.fill();
+    ctx.strokeStyle=colors[1];ctx.lineWidth=Math.max(1,size*.12);ctx.stroke();
+    ctx.fillStyle="#FFFFFF";ctx.font=`900 ${Math.round(size*.95)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(text,x,y);ctx.textAlign="left";
+  };
+  const drawGate=(row)=>{
+    const x=gateX(row);if(x<-W*.3||x>W*1.4)return;
+    task.gates[row].forEach((op,lane)=>{
+      const y=laneY(lane),h=H*.26,w=W*.16;
+      const positive=op.kind==="add"||op.kind==="mul";
+      const fill=ctx.createLinearGradient(x-w/2,y-h/2,x+w/2,y+h/2);
+      if(positive){fill.addColorStop(0,"rgba(102,192,140,.85)");fill.addColorStop(1,"rgba(46,122,84,.9)")}
+      else{fill.addColorStop(0,"rgba(234,126,155,.85)");fill.addColorStop(1,"rgba(168,65,106,.9)")}
+      ctx.fillStyle=fill;
+      ctx.beginPath();ctx.roundRect(x-w/2,y-h/2,w,h,W*.02);ctx.fill();
+      ctx.strokeStyle="rgba(255,255,255,.75)";ctx.lineWidth=Math.max(2,W*.008);ctx.stroke();
+      ctx.fillStyle="#FFFFFF";ctx.font=`900 ${Math.round(W*.075)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(gateLabel(op),x,y);ctx.textAlign="left";
+    });
+  };
+  const drawEnemy=()=>{
+    const x=enemyX();if(x>W*1.5)return;
+    drawCrowd(x,H*.52,task.enemy,{body:"#6B4E8F",head:"#8E6BD0"},1);
+    drawBadge(x,H*.16,`${task.enemy}`,["#4A2A72","#B79BE0"],W*.06);
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    if(state.shake>0){const power=state.shake*W*.02;ctx.translate((randomFloat()-.5)*power,(randomFloat()-.5)*power)}
+    const sky=ctx.createLinearGradient(0,0,0,H);
+    sky.addColorStop(0,"#DCEBFA");sky.addColorStop(.5,"#EFE4F8");sky.addColorStop(1,"#CDE6D6");
+    ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
+    ctx.fillStyle="rgba(255,255,255,.5)";ctx.fillRect(0,H*.5-2,W,4);
+    for(let i=0;i<12;i++){
+      const x=(i*W*.24-state.x*.6)%(W*1.4)-W*.2;
+      ctx.fillStyle="rgba(122,84,150,.08)";
+      ctx.beginPath();ctx.ellipse(x,H*.5,W*.09,H*.03,0,0,Math.PI*2);ctx.fill();
+    }
+    task.gates.forEach((pair,row)=>drawGate(row));
+    drawEnemy();
+    const heroX=W*.22,heroY=laneY(state.lane);
+    drawCrowd(heroX,heroY,state.count,{body:"#C06A26",head:"#F0A25A"},1+state.pop*.15);
+    drawBadge(heroX,heroY-H*.16,`${state.count}`,["#8C5A1E","#FFD9A0"],W*.06);
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    if(state.flash>0){ctx.fillStyle=`rgba(255,255,255,${state.flash*.6})`;ctx.fillRect(0,0,W,H)}
+    ctx.restore();
+    if(state.result){
+      ctx.fillStyle=state.result==="win"?"rgba(46,122,84,.9)":"rgba(168,65,106,.9)";
+      ctx.font=`900 ${Math.round(W*.12)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.textBaseline="middle";
+      ctx.fillText(state.result==="win"?"勝った！":"負け…",W/2,H*.5);ctx.textAlign="left";
+    }
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=W*(.05+randomFloat()*.12);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-W*.05,size:W*(.006+randomFloat()*.012),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    state.result=won?"win":"lose";
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?300:1100);
+  };
+  const setLane=lane=>{if(!state.done)state.lane=lane};
+  up.addEventListener("pointerdown",event=>{event.preventDefault();setLane(0)});
+  down.addEventListener("pointerdown",event=>{event.preventDefault();setLane(1)});
+  up.addEventListener("click",event=>{if(event.detail===0)setLane(0)});
+  down.addEventListener("click",event=>{if(event.detail===0)setLane(1)});
+  canvas.addEventListener("pointerdown",event=>{
+    event.preventDefault();
+    const rect=canvas.getBoundingClientRect();
+    setLane(event.clientY-rect.top<rect.height/2?0:1);
+  });
+  wrap.tabIndex=0;
+  wrap.addEventListener("keydown",event=>{
+    if(event.key==="ArrowUp"){event.preventDefault();setLane(0)}
+    else if(event.key==="ArrowDown"){event.preventDefault();setLane(1)}
+  });
+  wrap.focus({preventScroll:true});
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const speed=()=>W*(reduced?.16:.22);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.shake=Math.max(0,state.shake-dt*2.5);
+    state.flash=Math.max(0,state.flash-dt*2);
+    state.pop=Math.max(0,state.pop-dt*3);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.6;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=W*.6*dt;
+    }
+    if(!state.done){
+      state.x+=speed()*dt;
+      if(state.row<task.gates.length&&gateX(state.row)<=W*.22){
+        const op=task.gates[state.row][state.lane],before=state.count;
+        state.count=gateApply(state.count,op);
+        state.pop=1;state.flash=.5;state.shake=.4;
+        burst(W*.22,laneY(state.lane),state.count>=before?"#7FD08C":"#EA7E9B",18);
+        state.row++;
+      }
+      if(state.row>=task.gates.length&&enemyX()<=W*.28){
+        state.shake=1;state.flash=.7;
+        burst(W*.3,H*.5,"#FFD9A0",30);
+        const won=state.count>task.enemy;
+        finish(won,won?`${state.count}対${task.enemy}で勝利。最大は${task.best}人でした。`
+          :`${state.count}対${task.enemy}で敗北。${task.best}人まで増やせる道がありました。`);
+      }
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.gate={state,task,setLane};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:"時間切れです。"});
+  });
+}
+function renderParkJam(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="park-stage";
+  const canvas=document.createElement("canvas");canvas.className="park-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","駐車場の脱出パズル");
+  const hint=document.createElement("p");hint.className="park-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const cars=task.cars.map(car=>({...car,ox:car.c,oy:car.r}));
+  const state={selected:-1,moves:0,done:false,shake:0,exit:0};
+  const sparks=[];
+  let W=0,H=0,cell=0,padX=0,padY=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*1.02);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    cell=Math.floor(Math.min(W*.86,H*.84)/PARK_SIZE);
+    padX=Math.round((W-cell*PARK_SIZE)/2);padY=Math.round(H*.12);
+  };
+  const cx=c=>padX+c*cell,cy=r=>padY+r*cell;
+  const drawLot=()=>{
+    ctx.fillStyle="#4A4356";
+    ctx.beginPath();ctx.roundRect(padX-cell*.16,padY-cell*.16,cell*PARK_SIZE+cell*.32,cell*PARK_SIZE+cell*.32,cell*.22);ctx.fill();
+    ctx.fillStyle="#5B5468";
+    ctx.beginPath();ctx.roundRect(padX,padY,cell*PARK_SIZE,cell*PARK_SIZE,cell*.12);ctx.fill();
+    ctx.strokeStyle="rgba(255,255,255,.22)";ctx.lineWidth=Math.max(1,cell*.04);
+    for(let i=1;i<PARK_SIZE;i++){
+      ctx.beginPath();ctx.moveTo(cx(i),padY+cell*.12);ctx.lineTo(cx(i),padY+cell*PARK_SIZE-cell*.12);ctx.stroke();
+    }
+    const exitY=cy(PARK_EXIT);
+    ctx.fillStyle="#F2CE4B";
+    ctx.beginPath();ctx.roundRect(cx(PARK_SIZE)+cell*.06,exitY+cell*.18,cell*.5,cell*.64,cell*.1);ctx.fill();
+    ctx.fillStyle="#5A3B1C";ctx.font=`900 ${Math.round(cell*.3)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("出口",cx(PARK_SIZE)+cell*.31,exitY+cell*.5);ctx.textAlign="left";
+  };
+  const drawCar=(car,index)=>{
+    const x=cx(car.ox),y=cy(car.oy);
+    const w=(car.dir==="h"?car.len:1)*cell,h=(car.dir==="v"?car.len:1)*cell;
+    const inset=cell*.1,selected=state.selected===index;
+    ctx.fillStyle="rgba(20,14,26,.3)";
+    ctx.beginPath();ctx.roundRect(x+inset,y+inset+cell*.06,w-inset*2,h-inset*2,cell*.2);ctx.fill();
+    const body=ctx.createLinearGradient(x,y,x+w,y+h);
+    body.addColorStop(0,car.color);body.addColorStop(1,shadeColor(car.color,-.28));
+    ctx.fillStyle=body;
+    ctx.beginPath();ctx.roundRect(x+inset,y+inset,w-inset*2,h-inset*2,cell*.2);ctx.fill();
+    ctx.fillStyle="rgba(255,255,255,.72)";
+    if(car.dir==="h"){
+      ctx.beginPath();ctx.roundRect(x+w*.24,y+cell*.26,w*.5,h-cell*.52,cell*.12);ctx.fill();
+      ctx.fillStyle="rgba(30,20,40,.55)";
+      ctx.beginPath();ctx.roundRect(x+w*.28,y+cell*.32,w*.42,h-cell*.64,cell*.1);ctx.fill();
+    }else{
+      ctx.beginPath();ctx.roundRect(x+cell*.26,y+h*.24,w-cell*.52,h*.5,cell*.12);ctx.fill();
+      ctx.fillStyle="rgba(30,20,40,.55)";
+      ctx.beginPath();ctx.roundRect(x+cell*.32,y+h*.28,w-cell*.64,h*.42,cell*.1);ctx.fill();
+    }
+    if(car.hero){
+      ctx.fillStyle="#FFFFFF";ctx.font=`900 ${Math.round(cell*.34)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("GO",x+w/2,y+h/2);ctx.textAlign="left";
+    }
+    if(selected){
+      ctx.strokeStyle=`rgba(255,255,255,${.6+Math.sin(clock*6)*.3})`;ctx.lineWidth=Math.max(2,cell*.08);
+      ctx.beginPath();ctx.roundRect(x+inset*.4,y+inset*.4,w-inset*.8,h-inset*.8,cell*.24);ctx.stroke();
+    }
+  };
+  const shadeColor=(color,amount)=>{
+    const n=parseInt(color.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;
+    const mix=v=>Math.round(clamp(amount<0?v*(1+amount):v+(255-v)*amount,0,255));
+    return `rgb(${mix(r)},${mix(g)},${mix(b)})`;
+  };
+  const drawHud=()=>{
+    const left=task.moveLimit-state.moves;
+    ctx.fillStyle="rgba(73,59,82,.9)";ctx.font=`800 ${Math.round(W*.045)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(`のこり ${left}手`,W*.06,H*.03);
+    ctx.textAlign="right";ctx.fillStyle="rgba(111,96,120,.9)";
+    ctx.fillText(`最短 ${task.minMoves}手`,W*.94,H*.03);ctx.textAlign="left";
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    if(state.shake>0){const power=state.shake*cell*.14;ctx.translate((randomFloat()-.5)*power,(randomFloat()-.5)*power)}
+    drawLot();
+    cars.forEach((car,index)=>drawCar(car,index));
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    ctx.restore();drawHud();
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=cell*(1+randomFloat()*3);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-cell,size:cell*(.03+randomFloat()*.05),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.55+(task.moveLimit-state.moves)*.08-elapsed/task.duration*.25,0,1):0,detail}),reduced?200:900);
+  };
+  const settle=(index,targetR,targetC)=>{
+    const car=cars[index];
+    const step=car.dir==="h"?Math.sign(targetC-car.c):Math.sign(targetR-car.r);
+    if(!step)return false;
+    const options=parkMoves(cars).filter(move=>move.index===index&&move.step===step);
+    if(!options.length){state.shake=.45;return false}
+    const wanted=car.dir==="h"?Math.abs(targetC-car.c):Math.abs(targetR-car.r);
+    const best=options.reduce((chosen,move)=>Math.abs(move.distance-wanted)<Math.abs(chosen.distance-wanted)?move:chosen,options[0]);
+    const shift=best.step*best.distance;
+    if(car.dir==="h")car.c+=shift;else car.r+=shift;
+    state.moves++;
+    const started=performance.now(),from={x:car.ox,y:car.oy},to={x:car.c,y:car.r};
+    const duration=reduced?60:180;
+    const animate=now=>{
+      if(questionAnswered)return;
+      const t=clamp((now-started)/duration,0,1),ease=1-(1-t)*(1-t);
+      car.ox=from.x+(to.x-from.x)*ease;car.oy=from.y+(to.y-from.y)*ease;
+      if(t<1){requestAnimationFrame(animate);return}
+      car.ox=to.x;car.oy=to.y;
+      if(parkSolved(cars)){
+        burst(cx(PARK_SIZE),cy(PARK_EXIT)+cell*.5,"#F2CE4B",26);
+        finish(true,`${state.moves}手で脱出。最短は${task.minMoves}手です。`);
+        return;
+      }
+      if(state.moves>=task.moveLimit)finish(false,`手数を使い切りました。最短${task.minMoves}手の手順があります。`);
+    };
+    requestAnimationFrame(animate);
+    return true;
+  };
+  const cellAt=event=>{
+    const rect=canvas.getBoundingClientRect();
+    const c=Math.floor((event.clientX-rect.left-padX)/cell),r=Math.floor((event.clientY-rect.top-padY)/cell);
+    if(r<0||r>=PARK_SIZE||c<0||c>=PARK_SIZE)return null;
+    return{r,c};
+  };
+  canvas.addEventListener("pointerdown",event=>{
+    event.preventDefault();
+    if(state.done||questionAnswered)return;
+    const spot=cellAt(event);if(!spot)return;
+    const grid=parkGrid(cars),index=grid[spot.r][spot.c];
+    if(index!==-1){
+      state.selected=state.selected===index?-1:index;
+      hint.textContent=state.selected<0?"車をタップして選びます":"動かしたいマスをタップ";
+      return;
+    }
+    if(state.selected<0)return;
+    const car=cars[state.selected];
+    if(car.dir==="h"&&spot.r!==car.r){state.shake=.4;return}
+    if(car.dir==="v"&&spot.c!==car.c){state.shake=.4;return}
+    settle(state.selected,spot.r,spot.c);
+  });
+  wrap.tabIndex=0;wrap.focus({preventScroll:true});
+  hint.textContent="車をタップして選びます";
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.shake=Math.max(0,state.shake-dt*2.5);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.7;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=cell*6*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.park={state,cars,task,settle};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`時間切れ。最短${task.minMoves}手で出せる配置でした。`});
+  });
+}
+function renderRopeUntangle(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="rope-stage";
+  const canvas=document.createElement("canvas");canvas.className="rope-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","杭をドラッグしてロープの交差をなくす");
+  const hint=document.createElement("p");hint.className="rope-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const points=task.points.map(point=>({...point}));
+  const state={drag:-1,done:false,best:task.start,glow:0};
+  const sparks=[];
+  let W=0,H=0,clock=0,crossing={count:task.start,pairs:[]};
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*.96);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  };
+  const px=point=>point.x*W,py=point=>point.y*H;
+  const recount=()=>{crossing=ropeCrossings(points,task.edges)};
+  const drawRope=(edge,index)=>{
+    const a=points[edge[0]],b=points[edge[1]];
+    const tangled=crossing.pairs.some(pair=>pair.includes(index));
+    const color=tangled?"#E4574F":ROPE_COLORS[index%ROPE_COLORS.length];
+    const width=W*.026;
+    ctx.lineCap="round";
+    ctx.strokeStyle="rgba(30,18,44,.18)";ctx.lineWidth=width*1.5;
+    ctx.beginPath();ctx.moveTo(px(a),py(a)+width*.4);ctx.lineTo(px(b),py(b)+width*.4);ctx.stroke();
+    ctx.strokeStyle=color;ctx.lineWidth=width;
+    ctx.beginPath();ctx.moveTo(px(a),py(a));ctx.lineTo(px(b),py(b));ctx.stroke();
+    ctx.strokeStyle="rgba(255,255,255,.45)";ctx.lineWidth=width*.3;
+    ctx.beginPath();ctx.moveTo(px(a),py(a));ctx.lineTo(px(b),py(b));ctx.stroke();
+    if(tangled){
+      ctx.strokeStyle=`rgba(228,87,79,${.35+Math.sin(clock*5)*.25})`;ctx.lineWidth=width*1.9;
+      ctx.beginPath();ctx.moveTo(px(a),py(a));ctx.lineTo(px(b),py(b));ctx.stroke();
+    }
+  };
+  const drawNode=(point,index)=>{
+    const x=px(point),y=py(point),r=W*.05,active=state.drag===index;
+    ctx.fillStyle="rgba(30,18,44,.22)";
+    ctx.beginPath();ctx.ellipse(x,y+r*.5,r*.9,r*.32,0,0,Math.PI*2);ctx.fill();
+    const body=ctx.createRadialGradient(x-r*.3,y-r*.4,r*.1,x,y,r);
+    body.addColorStop(0,"#FFF6E4");body.addColorStop(.55,"#E9D6B8");body.addColorStop(1,"#A8895F");
+    ctx.fillStyle=body;ctx.beginPath();ctx.arc(x,y,r*(active?1.12:1),0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle="rgba(120,90,60,.6)";ctx.lineWidth=Math.max(1,r*.12);ctx.stroke();
+    ctx.fillStyle="#5A4632";
+    ctx.beginPath();ctx.arc(x-r*.22,y-r*.08,r*.13,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.arc(x+r*.22,y-r*.08,r*.13,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle="#5A4632";ctx.lineWidth=Math.max(1,r*.09);
+    ctx.beginPath();ctx.arc(x,y+r*.12,r*.24,.15*Math.PI,.85*Math.PI);ctx.stroke();
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    const back=ctx.createLinearGradient(0,0,W,H);
+    back.addColorStop(0,"#F7F1FB");back.addColorStop(1,"#E4EFF6");
+    ctx.fillStyle=back;ctx.fillRect(0,0,W,H);
+    task.edges.forEach(drawRope);
+    points.forEach(drawNode);
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    ctx.fillStyle=crossing.count?"rgba(166,71,99,.95)":"rgba(61,120,95,.95)";
+    ctx.font=`900 ${Math.round(W*.055)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(crossing.count?`交差 ${crossing.count}`:"交差なし！",W*.05,H*.035);
+    if(state.glow>0){
+      ctx.fillStyle=`rgba(255,255,255,${state.glow*.5})`;ctx.fillRect(0,0,W,H);
+    }
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=W*(.04+randomFloat()*.1);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-W*.03,size:W*(.005+randomFloat()*.01),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?200:900);
+  };
+  const nodeAt=event=>{
+    const rect=canvas.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;
+    let best=-1,bestDistance=W*.09;
+    points.forEach((point,index)=>{
+      const distance=Math.hypot(x-px(point),y-py(point));
+      if(distance<bestDistance){bestDistance=distance;best=index}
+    });
+    return{index:best,x,y};
+  };
+  canvas.addEventListener("pointerdown",event=>{
+    if(state.done||questionAnswered)return;
+    event.preventDefault();
+    const hit=nodeAt(event);
+    if(hit.index<0)return;
+    state.drag=hit.index;
+    try{canvas.setPointerCapture?.(event.pointerId)}catch{}
+    hint.textContent="動かして交差をほどきます";
+  });
+  canvas.addEventListener("pointermove",event=>{
+    if(state.drag<0||state.done)return;
+    event.preventDefault();
+    const rect=canvas.getBoundingClientRect();
+    points[state.drag].x=clamp((event.clientX-rect.left)/W,.06,.94);
+    points[state.drag].y=clamp((event.clientY-rect.top)/H,.08,.94);
+    recount();
+  });
+  const release=()=>{
+    if(state.drag<0)return;
+    state.drag=-1;recount();
+    state.best=Math.min(state.best,crossing.count);
+    if(!crossing.count&&!state.done){
+      state.glow=1;
+      points.forEach(point=>burst(px(point),py(point),"#7FD08C",14));
+      finish(true,`交差${task.start}本をほどきました。`);
+    }
+  };
+  canvas.addEventListener("pointerup",release);
+  canvas.addEventListener("pointercancel",release);
+  wrap.tabIndex=0;wrap.focus({preventScroll:true});
+  hint.textContent="杭をドラッグしてほどきます";
+  recount();
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.glow=Math.max(0,state.glow-dt*1.4);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.6;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=W*.4*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.rope={state,points,task,recount,crossing:()=>crossing,release};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`時間切れ。交差は${crossing.count}本残っていました。`});
+  });
+}
+function renderFlowLink(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="flow-stage";
+  const canvas=document.createElement("canvas");canvas.className="flow-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","同じ色の点を線でつなぐパズル");
+  const hint=document.createElement("p");hint.className="flow-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const size=task.size||FLOW_SIZE;
+  const paths=task.endpoints.map(pair=>[{...pair.a}]);
+  const state={drag:-1,done:false,glow:0};
+  const sparks=[];
+  let W=0,H=0,cell=0,padX=0,padY=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*1.02);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    cell=Math.floor(Math.min(W*.92,H*.9)/size);
+    padX=Math.round((W-cell*size)/2);padY=Math.round((H-cell*size)/2);
+  };
+  const cxOf=c=>padX+c*cell+cell/2,cyOf=r=>padY+r*cell+cell/2;
+  const owner=(r,c)=>{
+    for(let index=0;index<paths.length;index++)
+      if(paths[index].some(cellPoint=>cellPoint.r===r&&cellPoint.c===c))return index;
+    return -1;
+  };
+  const isEndpoint=(r,c)=>{
+    for(let index=0;index<task.endpoints.length;index++){
+      const pair=task.endpoints[index];
+      if((pair.a.r===r&&pair.a.c===c)||(pair.b.r===r&&pair.b.c===c))return index;
+    }
+    return -1;
+  };
+  const same=(a,b)=>a.r===b.r&&a.c===b.c;
+  const connected=index=>{
+    const path=paths[index],pair=task.endpoints[index];
+    if(path.length<2)return false;
+    const head=path[0],tail=path.at(-1);
+    return (same(head,pair.a)&&same(tail,pair.b))||(same(head,pair.b)&&same(tail,pair.a));
+  };
+  const filled=()=>{
+    const used=new Set();
+    paths.forEach(path=>path.forEach(point=>used.add(flowId(point.r,point.c))));
+    return used.size;
+  };
+  const drawGrid=()=>{
+    ctx.fillStyle="#F7F1FB";
+    ctx.beginPath();ctx.roundRect(padX-cell*.1,padY-cell*.1,cell*size+cell*.2,cell*size+cell*.2,cell*.22);ctx.fill();
+    for(let r=0;r<size;r++)for(let c=0;c<size;c++){
+      ctx.fillStyle=(r+c)%2?"#EFE6F8":"#F5EEFA";
+      ctx.beginPath();ctx.roundRect(padX+c*cell+cell*.06,padY+r*cell+cell*.06,cell*.88,cell*.88,cell*.16);ctx.fill();
+    }
+  };
+  const drawPath=(index)=>{
+    const path=paths[index],color=flowColor(index);
+    if(path.length<2)return;
+    ctx.lineCap="round";ctx.lineJoin="round";
+    ctx.strokeStyle=color.base;ctx.lineWidth=cell*.42;
+    ctx.beginPath();
+    path.forEach((point,i)=>{const x=cxOf(point.c),y=cyOf(point.r);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});
+    ctx.stroke();
+    ctx.strokeStyle=color.light;ctx.lineWidth=cell*.16;
+    ctx.beginPath();
+    path.forEach((point,i)=>{const x=cxOf(point.c),y=cyOf(point.r);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});
+    ctx.stroke();
+  };
+  const drawEndpoints=()=>{
+    task.endpoints.forEach((pair,index)=>{
+      const color=flowColor(index),done=connected(index);
+      [pair.a,pair.b].forEach(point=>{
+        const x=cxOf(point.c),y=cyOf(point.r),r=cell*.31;
+        ctx.fillStyle="rgba(40,24,52,.18)";
+        ctx.beginPath();ctx.ellipse(x,y+r*.36,r*.9,r*.3,0,0,Math.PI*2);ctx.fill();
+        const body=ctx.createRadialGradient(x-r*.3,y-r*.35,r*.1,x,y,r);
+        body.addColorStop(0,color.light);body.addColorStop(1,color.base);
+        ctx.fillStyle=body;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle=done?"rgba(255,255,255,.95)":"rgba(255,255,255,.7)";
+        ctx.lineWidth=Math.max(2,cell*.06);ctx.stroke();
+        if(done){
+          ctx.strokeStyle=`rgba(255,255,255,${.4+Math.sin(clock*5)*.3})`;ctx.lineWidth=Math.max(1,cell*.05);
+          ctx.beginPath();ctx.arc(x,y,r*1.28,0,Math.PI*2);ctx.stroke();
+        }
+      });
+    });
+  };
+  const drawHud=()=>{
+    const done=task.endpoints.filter((pair,index)=>connected(index)).length;
+    ctx.fillStyle="rgba(73,59,82,.9)";ctx.font=`800 ${Math.round(W*.045)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(`つながった ${done} / ${task.endpoints.length}`,W*.05,H*.015);
+    ctx.textAlign="right";ctx.fillStyle="rgba(111,96,120,.9)";
+    ctx.fillText(`マス ${filled()} / ${size*size}`,W*.95,H*.015);ctx.textAlign="left";
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    drawGrid();
+    paths.forEach((path,index)=>drawPath(index));
+    drawEndpoints();
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    if(state.glow>0){ctx.fillStyle=`rgba(255,255,255,${state.glow*.45})`;ctx.fillRect(0,0,W,H)}
+    drawHud();
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=cell*(1+randomFloat()*3);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-cell,size:cell*(.03+randomFloat()*.05),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?200:900);
+  };
+  const checkWin=()=>{
+    const allConnected=task.endpoints.every((pair,index)=>connected(index));
+    if(!allConnected)return;
+    if(filled()<size*size){hint.textContent="全部のマスを通してください";return}
+    state.glow=1;
+    task.endpoints.forEach((pair,index)=>burst(cxOf(pair.b.c),cyOf(pair.b.r),flowColor(index).light,14));
+    finish(true,`${task.endpoints.length}色すべてをつなぎました。`);
+  };
+  const cellAt=event=>{
+    const rect=canvas.getBoundingClientRect();
+    const c=Math.floor((event.clientX-rect.left-padX)/cell),r=Math.floor((event.clientY-rect.top-padY)/cell);
+    if(r<0||r>=size||c<0||c>=size)return null;
+    return{r,c};
+  };
+  const startDrag=spot=>{
+    const endpointIndex=isEndpoint(spot.r,spot.c);
+    if(endpointIndex>=0){
+      const pair=task.endpoints[endpointIndex];
+      paths[endpointIndex]=[{r:spot.r,c:spot.c}];
+      // dragging from the far end simply walks the path the other way
+      if(pair.b.r===spot.r&&pair.b.c===spot.c)paths[endpointIndex]=[{r:pair.b.r,c:pair.b.c}];
+      state.drag=endpointIndex;return;
+    }
+    const index=owner(spot.r,spot.c);
+    if(index<0)return;
+    const path=paths[index],position=path.findIndex(point=>point.r===spot.r&&point.c===spot.c);
+    paths[index]=path.slice(0,position+1);
+    state.drag=index;
+  };
+  const extend=spot=>{
+    const index=state.drag;if(index<0)return;
+    const path=paths[index],last=path.at(-1);
+    if(last.r===spot.r&&last.c===spot.c)return;
+    if(Math.abs(last.r-spot.r)+Math.abs(last.c-spot.c)!==1)return;
+    const own=path.findIndex(point=>point.r===spot.r&&point.c===spot.c);
+    if(own>=0){paths[index]=path.slice(0,own+1);return}
+    const endpointIndex=isEndpoint(spot.r,spot.c);
+    if(endpointIndex>=0&&endpointIndex!==index)return;                     // never run over another colour's dot
+    const other=owner(spot.r,spot.c);
+    if(other>=0&&other!==index){
+      const otherPath=paths[other],position=otherPath.findIndex(point=>point.r===spot.r&&point.c===spot.c);
+      paths[other]=otherPath.slice(0,Math.max(1,position));
+    }
+    const pair=task.endpoints[index];
+    const target=(pair.b.r===path[0].r&&pair.b.c===path[0].c)?pair.a:pair.b;
+    const wasDone=connected(index);
+    path.push({r:spot.r,c:spot.c});
+    if(!wasDone&&spot.r===target.r&&spot.c===target.c){
+      burst(cxOf(spot.c),cyOf(spot.r),flowColor(index).light,12);
+    }
+  };
+  canvas.addEventListener("pointerdown",event=>{
+    if(state.done||questionAnswered)return;
+    event.preventDefault();
+    const spot=cellAt(event);if(!spot)return;
+    startDrag(spot);
+    try{canvas.setPointerCapture?.(event.pointerId)}catch{}
+  });
+  const moveTo=spot=>{
+    // a fast finger skips cells, so walk the gap one cell at a time
+    for(let guard=0;guard<size*size;guard++){
+      const index=state.drag;if(index<0)return;
+      const last=paths[index].at(-1);
+      if(last.r===spot.r&&last.c===spot.c)return;
+      const dr=Math.sign(spot.r-last.r),dc=Math.sign(spot.c-last.c);
+      const options=[];
+      if(Math.abs(spot.r-last.r)>=Math.abs(spot.c-last.c)){
+        if(dr)options.push({r:last.r+dr,c:last.c});
+        if(dc)options.push({r:last.r,c:last.c+dc});
+      }else{
+        if(dc)options.push({r:last.r,c:last.c+dc});
+        if(dr)options.push({r:last.r+dr,c:last.c});
+      }
+      if(!options.length)return;
+      const before=paths[index].length;
+      let moved=false;
+      for(const step of options){
+        extend(step);
+        const after=paths[index].at(-1);
+        if(after.r===step.r&&after.c===step.c||paths[index].length!==before){moved=true;break}
+      }
+      if(!moved)return;
+    }
+  };
+  canvas.addEventListener("pointermove",event=>{
+    if(state.drag<0||state.done)return;
+    event.preventDefault();
+    const spot=cellAt(event);if(!spot)return;
+    moveTo(spot);
+  });
+  const release=()=>{
+    if(state.drag<0)return;
+    const index=state.drag;state.drag=-1;
+    const path=paths[index];
+    if(!connected(index)&&path.length>1)hint.textContent="同じ色の点まで届かせてください";
+    else hint.textContent="色の点から指をなぞってつなぎます";
+    checkWin();
+  };
+  canvas.addEventListener("pointerup",release);
+  canvas.addEventListener("pointercancel",release);
+  wrap.tabIndex=0;wrap.focus({preventScroll:true});
+  hint.textContent="色の点から指をなぞってつなぎます";
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.glow=Math.max(0,state.glow-dt*1.4);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.7;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=cell*5*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.flow={state,paths,task,startDrag,extend,moveTo,release,checkWin};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const done=task.endpoints.filter((pair,index)=>connected(index)).length;
+    finishTask(false,{detail:`時間切れ。${done}色までつながりました。`});
+  });
+}
+function renderPipeFlow(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="pipe-stage";
+  const canvas=document.createElement("canvas");canvas.className="pipe-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","パイプを回して水を通すパズル");
+  const hint=document.createElement("p");hint.className="pipe-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const size=task.size||PIPE_SIZE;
+  const cells=task.cells.map(cell=>({...cell,spin:0}));
+  const state={done:false,glow:0,taps:0};
+  const sparks=[];
+  let W=0,H=0,cell=0,padX=0,padY=0,clock=0,lit=new Set();
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*1.02);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    cell=Math.floor(Math.min(W*.9,H*.86)/size);
+    padX=Math.round((W-cell*size)/2);padY=Math.round((H-cell*size)/2);
+  };
+  const recount=()=>{lit=pipeConnected(cells).lit};
+  const cellCentre=item=>({x:padX+item.c*cell+cell/2,y:padY+item.r*cell+cell/2});
+  const drawCell=item=>{
+    const{x,y}=cellCentre(item),isLit=lit.has(`${item.r},${item.c}`);
+    ctx.fillStyle=(item.r+item.c)%2?"#EFE6F8":"#F6F0FB";
+    ctx.beginPath();ctx.roundRect(padX+item.c*cell+cell*.04,padY+item.r*cell+cell*.04,cell*.92,cell*.92,cell*.14);ctx.fill();
+    if(!item.mask)return;
+    ctx.save();ctx.translate(x,y);ctx.rotate((item.turn+item.spin)*Math.PI/2);
+    const arm=cell*.5,thick=cell*.3;
+    ctx.strokeStyle="#7C7589";ctx.lineWidth=thick;ctx.lineCap="round";
+    PIPE_DIRS.forEach((step,dir)=>{
+      if(!(item.mask>>dir&1))return;
+      ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(step.dc*arm,step.dr*arm);ctx.stroke();
+    });
+    ctx.strokeStyle=isLit?"#5FB6E0":"#B4AFC2";ctx.lineWidth=thick*.62;
+    PIPE_DIRS.forEach((step,dir)=>{
+      if(!(item.mask>>dir&1))return;
+      ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(step.dc*arm,step.dr*arm);ctx.stroke();
+    });
+    if(isLit){
+      ctx.strokeStyle="rgba(255,255,255,.6)";ctx.lineWidth=thick*.2;
+      PIPE_DIRS.forEach((step,dir)=>{
+        if(!(item.mask>>dir&1))return;
+        ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(step.dc*arm*.8,step.dr*arm*.8);ctx.stroke();
+      });
+    }
+    ctx.fillStyle=isLit?"#2E9BD6":"#8B8698";
+    ctx.beginPath();ctx.arc(0,0,thick*.42,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+    if(item.role==="source"){
+      ctx.fillStyle="#2E9BD6";ctx.beginPath();ctx.roundRect(x-cell*.26,y-cell*.26,cell*.52,cell*.52,cell*.12);ctx.fill();
+      ctx.fillStyle="#BDE4F8";ctx.beginPath();ctx.arc(x,y,cell*.13,0,Math.PI*2);ctx.fill();
+    }
+    if(item.role==="goal"){
+      const done=lit.has(`${item.r},${item.c}`);
+      ctx.fillStyle=done?"#66C08C":"#B4AFC2";
+      ctx.beginPath();ctx.arc(x,y,cell*.24,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle="#FFFFFF";ctx.font=`900 ${Math.round(cell*.26)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(done?"◎":"？",x,y);ctx.textAlign="left";
+    }
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle="#FBF7FE";ctx.fillRect(0,0,W,H);
+    cells.forEach(drawCell);
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    if(state.glow>0){ctx.fillStyle=`rgba(191,224,242,${state.glow*.5})`;ctx.fillRect(0,0,W,H)}
+    ctx.fillStyle="rgba(73,59,82,.9)";ctx.font=`800 ${Math.round(W*.045)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(`回した回数 ${state.taps}`,W*.05,H*.02);
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=cell*(1+randomFloat()*3);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-cell,size:cell*(.03+randomFloat()*.05),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?200:900);
+  };
+  const rotate=item=>{
+    if(state.done||questionAnswered||!item.mask)return;
+    state.taps++;
+    const started=performance.now(),duration=reduced?60:170;
+    const step=now=>{
+      if(questionAnswered)return;
+      const t=clamp((now-started)/duration,0,1),ease=1-(1-t)*(1-t);
+      item.spin=ease;
+      if(t<1){requestAnimationFrame(step);return}
+      item.spin=0;item.turn=(item.turn+1)%4;
+      recount();
+      const goal=cells.find(entry=>entry.role==="goal");
+      if(lit.has(`${goal.r},${goal.c}`)){
+        state.glow=1;
+        cells.filter(entry=>lit.has(`${entry.r},${entry.c}`)).forEach(entry=>{
+          const point=cellCentre(entry);burst(point.x,point.y,"#BDE4F8",8);
+        });
+        finish(true,`${state.taps}回まわして水を通しました。`);
+      }
+    };
+    requestAnimationFrame(step);
+  };
+  canvas.addEventListener("pointerdown",event=>{
+    if(state.done||questionAnswered)return;
+    event.preventDefault();
+    const rect=canvas.getBoundingClientRect();
+    const c=Math.floor((event.clientX-rect.left-padX)/cell),r=Math.floor((event.clientY-rect.top-padY)/cell);
+    const item=cells.find(entry=>entry.r===r&&entry.c===c);
+    if(item)rotate(item);
+  });
+  wrap.tabIndex=0;wrap.focus({preventScroll:true});
+  hint.textContent="パイプをタップして回します";
+  recount();
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.glow=Math.max(0,state.glow-dt*1.4);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.7;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=cell*5*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.pipe={state,cells,task,rotate,recount,lit:()=>lit};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:"時間切れ。水はゴールまで届きませんでした。"});
+  });
+}
+function renderScrewOut(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="screw-stage";
+  const canvas=document.createElement("canvas");canvas.className="screw-canvas";
+  canvas.setAttribute("role","img");canvas.setAttribute("aria-label","交差した板のボルトを抜くパズル");
+  const hint=document.createElement("p");hint.className="screw-hint";
+  wrap.append(canvas,hint);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const plates=task.plates.map(plate=>({...plate,drop:0,shake:0,gone:false}));
+  const removed=new Set();
+  const state={done:false,glow:0,order:[]};
+  const sparks=[];
+  let W=0,H=0,step=0,originX=0,originY=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*.92);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    step=Math.min(W,H)*.27;
+    originX=(W-step*(SCREW_GRID-1))/2;originY=(H-step*(SCREW_GRID-1))/2+H*.03;
+  };
+  const holeX=col=>originX+col*step,holeY=row=>originY+row*step;
+  const boltPos=bolt=>({x:holeX(bolt%SCREW_GRID),y:holeY(Math.floor(bolt/SCREW_GRID))});
+  const visiblePlates=()=>plates.filter(plate=>!plate.gone);
+  const covered=bolt=>visiblePlates().some(plate=>plate.covers.includes(bolt));
+  const shadeScrew=(color,amount)=>{
+    const n=parseInt(color.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;
+    const mix=v=>Math.round(clamp(amount<0?v*(1+amount):v+(255-v)*amount,0,255));
+    return `rgb(${mix(r)},${mix(g)},${mix(b)})`;
+  };
+  const plateRect=plate=>{
+    const thickness=step*.52,pad=step*.34;
+    if(plate.dir==="h"){
+      const y=holeY(plate.r)+plate.drop*H;
+      return{x:holeX(plate.c0)-pad,y:y-thickness/2,w:(plate.c1-plate.c0)*step+pad*2,h:thickness};
+    }
+    const x=holeX(plate.c);
+    return{x:x-thickness/2,y:holeY(plate.r0)-pad+plate.drop*H,w:thickness,h:(plate.r1-plate.r0)*step+pad*2};
+  };
+  const drawPlate=plate=>{
+    const rect=plateRect(plate),radius=Math.min(rect.w,rect.h)*.42;
+    ctx.save();
+    if(plate.shake)ctx.translate(Math.sin(clock*45)*W*.012,0);
+    ctx.fillStyle="rgba(30,20,44,.28)";
+    ctx.beginPath();ctx.roundRect(rect.x+W*.014,rect.y+W*.018,rect.w,rect.h,radius);ctx.fill();
+    const body=ctx.createLinearGradient(rect.x,rect.y,rect.x+rect.w,rect.y+rect.h);
+    body.addColorStop(0,shadeScrew(plate.color,.22));body.addColorStop(.55,plate.color);body.addColorStop(1,shadeScrew(plate.color,-.26));
+    ctx.fillStyle=body;
+    ctx.beginPath();ctx.roundRect(rect.x,rect.y,rect.w,rect.h,radius);ctx.fill();
+    ctx.strokeStyle="rgba(255,255,255,.55)";ctx.lineWidth=Math.max(1,step*.035);
+    ctx.beginPath();ctx.roundRect(rect.x+step*.05,rect.y+step*.05,rect.w-step*.1,rect.h-step*.1,radius*.8);ctx.stroke();
+    ctx.restore();
+  };
+  const drawBolt=(bolt,plate)=>{
+    if(removed.has(bolt))return;
+    const point=boltPos(bolt),y=point.y+plate.drop*H,r=step*.19;
+    ctx.fillStyle="rgba(30,20,44,.32)";ctx.beginPath();ctx.arc(point.x+2,y+3,r,0,Math.PI*2);ctx.fill();
+    const metal=ctx.createRadialGradient(point.x-r*.35,y-r*.4,r*.15,point.x,y,r);
+    metal.addColorStop(0,"#FBEBC0");metal.addColorStop(.55,"#E2B44A");metal.addColorStop(1,"#8E6420");
+    ctx.fillStyle=metal;ctx.beginPath();ctx.arc(point.x,y,r,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle="#6E4E15";ctx.lineWidth=Math.max(1,r*.18);
+    ctx.beginPath();ctx.moveTo(point.x-r*.55,y-r*.2);ctx.lineTo(point.x+r*.55,y+r*.2);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(point.x-r*.2,y+r*.55);ctx.lineTo(point.x+r*.2,y-r*.55);ctx.stroke();
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    const back=ctx.createLinearGradient(0,0,0,H);
+    back.addColorStop(0,"#F7F1FB");back.addColorStop(1,"#E7E0F2");
+    ctx.fillStyle=back;ctx.fillRect(0,0,W,H);
+    ctx.fillStyle="rgba(122,84,150,.1)";
+    ctx.beginPath();ctx.roundRect(originX-step*.62,originY-step*.62,step*(SCREW_GRID-1)+step*1.24,step*(SCREW_GRID-1)+step*1.24,step*.3);ctx.fill();
+    for(let r=0;r<SCREW_GRID;r++)for(let c=0;c<SCREW_GRID;c++){
+      ctx.fillStyle="rgba(122,84,150,.16)";
+      ctx.beginPath();ctx.arc(holeX(c),holeY(r),step*.09,0,Math.PI*2);ctx.fill();
+    }
+    [...plates].sort((a,b)=>b.layer-a.layer).forEach(plate=>{
+      if(plate.gone&&plate.drop>1.2)return;
+      drawPlate(plate);
+      plate.bolts.forEach(bolt=>drawBolt(bolt,plate));
+    });
+    // a buried bolt shows through as a shadow, so its position is never a guess
+    visiblePlates().forEach(plate=>{
+      plate.bolts.forEach(bolt=>{
+        if(removed.has(bolt)||!covered(bolt))return;
+        const point=boltPos(bolt),r=step*.19;
+        ctx.fillStyle="rgba(28,18,40,.42)";
+        ctx.beginPath();ctx.arc(point.x,point.y+plate.drop*H,r*.86,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle="rgba(255,255,255,.3)";ctx.lineWidth=Math.max(1,r*.16);
+        ctx.beginPath();ctx.arc(point.x,point.y+plate.drop*H,r*.86,0,Math.PI*2);ctx.stroke();
+      });
+    });
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    if(state.glow>0){ctx.fillStyle=`rgba(255,255,255,${state.glow*.45})`;ctx.fillRect(0,0,W,H)}
+    ctx.fillStyle="rgba(73,59,82,.9)";ctx.font=`800 ${Math.round(W*.045)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(`のこり ${visiblePlates().length}枚`,W*.06,H*.03);
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=W*(.05+randomFloat()*.12);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-W*.05,size:W*(.006+randomFloat()*.012),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.6-elapsed/task.duration*.3,0,1):0,detail}),reduced?200:900);
+  };
+  const pull=bolt=>{
+    if(state.done||questionAnswered||removed.has(bolt))return;
+    const blocker=visiblePlates().find(plate=>plate.covers.includes(bolt));
+    if(blocker){
+      blocker.shake=1;later(()=>{blocker.shake=0},reduced?100:320);
+      const point=boltPos(bolt);
+      burst(point.x,point.y,"#E4574F",16);
+      hint.textContent="板の下のボルトは 回せません";
+      finish(false,"板の下のボルトでした。上に乗っている板から外します。");
+      return;
+    }
+    removed.add(bolt);state.order.push(bolt);
+    const point=boltPos(bolt);burst(point.x,point.y,"#F7DE9A",14);
+    hint.textContent="次に外せる板を見きわめて";
+    visiblePlates().filter(plate=>plate.bolts.every(item=>removed.has(item))).forEach(plate=>{
+      plate.gone=true;
+      const started=performance.now(),duration=reduced?120:520;
+      const drop=now=>{
+        if(questionAnswered)return;
+        const t=clamp((now-started)/duration,0,1);
+        plate.drop=t*t*1.5;
+        if(t<1){requestAnimationFrame(drop);return}
+        if(!visiblePlates().length){state.glow=1;finish(true,`${plates.length}枚すべて外しました。`)}
+      };
+      requestAnimationFrame(drop);
+    });
+  };
+  canvas.addEventListener("pointerdown",event=>{
+    if(state.done||questionAnswered)return;
+    event.preventDefault();
+    const rect=canvas.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;
+    let best=-1,bestDistance=step*.42;
+    plates.forEach(plate=>{
+      if(plate.gone)return;
+      plate.bolts.forEach(bolt=>{
+        if(removed.has(bolt))return;
+        const point=boltPos(bolt);
+        const distance=Math.hypot(x-point.x,y-point.y);
+        if(distance<bestDistance){bestDistance=distance;best=bolt}
+      });
+    });
+    if(best>=0)pull(best);
+  });
+  wrap.tabIndex=0;wrap.focus({preventScroll:true});
+  hint.textContent="ボルトをタップして外します";
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.glow=Math.max(0,state.glow-dt*1.4);
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.7;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=W*.5*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.screw={state,plates,task,pull,removed};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:"時間切れ。上に乗った板から順に外します。"});
+  });
+}
+
+function renderTowerStack(task){
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const wrap=document.createElement("div");wrap.className="tower-stage";
+  const canvas=document.createElement("canvas");canvas.className="tower-canvas";
+  canvas.setAttribute("role","button");canvas.tabIndex=0;
+  canvas.setAttribute("aria-label","動くブロックをタップで落として積み上げる");
+  const button=document.createElement("button");button.type="button";button.className="tower-key";
+  button.textContent="落とす";
+  wrap.append(canvas,button);$("challenge").append(wrap);
+  const ctx=canvas.getContext("2d");
+  const stack=[{x:.5-task.startWidth/2,w:task.startWidth}];
+  const state={done:false,dir:1,x:.06,moving:null,shake:0,flash:0,perfect:0,combo:0};
+  const chips=[],sparks=[];
+  let W=0,H=0,clock=0;
+  const resize=()=>{
+    const dpr=Math.min(window.devicePixelRatio||1,3);
+    W=Math.max(240,Math.round(wrap.clientWidth||320));H=Math.round(W*1.06);
+    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+    canvas.style.width=`${W}px`;canvas.style.height=`${H}px`;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  };
+  const blockH=()=>H*.1;
+  const baseY=()=>H*.9;
+  const levelY=index=>baseY()-index*blockH()-Math.max(0,stack.length-4)*0+0;
+  const scroll=()=>Math.max(0,(stack.length-4)*blockH());
+  const colorFor=index=>TOWER_COLORS[(task.hue+index)%TOWER_COLORS.length];
+  const drawBlock=(x,w,y,color,alpha=1)=>{
+    const h=blockH();
+    ctx.globalAlpha=alpha;
+    ctx.fillStyle="rgba(30,20,44,.22)";
+    ctx.beginPath();ctx.roundRect(x*W+4,y-h+6,w*W,h,h*.22);ctx.fill();
+    const body=ctx.createLinearGradient(x*W,y-h,x*W+w*W,y);
+    body.addColorStop(0,color);body.addColorStop(.55,color);body.addColorStop(1,"rgba(0,0,0,.18)");
+    ctx.fillStyle=color;
+    ctx.beginPath();ctx.roundRect(x*W,y-h,w*W,h,h*.22);ctx.fill();
+    ctx.fillStyle="rgba(255,255,255,.3)";
+    ctx.beginPath();ctx.roundRect(x*W+w*W*.06,y-h+h*.14,w*W*.88,h*.24,h*.12);ctx.fill();
+    ctx.globalAlpha=1;
+  };
+  const paint=()=>{
+    ctx.clearRect(0,0,W,H);
+    const sky=ctx.createLinearGradient(0,0,0,H);
+    sky.addColorStop(0,"#DCEBFA");sky.addColorStop(.6,"#F0E7F8");sky.addColorStop(1,"#E6DDF3");
+    ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
+    ctx.save();
+    if(state.shake>0){const power=state.shake*W*.02;ctx.translate((randomFloat()-.5)*power,(randomFloat()-.5)*power)}
+    ctx.translate(0,scroll());
+    ctx.fillStyle="rgba(122,84,150,.12)";
+    ctx.fillRect(0,baseY(),W,H);
+    stack.forEach((block,index)=>drawBlock(block.x,block.w,baseY()-index*blockH(),colorFor(index)));
+    if(state.moving)drawBlock(state.moving.x,state.moving.w,baseY()-stack.length*blockH()-state.moving.fall,colorFor(stack.length));
+    else if(!state.done)drawBlock(state.x,stack.at(-1).w,baseY()-stack.length*blockH(),colorFor(stack.length),.95);
+    chips.forEach(chip=>{
+      ctx.save();ctx.translate(chip.x*W+chip.w*W/2,chip.y);ctx.rotate(chip.spin);
+      drawBlock(-chip.w/2/1,chip.w,0,chip.color,clamp(chip.life,0,1));
+      ctx.restore();
+    });
+    ctx.restore();
+    sparks.forEach(spark=>{
+      ctx.globalAlpha=clamp(spark.life,0,1);ctx.fillStyle=spark.color;
+      ctx.beginPath();ctx.arc(spark.x,spark.y,spark.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+    });
+    if(state.flash>0){ctx.fillStyle=`rgba(255,255,255,${state.flash*.5})`;ctx.fillRect(0,0,W,H)}
+    ctx.fillStyle="rgba(73,59,82,.92)";ctx.font=`900 ${Math.round(W*.06)}px "Hiragino Maru Gothic ProN",sans-serif`;
+    ctx.textBaseline="top";ctx.fillText(`${stack.length-1} / ${task.target}`,W*.06,H*.035);
+    if(state.perfect>0){
+      ctx.fillStyle=`rgba(46,122,84,${clamp(state.perfect,0,1)})`;
+      ctx.font=`900 ${Math.round(W*.075)}px "Hiragino Maru Gothic ProN",sans-serif`;
+      ctx.textAlign="center";ctx.fillText("ピッタリ！",W/2,H*.16);ctx.textAlign="left";
+    }
+  };
+  const burst=(x,y,color,count)=>{
+    for(let i=0;i<(reduced?4:count);i++){
+      const angle=randomFloat()*Math.PI*2,speed=W*(.05+randomFloat()*.14);
+      sparks.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-W*.06,size:W*(.006+randomFloat()*.012),color,life:1});
+    }
+  };
+  const finish=(won,detail)=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    const elapsed=performance.now()-questionStartedAt;
+    later(()=>finishTask(won,{quality:won?clamp(.5+state.combo*.12-elapsed/task.duration*.2,0,1):0,detail}),reduced?200:900);
+  };
+  const drop=()=>{
+    if(state.done||state.moving||questionAnswered)return;
+    const below=stack.at(-1),x=state.x,w=below.w;
+    const left=Math.max(x,below.x),right=Math.min(x+w,below.x+below.w);
+    const overlap=right-left;
+    if(overlap<=.01){
+      state.shake=1;state.flash=.5;
+      burst(W*(x+w/2),baseY()-stack.length*blockH()+scroll(),"#EA7E9B",22);
+      finish(false,`${stack.length-1}段で外しました。`);
+      return;
+    }
+    const perfect=Math.abs(x-below.x)<.012;
+    if(perfect){state.perfect=1;state.combo++}else state.combo=0;
+    const placed={x:left,w:perfect?below.w:overlap};
+    state.moving={x:placed.x,w:placed.w,fall:0};
+    // the overhang tumbles away
+    if(!perfect){
+      if(x<below.x)chips.push({x,w:below.x-x,y:baseY()-stack.length*blockH(),vy:-W*.02,spin:0,vs:-3,color:colorFor(stack.length),life:1});
+      if(x+w>below.x+below.w)chips.push({x:below.x+below.w,w:(x+w)-(below.x+below.w),y:baseY()-stack.length*blockH(),vy:-W*.02,spin:0,vs:3,color:colorFor(stack.length),life:1});
+    }
+    const started=performance.now(),duration=reduced?70:180;
+    const fall=now=>{
+      if(questionAnswered)return;
+      const t=clamp((now-started)/duration,0,1);
+      state.moving.fall=(1-t)*H*.22;
+      if(t<1){requestAnimationFrame(fall);return}
+      stack.push({x:placed.x,w:placed.w});
+      state.moving=null;state.shake=Math.max(state.shake,.3);
+      burst(W*(placed.x+placed.w/2),baseY()-(stack.length-1)*blockH()+scroll(),perfect?"#7FD08C":"#FFD9A0",perfect?20:10);
+      if(stack.length-1>=task.target){
+        finish(true,`${task.target}段まで積みました。${state.combo?`ピッタリ${state.combo}回。`:""}`);
+        return;
+      }
+      state.x=randomFloat()<.5?.04:1-placed.w-.04;
+      state.dir=state.x<.5?1:-1;
+    };
+    requestAnimationFrame(fall);
+  };
+  canvas.addEventListener("pointerdown",event=>{event.preventDefault();drop()});
+  button.addEventListener("pointerdown",event=>{event.preventDefault();drop()});
+  button.addEventListener("click",event=>{if(event.detail===0)drop()});
+  canvas.addEventListener("keydown",event=>{
+    if(event.key===" "||event.key==="Enter"){event.preventDefault();drop()}
+  });
+  canvas.focus({preventScroll:true});
+  let last=performance.now();const token={id:null};extraRafs.push(token);
+  const tick=now=>{
+    if(questionAnswered)return;
+    const dt=Math.min(Math.max((now-last)/1000,0),.05);last=now;clock+=dt;
+    state.shake=Math.max(0,state.shake-dt*2.6);
+    state.flash=Math.max(0,state.flash-dt*2);
+    state.perfect=Math.max(0,state.perfect-dt*1.2);
+    if(!state.done&&!state.moving){
+      const width=stack.at(-1).w;
+      const speed=(task.speed+(stack.length-1)*.06)*(reduced?.7:1);
+      state.x+=state.dir*speed*dt;
+      if(state.x<.03){state.x=.03;state.dir=1}
+      if(state.x+width>.97){state.x=.97-width;state.dir=-1}
+    }
+    for(let i=chips.length-1;i>=0;i--){
+      const chip=chips[i];chip.life-=dt*1.1;
+      if(chip.life<=0){chips.splice(i,1);continue}
+      chip.vy+=H*1.6*dt;chip.y+=chip.vy*dt;chip.spin+=chip.vs*dt;
+    }
+    for(let i=sparks.length-1;i>=0;i--){
+      const spark=sparks[i];spark.life-=dt*1.7;
+      if(spark.life<=0){sparks.splice(i,1);continue}
+      spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=W*.6*dt;
+    }
+    paint();token.id=requestAnimationFrame(tick);
+  };
+  resize();
+  const onResize=()=>{resize();paint()};
+  window.addEventListener("resize",onResize,{passive:true});
+  questionTimers.push(setTimeout(()=>window.removeEventListener("resize",onResize),task.duration+4000));
+  if(window.__SHORO_QA__)window.__SHORO_QA__.tower={state,stack,task,drop};
+  paint();token.id=requestAnimationFrame(tick);
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`時間切れ。${stack.length-1}段まででした。`});
+  });
+}
+function renderWordOrder(task){
+  const wrap=document.createElement("div");wrap.className="order-stage";
+  const line=document.createElement("div");line.className="order-line";line.setAttribute("aria-live","polite");
+  const pool=document.createElement("div");pool.className="order-pool";
+  const actions=document.createElement("div");actions.className="order-actions";
+  const clear=document.createElement("button");clear.type="button";clear.className="order-clear";clear.textContent="Clear";
+  actions.append(clear);
+  wrap.append(line,pool,actions);$("challenge").append(wrap);
+  const placed=[],state={done:false};
+  const draw=()=>{
+    line.replaceChildren();
+    if(!placed.length){
+      const ghost=document.createElement("span");ghost.className="order-ghost";
+      ghost.textContent="Your sentence appears here";line.append(ghost);
+    }
+    placed.forEach((entry,index)=>{
+      const chip=document.createElement("button");chip.type="button";chip.className="order-chip placed";
+      chip.textContent=entry.text;chip.setAttribute("aria-label",`Remove ${entry.text}`);
+      chip.addEventListener("click",()=>{
+        if(state.done)return;
+        placed.splice(index,1);entry.button.disabled=false;entry.button.classList.remove("used");draw();
+      });
+      line.append(chip);
+    });
+    clear.disabled=!placed.length||state.done;
+  };
+  const check=()=>{
+    const sentence=placed.map(entry=>entry.text);
+    const ok=task.accepted.some(option=>option.length===sentence.length&&option.every((word,index)=>word===sentence[index]));
+    state.done=true;
+    pool.querySelectorAll("button").forEach(button=>{button.disabled=true});
+    clear.disabled=true;
+    line.classList.add(ok?"correct":"wrong");
+    later(()=>finishTask(ok,{
+      quality:clamp(1-(performance.now()-questionStartedAt)/task.duration,0,1),
+      detail:ok?`“${task.answer.join(" ")}” — ${task.note}`:`Correct: “${task.answer.join(" ")}” — ${task.note}`
+    }),ok?420:520);
+  };
+  task.chunks.forEach(text=>{
+    const button=document.createElement("button");button.type="button";button.className="order-chip";
+    button.textContent=text;
+    button.addEventListener("click",()=>{
+      if(state.done||button.disabled)return;
+      button.disabled=true;button.classList.add("used");
+      placed.push({text,button});draw();
+      if(placed.length===task.chunks.length)later(check,220);
+    });
+    pool.append(button);
+  });
+  clear.addEventListener("click",()=>{
+    if(state.done)return;
+    placed.splice(0).forEach(entry=>{entry.button.disabled=false;entry.button.classList.remove("used")});
+    draw();
+  });
+  draw();
+  startDeadline(task.duration,()=>{
+    if(state.done||questionAnswered)return;state.done=true;
+    finishTask(false,{detail:`Time is up. Correct: “${task.answer.join(" ")}”`});
+  });
+}
 function finishTask(correct,meta={}){
   if(questionAnswered||!state.activeSession)return;questionAnswered=true;clearQuestionTimers();
   const session=state.activeSession,index=session.currentIndex,task=session.tasks[index],elapsed=Math.max(1,performance.now()-questionStartedAt),beforeLevel=currentLevel();
@@ -1595,11 +4108,11 @@ function fallbackCopy(text){const area=document.createElement("textarea");area.v
 function toast(message){const el=$("toast");el.textContent=message;el.classList.add("show");clearTimeout(el._timer);el._timer=setTimeout(()=>el.classList.remove("show"),2200)}
 
 if(["127.0.0.1","localhost"].includes(location.hostname))window.__SHORO_QA__={
-  catalog:TASK_FACTORIES.map(factory=>({id:factory.id,tier:tierFor(factory.id),flavor:flavorFor(factory.id),category:factory.category})),
+  catalog:TASK_FACTORIES.map(factory=>({id:factory.id,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category})),
   grade(score){return gradeFor(score).name},
-  sampleSession(level=1,paceMode=PACE_STANDARD){if(![1,2,3].includes(level))throw new Error("invalid level");if(![PACE_STANDARD,PACE_RELAXED].includes(paceMode))throw new Error("invalid pace");const profile=defaultProfile("QA","🤓");profile.xp=(level-1)*120;profile.paceMode=paceMode;TASK_FACTORIES.filter(factory=>tierFor(factory.id)===1).slice(0,(level-1)*6).forEach(factory=>profile.templateWins[factory.id]=1);return buildTasks(profile,paceMode)},
-  validate(iterations=20){const issues=[],ids=new Set();TASK_FACTORIES.forEach(factory=>{if(ids.has(factory.id))issues.push(`${factory.id}: duplicate id`);ids.add(factory.id);if(!CATEGORIES[factory.category])issues.push(`${factory.id}: unknown category`);if(![1,2,3].includes(tierFor(factory.id)))issues.push(`${factory.id}: invalid tier`);for(let i=0;i<iterations;i++){let task;try{task=factory.make()}catch(error){issues.push(`${factory.id}: generator ${error.message}`);break}if(!task?.kind||!Number.isFinite(task.duration))issues.push(`${factory.id}: missing kind/duration`);if(Array.isArray(task.options)){if(task.answer!=null&&!task.options.includes(task.answer))issues.push(`${factory.id}: answer absent`);if(new Set(task.options).size!==task.options.length)issues.push(`${factory.id}: duplicate option`)}}});return{factories:TASK_FACTORIES.length,iterations,issues:[...new Set(issues)]}},
-  preview(templateId,duration=60000,slowRunner=true){const factory=TASK_FACTORIES.find(item=>item.id===templateId);if(!factory)throw new Error("unknown template");const task={templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),category:factory.category,...factory.make()};task.duration=Math.max(task.duration,duration);if(task.kind==="runner"&&slowRunner)task.travelMs=Math.max(task.travelMs||2800,9000);document.querySelectorAll("dialog[open]").forEach(dialog=>dialog.close());state.activeSession={id:uuid(),startedAt:Date.now(),contentPack:CONTENT_PACK,tasks:[task],currentIndex:0,answers:[],earnedXp:0};state.pendingResult=false;saveState();renderCurrentTask();return task}
+  sampleSession(level=1,paceMode=PACE_STANDARD){if(!Number.isInteger(level)||level<1||level>MAX_TIER)throw new Error("invalid level");if(![PACE_STANDARD,PACE_RELAXED].includes(paceMode))throw new Error("invalid pace");const profile=defaultProfile("QA","🤓");profile.xp=(level-1)*120;profile.paceMode=paceMode;TASK_FACTORIES.filter(factory=>tierFor(factory.id)===1).slice(0,(level-1)*6).forEach(factory=>profile.templateWins[factory.id]=1);return buildTasks(profile,paceMode)},
+  validate(iterations=20){const issues=[],ids=new Set();TASK_FACTORIES.forEach(factory=>{if(ids.has(factory.id))issues.push(`${factory.id}: duplicate id`);ids.add(factory.id);if(!CATEGORIES[factory.category])issues.push(`${factory.id}: unknown category`);if(![1,2,3,4,5].includes(tierFor(factory.id)))issues.push(`${factory.id}: invalid tier`);for(let i=0;i<iterations;i++){let task;try{task=factory.make()}catch(error){issues.push(`${factory.id}: generator ${error.message}`);break}if(!task?.kind||!Number.isFinite(task.duration))issues.push(`${factory.id}: missing kind/duration`);if(Array.isArray(task.options)){if(task.answer!=null&&!task.options.includes(task.answer))issues.push(`${factory.id}: answer absent`);if(new Set(task.options).size!==task.options.length)issues.push(`${factory.id}: duplicate option`)}}});return{factories:TASK_FACTORIES.length,iterations,issues:[...new Set(issues)]}},
+  preview(templateId,duration=60000,slowRunner=true){const factory=TASK_FACTORIES.find(item=>item.id===templateId);if(!factory)throw new Error("unknown template");const task={templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category,...factory.make()};task.duration=Math.max(task.duration,duration);if(task.kind==="runner"&&slowRunner)task.travelMs=Math.max(task.travelMs||2800,9000);document.querySelectorAll("dialog[open]").forEach(dialog=>dialog.close());state.activeSession={id:uuid(),startedAt:Date.now(),contentPack:CONTENT_PACK,tasks:[task],currentIndex:0,answers:[],earnedXp:0};state.pendingResult=false;saveState();renderCurrentTask();return task}
 };
 
 $("start-button").addEventListener("click",startOrResume);
