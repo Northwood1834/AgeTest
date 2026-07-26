@@ -1,0 +1,582 @@
+{
+  "canonicalViewports": [
+    {
+      "width": 393,
+      "height": 852,
+      "dpr": 3
+    },
+    {
+      "width": 402,
+      "height": 874,
+      "dpr": 3
+    }
+  ],
+  "layouts": [
+    0,
+    1,
+    2
+  ],
+  "states": [
+    "initial",
+    "mid-clean",
+    "cup-full-warning",
+    "decoration-damage",
+    "hole",
+    "overflow",
+    "success",
+    "timeout"
+  ],
+  "comparisons": 48,
+  "screenshots": 96,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "maxMAE": 0.0,
+  "meanMAE": 0.0,
+  "maxNormalizedRMSE": 0.0,
+  "meanChanged": 0.0,
+  "rows": [
+    {
+      "key": "0-393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-393x852-mid-clean",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-393x852-cup-full-warning",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-393x852-decoration-damage",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-393x852-hole",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-393x852-overflow",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-402x874-mid-clean",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-402x874-cup-full-warning",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-402x874-decoration-damage",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-402x874-hole",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-402x874-overflow",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "0-402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-393x852-mid-clean",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-393x852-cup-full-warning",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-393x852-decoration-damage",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-393x852-hole",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-393x852-overflow",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-402x874-mid-clean",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-402x874-cup-full-warning",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-402x874-decoration-damage",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-402x874-hole",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-402x874-overflow",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "1-402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-393x852-mid-clean",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-393x852-cup-full-warning",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-393x852-decoration-damage",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-393x852-hole",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-393x852-overflow",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-402x874-mid-clean",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-402x874-cup-full-warning",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-402x874-decoration-damage",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-402x874-hole",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-402x874-overflow",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "2-402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    }
+  ],
+  "visualQc": {
+    "status": "pass",
+    "review": "director canonical visual QC plus full 402 contact matrix and 390/430 supplemental review",
+    "checks": {
+      "continuousTactileKnitNotFlatGrid": true,
+      "pillFuzzCleanProgression": true,
+      "physicalCupWarning": true,
+      "coordinateSnagVisible": true,
+      "localHoleVisible": true,
+      "overflowRedepositVisible": true,
+      "foldedSuccessAndMetricsCoherent": true,
+      "timeoutGeometryRetained": true,
+      "allTextControlsUnclipped": true
+    }
+  }
+}
