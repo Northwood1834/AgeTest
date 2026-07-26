@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "social-greeting-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "ca9ea9f551de25923789b0ebf58361787a00934c",
+  "test": "test/social-greeting-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

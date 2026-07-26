@@ -397,6 +397,17 @@ export const gameManifest=Object.freeze([
     "hash": "99e2f82a2a4be2c9"
   },
   {
+    "id": "social-greeting-v1",
+    "introducedIn": "1.15",
+    "tier": 1,
+    "flavor": "classic",
+    "step": 1,
+    "family": "social-greeting",
+    "category": "social",
+    "module": "./games/social-greeting-v1.js",
+    "hash": "71946f64f112545e"
+  },
+  {
     "id": "social-partner-mood-v1",
     "introducedIn": "1.0",
     "tier": 2,

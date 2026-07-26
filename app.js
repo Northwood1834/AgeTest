@@ -543,7 +543,6 @@ const LEGACY_TASK_FACTORIES = [
   {id:"language-kanji-read-v1",version:"1.15",category:"language",make:()=>{const rows=[["『速い』の読みは？","はやい",["おそい","つよい","かるい"]],["『暖かい』の読みは？","あたたかい",["すずしい","つめたい","あかるい"]],["『笑顔』の読みは？","えがお",["わらいがお","しょうがん","えみかお"]],["『年賀状』の読みは？","ねんがじょう",["としがじょう","ねんかじょう","ねんがしょう"]]],r=pick(rows);return{kind:"choice",prompt:r[0],help:"よく見る漢字です。",options:shuffle([r[1],...r[2]]),answer:r[1],duration:7000}}},
   {id:"language-katakana-v1",version:"1.15",category:"language",make:()=>{const rows=[["体温をはかる道具は？","タイオンケイ",["タイヨウケイ","タイオンキ","オンドケイキ"]],["食事の前に洗うのは？","テ",["アシ","カオ","ハ"]],["『病院で診てもらう人』は？","カンジャ",["イシャ","カンゴ","ヤクザイ"]]],r=pick(rows);return{kind:"choice",prompt:r[0],help:"素直に選んでください。",options:shuffle([r[1],...r[2]]),answer:r[1],duration:7000}}},
   {id:"memory-color-v1",version:"1.15",category:"memory",make:()=>{const shown=shuffle(["赤","青","黄","緑","紫"]).slice(0,3);return{kind:"flashChoice",prompt:"3つの色を覚えて",help:"順番も見ておいてください。",afterHelp:"2番目の色はどれ？",shown,options:shuffle(["赤","青","黄","緑","紫"]),answer:shown[1],duration:7000}}},
-  {id:"social-greeting-v1",version:"1.15",category:"social",make:()=>{const rows=[["朝、近所の人に会いました。","おはようございます",["おやすみなさい","いただきます","ごちそうさま"]],["お店で先に会計を譲ってもらいました。","ありがとうございます",["いってきます","おかえりなさい","はじめまして"]],["久しぶりに友人に会いました。","お久しぶりです",["いってらっしゃい","おつかれさま、また明日","ただいま"]]],r=pick(rows);return{kind:"choice",prompt:`${r[0]} なんと言う？`,help:"いちばん自然なあいさつを。",options:shuffle([r[1],...r[2]]),answer:r[1],duration:7000}}}
 ];
 
 const TASK_FACTORIES=[

@@ -10,10 +10,10 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
+| `memory-missing-v1` | former Emoji Match owner | P10 port; flow lane | Faithfully port the published absent-item flash task with exact nested random-call parity |
 | `attention-animal-count-v1` | former Kana Count owner | P10 port pre-browser; waits for flow | Faithfully port the published 14-animal count task without target cues |
-| `social-greeting-v1` | former Social Date owner | P09 port; audit lane | Faithfully port all three published greeting scenarios and exact etiquette choices |
 | `inhibition-rule-switch-v1` | former Opposite owner | P10 port; screw lane | Faithfully port the published reversed parity rule without odd/even visual cues |
-| `attention-lint-shaver-v1` | original implementation owner | N08 pre-browser; waits for audit | Quantized continuous lint removal with speed, dwell, hazards, and dust-cup causality |
+| `attention-lint-shaver-v1` | original implementation owner | N08 audit lane | Quantized continuous lint removal with speed, dwell, hazards, and dust-cup causality |
 
 ## Waiting queue
 
@@ -115,6 +115,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Outcomes: correctly tidied room with sleeping cat; cumulative wake; repeated stop-window violation; harmless dropped cup; wrong placement; and timeout retaining every object, held state, sleep depth, and violation.
 - Proof: finite 10×14 floor tiles and integer ticks exhaustively prove a route that requires at least one true stop, excludes uninterrupted success, uses rug/noise causally, covers stop-window boundaries and all failures, and supports plain resume/single finish.
 - Reduced motion/art: discrete cat/sleep/noise states and proportionally extended stop windows; original overhead room, gentle five-pose cat, object/placement states, cable hazard, meters, and tidy success still with no animal distress or real brands.
+
+### Q21 — `language-particle-scene-v1`
+
+- Category/tier/flavor: language / tier 3 / satisfying
+- Core: drag finite particle tiles and reorder phrase blocks; every edit deterministically rebuilds an illustrated agent/object/destination scene until it matches the always-visible target within six moves.
+- Outcomes/proof: exact scene match; reversed roles; wrong destination/direction; move exhaustion; incomplete sentence; timeout retaining sentence and preview. Exhaustively verify the finite grammar-to-scene mapping, 3–6 move solutions, dummy rejection, no tile-order cue, and plain resume.
+- Art/reduced motion: original neutral animals and destination props in composable poses, text rendered by UI; instant/cross-faded scene swaps and accessible snap targets, never copied textbook design.
+
+### Q22 — `language-notice-trim-v1`
+
+- Category/tier/flavor: language / tier 3 / quirky
+- Core: remove and restore word chips until a fictional one-line notice fits its physical width while retaining the task-authored place, time, audience condition, action, and requested tone; the recipient preview changes behavior immediately.
+- Outcomes/proof: concise valid notice; missing place/time; lost audience condition; meaningless deletion; width overflow; authored-tone miss; timeout. Enumerate at most 4,096 subsets, guarantee one or two valid solutions and exact-fit/one-over boundaries, and never generalize real-world politeness or safety guidance.
+- Art/reduced motion: original fictional storefront board and recipients, UI-rendered chips, three-state recipient poses, discrete width units; no real public, medical, or emergency signage.
+
+### Q23 — `social-shared-umbrella-v1`
+
+- Category/tier/flavor: social / tier 3 / satisfying
+- Core: continuously position and tilt one umbrella while matching walking pace so two fictional adults share visible rain coverage through changing wind, puddles, and sheltered reset points.
+- Outcomes/proof: balanced dry arrival; companion soaked; player overexposed without glorifying self-sacrifice; distance break; puddle splash; timeout retaining geometry/wetness. Finite segment and quantized coverage search proves balanced solutions and rejects either-person-only strategies.
+- Art/reduced motion: original rainy arcade, umbrella angles, neutral adults and wetness stages; static rain textures and stepped travel with identical coverage geometry, no romance assumption.
+
+### Q24 — `reaction-cupboard-catch-v1`
+
+- Category/tier/flavor: reaction / tier 2 / wild
+- Core: direct two independently occupied hand slots to catch eight visibly tipping cupboard items, then unload each to its correct safe counter zone before the next fall.
+- Outcomes/proof: all stored; retained miss; wrong-zone slide; two-hand collision; overloaded hands; timeout retaining queue/hands/counter. Integer-tick exhaustive scheduling guarantees a route requiring proactive unloading, exact catch boundaries, and all failures.
+- Art/reduced motion: original cupboard, four dish types in finite tip/fall/catch/place states, two hand states, cloth/counter zones; four-step falls with no injury or flying shards.
+
+### Q25 — `spatial-suitcase-pack-v1`
+
+- Category/tier/flavor: spatial / tier 3 / satisfying
+- Core: rotate finite polyomino luggage, compress soft items once where space permits, protect fragile pieces from hard stacks, include every visible essential, and physically close the case under a height limit.
+- Outcomes/proof: closed valid case; raised lid; missing essential; crushed fragile item; recoverable bad packing; timeout retaining placement/rotation/deformation. Exhaustive ≤8×10 search proves 1–3 solutions requiring rotation/compression and exact height boundaries.
+- Art/reduced motion: original open/raised/closed case and branded-free travel objects in rotation/deformation states; grid snapping, static height/hatching, and no copied luggage product.
+
+### Q26 — `calculation-gear-train-v1`
+
+- Category/tier/flavor: calculation / tier 3 / wild
+- Core: fit finite `{8,12,16,24}`-tooth gears to fixed shafts so exact meshing, parity of contacts, rational speed ratios, one compound shaft, inventory, and beam clearance produce the displayed output direction and ratio.
+- Outcomes/proof: exact mechanism; reverse direction; wrong ratio; disconnected train; frame interference; inventory failure; timeout. Exhaustively assign inventory with exact rational arithmetic and guarantee direction-only and ratio-only near misses.
+- Art/reduced motion: original gears/shafts/handle/output/frame and contact/gap overlays; stepped angle states and numeric arrows rather than continuous spin or real machinery instruction.
 
 ## Dispatched brief archive
 
