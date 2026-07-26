@@ -122,6 +122,17 @@ export const gameManifest=Object.freeze([
     "hash": "fd52fd1abe123e27"
   },
   {
+    "id": "memory-path-v1",
+    "introducedIn": "1.0",
+    "tier": 1,
+    "flavor": "classic",
+    "step": 1,
+    "family": "memory-path",
+    "category": "memory",
+    "module": "./games/memory-path-v1.js",
+    "hash": "db1ad1e63391843b"
+  },
+  {
     "id": "memory-phone-pin-v1",
     "introducedIn": "2.0",
     "tier": 2,
