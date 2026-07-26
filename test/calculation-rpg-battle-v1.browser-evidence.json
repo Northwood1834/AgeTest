@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "isolated": true
+  },
+  "interaction": {
+    "viewport": "402x874 DPR3",
+    "keyboardFocus": true,
+    "touchCommand": true,
+    "targetFocus": true,
+    "phase": "target",
+    "focused": "ぬまスライム",
+    "spritePixels": {
+      "width": 72,
+      "height": 72
+    }
+  },
+  "performance": {
+    "fixtureElapsedMs": 100.70000004768372,
+    "bodyScrollWidth": 402,
+    "runtimeFrames": 0,
+    "runtimeTimeouts": 4,
+    "resourcesAdded": 0
+  },
+  "runtime": {
+    "disposed": false,
+    "finished": false,
+    "finishCalls": 0,
+    "commits": 0,
+    "timeouts": 4,
+    "frames": 0,
+    "listeners": 33,
+    "aborted": false
+  },
+  "external": [],
+  "visualArtifacts": "/tmp/calculation-rpg-battle-v1-visual",
+  "visualReport": "test/calculation-rpg-battle-v1.visual-report.json"
+}

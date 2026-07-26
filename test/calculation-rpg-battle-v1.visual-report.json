@@ -1,0 +1,229 @@
+{
+  "status": "pass",
+  "pairedComparisons": 40,
+  "fullResolutionScreenshots": 80,
+  "viewports": [
+    "393x852 DPR3",
+    "402x874 DPR3"
+  ],
+  "motions": [
+    "normal",
+    "reduced"
+  ],
+  "scenes": [
+    "initial",
+    "question",
+    "input",
+    "attack",
+    "wrong-hit",
+    "progress",
+    "sweep",
+    "call",
+    "success",
+    "failure"
+  ],
+  "threshold": 0.18,
+  "maxNormalizedRmse": 0.146299,
+  "rows": [
+    {
+      "pair": "393x852-attack-normal",
+      "normalizedRmse": 0.0819989,
+      "pass": true
+    },
+    {
+      "pair": "393x852-attack-reduced",
+      "normalizedRmse": 0.0822934,
+      "pass": true
+    },
+    {
+      "pair": "393x852-call-normal",
+      "normalizedRmse": 0.0830532,
+      "pass": true
+    },
+    {
+      "pair": "393x852-call-reduced",
+      "normalizedRmse": 0.0830532,
+      "pass": true
+    },
+    {
+      "pair": "393x852-failure-normal",
+      "normalizedRmse": 0.0358052,
+      "pass": true
+    },
+    {
+      "pair": "393x852-failure-reduced",
+      "normalizedRmse": 0.0358052,
+      "pass": true
+    },
+    {
+      "pair": "393x852-initial-normal",
+      "normalizedRmse": 0.0781703,
+      "pass": true
+    },
+    {
+      "pair": "393x852-initial-reduced",
+      "normalizedRmse": 0.0781703,
+      "pass": true
+    },
+    {
+      "pair": "393x852-input-normal",
+      "normalizedRmse": 0.081322,
+      "pass": true
+    },
+    {
+      "pair": "393x852-input-reduced",
+      "normalizedRmse": 0.0810263,
+      "pass": true
+    },
+    {
+      "pair": "393x852-progress-normal",
+      "normalizedRmse": 0.0796457,
+      "pass": true
+    },
+    {
+      "pair": "393x852-progress-reduced",
+      "normalizedRmse": 0.0792685,
+      "pass": true
+    },
+    {
+      "pair": "393x852-question-normal",
+      "normalizedRmse": 0.0781703,
+      "pass": true
+    },
+    {
+      "pair": "393x852-question-reduced",
+      "normalizedRmse": 0.0811417,
+      "pass": true
+    },
+    {
+      "pair": "393x852-success-normal",
+      "normalizedRmse": 0.0382251,
+      "pass": true
+    },
+    {
+      "pair": "393x852-success-reduced",
+      "normalizedRmse": 0.0376949,
+      "pass": true
+    },
+    {
+      "pair": "393x852-sweep-normal",
+      "normalizedRmse": 0.0732572,
+      "pass": true
+    },
+    {
+      "pair": "393x852-sweep-reduced",
+      "normalizedRmse": 0.0728025,
+      "pass": true
+    },
+    {
+      "pair": "393x852-wrong-hit-normal",
+      "normalizedRmse": 0.126036,
+      "pass": true
+    },
+    {
+      "pair": "393x852-wrong-hit-reduced",
+      "normalizedRmse": 0.146299,
+      "pass": true
+    },
+    {
+      "pair": "402x874-attack-normal",
+      "normalizedRmse": 0.0752194,
+      "pass": true
+    },
+    {
+      "pair": "402x874-attack-reduced",
+      "normalizedRmse": 0.0752791,
+      "pass": true
+    },
+    {
+      "pair": "402x874-call-normal",
+      "normalizedRmse": 0.0765746,
+      "pass": true
+    },
+    {
+      "pair": "402x874-call-reduced",
+      "normalizedRmse": 0.0733633,
+      "pass": true
+    },
+    {
+      "pair": "402x874-failure-normal",
+      "normalizedRmse": 0.0349877,
+      "pass": true
+    },
+    {
+      "pair": "402x874-failure-reduced",
+      "normalizedRmse": 0.0349877,
+      "pass": true
+    },
+    {
+      "pair": "402x874-initial-normal",
+      "normalizedRmse": 0.0745262,
+      "pass": true
+    },
+    {
+      "pair": "402x874-initial-reduced",
+      "normalizedRmse": 0.0745262,
+      "pass": true
+    },
+    {
+      "pair": "402x874-input-normal",
+      "normalizedRmse": 0.0664157,
+      "pass": true
+    },
+    {
+      "pair": "402x874-input-reduced",
+      "normalizedRmse": 0.0661417,
+      "pass": true
+    },
+    {
+      "pair": "402x874-progress-normal",
+      "normalizedRmse": 0.0699878,
+      "pass": true
+    },
+    {
+      "pair": "402x874-progress-reduced",
+      "normalizedRmse": 0.0693198,
+      "pass": true
+    },
+    {
+      "pair": "402x874-question-normal",
+      "normalizedRmse": 0.0745262,
+      "pass": true
+    },
+    {
+      "pair": "402x874-question-reduced",
+      "normalizedRmse": 0.0712221,
+      "pass": true
+    },
+    {
+      "pair": "402x874-success-normal",
+      "normalizedRmse": 0.035622,
+      "pass": true
+    },
+    {
+      "pair": "402x874-success-reduced",
+      "normalizedRmse": 0.0351063,
+      "pass": true
+    },
+    {
+      "pair": "402x874-sweep-normal",
+      "normalizedRmse": 0.0662975,
+      "pass": true
+    },
+    {
+      "pair": "402x874-sweep-reduced",
+      "normalizedRmse": 0.0656594,
+      "pass": true
+    },
+    {
+      "pair": "402x874-wrong-hit-normal",
+      "normalizedRmse": 0.120221,
+      "pass": true
+    },
+    {
+      "pair": "402x874-wrong-hit-reduced",
+      "normalizedRmse": 0.138009,
+      "pass": true
+    }
+  ]
+}
