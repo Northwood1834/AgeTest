@@ -221,6 +221,17 @@ export const gameManifest=Object.freeze([
     "hash": "e6992f37493fe03a"
   },
   {
+    "id": "prediction-shape-v1",
+    "introducedIn": "1.15",
+    "tier": 1,
+    "flavor": "classic",
+    "step": 1,
+    "family": "prediction-shape",
+    "category": "prediction",
+    "module": "./games/prediction-shape-v1.js",
+    "hash": "cbf199710ce4e75a"
+  },
+  {
     "id": "reaction-emoji-runner-v1",
     "introducedIn": "1.0",
     "tier": 2,
@@ -461,5 +472,16 @@ export const gameManifest=Object.freeze([
     "category": "timing",
     "module": "./games/timing-tower-stack-v1.js",
     "hash": "9bb1df6b58f2eb4f"
+  },
+  {
+    "id": "timing-two-v1",
+    "introducedIn": "1.15",
+    "tier": 1,
+    "flavor": "classic",
+    "step": 1,
+    "family": "timing-two",
+    "category": "timing",
+    "module": "./games/timing-two-v1.js",
+    "hash": "75c24b5d9764ef3e"
   }
 ].map(Object.freeze));

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "prediction-shape-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "69d589c7e717e5e69656fb5c28251906309837b6",
+  "test": "test/prediction-shape-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "timing-two-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "2fa62a5ef57eac979a8ab3981f7dcae7a34dba90",
+  "test": "test/timing-two-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
