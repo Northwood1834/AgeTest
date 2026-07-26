@@ -648,6 +648,13 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Proof/outcomes: exhaustive delay placements yield only 1–2 valid plans, prove zero-delay maximum three and front-loaded failure, with ≥3-tick windows and retained phase/transfer/timeout states.
 - Art/reduced motion: original abstract two-disc transfer board; discrete angles and static alignment highlight, no real rotating equipment.
 
+### Q97 — `inhibition-queue-cancel-v1`
+
+- Category/tier/flavor: inhibition / tier 3 / wild
+- Core: maintain a visible delayed command queue deep enough for throughput while three selective cancellations prevent irreversible executions during fully previewed stop windows; each cancellation advances every later execution tick and can create a new conflict.
+- Proof/outcomes: exhaustive integer enqueue/cancel histories require depth ≥3, defeat always-full and depth≤2 policies, and include a promotion-created collision solvable only by the correct cancel order; exact window edges, cancel exhaustion, shallow shortfall, chained violation and timeout retain the queue.
+- Art/reduced motion: original abstract queue slots/command chips/execution port/static stop bands; immediate promotion and sequential stills, no real device, hidden schedule or flashing.
+
 ### Q98 — `reaction-shared-head-v1`
 
 - Category/tier/flavor: reaction / tier 3 / wild
