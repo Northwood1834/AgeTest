@@ -1,0 +1,1605 @@
+{
+  "game": "inhibition-opposite-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "checks": {
+    "bothShownValuesLive": true,
+    "exactPromptsAndOppositeAnswers": true,
+    "fixedOptions": true,
+    "identicalLeftRightMaterial": true,
+    "noDirectionIcons": true,
+    "noAsymmetricCue": true,
+    "noAnswerMarker": true,
+    "realTouch": true,
+    "immediateResult": true,
+    "successPayload": true,
+    "inputLock": true,
+    "keyboardEnter": true,
+    "keyboardSpace": true,
+    "focusVisibleAndInViewport": true,
+    "width390And430": true,
+    "reducedFeedback": true,
+    "reducedNoRaf": true,
+    "wrongPayload": true,
+    "actualDeadline4500": true,
+    "timeoutPayload": true,
+    "dispose": true,
+    "singleFinish": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "noErrorsOrExternal": true,
+    "performance": true
+  },
+  "samples": [
+    {
+      "sample": 0,
+      "task": {
+        "kind": "choice",
+        "prompt": "「左」と反対を選んで",
+        "help": "読んだとおりには押さない。",
+        "options": [
+          "左",
+          "右"
+        ],
+        "answer": "右",
+        "duration": 4500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "shown": "左",
+        "prompt": "「左」と反対を選んで",
+        "answer": "右",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "右",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 152,
+          "pixelWidth": 1005,
+          "pixelHeight": 456,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "反対の言葉を選んでください"
+      },
+      "focused": true,
+      "wordText": "左",
+      "wordClass": "io-word",
+      "wordChildCount": 0,
+      "wordRect": {
+        "left": 30,
+        "right": 363,
+        "top": 121.140625,
+        "bottom": 271.140625
+      },
+      "wordStyle": {
+        "color": "rgb(75, 61, 81)",
+        "fontSize": "70.74px",
+        "fontWeight": "950",
+        "letterSpacing": "normal",
+        "opacity": "1",
+        "transform": "none"
+      },
+      "sceneStyle": {
+        "backgroundColor": "rgb(244, 238, 247)",
+        "borderColor": "rgb(216, 204, 223)",
+        "borderRadius": "16.8px"
+      },
+      "buttonTexts": [
+        "左",
+        "右"
+      ],
+      "buttonColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "buttonBackgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "canvasLabel": "左",
+      "status": "反対の言葉を選んでください",
+      "icons": [],
+      "cueClasses": [],
+      "cueData": [],
+      "evidence": {
+        "variant": "module",
+        "sample": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "「左」と反対を選んで",
+          "help": "読んだとおりには押さない。",
+          "options": [
+            "左",
+            "右"
+          ],
+          "answer": "右",
+          "duration": 4500
+        },
+        "constants": {
+          "shown": [
+            "左",
+            "右"
+          ],
+          "duration": 4500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "shown": "左",
+          "prompt": "「左」と反対を選んで",
+          "answer": "右",
+          "buttons": [
+            {
+              "text": "左",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "右",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 152,
+            "pixelWidth": 1005,
+            "pixelHeight": 456,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "反対の言葉を選んでください"
+        },
+        "computed": {
+          "shown": "左",
+          "prompt": "「左」と反対を選んで",
+          "answer": "右",
+          "options": [
+            "左",
+            "右"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0,
+          "wordClass": "io-word",
+          "wordChildCount": 0,
+          "wordStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "70.74px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 152,
+            "pixelWidth": 1005,
+            "pixelHeight": 456,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-opposite-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-opposite-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "sample": 1,
+      "task": {
+        "kind": "choice",
+        "prompt": "「右」と反対を選んで",
+        "help": "読んだとおりには押さない。",
+        "options": [
+          "左",
+          "右"
+        ],
+        "answer": "左",
+        "duration": 4500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "shown": "右",
+        "prompt": "「右」と反対を選んで",
+        "answer": "左",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "右",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 152,
+          "pixelWidth": 1005,
+          "pixelHeight": 456,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "反対の言葉を選んでください"
+      },
+      "focused": true,
+      "wordText": "右",
+      "wordClass": "io-word",
+      "wordChildCount": 0,
+      "wordRect": {
+        "left": 30,
+        "right": 363,
+        "top": 121.140625,
+        "bottom": 271.140625
+      },
+      "wordStyle": {
+        "color": "rgb(75, 61, 81)",
+        "fontSize": "70.74px",
+        "fontWeight": "950",
+        "letterSpacing": "normal",
+        "opacity": "1",
+        "transform": "none"
+      },
+      "sceneStyle": {
+        "backgroundColor": "rgb(244, 238, 247)",
+        "borderColor": "rgb(216, 204, 223)",
+        "borderRadius": "16.8px"
+      },
+      "buttonTexts": [
+        "左",
+        "右"
+      ],
+      "buttonColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "buttonBackgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "canvasLabel": "右",
+      "status": "反対の言葉を選んでください",
+      "icons": [],
+      "cueClasses": [],
+      "cueData": [],
+      "evidence": {
+        "variant": "module",
+        "sample": 1,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "「右」と反対を選んで",
+          "help": "読んだとおりには押さない。",
+          "options": [
+            "左",
+            "右"
+          ],
+          "answer": "左",
+          "duration": 4500
+        },
+        "constants": {
+          "shown": [
+            "左",
+            "右"
+          ],
+          "duration": 4500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "shown": "右",
+          "prompt": "「右」と反対を選んで",
+          "answer": "左",
+          "buttons": [
+            {
+              "text": "左",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "右",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 152,
+            "pixelWidth": 1005,
+            "pixelHeight": 456,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "反対の言葉を選んでください"
+        },
+        "computed": {
+          "shown": "右",
+          "prompt": "「右」と反対を選んで",
+          "answer": "左",
+          "options": [
+            "左",
+            "右"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0,
+          "wordClass": "io-word",
+          "wordChildCount": 0,
+          "wordStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "70.74px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 152,
+            "pixelWidth": 1005,
+            "pixelHeight": 456,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-opposite-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-opposite-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    }
+  ],
+  "touch": {
+    "start": {
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "shown": "左",
+        "prompt": "「左」と反対を選んで",
+        "answer": "右",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "右",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 151,
+          "pixelWidth": 996,
+          "pixelHeight": 453,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "反対の言葉を選んでください"
+      },
+      "focused": true,
+      "rect": {
+        "left": 29,
+        "right": 191.3125,
+        "top": 330.765625,
+        "bottom": 381.953125
+      },
+      "scrollY": 0
+    },
+    "touchPoint": {
+      "x": 279.8359375,
+      "y": 356.359375,
+      "width": 162.328125,
+      "height": 51.1875,
+      "disabled": false
+    },
+    "final": {
+      "before": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "右",
+        "detail": "正解は「右」",
+        "payload": {
+          "answerLabel": "右"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "shown": "左",
+        "prompt": "「左」と反対を選んで",
+        "answer": "右",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "右",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 151,
+          "pixelWidth": 996,
+          "pixelHeight": 453,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解は「右」"
+      },
+      "after": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "右",
+        "detail": "正解は「右」",
+        "payload": {
+          "answerLabel": "右"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "shown": "左",
+        "prompt": "「左」と反対を選んで",
+        "answer": "右",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "右",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 151,
+          "pixelWidth": 996,
+          "pixelHeight": 453,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解は「右」"
+      },
+      "finishesBefore": [
+        {
+          "correct": true,
+          "result": {
+            "answerLabel": "右"
+          }
+        }
+      ],
+      "evidence": {
+        "variant": "module",
+        "sample": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 390,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "「左」と反対を選んで",
+          "help": "読んだとおりには押さない。",
+          "options": [
+            "左",
+            "右"
+          ],
+          "answer": "右",
+          "duration": 4500
+        },
+        "constants": {
+          "shown": [
+            "左",
+            "右"
+          ],
+          "duration": 4500
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "selected": "右",
+          "detail": "正解は「右」",
+          "payload": {
+            "answerLabel": "右"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "shown": "左",
+          "prompt": "「左」と反対を選んで",
+          "answer": "右",
+          "buttons": [
+            {
+              "text": "左",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "右",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 151,
+            "pixelWidth": 996,
+            "pixelHeight": 453,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "正解は「右」"
+        },
+        "computed": {
+          "shown": "左",
+          "prompt": "「左」と反対を選んで",
+          "answer": "右",
+          "options": [
+            "左",
+            "右"
+          ],
+          "choicesEnabled": false,
+          "result": "success",
+          "selected": "右",
+          "payload": {
+            "correct": true,
+            "result": {
+              "answerLabel": "右"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1,
+          "wordClass": "io-word",
+          "wordChildCount": 0,
+          "wordStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "70.2px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "answerLabel": "右"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 151,
+            "pixelWidth": 996,
+            "pixelHeight": 453,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-opposite-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-opposite-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0,
+      "navigationMs": 60.60000002384186,
+      "longTasks": [],
+      "nodeCount": 24
+    }
+  },
+  "enter": {
+    "ready": {
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "shown": "右",
+        "prompt": "「右」と反対を選んで",
+        "answer": "左",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "右",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 169,
+          "pixelWidth": 1116,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "反対の言葉を選んでください"
+      },
+      "focused": true,
+      "active": "左",
+      "rect": {
+        "left": 29,
+        "right": 211.3125,
+        "top": 351.265625,
+        "bottom": 402.453125
+      },
+      "scrollY": 0
+    },
+    "final": {
+      "state": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "左",
+        "detail": "正解は「左」",
+        "payload": {
+          "answerLabel": "左"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "shown": "右",
+        "prompt": "「右」と反対を選んで",
+        "answer": "左",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "右",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 169,
+          "pixelWidth": 1116,
+          "pixelHeight": 507,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解は「左」"
+      },
+      "evidence": {
+        "variant": "module",
+        "sample": 1,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 430,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "「右」と反対を選んで",
+          "help": "読んだとおりには押さない。",
+          "options": [
+            "左",
+            "右"
+          ],
+          "answer": "左",
+          "duration": 4500
+        },
+        "constants": {
+          "shown": [
+            "左",
+            "右"
+          ],
+          "duration": 4500
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "selected": "左",
+          "detail": "正解は「左」",
+          "payload": {
+            "answerLabel": "左"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "shown": "右",
+          "prompt": "「右」と反対を選んで",
+          "answer": "左",
+          "buttons": [
+            {
+              "text": "左",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            },
+            {
+              "text": "右",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 169,
+            "pixelWidth": 1116,
+            "pixelHeight": 507,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "正解は「左」"
+        },
+        "computed": {
+          "shown": "右",
+          "prompt": "「右」と反対を選んで",
+          "answer": "左",
+          "options": [
+            "左",
+            "右"
+          ],
+          "choicesEnabled": false,
+          "result": "success",
+          "selected": "左",
+          "payload": {
+            "correct": true,
+            "result": {
+              "answerLabel": "左"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1,
+          "wordClass": "io-word",
+          "wordChildCount": 0,
+          "wordStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "77.4px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "answerLabel": "左"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 430,
+          "innerWidth": 430,
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 169,
+            "pixelWidth": 1116,
+            "pixelHeight": 507,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-opposite-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-opposite-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0
+    }
+  },
+  "space": {
+    "ready": {
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "shown": "左",
+        "prompt": "「左」と反対を選んで",
+        "answer": "右",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "右",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 152,
+          "pixelWidth": 1005,
+          "pixelHeight": 456,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "反対の言葉を選んでください"
+      },
+      "focused": true,
+      "active": "左",
+      "scrollY": 0
+    },
+    "final": {
+      "state": {
+        "phase": "WRONG",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "wrong",
+        "selected": "左",
+        "detail": "残念。正解は「右」",
+        "payload": {
+          "answerLabel": "右"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "shown": "左",
+        "prompt": "「左」と反対を選んで",
+        "answer": "右",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "右",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 152,
+          "pixelWidth": 1005,
+          "pixelHeight": 456,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "残念。正解は「右」"
+      },
+      "evidence": {
+        "variant": "module",
+        "sample": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "「左」と反対を選んで",
+          "help": "読んだとおりには押さない。",
+          "options": [
+            "左",
+            "右"
+          ],
+          "answer": "右",
+          "duration": 4500
+        },
+        "constants": {
+          "shown": [
+            "左",
+            "右"
+          ],
+          "duration": 4500
+        },
+        "state": {
+          "phase": "WRONG",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "wrong",
+          "selected": "左",
+          "detail": "残念。正解は「右」",
+          "payload": {
+            "answerLabel": "右"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "shown": "左",
+          "prompt": "「左」と反対を選んで",
+          "answer": "右",
+          "buttons": [
+            {
+              "text": "左",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            },
+            {
+              "text": "右",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 152,
+            "pixelWidth": 1005,
+            "pixelHeight": 456,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "残念。正解は「右」"
+        },
+        "computed": {
+          "shown": "左",
+          "prompt": "「左」と反対を選んで",
+          "answer": "右",
+          "options": [
+            "左",
+            "右"
+          ],
+          "choicesEnabled": false,
+          "result": "wrong",
+          "selected": "左",
+          "payload": {
+            "correct": false,
+            "result": {
+              "answerLabel": "右"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1,
+          "wordClass": "io-word",
+          "wordChildCount": 0,
+          "wordStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "70.74px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [
+          {
+            "correct": false,
+            "result": {
+              "answerLabel": "右"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 152,
+            "pixelWidth": 1005,
+            "pixelHeight": 456,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-opposite-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-opposite-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0
+    }
+  },
+  "deadline": {
+    "elapsed": 4512.399999976158,
+    "state": {
+      "phase": "TIMEOUT",
+      "choicesEnabled": false,
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "selected": null,
+      "detail": "時間切れです。脳は定時退社しました。",
+      "payload": {
+        "detail": "時間切れです。脳は定時退社しました。",
+        "answerLabel": "左"
+      },
+      "finishCalls": 1,
+      "feedbackStages": 1,
+      "shown": "右",
+      "prompt": "「右」と反対を選んで",
+      "answer": "左",
+      "buttons": [
+        {
+          "text": "左",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "右",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 335,
+        "cssHeight": 152,
+        "pixelWidth": 1005,
+        "pixelHeight": 456,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "時間切れ。正解は「左」"
+    },
+    "evidence": {
+      "variant": "module",
+      "sample": 1,
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 393,
+      "dpr": 3,
+      "task": {
+        "kind": "choice",
+        "prompt": "「右」と反対を選んで",
+        "help": "読んだとおりには押さない。",
+        "options": [
+          "左",
+          "右"
+        ],
+        "answer": "左",
+        "duration": 4500
+      },
+      "constants": {
+        "shown": [
+          "左",
+          "右"
+        ],
+        "duration": 4500
+      },
+      "state": {
+        "phase": "TIMEOUT",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "timeout",
+        "selected": null,
+        "detail": "時間切れです。脳は定時退社しました。",
+        "payload": {
+          "detail": "時間切れです。脳は定時退社しました。",
+          "answerLabel": "左"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "shown": "右",
+        "prompt": "「右」と反対を選んで",
+        "answer": "左",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "右",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 152,
+          "pixelWidth": 1005,
+          "pixelHeight": 456,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "時間切れ。正解は「左」"
+      },
+      "computed": {
+        "shown": "右",
+        "prompt": "「右」と反対を選んで",
+        "answer": "左",
+        "options": [
+          "左",
+          "右"
+        ],
+        "choicesEnabled": false,
+        "result": "timeout",
+        "selected": null,
+        "payload": {
+          "correct": false,
+          "result": {
+            "detail": "時間切れです。脳は定時退社しました。",
+            "answerLabel": "左"
+          }
+        },
+        "feedbackStages": 1,
+        "focused": -1,
+        "wordClass": "io-word",
+        "wordChildCount": 0,
+        "wordStyle": {
+          "color": "rgb(75, 61, 81)",
+          "fontSize": "70.74px",
+          "fontWeight": "950",
+          "letterSpacing": "normal",
+          "opacity": "1",
+          "transform": "none"
+        },
+        "sceneStyle": {
+          "backgroundColor": "rgb(244, 238, 247)",
+          "borderColor": "rgb(216, 204, 223)",
+          "borderRadius": "16.8px"
+        }
+      },
+      "finishes": [
+        {
+          "correct": false,
+          "result": {
+            "detail": "時間切れです。脳は定時退社しました。",
+            "answerLabel": "左"
+          }
+        }
+      ],
+      "layout": {
+        "scrollWidth": 393,
+        "innerWidth": 393,
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 152,
+          "pixelWidth": 1005,
+          "pixelHeight": 456,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/inhibition-opposite-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/inhibition-opposite-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    }
+  },
+  "disposed": {
+    "before": {
+      "phase": "CHOOSING",
+      "choicesEnabled": true,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "selected": null,
+      "detail": "",
+      "payload": null,
+      "finishCalls": 0,
+      "feedbackStages": 0,
+      "shown": "左",
+      "prompt": "「左」と反対を選んで",
+      "answer": "右",
+      "buttons": [
+        {
+          "text": "左",
+          "disabled": false,
+          "selected": false,
+          "focused": true
+        },
+        {
+          "text": "右",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 157,
+        "pixelWidth": 1032,
+        "pixelHeight": 471,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "反対の言葉を選んでください"
+    },
+    "after": {
+      "phase": "CHOOSING",
+      "choicesEnabled": true,
+      "done": false,
+      "disposed": true,
+      "result": null,
+      "selected": null,
+      "detail": "",
+      "payload": null,
+      "finishCalls": 0,
+      "feedbackStages": 0,
+      "shown": "左",
+      "prompt": "「左」と反対を選んで",
+      "answer": "右",
+      "buttons": [
+        {
+          "text": "左",
+          "disabled": false,
+          "selected": false,
+          "focused": true
+        },
+        {
+          "text": "右",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 157,
+        "pixelWidth": 1032,
+        "pixelHeight": 471,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "反対の言葉を選んでください"
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": false,
+      "finishCalls": 0,
+      "commits": 0,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "qaRemoved": true,
+    "evidence": {
+      "variant": "module",
+      "sample": 0,
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 402,
+      "dpr": 3,
+      "task": {
+        "kind": "choice",
+        "prompt": "「左」と反対を選んで",
+        "help": "読んだとおりには押さない。",
+        "options": [
+          "左",
+          "右"
+        ],
+        "answer": "右",
+        "duration": 4500
+      },
+      "constants": {
+        "shown": [
+          "左",
+          "右"
+        ],
+        "duration": 4500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": true,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "shown": "左",
+        "prompt": "「左」と反対を選んで",
+        "answer": "右",
+        "buttons": [
+          {
+            "text": "左",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "右",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 157,
+          "pixelWidth": 1032,
+          "pixelHeight": 471,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "反対の言葉を選んでください"
+      },
+      "computed": {
+        "shown": "左",
+        "prompt": "「左」と反対を選んで",
+        "answer": "右",
+        "options": [
+          "左",
+          "右"
+        ],
+        "choicesEnabled": true,
+        "result": null,
+        "selected": null,
+        "payload": null,
+        "feedbackStages": 0,
+        "focused": 0,
+        "wordClass": "io-word",
+        "wordChildCount": 0,
+        "wordStyle": {
+          "color": "rgb(75, 61, 81)",
+          "fontSize": "72.36px",
+          "fontWeight": "950",
+          "letterSpacing": "normal",
+          "opacity": "1",
+          "transform": "none"
+        },
+        "sceneStyle": {
+          "backgroundColor": "rgb(244, 238, 247)",
+          "borderColor": "rgb(216, 204, 223)",
+          "borderRadius": "16.8px"
+        }
+      },
+      "finishes": [],
+      "layout": {
+        "scrollWidth": 402,
+        "innerWidth": 402,
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 157,
+          "pixelWidth": 1032,
+          "pixelHeight": 471,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/inhibition-opposite-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/inhibition-opposite-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    }
+  }
+}
