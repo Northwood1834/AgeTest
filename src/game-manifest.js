@@ -779,7 +779,7 @@ export const gameManifest=Object.freeze([
     "family": "spatial-photo-layout",
     "category": "spatial",
     "module": "./games/spatial-photo-layout-v1.js",
-    "hash": "00bd1d7c3e9bce8f"
+    "hash": "718f3a6746861291"
   },
   {
     "id": "spatial-pipe-flow-v1",
