@@ -617,6 +617,17 @@ export const gameManifest=Object.freeze([
     "hash": "6ad33b68af75eb8e"
   },
   {
+    "id": "social-postcard-send-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "social-postcard-send",
+    "category": "social",
+    "module": "./games/social-postcard-send-v1.js",
+    "hash": "30c960fbf2b83b59"
+  },
+  {
     "id": "social-share-cookies-v1",
     "introducedIn": "2.0",
     "tier": 1,

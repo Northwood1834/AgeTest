@@ -16,7 +16,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `social-postcard-send-v1` | former Flower Share owner | N12; screw lane | Drag four postcards into picture-matched address boxes using only visible motifs |
+| _None_ | — | — | — |
 
 ## Waiting queue
 

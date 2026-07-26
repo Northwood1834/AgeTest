@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "social-postcard-send-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "591dd584d76fd54b63f570d776405be3694384f8",
+  "test": "test/social-postcard-send-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

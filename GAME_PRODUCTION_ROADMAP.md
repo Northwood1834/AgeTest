@@ -178,7 +178,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `language-label-jar-v1` — accepted and integrated
 - `calculation-flower-share-v1` — accepted and integrated
 - `spatial-photo-layout-v1` — accepted and integrated
-- `social-postcard-send-v1` — screw lane
+- `social-postcard-send-v1` — accepted and integrated
 - `spatial-suitcase-pack-v1` — accepted and integrated
 - `spatial-shelf-balance-v1` — accepted and integrated
 
