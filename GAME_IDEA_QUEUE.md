@@ -12,8 +12,9 @@ Queue order follows user intake unless a category/lane dependency makes the next
 |---|---|---|---|
 | `memory-missing-v1` | former Emoji Match owner | P10 port; flow lane | Faithfully port the published absent-item flash task with exact nested random-call parity |
 | `attention-animal-count-v1` | former Kana Count owner | P10 port pre-browser; waits for flow | Faithfully port the published 14-animal count task without target cues |
-| `inhibition-rule-switch-v1` | former Opposite owner | P10 port; screw lane | Faithfully port the published reversed parity rule without odd/even visual cues |
+| `timing-mochi-pound-v1` | former Rule Switch owner | N08 original; screw lane | Accumulated safe-window turning against a finite accelerating mallet schedule |
 | `attention-lint-shaver-v1` | original implementation owner | N08 audit lane | Quantized continuous lint removal with speed, dwell, hazards, and dust-cup causality |
+| `language-particle-scene-v1` | former Social Greeting owner | N08 pre-browser; waits for audit | Particle and phrase edits deterministically rebuild an always-visible target scene |
 
 ## Waiting queue
 
@@ -157,6 +158,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Core: fit finite `{8,12,16,24}`-tooth gears to fixed shafts so exact meshing, parity of contacts, rational speed ratios, one compound shaft, inventory, and beam clearance produce the displayed output direction and ratio.
 - Outcomes/proof: exact mechanism; reverse direction; wrong ratio; disconnected train; frame interference; inventory failure; timeout. Exhaustively assign inventory with exact rational arithmetic and guarantee direction-only and ratio-only near misses.
 - Art/reduced motion: original gears/shafts/handle/output/frame and contact/gap overlays; stepped angle states and numeric arrows rather than continuous spin or real machinery instruction.
+
+### Q27 — `language-segment-sign-v1`
+
+- Category/tier/flavor: language / tier 3 / quirky
+- Core: insert, move, or remove up to four boundaries in an unspaced hiragana notice; each segmentation immediately changes a fictional visitor's visible behavior toward the always-visible target scene.
+- Outcomes/proof: target interpretation; valid alternate behavior; undefined fragments; under-segmentation; line exhaustion; timeout. Enumerate all boundaries for ≤14 characters against an on-screen finite lexicon, guarantee at least two valid readings, no spacing cue, plain resume, and no external vocabulary/safety-sign knowledge.
+- Art/reduced motion: original shop/sign/visitor/car poses with UI text and static three-stage behavior; no copied real sign or emergency instruction.
+
+### Q28 — `social-share-platter-v1`
+
+- Category/tier/flavor: social / tier 2 / satisfying
+- Core: use tongs to distribute three finite dishes among four symmetric plates according only to visible task-specific dietary/served-state cards, with every moved item retained physically.
+- Outcomes/proof: valid balanced distribution; explicit-card conflict; quantity outlier; excess leftovers; timeout retaining all plates. Exhaustively enumerate allocations, require a solution that reallocates an overfilled plate without privileging the player's plate, and never score general etiquette, self-sacrifice, or medical assumptions.
+- Art/reduced motion: original table, foods, four neutral adults and card UI; two-state tong transfers and static serving levels with no real restaurant imagery.
+
+### Q29 — `reaction-switchboard-v1`
+
+- Category/tier/flavor: reaction / tier 3 / wild
+- Core: pair visible source/destination jacks using four finite two-ended cords, then reclaim completed cords before twelve scheduled fictional calls exhaust their visible wait windows.
+- Outcomes/proof: all connected; dropped call; wrong pairing; unreclaimed-cord jam; busy destination; timeout retaining every plug/call. Integer-tick search proves proactive reclamation, exact wait boundaries, busy conflict, all failures, and plain resume.
+- Art/reduced motion: wholly fictional twelve-jack board and cords with static lamp/count states; not a reproduction or instruction for real communications equipment.
+
+### Q30 — `memory-room-restore-v1`
+
+- Category/tier/flavor: memory / tier 3 / satisfying
+- Core: study an eighteen-object room, then directly restore six hidden changes across position, orientation, open/closed, and on/off states without disturbing unchanged objects.
+- Outcomes/proof: exact restoration; missed change; over-correction; partial state; swapped twins; timeout retaining room edits. Authored finite states ensure four change types, visible encoding, no color-only cue, reachable errors, exact diff, and plain resume.
+- Art/reduced motion: original private-data-free room and object state sets; fixed encoding still and snap updates with static diff reveal.
+
+### Q31 — `prediction-shadow-shape-v1`
+
+- Category/tier/flavor: prediction / tier 3 / satisfying
+- Core: place/rotate finite cutout parts on three supports and move an unlit source along a measured rail, then commit one light activation to reveal whether the rational projection matches an undivided target silhouette.
+- Outcomes/proof: exact shadow; oversized; undersized; overlap-filled void; wrong orientation; inventory failure; timeout retaining the unlit setup. Exhaustively solve integer geometry with exact rational scale, one or two solutions, inside/outside boundaries, and one irreversible reveal.
+- Art/reduced motion: original dark room, supports/light/cutouts and generated masks; two-state illumination and static mismatch hatching, no copied character silhouettes.
+
+### Q32 — `attention-counter-dual-v1`
+
+- Category/tier/flavor: attention / tier 3 / wild
+- Core: share one hand between packing six visible weighted/fragile items and removing three independently progressing fictional steamer trays within their visible readiness bands and a customer wait window.
+- Outcomes/proof: all packed/ready; crushed item; overdone tray; early tray; wait expiry; capacity miss; timeout retaining both streams. Integer-tick exhaustive scheduling requires at least two true task switches and proves either-stream-only strategies fail.
+- Art/reduced motion: original unbranded counter, bag/object states, harmless fictional three-stage appliance and adult customer; discrete readiness/counts with no heat, burn, hygiene, or real cooking instruction.
 
 ## Dispatched brief archive
 

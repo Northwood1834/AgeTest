@@ -158,12 +158,13 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `attention-animal-count-v1` — pre-browser; waits for flow lane
 - `inhibition-parity-v1` — accepted and integrated
 - `inhibition-opposite-v1` — accepted and integrated
-- `inhibition-rule-switch-v1` — screw lane
+- `inhibition-rule-switch-v1` — accepted and integrated
 - `memory-missing-v1` — flow lane
 
 ### N08 — active original
 
 - `attention-lint-shaver-v1` — audit lane
+- `timing-mochi-pound-v1` — screw lane
 
 ### N07 — completed original
 
