@@ -620,6 +620,41 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Proof/outcomes: enumerate all ticks/regions to guarantee one future solution plus a deceptive current-time solution, exact commit-start and ±1-tick boundaries; wrong-now, late, indecision, disconnected and timeout states retain selection.
 - Art/reduced motion: original abstract signed-value grid/selection outline/commit timer; stepped updates, no money, score, real forecasting, or hidden parameter.
 
+### Q93 — `language-lexicon-recall-v1`
+
+- Category/tier/flavor: language / tier 3 / satisfying
+- Core: encode a six-symbol fictional lexicon simultaneously, then compose commands using always-visible task grammar; an incorrect send reveals that symbol’s true action but irreversibly changes the finite board.
+- Proof/outcomes: exhaustive automaton histories guarantee an error-free route, recovery from any one symbol error but not two, and exact lexicon/word-order/error/hand-limit/timeout states without external language knowledge.
+- Art/reduced motion: original abstract device/symbol chips/encoding card; sequential action stills and eight-second reduced encoding, no real control language.
+
+### Q94 — `social-turn-handover-v1`
+
+- Category/tier/flavor: social / tier 3 / satisfying
+- Core: schedule two alternating abstract units with different task-authored processing rates; longer turns save fixed handover cost but consume the other unit’s visible deadline margin.
+- Proof/outcomes: exhaustive integer schedules prove a successful 2–4-action cadence while zero handovers and every-task handovers fail; exact deadline/handover/slow assignment/idle/timeout states retain positions.
+- Art/reduced motion: original abstract shared board/units/task tiles; discrete action and static handover states, no people, workplace norm, virtue, or authority beyond shown values.
+
+### Q95 — `prediction-preset-queue-v1`
+
+- Category/tier/flavor: prediction / tier 3 / wild
+- Core: precommit exactly three timed actions before an abstract device runs; each deterministic action changes the state and duration conditions under which every later reservation executes.
+- Proof/outcomes: enumerate all finite reservation triples to allow only 1–2 successes, defeat one-step plans, enforce minimum action spacing and finite termination; empty, chained-state, overlap, impossible-third and timeout states retain the queue.
+- Art/reduced motion: original abstract state device/three-slot timeline/transition table; sequential stills and one commit, no real scheduling procedure.
+
+### Q96 — `timing-phase-align-v1`
+
+- Category/tier/flavor: timing / tier 3 / satisfying
+- Core: trigger four transfers where two fully visible integer-period discs align, using at most three one-tick delays that each alter every subsequent phase and alignment opportunity.
+- Proof/outcomes: exhaustive delay placements yield only 1–2 valid plans, prove zero-delay maximum three and front-loaded failure, with ≥3-tick windows and retained phase/transfer/timeout states.
+- Art/reduced motion: original abstract two-disc transfer board; discrete angles and static alignment highlight, no real rotating equipment.
+
+### Q98 — `reaction-shared-head-v1`
+
+- Category/tier/flavor: reaction / tier 3 / wild
+- Core: react to twelve deterministic arrivals across two visible channels using one switchable processing head; fixed switch dead time couples dense short windows to sparse long windows that later expire together.
+- Proof/outcomes: exhaustive integer switch histories require a bounded cadence and defeat never-switch/max-switch policies; exact switch-cost edges cover neglected channel, switch-loss, dense-return, sparse-late and retained timeout.
+- Art/reduced motion: original abstract dual-channel gate/head/tokens; immediate arrivals and static switch state, no real processing device.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
