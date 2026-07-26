@@ -265,6 +265,17 @@ export const gameManifest=Object.freeze([
     "hash": "19bca45fc6adc357"
   },
   {
+    "id": "language-notice-trim-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "language-notice-trim",
+    "category": "language",
+    "module": "./games/language-notice-trim-v1.js",
+    "hash": "84a761ad4dda8442"
+  },
+  {
     "id": "language-particle-scene-v1",
     "introducedIn": "1.16",
     "tier": 3,

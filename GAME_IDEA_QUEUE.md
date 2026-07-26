@@ -16,7 +16,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `language-notice-trim-v1` | former Balance Scale owner | N10; audit lane | Trim a fictional notice to width while retaining only task-authored required slots and tone |
+| `timing-milk-pour-v1` | former Notice Trim owner | N11; audit lane | Hold to pour and release before the foam rim, allowing for one gentle after-flow |
 | `attention-leaf-trim-v1` | former Shared Umbrella owner | N11; flow lane | Tap dry-edged leaves on a warm houseplant with two recoverable healthy-leaf mistakes |
 | `spatial-suitcase-pack-v1` | former Particle Scene owner | N10; screw lane | Rotate, compress, protect, and close a finite essential-item packing grid |
 

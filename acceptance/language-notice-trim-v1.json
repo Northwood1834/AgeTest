@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "language-notice-trim-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "96d8b4d94a5871d69256bf9f871b68b0e8152061",
+  "test": "test/language-notice-trim-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
