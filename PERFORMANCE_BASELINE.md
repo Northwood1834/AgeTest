@@ -1,5 +1,25 @@
 # Modular runtime performance baseline
 
+## Post-P08/N07 integration check
+
+Rechecked at `f81bcf9` on the owned `director` lane (393×852, DPR 3, cache disabled). The catalogue contained 98 IDs and the generated manifest contained 45 accepted modules: 26 published ports and 19 originals.
+
+| Metric | Result |
+|---|---:|
+| Cold requests | 10 |
+| Cold transfer / response bodies | 328,020 / 325,020 B |
+| Cold JavaScript transfer | 201,346 B |
+| `app.js` transfer / body | 181,844 / 181,544 B |
+| DOMContentLoaded / load | 22.0 / 23.0 ms |
+| Cold game-module fetches | 0 |
+| External requests / horizontal overflow / long tasks | 0 / 0 / 0 |
+| Level 1 session build / first frame | 4.0 / 11.6 ms |
+| Level 1 modular fetches | 3, 24,191 B |
+| Level 5 session build / first frame | 34.0 / 34.1 ms |
+| Level 5 modular fetches | 6, 155,395 B |
+
+Both samples contained exactly 12 tasks and fetched only selected modules. The Level 1 sample fetched `reaction-signal-v1`, `reaction-target-v1`, and `spatial-flip-v1`; Level 5 fetched six selected modules including `spatial-draw-bridge-v1`. Cold home remained at zero game-module requests and total transfer stayed near 328 KB. Clean integration completed with 709 tests passing and 45 acceptance records verified.
+
 ## Post-P06/N06 integration check
 
 Rechecked at `b7c0f60` on the owned `director` lane (393×852, DPR 3, cache disabled). The catalogue contained 97 IDs and the generated manifest contained 36 accepted modules: 18 published ports and 18 originals.
