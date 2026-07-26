@@ -123,7 +123,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
 - `attention-laundry-rescue-v1` — accepted and integrated
 - `calculation-change-smart-v1` — accepted and integrated
-- `memory-phone-pin-v1` — accepted and integrated
+- `memory-phone-pin-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (example and instructions are not understandable in ordinary human terms)
 
 ### N05 — completed
 
