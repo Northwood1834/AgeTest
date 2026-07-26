@@ -166,7 +166,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `memory-recipe-order-v1` — accepted and integrated
 - `calculation-balance-scale-v1` — accepted and integrated
 - `language-notice-trim-v1` — accepted and integrated
-- `timing-milk-pour-v1` — audit lane
+- `timing-milk-pour-v1` — accepted and integrated
 - `inhibition-quiet-tidy-v1` — accepted and integrated
 - `social-shared-umbrella-v1` — accepted and integrated
 - `attention-leaf-trim-v1` — accepted and integrated

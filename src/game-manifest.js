@@ -782,6 +782,17 @@ export const gameManifest=Object.freeze([
     "hash": "902d9daf766fcd81"
   },
   {
+    "id": "timing-milk-pour-v1",
+    "introducedIn": "2.0",
+    "tier": 1,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "timing-milk-pour",
+    "category": "timing",
+    "module": "./games/timing-milk-pour-v1.js",
+    "hash": "cf33305d23514c12"
+  },
+  {
     "id": "timing-mochi-pound-v1",
     "introducedIn": "2.0",
     "tier": 3,
