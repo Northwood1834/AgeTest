@@ -84,7 +84,9 @@ The kernel owns answer commit, XP, history, cooldown, profile switching, and gen
 
 The published `a8761a1` game is the visual baseline, not merely a source of rules. A port must preserve or improve its visual identity, material depth, hierarchy, interaction feedback, causal animation, terminal states, and celebration. A technically correct but flatter, generic, simplified, or template-like rendering is a regression and is not accepted.
 
-Every owner supplies legacy/module side-by-side captures at 393×852 and 402×874 CSS pixels at DPR 3. The comparison must use the same authored task and include at least six representative states: initial, active input or motion, meaningful progress, invalid or incorrect input, success, and timeout/failure. Games with additional decisive states include those as well. Captures are made from the final implementation with cache disabled; contact sheets never substitute for inspecting full-resolution source frames.
+For a port, every owner supplies legacy/module side-by-side captures at 393×852 and 402×874 CSS pixels at DPR 3. The comparison must use the same authored task and include at least six representative states: initial, active input or motion, meaningful progress, invalid or incorrect input, success, and timeout/failure. Games with additional decisive states include those as well.
+
+A new original game has no invented “legacy” comparison. Its owner supplies final full-resolution captures at both required viewports for the same minimum state set, plus any mechanic-specific decisive states. Independent review measures those frames against the accepted concept brief, the production-quality requirements below, and the best accepted games in the catalogue. Captures are made from the final implementation with cache disabled; contact sheets never substitute for inspecting full-resolution source frames.
 
 Visual review checks, as applicable:
 
