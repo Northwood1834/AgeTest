@@ -13,9 +13,9 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | `reaction-emoji-match-v1` | former Reaction Shape owner | P09 port pre-browser; waits for flow | Faithfully port all six published emoji-match answers with nested-shuffle parity |
 | `spatial-rotation-v1` | former Draw Bridge owner | P08 port; audit lane | Faithfully port all three published clockwise arrow-rotation angles |
 | `attention-odd-v1` | former Shape Count owner | P08 port pre-browser; waits for flow | Faithfully port all four published 5×5 lookalike families with exact parity |
-| `social-partner-mood-v1` | former Social Date owner | P08 port pre-browser; waits for audit | Faithfully port the published three-step partner dialogue without answer leaks |
-| `memory-reverse-v1` | former Timing Three owner | P09 port pre-browser; waits for screw | Faithfully port the published four-digit reverse-recall task with distractor parity |
-| `inhibition-flanker-v1` | former Stroop owner | P08 port; screw lane | Faithfully port both published equal-material flanker directions |
+| `social-greeting-v1` | former Social Date owner | P09 port; audit lane | Faithfully port all three published greeting scenarios and exact etiquette choices |
+| `memory-reverse-v1` | former Timing Three owner | P09 port; screw lane | Faithfully port the published four-digit reverse-recall task with distractor parity |
+| `inhibition-parity-v1` | former Flanker owner | P09 port pre-browser; waits for screw | Faithfully port the published parity inhibition task across exact numeric bounds |
 
 ## Waiting queue
 

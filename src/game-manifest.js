@@ -144,6 +144,17 @@ export const gameManifest=Object.freeze([
     "hash": "fd52fd1abe123e27"
   },
   {
+    "id": "inhibition-flanker-v1",
+    "introducedIn": "1.0",
+    "tier": 1,
+    "flavor": "classic",
+    "step": 1,
+    "family": "inhibition-flanker",
+    "category": "inhibition",
+    "module": "./games/inhibition-flanker-v1.js",
+    "hash": "2d6a38c79b8cb166"
+  },
+  {
     "id": "inhibition-stroop-v1",
     "introducedIn": "1.0",
     "tier": 1,
@@ -318,6 +329,17 @@ export const gameManifest=Object.freeze([
     "category": "social",
     "module": "./games/social-date-v1.js",
     "hash": "99e2f82a2a4be2c9"
+  },
+  {
+    "id": "social-partner-mood-v1",
+    "introducedIn": "1.0",
+    "tier": 2,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "social-partner-mood",
+    "category": "social",
+    "module": "./games/social-partner-mood-v1.js",
+    "hash": "6ad33b68af75eb8e"
   },
   {
     "id": "social-thread-vibe-v1",

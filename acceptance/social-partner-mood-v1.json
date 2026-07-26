@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "social-partner-mood-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "c09a223d07cc414b9574fd3c53e4521a9f78bc8f",
+  "test": "test/social-partner-mood-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

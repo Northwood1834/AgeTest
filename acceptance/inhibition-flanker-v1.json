@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "inhibition-flanker-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "b254dc5e90cb28692d1c18b768f331efbaa3ef44",
+  "test": "test/inhibition-flanker-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
