@@ -199,14 +199,20 @@ function render(task,context){
   };
   const setX=value=>{if(state.done||state.disposed||state.landing||!Number.isFinite(value))return false;state.x=clamp(value,-1,2);paint();return true};
   const align=()=>setX(stack.at(-1).x);
-  const tick=time=>{
-    if(state.disposed)return false;const current=Number(time)||now();if(lastTime===null)lastTime=current;const dt=clamp((current-lastTime)/1000,0,.05);lastTime=current;clock=current;state.frames++;
+  const advanceMotion=(dt,current,countFrame)=>{
+    clock=current;if(countFrame)state.frames++;
     state.shake=Math.max(0,state.shake-dt*2.5);state.flash=Math.max(0,state.flash-dt*2.2);state.perfect=Math.max(0,state.perfect-dt*1.25);
     if(!state.done&&!state.landing){const movingWidth=stack.at(-1).w,speed=(task.speed+(stack.length-1)*.06)*(context.reducedMotion?.7:1);state.x+=state.dir*speed*dt;if(state.x<.03){state.x=.03;state.dir=1}if(state.x+movingWidth>.97){state.x=.97-movingWidth;state.dir=-1}}
     if(state.miss){state.miss.vy+=height*1.7*dt;state.miss.y+=state.miss.vy*dt;state.miss.rotation+=state.miss.spin*dt;state.miss.life=Math.max(0,state.miss.life-dt*.65)}
     for(let index=chips.length-1;index>=0;index--){const chip=chips[index];chip.life-=dt*1.05;if(chip.life<=0){chips.splice(index,1);continue}chip.vy+=height*1.65*dt;chip.y+=chip.vy*dt;chip.rotation+=chip.spin*dt}
     for(let index=sparks.length-1;index>=0;index--){const spark=sparks[index];spark.life-=dt*1.65;if(spark.life<=0){sparks.splice(index,1);continue}spark.x+=spark.vx*dt;spark.y+=spark.vy*dt;spark.vy+=width*.62*dt}
     paint();return true;
+  };
+  const tick=time=>{
+    if(state.disposed)return false;const current=Number(time)||now();if(lastTime===null)lastTime=current;const dt=clamp((current-lastTime)/1000,0,.05);lastTime=current;return advanceMotion(dt,current,true);
+  };
+  const reducedStep=()=>{
+    if(state.disposed||state.done)return;advanceMotion(.12,now(),false);if(!state.disposed&&!state.done)context.later(reducedStep,120);
   };
   const activate=event=>{event?.preventDefault?.();drop()};
   context.listen(canvas,"pointerdown",activate);context.listen(dropButton,"pointerdown",activate);
@@ -217,6 +223,7 @@ function render(task,context){
   refreshStatus();resize();canvas.focus({preventScroll:true});
   if(!context.reducedMotion)context.frame(tick);
   context.setDeadline(task.duration,()=>{if(state.done||state.disposed)return;state.done=true;state.result="timeout";board.classList.add("ats-timeout");terminal.textContent="時間切れ";refreshStatus(`時間切れ。${stack.length-1}段まででした`);paint();context.finish(false,{reason:"timeout",detail:`時間切れ。${stack.length-1}段まででした。`})});
+  if(context.reducedMotion)context.later(reducedStep,120);
   const qaApi={drop,setX,align,completeLanding:()=>state.landing?completeLanding(state.landing):false,paint,inspect:()=>({stack:stack.map(block=>({...block})),x:state.x,dir:state.dir,landing:state.landing?{placed:{...state.landing.placed},perfect:state.landing.perfect}:null,miss:state.miss?{...state.miss}:null,done:state.done,disposed:state.disposed,result:state.result,combo:state.combo,drops:state.drops,cuts:state.cuts,narrow:state.narrow,frames:state.frames,chips:chips.map(chip=>({...chip})),sparks:sparks.length,status:status.textContent,canvas:{width:canvas.width,height:canvas.height,cssWidth:width,cssHeight:height,dpr},viewport:{...context.viewport}})};
   if(context.qa&&typeof context.qa==="object")context.qa[metadata.id]=qaApi;
   context.listen(context.signal,"abort",()=>{state.disposed=true;state.done=true;if(context.qa?.[metadata.id]===qaApi)delete context.qa[metadata.id]},{once:true});
