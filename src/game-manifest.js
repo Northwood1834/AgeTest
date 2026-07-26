@@ -276,6 +276,17 @@ export const gameManifest=Object.freeze([
     "hash": "820127ee1dc81716"
   },
   {
+    "id": "memory-recipe-order-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "memory-recipe-order",
+    "category": "memory",
+    "module": "./games/memory-recipe-order-v1.js",
+    "hash": "40c19d3b269fccda"
+  },
+  {
     "id": "memory-reverse-v1",
     "introducedIn": "1.0",
     "tier": 2,

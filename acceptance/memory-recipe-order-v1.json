@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "memory-recipe-order-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "1d2da9d375b991fa69153f64f79a114c366e875a",
+  "test": "test/memory-recipe-order-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

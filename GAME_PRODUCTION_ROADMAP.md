@@ -163,9 +163,9 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
 ### N09 — active original
 
-- `memory-recipe-order-v1` — flow lane
+- `memory-recipe-order-v1` — accepted and integrated
 - `calculation-balance-scale-v1` — pre-browser; waits for audit lane
-- `inhibition-quiet-tidy-v1` — pre-browser; waits for flow lane
+- `inhibition-quiet-tidy-v1` — flow lane
 
 ### N08 — active original
 
