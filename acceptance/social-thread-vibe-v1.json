@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "social-thread-vibe-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "2bf7740376e5f3a9289069f0891561f4ef9b4323",
+  "test": "test/social-thread-vibe-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

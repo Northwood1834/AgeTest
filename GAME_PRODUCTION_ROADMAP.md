@@ -91,17 +91,23 @@ A failed game stays isolated and is revised or withheld. It never blocks accepte
 
 Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
-### N03 — active browser/acceptance wave
+### N03 — completed
 
-- `attention-driving-safety-v1` — flow lane
-- `spatial-screen-protector-v1` — audit lane
-- `social-thread-vibe-v1` — screw lane
+- `attention-driving-safety-v1` — accepted
+- `spatial-screen-protector-v1` — accepted
+- `social-thread-vibe-v1` — accepted
 
-### N04 — active pre-browser production
+### N04 — active browser/acceptance wave
 
-- `attention-laundry-rescue-v1` — implementation; waits for flow lane
-- `calculation-change-smart-v1` — implementation; waits for audit lane
-- `memory-phone-pin-v1` — implementation; waits for screw lane
+- `attention-laundry-rescue-v1` — flow lane
+- `calculation-change-smart-v1` — audit lane
+- `memory-phone-pin-v1` — screw lane
+
+### N05 — active pre-browser production
+
+- `calculation-number-tower-route-v1` — waits for flow lane
+- `social-care-package-v1` — waits for audit lane
+- `spatial-draw-shelter-v1` — waits for screw lane
 
 ### P04
 

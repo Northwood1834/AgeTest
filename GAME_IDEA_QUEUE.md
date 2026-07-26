@@ -10,21 +10,14 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `attention-driving-safety-v1` | former Chain Puzzle owner | browser/visual, flow lane | Five original exam-format safety questions verified against current official Japanese primary sources |
+| `calculation-number-tower-route-v1` | former Driving Safety owner | pre-browser; waits for flow | Plan a whole numbered tower route whose running value changes every later fight |
 | `social-care-package-v1` | former Screen Protector owner | pre-browser; waits for audit | Pack practical supplies without intruding on an adult son's personal or social life |
 | `spatial-draw-shelter-v1` | former Thread Vibe owner | pre-browser; waits for screw | Draw one anchored physical barrier that must survive a real hornet-swarm hazard phase |
-| `attention-laundry-rescue-v1` | former Sheep Home owner | pre-browser; waits for flow | Drag only laundry into a top-loader; wife or dog is an immediate comic failure |
-| `calculation-change-smart-v1` | former Farm Close owner | pre-browser; waits for audit | Build a payment whose returned change uses the fewest coins |
-| `memory-phone-pin-v1` | former Commuter Seat owner | pre-browser; waits for screw | Recall one fictional four-digit PIN from meaningful floating cues in three attempts |
+| `attention-laundry-rescue-v1` | former Sheep Home owner | browser/visual, flow lane | Drag only laundry into a top-loader; wife or dog is an immediate comic failure |
+| `calculation-change-smart-v1` | former Farm Close owner | browser/visual, audit lane | Build a payment whose returned change uses the fewest coins |
+| `memory-phone-pin-v1` | former Commuter Seat owner | browser/visual, screw lane | Recall one fictional four-digit PIN from meaningful floating cues in three attempts |
 
 ## Waiting queue
-
-### Q5 — `calculation-number-tower-route-v1`
-
-- Category/tier/flavor: calculation / tier 3 / wild
-- Core: route a numbered hero through a tower, absorbing weaker encounters and applying visible `+`, `−`, and multiplier rewards so the running value can defeat the final floor.
-- Required distinction: the whole room order changes later comparisons; this is not another one-step gate runner or command RPG.
-- Proof: finite tower graph, exhaustive route outcomes, at least two plausible losing branches, one bounded winning route, plain-data resume.
 
 ### Q6 — `attention-goods-shelf-sort-v1`
 
@@ -55,6 +48,13 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Proof: bounded stroke graph and supports, deterministic load steps, canonical viable span, bottom-out, snap, rollover, success, and timeout.
 
 ## Dispatched brief archive
+
+### Q5 — `calculation-number-tower-route-v1`
+
+- Category/tier/flavor: calculation / tier 3 / wild
+- Core: route a numbered hero through a tower, absorbing weaker encounters and applying visible `+`, `−`, and multiplier rewards so the running value can defeat the final floor.
+- Required distinction: the whole room order changes later comparisons; this is not another one-step gate runner or command RPG.
+- Proof: finite tower graph, exhaustive route outcomes, at least two plausible losing branches, one bounded winning route, plain-data resume.
 
 ### Q4 — `social-care-package-v1`
 
