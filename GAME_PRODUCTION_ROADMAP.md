@@ -155,17 +155,19 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `social-greeting-v1` — accepted and integrated
 - `reaction-emoji-match-v1` — accepted and integrated
 - `attention-kana-count-v1` — accepted and integrated
-- `attention-animal-count-v1` — pre-browser; waits for flow lane
+- `attention-animal-count-v1` — flow lane
 - `inhibition-parity-v1` — accepted and integrated
 - `inhibition-opposite-v1` — accepted and integrated
 - `inhibition-rule-switch-v1` — accepted and integrated
-- `memory-missing-v1` — flow lane
+- `memory-missing-v1` — accepted and integrated
+- `memory-recipe-order-v1` — pre-browser; waits for flow lane
 
 ### N08 — active original
 
 - `attention-lint-shaver-v1` — audit lane
 - `timing-mochi-pound-v1` — screw lane
 - `language-particle-scene-v1` — pre-browser; waits for audit lane
+- `prediction-domino-relay-v1` — pre-browser; waits for screw lane
 
 ### N07 — completed original
 

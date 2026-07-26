@@ -10,11 +10,12 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `memory-missing-v1` | former Emoji Match owner | P10 port; flow lane | Faithfully port the published absent-item flash task with exact nested random-call parity |
-| `attention-animal-count-v1` | former Kana Count owner | P10 port pre-browser; waits for flow | Faithfully port the published 14-animal count task without target cues |
+| `memory-recipe-order-v1` | former Memory Missing owner | N09 pre-browser; waits for flow | Hidden fictional four-action order causes irreversible visible pan-state changes |
+| `attention-animal-count-v1` | former Kana Count owner | P10 port; flow lane | Faithfully port the published 14-animal count task without target cues |
 | `timing-mochi-pound-v1` | former Rule Switch owner | N08 original; screw lane | Accumulated safe-window turning against a finite accelerating mallet schedule |
 | `attention-lint-shaver-v1` | original implementation owner | N08 audit lane | Quantized continuous lint removal with speed, dwell, hazards, and dust-cup causality |
 | `language-particle-scene-v1` | former Social Greeting owner | N08 pre-browser; waits for audit | Particle and phrase edits deterministically rebuild an always-visible target scene |
+| `prediction-domino-relay-v1` | former Memory Reverse owner | N08 pre-browser; waits for screw | Limited-height placement drives one deterministic retained domino cascade |
 
 ## Waiting queue
 
@@ -200,6 +201,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Core: share one hand between packing six visible weighted/fragile items and removing three independently progressing fictional steamer trays within their visible readiness bands and a customer wait window.
 - Outcomes/proof: all packed/ready; crushed item; overdone tray; early tray; wait expiry; capacity miss; timeout retaining both streams. Integer-tick exhaustive scheduling requires at least two true task switches and proves either-stream-only strategies fail.
 - Art/reduced motion: original unbranded counter, bag/object states, harmless fictional three-stage appliance and adult customer; discrete readiness/counts with no heat, burn, hygiene, or real cooking instruction.
+
+### Q33 — `language-modifier-scope-v1`
+
+- Category/tier/flavor: language / tier 3 / quirky
+- Core: connect up to three modifier chips to subsets of up to three product chips; every scope-line edit immediately rebuilds a fictional workshop preview toward an always-visible target object set within six moves.
+- Outcomes/proof: exact order; excess scope; missing scope; crossed attributes; move exhaustion; timeout. Enumerate ≤512 scope assignments, guarantee a 3–6 move nontrivial solution, visible finite attribute glossary, no external vocabulary, and plain resume.
+- Art/reduced motion: original workshop/products with UI text and redundant endpoint borders; snapped lines and cross-faded previews, no real order form or brand.
+
+### Q34 — `timing-tidal-path-v1`
+
+- Category/tier/flavor: timing / tier 3 / wild
+- Core: choose departure and continuously budget walking pace, fatigue, collection time, and return travel against one fully visible, asymmetric fictional shallow-water curve.
+- Outcomes/proof: collected round trip; return shortfall; too-early deep path; fatigue collapse-to-stop; insufficient collection; timeout retaining position/water/fatigue/count. Integer-tick exhaustive profiles reject always-fast and always-slow strategies and prove one-tick departure boundaries.
+- Art/reduced motion: wholly fictional knee-deep sand path, walker/shell/water stages and abstract graph; static stepped water/scroll, never real tide or coastal-safety guidance.
+
+### Q35 — `inhibition-float-strike-v1`
+
+- Category/tier/flavor: inhibition / tier 3 / satisfying
+- Core: ignore three visible decoy float events and flick only during the full-submerge event, with quantized flick distance controlling a displayed safe response band.
+- Outcomes/proof: three harmless catch-and-release successes; premature-response exhaustion; too-strong automatic safety retraction; repeated weak response; missed true windows; timeout. Enumerate event ticks and force at least three true inhibitions with exact timing/strength boundaries.
+- Art/reduced motion: abstract fictional clear pond, painless non-hook interaction, fish/float/rod static states and automatic line recovery; no biological harm, litter, real species, venue, equipment, or fishing instruction.
+
+### Q36 — `reaction-ink-blot-v1`
+
+- Category/tier/flavor: reaction / tier 2 / satisfying
+- Core: move a finite-capacity blotter onto predicted falling drops; reaction delay deterministically becomes retained stain radius and obscured-character count, while saturation forces a timed replacement.
+- Outcomes/proof: clean readable page; accumulated unreadability; reverse transfer; missed drop during replacement; protected-field stain; timeout retaining all radii/blotter/schedule. Integer-tick search requires replacement and proves each radius boundary/failure.
+- Art/reduced motion: fictional document and UI text, four stain/blotter states and replacement stack; discrete radius stages, no real form or personal data.
+
+### Q37 — `prediction-fold-cut-v1`
+
+- Category/tier/flavor: prediction / tier 3 / satisfying
+- Core: choose up to three finite folds, then draw one abstract grid-snapped cut line and commit one unfold whose reflected copies must form an undivided target silhouette.
+- Outcomes/proof: exact cutout; excess symmetry; insufficient symmetry; disconnected paper; offset cut; timeout retaining folded state. Exhaustively apply exact discrete reflection transforms, constrain to one or two ≥2-fold solutions, and prove one-cell boundaries.
+- Art/reduced motion: original paper/fold/cut masks and completion still; staged static unfold with the blade abstracted away and no real cutting instruction or copied motif.
+
+### Q38 — `spatial-flatpack-assemble-v1`
+
+- Category/tier/flavor: spatial / tier 3 / satisfying
+- Core: orient and insert six asymmetric-hole panels in an order whose fixed pieces physically block later insertion paths; removal costs time and consumes finite reusable fasteners.
+- Outcomes/proof: stable shelf; wrong orientation; order dead-end; fastener exhaustion; unstable completion; timeout retaining assembly. Exhaustively search all poses/orders, guarantee recoverable-once but not twice, exact fit/tilt boundaries, and plain resume.
+- Art/reduced motion: wholly fictional panels/holes/fasteners and staged shelf states; snapped insert/remove and static tilt, not a real product manual or tool procedure.
 
 ## Dispatched brief archive
 

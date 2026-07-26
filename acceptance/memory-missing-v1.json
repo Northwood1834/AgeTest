@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "memory-missing-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "02be704ed48f1ff25907d78c2f0d16550223408d",
+  "test": "test/memory-missing-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

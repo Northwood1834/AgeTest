@@ -221,6 +221,17 @@ export const gameManifest=Object.freeze([
     "hash": "19bca45fc6adc357"
   },
   {
+    "id": "memory-missing-v1",
+    "introducedIn": "1.0",
+    "tier": 1,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "memory-missing",
+    "category": "memory",
+    "module": "./games/memory-missing-v1.js",
+    "hash": "96e11c317015e6fc"
+  },
+  {
     "id": "memory-path-v1",
     "introducedIn": "1.0",
     "tier": 1,
