@@ -463,6 +463,17 @@ export const gameManifest=Object.freeze([
     "hash": "cbf199710ce4e75a"
   },
   {
+    "id": "reaction-clothesline-calm-v1",
+    "introducedIn": "2.0",
+    "tier": 1,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "reaction-clothesline-calm",
+    "category": "reaction",
+    "module": "./games/reaction-clothesline-calm-v1.js",
+    "hash": "ecc3bb2292c8e304"
+  },
+  {
     "id": "reaction-cupboard-catch-v1",
     "introducedIn": "2.0",
     "tier": 2,

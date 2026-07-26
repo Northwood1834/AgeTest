@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "reaction-clothesline-calm-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "317f8847c8bf871b85bb6d3d40251734d89383c1",
+  "test": "test/reaction-clothesline-calm-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

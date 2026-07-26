@@ -16,7 +16,6 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `reaction-clothesline-calm-v1` | former Table Restore owner | N12; flow lane | Tap each visibly fluttering clothesline item, with one gentle basket recovery |
 | `calculation-flower-share-v1` | former Label Jar owner | N12; screw lane | Drag one-dot stems and two-dot double blooms until three vases are visibly full |
 | `inhibition-bubble-keep-v1` | former Share Cookies owner | N12; audit lane | Tap small round bubbles while leaving the larger star bubbles |
 
