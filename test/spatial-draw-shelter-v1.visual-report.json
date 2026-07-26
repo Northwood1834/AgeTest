@@ -1,0 +1,5761 @@
+{
+  "game": "spatial-draw-shelter-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "matrix": {
+    "scenes": 10,
+    "viewports": 2,
+    "motions": 2,
+    "total": 40
+  },
+  "checks": {
+    "allPass": true,
+    "singlePlainTask": true,
+    "boundedStroke": true,
+    "twoAnchorDeployment": true,
+    "realDeformation": true,
+    "distinctTerminals": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "noExternalResources": true,
+    "touchTargets": true
+  },
+  "rows": [
+    {
+      "status": "pass",
+      "scene": "initial",
+      "reduced": false,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "READY",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "金色の杭から一本の保護リボンを引いてください",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/initial-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "anchor-focus",
+      "reduced": false,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "READY",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "金色の杭から一本の保護リボンを引いてください",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/anchor-focus-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "drawing",
+      "reduced": false,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "DRAWING",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 27,
+      "inputLength": 0.865472135198887,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.634527864801113,
+      "physics": null,
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "描画中。残り0.63m",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/drawing-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "over-budget",
+      "reduced": false,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "DRAWING",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 44,
+      "inputLength": 1.4724465133501274,
+      "overBudget": true,
+      "invalidReason": null,
+      "remaining": 0.02755348664987256,
+      "physics": null,
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "残り0.03m。これ以上は引けません",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/over-budget-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "deployed",
+      "reduced": false,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "HAZARD",
+      "done": true,
+      "disposed": true,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 0,
+        "elapsed": 0,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.15950984650169303,
+            "y": 0.5288234311499391,
+            "previousX": 0.15950984650169303,
+            "previousY": 0.5288234311499391
+          },
+          {
+            "x": 0.19901969300338604,
+            "y": 0.43764686229987837,
+            "previousX": 0.19901969300338604,
+            "previousY": 0.43764686229987837
+          },
+          {
+            "x": 0.23852953950507907,
+            "y": 0.34647029344981756,
+            "previousX": 0.23852953950507907,
+            "previousY": 0.34647029344981756
+          },
+          {
+            "x": 0.31547643195237934,
+            "y": 0.2938094272190483,
+            "previousX": 0.31547643195237934,
+            "previousY": 0.2938094272190483
+          },
+          {
+            "x": 0.40773821597618976,
+            "y": 0.2569047136095241,
+            "previousX": 0.40773821597618976,
+            "previousY": 0.2569047136095241
+          },
+          {
+            "x": 0.5,
+            "y": 0.21999999999999997,
+            "previousX": 0.5,
+            "previousY": 0.21999999999999997
+          },
+          {
+            "x": 0.5922617840238102,
+            "y": 0.2569047136095241,
+            "previousX": 0.5922617840238102,
+            "previousY": 0.2569047136095241
+          },
+          {
+            "x": 0.6845235680476207,
+            "y": 0.29380942721904824,
+            "previousX": 0.6845235680476207,
+            "previousY": 0.29380942721904824
+          },
+          {
+            "x": 0.761470460494921,
+            "y": 0.3464702934498176,
+            "previousX": 0.761470460494921,
+            "previousY": 0.3464702934498176
+          },
+          {
+            "x": 0.800980306996614,
+            "y": 0.4376468622998785,
+            "previousX": 0.800980306996614,
+            "previousY": 0.4376468622998785
+          },
+          {
+            "x": 0.840490153498307,
+            "y": 0.5288234311499392,
+            "previousX": 0.840490153498307,
+            "previousY": 0.5288234311499392
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.37,
+            "y": 0.04,
+            "vx": 0.006500000000000001,
+            "vy": 0.24,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.63,
+            "y": 0.02,
+            "vx": -0.006500000000000001,
+            "vy": 0.24,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.5,
+            "y": 0.06,
+            "vx": 0,
+            "vy": 0.24,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "両端固定。ツノバチ襲来を耐えてください",
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/deployed-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "impact",
+      "reduced": false,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "HAZARD",
+      "done": true,
+      "disposed": true,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 70,
+        "elapsed": 1750,
+        "collisions": 3,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.21920127607468892,
+            "y": 0.6257706673554315,
+            "previousX": 0.21934099352571496,
+            "previousY": 0.6223581619570299
+          },
+          {
+            "x": 0.25188518645138813,
+            "y": 0.5319306470525301,
+            "previousX": 0.25121337625401735,
+            "previousY": 0.5282394142998917
+          },
+          {
+            "x": 0.2364827212331418,
+            "y": 0.43376266759053855,
+            "previousX": 0.2361312205884172,
+            "previousY": 0.4300217147630892
+          },
+          {
+            "x": 0.3244758716749924,
+            "y": 0.46460443303098686,
+            "previousX": 0.32444660412193166,
+            "previousY": 0.45992829074012154
+          },
+          {
+            "x": 0.423217627055282,
+            "y": 0.45345649229965634,
+            "previousX": 0.42313880443789514,
+            "previousY": 0.44834979775212686
+          },
+          {
+            "x": 0.4988024430013821,
+            "y": 0.38894961480373463,
+            "previousX": 0.49880254564549553,
+            "previousY": 0.3839355052974447
+          },
+          {
+            "x": 0.5783626501829016,
+            "y": 0.44848328184270037,
+            "previousX": 0.5784525453530517,
+            "previousY": 0.4433490052845987
+          },
+          {
+            "x": 0.6764097994894143,
+            "y": 0.46463312429699866,
+            "previousX": 0.676422396438973,
+            "previousY": 0.4599612724833439
+          },
+          {
+            "x": 0.7644424676328255,
+            "y": 0.4339055617948274,
+            "previousX": 0.7647727945132371,
+            "previousY": 0.43015961506775235
+          },
+          {
+            "x": 0.7481273488093105,
+            "y": 0.5319263114489713,
+            "previousX": 0.7487971487138335,
+            "previousY": 0.5282362948031898
+          },
+          {
+            "x": 0.7807987248016096,
+            "y": 0.6257707605105766,
+            "previousX": 0.7806590148416921,
+            "previousY": 0.6223586745502614
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.33092669293230775,
+            "y": 0.37272515580205445,
+            "vx": 0.014321458081119405,
+            "vy": 0.3196793641110272,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6415695256816079,
+            "y": 0.33200927986456585,
+            "vx": 0.07604724992101258,
+            "vy": 0.004533044531925786,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.4773339547015782,
+            "y": 0.27309336068076034,
+            "vx": -0.06750254663446588,
+            "vy": -0.032215728944804775,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "両端固定。ツノバチ襲来を耐えてください",
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/impact-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "collapse",
+      "reduced": false,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 785
+      },
+      "phase": "COLLAPSE",
+      "done": true,
+      "disposed": true,
+      "result": "collapse",
+      "finishCalls": 1,
+      "inputCount": 4,
+      "inputLength": 0.4380770429827991,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.0619229570172009,
+      "physics": {
+        "step": 45,
+        "elapsed": 1125,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.14912398199742627,
+            "y": 0.6423180096457439,
+            "previousX": 0.14919181971461695,
+            "previousY": 0.6422167929258905
+          },
+          {
+            "x": 0.179817704987509,
+            "y": 0.6623894444329932,
+            "previousX": 0.18017536260124728,
+            "previousY": 0.6618245780739456
+          },
+          {
+            "x": 0.2130480370273973,
+            "y": 0.6778564354331063,
+            "previousX": 0.21406778435565926,
+            "previousY": 0.6757693617877508
+          },
+          {
+            "x": 0.24923663753411449,
+            "y": 0.6836180941515768,
+            "previousX": 0.25045723663548797,
+            "previousY": 0.6800537509187888
+          },
+          {
+            "x": 0.28526509587625204,
+            "y": 0.682859635433117,
+            "previousX": 0.2864637146502037,
+            "previousY": 0.6786856766115801
+          },
+          {
+            "x": 0.32178413522115434,
+            "y": 0.680198398875016,
+            "previousX": 0.3229736726508846,
+            "previousY": 0.6759536357241016
+          },
+          {
+            "x": 0.358382483096093,
+            "y": 0.6802957090718509,
+            "previousX": 0.35956439312217,
+            "previousY": 0.6765388279316902
+          },
+          {
+            "x": 0.39476703647399697,
+            "y": 0.684083345924058,
+            "previousX": 0.39592623533912796,
+            "previousY": 0.6805147280576396
+          },
+          {
+            "x": 0.43095772657390197,
+            "y": 0.6892871087111128,
+            "previousX": 0.4321120656370317,
+            "previousY": 0.6857380957611314
+          },
+          {
+            "x": 0.4671087339105935,
+            "y": 0.6944997700052138,
+            "previousX": 0.46825537528224315,
+            "previousY": 0.6909944227287768
+          },
+          {
+            "x": 0.5030725848768023,
+            "y": 0.7008792993008836,
+            "previousX": 0.5042022711876741,
+            "previousY": 0.6974649801290574
+          },
+          {
+            "x": 0.5388855648385844,
+            "y": 0.7079609082721517,
+            "previousX": 0.5400115011353412,
+            "previousY": 0.7045655272854425
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.4037968675679888,
+            "y": 0.3927369363992815,
+            "vx": 0.04518409563509451,
+            "vy": 0.3167939353927702,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6194756184763112,
+            "y": 0.2623323222775936,
+            "vx": -0.020125961964737003,
+            "vy": 0.3193664754713525,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.49807420059382085,
+            "y": 0.1905384903816988,
+            "vx": -0.006180037367469763,
+            "vy": 0.3199403180878219,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": null
+      },
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "リボンが崩落",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "collapse",
+          "quality": 0,
+          "detail": "重さと衝撃でリボンが保護対象へ落ちました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/collapse-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "sting",
+      "reduced": false,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 785
+      },
+      "phase": "STING",
+      "done": true,
+      "disposed": true,
+      "result": "sting",
+      "finishCalls": 1,
+      "inputCount": 5,
+      "inputLength": 1.2826631589317232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.21733684106827678,
+      "physics": {
+        "step": 82,
+        "elapsed": 2050,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.16186301146086265,
+            "y": 0.71836427354716,
+            "previousX": 0.16172623332038052,
+            "previousY": 0.7184224650696972
+          },
+          {
+            "x": 0.1863236263486077,
+            "y": 0.8224227796438671,
+            "previousX": 0.18650148673210132,
+            "previousY": 0.822406522823173
+          },
+          {
+            "x": 0.1803081101152981,
+            "y": 0.9056447827401969,
+            "previousX": 0.18031210433325073,
+            "previousY": 0.9056157754196285
+          },
+          {
+            "x": 0.2862275720298108,
+            "y": 0.92,
+            "previousX": 0.2862276085024372,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.39311454941465385,
+            "y": 0.9199999999678168,
+            "previousX": 0.39311456050362326,
+            "previousY": 0.9199999999671055
+          },
+          {
+            "x": 0.5000013007921047,
+            "y": 0.92,
+            "previousX": 0.500001286964671,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.6068888414808411,
+            "y": 0.92,
+            "previousX": 0.6068887991878648,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.7137774666165464,
+            "y": 0.919999996138439,
+            "previousX": 0.7137773959285706,
+            "previousY": 0.9199999999779056
+          },
+          {
+            "x": 0.8197011689227157,
+            "y": 0.9056643363504234,
+            "previousX": 0.8196971369478532,
+            "previousY": 0.9056352527340182
+          },
+          {
+            "x": 0.8136763957898993,
+            "y": 0.8224246911268006,
+            "previousX": 0.8134982631610599,
+            "previousY": 0.8224083229877573
+          },
+          {
+            "x": 0.8381568763247443,
+            "y": 0.7183581469906561,
+            "previousX": 0.8382936937197291,
+            "previousY": 0.718416238979116
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.4538487693562171,
+            "y": 0.6925421639162813,
+            "vx": 0.061247252798958346,
+            "vy": 0.31408402382894374,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.5997222288809982,
+            "y": 0.5576678010536771,
+            "vx": -0.025582517872708672,
+            "vy": 0.31897575892110136,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.4870455179650682,
+            "y": 0.4863134819015031,
+            "vx": -0.01564211794288425,
+            "vy": 0.31961746533357793,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "ツノバチが到達",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "sting",
+          "quality": 0,
+          "detail": "軌道を外へ流し切れず、群れが庭便へ触れました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/sting-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "success",
+      "reduced": false,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 785
+      },
+      "phase": "SUCCESS",
+      "done": true,
+      "disposed": true,
+      "result": "success",
+      "finishCalls": 1,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 96,
+        "elapsed": 2400,
+        "collisions": 4,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.1736673408356049,
+            "y": 0.7036302073240339,
+            "previousX": 0.17634806643628134,
+            "previousY": 0.7018479713169214
+          },
+          {
+            "x": 0.2601666266754111,
+            "y": 0.654721379134567,
+            "previousX": 0.26050806693572603,
+            "previousY": 0.6490152633122074
+          },
+          {
+            "x": 0.2456896760170083,
+            "y": 0.5564125644391248,
+            "previousX": 0.2453671440050558,
+            "previousY": 0.5508065164540589
+          },
+          {
+            "x": 0.3254076925866809,
+            "y": 0.6047759942012207,
+            "previousX": 0.32534992661706374,
+            "previousY": 0.5987308088250706
+          },
+          {
+            "x": 0.42476858487902125,
+            "y": 0.6035090356157243,
+            "previousX": 0.42470643569213895,
+            "previousY": 0.5971571086753256
+          },
+          {
+            "x": 0.4988395538971436,
+            "y": 0.5372696573623633,
+            "previousX": 0.4988386127943748,
+            "previousY": 0.5309862492971504
+          },
+          {
+            "x": 0.5765487264866493,
+            "y": 0.5991993363482936,
+            "previousX": 0.5766202277846394,
+            "previousY": 0.5928248694325611
+          },
+          {
+            "x": 0.6757736336529109,
+            "y": 0.6045370854321314,
+            "previousX": 0.6758254803347888,
+            "previousY": 0.5985158283277671
+          },
+          {
+            "x": 0.7557501943982206,
+            "y": 0.5566026539756435,
+            "previousX": 0.7560518800667291,
+            "previousY": 0.5510007479499173
+          },
+          {
+            "x": 0.7398989075157117,
+            "y": 0.6546992110106957,
+            "previousX": 0.7395559007545178,
+            "previousY": 0.6489909585742238
+          },
+          {
+            "x": 0.8263715198736825,
+            "y": 0.7036551301307838,
+            "previousX": 0.8236859118521067,
+            "previousY": 0.7018713512403973
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.36630292694632405,
+            "y": 0.5100761828009979,
+            "vx": 0.08798847950939585,
+            "vy": -0.10589392817935424,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6710871722956767,
+            "y": 0.44272622097104986,
+            "vx": 0.013643827444660675,
+            "vy": 0.31970900202005625,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.43608269858124254,
+            "y": 0.3617664587364112,
+            "vx": -0.05438848265455284,
+            "vy": 0.292397798007761,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "庭便を守り切った",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": true,
+        "detail": {
+          "reason": "success",
+          "quality": 0.86,
+          "detail": "張ったリボンが群れを滑らせ、配達員と荷物は無傷です。 衝突4回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/success-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "timeout",
+      "reduced": false,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 785
+      },
+      "phase": "TIMEOUT",
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "finishCalls": 1,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "展開が間に合わず",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "quality": 0,
+          "detail": "リボンを張る前に庭便の時間が尽きました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/timeout-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "initial",
+      "reduced": true,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "READY",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "金色の杭から一本の保護リボンを引いてください",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/initial-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "anchor-focus",
+      "reduced": true,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "READY",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "金色の杭から一本の保護リボンを引いてください",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/anchor-focus-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "drawing",
+      "reduced": true,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "DRAWING",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 27,
+      "inputLength": 0.865472135198887,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.634527864801113,
+      "physics": null,
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "描画中。残り0.63m",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/drawing-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "over-budget",
+      "reduced": true,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "DRAWING",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 44,
+      "inputLength": 1.4724465133501274,
+      "overBudget": true,
+      "invalidReason": null,
+      "remaining": 0.02755348664987256,
+      "physics": null,
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "残り0.03m。これ以上は引けません",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/over-budget-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "deployed",
+      "reduced": true,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "HAZARD",
+      "done": true,
+      "disposed": true,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 0,
+        "elapsed": 0,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.15950984650169303,
+            "y": 0.5288234311499391,
+            "previousX": 0.15950984650169303,
+            "previousY": 0.5288234311499391
+          },
+          {
+            "x": 0.19901969300338604,
+            "y": 0.43764686229987837,
+            "previousX": 0.19901969300338604,
+            "previousY": 0.43764686229987837
+          },
+          {
+            "x": 0.23852953950507907,
+            "y": 0.34647029344981756,
+            "previousX": 0.23852953950507907,
+            "previousY": 0.34647029344981756
+          },
+          {
+            "x": 0.31547643195237934,
+            "y": 0.2938094272190483,
+            "previousX": 0.31547643195237934,
+            "previousY": 0.2938094272190483
+          },
+          {
+            "x": 0.40773821597618976,
+            "y": 0.2569047136095241,
+            "previousX": 0.40773821597618976,
+            "previousY": 0.2569047136095241
+          },
+          {
+            "x": 0.5,
+            "y": 0.21999999999999997,
+            "previousX": 0.5,
+            "previousY": 0.21999999999999997
+          },
+          {
+            "x": 0.5922617840238102,
+            "y": 0.2569047136095241,
+            "previousX": 0.5922617840238102,
+            "previousY": 0.2569047136095241
+          },
+          {
+            "x": 0.6845235680476207,
+            "y": 0.29380942721904824,
+            "previousX": 0.6845235680476207,
+            "previousY": 0.29380942721904824
+          },
+          {
+            "x": 0.761470460494921,
+            "y": 0.3464702934498176,
+            "previousX": 0.761470460494921,
+            "previousY": 0.3464702934498176
+          },
+          {
+            "x": 0.800980306996614,
+            "y": 0.4376468622998785,
+            "previousX": 0.800980306996614,
+            "previousY": 0.4376468622998785
+          },
+          {
+            "x": 0.840490153498307,
+            "y": 0.5288234311499392,
+            "previousX": 0.840490153498307,
+            "previousY": 0.5288234311499392
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.37,
+            "y": 0.04,
+            "vx": 0.006500000000000001,
+            "vy": 0.24,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.63,
+            "y": 0.02,
+            "vx": -0.006500000000000001,
+            "vy": 0.24,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.5,
+            "y": 0.06,
+            "vx": 0,
+            "vy": 0.24,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "両端固定。ツノバチ襲来を耐えてください",
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/deployed-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "impact",
+      "reduced": true,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 800
+      },
+      "phase": "HAZARD",
+      "done": true,
+      "disposed": true,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 70,
+        "elapsed": 1750,
+        "collisions": 3,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.21920127607468892,
+            "y": 0.6257706673554315,
+            "previousX": 0.21934099352571496,
+            "previousY": 0.6223581619570299
+          },
+          {
+            "x": 0.25188518645138813,
+            "y": 0.5319306470525301,
+            "previousX": 0.25121337625401735,
+            "previousY": 0.5282394142998917
+          },
+          {
+            "x": 0.2364827212331418,
+            "y": 0.43376266759053855,
+            "previousX": 0.2361312205884172,
+            "previousY": 0.4300217147630892
+          },
+          {
+            "x": 0.3244758716749924,
+            "y": 0.46460443303098686,
+            "previousX": 0.32444660412193166,
+            "previousY": 0.45992829074012154
+          },
+          {
+            "x": 0.423217627055282,
+            "y": 0.45345649229965634,
+            "previousX": 0.42313880443789514,
+            "previousY": 0.44834979775212686
+          },
+          {
+            "x": 0.4988024430013821,
+            "y": 0.38894961480373463,
+            "previousX": 0.49880254564549553,
+            "previousY": 0.3839355052974447
+          },
+          {
+            "x": 0.5783626501829016,
+            "y": 0.44848328184270037,
+            "previousX": 0.5784525453530517,
+            "previousY": 0.4433490052845987
+          },
+          {
+            "x": 0.6764097994894143,
+            "y": 0.46463312429699866,
+            "previousX": 0.676422396438973,
+            "previousY": 0.4599612724833439
+          },
+          {
+            "x": 0.7644424676328255,
+            "y": 0.4339055617948274,
+            "previousX": 0.7647727945132371,
+            "previousY": 0.43015961506775235
+          },
+          {
+            "x": 0.7481273488093105,
+            "y": 0.5319263114489713,
+            "previousX": 0.7487971487138335,
+            "previousY": 0.5282362948031898
+          },
+          {
+            "x": 0.7807987248016096,
+            "y": 0.6257707605105766,
+            "previousX": 0.7806590148416921,
+            "previousY": 0.6223586745502614
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.33092669293230775,
+            "y": 0.37272515580205445,
+            "vx": 0.014321458081119405,
+            "vy": 0.3196793641110272,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6415695256816079,
+            "y": 0.33200927986456585,
+            "vx": 0.07604724992101258,
+            "vy": 0.004533044531925786,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.4773339547015782,
+            "y": 0.27309336068076034,
+            "vx": -0.06750254663446588,
+            "vy": -0.032215728944804775,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "両端固定。ツノバチ襲来を耐えてください",
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/impact-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "collapse",
+      "reduced": true,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 785
+      },
+      "phase": "COLLAPSE",
+      "done": true,
+      "disposed": true,
+      "result": "collapse",
+      "finishCalls": 1,
+      "inputCount": 4,
+      "inputLength": 0.4380770429827991,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.0619229570172009,
+      "physics": {
+        "step": 45,
+        "elapsed": 1125,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.14912398199742627,
+            "y": 0.6423180096457439,
+            "previousX": 0.14919181971461695,
+            "previousY": 0.6422167929258905
+          },
+          {
+            "x": 0.179817704987509,
+            "y": 0.6623894444329932,
+            "previousX": 0.18017536260124728,
+            "previousY": 0.6618245780739456
+          },
+          {
+            "x": 0.2130480370273973,
+            "y": 0.6778564354331063,
+            "previousX": 0.21406778435565926,
+            "previousY": 0.6757693617877508
+          },
+          {
+            "x": 0.24923663753411449,
+            "y": 0.6836180941515768,
+            "previousX": 0.25045723663548797,
+            "previousY": 0.6800537509187888
+          },
+          {
+            "x": 0.28526509587625204,
+            "y": 0.682859635433117,
+            "previousX": 0.2864637146502037,
+            "previousY": 0.6786856766115801
+          },
+          {
+            "x": 0.32178413522115434,
+            "y": 0.680198398875016,
+            "previousX": 0.3229736726508846,
+            "previousY": 0.6759536357241016
+          },
+          {
+            "x": 0.358382483096093,
+            "y": 0.6802957090718509,
+            "previousX": 0.35956439312217,
+            "previousY": 0.6765388279316902
+          },
+          {
+            "x": 0.39476703647399697,
+            "y": 0.684083345924058,
+            "previousX": 0.39592623533912796,
+            "previousY": 0.6805147280576396
+          },
+          {
+            "x": 0.43095772657390197,
+            "y": 0.6892871087111128,
+            "previousX": 0.4321120656370317,
+            "previousY": 0.6857380957611314
+          },
+          {
+            "x": 0.4671087339105935,
+            "y": 0.6944997700052138,
+            "previousX": 0.46825537528224315,
+            "previousY": 0.6909944227287768
+          },
+          {
+            "x": 0.5030725848768023,
+            "y": 0.7008792993008836,
+            "previousX": 0.5042022711876741,
+            "previousY": 0.6974649801290574
+          },
+          {
+            "x": 0.5388855648385844,
+            "y": 0.7079609082721517,
+            "previousX": 0.5400115011353412,
+            "previousY": 0.7045655272854425
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.4037968675679888,
+            "y": 0.3927369363992815,
+            "vx": 0.04518409563509451,
+            "vy": 0.3167939353927702,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6194756184763112,
+            "y": 0.2623323222775936,
+            "vx": -0.020125961964737003,
+            "vy": 0.3193664754713525,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.49807420059382085,
+            "y": 0.1905384903816988,
+            "vx": -0.006180037367469763,
+            "vy": 0.3199403180878219,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": null
+      },
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "リボンが崩落",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "collapse",
+          "quality": 0,
+          "detail": "重さと衝撃でリボンが保護対象へ落ちました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/collapse-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "sting",
+      "reduced": true,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 785
+      },
+      "phase": "STING",
+      "done": true,
+      "disposed": true,
+      "result": "sting",
+      "finishCalls": 1,
+      "inputCount": 5,
+      "inputLength": 1.2826631589317232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.21733684106827678,
+      "physics": {
+        "step": 82,
+        "elapsed": 2050,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.16186301146086265,
+            "y": 0.71836427354716,
+            "previousX": 0.16172623332038052,
+            "previousY": 0.7184224650696972
+          },
+          {
+            "x": 0.1863236263486077,
+            "y": 0.8224227796438671,
+            "previousX": 0.18650148673210132,
+            "previousY": 0.822406522823173
+          },
+          {
+            "x": 0.1803081101152981,
+            "y": 0.9056447827401969,
+            "previousX": 0.18031210433325073,
+            "previousY": 0.9056157754196285
+          },
+          {
+            "x": 0.2862275720298108,
+            "y": 0.92,
+            "previousX": 0.2862276085024372,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.39311454941465385,
+            "y": 0.9199999999678168,
+            "previousX": 0.39311456050362326,
+            "previousY": 0.9199999999671055
+          },
+          {
+            "x": 0.5000013007921047,
+            "y": 0.92,
+            "previousX": 0.500001286964671,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.6068888414808411,
+            "y": 0.92,
+            "previousX": 0.6068887991878648,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.7137774666165464,
+            "y": 0.919999996138439,
+            "previousX": 0.7137773959285706,
+            "previousY": 0.9199999999779056
+          },
+          {
+            "x": 0.8197011689227157,
+            "y": 0.9056643363504234,
+            "previousX": 0.8196971369478532,
+            "previousY": 0.9056352527340182
+          },
+          {
+            "x": 0.8136763957898993,
+            "y": 0.8224246911268006,
+            "previousX": 0.8134982631610599,
+            "previousY": 0.8224083229877573
+          },
+          {
+            "x": 0.8381568763247443,
+            "y": 0.7183581469906561,
+            "previousX": 0.8382936937197291,
+            "previousY": 0.718416238979116
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.4538487693562171,
+            "y": 0.6925421639162813,
+            "vx": 0.061247252798958346,
+            "vy": 0.31408402382894374,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.5997222288809982,
+            "y": 0.5576678010536771,
+            "vx": -0.025582517872708672,
+            "vy": 0.31897575892110136,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.4870455179650682,
+            "y": 0.4863134819015031,
+            "vx": -0.01564211794288425,
+            "vy": 0.31961746533357793,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "ツノバチが到達",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "sting",
+          "quality": 0,
+          "detail": "軌道を外へ流し切れず、群れが庭便へ触れました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/sting-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "success",
+      "reduced": true,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 785
+      },
+      "phase": "SUCCESS",
+      "done": true,
+      "disposed": true,
+      "result": "success",
+      "finishCalls": 1,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 96,
+        "elapsed": 2400,
+        "collisions": 4,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.1736673408356049,
+            "y": 0.7036302073240339,
+            "previousX": 0.17634806643628134,
+            "previousY": 0.7018479713169214
+          },
+          {
+            "x": 0.2601666266754111,
+            "y": 0.654721379134567,
+            "previousX": 0.26050806693572603,
+            "previousY": 0.6490152633122074
+          },
+          {
+            "x": 0.2456896760170083,
+            "y": 0.5564125644391248,
+            "previousX": 0.2453671440050558,
+            "previousY": 0.5508065164540589
+          },
+          {
+            "x": 0.3254076925866809,
+            "y": 0.6047759942012207,
+            "previousX": 0.32534992661706374,
+            "previousY": 0.5987308088250706
+          },
+          {
+            "x": 0.42476858487902125,
+            "y": 0.6035090356157243,
+            "previousX": 0.42470643569213895,
+            "previousY": 0.5971571086753256
+          },
+          {
+            "x": 0.4988395538971436,
+            "y": 0.5372696573623633,
+            "previousX": 0.4988386127943748,
+            "previousY": 0.5309862492971504
+          },
+          {
+            "x": 0.5765487264866493,
+            "y": 0.5991993363482936,
+            "previousX": 0.5766202277846394,
+            "previousY": 0.5928248694325611
+          },
+          {
+            "x": 0.6757736336529109,
+            "y": 0.6045370854321314,
+            "previousX": 0.6758254803347888,
+            "previousY": 0.5985158283277671
+          },
+          {
+            "x": 0.7557501943982206,
+            "y": 0.5566026539756435,
+            "previousX": 0.7560518800667291,
+            "previousY": 0.5510007479499173
+          },
+          {
+            "x": 0.7398989075157117,
+            "y": 0.6546992110106957,
+            "previousX": 0.7395559007545178,
+            "previousY": 0.6489909585742238
+          },
+          {
+            "x": 0.8263715198736825,
+            "y": 0.7036551301307838,
+            "previousX": 0.8236859118521067,
+            "previousY": 0.7018713512403973
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.36630292694632405,
+            "y": 0.5100761828009979,
+            "vx": 0.08798847950939585,
+            "vy": -0.10589392817935424,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6710871722956767,
+            "y": 0.44272622097104986,
+            "vx": 0.013643827444660675,
+            "vy": 0.31970900202005625,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.43608269858124254,
+            "y": 0.3617664587364112,
+            "vx": -0.05438848265455284,
+            "vy": 0.292397798007761,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "庭便を守り切った",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": true,
+        "detail": {
+          "reason": "success",
+          "quality": 0.86,
+          "detail": "張ったリボンが群れを滑らせ、配達員と荷物は無傷です。 衝突4回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/success-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "timeout",
+      "reduced": true,
+      "width": 393,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 785
+      },
+      "phase": "TIMEOUT",
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "finishCalls": 1,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1011,
+        "height": 1416,
+        "cssWidth": 337,
+        "cssHeight": 472,
+        "dpr": 3
+      },
+      "statusText": "展開が間に合わず",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "quality": 0,
+          "detail": "リボンを張る前に庭便の時間が尽きました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/timeout-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "initial",
+      "reduced": false,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "READY",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "金色の杭から一本の保護リボンを引いてください",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/initial-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "anchor-focus",
+      "reduced": false,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "READY",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "金色の杭から一本の保護リボンを引いてください",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/anchor-focus-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "drawing",
+      "reduced": false,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "DRAWING",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 27,
+      "inputLength": 0.865472135198887,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.634527864801113,
+      "physics": null,
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "描画中。残り0.63m",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/drawing-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "over-budget",
+      "reduced": false,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "DRAWING",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 44,
+      "inputLength": 1.4724465133501274,
+      "overBudget": true,
+      "invalidReason": null,
+      "remaining": 0.02755348664987256,
+      "physics": null,
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "残り0.03m。これ以上は引けません",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/over-budget-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "deployed",
+      "reduced": false,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "HAZARD",
+      "done": true,
+      "disposed": true,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 0,
+        "elapsed": 0,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.15950984650169303,
+            "y": 0.5288234311499391,
+            "previousX": 0.15950984650169303,
+            "previousY": 0.5288234311499391
+          },
+          {
+            "x": 0.19901969300338604,
+            "y": 0.43764686229987837,
+            "previousX": 0.19901969300338604,
+            "previousY": 0.43764686229987837
+          },
+          {
+            "x": 0.23852953950507907,
+            "y": 0.34647029344981756,
+            "previousX": 0.23852953950507907,
+            "previousY": 0.34647029344981756
+          },
+          {
+            "x": 0.31547643195237934,
+            "y": 0.2938094272190483,
+            "previousX": 0.31547643195237934,
+            "previousY": 0.2938094272190483
+          },
+          {
+            "x": 0.40773821597618976,
+            "y": 0.2569047136095241,
+            "previousX": 0.40773821597618976,
+            "previousY": 0.2569047136095241
+          },
+          {
+            "x": 0.5,
+            "y": 0.21999999999999997,
+            "previousX": 0.5,
+            "previousY": 0.21999999999999997
+          },
+          {
+            "x": 0.5922617840238102,
+            "y": 0.2569047136095241,
+            "previousX": 0.5922617840238102,
+            "previousY": 0.2569047136095241
+          },
+          {
+            "x": 0.6845235680476207,
+            "y": 0.29380942721904824,
+            "previousX": 0.6845235680476207,
+            "previousY": 0.29380942721904824
+          },
+          {
+            "x": 0.761470460494921,
+            "y": 0.3464702934498176,
+            "previousX": 0.761470460494921,
+            "previousY": 0.3464702934498176
+          },
+          {
+            "x": 0.800980306996614,
+            "y": 0.4376468622998785,
+            "previousX": 0.800980306996614,
+            "previousY": 0.4376468622998785
+          },
+          {
+            "x": 0.840490153498307,
+            "y": 0.5288234311499392,
+            "previousX": 0.840490153498307,
+            "previousY": 0.5288234311499392
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.37,
+            "y": 0.04,
+            "vx": 0.006500000000000001,
+            "vy": 0.24,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.63,
+            "y": 0.02,
+            "vx": -0.006500000000000001,
+            "vy": 0.24,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.5,
+            "y": 0.06,
+            "vx": 0,
+            "vy": 0.24,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "両端固定。ツノバチ襲来を耐えてください",
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/deployed-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "impact",
+      "reduced": false,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "HAZARD",
+      "done": true,
+      "disposed": true,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 70,
+        "elapsed": 1750,
+        "collisions": 3,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.21920127607468892,
+            "y": 0.6257706673554315,
+            "previousX": 0.21934099352571496,
+            "previousY": 0.6223581619570299
+          },
+          {
+            "x": 0.25188518645138813,
+            "y": 0.5319306470525301,
+            "previousX": 0.25121337625401735,
+            "previousY": 0.5282394142998917
+          },
+          {
+            "x": 0.2364827212331418,
+            "y": 0.43376266759053855,
+            "previousX": 0.2361312205884172,
+            "previousY": 0.4300217147630892
+          },
+          {
+            "x": 0.3244758716749924,
+            "y": 0.46460443303098686,
+            "previousX": 0.32444660412193166,
+            "previousY": 0.45992829074012154
+          },
+          {
+            "x": 0.423217627055282,
+            "y": 0.45345649229965634,
+            "previousX": 0.42313880443789514,
+            "previousY": 0.44834979775212686
+          },
+          {
+            "x": 0.4988024430013821,
+            "y": 0.38894961480373463,
+            "previousX": 0.49880254564549553,
+            "previousY": 0.3839355052974447
+          },
+          {
+            "x": 0.5783626501829016,
+            "y": 0.44848328184270037,
+            "previousX": 0.5784525453530517,
+            "previousY": 0.4433490052845987
+          },
+          {
+            "x": 0.6764097994894143,
+            "y": 0.46463312429699866,
+            "previousX": 0.676422396438973,
+            "previousY": 0.4599612724833439
+          },
+          {
+            "x": 0.7644424676328255,
+            "y": 0.4339055617948274,
+            "previousX": 0.7647727945132371,
+            "previousY": 0.43015961506775235
+          },
+          {
+            "x": 0.7481273488093105,
+            "y": 0.5319263114489713,
+            "previousX": 0.7487971487138335,
+            "previousY": 0.5282362948031898
+          },
+          {
+            "x": 0.7807987248016096,
+            "y": 0.6257707605105766,
+            "previousX": 0.7806590148416921,
+            "previousY": 0.6223586745502614
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.33092669293230775,
+            "y": 0.37272515580205445,
+            "vx": 0.014321458081119405,
+            "vy": 0.3196793641110272,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6415695256816079,
+            "y": 0.33200927986456585,
+            "vx": 0.07604724992101258,
+            "vy": 0.004533044531925786,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.4773339547015782,
+            "y": 0.27309336068076034,
+            "vx": -0.06750254663446588,
+            "vy": -0.032215728944804775,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "両端固定。ツノバチ襲来を耐えてください",
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/impact-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "collapse",
+      "reduced": false,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 796
+      },
+      "phase": "COLLAPSE",
+      "done": true,
+      "disposed": true,
+      "result": "collapse",
+      "finishCalls": 1,
+      "inputCount": 4,
+      "inputLength": 0.4380770429827991,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.0619229570172009,
+      "physics": {
+        "step": 45,
+        "elapsed": 1125,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.14912398199742627,
+            "y": 0.6423180096457439,
+            "previousX": 0.14919181971461695,
+            "previousY": 0.6422167929258905
+          },
+          {
+            "x": 0.179817704987509,
+            "y": 0.6623894444329932,
+            "previousX": 0.18017536260124728,
+            "previousY": 0.6618245780739456
+          },
+          {
+            "x": 0.2130480370273973,
+            "y": 0.6778564354331063,
+            "previousX": 0.21406778435565926,
+            "previousY": 0.6757693617877508
+          },
+          {
+            "x": 0.24923663753411449,
+            "y": 0.6836180941515768,
+            "previousX": 0.25045723663548797,
+            "previousY": 0.6800537509187888
+          },
+          {
+            "x": 0.28526509587625204,
+            "y": 0.682859635433117,
+            "previousX": 0.2864637146502037,
+            "previousY": 0.6786856766115801
+          },
+          {
+            "x": 0.32178413522115434,
+            "y": 0.680198398875016,
+            "previousX": 0.3229736726508846,
+            "previousY": 0.6759536357241016
+          },
+          {
+            "x": 0.358382483096093,
+            "y": 0.6802957090718509,
+            "previousX": 0.35956439312217,
+            "previousY": 0.6765388279316902
+          },
+          {
+            "x": 0.39476703647399697,
+            "y": 0.684083345924058,
+            "previousX": 0.39592623533912796,
+            "previousY": 0.6805147280576396
+          },
+          {
+            "x": 0.43095772657390197,
+            "y": 0.6892871087111128,
+            "previousX": 0.4321120656370317,
+            "previousY": 0.6857380957611314
+          },
+          {
+            "x": 0.4671087339105935,
+            "y": 0.6944997700052138,
+            "previousX": 0.46825537528224315,
+            "previousY": 0.6909944227287768
+          },
+          {
+            "x": 0.5030725848768023,
+            "y": 0.7008792993008836,
+            "previousX": 0.5042022711876741,
+            "previousY": 0.6974649801290574
+          },
+          {
+            "x": 0.5388855648385844,
+            "y": 0.7079609082721517,
+            "previousX": 0.5400115011353412,
+            "previousY": 0.7045655272854425
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.4037968675679888,
+            "y": 0.3927369363992815,
+            "vx": 0.04518409563509451,
+            "vy": 0.3167939353927702,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6194756184763112,
+            "y": 0.2623323222775936,
+            "vx": -0.020125961964737003,
+            "vy": 0.3193664754713525,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.49807420059382085,
+            "y": 0.1905384903816988,
+            "vx": -0.006180037367469763,
+            "vy": 0.3199403180878219,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": null
+      },
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "リボンが崩落",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "collapse",
+          "quality": 0,
+          "detail": "重さと衝撃でリボンが保護対象へ落ちました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/collapse-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "sting",
+      "reduced": false,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 796
+      },
+      "phase": "STING",
+      "done": true,
+      "disposed": true,
+      "result": "sting",
+      "finishCalls": 1,
+      "inputCount": 5,
+      "inputLength": 1.2826631589317232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.21733684106827678,
+      "physics": {
+        "step": 82,
+        "elapsed": 2050,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.16186301146086265,
+            "y": 0.71836427354716,
+            "previousX": 0.16172623332038052,
+            "previousY": 0.7184224650696972
+          },
+          {
+            "x": 0.1863236263486077,
+            "y": 0.8224227796438671,
+            "previousX": 0.18650148673210132,
+            "previousY": 0.822406522823173
+          },
+          {
+            "x": 0.1803081101152981,
+            "y": 0.9056447827401969,
+            "previousX": 0.18031210433325073,
+            "previousY": 0.9056157754196285
+          },
+          {
+            "x": 0.2862275720298108,
+            "y": 0.92,
+            "previousX": 0.2862276085024372,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.39311454941465385,
+            "y": 0.9199999999678168,
+            "previousX": 0.39311456050362326,
+            "previousY": 0.9199999999671055
+          },
+          {
+            "x": 0.5000013007921047,
+            "y": 0.92,
+            "previousX": 0.500001286964671,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.6068888414808411,
+            "y": 0.92,
+            "previousX": 0.6068887991878648,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.7137774666165464,
+            "y": 0.919999996138439,
+            "previousX": 0.7137773959285706,
+            "previousY": 0.9199999999779056
+          },
+          {
+            "x": 0.8197011689227157,
+            "y": 0.9056643363504234,
+            "previousX": 0.8196971369478532,
+            "previousY": 0.9056352527340182
+          },
+          {
+            "x": 0.8136763957898993,
+            "y": 0.8224246911268006,
+            "previousX": 0.8134982631610599,
+            "previousY": 0.8224083229877573
+          },
+          {
+            "x": 0.8381568763247443,
+            "y": 0.7183581469906561,
+            "previousX": 0.8382936937197291,
+            "previousY": 0.718416238979116
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.4538487693562171,
+            "y": 0.6925421639162813,
+            "vx": 0.061247252798958346,
+            "vy": 0.31408402382894374,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.5997222288809982,
+            "y": 0.5576678010536771,
+            "vx": -0.025582517872708672,
+            "vy": 0.31897575892110136,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.4870455179650682,
+            "y": 0.4863134819015031,
+            "vx": -0.01564211794288425,
+            "vy": 0.31961746533357793,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "ツノバチが到達",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "sting",
+          "quality": 0,
+          "detail": "軌道を外へ流し切れず、群れが庭便へ触れました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/sting-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "success",
+      "reduced": false,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 796
+      },
+      "phase": "SUCCESS",
+      "done": true,
+      "disposed": true,
+      "result": "success",
+      "finishCalls": 1,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 96,
+        "elapsed": 2400,
+        "collisions": 4,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.1736673408356049,
+            "y": 0.7036302073240339,
+            "previousX": 0.17634806643628134,
+            "previousY": 0.7018479713169214
+          },
+          {
+            "x": 0.2601666266754111,
+            "y": 0.654721379134567,
+            "previousX": 0.26050806693572603,
+            "previousY": 0.6490152633122074
+          },
+          {
+            "x": 0.2456896760170083,
+            "y": 0.5564125644391248,
+            "previousX": 0.2453671440050558,
+            "previousY": 0.5508065164540589
+          },
+          {
+            "x": 0.3254076925866809,
+            "y": 0.6047759942012207,
+            "previousX": 0.32534992661706374,
+            "previousY": 0.5987308088250706
+          },
+          {
+            "x": 0.42476858487902125,
+            "y": 0.6035090356157243,
+            "previousX": 0.42470643569213895,
+            "previousY": 0.5971571086753256
+          },
+          {
+            "x": 0.4988395538971436,
+            "y": 0.5372696573623633,
+            "previousX": 0.4988386127943748,
+            "previousY": 0.5309862492971504
+          },
+          {
+            "x": 0.5765487264866493,
+            "y": 0.5991993363482936,
+            "previousX": 0.5766202277846394,
+            "previousY": 0.5928248694325611
+          },
+          {
+            "x": 0.6757736336529109,
+            "y": 0.6045370854321314,
+            "previousX": 0.6758254803347888,
+            "previousY": 0.5985158283277671
+          },
+          {
+            "x": 0.7557501943982206,
+            "y": 0.5566026539756435,
+            "previousX": 0.7560518800667291,
+            "previousY": 0.5510007479499173
+          },
+          {
+            "x": 0.7398989075157117,
+            "y": 0.6546992110106957,
+            "previousX": 0.7395559007545178,
+            "previousY": 0.6489909585742238
+          },
+          {
+            "x": 0.8263715198736825,
+            "y": 0.7036551301307838,
+            "previousX": 0.8236859118521067,
+            "previousY": 0.7018713512403973
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.36630292694632405,
+            "y": 0.5100761828009979,
+            "vx": 0.08798847950939585,
+            "vy": -0.10589392817935424,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6710871722956767,
+            "y": 0.44272622097104986,
+            "vx": 0.013643827444660675,
+            "vy": 0.31970900202005625,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.43608269858124254,
+            "y": 0.3617664587364112,
+            "vx": -0.05438848265455284,
+            "vy": 0.292397798007761,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "庭便を守り切った",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": true,
+        "detail": {
+          "reason": "success",
+          "quality": 0.86,
+          "detail": "張ったリボンが群れを滑らせ、配達員と荷物は無傷です。 衝突4回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/success-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "timeout",
+      "reduced": false,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 796
+      },
+      "phase": "TIMEOUT",
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "finishCalls": 1,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "展開が間に合わず",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "quality": 0,
+          "detail": "リボンを張る前に庭便の時間が尽きました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/timeout-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "initial",
+      "reduced": true,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "READY",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "金色の杭から一本の保護リボンを引いてください",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/initial-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "anchor-focus",
+      "reduced": true,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "READY",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "金色の杭から一本の保護リボンを引いてください",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/anchor-focus-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "drawing",
+      "reduced": true,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "DRAWING",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 27,
+      "inputLength": 0.865472135198887,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.634527864801113,
+      "physics": null,
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "描画中。残り0.63m",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/drawing-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "over-budget",
+      "reduced": true,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "DRAWING",
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 44,
+      "inputLength": 1.4724465133501274,
+      "overBudget": true,
+      "invalidReason": null,
+      "remaining": 0.02755348664987256,
+      "physics": null,
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "残り0.03m。これ以上は引けません",
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 13,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/over-budget-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "deployed",
+      "reduced": true,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "HAZARD",
+      "done": true,
+      "disposed": true,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 0,
+        "elapsed": 0,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.15950984650169303,
+            "y": 0.5288234311499391,
+            "previousX": 0.15950984650169303,
+            "previousY": 0.5288234311499391
+          },
+          {
+            "x": 0.19901969300338604,
+            "y": 0.43764686229987837,
+            "previousX": 0.19901969300338604,
+            "previousY": 0.43764686229987837
+          },
+          {
+            "x": 0.23852953950507907,
+            "y": 0.34647029344981756,
+            "previousX": 0.23852953950507907,
+            "previousY": 0.34647029344981756
+          },
+          {
+            "x": 0.31547643195237934,
+            "y": 0.2938094272190483,
+            "previousX": 0.31547643195237934,
+            "previousY": 0.2938094272190483
+          },
+          {
+            "x": 0.40773821597618976,
+            "y": 0.2569047136095241,
+            "previousX": 0.40773821597618976,
+            "previousY": 0.2569047136095241
+          },
+          {
+            "x": 0.5,
+            "y": 0.21999999999999997,
+            "previousX": 0.5,
+            "previousY": 0.21999999999999997
+          },
+          {
+            "x": 0.5922617840238102,
+            "y": 0.2569047136095241,
+            "previousX": 0.5922617840238102,
+            "previousY": 0.2569047136095241
+          },
+          {
+            "x": 0.6845235680476207,
+            "y": 0.29380942721904824,
+            "previousX": 0.6845235680476207,
+            "previousY": 0.29380942721904824
+          },
+          {
+            "x": 0.761470460494921,
+            "y": 0.3464702934498176,
+            "previousX": 0.761470460494921,
+            "previousY": 0.3464702934498176
+          },
+          {
+            "x": 0.800980306996614,
+            "y": 0.4376468622998785,
+            "previousX": 0.800980306996614,
+            "previousY": 0.4376468622998785
+          },
+          {
+            "x": 0.840490153498307,
+            "y": 0.5288234311499392,
+            "previousX": 0.840490153498307,
+            "previousY": 0.5288234311499392
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.37,
+            "y": 0.04,
+            "vx": 0.006500000000000001,
+            "vy": 0.24,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.63,
+            "y": 0.02,
+            "vx": -0.006500000000000001,
+            "vy": 0.24,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.5,
+            "y": 0.06,
+            "vx": 0,
+            "vy": 0.24,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "両端固定。ツノバチ襲来を耐えてください",
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/deployed-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "impact",
+      "reduced": true,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 811
+      },
+      "phase": "HAZARD",
+      "done": true,
+      "disposed": true,
+      "result": null,
+      "finishCalls": 0,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 70,
+        "elapsed": 1750,
+        "collisions": 3,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.21920127607468892,
+            "y": 0.6257706673554315,
+            "previousX": 0.21934099352571496,
+            "previousY": 0.6223581619570299
+          },
+          {
+            "x": 0.25188518645138813,
+            "y": 0.5319306470525301,
+            "previousX": 0.25121337625401735,
+            "previousY": 0.5282394142998917
+          },
+          {
+            "x": 0.2364827212331418,
+            "y": 0.43376266759053855,
+            "previousX": 0.2361312205884172,
+            "previousY": 0.4300217147630892
+          },
+          {
+            "x": 0.3244758716749924,
+            "y": 0.46460443303098686,
+            "previousX": 0.32444660412193166,
+            "previousY": 0.45992829074012154
+          },
+          {
+            "x": 0.423217627055282,
+            "y": 0.45345649229965634,
+            "previousX": 0.42313880443789514,
+            "previousY": 0.44834979775212686
+          },
+          {
+            "x": 0.4988024430013821,
+            "y": 0.38894961480373463,
+            "previousX": 0.49880254564549553,
+            "previousY": 0.3839355052974447
+          },
+          {
+            "x": 0.5783626501829016,
+            "y": 0.44848328184270037,
+            "previousX": 0.5784525453530517,
+            "previousY": 0.4433490052845987
+          },
+          {
+            "x": 0.6764097994894143,
+            "y": 0.46463312429699866,
+            "previousX": 0.676422396438973,
+            "previousY": 0.4599612724833439
+          },
+          {
+            "x": 0.7644424676328255,
+            "y": 0.4339055617948274,
+            "previousX": 0.7647727945132371,
+            "previousY": 0.43015961506775235
+          },
+          {
+            "x": 0.7481273488093105,
+            "y": 0.5319263114489713,
+            "previousX": 0.7487971487138335,
+            "previousY": 0.5282362948031898
+          },
+          {
+            "x": 0.7807987248016096,
+            "y": 0.6257707605105766,
+            "previousX": 0.7806590148416921,
+            "previousY": 0.6223586745502614
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.33092669293230775,
+            "y": 0.37272515580205445,
+            "vx": 0.014321458081119405,
+            "vy": 0.3196793641110272,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6415695256816079,
+            "y": 0.33200927986456585,
+            "vx": 0.07604724992101258,
+            "vy": 0.004533044531925786,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.4773339547015782,
+            "y": 0.27309336068076034,
+            "vx": -0.06750254663446588,
+            "vy": -0.032215728944804775,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "両端固定。ツノバチ襲来を耐えてください",
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/impact-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "collapse",
+      "reduced": true,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 796
+      },
+      "phase": "COLLAPSE",
+      "done": true,
+      "disposed": true,
+      "result": "collapse",
+      "finishCalls": 1,
+      "inputCount": 4,
+      "inputLength": 0.4380770429827991,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.0619229570172009,
+      "physics": {
+        "step": 45,
+        "elapsed": 1125,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.14912398199742627,
+            "y": 0.6423180096457439,
+            "previousX": 0.14919181971461695,
+            "previousY": 0.6422167929258905
+          },
+          {
+            "x": 0.179817704987509,
+            "y": 0.6623894444329932,
+            "previousX": 0.18017536260124728,
+            "previousY": 0.6618245780739456
+          },
+          {
+            "x": 0.2130480370273973,
+            "y": 0.6778564354331063,
+            "previousX": 0.21406778435565926,
+            "previousY": 0.6757693617877508
+          },
+          {
+            "x": 0.24923663753411449,
+            "y": 0.6836180941515768,
+            "previousX": 0.25045723663548797,
+            "previousY": 0.6800537509187888
+          },
+          {
+            "x": 0.28526509587625204,
+            "y": 0.682859635433117,
+            "previousX": 0.2864637146502037,
+            "previousY": 0.6786856766115801
+          },
+          {
+            "x": 0.32178413522115434,
+            "y": 0.680198398875016,
+            "previousX": 0.3229736726508846,
+            "previousY": 0.6759536357241016
+          },
+          {
+            "x": 0.358382483096093,
+            "y": 0.6802957090718509,
+            "previousX": 0.35956439312217,
+            "previousY": 0.6765388279316902
+          },
+          {
+            "x": 0.39476703647399697,
+            "y": 0.684083345924058,
+            "previousX": 0.39592623533912796,
+            "previousY": 0.6805147280576396
+          },
+          {
+            "x": 0.43095772657390197,
+            "y": 0.6892871087111128,
+            "previousX": 0.4321120656370317,
+            "previousY": 0.6857380957611314
+          },
+          {
+            "x": 0.4671087339105935,
+            "y": 0.6944997700052138,
+            "previousX": 0.46825537528224315,
+            "previousY": 0.6909944227287768
+          },
+          {
+            "x": 0.5030725848768023,
+            "y": 0.7008792993008836,
+            "previousX": 0.5042022711876741,
+            "previousY": 0.6974649801290574
+          },
+          {
+            "x": 0.5388855648385844,
+            "y": 0.7079609082721517,
+            "previousX": 0.5400115011353412,
+            "previousY": 0.7045655272854425
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.4037968675679888,
+            "y": 0.3927369363992815,
+            "vx": 0.04518409563509451,
+            "vy": 0.3167939353927702,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6194756184763112,
+            "y": 0.2623323222775936,
+            "vx": -0.020125961964737003,
+            "vy": 0.3193664754713525,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.49807420059382085,
+            "y": 0.1905384903816988,
+            "vx": -0.006180037367469763,
+            "vy": 0.3199403180878219,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": null
+      },
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "リボンが崩落",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "collapse",
+          "quality": 0,
+          "detail": "重さと衝撃でリボンが保護対象へ落ちました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/collapse-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "sting",
+      "reduced": true,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 796
+      },
+      "phase": "STING",
+      "done": true,
+      "disposed": true,
+      "result": "sting",
+      "finishCalls": 1,
+      "inputCount": 5,
+      "inputLength": 1.2826631589317232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.21733684106827678,
+      "physics": {
+        "step": 82,
+        "elapsed": 2050,
+        "collisions": 0,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.16186301146086265,
+            "y": 0.71836427354716,
+            "previousX": 0.16172623332038052,
+            "previousY": 0.7184224650696972
+          },
+          {
+            "x": 0.1863236263486077,
+            "y": 0.8224227796438671,
+            "previousX": 0.18650148673210132,
+            "previousY": 0.822406522823173
+          },
+          {
+            "x": 0.1803081101152981,
+            "y": 0.9056447827401969,
+            "previousX": 0.18031210433325073,
+            "previousY": 0.9056157754196285
+          },
+          {
+            "x": 0.2862275720298108,
+            "y": 0.92,
+            "previousX": 0.2862276085024372,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.39311454941465385,
+            "y": 0.9199999999678168,
+            "previousX": 0.39311456050362326,
+            "previousY": 0.9199999999671055
+          },
+          {
+            "x": 0.5000013007921047,
+            "y": 0.92,
+            "previousX": 0.500001286964671,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.6068888414808411,
+            "y": 0.92,
+            "previousX": 0.6068887991878648,
+            "previousY": 0.92
+          },
+          {
+            "x": 0.7137774666165464,
+            "y": 0.919999996138439,
+            "previousX": 0.7137773959285706,
+            "previousY": 0.9199999999779056
+          },
+          {
+            "x": 0.8197011689227157,
+            "y": 0.9056643363504234,
+            "previousX": 0.8196971369478532,
+            "previousY": 0.9056352527340182
+          },
+          {
+            "x": 0.8136763957898993,
+            "y": 0.8224246911268006,
+            "previousX": 0.8134982631610599,
+            "previousY": 0.8224083229877573
+          },
+          {
+            "x": 0.8381568763247443,
+            "y": 0.7183581469906561,
+            "previousX": 0.8382936937197291,
+            "previousY": 0.718416238979116
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.4538487693562171,
+            "y": 0.6925421639162813,
+            "vx": 0.061247252798958346,
+            "vy": 0.31408402382894374,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.5997222288809982,
+            "y": 0.5576678010536771,
+            "vx": -0.025582517872708672,
+            "vy": 0.31897575892110136,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.4870455179650682,
+            "y": 0.4863134819015031,
+            "vx": -0.01564211794288425,
+            "vy": 0.31961746533357793,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "ツノバチが到達",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "sting",
+          "quality": 0,
+          "detail": "軌道を外へ流し切れず、群れが庭便へ触れました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/sting-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "success",
+      "reduced": true,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 796
+      },
+      "phase": "SUCCESS",
+      "done": true,
+      "disposed": true,
+      "result": "success",
+      "finishCalls": 1,
+      "inputCount": 5,
+      "inputLength": 1.1924277896843232,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 0.30757221031567683,
+      "physics": {
+        "step": 96,
+        "elapsed": 2400,
+        "collisions": 4,
+        "nodes": [
+          {
+            "x": 0.12,
+            "y": 0.62,
+            "previousX": 0.12,
+            "previousY": 0.62
+          },
+          {
+            "x": 0.1736673408356049,
+            "y": 0.7036302073240339,
+            "previousX": 0.17634806643628134,
+            "previousY": 0.7018479713169214
+          },
+          {
+            "x": 0.2601666266754111,
+            "y": 0.654721379134567,
+            "previousX": 0.26050806693572603,
+            "previousY": 0.6490152633122074
+          },
+          {
+            "x": 0.2456896760170083,
+            "y": 0.5564125644391248,
+            "previousX": 0.2453671440050558,
+            "previousY": 0.5508065164540589
+          },
+          {
+            "x": 0.3254076925866809,
+            "y": 0.6047759942012207,
+            "previousX": 0.32534992661706374,
+            "previousY": 0.5987308088250706
+          },
+          {
+            "x": 0.42476858487902125,
+            "y": 0.6035090356157243,
+            "previousX": 0.42470643569213895,
+            "previousY": 0.5971571086753256
+          },
+          {
+            "x": 0.4988395538971436,
+            "y": 0.5372696573623633,
+            "previousX": 0.4988386127943748,
+            "previousY": 0.5309862492971504
+          },
+          {
+            "x": 0.5765487264866493,
+            "y": 0.5991993363482936,
+            "previousX": 0.5766202277846394,
+            "previousY": 0.5928248694325611
+          },
+          {
+            "x": 0.6757736336529109,
+            "y": 0.6045370854321314,
+            "previousX": 0.6758254803347888,
+            "previousY": 0.5985158283277671
+          },
+          {
+            "x": 0.7557501943982206,
+            "y": 0.5566026539756435,
+            "previousX": 0.7560518800667291,
+            "previousY": 0.5510007479499173
+          },
+          {
+            "x": 0.7398989075157117,
+            "y": 0.6546992110106957,
+            "previousX": 0.7395559007545178,
+            "previousY": 0.6489909585742238
+          },
+          {
+            "x": 0.8263715198736825,
+            "y": 0.7036551301307838,
+            "previousX": 0.8236859118521067,
+            "previousY": 0.7018713512403973
+          },
+          {
+            "x": 0.88,
+            "y": 0.62,
+            "previousX": 0.88,
+            "previousY": 0.62
+          }
+        ],
+        "bees": [
+          {
+            "id": "h1",
+            "x": 0.36630292694632405,
+            "y": 0.5100761828009979,
+            "vx": 0.08798847950939585,
+            "vy": -0.10589392817935424,
+            "target": 0,
+            "delay": 0,
+            "phase": 0.2,
+            "r": 0.022
+          },
+          {
+            "id": "h2",
+            "x": 0.6710871722956767,
+            "y": 0.44272622097104986,
+            "vx": 0.013643827444660675,
+            "vy": 0.31970900202005625,
+            "target": 1,
+            "delay": 350,
+            "phase": 2,
+            "r": 0.022
+          },
+          {
+            "id": "h3",
+            "x": 0.43608269858124254,
+            "y": 0.3617664587364112,
+            "vx": -0.05438848265455284,
+            "vy": 0.292397798007761,
+            "target": 0,
+            "delay": 700,
+            "phase": 4,
+            "r": 0.022
+          }
+        ],
+        "start": "brass-left",
+        "end": "brass-right"
+      },
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "庭便を守り切った",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": true,
+        "detail": {
+          "reason": "success",
+          "quality": 0.86,
+          "detail": "張ったリボンが群れを滑らせ、配達員と荷物は無傷です。 衝突4回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/success-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "timeout",
+      "reduced": true,
+      "width": 402,
+      "layout": 0,
+      "task": {
+        "layoutId": "gate-arch",
+        "title": "夕庭の門を越える群れ",
+        "proof": {
+          "canonical": {
+            "outcome": "success",
+            "steps": 96,
+            "collisions": 4,
+            "minClearance": 0.096897,
+            "length": 1.192428,
+            "twoAnchors": true
+          },
+          "collapse": {
+            "outcome": "collapse",
+            "steps": 45,
+            "collisions": 0,
+            "minClearance": -0.000436,
+            "length": 0.438077,
+            "twoAnchors": false
+          },
+          "sting": {
+            "outcome": "sting",
+            "steps": 82,
+            "collisions": 0,
+            "minClearance": -0.002636,
+            "length": 1.282663,
+            "twoAnchors": true
+          }
+        }
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 796
+      },
+      "phase": "TIMEOUT",
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "finishCalls": 1,
+      "inputCount": 0,
+      "inputLength": 0,
+      "overBudget": false,
+      "invalidReason": null,
+      "remaining": 1.5,
+      "physics": null,
+      "canvas": {
+        "width": 1026,
+        "height": 1437,
+        "cssWidth": 342,
+        "cssHeight": 479,
+        "dpr": 3
+      },
+      "statusText": "展開が間に合わず",
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "quality": 0,
+          "detail": "リボンを張る前に庭便の時間が尽きました。 衝突0回。"
+        }
+      },
+      "focusVisible": true,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/spatial-draw-shelter-v1-visual/timeout-402-reduced.png",
+      "errors": []
+    }
+  ]
+}
