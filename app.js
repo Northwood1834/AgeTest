@@ -1,3 +1,6 @@
+import {createGameRuntime} from "./src/game-kernel.js";
+import {generateGameTask,isModularGame,loadGame,manifestEntry,selectableGameCatalog} from "./src/game-loader.js";
+
 (() => {
 "use strict";
 if (window.top !== window.self) {
@@ -1046,19 +1049,19 @@ const TEMPLATE_TIERS={
   "attention-dual-v1":3,"calculation-rpg-battle-v1":2,"spatial-lane-run-v1":2,"prediction-chain-puzzle-v1":2,"prediction-pin-pull-v1":2,"attention-water-sort-v1":2,"calculation-gate-run-v1":2,"spatial-park-jam-v1":3,"spatial-rope-untangle-v1":2,"spatial-flow-link-v1":3,"spatial-pipe-flow-v1":2,"attention-screw-out-v1":2,"timing-tower-stack-v1":2,"language-word-order-v1":2,"language-english-gap-v1":2,"language-english-error-v1":3,"language-english-form-v1":2,"social-date-v1":2,"social-partner-mood-v1":2,"language-english-v1":2
 };
 const MAX_TIER=5;
-const tierFor = templateId => TEMPLATE_TIERS[templateId]||1;
+const tierFor = templateId => manifestEntry(templateId)?.tier??(TEMPLATE_TIERS[templateId]||1);
 const TEMPLATE_FLAVORS={
   "reaction-target-v1":"wild","reaction-emoji-runner-v1":"wild","attention-author-boss-v1":"wild","spatial-emoji-fps-v1":"wild","prediction-lane3d-v1":"wild","spatial-golf-putt-v1":"wild","spatial-lane-run-v1":"wild","spatial-park-jam-v1":"satisfying","spatial-flow-link-v1":"satisfying","spatial-pipe-flow-v1":"satisfying","spatial-rope-untangle-v1":"quirky","calculation-rpg-battle-v1":"wild","calculation-gate-run-v1":"wild","timing-three-v1":"wild","timing-five-v1":"wild","timing-tower-stack-v1":"wild",
   "memory-missing-v1":"quirky","reaction-emoji-match-v1":"quirky","attention-animal-count-v1":"quirky","inhibition-parity-v1":"quirky","attention-kana-count-v1":"quirky","attention-dual-v1":"quirky","language-anagram-v1":"quirky","language-word-order-v1":"satisfying","social-partner-mood-v1":"quirky","social-date-v1":"wild",
   "memory-path-v1":"satisfying","spatial-cube-v1":"satisfying","spatial-rotation-v1":"satisfying","prediction-number-v1":"satisfying","prediction-double-v1":"satisfying","prediction-chain-puzzle-v1":"satisfying","attention-water-sort-v1":"satisfying","prediction-pin-pull-v1":"wild","attention-screw-out-v1":"quirky","calculation-mental-v1":"satisfying","calculation-multistep-v1":"satisfying","attention-odd-v1":"satisfying","attention-search-v1":"satisfying"
 };
-const flavorFor = templateId => TEMPLATE_FLAVORS[templateId]||"classic";
+const flavorFor = templateId => manifestEntry(templateId)?.flavor??(TEMPLATE_FLAVORS[templateId]||"classic");
 // Every family ships its basic form as step 1. A harder version of the same play
 // is added as a new stable ID with a higher step, never as a retune of an old ID,
 // so history and category strength keep their meaning.
 const TEMPLATE_STEPS={};
-const stepFor = templateId => TEMPLATE_STEPS[templateId]||1;
-const familyOf = templateId => templateId.replace(/-v\d+$/,"").replace(/-(hard|pro)$/,"");
+const stepFor = templateId => manifestEntry(templateId)?.step??(TEMPLATE_STEPS[templateId]||1);
+const familyOf = templateId => manifestEntry(templateId)?.family??templateId.replace(/-v\d+$/,"").replace(/-(hard|pro)$/,"");
 const PACE_FIXED_KINDS = new Set(["signal","target","timing","runner"]);
 function tuneTaskForPace(task,paceMode){
   if(paceMode!==PACE_RELAXED)return task;
@@ -1068,8 +1071,7 @@ function tuneTaskForPace(task,paceMode){
   return{...task,standardDuration:task.duration,duration:Math.round(task.duration*RELAXED_DURATION_MULTIPLIER)};
 }
 
-const TASK_FACTORIES = [
-  {id:"reaction-signal-v1",version:"1.0",category:"reaction",make:()=>({kind:"signal",prompt:"合図が出たら、すぐタップ",help:"フライングは不正解です。",delay:randomInt(900,2200),duration:4300})},
+const LEGACY_TASK_FACTORIES = [
   {id:"reaction-target-v1",version:"1.0",category:"reaction",make:()=>({kind:"target",prompt:"逃げる紫をつかまえて",help:"背景を押すと逃亡成功です。",x:randomInt(8,72),y:randomInt(10,62),duration:5000})},
   {id:"memory-path-v1",version:"1.0",category:"memory",make:()=>({kind:"memoryPath",prompt:"光る順番を覚えて",help:"あとで同じ順番にタップ。",path:shuffle([0,1,2,3,4,5,6,7,8]).slice(0,3),duration:7200})},
   {id:"memory-missing-v1",version:"1.0",category:"memory",make:()=>{const all=["🍇","鍵","傘","月","猫","靴","山","時計","魚","本"],shown=shuffle(all).slice(0,5),absent=pick(all.filter(x=>!shown.includes(x))),others=shuffle(shown).slice(0,3);return{kind:"flashChoice",prompt:"なかったものを選んで",help:"まず5つを覚えてください。",shown,options:shuffle([absent,...others]),answer:absent,duration:7500}}},
@@ -1167,7 +1169,12 @@ const TASK_FACTORIES = [
   {id:"social-greeting-v1",version:"1.15",category:"social",make:()=>{const rows=[["朝、近所の人に会いました。","おはようございます",["おやすみなさい","いただきます","ごちそうさま"]],["お店で先に会計を譲ってもらいました。","ありがとうございます",["いってきます","おかえりなさい","はじめまして"]],["久しぶりに友人に会いました。","お久しぶりです",["いってらっしゃい","おつかれさま、また明日","ただいま"]]],r=pick(rows);return{kind:"choice",prompt:`${r[0]} なんと言う？`,help:"いちばん自然なあいさつを。",options:shuffle([r[1],...r[2]]),answer:r[1],duration:7000}}}
 ];
 
-function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
+const TASK_FACTORIES=[
+  ...selectableGameCatalog.map(entry=>({id:entry.id,version:entry.introducedIn,category:entry.category,modular:true})),
+  ...LEGACY_TASK_FACTORIES.filter(factory=>!isModularGame(factory.id))
+];
+
+async function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDARD){
   const recent=new Set(profile.recentTemplates.slice(0,10)),level=currentLevel(profile);
   const available=TASK_FACTORIES.filter(factory=>tierFor(factory.id)<=level);
   const ranked=available.map(factory=>{
@@ -1183,18 +1190,26 @@ function buildTasks(profile=state.profile,paceMode=profile.paceMode||PACE_STANDA
   if(boss&&!chosen.includes(boss)){const same=chosen.map((factory,index)=>factory.category===boss.category?index:-1).filter(index=>index>=0),wild=chosen.findIndex(factory=>flavorFor(factory.id)==="wild"),replace=same.length>=2?same.at(-1):wild>=0?wild:chosen.length-1;chosen[replace]=boss}
   let ordered=shuffle(chosen);
   if(boss&&ordered.includes(boss)){ordered=shuffle(ordered.filter(factory=>factory!==boss));ordered.splice(Math.min(5,ordered.length),0,boss)}
-  return ordered.map(factory=>tuneTaskForPace({templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category,...factory.make()},paceMode));
+  return Promise.all(ordered.map(async factory=>{
+    const task=factory.modular
+      ?await generateGameTask(factory.id,{random:randomFloat,randomInt,pick,shuffle})
+      :{templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category,...factory.make()};
+    return tuneTaskForPace(task,paceMode);
+  }));
 }
 
-let cooldownTicker=null,questionTimers=[],timerRaf=null,extraRafs=[],deadlineTimeout=null,questionAnswered=false,questionStartedAt=0;
+let cooldownTicker=null,questionTimers=[],timerRaf=null,extraRafs=[],deadlineTimeout=null,questionAnswered=false,questionStartedAt=0,activeGameRuntime=null,lastGameRuntimeState=null,questionRenderToken=0,sessionStarting=false;
+const gameQaHooks={};
 function clearQuestionTimers(){questionTimers.forEach(clearTimeout);questionTimers=[];clearTimeout(deadlineTimeout);deadlineTimeout=null;cancelAnimationFrame(timerRaf);timerRaf=null;extraRafs.forEach(token=>cancelAnimationFrame(typeof token==="object"?token.id:token));extraRafs=[]}
+function releaseGameRuntime(){if(!activeGameRuntime)return;activeGameRuntime.dispose();lastGameRuntimeState=activeGameRuntime.inspect();activeGameRuntime=null}
+function disposeCurrentQuestion(){questionRenderToken++;releaseGameRuntime();clearQuestionTimers();return questionRenderToken}
 function later(fn,ms){const id=setTimeout(fn,ms);questionTimers.push(id);return id}
 function showView(id){["home-view","game-view","result-view"].forEach(x=>$(x).hidden=x!==id);window.scrollTo(0,0)}
 function formatRemaining(ms){const total=Math.max(0,Math.ceil(ms/1000)),h=Math.floor(total/3600),m=Math.floor(total%3600/60),s=total%60;return h?`${h}時間 ${String(m).padStart(2,"0")}分`:m?`${m}分 ${String(s).padStart(2,"0")}秒`:`${s}秒`}
 function gradeFor(score){return GRADES.find(g=>score>=g.min)||GRADES.at(-1)}
 
 function renderHome(){
-  clearQuestionTimers();$("feedback").hidden=true;showView("home-view");
+  disposeCurrentQuestion();$("feedback").hidden=true;showView("home-view");
   $("profile-avatar").textContent=state.profile.avatar;$("profile-name").textContent=state.profile.name;
   const selectedPace=state.profile.paceMode===PACE_RELAXED?PACE_RELAXED:PACE_STANDARD,sessionPace=state.activeSession?.paceMode||PACE_STANDARD;
   $("pace-note").textContent=state.activeSession&&sessionPace!==selectedPace?`進行中は${sessionPace===PACE_RELAXED?"ゆったり":"標準"}。次のセットから${selectedPace===PACE_RELAXED?"ゆったり":"標準"}です。`:selectedPace===PACE_RELAXED?"ゆったりモード（番付対象外）":"標準モード（番付対象）";
@@ -1222,18 +1237,25 @@ function renderCategoryStats(){
   entries.forEach(([key,meta])=>{const s=stats[key],pct=Math.round(s.correct/s.asked*100),row=document.createElement("div");row.className="category-row";const label=document.createElement("span");label.className="category-label";label.textContent=`${meta.icon} ${meta.label}`;const track=document.createElement("span");track.className="category-track";const fill=document.createElement("i");fill.style.width=`${pct}%`;track.append(fill);const value=document.createElement("span");value.className="category-pct";value.textContent=`${pct}%`;row.append(label,track,value);root.append(row)});
 }
 
-function startOrResume(){
-  if(state.activeSession){renderCurrentTask();return}
-  const now=Date.now(),window=trainingWindowStatus();
-  if(window.expired){state.profile.trainingWindowStartedAt=0;state.profile.setsInWindow=0;state.cooldownUntil=0}
-  if((state.cooldownUntil||0)>now||state.profile.setsInWindow>=MAX_SETS_PER_WINDOW)return;
-  if(!state.profile.trainingWindowStartedAt)state.profile.trainingWindowStartedAt=now;
-  const paceMode=state.profile.paceMode===PACE_RELAXED?PACE_RELAXED:PACE_STANDARD;
-  state.activeSession={id:uuid(),startedAt:now,trainingWindowStartedAt:state.profile.trainingWindowStartedAt,contentPack:CONTENT_PACK,paceMode,tasks:buildTasks(state.profile,paceMode),currentIndex:0,answers:[],earnedXp:0};
-  state.pendingResult=false;saveState();renderCurrentTask();
+async function startOrResume(){
+  if(state.activeSession){void renderCurrentTask();return}
+  if(sessionStarting)return;
+  const now=Date.now(),window=trainingWindowStatus(),profile=state.profile;
+  if(window.expired){profile.trainingWindowStartedAt=0;profile.setsInWindow=0;state.cooldownUntil=0}
+  if((state.cooldownUntil||0)>now||profile.setsInWindow>=MAX_SETS_PER_WINDOW)return;
+  const paceMode=profile.paceMode===PACE_RELAXED?PACE_RELAXED:PACE_STANDARD,profileId=profile.id;
+  sessionStarting=true;$("start-button").disabled=true;$("start-button").textContent="問題を準備中…";
+  try{
+    const tasks=await buildTasks(profile,paceMode);
+    if(state.profile.id!==profileId||state.activeSession)return;
+    if(!profile.trainingWindowStartedAt)profile.trainingWindowStartedAt=now;
+    state.activeSession={id:uuid(),startedAt:now,trainingWindowStartedAt:profile.trainingWindowStartedAt,contentPack:CONTENT_PACK,paceMode,tasks,currentIndex:0,answers:[],earnedXp:0};
+    state.pendingResult=false;saveState();void renderCurrentTask();
+  }catch(error){console.error("session generation failed",error);toast("問題を読み込めませんでした")}
+  finally{sessionStarting=false;if(!state.activeSession)refreshHomeButton()}
 }
-function renderCurrentTask(){
-  clearInterval(cooldownTicker);clearQuestionTimers();$("feedback").hidden=true;
+async function renderCurrentTask(){
+  clearInterval(cooldownTicker);const renderToken=disposeCurrentQuestion();$("feedback").hidden=true;
   const session=state.activeSession;if(!session)return renderHome();
   if(session.currentIndex>=session.tasks.length){finalizeSession();return}
   questionAnswered=false;questionStartedAt=performance.now();showView("game-view");
@@ -1243,7 +1265,18 @@ function renderCurrentTask(){
   $("category-icon").textContent=meta.icon;$("category-name").textContent=meta.label;$("task-tier").textContent=`Tier ${task.tier||1}`;
   const reveal=$("category-reveal");reveal.classList.remove("category-reveal");void reveal.offsetWidth;reveal.classList.add("category-reveal");
   $("question-kicker").textContent=`問題タイプ · ${meta.label}${session.paceMode===PACE_RELAXED?" · ゆったり":""}`;$("question-prompt").textContent=task.prompt;$("question-help").textContent=task.help||"";$("challenge").replaceChildren();$("timer-bar").parentElement.hidden=false;
-  renderTask(task);
+  if(!isModularGame(task.templateId)){renderTask(task);return}
+  try{
+    const game=await loadGame(task.templateId);
+    if(renderToken!==questionRenderToken||state.activeSession!==session||session.currentIndex!==index)return;
+    let runtime=null;
+    runtime=createGameRuntime({host:$("challenge"),timerBar:$("timer-bar"),onFinish:(correct,result)=>{lastGameRuntimeState=runtime.inspect();if(activeGameRuntime===runtime)activeGameRuntime=null;finishTask(correct,result)},qa:window.__SHORO_QA__?gameQaHooks:null});
+    activeGameRuntime=runtime;lastGameRuntimeState=null;game.render(task,runtime.context);
+  }catch(error){
+    if(renderToken!==questionRenderToken)return;
+    releaseGameRuntime();console.error("game compatibility error",error);
+    const message=document.createElement("p");message.className="inline-error";message.setAttribute("role","alert");message.textContent="この問題を読み込めません。最新版を読み込んでください。";$("challenge").append(message);
+  }
 }
 function startDeadline(duration,onExpire){
   const started=performance.now(),bar=$("timer-bar");bar.style.width="100%";
@@ -1279,9 +1312,6 @@ function renderTask(task){
   }
   if(task.kind==="stroop"){
     const word=document.createElement("div");word.className=`stroop-word ${COLOR_CLASSES[task.ink]}`;word.textContent=task.word;root.append(word);makeChoices(task);startDeadline(task.duration,()=>genericTimeout(task));return
-  }
-  if(task.kind==="signal"){
-    const button=document.createElement("button");button.type="button";button.className="signal-button";button.textContent="まだ…";let goAt=0;button.addEventListener("click",()=>{if(!goAt){finishTask(false,{detail:"フライングです。若さが暴走しました。"});return}const ms=performance.now()-goAt;finishTask(ms<=1500,{reactionMs:Math.round(ms),quality:clamp(1-(ms-180)/1500,0,1),detail:ms<=1500?`${Math.round(ms)} ms`:`${Math.round(ms)} ms。少し遅かったようです。`})});root.append(button);later(()=>{if(questionAnswered)return;goAt=performance.now();button.textContent="いま！";button.classList.add("go")},task.delay);startDeadline(task.duration,()=>finishTask(false,{detail:"合図は帰りました。"}));return
   }
   if(task.kind==="target"){
     const arena=document.createElement("div");arena.className="target-arena";const target=document.createElement("button");target.type="button";target.className="moving-target";target.setAttribute("aria-label","紫の的");target.hidden=true;let appeared=0,caught=false,x=0,y=0,vx=0,vy=0;const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;const catchTarget=event=>{event.preventDefault();event.stopPropagation();if(caught||questionAnswered||!appeared)return;caught=true;const ms=performance.now()-appeared;finishTask(true,{reactionMs:Math.round(ms),quality:clamp(1-ms/4000,0,1),detail:`確保まで ${Math.round(ms)} ms`})};target.addEventListener("pointerdown",catchTarget);target.addEventListener("click",event=>{event.stopPropagation();if(event.detail===0)catchTarget(event)});arena.addEventListener("click",event=>{if(event.target===target||target.contains(event.target))return;finishTask(false,{detail:"そこにはもう、紫はいません。"})});arena.append(target);root.append(arena);
@@ -4059,7 +4089,7 @@ function renderWordOrder(task){
   });
 }
 function finishTask(correct,meta={}){
-  if(questionAnswered||!state.activeSession)return;questionAnswered=true;clearQuestionTimers();
+  if(questionAnswered||!state.activeSession)return;questionAnswered=true;releaseGameRuntime();clearQuestionTimers();
   const session=state.activeSession,index=session.currentIndex,task=session.tasks[index],elapsed=Math.max(1,performance.now()-questionStartedAt),beforeLevel=currentLevel();
   let quality=Number.isFinite(meta.quality)?clamp(meta.quality,0,1):clamp(1-elapsed/(task.duration||8000)*.7,0,1),xp=0;
   if(correct){const wins=Number(state.profile.templateWins[task.templateId]||0);xp=8+Math.round(quality*4)+(wins===0?6:wins<3?2:0);state.profile.xp+=xp;state.profile.templateWins[task.templateId]=wins+1;session.earnedXp=(session.earnedXp||0)+xp}
@@ -4108,11 +4138,17 @@ function fallbackCopy(text){const area=document.createElement("textarea");area.v
 function toast(message){const el=$("toast");el.textContent=message;el.classList.add("show");clearTimeout(el._timer);el._timer=setTimeout(()=>el.classList.remove("show"),2200)}
 
 if(["127.0.0.1","localhost"].includes(location.hostname))window.__SHORO_QA__={
-  catalog:TASK_FACTORIES.map(factory=>({id:factory.id,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category})),
+  catalog:TASK_FACTORIES.map(factory=>({id:factory.id,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category,modular:!!factory.modular})),
+  games:gameQaHooks,
   grade(score){return gradeFor(score).name},
-  sampleSession(level=1,paceMode=PACE_STANDARD){if(!Number.isInteger(level)||level<1||level>MAX_TIER)throw new Error("invalid level");if(![PACE_STANDARD,PACE_RELAXED].includes(paceMode))throw new Error("invalid pace");const profile=defaultProfile("QA","🤓");profile.xp=(level-1)*120;profile.paceMode=paceMode;TASK_FACTORIES.filter(factory=>tierFor(factory.id)===1).slice(0,(level-1)*6).forEach(factory=>profile.templateWins[factory.id]=1);return buildTasks(profile,paceMode)},
-  validate(iterations=20){const issues=[],ids=new Set();TASK_FACTORIES.forEach(factory=>{if(ids.has(factory.id))issues.push(`${factory.id}: duplicate id`);ids.add(factory.id);if(!CATEGORIES[factory.category])issues.push(`${factory.id}: unknown category`);if(![1,2,3,4,5].includes(tierFor(factory.id)))issues.push(`${factory.id}: invalid tier`);for(let i=0;i<iterations;i++){let task;try{task=factory.make()}catch(error){issues.push(`${factory.id}: generator ${error.message}`);break}if(!task?.kind||!Number.isFinite(task.duration))issues.push(`${factory.id}: missing kind/duration`);if(Array.isArray(task.options)){if(task.answer!=null&&!task.options.includes(task.answer))issues.push(`${factory.id}: answer absent`);if(new Set(task.options).size!==task.options.length)issues.push(`${factory.id}: duplicate option`)}}});return{factories:TASK_FACTORIES.length,iterations,issues:[...new Set(issues)]}},
-  preview(templateId,duration=60000,slowRunner=true){const factory=TASK_FACTORIES.find(item=>item.id===templateId);if(!factory)throw new Error("unknown template");const task={templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category,...factory.make()};task.duration=Math.max(task.duration,duration);if(task.kind==="runner"&&slowRunner)task.travelMs=Math.max(task.travelMs||2800,9000);document.querySelectorAll("dialog[open]").forEach(dialog=>dialog.close());state.activeSession={id:uuid(),startedAt:Date.now(),contentPack:CONTENT_PACK,tasks:[task],currentIndex:0,answers:[],earnedXp:0};state.pendingResult=false;saveState();renderCurrentTask();return task}
+  async sampleSession(level=1,paceMode=PACE_STANDARD){if(!Number.isInteger(level)||level<1||level>MAX_TIER)throw new Error("invalid level");if(![PACE_STANDARD,PACE_RELAXED].includes(paceMode))throw new Error("invalid pace");const profile=defaultProfile("QA","🤓");profile.xp=(level-1)*120;profile.paceMode=paceMode;TASK_FACTORIES.filter(factory=>tierFor(factory.id)===1).slice(0,(level-1)*6).forEach(factory=>profile.templateWins[factory.id]=1);return buildTasks(profile,paceMode)},
+  async validate(iterations=20){const issues=[],ids=new Set();for(const factory of TASK_FACTORIES){if(ids.has(factory.id))issues.push(`${factory.id}: duplicate id`);ids.add(factory.id);if(!CATEGORIES[factory.category])issues.push(`${factory.id}: unknown category`);if(![1,2,3,4,5].includes(tierFor(factory.id)))issues.push(`${factory.id}: invalid tier`);for(let i=0;i<iterations;i++){let task;try{task=factory.modular?await generateGameTask(factory.id,{random:randomFloat,randomInt,pick,shuffle}):factory.make()}catch(error){issues.push(`${factory.id}: generator ${error.message}`);break}if(!task?.kind||!Number.isFinite(task.duration))issues.push(`${factory.id}: missing kind/duration`);if(Array.isArray(task.options)){if(task.answer!=null&&!task.options.includes(task.answer))issues.push(`${factory.id}: answer absent`);if(new Set(task.options).size!==task.options.length)issues.push(`${factory.id}: duplicate option`)}}}return{factories:TASK_FACTORIES.length,iterations,issues:[...new Set(issues)]}},
+  async preview(templateId,duration=60000,slowRunner=true){const factory=TASK_FACTORIES.find(item=>item.id===templateId)||(manifestEntry(templateId)?{id:templateId,modular:true}:null);if(!factory)throw new Error("unknown template");const task=factory.modular?await generateGameTask(factory.id,{random:randomFloat,randomInt,pick,shuffle}):{templateId:factory.id,introducedIn:factory.version,tier:tierFor(factory.id),flavor:flavorFor(factory.id),step:stepFor(factory.id),family:familyOf(factory.id),category:factory.category,...factory.make()};task.duration=Math.max(task.duration,duration);if(task.kind==="runner"&&slowRunner)task.travelMs=Math.max(task.travelMs||2800,9000);document.querySelectorAll("dialog[open]").forEach(dialog=>dialog.close());state.activeSession={id:uuid(),startedAt:Date.now(),contentPack:CONTENT_PACK,paceMode:PACE_STANDARD,tasks:[task],currentIndex:0,answers:[],earnedXp:0};state.pendingResult=false;saveState();await renderCurrentTask();return task},
+  home(){renderHome()},
+  runtime(){return activeGameRuntime?.inspect()||lastGameRuntimeState},
+  activeTask(){return state.activeSession?.tasks[state.activeSession.currentIndex]||null},
+  sessionTasks(){return state.activeSession?.tasks.map(task=>task.templateId)||[]},
+  async next(){if(!state.activeSession)return null;state.activeSession.currentIndex++;await renderCurrentTask();return state.activeSession?.tasks[state.activeSession.currentIndex]||null}
 };
 
 $("start-button").addEventListener("click",startOrResume);
@@ -4141,6 +4177,7 @@ else{state.activeSession=null;renderHome()}
 
 if(window.__SHORO_QA__){
   const params=new URLSearchParams(location.search),templateId=params.get("preview");
-  if(templateId){try{window.__SHORO_QA__.preview(templateId,Number(params.get("ms"))||600000)}catch(error){console.warn("preview:",error.message)}}
+  if(templateId)window.__SHORO_QA__.preview(templateId,Number(params.get("ms"))||600000).catch(error=>console.warn("preview:",error.message));
+  if(params.get("browserTest")==="reaction-signal-v1")import("./test/browser-reaction-runner.mjs").then(module=>module.runReactionBrowserQa(window.__SHORO_QA__)).catch(error=>console.error("browser QA:",error));
 }
 })();
