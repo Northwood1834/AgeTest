@@ -199,6 +199,17 @@ export const gameManifest=Object.freeze([
     "hash": "2e158179c1357576"
   },
   {
+    "id": "inhibition-rule-switch-v1",
+    "introducedIn": "1.0",
+    "tier": 3,
+    "flavor": "classic",
+    "step": 1,
+    "family": "inhibition-rule-switch",
+    "category": "inhibition",
+    "module": "./games/inhibition-rule-switch-v1.js",
+    "hash": "bc8a7df34b1b430e"
+  },
+  {
     "id": "inhibition-stroop-v1",
     "introducedIn": "1.0",
     "tier": 1,

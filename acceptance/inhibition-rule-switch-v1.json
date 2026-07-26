@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "inhibition-rule-switch-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "d5513e90bb0af6ad8eaf47753e971643fc8a0e27",
+  "test": "test/inhibition-rule-switch-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
