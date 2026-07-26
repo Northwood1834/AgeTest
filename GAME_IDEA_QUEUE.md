@@ -773,6 +773,13 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Proof/outcomes: exhaustive integer choices defeat simple long-window defer greed and include ≥2 return collisions; exact window edges cover easy-first pileup, hard-first miss, collision loss, max-shortening and timeout.
 - Art/reduced motion: original abstract paired requests/inlet/return timeline; immediate arrivals and static return previews, no real queue procedure.
 
+### Q115 — `timing-dual-clock-v1`
+
+- Category/tier/flavor: timing / tier 3 / satisfying
+- Core: control a finite nonzero speed that advances an abstract work clock while an independent real clock advances steadily; cross three visible paired checkpoints without ever waiting or reversing either clock.
+- Proof/outcomes: exhaustive integer speed histories permit 1–2 plans, defeat fixed minimum/maximum/constant speed, require different feasible averages per segment and preserve later reachability from CP1 edges; early-work, late-real, minimum-drift, spent-slack and timeout retain both clocks.
+- Art/reduced motion: original abstract dual-dial board/handle/checkpoint markers; stepped numeric clocks and static speed stage, no real clock or process operation.
+
 ### Q116 — `language-quantifier-scope-v1`
 
 - Category/tier/flavor: language / tier 3 / satisfying
