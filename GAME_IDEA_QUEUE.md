@@ -17,7 +17,6 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
 | `calculation-flower-share-v1` | former Label Jar owner | N12; screw lane | Drag one-dot stems and two-dot double blooms until three vases are visibly full |
-| `inhibition-bubble-keep-v1` | former Share Cookies owner | N12; audit lane | Tap small round bubbles while leaving the larger star bubbles |
 | `prediction-cookie-cut-v1` | former Clothesline Calm owner | N12; flow lane | Arrange three cutters on dough, then lift once to reveal only valid cookies |
 
 ## Waiting queue

@@ -210,6 +210,17 @@ export const gameManifest=Object.freeze([
     "hash": "fd52fd1abe123e27"
   },
   {
+    "id": "inhibition-bubble-keep-v1",
+    "introducedIn": "2.0",
+    "tier": 1,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "inhibition-bubble-keep",
+    "category": "inhibition",
+    "module": "./games/inhibition-bubble-keep-v1.js",
+    "hash": "325bb31b005c6a85"
+  },
+  {
     "id": "inhibition-flanker-v1",
     "introducedIn": "1.0",
     "tier": 1,

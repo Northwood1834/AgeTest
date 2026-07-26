@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "inhibition-bubble-keep-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "fc475df42a4d762e08223d2cf5ebedcdf39c8154",
+  "test": "test/inhibition-bubble-keep-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
