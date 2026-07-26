@@ -412,6 +412,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Interdependence/proof: successful detour raises companion-management demand, while direct grouping violates avoidance. Exhaustive quantized routes require ≥2 waits, defeat shortest/max-detour strategies and prove distance/contact boundaries.
 - Art/reduced motion: original abstract gallery, display shapes, guide marker and two nonhuman light sprites; stepped movement, no plants, visitors, attention/ability judgment, etiquette, or real venue procedure.
 
+### Q63 — `language-reference-narrow-v1`
+
+- Category/tier/flavor: language / tier 3 / satisfying
+- Core: add up to four always-explained attribute chips to narrow highlighted matches in a 48-cell abstract shelf, trading fixed phrasing time against per-candidate inspection time for three targets.
+- Interdependence/proof: precision reduces search while costing the same time resource; exhaustive chip strategies make both always-maximal and never-filter approaches fail, prove changing break-even points and candidate boundaries.
+- Art/reduced motion: original abstract shelf/pieces/chips/target frames; static hatching and stepped inspection, no external vocabulary, product, or real classification.
+
+### Q64 — `spatial-blackout-route-v1`
+
+- Category/tier/flavor: spatial / tier 3 / wild
+- Core: encode obstacles on a 10×14 abstract board before signal blackout, then route a visible token while deterministic accumulated position drift requires exactly one planned touch of a clearly marked safe calibration rail to reset.
+- Interdependence/proof: remembered geometry loses alignment with drift, while calibration consumes route/time budget. Exhaustive paths make zero calibration exceed drift, two exceed contact/time, and treat every obstacle contact as error with exact boundaries and no hidden randomness.
+- Art/reduced motion: original abstract signal board/obstacles/token/calibration rail; stepped grid motion, no facility, darkness, evacuation, accessibility, or real-world guidance.
+
+### Q65 — `social-shared-grid-v1`
+
+- Category/tier/flavor: social / tier 3 / satisfying
+- Core: schedule one player-controlled fictional arm’s four token operations on a 6×4 board around a second autonomous arm’s always-visible timed region plan; blocking rewrites that arm’s later plan into larger alternatives.
+- Interdependence/proof: forecast constrains placement, while placement changes the forecast source and can amplify conflict. Exhaustive schedules reject always-self/always-other policies and prove wait/rewrite/deadlock boundaries.
+- Art/reduced motion: original shared board, two abstract arms/tokens/schedule UI; snapped states, no people, yielding virtue, workplace division, skill judgment, or real cooperation norm.
+
+### Q66 — `timing-water-clock-v1`
+
+- Category/tier/flavor: timing / tier 3 / satisfying
+- Core: open/close three visible unitless-flow channels with differing visible actuation delays so irreversible integer accumulation lands in a target band at an exact target tick.
+- Interdependence/proof: calculated timing changes the next calculation’s initial quantity; exhaustive operation sequences require ≥2 channels, reject delay-free arithmetic, and prove both band edges and over-operation outcomes.
+- Art/reduced motion: original abstract tabletop channels/reservoir/markers; tickwise levels, no real clock, plumbing, measurement device, or operating guidance.
+
+### Q67 — `attention-still-water-pick-v1`
+
+- Category/tier/flavor: attention / tier 3 / wild
+- Core: identify five subdued pieces among twenty by a continuously visible two-feature shape rule while suppressing visually dominant, always-wrong double-outline pieces whose touch deterministically permutes the whole board.
+- Interdependence/proof: inhibition failure destroys search progress, increasing urgency and later inhibition demand. Exhaustive finite layouts guarantee no-touch success, reachable distinct errors, deterministic complete permutations and contact boundaries.
+- Art/reduced motion: original creature-free shallow abstract basin, shape pieces/sample/bowl; two-frame rearrangement, no real collection, sorting, mineral, or game-of-chance motif.
+
+### Q68 — `reaction-capacity-gate-v1`
+
+- Category/tier/flavor: reaction / tier 3 / wild
+- Core: accept or pass twelve arriving integer tokens within visible windows so irreversible capacity ends in a target band; current token, next three, and suffix total are always visible.
+- Interdependence/proof: deliberation can forfeit the choice, while each quick choice reduces later combinatorial freedom. Exhaustive 2^12 outcomes constrain to ≤2 solutions and prove an observation-equivalent policy: every hidden suffix sharing visible history/next-three/total has the same correct current decision.
+- Art/reduced motion: original abstract terminal/tokens/capacity/waiting row; discrete updates, no currency, trade, gambling, or real allocation system.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
