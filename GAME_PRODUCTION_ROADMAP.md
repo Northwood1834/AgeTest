@@ -35,10 +35,14 @@ New games are conceived one owner and one game at a time. The director does not 
 Preferred sources of playful recognition are:
 
 - the memorable few seconds or mechanical beat people remember from a classic game, rebuilt as an original homage;
-- the satisfying interaction promised by mobile-game advertising, developed into the complete game rather than used as bait; and
-- nostalgic physical play from school, parks, or home, such as ruler flicking or battle pencils, translated into touch interaction.
+- the satisfying interaction promised by mobile-game advertising, developed into the complete game rather than used as bait;
+- nostalgic physical play from school, parks, or home, such as ruler flicking or battle pencils, translated into touch interaction;
+- familiar physical card games such as speed or sevens, rebuilt around fast, legible touch play; and
+- an original draw → deploy a monster → resolve a normal attack card-battle moment, presented with the completeness of a commercial card-game UI.
 
-An homage preserves the structure of the remembered moment, not another work's protected name, characters, artwork, map, copy, music, or screen composition. Every concept must have its own visual identity and a meaningful mechanical difference rather than a cosmetic reskin.
+An homage preserves the structure of the remembered moment, not another work's protected name, characters, artwork, card frame, zone layout, copy, music, or screen composition. Every concept must have its own terminology, card designs, creatures, visual identity, and meaningful mechanical difference rather than a cosmetic reskin.
+
+High production value is a defining requirement, not a late polish task. New games do not use low resolution, pixelation, crude handmade graphics, or ironic amateur styling as a shortcut. At both required DPR3 viewports, cards, materials, type, icons, particles, lighting, transitions, and terminal effects must look deliberately designed and resolution-independent. Card games in particular need a complete readable hierarchy for deck, hand, field, legal targets, stats, turn state, draw/deploy/attack feedback, and victory or defeat—not loose rectangles with text placed on them.
 
 A concept brief contains one provisional stable ID, category/tier/flavor, a 20–60 second core loop, win and failure conditions, touch and accessible controls, visual identity and celebration, generation/validation invariants, and the reason it is not redundant with an accepted game. Multiple alternatives and speculative idea dumps are rejected as the wrong work granularity.
 

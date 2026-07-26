@@ -93,8 +93,11 @@ Visual review checks, as applicable:
 - visible pressed, selected, dragging, disabled, invalid, focus, and reduced-motion states;
 - touch targets, labels, status text, safe-area spacing, and no clipping or horizontal overflow;
 - distinct success and failure hierarchy, with a celebration or impact at least as strong as the published game;
-- Canvas/SVG output at the requested DPR without blur, seams, accidental gaps, stale frames, or edge artifacts; and
-- consistent quality at both comparison widths without relying on emoji as a replacement for authored visual material.
+- Canvas/SVG output at the requested DPR without blur, seams, accidental gaps, stale frames, or edge artifacts;
+- consistent quality at both comparison widths without relying on emoji as a replacement for authored visual material; and
+- resolution-independent, commercially finished typography, icons, materials, lighting, particles, transitions, and outcome effects rather than low-resolution, pixelated, crude handmade, or intentionally amateur presentation.
+
+Card games require the same standard as rich action games. Deck, hand, field, zones, legal targets, card stats, current phase, and outcome must form one polished and readable hierarchy. Draw, deploy/set, attack, damage, victory, and defeat each need distinct causal feedback. Familiar card mechanics may be honored, but names, creatures, card art, frames, terminology, field layout, copy, and effects are authored for AgeTest rather than imitating a specific commercial property.
 
 Independent review by someone other than the game owner is required. Any material downgrade remains a blocking failure until the implementation and the complete comparison set are regenerated and reviewed again.
 
