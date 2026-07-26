@@ -578,6 +578,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Proof/outcomes: exhaustive quantized controls require at least two weak-drag waits while defeating always-maximum and always-minimum policies; exact inertia boundaries cover overshoot, accumulated drift, timeout and oscillation.
 - Art/reduced motion: original abstract field bands/gates/token with static density arrows and numeric drift/inertia; discrete coarse drag updates and no real navigation instruction.
 
+### Q87 — `memory-freshness-watch-v1`
+
+- Category/tier/flavor: memory / tier 3 / satisfying
+- Core: encode all six initial integer values together for six seconds, then allocate a one-item magnifier while their always-visible fixed rates continue; use remembered or reobserved values to set three target-time controls.
+- Proof/outcomes: exhaustive observation orders make observing all impossible and require ≥1 rate-based memory update; one-order-step boundaries cover stale, overcorrected, never-seen, overobserve and retained timeout states. No initial parameter is hidden.
+- Art/reduced motion: original abstract six-channel board/magnifier/control sliders; stepped values, visible rates and observation-age counters, no real monitoring process.
+
+### Q88 — `prediction-counter-table-v1`
+
+- Category/tier/flavor: prediction / tier 3 / wild
+- Core: choose five finite moves on an abstract board where a fully visible deterministic response table maps each prior player move and current position to the opposing unit’s next move, creating the three-step future being predicted.
+- Proof/outcomes: exhaustive histories allow only 1–2 target routes and defeat greedy one/two-step reading; exact overrun, induced dead end, hand-limit and retained timeout states, with no cycles or target-path leak.
+- Art/reduced motion: original abstract pieces/board/response table; immediate player move and two response stills, no competition or gambling framing.
+
+### Q89 — `reaction-verify-gate-v1`
+
+- Category/tier/flavor: reaction / tier 3 / satisfying
+- Core: route ten scheduled two-attribute tokens; visible shape narrows the second attribute to two task-stated possibilities, and inspection costs time. Some pairs provably share one route and need no inspection, while differing-route pairs must be inspected—never guessed.
+- Proof/outcomes: exhaustive integer schedules defeat inspect-all and skip-all, prove shared-route/different-route cases and exact window/jam boundaries; wrong routes jam the abstract gate and causally shorten later windows.
+- Art/reduced motion: original tokens/inspection frame/abstract gate; immediate arrivals and two-state inspection, no gambling, hidden-random decision, or real screening process.
+
+### Q90 — `social-role-recall-v1`
+
+- Category/tier/flavor: social / tier 3 / satisfying
+- Core: encode a six-second task-authored schedule for two autonomous abstract units, then place four pieces on their shared board; a collision deterministically changes one role and re-displays only that updated entry.
+- Proof/outcomes: exhaustive placement histories prove a zero-collision route, recoverability after one but not three collisions, and exact old/new-memory conflicts; success, overyield, repeated conflict, alternate conflict and timeout retain occupancy/history.
+- Art/reduced motion: original abstract shared grid/units/schedule card; discrete steps and static update markers, no people, virtues, etiquette or collaboration norm beyond the shown table.
+
+### Q91 — `spatial-one-way-bridge-v1`
+
+- Category/tier/flavor: spatial / tier 3 / wild
+- Core: allocate finite links among marked abstract islands and visit all collection nodes before returning; each link deterministically deactivates after one crossing, so placement and traversal order jointly determine future reachability.
+- Proof/outcomes: exhaustive finite build/move histories allow 1–2 routes, defeat greedy shortest links and prove exact supply/isolation/double-link edges with immediately visible dead ends and retained timeout.
+- Art/reduced motion: original abstract nodes/link sockets/active-spent links; discrete moves and two-state deactivation, no collapsing structure, debris, person, or real route instruction.
+
+### Q92 — `calculation-drift-sum-v1`
+
+- Category/tier/flavor: calculation / tier 3 / satisfying
+- Core: select one connected four-cell region on a twelve-cell board whose fully visible integer values and fixed signed rates sum to the target at a stated future commit tick; selection and changes themselves consume known time.
+- Proof/outcomes: enumerate all ticks/regions to guarantee one future solution plus a deceptive current-time solution, exact commit-start and ±1-tick boundaries; wrong-now, late, indecision, disconnected and timeout states retain selection.
+- Art/reduced motion: original abstract signed-value grid/selection outline/commit timer; stepped updates, no money, score, real forecasting, or hidden parameter.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
