@@ -95,7 +95,7 @@ P04 takes the next three owner slots that become free after their current owners
 
 - `spatial-golf-putt-v1` — accepted and integrated
 - `attention-author-boss-v1` — accepted and integrated
-- `social-date-v1` — audit lane
+- `social-date-v1` — accepted and integrated
 
 ### P06 — active ports
 
@@ -141,11 +141,14 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `attention-search-v1` — accepted and integrated
 - `spatial-flip-v1` — accepted and integrated
 - `prediction-shape-v1` — accepted and integrated
-- `inhibition-stroop-v1` — screw lane
-- `attention-shape-count-v1` — flow lane
+- `inhibition-stroop-v1` — accepted and integrated
+- `attention-shape-count-v1` — accepted and integrated
 - `timing-two-v1` — accepted and integrated
-- `reaction-shape-v1` — pre-browser; waits for flow lane
-- `timing-three-v1` — pre-browser; waits for screw lane
+- `reaction-shape-v1` — flow lane
+- `timing-three-v1` — screw lane
+- `attention-odd-v1` — pre-browser; waits for flow lane
+- `social-partner-mood-v1` — pre-browser; waits for audit lane
+- `inhibition-flanker-v1` — pre-browser; waits for screw lane
 
 ### N07 — completed original
 
@@ -153,7 +156,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
 ### P08 — active pre-browser port
 
-- `spatial-rotation-v1` — waits for audit lane
+- `spatial-rotation-v1` — audit lane
 
 ### P04
 

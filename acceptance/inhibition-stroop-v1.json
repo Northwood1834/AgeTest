@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "inhibition-stroop-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "e2e629d33df44d12c5b2dcdadc3f202b53e8eee7",
+  "test": "test/inhibition-stroop-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

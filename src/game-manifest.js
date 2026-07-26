@@ -78,6 +78,17 @@ export const gameManifest=Object.freeze([
     "hash": "57b098b20ed98840"
   },
   {
+    "id": "attention-shape-count-v1",
+    "introducedIn": "1.15",
+    "tier": 1,
+    "flavor": "classic",
+    "step": 1,
+    "family": "attention-shape-count",
+    "category": "attention",
+    "module": "./games/attention-shape-count-v1.js",
+    "hash": "776297e02f08d10d"
+  },
+  {
     "id": "attention-water-sort-v1",
     "introducedIn": "1.5",
     "tier": 2,
@@ -131,6 +142,17 @@ export const gameManifest=Object.freeze([
     "category": "calculation",
     "module": "./games/calculation-rpg-battle-v1.js",
     "hash": "fd52fd1abe123e27"
+  },
+  {
+    "id": "inhibition-stroop-v1",
+    "introducedIn": "1.0",
+    "tier": 1,
+    "flavor": "classic",
+    "step": 1,
+    "family": "inhibition-stroop",
+    "category": "inhibition",
+    "module": "./games/inhibition-stroop-v1.js",
+    "hash": "19bca45fc6adc357"
   },
   {
     "id": "memory-path-v1",
@@ -274,6 +296,17 @@ export const gameManifest=Object.freeze([
     "category": "social",
     "module": "./games/social-care-package-v1.js",
     "hash": "b8c0fd64da02238c"
+  },
+  {
+    "id": "social-date-v1",
+    "introducedIn": "1.0",
+    "tier": 2,
+    "flavor": "wild",
+    "step": 1,
+    "family": "social-date",
+    "category": "social",
+    "module": "./games/social-date-v1.js",
+    "hash": "99e2f82a2a4be2c9"
   },
   {
     "id": "social-thread-vibe-v1",

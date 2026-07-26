@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "attention-shape-count-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "8ccc53c091fd3c929df53ea988e91ad912983083",
+  "test": "test/attention-shape-count-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

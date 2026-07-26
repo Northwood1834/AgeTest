@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "social-date-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "243e9edc3942a1837fb33845f202bf05465e8006",
+  "test": "test/social-date-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
