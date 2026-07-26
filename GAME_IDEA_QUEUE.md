@@ -456,7 +456,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 - Category/tier/flavor: prediction / tier 3 / satisfying
 - Core: use exactly the first two of five abstract launches at distinct integer settings to identify one run-fixed hidden linear slope/intercept from retained landing pairs, then hit three narrow target bands with the remaining launches.
-- Interdependence/proof: launches are the only parameter observations and finite achievement opportunities. Exhaustive candidate relations prove no <2-observation guaranteed hit, exact identification after two, unique three-target completion, and all retained errors.
+- Interdependence/proof: launches are the only parameter observations and finite achievement opportunities; the first two landing tokens remain and must be chosen not to block later target bands. Exhaustive candidate relations prove no <2-observation guaranteed hit, exact identification after two, safe and blocking calibration pairs, and unique three-target completion.
 - Art/reduced motion: original non-weapon tabletop launcher/scale/targets/history; three-stage stills, no real experiment, measurement procedure, or device.
 
 ### Q70 — `calculation-approach-dial-v1`
@@ -493,6 +493,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Core: move six abstract tokens across three scheduled clearance sections in 2–3 trips; vertical versus horizontal loading changes carrier height/width, and rest areas alone permit costly reshaping.
 - Interdependence/proof: load shape changes passage windows while smaller loads increase trips; exhaustive plans require ≥1 reshape, defeat max-load/single-token strategies and prove clearance/timing edges.
 - Art/reduced motion: original abstract route/carrier/tokens/clearance schedule; stepped movement and two-state reshape, no warehouse, railway, equipment, or loading procedure.
+
+### Q75 — `language-assembly-order-v1`
+
+- Category/tier/flavor: language / tier 3 / satisfying
+- Core: reorder five in-task instruction rows and place always-explained immediate/wait connector chips before one commit; the abstract assembler executes literally, while inserted parts and arm retreat time can block later paths.
+- Interdependence/proof: physical feasibility constrains expressible row order and the written sequence creates that physical order. Exhaustively search 5! arrangements/connectors, require a wait, and prove one-swap/dead-end boundaries.
+- Art/reduced motion: original abstract board/arm/parts/instruction chips; row stills, no real machine, drawing notation, manual, or assembly process.
+
+### Q76 — `calculation-supply-cycles-v1`
+
+- Category/tier/flavor: calculation / tier 3 / satisfying
+- Core: distribute finite integer supply among three abstract units across four fully previewed cycles; each shortage deterministically increases that unit’s next-cycle requirement while excess is discarded.
+- Interdependence/proof: allocation writes the next arithmetic inputs, which constrain later allocation. Exhaustive schedules require non-greedy choices in ≥2 cycles and defeat concentrated/equal/deferred strategies with exact shortage edges.
+- Art/reduced motion: original abstract three-unit supply panel/tables; discrete fills, no people, fairness, aid, medicine, utilities, or real allocation norm.
+
+### Q77 — `prediction-catch-frame-v1`
+
+- Category/tier/flavor: prediction / tier 3 / wild
+- Core: place finite frame elements on a deterministic vertical grid before five scheduled abstract drops; every installed catcher also becomes an obstacle that changes all later routes.
+- Interdependence/proof: construction creates the future system being predicted. Exhaustive placement histories catch all five but require ≥1 deliberately minimal current catcher preserving later routes, defeating greedy maximal frames without ever skipping a required catch.
+- Art/reduced motion: original deterministic vertical board/pegs/frame pieces/tokens; peg-step stills, no gambling, score, payout, or real apparatus.
+
+### Q78 — `reaction-arm-cross-v1`
+
+- Category/tier/flavor: reaction / tier 3 / wild
+- Core: choose between two independently dragged abstract arms for twelve brief requests; arms cannot pass through each other, and crossing narrows future reachable regions until a costly coordinated reset.
+- Interdependence/proof: locally fastest responses can irreversibly reduce later response capacity. Exhaustive schedules require slower-side choices and temporary managed crossing, defeating always-fast/never-cross policies and proving reach/window/deadlock edges.
+- Art/reduced motion: original abstract two-arm grid/reach outlines/requests; snapped positions, no real robot or equipment procedure.
+
+### Q79 — `timing-interval-stamp-v1`
+
+- Category/tier/flavor: timing / tier 3 / satisfying
+- Core: encode three distinct visual interval lengths, then stamp each from the prior mark; each interval’s signed error deterministically changes the next cursor speed (overshoot faster, undershoot slower), with current speed always visible.
+- Interdependence/proof: remembered next length must be translated into timing under a speed generated by prior accuracy. Enumerate integer stamps/speeds, guarantee ≥3-tick bands, changing speeds and exact interval/error boundaries without claiming mere origin shift propagates interval error.
+- Art/reduced motion: original abstract strip/cursor/stamps/encoded spans; tickwise cursor, no real measuring, drafting or marking process.
+
+### Q80 — `calculation-region-sum-v1`
+
+- Category/tier/flavor: calculation / tier 3 / satisfying
+- Core: locate one unique connected 3–5-cell target sum on a 6×8 board whose values initially show only truthful interval classes; a movable exact-read frame costs time proportional to area and permanently reveals cells.
+- Interdependence/proof: interval arithmetic chooses high-information reads, which tighten overlapping candidate intervals. Exhaustive connected regions require ≥5 coarse candidates, prohibit reading all, and prove a bounded unique-information plan and selection edges.
+- Art/reduced motion: original abstract density-pattern grid/read frame/region outline; snapped reveals, no currency, score, gambling, or real measurement system.
 
 ## Dispatched brief archive
 
