@@ -11,20 +11,13 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
 | `calculation-number-tower-route-v1` | former Driving Safety owner | pre-browser; waits for flow | Plan a whole numbered tower route whose running value changes every later fight |
-| `prediction-ricochet-knockback-v1` | former Care Package owner | pre-browser; waits for audit | Predict bounded wall bounces and knock hostile figures from platforms without collateral |
+| `spatial-draw-bridge-v1` | former Ricochet owner | pre-browser; waits for audit | Draw a limited anchored span that must carry a real moving vehicle load |
 | `reaction-emoji-runner-v1` | former Draw Shelter owner | P04 port pre-browser; waits for screw | Faithfully port the published one-jump log runner with same-task visual parity |
 | `attention-laundry-rescue-v1` | former Sheep Home owner | browser/visual, flow lane | Drag only laundry into a top-loader; wife or dog is an immediate comic failure |
 | `spatial-emoji-fps-v1` | former Goods Shelf owner | P04 port pre-browser; waits for audit | Faithfully port the published three-target 3D lock-on corridor with parity evidence |
 | `prediction-lane3d-v1` | former Sand Channel owner | P04 port pre-browser; waits for screw | Faithfully port the published three-lane future-hazard choice with parity evidence |
 
 ## Waiting queue
-
-### Q9 — `spatial-draw-bridge-v1`
-
-- Category/tier/flavor: spatial / tier 3 / satisfying
-- Core: draw a load-bearing bridge between legal anchors with a limited material budget, release it, and watch a vehicle cross under real sag and joint stress.
-- Required distinction: unlike Draw Shelter, the line supports a moving load across a gap rather than deflecting a swarm.
-- Proof: bounded stroke graph and supports, deterministic load steps, canonical viable span, bottom-out, snap, rollover, success, and timeout.
 
 ### Q10 — `spatial-photo-booth-v1`
 
@@ -45,6 +38,13 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Proof: finite authored floor plans, swept-polygon collision, canonical collision-free route, near-clearance boundary cases, deterministic damage accounting, plain resume, single finish, and equivalent reduced-motion geometry.
 
 ## Dispatched brief archive
+
+### Q9 — `spatial-draw-bridge-v1`
+
+- Category/tier/flavor: spatial / tier 3 / satisfying
+- Core: draw a load-bearing bridge between legal anchors with a limited material budget, release it, and watch a vehicle cross under real sag and joint stress.
+- Required distinction: unlike Draw Shelter, the line supports a moving load across a gap rather than deflecting a swarm.
+- Proof: bounded stroke graph and supports, deterministic load steps, canonical viable span, bottom-out, snap, rollover, success, and timeout.
 
 ### Q8 — `prediction-ricochet-knockback-v1`
 

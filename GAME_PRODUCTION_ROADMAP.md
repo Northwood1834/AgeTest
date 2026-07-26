@@ -117,11 +117,15 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `social-care-package-v1` — accepted and integrated
 - `spatial-draw-shelter-v1` — accepted and integrated
 
-### N06 — active production
+### N06 — completed
 
 - `attention-goods-shelf-sort-v1` — accepted and integrated
 - `spatial-sand-channel-v1` — accepted and integrated
-- `prediction-ricochet-knockback-v1` — audit lane
+- `prediction-ricochet-knockback-v1` — accepted and integrated
+
+### N07 — active pre-browser production
+
+- `spatial-draw-bridge-v1` — waits for audit lane
 
 ### P04
 

@@ -144,6 +144,17 @@ export const gameManifest=Object.freeze([
     "hash": "a915e45858682113"
   },
   {
+    "id": "prediction-ricochet-knockback-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "wild",
+    "step": 1,
+    "family": "prediction-ricochet-knockback",
+    "category": "prediction",
+    "module": "./games/prediction-ricochet-knockback-v1.js",
+    "hash": "e6992f37493fe03a"
+  },
+  {
     "id": "reaction-signal-v1",
     "introducedIn": "1.0",
     "tier": 1,
