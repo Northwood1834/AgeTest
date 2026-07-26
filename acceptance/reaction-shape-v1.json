@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "reaction-shape-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "180221f7ac3ab894b2243fe0ec186900ebe79f29",
+  "test": "test/reaction-shape-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

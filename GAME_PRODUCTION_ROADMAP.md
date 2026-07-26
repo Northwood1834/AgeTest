@@ -144,7 +144,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `inhibition-stroop-v1` — accepted and integrated
 - `attention-shape-count-v1` — accepted and integrated
 - `timing-two-v1` — accepted and integrated
-- `reaction-shape-v1` — flow lane
+- `reaction-shape-v1` — accepted and integrated
 - `timing-three-v1` — screw lane
 - `attention-odd-v1` — pre-browser; waits for flow lane
 - `social-partner-mood-v1` — pre-browser; waits for audit lane
@@ -156,7 +156,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
 ### P08 — active pre-browser port
 
-- `spatial-rotation-v1` — audit lane
+- `spatial-rotation-v1` — accepted and integrated
 
 ### P04
 

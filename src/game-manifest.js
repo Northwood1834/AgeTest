@@ -265,6 +265,17 @@ export const gameManifest=Object.freeze([
     "hash": "ac99a0f89062fcf1"
   },
   {
+    "id": "reaction-shape-v1",
+    "introducedIn": "1.15",
+    "tier": 1,
+    "flavor": "classic",
+    "step": 1,
+    "family": "reaction-shape",
+    "category": "reaction",
+    "module": "./games/reaction-shape-v1.js",
+    "hash": "37eb49b8f1ce8435"
+  },
+  {
     "id": "reaction-signal-v1",
     "introducedIn": "1.0",
     "tier": 1,
@@ -450,6 +461,17 @@ export const gameManifest=Object.freeze([
     "category": "spatial",
     "module": "./games/spatial-rope-untangle-v1.js",
     "hash": "ac2ae41e76a1864f"
+  },
+  {
+    "id": "spatial-rotation-v1",
+    "introducedIn": "1.0",
+    "tier": 1,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "spatial-rotation",
+    "category": "spatial",
+    "module": "./games/spatial-rotation-v1.js",
+    "hash": "fc46bcc44ef9eed8"
   },
   {
     "id": "spatial-sand-channel-v1",
