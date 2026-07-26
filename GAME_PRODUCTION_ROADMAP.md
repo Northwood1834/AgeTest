@@ -168,6 +168,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `language-notice-trim-v1` — audit lane
 - `inhibition-quiet-tidy-v1` — accepted and integrated
 - `social-shared-umbrella-v1` — flow lane
+- `spatial-suitcase-pack-v1` — pre-browser; waits for first released QA lane
 
 ### N08 — active original
 
