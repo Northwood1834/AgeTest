@@ -1,0 +1,93 @@
+{
+  "game": "memory-path-v1",
+  "status": "pass",
+  "reviewDate": "2026-07-27",
+  "reviewer": {
+    "method": "independent vision review of full-resolution current-app/module parity matrix",
+    "tool": "read_image",
+    "backend": "gpt"
+  },
+  "evidence": {
+    "browserReport": "test/memory-path-v1.browser-evidence.json",
+    "captureDirectory": "test/memory-path-v1-visual",
+    "captureTool": "tools/qa-browser-lanes.mjs",
+    "lane": "flow CDP9331 / HTTP8861",
+    "sourceScreenshots": 88,
+    "sideBySideParityPlates": 42,
+    "totalPng": 130,
+    "canonicalSourceSizes": [
+      "1179x2556 (393x852 CSS DPR3)",
+      "1206x2622 (402x874 CSS DPR3)"
+    ],
+    "canonicalParityPlateSizes": [
+      "2390x2644 (393 current app + module)",
+      "2444x2710 (402 current app + module)"
+    ],
+    "responsiveBoundaries": [
+      "390x844 DPR3",
+      "430x932 DPR3"
+    ]
+  },
+  "audits": [
+    {
+      "set": "393x852 normal current-app/module initial, flash1, flash2, flash3, and recall",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "393x852 normal current-app/module correct1, correct2, wrong, success, and timeout",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "393x852 reduced current-app/module all ten states",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "402x874 normal current-app/module all ten states",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "402x874 reduced current-app/module all ten states",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "module-only keyboard graph focus in 393/402 normal/reduced",
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "390x844 and 430x932 current-app/module responsive boundaries",
+      "status": "pass",
+      "blockers": []
+    }
+  ],
+  "finalFindings": {
+    "frozenTaskExact": true,
+    "initialInformationParity": true,
+    "flashOrderCenterTopCenterBottomRight": true,
+    "flashExposureVisuallyNonzero": true,
+    "recallHasNoOrderLeak": true,
+    "recallHelpExact": true,
+    "firstAndSecondChosenPulsesVisible": true,
+    "wrongImmediateAndDistinct": true,
+    "successDistinct": true,
+    "timeoutDistinct": true,
+    "normalReducedInformationEqual": true,
+    "keyboardFocusIsolatedFromParityStates": true,
+    "touchTargetsReadable": true,
+    "noClippingOrOverflow": true,
+    "noContainerFocusArtifact": true,
+    "noCanvasOrDomArtifact": true,
+    "productionPolish": true
+  },
+  "resolvedDuringReview": [
+    "added an explicit context-owned reduced-motion flag so visual transitions are suppressed without changing any flash or chosen timing",
+    "removed the browser-default black outline from the focused application container",
+    "moved the intentional dashed keyboard focus into dedicated focus evidence so correct and success parity plates remain visually uncontaminated",
+    "retained the module wrong-cell geometric fracture as an intentional non-color accessibility cue while preserving the same wrong cell, timing, and result"
+  ]
+}
