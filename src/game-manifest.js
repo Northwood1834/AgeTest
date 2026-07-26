@@ -353,6 +353,17 @@ export const gameManifest=Object.freeze([
     "hash": "f502bab26f3927d1"
   },
   {
+    "id": "memory-table-restore-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "memory-table-restore",
+    "category": "memory",
+    "module": "./games/memory-table-restore-v1.js",
+    "hash": "9574de46b2958e68"
+  },
+  {
     "id": "prediction-card-combo-v1",
     "introducedIn": "2.0",
     "tier": 3,
