@@ -536,6 +536,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Interdependence/proof: interval arithmetic chooses high-information reads, which tighten overlapping candidate intervals. Exhaustive connected regions require ≥5 coarse candidates, prohibit reading all, and prove a bounded unique-information plan and selection edges.
 - Art/reduced motion: original abstract density-pattern grid/read frame/region outline; snapped reveals, no currency, score, gambling, or real measurement system.
 
+### Q81 — `social-signal-relay-v1`
+
+- Category/tier/flavor: social / tier 3 / satisfying
+- Core: predict a deterministic limited-view partner unit and spend only three direction overrides among five obstacles; every message changes its later position and therefore the future being predicted.
+- Proof/outcomes: exhaustive finite send plans include ≥2 self-solvable and ≥2 intervention-required obstacles; always-send and never-send both fail, with exact late/invalid/waste/dead-end edges and retained timeout.
+- Art/reduced motion: original abstract grid/unit/vision outline/rule card; discrete steps, no people, etiquette, or hidden partner information.
+
+### Q82 — `language-conditional-cue-v1`
+
+- Category/tier/flavor: language / tier 3 / quirky
+- Core: build three in-task commands for a fully visible cycling mechanism, trading quick unconditional execution against slower conditional forms for short versus sustained state windows.
+- Proof/outcomes: exhaustive integer-tick command plans require both forms and both task-explained condition chips; all-conditional times out and all-unconditional misses overlapping windows, with empty/waiting/order/timeout states retained.
+- Art/reduced motion: original abstract state board and annotated chips; instant state swaps and static wait marks, no external grammar authority or real mechanism.
+
+### Q83 — `attention-fragment-match-v1`
+
+- Category/tier/flavor: attention / tier 3 / wild
+- Core: search twelve irregular fragments by visible edge features, but rotation and joining change the current outer contour and thus the candidate set for every later search.
+- Proof/outcomes: enumerate finite four-rotation join histories; require deceptive visual candidates, one-rotation boundaries, solvable simplifying order and recoverable costly/complex dead ends without target split-line leakage.
+- Art/reduced motion: original abstract fragments/contours/target silhouette; snapped rotations and two-state joins, shape and hatching rather than color alone.
+
+### Q84 — `inhibition-habit-gauge-v1`
+
+- Category/tier/flavor: inhibition / tier 3 / wild
+- Core: repeated responses to one of three abstract sockets build a visible deterministic speed gauge, while that same gauge increases the explicitly previewed initial pull toward the practiced direction after a switch.
+- Proof/outcomes: exhaustive integer schedules require ≥3 gauge levels but defeat always-max and never-build policies; exact counter-input boundaries produce success, pull error, reset loop, overcorrection, slow timeout.
+- Art/reduced motion: original abstract arm/sockets/gauge/prediction arrows; discrete velocity and fixed initial offsets, no real device operation.
+
+### Q85 — `timing-completion-order-v1`
+
+- Category/tier/flavor: timing / tier 3 / satisfying
+- Core: route one capacity-three collector among five abstract progress sources with fixed visible rates; each collection changes position and every third forces a visible depot trip, altering which later completions remain reachable.
+- Proof/outcomes: exhaustive integer routes prove all eight impossible but ≥6 achievable, ≥3 mutually exclusive completion pairs, greedy failure, and exact travel-time edges; full/late/depot/wait/timeout states retain progress and position.
+- Art/reduced motion: original abstract reservoirs/tokens/collector/depot; stepped progress/travel, no industrial process, real procedure, payout, or gambling.
+
+### Q86 — `spatial-field-drift-v1`
+
+- Category/tier/flavor: spatial / tier 3 / wild
+- Core: guide a token through three fully visible abstract vector bands and two gates; stronger counter-drag adds visible deterministic inertia that can push the token into a stronger region and amplify later drift.
+- Proof/outcomes: exhaustive quantized controls require at least two weak-drag waits while defeating always-maximum and always-minimum policies; exact inertia boundaries cover overshoot, accumulated drift, timeout and oscillation.
+- Art/reduced motion: original abstract field bands/gates/token with static density arrows and numeric drift/inertia; discrete coarse drag updates and no real navigation instruction.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
