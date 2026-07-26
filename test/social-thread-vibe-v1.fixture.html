@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>social-thread-vibe-v1 module fixture</title>
+  <style>
+    :root{color-scheme:light;font-family:system-ui,-apple-system,"Hiragino Sans","Yu Gothic UI",sans-serif;background:#e8edf3;color:#172235}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;overflow-x:hidden}
+    body{width:min(100%,430px);margin-inline:auto;padding:max(10px,env(safe-area-inset-top)) 10px max(14px,env(safe-area-inset-bottom));background:radial-gradient(circle at 85% 0,#f9fbfd 0,#e9eef4 45%,#dfe6ed 100%)}
+    .fixture-head{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin:0 .15rem .45rem;color:#53647a;font-size:.67rem;font-weight:900;letter-spacing:.05em}.fixture-head b{color:#233652;font-size:.74rem}.fixture-card{border:1px solid #ccd5df;border-radius:1.15rem;background:rgba(250,252,254,.92);padding:9px;box-shadow:0 14px 34px rgba(42,59,79,.14)}
+    h1{margin:.05rem .2rem .1rem;color:#1d2d44;font-size:clamp(1rem,4.7vw,1.22rem);line-height:1.25}.help{margin:0 .2rem .52rem;color:#68778a;font-size:.72rem;font-weight:700;line-height:1.38}
+    #challenge{width:100%}#result{margin:.5rem .15rem 0;padding:.52rem;border:1px solid #8194ab;border-radius:.75rem;background:#eef3f8;color:#263a55;text-align:center;font-size:.72rem;font-weight:900}#result[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <header class="fixture-head"><b>初老テスト。social lab</b><span>module 2.0 / fictional thread</span></header>
+  <main class="fixture-card">
+    <h1>3レスでスレの適温を保て</h1>
+    <p class="help">文脈・勢い・温度・既出度を読み、短さとアンカーを選びます。</p>
+    <div id="challenge"></div>
+    <div id="result" hidden></div>
+  </main>
+  <script type="module" src="social-thread-vibe-v1.fixture.mjs"></script>
+</body>
+</html>

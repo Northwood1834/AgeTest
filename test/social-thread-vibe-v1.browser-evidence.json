@@ -1,0 +1,116 @@
+{
+  "game": "social-thread-vibe-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "checks": {
+    "keyboardFocus": true,
+    "touchSingleCommit": true,
+    "keyboardSelection": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "trackedDispose": true,
+    "reducedMotion": true,
+    "performance": true,
+    "noExternalResources": true
+  },
+  "interaction": {
+    "firstFocus": true,
+    "secondFocus": true,
+    "immediate": {
+      "path": [
+        "j1-cold"
+      ],
+      "posts": 5,
+      "busy": true
+    },
+    "settled": {
+      "turn": 1,
+      "path": [
+        "j1-cold"
+      ],
+      "posts": 8,
+      "busy": false
+    },
+    "keyboard": {
+      "path": [
+        "j1-cold",
+        "j2-cold"
+      ],
+      "posts": 9,
+      "busy": true
+    },
+    "dpr": 3,
+    "overflow": 0,
+    "touch": [
+      336.625,
+      48
+    ],
+    "runtime": {
+      "disposed": false,
+      "finished": false,
+      "finishCalls": 0,
+      "commits": 0,
+      "timeouts": 2,
+      "frames": 0,
+      "listeners": 14,
+      "aborted": false
+    }
+  },
+  "disposal": {
+    "before": {
+      "posts": 5,
+      "path": [
+        "t1-good"
+      ]
+    },
+    "after": {
+      "posts": 5,
+      "path": [
+        "t1-good"
+      ],
+      "disposed": true,
+      "result": null,
+      "finishCalls": 0
+    },
+    "qaRemoved": true,
+    "runtime": {
+      "disposed": true,
+      "finished": false,
+      "finishCalls": 0,
+      "commits": 0,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "outcome": null
+  },
+  "reduced": {
+    "elapsedMs": 360.2999999523163,
+    "scene": "progress",
+    "turn": 1,
+    "posts": 8,
+    "dpr": 3,
+    "reduced": "true",
+    "animationsDisabled": true,
+    "runtime": {
+      "disposed": false,
+      "finished": false,
+      "finishCalls": 0,
+      "commits": 0,
+      "timeouts": 1,
+      "frames": 0,
+      "listeners": 14,
+      "aborted": false
+    },
+    "overflow": 0,
+    "resourcesAdded": 0,
+    "external": [],
+    "nodeCount": 115,
+    "navigationMs": 13.300000071525574
+  }
+}

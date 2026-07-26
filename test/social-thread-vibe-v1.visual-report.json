@@ -1,0 +1,3587 @@
+{
+  "game": "social-thread-vibe-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "persistedTask": {
+    "scenarioId": "serious-tool",
+    "title": "古い道具、直すか買い替えるか",
+    "bytes": 3784,
+    "hash": "3dd84888",
+    "seedNumbers": [
+      41,
+      42,
+      43
+    ],
+    "incomingNumbers": [
+      44,
+      48,
+      52
+    ],
+    "answer": [
+      "s1-good",
+      "s2-good",
+      "s3-good"
+    ],
+    "wins": 14,
+    "total": 27
+  },
+  "matrix": {
+    "scenes": 10,
+    "viewports": 2,
+    "motions": 2,
+    "total": 40
+  },
+  "checks": {
+    "allPass": true,
+    "singlePersistedTask": true,
+    "causalTextMatch": true,
+    "fullPostBoundaries": true,
+    "dpr3": true,
+    "noHorizontalOverflow": true,
+    "noExternalResources": true,
+    "touchTargets": true,
+    "distinctTerminals": true
+  },
+  "rows": [
+    {
+      "status": "pass",
+      "scene": "initial",
+      "reduced": false,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 730
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/initial-393-normal.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "input",
+      "reduced": false,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 730
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "designatedFocused": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/input-393-normal.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "reply",
+      "reduced": false,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 730
+      },
+      "result": null,
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 5,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/reply-393-normal.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "followup",
+      "reduced": false,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 42,
+        "scrollTop": 47,
+        "tailPad": "13px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 730
+      },
+      "result": null,
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 6,
+      "stats": {
+        "heat": 3,
+        "momentum": 5,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/followup-393-normal.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "progress",
+      "reduced": false,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 44,
+        "scrollTop": 143,
+        "tailPad": "13px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 730
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 1,
+      "posts": 8,
+      "stats": {
+        "heat": 3,
+        "momentum": 5,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 14,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/progress-393-normal.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "cold",
+      "reduced": false,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 496,
+        "tailPad": "33px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 596
+      },
+      "result": "cold",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 1,
+        "momentum": 3,
+        "stale": 6,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "cold",
+          "quality": 0,
+          "detail": "勢いか温度が落ちた、または既出ネタを擦りすぎました。　勢い3 / 温度1 / 既出6 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/cold-393-normal.png",
+      "expected": "cold",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "derail",
+      "reduced": false,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 496,
+        "tailPad": "33px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 612
+      },
+      "result": "derail",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 3,
+        "momentum": 7,
+        "stale": 2,
+        "drift": 4
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "derail",
+          "quality": 0,
+          "detail": "軽い脱線が本線を押し流しました。元の投稿への橋が不足です。　勢い7 / 温度3 / 既出2 / 脱線4"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/derail-393-normal.png",
+      "expected": "derail",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "flame",
+      "reduced": false,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": "十年物なら博物館へ寄贈で解決",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 496,
+        "tailPad": "13px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 596
+      },
+      "result": "flame",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 6,
+        "momentum": 8,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "flame",
+          "quality": 0,
+          "detail": "勢いを取りに行きすぎ、論点より反応が熱くなりました。　勢い8 / 温度6 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/flame-393-normal.png",
+      "expected": "flame",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "success",
+      "reduced": false,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 514,
+        "tailPad": "13px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 596
+      },
+      "result": "success",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 3,
+        "momentum": 7,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": true,
+        "detail": {
+          "reason": "success",
+          "quality": 0.9,
+          "detail": "短さと距離感が噛み合い、三返信後も会話が続きました。　勢い7 / 温度3 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/success-393-normal.png",
+      "expected": "success",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "timeout",
+      "reduced": false,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 596
+      },
+      "result": "timeout",
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "quality": 0,
+          "detail": "返信を選ぶ前に流れが止まりました。　勢い4 / 温度3 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/timeout-393-normal.png",
+      "expected": "timeout",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "initial",
+      "reduced": true,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 730
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/initial-393-reduced.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "input",
+      "reduced": true,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 730
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "designatedFocused": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/input-393-reduced.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "reply",
+      "reduced": true,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 730
+      },
+      "result": null,
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 5,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/reply-393-reduced.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "followup",
+      "reduced": true,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 42,
+        "scrollTop": 47,
+        "tailPad": "14px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 730
+      },
+      "result": null,
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 6,
+      "stats": {
+        "heat": 3,
+        "momentum": 5,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/followup-393-reduced.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "progress",
+      "reduced": true,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 44,
+        "scrollTop": 143,
+        "tailPad": "14px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 730
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 1,
+      "posts": 8,
+      "stats": {
+        "heat": 3,
+        "momentum": 5,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 14,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/progress-393-reduced.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "cold",
+      "reduced": true,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 496,
+        "tailPad": "32px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 596
+      },
+      "result": "cold",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 1,
+        "momentum": 3,
+        "stale": 6,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "cold",
+          "quality": 0,
+          "detail": "勢いか温度が落ちた、または既出ネタを擦りすぎました。　勢い3 / 温度1 / 既出6 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/cold-393-reduced.png",
+      "expected": "cold",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "derail",
+      "reduced": true,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 496,
+        "tailPad": "32px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 612
+      },
+      "result": "derail",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 3,
+        "momentum": 7,
+        "stale": 2,
+        "drift": 4
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "derail",
+          "quality": 0,
+          "detail": "軽い脱線が本線を押し流しました。元の投稿への橋が不足です。　勢い7 / 温度3 / 既出2 / 脱線4"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/derail-393-reduced.png",
+      "expected": "derail",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "flame",
+      "reduced": true,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": "十年物なら博物館へ寄贈で解決",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 496,
+        "tailPad": "14px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 596
+      },
+      "result": "flame",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 6,
+        "momentum": 8,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "flame",
+          "quality": 0,
+          "detail": "勢いを取りに行きすぎ、論点より反応が熱くなりました。　勢い8 / 温度6 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/flame-393-reduced.png",
+      "expected": "flame",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "success",
+      "reduced": true,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 514,
+        "tailPad": "14px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 596
+      },
+      "result": "success",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 3,
+        "momentum": 7,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": true,
+        "detail": {
+          "reason": "success",
+          "quality": 0.9,
+          "detail": "短さと距離感が噛み合い、三返信後も会話が続きました。　勢い7 / 温度3 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/success-393-reduced.png",
+      "expected": "success",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "timeout",
+      "reduced": true,
+      "width": 393,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "bodyScrollWidth": 393,
+        "bodyScrollHeight": 596
+      },
+      "result": "timeout",
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "quality": 0,
+          "detail": "返信を選ぶ前に流れが止まりました。　勢い4 / 温度3 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/timeout-393-reduced.png",
+      "expected": "timeout",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "initial",
+      "reduced": false,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 751
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/initial-402-normal.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "input",
+      "reduced": false,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 751
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "designatedFocused": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/input-402-normal.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "reply",
+      "reduced": false,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 751
+      },
+      "result": null,
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 5,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/reply-402-normal.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "followup",
+      "reduced": false,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 42,
+        "scrollTop": 48,
+        "tailPad": "30px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 751
+      },
+      "result": null,
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 6,
+      "stats": {
+        "heat": 3,
+        "momentum": 5,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/followup-402-normal.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "progress",
+      "reduced": false,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 44,
+        "scrollTop": 144,
+        "tailPad": "29px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 751
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 1,
+      "posts": 8,
+      "stats": {
+        "heat": 3,
+        "momentum": 5,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 14,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/progress-402-normal.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "cold",
+      "reduced": false,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 500,
+        "tailPad": "48px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 617
+      },
+      "result": "cold",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 1,
+        "momentum": 3,
+        "stale": 6,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "cold",
+          "quality": 0,
+          "detail": "勢いか温度が落ちた、または既出ネタを擦りすぎました。　勢い3 / 温度1 / 既出6 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/cold-402-normal.png",
+      "expected": "cold",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "derail",
+      "reduced": false,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 500,
+        "tailPad": "48px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 633
+      },
+      "result": "derail",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 3,
+        "momentum": 7,
+        "stale": 2,
+        "drift": 4
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "derail",
+          "quality": 0,
+          "detail": "軽い脱線が本線を押し流しました。元の投稿への橋が不足です。　勢い7 / 温度3 / 既出2 / 脱線4"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/derail-402-normal.png",
+      "expected": "derail",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "flame",
+      "reduced": false,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": "十年物なら博物館へ寄贈で解決",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 500,
+        "tailPad": "30px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 617
+      },
+      "result": "flame",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 6,
+        "momentum": 8,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "flame",
+          "quality": 0,
+          "detail": "勢いを取りに行きすぎ、論点より反応が熱くなりました。　勢い8 / 温度6 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/flame-402-normal.png",
+      "expected": "flame",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "success",
+      "reduced": false,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 518,
+        "tailPad": "30px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 617
+      },
+      "result": "success",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 3,
+        "momentum": 7,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": true,
+        "detail": {
+          "reason": "success",
+          "quality": 0.9,
+          "detail": "短さと距離感が噛み合い、三返信後も会話が続きました。　勢い7 / 温度3 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/success-402-normal.png",
+      "expected": "success",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "timeout",
+      "reduced": false,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 617
+      },
+      "result": "timeout",
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "quality": 0,
+          "detail": "返信を選ぶ前に流れが止まりました。　勢い4 / 温度3 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/timeout-402-normal.png",
+      "expected": "timeout",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "initial",
+      "reduced": true,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 751
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/initial-402-reduced.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "input",
+      "reduced": true,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 751
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": true,
+      "designatedFocused": true,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/input-402-reduced.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "reply",
+      "reduced": true,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 751
+      },
+      "result": null,
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 5,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/reply-402-reduced.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "followup",
+      "reduced": true,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 42,
+        "scrollTop": 48,
+        "tailPad": "29px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 751
+      },
+      "result": null,
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 6,
+      "stats": {
+        "heat": 3,
+        "momentum": 5,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/followup-402-reduced.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "progress",
+      "reduced": true,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 44,
+        "scrollTop": 144,
+        "tailPad": "28px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 751
+      },
+      "result": null,
+      "done": false,
+      "busy": false,
+      "turn": 1,
+      "posts": 8,
+      "stats": {
+        "heat": 3,
+        "momentum": 5,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 0,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 14,
+        "aborted": false
+      },
+      "outcome": null,
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": 48,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/progress-402-reduced.png",
+      "expected": null,
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "cold",
+      "reduced": true,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 500,
+        "tailPad": "47px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 617
+      },
+      "result": "cold",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 1,
+        "momentum": 3,
+        "stale": 6,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "cold",
+          "quality": 0,
+          "detail": "勢いか温度が落ちた、または既出ネタを擦りすぎました。　勢い3 / 温度1 / 既出6 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/cold-402-reduced.png",
+      "expected": "cold",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "derail",
+      "reduced": true,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 500,
+        "tailPad": "47px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 633
+      },
+      "result": "derail",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 3,
+        "momentum": 7,
+        "stale": 2,
+        "drift": 4
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "derail",
+          "quality": 0,
+          "detail": "軽い脱線が本線を押し流しました。元の投稿への橋が不足です。　勢い7 / 温度3 / 既出2 / 脱線4"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/derail-402-reduced.png",
+      "expected": "derail",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "flame",
+      "reduced": true,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": "十年物なら博物館へ寄贈で解決",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 500,
+        "tailPad": "29px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 617
+      },
+      "result": "flame",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 6,
+        "momentum": 8,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "flame",
+          "quality": 0,
+          "detail": "勢いを取りに行きすぎ、論点より反応が熱くなりました。　勢い8 / 温度6 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/flame-402-reduced.png",
+      "expected": "flame",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "success",
+      "reduced": true,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": {
+        "no": 45,
+        "time": "20:15:46",
+        "id": "RLY-YOU",
+        "author": "匿名乗組員",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+        "kind": "you"
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 51,
+        "scrollTop": 518,
+        "tailPad": "29px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 617
+      },
+      "result": "success",
+      "done": true,
+      "busy": false,
+      "turn": 3,
+      "posts": 15,
+      "stats": {
+        "heat": 3,
+        "momentum": 7,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": true,
+        "detail": {
+          "reason": "success",
+          "quality": 0.9,
+          "detail": "短さと距離感が噛み合い、三返信後も会話が続きました。　勢い7 / 温度3 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/success-402-reduced.png",
+      "expected": "success",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "timeout",
+      "reduced": true,
+      "width": 402,
+      "family": 0,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "designatedChoice": {
+        "id": "s1-good",
+        "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある"
+      },
+      "firstOwnPost": null,
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "bodyScrollWidth": 402,
+        "bodyScrollHeight": 617
+      },
+      "result": "timeout",
+      "done": true,
+      "busy": false,
+      "turn": 0,
+      "posts": 4,
+      "stats": {
+        "heat": 3,
+        "momentum": 4,
+        "stale": 0,
+        "drift": 0
+      },
+      "dpr": 3,
+      "finishCalls": 1,
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "outcome": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "quality": 0,
+          "detail": "返信を選ぶ前に流れが止まりました。　勢い4 / 温度3 / 既出0 / 脱線0"
+        }
+      },
+      "focusVisible": false,
+      "designatedFocused": false,
+      "minTouchHeight": null,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-visual/timeout-402-reduced.png",
+      "expected": "timeout",
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,2832 @@
+{
+  "game": "social-thread-vibe-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "persistedTask": {
+    "scenarioId": "serious-tool",
+    "title": "古い道具、直すか買い替えるか",
+    "bytes": 3784,
+    "hash": "3dd84888",
+    "seedNumbers": [
+      41,
+      42,
+      43
+    ],
+    "incomingNumbers": [
+      44,
+      48,
+      52
+    ],
+    "answer": [
+      "s1-good",
+      "s2-good",
+      "s3-good"
+    ],
+    "wins": 14,
+    "total": 27
+  },
+  "matrix": {
+    "turns": 3,
+    "phases": 3,
+    "viewports": 2,
+    "motions": 2,
+    "total": 36
+  },
+  "checks": {
+    "allPass": true,
+    "singlePersistedTask": true,
+    "fullPostBoundaries": true,
+    "threeTurns": true,
+    "selectedTextEqualsOwn": true,
+    "immediateFollowups": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "noExternalResources": true
+  },
+  "rows": [
+    {
+      "status": "pass",
+      "scene": "causal-t1-choice",
+      "width": 393,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "choice",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s1-good"
+      },
+      "posts": 4,
+      "path": [],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-choice-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-reply",
+      "width": 393,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "reply",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": {
+          "no": 45,
+          "time": "20:15:46",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s1-good",
+        "focusedChoiceId": null
+      },
+      "posts": 5,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-reply-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-followup",
+      "width": 393,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 42,
+        "scrollTop": 47,
+        "tailPad": "30px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "followup",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": {
+          "no": 45,
+          "time": "20:15:46",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:16:03",
+            "id": "RLY-K8M",
+            "author": "匿名乗組員",
+            "text": "そこ先でいい。いきなり基板まで行かなくて済む",
+            "no": 46,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s1-good",
+        "focusedChoiceId": null
+      },
+      "posts": 6,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-followup-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-choice",
+      "width": 393,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 44,
+        "scrollTop": 143,
+        "tailPad": "30px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "choice",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s2-good"
+      },
+      "posts": 8,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 14,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-choice-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-reply",
+      "width": 393,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 46,
+        "scrollTop": 257,
+        "tailPad": "78px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "reply",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": {
+          "no": 49,
+          "time": "20:17:07",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s2-good",
+        "focusedChoiceId": null
+      },
+      "posts": 9,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-reply-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-followup",
+      "width": 393,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 46,
+        "scrollTop": 257,
+        "tailPad": "31px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "followup",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": {
+          "no": 49,
+          "time": "20:17:07",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:17:24",
+            "id": "RLY-N2C",
+            "author": "匿名乗組員",
+            "text": "段階踏んでてよい",
+            "no": 50,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s2-good",
+        "focusedChoiceId": null
+      },
+      "posts": 10,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-followup-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-choice",
+      "width": 393,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 48,
+        "scrollTop": 353,
+        "tailPad": "31px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "choice",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s3-good"
+      },
+      "posts": 12,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 20,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-choice-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-reply",
+      "width": 393,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 50,
+        "scrollTop": 466,
+        "tailPad": "78px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "reply",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": {
+          "no": 53,
+          "time": "20:18:16",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s3-good",
+        "focusedChoiceId": null
+      },
+      "posts": 13,
+      "path": [
+        "s1-good",
+        "s2-good",
+        "s3-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-reply-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-followup",
+      "width": 393,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 50,
+        "scrollTop": 466,
+        "tailPad": "30px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "followup",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": {
+          "no": 53,
+          "time": "20:18:16",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:18:33",
+            "id": "RLY-K8M",
+            "author": "匿名乗組員",
+            "text": "触りすぎず撤収までが修理",
+            "no": 54,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s3-good",
+        "focusedChoiceId": null
+      },
+      "posts": 14,
+      "path": [
+        "s1-good",
+        "s2-good",
+        "s3-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-followup-393-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-choice",
+      "width": 393,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "choice",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s1-good"
+      },
+      "posts": 4,
+      "path": [],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-choice-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-reply",
+      "width": 393,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "reply",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": {
+          "no": 45,
+          "time": "20:15:46",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s1-good",
+        "focusedChoiceId": null
+      },
+      "posts": 5,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-reply-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-followup",
+      "width": 393,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 42,
+        "scrollTop": 47,
+        "tailPad": "38px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "followup",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": {
+          "no": 45,
+          "time": "20:15:46",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:16:03",
+            "id": "RLY-K8M",
+            "author": "匿名乗組員",
+            "text": "そこ先でいい。いきなり基板まで行かなくて済む",
+            "no": 46,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s1-good",
+        "focusedChoiceId": null
+      },
+      "posts": 6,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-followup-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-choice",
+      "width": 393,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 44,
+        "scrollTop": 143,
+        "tailPad": "38px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "choice",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s2-good"
+      },
+      "posts": 8,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 14,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-choice-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-reply",
+      "width": 393,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 46,
+        "scrollTop": 257,
+        "tailPad": "86px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "reply",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": {
+          "no": 49,
+          "time": "20:17:07",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s2-good",
+        "focusedChoiceId": null
+      },
+      "posts": 9,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-reply-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-followup",
+      "width": 393,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 46,
+        "scrollTop": 257,
+        "tailPad": "39px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "followup",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": {
+          "no": 49,
+          "time": "20:17:07",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:17:24",
+            "id": "RLY-N2C",
+            "author": "匿名乗組員",
+            "text": "段階踏んでてよい",
+            "no": 50,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s2-good",
+        "focusedChoiceId": null
+      },
+      "posts": 10,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-followup-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-choice",
+      "width": 393,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 48,
+        "scrollTop": 353,
+        "tailPad": "39px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "choice",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s3-good"
+      },
+      "posts": 12,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 20,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-choice-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-reply",
+      "width": 393,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 50,
+        "scrollTop": 466,
+        "tailPad": "86px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "reply",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": {
+          "no": 53,
+          "time": "20:18:16",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s3-good",
+        "focusedChoiceId": null
+      },
+      "posts": 13,
+      "path": [
+        "s1-good",
+        "s2-good",
+        "s3-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-reply-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-followup",
+      "width": 393,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 50,
+        "scrollTop": 466,
+        "tailPad": "38px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "followup",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": {
+          "no": 53,
+          "time": "20:18:16",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:18:33",
+            "id": "RLY-K8M",
+            "author": "匿名乗組員",
+            "text": "触りすぎず撤収までが修理",
+            "no": 54,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s3-good",
+        "focusedChoiceId": null
+      },
+      "posts": 14,
+      "path": [
+        "s1-good",
+        "s2-good",
+        "s3-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-followup-393-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-choice",
+      "width": 402,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "choice",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s1-good"
+      },
+      "posts": 4,
+      "path": [],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-choice-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-reply",
+      "width": 402,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "reply",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": {
+          "no": 45,
+          "time": "20:15:46",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s1-good",
+        "focusedChoiceId": null
+      },
+      "posts": 5,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-reply-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-followup",
+      "width": 402,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 42,
+        "scrollTop": 48,
+        "tailPad": "45px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "followup",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": {
+          "no": 45,
+          "time": "20:15:46",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:16:03",
+            "id": "RLY-K8M",
+            "author": "匿名乗組員",
+            "text": "そこ先でいい。いきなり基板まで行かなくて済む",
+            "no": 46,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s1-good",
+        "focusedChoiceId": null
+      },
+      "posts": 6,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-followup-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-choice",
+      "width": 402,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 44,
+        "scrollTop": 144,
+        "tailPad": "44px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "choice",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s2-good"
+      },
+      "posts": 8,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 14,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-choice-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-reply",
+      "width": 402,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 45,
+        "scrollTop": 192,
+        "tailPad": "26px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "reply",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": {
+          "no": 49,
+          "time": "20:17:07",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s2-good",
+        "focusedChoiceId": null
+      },
+      "posts": 9,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-reply-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-followup",
+      "width": 402,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 46,
+        "scrollTop": 259,
+        "tailPad": "45px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "followup",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": {
+          "no": 49,
+          "time": "20:17:07",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:17:24",
+            "id": "RLY-N2C",
+            "author": "匿名乗組員",
+            "text": "段階踏んでてよい",
+            "no": 50,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s2-good",
+        "focusedChoiceId": null
+      },
+      "posts": 10,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-followup-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-choice",
+      "width": 402,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 48,
+        "scrollTop": 355,
+        "tailPad": "45px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "choice",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s3-good"
+      },
+      "posts": 12,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 20,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-choice-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-reply",
+      "width": 402,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 49,
+        "scrollTop": 403,
+        "tailPad": "26px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "reply",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": {
+          "no": 53,
+          "time": "20:18:16",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s3-good",
+        "focusedChoiceId": null
+      },
+      "posts": 13,
+      "path": [
+        "s1-good",
+        "s2-good",
+        "s3-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-reply-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-followup",
+      "width": 402,
+      "reduced": false,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 50,
+        "scrollTop": 469,
+        "tailPad": "44px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "followup",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": {
+          "no": 53,
+          "time": "20:18:16",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:18:33",
+            "id": "RLY-K8M",
+            "author": "匿名乗組員",
+            "text": "触りすぎず撤収までが修理",
+            "no": 54,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s3-good",
+        "focusedChoiceId": null
+      },
+      "posts": 14,
+      "path": [
+        "s1-good",
+        "s2-good",
+        "s3-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-followup-402-normal.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-choice",
+      "width": 402,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "choice",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s1-good"
+      },
+      "posts": 4,
+      "path": [],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 8,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-choice-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-reply",
+      "width": 402,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 41,
+        "scrollTop": 0,
+        "tailPad": "0px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "reply",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": {
+          "no": 45,
+          "time": "20:15:46",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s1-good",
+        "focusedChoiceId": null
+      },
+      "posts": 5,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-reply-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t1-followup",
+      "width": 402,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 42,
+        "scrollTop": 48,
+        "tailPad": "53px"
+      },
+      "causal": {
+        "turn": 1,
+        "phase": "followup",
+        "choice": {
+          "id": "s1-good",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "replyTo": 44
+        },
+        "ownPost": {
+          "no": 45,
+          "time": "20:15:46",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>44 電池を抜いて、つまみ横の小ネジ。そこが緩い例ある",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:16:03",
+            "id": "RLY-K8M",
+            "author": "匿名乗組員",
+            "text": "そこ先でいい。いきなり基板まで行かなくて済む",
+            "no": 46,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s1-good",
+        "focusedChoiceId": null
+      },
+      "posts": 6,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t1-followup-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-choice",
+      "width": 402,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 44,
+        "scrollTop": 144,
+        "tailPad": "52px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "choice",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s2-good"
+      },
+      "posts": 8,
+      "path": [
+        "s1-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 14,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-choice-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-reply",
+      "width": 402,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 45,
+        "scrollTop": 192,
+        "tailPad": "34px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "reply",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": {
+          "no": 49,
+          "time": "20:17:07",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s2-good",
+        "focusedChoiceId": null
+      },
+      "posts": 9,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-reply-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t2-followup",
+      "width": 402,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 46,
+        "scrollTop": 259,
+        "tailPad": "53px"
+      },
+      "causal": {
+        "turn": 2,
+        "phase": "followup",
+        "choice": {
+          "id": "s2-good",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "replyTo": 48
+        },
+        "ownPost": {
+          "no": 49,
+          "time": "20:17:07",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>48 直ったのはでかい。ガリは電源切って数回ゆっくり回すと軽くなることも",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:17:24",
+            "id": "RLY-N2C",
+            "author": "匿名乗組員",
+            "text": "段階踏んでてよい",
+            "no": 50,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s2-good",
+        "focusedChoiceId": null
+      },
+      "posts": 10,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t2-followup-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-choice",
+      "width": 402,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 48,
+        "scrollTop": 355,
+        "tailPad": "53px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "choice",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": null,
+        "followups": [],
+        "pickedChoiceId": null,
+        "focusedChoiceId": "s3-good"
+      },
+      "posts": 12,
+      "path": [
+        "s1-good",
+        "s2-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 20,
+        "aborted": false
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-choice-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-reply",
+      "width": 402,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 49,
+        "scrollTop": 403,
+        "tailPad": "34px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "reply",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": {
+          "no": 53,
+          "time": "20:18:16",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "kind": "you"
+        },
+        "followups": [],
+        "pickedChoiceId": "s3-good",
+        "focusedChoiceId": null
+      },
+      "posts": 13,
+      "path": [
+        "s1-good",
+        "s2-good",
+        "s3-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-reply-402-reduced.png",
+      "errors": []
+    },
+    {
+      "status": "pass",
+      "scene": "causal-t3-followup",
+      "width": 402,
+      "reduced": true,
+      "taskIdentity": {
+        "scenarioId": "serious-tool",
+        "title": "古い道具、直すか買い替えるか",
+        "bytes": 3784,
+        "hash": "3dd84888",
+        "seedNumbers": [
+          41,
+          42,
+          43
+        ],
+        "incomingNumbers": [
+          44,
+          48,
+          52
+        ],
+        "answer": [
+          "s1-good",
+          "s2-good",
+          "s3-good"
+        ],
+        "wins": 14,
+        "total": 27
+      },
+      "threadBoundary": {
+        "complete": true,
+        "firstVisibleNo": 50,
+        "scrollTop": 469,
+        "tailPad": "52px"
+      },
+      "causal": {
+        "turn": 3,
+        "phase": "followup",
+        "choice": {
+          "id": "s3-good",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "replyTo": 52
+        },
+        "ownPost": {
+          "no": 53,
+          "time": "20:18:16",
+          "id": "RLY-YOU",
+          "author": "匿名乗組員",
+          "text": ">>52 勝ち。今日はそこで閉じて、型番と直した箇所だけメモしとくと次が楽",
+          "kind": "you"
+        },
+        "followups": [
+          {
+            "time": "20:18:33",
+            "id": "RLY-K8M",
+            "author": "匿名乗組員",
+            "text": "触りすぎず撤収までが修理",
+            "no": 54,
+            "kind": "reaction"
+          }
+        ],
+        "pickedChoiceId": "s3-good",
+        "focusedChoiceId": null
+      },
+      "posts": 14,
+      "path": [
+        "s1-good",
+        "s2-good",
+        "s3-good"
+      ],
+      "result": null,
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "overflow": 0,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "image": "/tmp/social-thread-vibe-v1-causal/causal-t3-followup-402-reduced.png",
+      "errors": []
+    }
+  ]
+}
