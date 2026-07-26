@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>calculation-number-tower-route-v1 evidence fixture</title>
+<style>*{box-sizing:border-box}html,body{margin:0;min-height:100%;overflow-x:hidden;background:radial-gradient(circle at 50% 0,#fff8e9,#eadfce 56%,#d9d0ca);color:#312c38;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif}body{display:flex;justify-content:center}main{width:100%;max-width:29rem;min-height:100dvh;padding:max(.6rem,env(safe-area-inset-top)) .58rem max(1.2rem,env(safe-area-inset-bottom))}.fixture-head{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin:0 0 .36rem;padding:0 .18rem;color:#6e594b;font-size:.64rem;font-weight:900}.fixture-card{padding:.62rem .52rem .72rem;border:1px solid #d2c3ad;border-radius:1.22rem;background:rgba(255,255,255,.96);box-shadow:0 11px 30px rgba(52,41,38,.15)}h1{margin:0 0 .12rem;text-align:center;color:#3e3242;font-size:1.02rem;line-height:1.25}.help{margin:0 0 .4rem;color:#74675f;text-align:center;font-size:.65rem;font-weight:750;line-height:1.35}.result{min-height:1.15rem;margin:.36rem 0 0;color:#536c4e;text-align:center;font-size:.68rem;font-weight:900}</style></head>
+<body><main><header class="fixture-head"><span>初老テスト。数の塔</span><span id="fixture-label"></span></header><section class="fixture-card"><h1 id="prompt"></h1><p class="help" id="help"></p><div id="game-host"></div><p class="result" id="fixture-result" aria-live="polite"></p></section></main>
+<script type="module">
+import game from "../src/games/calculation-number-tower-route-v1.js";
+import {createGameRuntime} from "../src/game-kernel.js";
+const FIXED_TASK=game.generate({randomInt:min=>min}),host=document.querySelector("#game-host"),label=document.querySelector("#fixture-label"),prompt=document.querySelector("#prompt"),help=document.querySelector("#help"),resultNode=document.querySelector("#fixture-result"),errors=[];
+let runtime=null,qa=null,result=null,lastTask=null,snapshot=null;
+addEventListener("error",event=>errors.push(String(event.error?.stack||event.message)));addEventListener("unhandledrejection",event=>errors.push(String(event.reason?.stack||event.reason)));
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms)),room=(floor,lane)=>lastTask.floors[floor-1].rooms[lane];
+function start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){
+  runtime?.dispose();host.replaceChildren();qa={};result=null;snapshot=null;resultNode.textContent="";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;
+  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?"塔主撃破":"攻略終了"} · ${detail.detail||detail.reason||""}`}});
+  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}},ownedFinish=context.finish;context.finish=(correct,detail)=>{snapshot=qa?.[game.metadata.id]?.inspect?.()||snapshot;return ownedFinish(correct,detail)};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);label.textContent=`${width}×${height} DPR${dpr}${reduced?" reduced":""}`;return structuredClone(lastTask);
+}
+const api=()=>qa?.[game.metadata.id],capture=()=>{snapshot=api()?.inspect?.()||snapshot;return snapshot},complete=()=>{const value=api()?.completeTransition?.();capture();return value};
+const choose=(id,settle=true)=>{const value=api().choose(id);if(settle)complete();else capture();return value};
+const play=lanes=>{for(let floor=1;floor<=4&&!api().inspect().done;floor++)choose(room(floor,lanes[floor-1]).id);if(!api().inspect().done)choose(lastTask.boss.id)};
+async function scenario(name,reduced){
+  if(name==="focus"){const stage=host.querySelector(".cntr-stage");stage.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true,cancelable:true}));stage.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowLeft",bubbles:true,cancelable:true}))}
+  else if(name==="invalid"){choose("f1c1");choose("f2c0");const button=host.querySelector('.cntr-room[data-id="f3c2"]');button.dispatchEvent(new PointerEvent("pointerdown",{pointerType:"touch",bubbles:true,cancelable:true}));capture()}
+  else if(name==="travel"){api().choose("f1c1");await wait(300)}
+  else if(name==="input-lock"){api().choose("f1c1");host.querySelector('.cntr-room[data-id="f1c2"]').dispatchEvent(new PointerEvent("pointerdown",{pointerType:"touch",bubbles:true,cancelable:true}));await wait(100);capture()}
+  else if(name==="addition")choose("f1c1");
+  else if(name==="multiply"){choose("f1c1");choose("f2c0")}
+  else if(name==="enemy"){choose("f1c1");choose("f2c0");choose("f3c1")}
+  else if(name==="retained"){choose("f1c1");choose("f2c0");choose("f3c1");choose("f4c2")}
+  else if(name==="too-strong")play(lastTask.proof.examples["too-strong"]);
+  else if(name==="operator-trap")play(lastTask.proof.examples["operator-trap"]);
+  else if(name==="boss-defeat")play(lastTask.proof.examples["boss-defeat"]);
+  else if(name==="success")play(lastTask.proof.winningLanes);
+  else if(name==="reduced"){api().choose("f1c1");await wait(270)}
+  else if(name==="touch"){const button=host.querySelector('.cntr-room[data-id="f1c1"]');button.dispatchEvent(new PointerEvent("pointerdown",{pointerType:"touch",bubbles:true,cancelable:true}));await wait(reduced?270:760)}
+  else if(name==="keyboard"){const stage=host.querySelector(".cntr-stage");stage.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true,cancelable:true}));stage.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowUp",bubbles:true,cancelable:true}));await wait(reduced?270:760)}
+  if(!["travel","reduced","touch","keyboard"].includes(name))await wait(40);document.documentElement.dataset.ready="true";document.body.dataset.scenario=name;
+}
+window.numberTowerFixture={game,start,scenario:name=>scenario(name,false),dispose(){runtime?.dispose()},choose,complete,play,inspect(){return api()?.inspect?.()||snapshot},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]},evidence(){const width=innerWidth,resources=performance.getEntriesByType("resource").map(entry=>entry.name),external=resources.filter(name=>new URL(name,location.href).origin!==location.origin),active=document.activeElement;return{scenario:document.body.dataset.scenario||"",viewport:{width,height:innerHeight,dpr:devicePixelRatio,scrollWidth:document.body.scrollWidth},task:structuredClone(lastTask),game:api()?.inspect?.()||snapshot,result:result?structuredClone(result):null,runtime:runtime?.inspect?.()||null,active:{tag:active?.tagName||null,className:active?.className||null,id:active?.dataset?.id||null,label:active?.getAttribute?.("aria-label")||null},canvasAria:host.querySelector("canvas")?.getAttribute("aria-label")||null,buttonCount:host.querySelectorAll(".cntr-room").length,errors:[...errors],resources,external,overflow:document.body.scrollWidth>width}}};
+const query=new URLSearchParams(location.search),name=query.get("scenario")||"initial",reduced=query.get("reduced")==="1"||name==="reduced"||name==="reduced-timeout",deadline=name==="timeout"||name==="reduced-timeout"?170:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name==="timeout"||name==="reduced-timeout"){choose("f1c1");await wait(230);capture();document.documentElement.dataset.ready="true";document.body.dataset.scenario=name}else await scenario(name,reduced);
+</script></body></html>

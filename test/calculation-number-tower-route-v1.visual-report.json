@@ -1,0 +1,132 @@
+{
+  "game": "calculation-number-tower-route-v1",
+  "status": "pass",
+  "reviewDate": "2026-07-26",
+  "reviewer": {
+    "method": "independent vision review of final full-resolution capture matrix",
+    "tool": "read_image",
+    "backend": "gpt"
+  },
+  "evidence": {
+    "browserReport": "test/calculation-number-tower-route-v1.browser-evidence.json",
+    "captureDirectory": "test/calculation-number-tower-route-v1-visual",
+    "captureTool": "tools/qa-browser-lanes.mjs",
+    "lane": "flow CDP9331 / HTTP8861",
+    "fullResolutionScreenshots": 38,
+    "canonicalSizes": [
+      "1179x2556 (393x852 CSS DPR3)",
+      "1206x2622 (402x874 CSS DPR3)"
+    ],
+    "responsiveBoundarySizes": [
+      "1170x2532 (390x844 CSS DPR3)",
+      "1290x2796 (430x932 CSS DPR3)"
+    ]
+  },
+  "audits": [
+    {
+      "set": "initial graph, real keyboard focus, value travel, and input lock at both canonical viewports",
+      "files": [
+        "393x852-initial.png",
+        "393x852-focus.png",
+        "393x852-travel.png",
+        "393x852-input-lock.png",
+        "402x874-initial.png",
+        "402x874-focus.png",
+        "402x874-travel.png",
+        "402x874-input-lock.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "addition, multiplication, enemy absorption, and four-floor retained route at both canonical viewports",
+      "files": [
+        "393x852-addition.png",
+        "393x852-multiply.png",
+        "393x852-enemy.png",
+        "393x852-retained.png",
+        "402x874-addition.png",
+        "402x874-multiply.png",
+        "402x874-enemy.png",
+        "402x874-retained.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "touch-driven nonadjacent rejection and three authored arithmetic defeat classes",
+      "files": [
+        "393x852-invalid.png",
+        "393x852-too-strong.png",
+        "393x852-operator-trap.png",
+        "393x852-boss-defeat.png",
+        "402x874-invalid.png",
+        "402x874-too-strong.png",
+        "402x874-operator-trap.png",
+        "402x874-boss-defeat.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "success, normal timeout, reduced resolution, and reduced timeout at both canonical viewports",
+      "files": [
+        "393x852-success.png",
+        "393x852-timeout.png",
+        "393x852-reduced.png",
+        "393x852-reduced-timeout.png",
+        "402x874-success.png",
+        "402x874-timeout.png",
+        "402x874-reduced.png",
+        "402x874-reduced-timeout.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "real touch activation and keyboard graph activation at both canonical viewports",
+      "files": [
+        "393x852-touch.png",
+        "393x852-keyboard.png",
+        "402x874-touch.png",
+        "402x874-keyboard.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    },
+    {
+      "set": "390px and 430px responsive boundaries",
+      "files": [
+        "boundary-390x844.png",
+        "boundary-430x932.png"
+      ],
+      "status": "pass",
+      "blockers": []
+    }
+  ],
+  "finalFindings": {
+    "authoredCutawayTowerIdentity": true,
+    "allRoomsAndBossVisibleInitially": true,
+    "focusMatchesCommittedRoom": true,
+    "exactRunningValueTraceVisible": true,
+    "laterComparisonsUseRetainedValue": true,
+    "clearedRoomsAndBlockedBranchesPersist": true,
+    "invalidAdjacencyIsExplicitAndNonterminal": true,
+    "failureClassesVisuallyDistinct": true,
+    "successAndTimeoutVisuallyDistinct": true,
+    "normalAndReducedOutcomesReadable": true,
+    "touchAndKeyboardEvidenceDistinct": true,
+    "inputLockExplicit": true,
+    "stateSpecificFooterGuidance": true,
+    "noRouteLedgerEllipsis": true,
+    "noClippingOrOverflow": true,
+    "noCanvasArtifacts": true,
+    "productionPolish": true
+  },
+  "resolvedDuringReview": [
+    "wrapped and enlarged the retained route ledger so exact arithmetic never ends in an ellipsis",
+    "made busy and terminal footer guidance state-specific instead of advertising unavailable controls",
+    "aligned the keyboard-focus evidence room with the subsequent +9 value-travel evidence",
+    "made touch activation and keyboard graph activation visually distinct while preserving real DOM input paths"
+  ]
+}

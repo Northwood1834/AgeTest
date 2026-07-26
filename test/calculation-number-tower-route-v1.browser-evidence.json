@@ -1,0 +1,6314 @@
+{
+  "game": "calculation-number-tower-route-v1",
+  "lane": {
+    "name": "flow",
+    "cdp": 9331,
+    "http": 8861,
+    "tool": "tools/qa-browser-lanes.mjs"
+  },
+  "captured": "2026-07-26",
+  "viewports": [
+    "393x852 DPR3",
+    "402x874 DPR3"
+  ],
+  "responsiveBoundaries": [
+    "390x844 DPR3",
+    "430x932 DPR3"
+  ],
+  "scenarioNames": [
+    "addition",
+    "boss-defeat",
+    "enemy",
+    "focus",
+    "initial",
+    "input-lock",
+    "invalid",
+    "keyboard",
+    "multiply",
+    "operator-trap",
+    "reduced",
+    "reduced-timeout",
+    "retained",
+    "success",
+    "timeout",
+    "too-strong",
+    "touch",
+    "travel"
+  ],
+  "checks": {
+    "scenarioCount": 36,
+    "requiredScenarioSet": true,
+    "behaviorPass": true,
+    "allErrorsEmpty": true,
+    "allExternalEmpty": true,
+    "allNoOverflow": true,
+    "allDpr3": true,
+    "boundary390And430": true,
+    "allAuthoredProof": true,
+    "performancePass": true,
+    "disposePass": true
+  },
+  "performance": {
+    "393x852": {
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "frames": 115,
+      "averageFrameMs": 16.666086956521738,
+      "maxFrameMs": 16.799999999999983,
+      "over25ms": 0,
+      "gameFrames": 129,
+      "canvas": {
+        "width": 1068,
+        "height": 1206,
+        "cssWidth": 356,
+        "cssHeight": 402,
+        "dpr": 3
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false
+    },
+    "402x874": {
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "frames": 115,
+      "averageFrameMs": 16.66608695652174,
+      "maxFrameMs": 16.799999999999955,
+      "over25ms": 0,
+      "gameFrames": 130,
+      "canvas": {
+        "width": 1095,
+        "height": 1236,
+        "cssWidth": 365,
+        "cssHeight": 412,
+        "dpr": 3
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false
+    }
+  },
+  "dispose": {
+    "393x852": {
+      "before": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "after": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "game": null,
+      "errors": []
+    },
+    "402x874": {
+      "before": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "after": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "game": null,
+      "errors": []
+    }
+  },
+  "boundaries": {
+    "390": {
+      "scenario": "initial",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 3,
+        "scrollWidth": 390
+      },
+      "game": {
+        "currentId": "start",
+        "floor": 0,
+        "lane": 1,
+        "value": 15,
+        "visited": [],
+        "blocked": [],
+        "trace": [],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "現在 15　｜　1階の隣接室を選択",
+        "canvas": {
+          "width": 1059,
+          "height": 1197,
+          "cssWidth": 353,
+          "cssHeight": 399,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "SECTION",
+        "className": "cntr-stage",
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、0階まで突破。経路未選択",
+      "status": "現在 15　｜　1階の隣接室を選択",
+      "ledger": "開始 15　｜　全41経路を見通して選ぶ",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    "430": {
+      "scenario": "initial",
+      "viewport": {
+        "width": 430,
+        "height": 932,
+        "dpr": 3,
+        "scrollWidth": 430
+      },
+      "game": {
+        "currentId": "start",
+        "floor": 0,
+        "lane": 1,
+        "value": 15,
+        "visited": [],
+        "blocked": [],
+        "trace": [],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "現在 15　｜　1階の隣接室を選択",
+        "canvas": {
+          "width": 1179,
+          "height": 1332,
+          "cssWidth": 393,
+          "cssHeight": 444,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 430,
+          "height": 932,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "SECTION",
+        "className": "cntr-stage",
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、0階まで突破。経路未選択",
+      "status": "現在 15　｜　1階の隣接室を選択",
+      "ledger": "開始 15　｜　全41経路を見通して選ぶ",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "scenario": "addition",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f1c1",
+        "floor": 1,
+        "lane": 1,
+        "value": 24,
+        "visited": [
+          "f1c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 16,
+        "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f2c1",
+        "label": "2階 −27。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在24、1階まで突破。経路f1c1",
+      "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "boss-defeat",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "boss",
+        "floor": 5,
+        "lane": 1,
+        "value": 35,
+        "visited": [
+          "f1c1",
+          "f2c0",
+          "f3c0",
+          "f4c0",
+          "boss"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2",
+          "f3c1",
+          "f3c2",
+          "f4c1",
+          "f4c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c0",
+            "label": "番人 27",
+            "before": 72,
+            "after": 99,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c0",
+            "label": "−64",
+            "before": 99,
+            "after": 35,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 35,
+            "after": 35,
+            "outcome": "boss-defeat"
+          }
+        ],
+        "cursor": 0,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "boss-defeat",
+        "frames": 0,
+        "status": "35では塔主149に届きません",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "boss-defeat",
+          "value": 35,
+          "route": [
+            "f1c1",
+            "f2c0",
+            "f3c0",
+            "f4c0",
+            "boss"
+          ],
+          "detail": "35では塔主149に届きません"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在35、5階まで突破。経路f1c1、f2c0、f3c0、f4c0、boss。結果塔主に届きません",
+      "status": "35では塔主149に届きません",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72　→ 番人 27 = 99　→ −64 = 35　→ 塔主 149 = 35",
+      "terminal": "塔主に届きません",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 0,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "enemy",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f3c1",
+        "floor": 3,
+        "lane": 1,
+        "value": 121,
+        "visited": [
+          "f1c1",
+          "f2c0",
+          "f3c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2",
+          "f3c0",
+          "f3c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 11,
+        "status": "番人 49：72 → 121。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f4c1",
+        "label": "4階 ＋21。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在121、3階まで突破。経路f1c1、f2c0、f3c1",
+      "status": "番人 49：72 → 121。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72　→ 番人 49 = 121",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "focus",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "start",
+        "floor": 0,
+        "lane": 1,
+        "value": 15,
+        "visited": [],
+        "blocked": [],
+        "trace": [],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "現在 15　｜　1階の隣接室を選択",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f1c1",
+        "label": "1階 ＋9。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在15、0階まで突破。経路未選択",
+      "status": "現在 15　｜　1階の隣接室を選択",
+      "ledger": "開始 15　｜　全41経路を見通して選ぶ",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "initial",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "start",
+        "floor": 0,
+        "lane": 1,
+        "value": 15,
+        "visited": [],
+        "blocked": [],
+        "trace": [],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "現在 15　｜　1階の隣接室を選択",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "SECTION",
+        "className": "cntr-stage",
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、0階まで突破。経路未選択",
+      "status": "現在 15　｜　1階の隣接室を選択",
+      "ledger": "開始 15　｜　全41経路を見通して選ぶ",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "input-lock",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "start",
+        "floor": 0,
+        "lane": 1,
+        "value": 15,
+        "visited": [],
+        "blocked": [],
+        "trace": [],
+        "cursor": 1,
+        "busy": true,
+        "transition": {
+          "targetId": "f1c1",
+          "before": 15,
+          "after": 24,
+          "outcome": "continue",
+          "progress": 0.44414285704067774
+        },
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 18,
+        "status": "＋9へ移動。15から計算します",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "SECTION",
+        "className": "cntr-stage",
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、0階まで突破。経路未選択",
+      "status": "＋9へ移動。15から計算します",
+      "ledger": "開始 15　｜　全41経路を見通して選ぶ",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "invalid",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f2c0",
+        "floor": 2,
+        "lane": 0,
+        "value": 72,
+        "visited": [
+          "f1c1",
+          "f2c0"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 0,
+        "busy": false,
+        "transition": null,
+        "invalidId": "f3c2",
+        "invalidAttempts": 1,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "3階の×2は、現在地から隣接していません",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 2,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f3c0",
+        "label": "3階 番人 27。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在72、2階まで突破。経路f1c1、f2c0",
+      "status": "3階の×2は、現在地から隣接していません",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 2,
+        "invalid": 1,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "keyboard",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f1c2",
+        "floor": 1,
+        "lane": 2,
+        "value": 15,
+        "visited": [
+          "f1c2"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c1"
+        ],
+        "trace": [
+          {
+            "id": "f1c2",
+            "label": "番人 15",
+            "before": 15,
+            "after": 15,
+            "outcome": "too-strong"
+          }
+        ],
+        "cursor": 2,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "too-strong",
+        "frames": 44,
+        "status": "15では番人15に勝てません",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 2,
+        "frames": 0,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、1階まで突破。経路f1c2。結果番人が強すぎます",
+      "status": "15では番人15に勝てません",
+      "ledger": "15　→ 番人 15 = 15",
+      "terminal": "番人が強すぎます",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 2,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "multiply",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f2c0",
+        "floor": 2,
+        "lane": 0,
+        "value": 72,
+        "visited": [
+          "f1c1",
+          "f2c0"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 0,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 13,
+        "status": "×3：24 → 72。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f3c0",
+        "label": "3階 番人 27。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在72、2階まで突破。経路f1c1、f2c0",
+      "status": "×3：24 → 72。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 2,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "operator-trap",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f2c1",
+        "floor": 2,
+        "lane": 1,
+        "value": -3,
+        "visited": [
+          "f1c1",
+          "f2c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c0",
+          "f2c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c1",
+            "label": "−27",
+            "before": 24,
+            "after": -3,
+            "outcome": "operator-trap"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "operator-trap",
+        "frames": 0,
+        "status": "24−27=-3。演算床が崩れました",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "operator-trap",
+          "value": -3,
+          "route": [
+            "f1c1",
+            "f2c1"
+          ],
+          "detail": "24−27=-3。演算床が崩れました"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在-3、2階まで突破。経路f1c1、f2c1。結果演算床が崩落",
+      "status": "24−27=-3。演算床が崩れました",
+      "ledger": "15　→ ＋9 = 24　→ −27 = -3",
+      "terminal": "演算床が崩落",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "reduced-timeout",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f1c1",
+        "floor": 1,
+        "lane": 1,
+        "value": 24,
+        "visited": [
+          "f1c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "timeout",
+        "frames": 0,
+        "status": "時間切れ。1階、現在値24で停止",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "value": 24,
+          "route": [
+            "f1c1"
+          ],
+          "detail": "時間切れ。1階、現在値24で停止"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在24、1階まで突破。経路f1c1。結果時間切れ",
+      "status": "時間切れ。1階、現在値24で停止",
+      "ledger": "15　→ ＋9 = 24",
+      "terminal": "時間切れ",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "reduced",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f1c1",
+        "floor": 1,
+        "lane": 1,
+        "value": 24,
+        "visited": [
+          "f1c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 0,
+        "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f2c1",
+        "label": "2階 −27。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在24、1階まで突破。経路f1c1",
+      "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "retained",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f4c2",
+        "floor": 4,
+        "lane": 2,
+        "value": 238,
+        "visited": [
+          "f1c1",
+          "f2c0",
+          "f3c1",
+          "f4c2"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2",
+          "f3c0",
+          "f3c2",
+          "f4c0",
+          "f4c1"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 0,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 11,
+        "status": "番人 117：121 → 238。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "boss",
+        "label": "5階 塔主 149。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在238、4階まで突破。経路f1c1、f2c0、f3c1、f4c2",
+      "status": "番人 117：121 → 238。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72　→ 番人 49 = 121　→ 番人 117 = 238",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 1,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "success",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "boss",
+        "floor": 5,
+        "lane": 1,
+        "value": 387,
+        "visited": [
+          "f1c1",
+          "f2c0",
+          "f3c1",
+          "f4c2",
+          "boss"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2",
+          "f3c0",
+          "f3c2",
+          "f4c0",
+          "f4c1"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "cursor": 0,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "success",
+        "frames": 0,
+        "status": "238で塔主149を倒し、最終値387",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": true,
+        "detail": {
+          "reason": "success",
+          "value": 387,
+          "route": [
+            "f1c1",
+            "f2c0",
+            "f3c1",
+            "f4c2",
+            "boss"
+          ],
+          "detail": "238で塔主149を倒し、最終値387"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在387、5階まで突破。経路f1c1、f2c0、f3c1、f4c2、boss。結果塔主撃破",
+      "status": "238で塔主149を倒し、最終値387",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72　→ 番人 49 = 121　→ 番人 117 = 238　→ 塔主 149 = 387",
+      "terminal": "塔主撃破",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 0,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "timeout",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f1c1",
+        "floor": 1,
+        "lane": 1,
+        "value": 24,
+        "visited": [
+          "f1c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "timeout",
+        "frames": 10,
+        "status": "時間切れ。1階、現在値24で停止",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "value": 24,
+          "route": [
+            "f1c1"
+          ],
+          "detail": "時間切れ。1階、現在値24で停止"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在24、1階まで突破。経路f1c1。結果時間切れ",
+      "status": "時間切れ。1階、現在値24で停止",
+      "ledger": "15　→ ＋9 = 24",
+      "terminal": "時間切れ",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "too-strong",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f1c0",
+        "floor": 1,
+        "lane": 0,
+        "value": 15,
+        "visited": [
+          "f1c0"
+        ],
+        "blocked": [
+          "f1c1",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c0",
+            "label": "番人 15",
+            "before": 15,
+            "after": 15,
+            "outcome": "too-strong"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "too-strong",
+        "frames": 0,
+        "status": "15では番人15に勝てません",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "too-strong",
+          "value": 15,
+          "route": [
+            "f1c0"
+          ],
+          "detail": "15では番人15に勝てません"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "SECTION",
+        "className": "cntr-stage",
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、1階まで突破。経路f1c0。結果番人が強すぎます",
+      "status": "15では番人15に勝てません",
+      "ledger": "15　→ 番人 15 = 15",
+      "terminal": "番人が強すぎます",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 2,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "touch",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "f1c1",
+        "floor": 1,
+        "lane": 1,
+        "value": 24,
+        "visited": [
+          "f1c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 51,
+        "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f2c1",
+        "label": "2階 −27。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在24、1階まで突破。経路f1c1",
+      "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "travel",
+      "viewport": {
+        "width": 393,
+        "height": 852,
+        "dpr": 3,
+        "scrollWidth": 393
+      },
+      "game": {
+        "currentId": "start",
+        "floor": 0,
+        "lane": 1,
+        "value": 15,
+        "visited": [],
+        "blocked": [],
+        "trace": [],
+        "cursor": 1,
+        "busy": true,
+        "transition": {
+          "targetId": "f1c1",
+          "before": 15,
+          "after": 24,
+          "outcome": "continue",
+          "progress": 0.6425714286054883
+        },
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 28,
+        "status": "＋9へ移動。15から計算します",
+        "canvas": {
+          "width": 1068,
+          "height": 1206,
+          "cssWidth": 356,
+          "cssHeight": 402,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "SECTION",
+        "className": "cntr-stage",
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、0階まで突破。経路未選択",
+      "status": "＋9へ移動。15から計算します",
+      "ledger": "開始 15　｜　全41経路を見通して選ぶ",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "addition",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f1c1",
+        "floor": 1,
+        "lane": 1,
+        "value": 24,
+        "visited": [
+          "f1c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f2c1",
+        "label": "2階 −27。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在24、1階まで突破。経路f1c1",
+      "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "boss-defeat",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "boss",
+        "floor": 5,
+        "lane": 1,
+        "value": 35,
+        "visited": [
+          "f1c1",
+          "f2c0",
+          "f3c0",
+          "f4c0",
+          "boss"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2",
+          "f3c1",
+          "f3c2",
+          "f4c1",
+          "f4c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c0",
+            "label": "番人 27",
+            "before": 72,
+            "after": 99,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c0",
+            "label": "−64",
+            "before": 99,
+            "after": 35,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 35,
+            "after": 35,
+            "outcome": "boss-defeat"
+          }
+        ],
+        "cursor": 0,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "boss-defeat",
+        "frames": 0,
+        "status": "35では塔主149に届きません",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "boss-defeat",
+          "value": 35,
+          "route": [
+            "f1c1",
+            "f2c0",
+            "f3c0",
+            "f4c0",
+            "boss"
+          ],
+          "detail": "35では塔主149に届きません"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在35、5階まで突破。経路f1c1、f2c0、f3c0、f4c0、boss。結果塔主に届きません",
+      "status": "35では塔主149に届きません",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72　→ 番人 27 = 99　→ −64 = 35　→ 塔主 149 = 35",
+      "terminal": "塔主に届きません",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 0,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "enemy",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f3c1",
+        "floor": 3,
+        "lane": 1,
+        "value": 121,
+        "visited": [
+          "f1c1",
+          "f2c0",
+          "f3c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2",
+          "f3c0",
+          "f3c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "番人 49：72 → 121。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f4c1",
+        "label": "4階 ＋21。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在121、3階まで突破。経路f1c1、f2c0、f3c1",
+      "status": "番人 49：72 → 121。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72　→ 番人 49 = 121",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "focus",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "start",
+        "floor": 0,
+        "lane": 1,
+        "value": 15,
+        "visited": [],
+        "blocked": [],
+        "trace": [],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "現在 15　｜　1階の隣接室を選択",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f1c1",
+        "label": "1階 ＋9。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在15、0階まで突破。経路未選択",
+      "status": "現在 15　｜　1階の隣接室を選択",
+      "ledger": "開始 15　｜　全41経路を見通して選ぶ",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "initial",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "start",
+        "floor": 0,
+        "lane": 1,
+        "value": 15,
+        "visited": [],
+        "blocked": [],
+        "trace": [],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "現在 15　｜　1階の隣接室を選択",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "SECTION",
+        "className": "cntr-stage",
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、0階まで突破。経路未選択",
+      "status": "現在 15　｜　1階の隣接室を選択",
+      "ledger": "開始 15　｜　全41経路を見通して選ぶ",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "input-lock",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "start",
+        "floor": 0,
+        "lane": 1,
+        "value": 15,
+        "visited": [],
+        "blocked": [],
+        "trace": [],
+        "cursor": 1,
+        "busy": true,
+        "transition": {
+          "targetId": "f1c1",
+          "before": 15,
+          "after": 24,
+          "outcome": "continue",
+          "progress": 0.28028571428571425
+        },
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 13,
+        "status": "＋9へ移動。15から計算します",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "SECTION",
+        "className": "cntr-stage",
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、0階まで突破。経路未選択",
+      "status": "＋9へ移動。15から計算します",
+      "ledger": "開始 15　｜　全41経路を見通して選ぶ",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "invalid",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f2c0",
+        "floor": 2,
+        "lane": 0,
+        "value": 72,
+        "visited": [
+          "f1c1",
+          "f2c0"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 0,
+        "busy": false,
+        "transition": null,
+        "invalidId": "f3c2",
+        "invalidAttempts": 1,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "3階の×2は、現在地から隣接していません",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 2,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f3c0",
+        "label": "3階 番人 27。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在72、2階まで突破。経路f1c1、f2c0",
+      "status": "3階の×2は、現在地から隣接していません",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 2,
+        "invalid": 1,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "keyboard",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f1c2",
+        "floor": 1,
+        "lane": 2,
+        "value": 15,
+        "visited": [
+          "f1c2"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c1"
+        ],
+        "trace": [
+          {
+            "id": "f1c2",
+            "label": "番人 15",
+            "before": 15,
+            "after": 15,
+            "outcome": "too-strong"
+          }
+        ],
+        "cursor": 2,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "too-strong",
+        "frames": 43,
+        "status": "15では番人15に勝てません",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 2,
+        "frames": 0,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、1階まで突破。経路f1c2。結果番人が強すぎます",
+      "status": "15では番人15に勝てません",
+      "ledger": "15　→ 番人 15 = 15",
+      "terminal": "番人が強すぎます",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 2,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "multiply",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f2c0",
+        "floor": 2,
+        "lane": 0,
+        "value": 72,
+        "visited": [
+          "f1c1",
+          "f2c0"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 0,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 9,
+        "status": "×3：24 → 72。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f3c0",
+        "label": "3階 番人 27。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在72、2階まで突破。経路f1c1、f2c0",
+      "status": "×3：24 → 72。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 2,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "operator-trap",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f2c1",
+        "floor": 2,
+        "lane": 1,
+        "value": -3,
+        "visited": [
+          "f1c1",
+          "f2c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c0",
+          "f2c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c1",
+            "label": "−27",
+            "before": 24,
+            "after": -3,
+            "outcome": "operator-trap"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "operator-trap",
+        "frames": 0,
+        "status": "24−27=-3。演算床が崩れました",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "operator-trap",
+          "value": -3,
+          "route": [
+            "f1c1",
+            "f2c1"
+          ],
+          "detail": "24−27=-3。演算床が崩れました"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在-3、2階まで突破。経路f1c1、f2c1。結果演算床が崩落",
+      "status": "24−27=-3。演算床が崩れました",
+      "ledger": "15　→ ＋9 = 24　→ −27 = -3",
+      "terminal": "演算床が崩落",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "reduced-timeout",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f1c1",
+        "floor": 1,
+        "lane": 1,
+        "value": 24,
+        "visited": [
+          "f1c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "timeout",
+        "frames": 0,
+        "status": "時間切れ。1階、現在値24で停止",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "value": 24,
+          "route": [
+            "f1c1"
+          ],
+          "detail": "時間切れ。1階、現在値24で停止"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在24、1階まで突破。経路f1c1。結果時間切れ",
+      "status": "時間切れ。1階、現在値24で停止",
+      "ledger": "15　→ ＋9 = 24",
+      "terminal": "時間切れ",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "reduced",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f1c1",
+        "floor": 1,
+        "lane": 1,
+        "value": 24,
+        "visited": [
+          "f1c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 0,
+        "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 0,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f2c1",
+        "label": "2階 −27。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在24、1階まで突破。経路f1c1",
+      "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "retained",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f4c2",
+        "floor": 4,
+        "lane": 2,
+        "value": 238,
+        "visited": [
+          "f1c1",
+          "f2c0",
+          "f3c1",
+          "f4c2"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2",
+          "f3c0",
+          "f3c2",
+          "f4c0",
+          "f4c1"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 0,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 10,
+        "status": "番人 117：121 → 238。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "boss",
+        "label": "5階 塔主 149。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在238、4階まで突破。経路f1c1、f2c0、f3c1、f4c2",
+      "status": "番人 117：121 → 238。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72　→ 番人 49 = 121　→ 番人 117 = 238",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 1,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "success",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "boss",
+        "floor": 5,
+        "lane": 1,
+        "value": 387,
+        "visited": [
+          "f1c1",
+          "f2c0",
+          "f3c1",
+          "f4c2",
+          "boss"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2",
+          "f2c1",
+          "f2c2",
+          "f3c0",
+          "f3c2",
+          "f4c0",
+          "f4c1"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "cursor": 0,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "success",
+        "frames": 0,
+        "status": "238で塔主149を倒し、最終値387",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": true,
+        "detail": {
+          "reason": "success",
+          "value": 387,
+          "route": [
+            "f1c1",
+            "f2c0",
+            "f3c1",
+            "f4c2",
+            "boss"
+          ],
+          "detail": "238で塔主149を倒し、最終値387"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在387、5階まで突破。経路f1c1、f2c0、f3c1、f4c2、boss。結果塔主撃破",
+      "status": "238で塔主149を倒し、最終値387",
+      "ledger": "15　→ ＋9 = 24　→ ×3 = 72　→ 番人 49 = 121　→ 番人 117 = 238　→ 塔主 149 = 387",
+      "terminal": "塔主撃破",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 0,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "timeout",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f1c1",
+        "floor": 1,
+        "lane": 1,
+        "value": 24,
+        "visited": [
+          "f1c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "timeout",
+        "frames": 11,
+        "status": "時間切れ。1階、現在値24で停止",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "timeout",
+          "value": 24,
+          "route": [
+            "f1c1"
+          ],
+          "detail": "時間切れ。1階、現在値24で停止"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BODY",
+        "className": null,
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在24、1階まで突破。経路f1c1。結果時間切れ",
+      "status": "時間切れ。1階、現在値24で停止",
+      "ledger": "15　→ ＋9 = 24",
+      "terminal": "時間切れ",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "too-strong",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f1c0",
+        "floor": 1,
+        "lane": 0,
+        "value": 15,
+        "visited": [
+          "f1c0"
+        ],
+        "blocked": [
+          "f1c1",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c0",
+            "label": "番人 15",
+            "before": 15,
+            "after": 15,
+            "outcome": "too-strong"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": true,
+        "disposed": false,
+        "result": "too-strong",
+        "frames": 0,
+        "status": "15では番人15に勝てません",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": {
+        "correct": false,
+        "detail": {
+          "reason": "too-strong",
+          "value": 15,
+          "route": [
+            "f1c0"
+          ],
+          "detail": "15では番人15に勝てません"
+        }
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "SECTION",
+        "className": "cntr-stage",
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、1階まで突破。経路f1c0。結果番人が強すぎます",
+      "status": "15では番人15に勝てません",
+      "ledger": "15　→ 番人 15 = 15",
+      "terminal": "番人が強すぎます",
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 2,
+        "invalid": 0,
+        "disabled": 13
+      }
+    },
+    {
+      "scenario": "touch",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "f1c1",
+        "floor": 1,
+        "lane": 1,
+        "value": 24,
+        "visited": [
+          "f1c1"
+        ],
+        "blocked": [
+          "f1c0",
+          "f1c2"
+        ],
+        "trace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          }
+        ],
+        "cursor": 1,
+        "busy": false,
+        "transition": null,
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 53,
+        "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "BUTTON",
+        "className": "cntr-room",
+        "id": "f2c1",
+        "label": "2階 −27。現在地から到達可能"
+      },
+      "canvasAria": "黄昏機関塔。現在24、1階まで突破。経路f1c1",
+      "status": "＋9：15 → 24。変化を次の階へ持ち越します",
+      "ledger": "15　→ ＋9 = 24",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 0
+      }
+    },
+    {
+      "scenario": "travel",
+      "viewport": {
+        "width": 402,
+        "height": 874,
+        "dpr": 3,
+        "scrollWidth": 402
+      },
+      "game": {
+        "currentId": "start",
+        "floor": 0,
+        "lane": 1,
+        "value": 15,
+        "visited": [],
+        "blocked": [],
+        "trace": [],
+        "cursor": 1,
+        "busy": true,
+        "transition": {
+          "targetId": "f1c1",
+          "before": 15,
+          "after": 24,
+          "outcome": "continue",
+          "progress": 0.49071428557804647
+        },
+        "invalidId": null,
+        "invalidAttempts": 0,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "frames": 21,
+        "status": "＋9へ移動。15から計算します",
+        "canvas": {
+          "width": 1095,
+          "height": 1236,
+          "cssWidth": 365,
+          "cssHeight": 412,
+          "dpr": 3
+        },
+        "viewport": {
+          "width": 402,
+          "height": 874,
+          "dpr": 3
+        }
+      },
+      "result": null,
+      "runtime": {
+        "disposed": false,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 1,
+        "frames": 1,
+        "listeners": 42,
+        "aborted": false
+      },
+      "errors": [],
+      "external": [],
+      "overflow": false,
+      "buttonCount": 13,
+      "active": {
+        "tag": "SECTION",
+        "className": "cntr-stage",
+        "id": null,
+        "label": null
+      },
+      "canvasAria": "黄昏機関塔。現在15、0階まで突破。経路未選択",
+      "status": "＋9へ移動。15から計算します",
+      "ledger": "開始 15　｜　全41経路を見通して選ぶ",
+      "terminal": null,
+      "task": {
+        "variant": 0,
+        "start": {
+          "id": "start",
+          "floor": 0,
+          "lane": 1,
+          "value": 15
+        },
+        "boss": {
+          "id": "boss",
+          "floor": 5,
+          "lane": 1,
+          "kind": "boss",
+          "value": 149,
+          "material": "clockwork-crown"
+        },
+        "winningLanes": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "winningTrace": [
+          {
+            "id": "f1c1",
+            "label": "＋9",
+            "before": 15,
+            "after": 24,
+            "outcome": "continue"
+          },
+          {
+            "id": "f2c0",
+            "label": "×3",
+            "before": 24,
+            "after": 72,
+            "outcome": "continue"
+          },
+          {
+            "id": "f3c1",
+            "label": "番人 49",
+            "before": 72,
+            "after": 121,
+            "outcome": "continue"
+          },
+          {
+            "id": "f4c2",
+            "label": "番人 117",
+            "before": 121,
+            "after": 238,
+            "outcome": "continue"
+          },
+          {
+            "id": "boss",
+            "label": "塔主 149",
+            "before": 238,
+            "after": 387,
+            "outcome": "success"
+          }
+        ],
+        "routeCount": 41,
+        "counts": {
+          "success": 1,
+          "too-strong": 28,
+          "operator-trap": 7,
+          "boss-defeat": 5
+        },
+        "maxObserved": 387
+      },
+      "dom": {
+        "rooms": 13,
+        "reachable": 3,
+        "invalid": 0,
+        "disabled": 13
+      }
+    }
+  ],
+  "screenshots": [
+    "393x852-addition.png",
+    "393x852-boss-defeat.png",
+    "393x852-enemy.png",
+    "393x852-focus.png",
+    "393x852-initial.png",
+    "393x852-input-lock.png",
+    "393x852-invalid.png",
+    "393x852-keyboard.png",
+    "393x852-multiply.png",
+    "393x852-operator-trap.png",
+    "393x852-reduced-timeout.png",
+    "393x852-reduced.png",
+    "393x852-retained.png",
+    "393x852-success.png",
+    "393x852-timeout.png",
+    "393x852-too-strong.png",
+    "393x852-touch.png",
+    "393x852-travel.png",
+    "402x874-addition.png",
+    "402x874-boss-defeat.png",
+    "402x874-enemy.png",
+    "402x874-focus.png",
+    "402x874-initial.png",
+    "402x874-input-lock.png",
+    "402x874-invalid.png",
+    "402x874-keyboard.png",
+    "402x874-multiply.png",
+    "402x874-operator-trap.png",
+    "402x874-reduced-timeout.png",
+    "402x874-reduced.png",
+    "402x874-retained.png",
+    "402x874-success.png",
+    "402x874-timeout.png",
+    "402x874-too-strong.png",
+    "402x874-touch.png",
+    "402x874-travel.png",
+    "boundary-390x844.png",
+    "boundary-430x932.png"
+  ],
+  "status": "pass"
+}
