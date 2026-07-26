@@ -167,7 +167,8 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `calculation-balance-scale-v1` — accepted and integrated
 - `language-notice-trim-v1` — audit lane
 - `inhibition-quiet-tidy-v1` — accepted and integrated
-- `social-shared-umbrella-v1` — flow lane; director visual-causality fix in progress
+- `social-shared-umbrella-v1` — accepted and integrated
+- `attention-leaf-trim-v1` — flow lane
 - `spatial-suitcase-pack-v1` — screw lane
 
 ### N08 — active original

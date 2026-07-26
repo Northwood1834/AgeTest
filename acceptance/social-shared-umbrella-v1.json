@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "social-shared-umbrella-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "a2299c13ab8f7cef6db6a2087fa6898bda746814",
+  "test": "test/social-shared-umbrella-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

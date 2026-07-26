@@ -529,6 +529,17 @@ export const gameManifest=Object.freeze([
     "hash": "6ad33b68af75eb8e"
   },
   {
+    "id": "social-shared-umbrella-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "social-shared-umbrella",
+    "category": "social",
+    "module": "./games/social-shared-umbrella-v1.js",
+    "hash": "59ec0bd2052a9def"
+  },
+  {
     "id": "social-thread-vibe-v1",
     "introducedIn": "2.0",
     "tier": 3,
