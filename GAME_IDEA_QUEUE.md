@@ -370,6 +370,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Interdependence/proof: spatial history changes later response budget while urgency tempts fragmentation. Exhaustive tick/placement search defeats nearest-slot greed, proves retrievability and exact dwell/capacity boundaries, and retains board/counter state.
 - Art/reduced motion: original unmanned token counter/board and abstract shapes; snapped updates, not a parcel, warehouse, courier, or logistics procedure.
 
+### Q57 — `calculation-mosaic-order-v1`
+
+- Category/tier/flavor: calculation / tier 3 / satisfying
+- Core: commit an abstract piece count for a finite notched mosaic grid before placing/rotating 2×1 pieces and making at most three grid splits whose reusable remnants determine the true minimum.
+- Interdependence/proof: quantity fixes spatial feasibility while exact spatial split plan defines quantity. Exhaustive finite tilings require the split cap, defeat area-only estimates, and prove shortage/excess/dead-end boundaries.
+- Art/reduced motion: original abstract mosaic board/pieces/order dial; snapped states, not flooring, construction, tools, real material, or installation instruction.
+
+### Q58 — `prediction-marble-gate-v1`
+
+- Category/tier/flavor: prediction / tier 3 / wild
+- Core: read deterministic visible peg routes and begin one slow gate switch early enough for three target marbles while suppressing switches for visibly distinct decoys arriving just before them.
+- Interdependence/proof: decoy response consumes the only correct-switch window, while inhibition alone cannot choose route. Enumerate integer paths/actions, guarantee ≥3-tick windows, no randomness, and all timing/direction failures.
+- Art/reduced motion: original tabletop marble board and staged gate/balls; no gambling, score, payout, real gaming-machine motif, or brand.
+
+### Q59 — `reaction-order-return-v1`
+
+- Category/tier/flavor: reaction / tier 3 / wild
+- Core: monitor three identical abstract request terminals whose visual bands complete at differing deterministic times, then return tokens only in the task-defined FIFO completion order while new requests continue.
+- Interdependence/proof: faster servicing shortens remembered queue; sequence errors consume time and lengthen it. Exhaustive ticks require queue depth three, unique completion times, and prove wrong-order/overflow/empty-return boundaries.
+- Art/reduced motion: original unmanned signal console, identical terminals/bands/tokens; stepped completion, no people, reception, service priority, or real social norm.
+
+### Q60 — `timing-sprinkler-route-v1`
+
+- Category/tier/flavor: timing / tier 3 / satisfying
+- Core: route three fictional plant tokens across a visible grid while one slider inversely couples a deterministic sweep sector’s rotation frequency and angular width, changing both when and where paths are open.
+- Interdependence/proof: route length sets needed window, which sets slider state, which reshapes route. Exhaustive discrete valves/paths require a change, reject both extremes, and prove exact window/placement boundaries.
+- Art/reduced motion: wholly fictional greenhouse board, tokens, sweep/dry textures and UI; stepped angles, no real irrigation, equipment operation, cultivation, chemical, or safety guidance.
+
+### Q61 — `memory-vending-rule-v1`
+
+- Category/tier/flavor: memory / tier 3 / quirky
+- Core: encode three finite shape-exchange rules, then feed irreversible token multisets into an opaque fictional machine toward a visible target; one optional test reveals output but consumes scarce resources.
+- Interdependence/proof: memory is the sole prediction source while irreversible prediction tests are the sole memory check. Enumerate finite exchanges, guarantee success with/without costly test, order-dependent dead ends and all retained outcomes.
+- Art/reduced motion: original abstract exchange box/shapes/rule cards/trays; three static stages, no vending, currency, gambling, or real machine.
+
+### Q62 — `inhibition-companion-route-v1`
+
+- Category/tier/flavor: inhibition / tier 3 / satisfying
+- Core: draw a guide route around abstract display zones while two fictional light-sprite companions follow within a distance bound; shortest-path attraction risks contact, but excessive detours make sprites approach displays unless the guide pauses.
+- Interdependence/proof: successful detour raises companion-management demand, while direct grouping violates avoidance. Exhaustive quantized routes require ≥2 waits, defeat shortest/max-detour strategies and prove distance/contact boundaries.
+- Art/reduced motion: original abstract gallery, display shapes, guide marker and two nonhuman light sprites; stepped movement, no plants, visitors, attention/ability judgment, etiquette, or real venue procedure.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
