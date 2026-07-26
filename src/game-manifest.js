@@ -276,6 +276,17 @@ export const gameManifest=Object.freeze([
     "hash": "19bca45fc6adc357"
   },
   {
+    "id": "language-label-jar-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "language-label-jar",
+    "category": "language",
+    "module": "./games/language-label-jar-v1.js",
+    "hash": "f16983d28a1ea72f"
+  },
+  {
     "id": "language-notice-trim-v1",
     "introducedIn": "2.0",
     "tier": 3,

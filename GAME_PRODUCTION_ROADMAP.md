@@ -173,7 +173,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `attention-leaf-trim-v1` — accepted and integrated
 - `memory-table-restore-v1` — accepted and integrated
 - `reaction-clothesline-calm-v1` — flow lane
-- `language-label-jar-v1` — screw lane
+- `language-label-jar-v1` — accepted and integrated
 - `spatial-suitcase-pack-v1` — accepted and integrated
 - `spatial-shelf-balance-v1` — accepted and integrated
 
