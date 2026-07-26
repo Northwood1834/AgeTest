@@ -114,8 +114,8 @@ A game is accepted only when its branch supplies evidence for:
 5. 390×844, 393×852, 402×874, and 430×932 CSS viewports at DPR 2 or 3;
 6. pointer/touch operation, keyboard path where applicable, focus, reduced motion, and no horizontal overflow;
 7. no console/page error and no external network request; and
-8. one stable-ID-scoped Git branch whose diff does not alter another game's semantics; and
-9. final same-task legacy/module comparison sheets that pass the independent visual review above.
+8. one stable-ID-scoped diff on `rebuild/game-modules` that does not alter another game's semantics; and
+9. final full-resolution visual evidence appropriate to a port or original game, as defined above, that passes independent review.
 
 The author supplies the evidence. Integration acceptance remains with the director.
 
