@@ -488,7 +488,6 @@ function tuneTaskForPace(task,paceMode){
 }
 
 const LEGACY_TASK_FACTORIES = [
-  {id:"reaction-target-v1",version:"1.0",category:"reaction",make:()=>({kind:"target",prompt:"逃げる紫をつかまえて",help:"背景を押すと逃亡成功です。",x:randomInt(8,72),y:randomInt(10,62),duration:5000})},
   {id:"memory-path-v1",version:"1.0",category:"memory",make:()=>({kind:"memoryPath",prompt:"光る順番を覚えて",help:"あとで同じ順番にタップ。",path:shuffle([0,1,2,3,4,5,6,7,8]).slice(0,3),duration:7200})},
   {id:"memory-missing-v1",version:"1.0",category:"memory",make:()=>{const all=["🍇","鍵","傘","月","猫","靴","山","時計","魚","本"],shown=shuffle(all).slice(0,5),absent=pick(all.filter(x=>!shown.includes(x))),others=shuffle(shown).slice(0,3);return{kind:"flashChoice",prompt:"なかったものを選んで",help:"まず5つを覚えてください。",shown,options:shuffle([absent,...others]),answer:absent,duration:7500}}},
   {id:"language-meaning-v1",version:"1.0",category:"language",make:()=>{const rows=[

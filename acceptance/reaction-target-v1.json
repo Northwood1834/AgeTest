@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "reaction-target-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "342587b40a0e441bea9590a0b5b6f3de1b7e1e1c",
+  "test": "test/reaction-target-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

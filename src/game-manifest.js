@@ -210,6 +210,17 @@ export const gameManifest=Object.freeze([
     "hash": "0a96503ee559c499"
   },
   {
+    "id": "reaction-target-v1",
+    "introducedIn": "1.0",
+    "tier": 1,
+    "flavor": "wild",
+    "step": 1,
+    "family": "reaction-target",
+    "category": "reaction",
+    "module": "./games/reaction-target-v1.js",
+    "hash": "e948389e13b85025"
+  },
+  {
     "id": "social-care-package-v1",
     "introducedIn": "2.0",
     "tier": 2,

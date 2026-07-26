@@ -99,7 +99,7 @@ P04 takes the next three owner slots that become free after their current owners
 
 ### P06 — active ports
 
-- `reaction-target-v1` — screw lane
+- `reaction-target-v1` — accepted and integrated
 - `memory-path-v1` — waits for flow lane
 - `spatial-cube-v1` — waits for screw lane
 
@@ -134,6 +134,10 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `attention-goods-shelf-sort-v1` — accepted and integrated
 - `spatial-sand-channel-v1` — accepted and integrated
 - `prediction-ricochet-knockback-v1` — accepted and integrated
+
+### P07 — active pre-browser port
+
+- `timing-five-v1` — waits for screw lane
 
 ### N07 — active browser production
 
