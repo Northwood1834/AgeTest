@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Park Jam module fixture</title>
+<style>*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#f8f3fa;font-family:system-ui,-apple-system,sans-serif}body{padding:max(8px,env(safe-area-inset-top)) 8px max(8px,env(safe-area-inset-bottom))}#shell{width:100%;max-width:430px;margin:auto}h1{margin:.15rem 0 .25rem;text-align:center;color:#513660;font-size:1.05rem}#result{min-height:1.3em;margin:.25rem 0;text-align:center;color:#65586d;font-size:.75rem}</style></head>
+<body><main id="shell"><h1>赤い車を出口へ</h1><div id="host"></div><p id="result"></p></main>
+<script type="module">
+import game from "../src/games/spatial-park-jam-v1.js";
+const params=new URLSearchParams(location.search),scenario=params.get("scenario")||"initial",seedValue=Number(params.get("seed"))||0x51a7;
+let seed=seedValue>>>0;const random=()=>((seed=(Math.imul(seed,1664525)+1013904223)>>>0)/2**32),randomInt=(min,max)=>min+Math.floor(random()*(max-min+1));
+const generated=game.generate({random,randomInt,pick:values=>values[randomInt(0,values.length-1)],shuffle:values=>[...values]}),publishedEmergency={kind:"parkJam",prompt:"赤い車を出口へ",help:"車をタップして、動かしたいマスをタップ。",cars:[{r:2,c:0,len:2,dir:"h",color:"#EA6A5C",hero:true},{r:0,c:3,len:3,dir:"v",color:"#5FB6E0"},{r:3,c:1,len:2,dir:"h",color:"#66C08C"}],minMoves:2,moveLimit:5,duration:75000},task=scenario==="legacy-resume"?publishedEmergency:generated;
+const host=document.querySelector("#host"),result=document.querySelector("#result"),controller=new AbortController(),qa={},jobs=new Set();let deadline=null,finished=[];
+const context={host,signal:controller.signal,qa,reducedMotion:params.get("reduced")==="1"||matchMedia("(prefers-reduced-motion: reduce)").matches,viewport:{width:innerWidth-16,height:innerHeight,dpr:devicePixelRatio},
+ listen(target,type,fn,options){target.addEventListener(type,fn,options);return()=>target.removeEventListener(type,fn,options)},later(fn,ms){const id=setTimeout(()=>{jobs.delete(id);fn()},ms);jobs.add(id);return id},frame(){throw new Error("unexpected frame loop")},setDeadline(ms,fn){deadline=fn;return 1},finish(correct,detail){if(finished.length)return false;finished.push({correct,detail});result.textContent=correct?"正解":"不正解";return true}};
+game.render(task,context);const api=qa[game.metadata.id],wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const reverse=move=>({...move,step:-move.step});
+const applyScenario=async()=>{
+ if(scenario==="selected"||scenario==="dragging"){
+   const move=task.solution[0],button=host.querySelectorAll(".apj-car")[move.index];api.select(move.index);
+   if(scenario==="dragging"){const rect=button.getBoundingClientRect(),horizontal=task.cars[move.index].dir==="h",pointerId=7;button.dispatchEvent(new PointerEvent("pointerdown",{bubbles:true,pointerId,clientX:rect.left+rect.width/2,clientY:rect.top+rect.height/2}));button.dispatchEvent(new PointerEvent("pointermove",{bubbles:true,pointerId,clientX:rect.left+rect.width/2+(horizontal?38*move.step:0),clientY:rect.top+rect.height/2+(horizontal?0:38*move.step)}))}
+ }else if(scenario==="legal"){api.move(task.solution[0]);await wait(260)}
+ else if(scenario==="illegal"){api.select(0);const occupied=new Set();task.cars.forEach(car=>{for(let i=0;i<car.len;i++)occupied.add(`${car.r+(car.dir==="v"?i:0)},${car.c+(car.dir==="h"?i:0)}`)});outer:for(let r=0;r<5;r++)for(let c=0;c<5;c++)if(r!==2&&!occupied.has(`${r},${c}`)){api.chooseCell(r,c);break outer}await wait(70)}
+ else if(scenario==="correct"){for(const move of task.solution){api.move(move);await wait(245)}await wait(900)}
+ else if(scenario==="limit"){const first=task.solution[0],back=reverse(first);for(let i=0;i<task.moveLimit;i++){api.move(i%2?back:first);await wait(235)}}
+ else if(scenario==="legacy-resume"){for(const move of[{index:1,step:1,distance:3},{index:0,step:1,distance:3}]){api.move(move);await wait(245)}await wait(900)}
+ else if(scenario==="timeout"){deadline();await wait(20)}
+ else if(scenario==="dispose"){api.move(task.solution[0]);controller.abort();for(const id of jobs)clearTimeout(id);jobs.clear();await wait(260)}
+ document.body.dataset.ready="true";window.__PARK_FIXTURE__={game,task,api,context,finished,dispose(){controller.abort();for(const id of jobs)clearTimeout(id)}};
+};
+await applyScenario();
+</script></body></html>
