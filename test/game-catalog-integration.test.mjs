@@ -37,7 +37,7 @@ test("every accepted manifest entry loads its own matching game module",async()=
 });
 
 test("withheld games leave new selection but remain loadable for saved sessions",async()=>{
-  const ids=["prediction-card-combo-v1","social-care-package-v1","spatial-cube-v1"];
+  const ids=["inhibition-parity-v1","prediction-card-combo-v1","social-care-package-v1","spatial-cube-v1","timing-mochi-pound-v1"];
   assert.deepEqual([...RETIRED_GAME_IDS].sort(),[...ids].sort());
   for(const id of ids){
     assert.equal(gameCatalog.some(entry=>entry.id===id),true);

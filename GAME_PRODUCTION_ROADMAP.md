@@ -156,7 +156,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `reaction-emoji-match-v1` — accepted and integrated
 - `attention-kana-count-v1` — accepted and integrated
 - `attention-animal-count-v1` — accepted and integrated
-- `inhibition-parity-v1` — accepted and integrated
+- `inhibition-parity-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (`押さない` conflicts with treating time expiry as failure)
 - `inhibition-opposite-v1` — accepted and integrated
 - `inhibition-rule-switch-v1` — accepted and integrated
 - `memory-missing-v1` — accepted and integrated
@@ -185,7 +185,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 ### N08 — active original
 
 - `attention-lint-shaver-v1` — accepted and integrated
-- `timing-mochi-pound-v1` — accepted and integrated
+- `timing-mochi-pound-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (the intended action and goal are not understandable on sight)
 - `language-particle-scene-v1` — accepted and integrated
 - `prediction-domino-relay-v1` — accepted and integrated
 - `reaction-cupboard-catch-v1` — accepted and integrated
