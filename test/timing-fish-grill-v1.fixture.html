@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>timing-fish-grill-v1 fixture</title>
+<style>*{box-sizing:border-box}html,body{margin:0;min-height:100%;overflow-x:hidden;background:#f5f0f7;color:#403647;font-family:"Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif}body{display:flex;justify-content:center}main{width:100%;max-width:29rem;min-height:100dvh;padding:1.35rem 1.15rem 2rem}.fixture-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 .5rem;padding:0 .1rem;color:#684578;font-size:.72rem;font-weight:900}.fixture-card{padding:1.05rem 1rem 1rem;border:1px solid #e2d6e8;border-radius:1.4rem;background:rgba(255,255,255,.96);box-shadow:0 7px 24px rgba(65,39,76,.12)}h1{margin:0 0 .18rem;text-align:center;font-size:1.42rem;line-height:1.3}.help{margin:0 0 .6rem;color:#786b80;text-align:center;font-size:.77rem;font-weight:700;line-height:1.4}.result{min-height:1.2rem;margin:.45rem 0 0;color:#2d6447;text-align:center;font-size:.76rem;font-weight:900}</style></head>
+<body><main><header class="fixture-head"><span>初老テスト。新作</span><span id="scenario-label"></span></header><section class="fixture-card"><h1 id="prompt"></h1><p class="help" id="help"></p><div id="game-host"></div><p class="result" id="fixture-result" aria-live="polite"></p></section></main>
+<script type="module">
+import game from "../src/games/timing-fish-grill-v1.js";
+import {createGameRuntime} from "../src/game-kernel.js";
+const FIXED_TASK={kind:"fishGrill",prompt:"焼き目、いま。",help:"魚の色、つや、油の泡を見て返します。両面がちょうどよく焼けたら盛り付けてください。",heatRates:[5,4],goodWindows:[[280,345],[280,345]],warningThresholds:[360,360],burnThresholds:[400,400],carryoverHeat:1,startingSide:0,maxUsefulFlips:3,quantumMs:250,duration:36000,pattern:3,proof:{flipAtStep:45,serveFromStep:104,serveToStep:120,toleranceSteps:17}};
+const host=document.querySelector("#game-host"),label=document.querySelector("#scenario-label"),prompt=document.querySelector("#prompt"),help=document.querySelector("#help"),resultNode=document.querySelector("#fixture-result"),errors=[];
+let runtime=null,qa=null,result=null,lastTask=null;addEventListener("error",event=>errors.push(String(event.error?.stack||event.message)));addEventListener("unhandledrejection",event=>errors.push(String(event.reason?.stack||event.reason)));const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+function start({task=FIXED_TASK,width=innerWidth,height=innerHeight,dpr=devicePixelRatio,reduced=false,deadlineOverride=null}={}){
+  runtime?.dispose();host.replaceChildren();qa={};result=null;resultNode.textContent="";lastTask=structuredClone(task);prompt.textContent=lastTask.prompt;help.textContent=lastTask.help;
+  runtime=createGameRuntime({host,qa,reducedMotion:reduced,viewport:{width,height,dpr},onFinish:(correct,detail)=>{result={correct,detail};resultNode.textContent=`${correct?"成功":"失敗"} · ${detail.detail||detail.reason||""}`}});
+  const context={...runtime.context,qa,reducedMotion:reduced,viewport:{width,height,dpr}};if(deadlineOverride!==null){const owned=context.setDeadline;context.setDeadline=(_ms,fn)=>owned(deadlineOverride,fn)}game.render(lastTask,context);return structuredClone(lastTask);
+}
+async function readyState(api){api.advanceSteps(Math.max(0,lastTask.proof.flipAtStep-api.inspect().steps));api.flip();await wait(660);api.advanceSteps(Math.max(0,lastTask.proof.serveFromStep-api.inspect().steps))}
+async function runScenario(name){const api=qa[game.metadata.id];
+  if(name==="pearly")api.advanceSteps(Math.ceil(lastTask.goodWindows[lastTask.startingSide][0]*.36/lastTask.heatRates[lastTask.startingSide]));
+  else if(name==="browning")api.advanceSteps(Math.ceil(lastTask.goodWindows[lastTask.startingSide][0]*.68/lastTask.heatRates[lastTask.startingSide]));
+  else if(name==="warning")api.advanceSteps(Math.ceil(lastTask.warningThresholds[lastTask.startingSide]/lastTask.heatRates[lastTask.startingSide]));
+  else if(name==="flip"){api.advanceSteps(lastTask.proof.flipAtStep);api.flip();await wait(300)}
+  else if(name==="ready")await readyState(api);
+  else if(name==="success"){await readyState(api);api.serve();await wait(820)}
+  else if(name==="burn"){api.advanceSteps(Math.ceil(lastTask.burnThresholds[lastTask.startingSide]/lastTask.heatRates[lastTask.startingSide]));await wait(160)}
+  else if(name==="undercooked"){api.flip();await wait(660);api.serve();await wait(180)}
+  await wait(35);document.body.dataset.ready="true";document.body.dataset.scenario=name;label.textContent="高火力グリル";
+}
+window.fishFixture={game,start,dispose(){runtime?.dispose()},inspect(){return qa?.[game.metadata.id]?.inspect?.()||null},outcomes(){return qa?.[game.metadata.id]?.outcomes?.()||null},flip(){return qa?.[game.metadata.id]?.flip?.()},serve(){return qa?.[game.metadata.id]?.serve?.()},advanceSteps(count){return qa?.[game.metadata.id]?.advanceSteps?.(count)},runtime(){return runtime?.inspect()||null},task(){return structuredClone(lastTask)},result(){return result?structuredClone(result):null},errors(){return[...errors]}};
+const query=new URLSearchParams(location.search),name=query.get("scenario")||"raw",reduced=query.get("reduced")==="1",deadline=name==="timeout"?120:null;start({width:innerWidth,height:innerHeight,dpr:devicePixelRatio,reduced,deadlineOverride:deadline});if(name==="timeout"){await wait(180);document.body.dataset.ready="true";document.body.dataset.scenario=name;label.textContent="高火力グリル"}else await runScenario(name);
+</script></body></html>
