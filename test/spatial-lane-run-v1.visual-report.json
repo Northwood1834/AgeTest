@@ -1,0 +1,469 @@
+{
+  "comparisons": 46,
+  "allFullResolution": true,
+  "meanMAE": 4.271,
+  "maxMAE": 8.143,
+  "meanChanged": 0.3137,
+  "rows": [
+    {
+      "key": "393x852-author",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.343,
+      "rmse": 12.686,
+      "changed": 0.2443
+    },
+    {
+      "key": "393x852-causal-author-normal",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 7.815,
+      "rmse": 25.67,
+      "changed": 0.4347
+    },
+    {
+      "key": "393x852-causal-author-reduced",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 8.143,
+      "rmse": 26.09,
+      "changed": 0.4397
+    },
+    {
+      "key": "393x852-causal-crate-air-normal",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 3.071,
+      "rmse": 14.451,
+      "changed": 0.2597
+    },
+    {
+      "key": "393x852-causal-crate-air-reduced",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.986,
+      "rmse": 14.303,
+      "changed": 0.2531
+    },
+    {
+      "key": "393x852-causal-crate-ground-normal",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 6.907,
+      "rmse": 24.087,
+      "changed": 0.3955
+    },
+    {
+      "key": "393x852-causal-crate-ground-reduced",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 7.69,
+      "rmse": 25.479,
+      "changed": 0.4032
+    },
+    {
+      "key": "393x852-causal-pit-normal",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 6.805,
+      "rmse": 23.656,
+      "changed": 0.3971
+    },
+    {
+      "key": "393x852-causal-pit-reduced",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 7.582,
+      "rmse": 25.108,
+      "changed": 0.4055
+    },
+    {
+      "key": "393x852-crate",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.374,
+      "rmse": 12.761,
+      "changed": 0.2405
+    },
+    {
+      "key": "393x852-failure",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 6.374,
+      "rmse": 22.378,
+      "changed": 0.4063
+    },
+    {
+      "key": "393x852-goal",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.327,
+      "rmse": 12.665,
+      "changed": 0.2412
+    },
+    {
+      "key": "393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.318,
+      "rmse": 12.635,
+      "changed": 0.245
+    },
+    {
+      "key": "393x852-input",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.313,
+      "rmse": 12.633,
+      "changed": 0.2444
+    },
+    {
+      "key": "393x852-invalid",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 6.969,
+      "rmse": 23.998,
+      "changed": 0.4049
+    },
+    {
+      "key": "393x852-jump",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.286,
+      "rmse": 12.597,
+      "changed": 0.2417
+    },
+    {
+      "key": "393x852-motion",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.336,
+      "rmse": 12.667,
+      "changed": 0.2445
+    },
+    {
+      "key": "393x852-pit",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.378,
+      "rmse": 12.753,
+      "changed": 0.2477
+    },
+    {
+      "key": "393x852-progress",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.512,
+      "rmse": 12.964,
+      "changed": 0.2561
+    },
+    {
+      "key": "393x852-rock",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.345,
+      "rmse": 12.676,
+      "changed": 0.2447
+    },
+    {
+      "key": "393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 5.001,
+      "rmse": 18.291,
+      "changed": 0.3451
+    },
+    {
+      "key": "393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 5.884,
+      "rmse": 21.815,
+      "changed": 0.3634
+    },
+    {
+      "key": "393x852-tnt",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 2.38,
+      "rmse": 12.765,
+      "changed": 0.2441
+    },
+    {
+      "key": "402x874-author",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.153,
+      "rmse": 11.728,
+      "changed": 0.2513
+    },
+    {
+      "key": "402x874-causal-author-normal",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 7.251,
+      "rmse": 24.961,
+      "changed": 0.3977
+    },
+    {
+      "key": "402x874-causal-author-reduced",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 7.581,
+      "rmse": 25.394,
+      "changed": 0.4019
+    },
+    {
+      "key": "402x874-causal-crate-air-normal",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.875,
+      "rmse": 13.596,
+      "changed": 0.2675
+    },
+    {
+      "key": "402x874-causal-crate-air-reduced",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.803,
+      "rmse": 13.491,
+      "changed": 0.2603
+    },
+    {
+      "key": "402x874-causal-crate-ground-normal",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 6.755,
+      "rmse": 23.684,
+      "changed": 0.3962
+    },
+    {
+      "key": "402x874-causal-crate-ground-reduced",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 7.429,
+      "rmse": 24.875,
+      "changed": 0.402
+    },
+    {
+      "key": "402x874-causal-pit-normal",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 6.982,
+      "rmse": 24.006,
+      "changed": 0.4001
+    },
+    {
+      "key": "402x874-causal-pit-reduced",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 7.331,
+      "rmse": 24.513,
+      "changed": 0.4044
+    },
+    {
+      "key": "402x874-crate",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.174,
+      "rmse": 11.773,
+      "changed": 0.2481
+    },
+    {
+      "key": "402x874-failure",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 6.173,
+      "rmse": 21.787,
+      "changed": 0.4125
+    },
+    {
+      "key": "402x874-goal",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.146,
+      "rmse": 11.724,
+      "changed": 0.248
+    },
+    {
+      "key": "402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.12,
+      "rmse": 11.654,
+      "changed": 0.2529
+    },
+    {
+      "key": "402x874-input",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.116,
+      "rmse": 11.653,
+      "changed": 0.2524
+    },
+    {
+      "key": "402x874-invalid",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 5.969,
+      "rmse": 21.922,
+      "changed": 0.3893
+    },
+    {
+      "key": "402x874-jump",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.09,
+      "rmse": 11.613,
+      "changed": 0.2497
+    },
+    {
+      "key": "402x874-motion",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.142,
+      "rmse": 11.707,
+      "changed": 0.2524
+    },
+    {
+      "key": "402x874-pit",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.186,
+      "rmse": 11.802,
+      "changed": 0.2547
+    },
+    {
+      "key": "402x874-progress",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.312,
+      "rmse": 12.0,
+      "changed": 0.2631
+    },
+    {
+      "key": "402x874-rock",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.16,
+      "rmse": 11.723,
+      "changed": 0.2524
+    },
+    {
+      "key": "402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 4.773,
+      "rmse": 17.617,
+      "changed": 0.3503
+    },
+    {
+      "key": "402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 5.622,
+      "rmse": 21.127,
+      "changed": 0.3673
+    },
+    {
+      "key": "402x874-tnt",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 2.18,
+      "rmse": 11.779,
+      "changed": 0.2517
+    }
+  ]
+}

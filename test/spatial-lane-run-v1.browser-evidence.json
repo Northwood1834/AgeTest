@@ -1,0 +1,43 @@
+{
+  "status": "pass",
+  "lane": {"name": "audit", "cdp": 9332, "http": 8862, "isolated": true},
+  "ariaPressed": {
+    "viewport": "402x874 DPR3",
+    "initial": ["false", "false", "false"],
+    "left": ["true", "false", "false"],
+    "right": ["false", "false", "true"],
+    "jumpRequestedBeforeAirborne": ["false", "false", "true"],
+    "airborne": ["false", "true", "true"],
+    "landed": ["false", "false", "true"]
+  },
+  "causalOutcomes": {
+    "pit": {"moduleResult": "failure", "moduleDetail": "穴に落ちました。手前でジャンプ。", "legacyDone": true, "firstItemHit": true},
+    "crate-ground": {"moduleResult": "failure", "moduleDetail": "木箱に激突しました。跳んでこわそう。", "legacyDone": true, "firstItemHit": true},
+    "crate-air": {"moduleResult": null, "moduleDone": false, "moduleCrates": 1, "moduleParticles": 14, "legacyDone": false, "legacyCrates": 1, "firstItemHit": true},
+    "author": {"moduleResult": "failure", "moduleDetail": "作者に激突しました。作者は跳び越えよう。", "legacyDone": true, "firstItemHit": true}
+  },
+  "legacyReduced": {
+    "motionQuery": "reduced",
+    "matchMediaPrefersReducedMotion": true,
+    "runtimeSpeed": 28,
+    "normalRuntimeSpeed": 36,
+    "crateAirJumpTiming": "(89 / state.speed * 1000) - 450ms",
+    "allFourCausalOutcomesReached": true,
+    "normalAndReducedHashesDifferForAllEightViewportOutcomePairs": true
+  },
+  "visual": {
+    "artifactDirectory": "/tmp/agetest-spatial-lane-run-v1-visual-accept",
+    "screenshots": 92,
+    "affectedCausalScreenshots": 32,
+    "pairedComparisons": 46,
+    "fullResolution": true,
+    "sizes": ["1179x2556", "1206x2622"],
+    "meanMAE": 4.271,
+    "maxMAE": 8.143,
+    "visionQC": "pass"
+  },
+  "performance": [
+    {"viewport": "393x852 DPR3 normal", "status": "pass", "frames": 79, "averageFrameMs": 16.6671, "maxFrameMs": 16.8, "scrollWidth": 393, "external": []},
+    {"viewport": "402x874 DPR3 reduced", "status": "pass", "frames": 79, "averageFrameMs": 16.6658, "maxFrameMs": 16.8, "scrollWidth": 402, "external": []}
+  ]
+}
