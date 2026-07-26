@@ -155,6 +155,17 @@ export const gameManifest=Object.freeze([
     "hash": "e6992f37493fe03a"
   },
   {
+    "id": "reaction-emoji-runner-v1",
+    "introducedIn": "1.0",
+    "tier": 2,
+    "flavor": "wild",
+    "step": 1,
+    "family": "reaction-emoji-runner",
+    "category": "reaction",
+    "module": "./games/reaction-emoji-runner-v1.js",
+    "hash": "ac99a0f89062fcf1"
+  },
+  {
     "id": "reaction-signal-v1",
     "introducedIn": "1.0",
     "tier": 1,
