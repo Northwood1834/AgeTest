@@ -1,5 +1,25 @@
 # Modular runtime performance baseline
 
+## Post-N03 integration check
+
+Rechecked at `81a4022` on the owned `director` lane (393×852, DPR 3, cache disabled). The catalogue contained 88 IDs and the generated manifest contained 22 accepted modules.
+
+| Metric | Result |
+|---|---:|
+| Cold requests | 10 |
+| Cold transfer / response bodies | 326,159 / 323,159 B |
+| Cold JavaScript transfer | 199,485 B |
+| `app.js` transfer / body | 186,228 / 185,928 B |
+| DOMContentLoaded / load | 24.8 / 26.4 ms |
+| Cold game-module fetches | 0 |
+| External requests / horizontal overflow | 0 / 0 |
+| Level 1 session build / first frame | 0.6 / 15.8 ms |
+| Level 1 modular fetches | 0 |
+| Level 5 session build / first frame | 4.7 / 10.5 ms |
+| Level 5 modular fetches | 1, 27,543 B |
+
+Both sampled sessions contained exactly 12 tasks. The random Level 1 sample selected only legacy tasks and fetched no module. The Level 5 sample fetched only its selected `timing-tower-stack-v1` module. Cold home fetched no game module, had zero long tasks, and remained entirely same-origin. The clean N03 integration run completed with 323 tests passing, generated-manifest agreement, and 22 acceptance records verified.
+
 ## Post-N02 integration check
 
 Rechecked at `19508a7` on the owned `director` lane (393×852, DPR 3, cache disabled). The catalogue contained 85 IDs and the generated manifest contained 19 accepted modules.
