@@ -3,8 +3,10 @@ import {gameManifest} from "./game-manifest.js";
 export const RETIRED_GAME_IDS=new Set([
   "inhibition-parity-v1",
   "memory-phone-pin-v1",
+  "memory-table-restore-v1",
   "prediction-card-combo-v1",
   "social-care-package-v1",
+  "social-postcard-send-v1",
   "spatial-cube-v1",
   "timing-mochi-pound-v1",
 ]);

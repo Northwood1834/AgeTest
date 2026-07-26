@@ -172,13 +172,13 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `inhibition-quiet-tidy-v1` — accepted and integrated
 - `social-shared-umbrella-v1` — accepted and integrated
 - `attention-leaf-trim-v1` — accepted and integrated
-- `memory-table-restore-v1` — accepted and integrated
+- `memory-table-restore-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (the restore task is not understandable on sight)
 - `reaction-clothesline-calm-v1` — accepted and integrated
 - `prediction-cookie-cut-v1` — accepted and integrated
 - `language-label-jar-v1` — accepted and integrated
 - `calculation-flower-share-v1` — accepted and integrated
 - `spatial-photo-layout-v1` — accepted and integrated
-- `social-postcard-send-v1` — accepted and integrated
+- `social-postcard-send-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (a postcard with two valid address boxes contradicts the postal fiction)
 - `spatial-suitcase-pack-v1` — accepted and integrated
 - `spatial-shelf-balance-v1` — accepted and integrated
 
