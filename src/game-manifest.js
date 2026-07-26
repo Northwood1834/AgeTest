@@ -232,6 +232,17 @@ export const gameManifest=Object.freeze([
     "hash": "a68f3e501b9c5ce3"
   },
   {
+    "id": "spatial-emoji-fps-v1",
+    "introducedIn": "1.0",
+    "tier": 3,
+    "flavor": "wild",
+    "step": 1,
+    "family": "spatial-emoji-fps",
+    "category": "spatial",
+    "module": "./games/spatial-emoji-fps-v1.js",
+    "hash": "2d9c1bc1b5182255"
+  },
+  {
     "id": "spatial-flow-link-v1",
     "introducedIn": "1.9",
     "tier": 3,
