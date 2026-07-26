@@ -1,5 +1,27 @@
 # Modular runtime performance baseline
 
+## Post-N01 integration check
+
+Rechecked at `566a55d` on the owned `audit` lane (393×852, DPR 3, cache disabled). The catalogue contained 82 IDs: every published baseline ID plus the three accepted original games.
+
+| Metric | Result |
+|---|---:|
+| Cold requests | 10 |
+| Cold transfer / response bodies | 323,924 / 320,924 B |
+| Cold JavaScript transfer | 197,250 B |
+| `app.js` transfer / body | 186,513 / 186,213 B |
+| DOMContentLoaded / load | 22.8 / 27.4 ms |
+| Cold game-module fetches | 0 |
+| External requests / horizontal overflow | 0 / 0 |
+| Level 1 session build / first frame | 3.7 / 4.9 ms |
+| Level 1 modular fetches | 1, 2,797 B |
+| Level 5 session build / first frame | 11.7 / 26.7 ms |
+| Level 5 modular fetches | 2, 59,309 B |
+
+Both sampled sessions contained exactly 12 tasks. Only modular games selected into each session were fetched; the cold home still fetched none. The definitive catalogue run completed with 180 tests passing and `check:games` passing.
+
+## Original migration baseline
+
 Measured on commit `2bfde83` using the owned `audit` lane from `tools/qa-browser-lanes.mjs`: isolated headless Google Chrome, 393×852 CSS pixels, DPR 3, cache disabled and cleared inside the navigation session, empty local storage, local static HTTP server. No Vivaldi or shared browser session was used.
 
 ## Cold home load
