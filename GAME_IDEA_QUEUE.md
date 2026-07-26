@@ -10,11 +10,18 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `attention-driving-safety-v1` | former Chain Puzzle owner | concept/research | Five original exam-format safety questions verified against current official Japanese primary sources |
-| `spatial-screen-protector-v1` | former Lane Run owner | concept/module | Press a protector from the phone's bottom edge, physically vent bubbles, peel back when needed, finish bubble-free |
-| `social-thread-vibe-v1` | former RPG Battle owner | concept/module | Keep an original anonymous-board thread in its context-appropriate temperature for three replies |
+| `attention-driving-safety-v1` | former Chain Puzzle owner | browser/visual, flow lane | Five original exam-format safety questions verified against current official Japanese primary sources |
+| `spatial-screen-protector-v1` | former Lane Run owner | browser/visual, audit lane | Press a protector from the phone's bottom edge, physically vent bubbles, peel back when needed, finish bubble-free |
+| `social-thread-vibe-v1` | former RPG Battle owner | browser/visual, screw lane | Keep an original anonymous-board thread in its context-appropriate temperature for three replies |
+| `attention-laundry-rescue-v1` | former Sheep Home owner | pre-browser; waits for flow | Drag only laundry into a top-loader; wife or dog is an immediate comic failure |
+| `calculation-change-smart-v1` | former Farm Close owner | pre-browser; waits for audit | Build a payment whose returned change uses the fewest coins |
+| `memory-phone-pin-v1` | former Commuter Seat owner | pre-browser; waits for screw | Recall one fictional four-digit PIN from meaningful floating cues in three attempts |
 
 ## Waiting queue
+
+None. New user ideas are appended here in intake order.
+
+## Dispatched brief archive
 
 ### Q1 — `calculation-change-smart-v1`
 

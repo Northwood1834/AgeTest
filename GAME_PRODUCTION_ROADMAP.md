@@ -77,19 +77,31 @@ A failed game stays isolated and is revised or withheld. It never blocks accepte
 - `prediction-desk-ruler-duel-v1` — accepted
 - `prediction-card-combo-v1` — accepted
 
-### P03 — active published-game wave
+### P03 — completed
 
-- `prediction-chain-puzzle-v1` — flow lane
-- `spatial-lane-run-v1` — audit lane
-- `calculation-rpg-battle-v1` — screw lane
+- `prediction-chain-puzzle-v1` — accepted
+- `spatial-lane-run-v1` — accepted
+- `calculation-rpg-battle-v1` — accepted
 
-### N02 — active daily-ritual original series
+### N02 — completed daily-ritual original series
 
-- `spatial-sheep-home-v1` — implementation pending lane handoff
-- `attention-farm-close-v1` — implementation pending lane handoff
-- `spatial-commuter-seat-v1` — implementation pending lane handoff
+- `spatial-sheep-home-v1` — accepted
+- `attention-farm-close-v1` — accepted
+- `spatial-commuter-seat-v1` — accepted
 
 Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
+
+### N03 — active browser/acceptance wave
+
+- `attention-driving-safety-v1` — flow lane
+- `spatial-screen-protector-v1` — audit lane
+- `social-thread-vibe-v1` — screw lane
+
+### N04 — active pre-browser production
+
+- `attention-laundry-rescue-v1` — implementation; waits for flow lane
+- `calculation-change-smart-v1` — implementation; waits for audit lane
+- `memory-phone-pin-v1` — implementation; waits for screw lane
 
 ### P04
 
