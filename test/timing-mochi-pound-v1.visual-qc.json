@@ -1,0 +1,36 @@
+{
+  "game": "timing-mochi-pound-v1",
+  "status": "PASS",
+  "review": {
+    "backend": "gpt-5.6-terra vision",
+    "effort": "low",
+    "representatives": [
+      "/tmp/timing-mochi-pound-v1-visual/montage-normal.jpg",
+      "/tmp/timing-mochi-pound-v1-visual/montage-reduced.jpg",
+      "/tmp/timing-mochi-pound-v1-focus-montage.jpg"
+    ]
+  },
+  "matrixEvidence": "test/timing-mochi-pound-v1.visual-report.json",
+  "focusEvidence": [
+    "test/timing-mochi-pound-v1.focus/focus-390-normal.png",
+    "test/timing-mochi-pound-v1.focus/focus-390-reduced.png",
+    "test/timing-mochi-pound-v1.focus/focus-430-normal.png",
+    "test/timing-mochi-pound-v1.focus/focus-430-reduced.png"
+  ],
+  "checks": {
+    "sceneLegibilityAndPolish": true,
+    "handOnlyInSafeHold": true,
+    "withdrawalFullyAbsent": true,
+    "raisedDescendingLandedAndSafetyStopReadable": true,
+    "mortarMalletPartnerAndMochiOriginal": true,
+    "grainGlossStretchTearStickAndTrayReadable": true,
+    "terminalStatesDistinct": true,
+    "japaneseTextUnclipped": true,
+    "noOverflowOrRenderingArtifacts": true,
+    "noDangerousContactGoreOrCaricature": true,
+    "noEmojiOrGenericButtonTreatment": true,
+    "normalReducedGameplayInformationEquivalent": true,
+    "realKeyboardInsetFocusVisible390And430NormalReduced": true,
+    "fictionalSafetyLabelAlwaysVisible": true
+  }
+}

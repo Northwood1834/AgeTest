@@ -1,0 +1,1789 @@
+{
+  "game": "timing-mochi-pound-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "checks": {
+    "ownedScrewLane": true,
+    "realNormalTouchHoldRelease": true,
+    "autonomousFirstStrikeTiming": true,
+    "twelveStrikeProofSuccess": true,
+    "glossyMaterial": true,
+    "realReducedKeyboardHoldRelease": true,
+    "exactNonzeroReducedStages": true,
+    "safeWithdrawal": true,
+    "timeoutRetainsCausalState": true,
+    "singleFinish": true,
+    "disposeClean": true,
+    "realKeyboardFocusCaptures": true,
+    "visibleInsetFocus390And430NormalReduced": true,
+    "fictionLabelAlwaysVisible": true,
+    "dpr3": true,
+    "width390And430": true,
+    "width393": true,
+    "noOverflow": true,
+    "noExternalResources": true,
+    "noRuntimeErrors": true,
+    "performance": true
+  },
+  "touch": {
+    "initial": {
+      "globalTick": 2,
+      "strikeIndex": 0,
+      "phaseTick": 2,
+      "stage": "up",
+      "holding": false,
+      "handVisible": false,
+      "turnTicks": 0,
+      "turnSinceStrike": 0,
+      "smoothness": 0,
+      "shape": 100,
+      "emptyStrikes": 0,
+      "strikes": 0,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "frames": 9,
+      "material": "grainy",
+      "status": "杵が着地。次の上げ間を待ちます",
+      "proof": {
+        "safeSequence": [
+          {
+            "strikeIndex": 0,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 33,
+            "marginTicks": 21
+          },
+          {
+            "strikeIndex": 1,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 31,
+            "marginTicks": 19
+          },
+          {
+            "strikeIndex": 2,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 29,
+            "marginTicks": 17
+          },
+          {
+            "strikeIndex": 3,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 27,
+            "marginTicks": 15
+          },
+          {
+            "strikeIndex": 4,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 25,
+            "marginTicks": 13
+          },
+          {
+            "strikeIndex": 5,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 23,
+            "marginTicks": 11
+          },
+          {
+            "strikeIndex": 6,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 22,
+            "marginTicks": 10
+          },
+          {
+            "strikeIndex": 7,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 21,
+            "marginTicks": 9
+          },
+          {
+            "strikeIndex": 8,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 20,
+            "marginTicks": 8
+          },
+          {
+            "strikeIndex": 9,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 19,
+            "marginTicks": 7
+          },
+          {
+            "strikeIndex": 10,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 18,
+            "marginTicks": 6
+          },
+          {
+            "strikeIndex": 11,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 17,
+            "marginTicks": 5
+          }
+        ],
+        "boundaries": {
+          "beforeSafeTick": 3,
+          "firstSafeTick": 4,
+          "lastSafeTicks": [
+            32,
+            30,
+            28,
+            26,
+            24,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17,
+            16
+          ],
+          "lateTicks": [
+            33,
+            31,
+            29,
+            27,
+            25,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17
+          ],
+          "releaseBeforeLastSafeAdvanceIsSafe": true,
+          "heldThroughLastSafeTickStopsAtDescent": true
+        },
+        "success": {
+          "turnTicks": 72,
+          "strikes": 12,
+          "finishCalls": 1
+        },
+        "failures": [
+          {
+            "reason": "safety-stop",
+            "strikeIndex": 0,
+            "holdFromTick": 6,
+            "heldAtTick": 33
+          },
+          {
+            "reason": "under",
+            "dwellTicksPerStrike": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "turnTicks": 60
+          },
+          {
+            "reason": "over",
+            "dwellTicksPerStrike": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ],
+            "turnTicks": 84,
+            "tearAtTurnTick": 85
+          },
+          {
+            "reason": "stick",
+            "emptyStrikeIndices": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "reason": "timeout",
+            "atGlobalTick": 100,
+            "retains": [
+              "strikes",
+              "turnTicks",
+              "smoothness",
+              "shape",
+              "emptyStrikes",
+              "material"
+            ]
+          }
+        ],
+        "finishPolicy": "single-commit",
+        "resumePolicy": "plain-json"
+      },
+      "canvas": {
+        "cssWidth": 352,
+        "cssHeight": 296,
+        "pixelWidth": 1056,
+        "pixelHeight": 888,
+        "dpr": 3
+      },
+      "reduced": false
+    },
+    "held": {
+      "stage": "up",
+      "phaseTick": 6,
+      "holding": true,
+      "handVisible": true
+    },
+    "withdrawn": {
+      "turnTicks": 6,
+      "smoothness": 12,
+      "shape": 106,
+      "holding": false,
+      "handVisible": false
+    },
+    "actualDwell": 6,
+    "firstStrike": {
+      "strikes": 1,
+      "shape": 104,
+      "smoothness": 22,
+      "emptyStrikes": 0,
+      "elapsedFromFixture": 2023.7000000476837,
+      "elapsedFromEval": 1857.5,
+      "holdMs": 1699.8999999761581
+    },
+    "final": {
+      "globalTick": 369,
+      "strikeIndex": 12,
+      "phaseTick": 0,
+      "stage": "finished",
+      "holding": false,
+      "handVisible": false,
+      "turnTicks": 72,
+      "turnSinceStrike": 0,
+      "smoothness": 264,
+      "shape": 148,
+      "emptyStrikes": 0,
+      "strikes": 12,
+      "done": true,
+      "disposed": true,
+      "result": "success",
+      "finishCalls": 1,
+      "frames": 121,
+      "material": "glossy",
+      "status": "十二回ついて、つやのある餅に仕上がりました",
+      "proof": {
+        "safeSequence": [
+          {
+            "strikeIndex": 0,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 33,
+            "marginTicks": 21
+          },
+          {
+            "strikeIndex": 1,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 31,
+            "marginTicks": 19
+          },
+          {
+            "strikeIndex": 2,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 29,
+            "marginTicks": 17
+          },
+          {
+            "strikeIndex": 3,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 27,
+            "marginTicks": 15
+          },
+          {
+            "strikeIndex": 4,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 25,
+            "marginTicks": 13
+          },
+          {
+            "strikeIndex": 5,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 23,
+            "marginTicks": 11
+          },
+          {
+            "strikeIndex": 6,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 22,
+            "marginTicks": 10
+          },
+          {
+            "strikeIndex": 7,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 21,
+            "marginTicks": 9
+          },
+          {
+            "strikeIndex": 8,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 20,
+            "marginTicks": 8
+          },
+          {
+            "strikeIndex": 9,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 19,
+            "marginTicks": 7
+          },
+          {
+            "strikeIndex": 10,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 18,
+            "marginTicks": 6
+          },
+          {
+            "strikeIndex": 11,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 17,
+            "marginTicks": 5
+          }
+        ],
+        "boundaries": {
+          "beforeSafeTick": 3,
+          "firstSafeTick": 4,
+          "lastSafeTicks": [
+            32,
+            30,
+            28,
+            26,
+            24,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17,
+            16
+          ],
+          "lateTicks": [
+            33,
+            31,
+            29,
+            27,
+            25,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17
+          ],
+          "releaseBeforeLastSafeAdvanceIsSafe": true,
+          "heldThroughLastSafeTickStopsAtDescent": true
+        },
+        "success": {
+          "turnTicks": 72,
+          "strikes": 12,
+          "finishCalls": 1
+        },
+        "failures": [
+          {
+            "reason": "safety-stop",
+            "strikeIndex": 0,
+            "holdFromTick": 6,
+            "heldAtTick": 33
+          },
+          {
+            "reason": "under",
+            "dwellTicksPerStrike": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "turnTicks": 60
+          },
+          {
+            "reason": "over",
+            "dwellTicksPerStrike": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ],
+            "turnTicks": 84,
+            "tearAtTurnTick": 85
+          },
+          {
+            "reason": "stick",
+            "emptyStrikeIndices": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "reason": "timeout",
+            "atGlobalTick": 100,
+            "retains": [
+              "strikes",
+              "turnTicks",
+              "smoothness",
+              "shape",
+              "emptyStrikes",
+              "material"
+            ]
+          }
+        ],
+        "finishPolicy": "single-commit",
+        "resumePolicy": "plain-json"
+      },
+      "canvas": {
+        "cssWidth": 352,
+        "cssHeight": 296,
+        "pixelWidth": 1056,
+        "pixelHeight": 888,
+        "dpr": 3
+      },
+      "reduced": false
+    },
+    "outcome": {
+      "correct": true,
+      "detail": {
+        "reason": "success",
+        "strikes": 12,
+        "turnTicks": 72,
+        "smoothness": 264,
+        "shape": 148,
+        "emptyStrikes": 0,
+        "material": "glossy"
+      }
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "layout": {
+      "overflow": 0,
+      "height": 544,
+      "boardBottom": 438.828125,
+      "dpr": 3,
+      "focused": true,
+      "resourcesAdded": 0,
+      "external": [],
+      "errors": [],
+      "navigationMs": 69.30000007152557,
+      "nodeCount": 27
+    }
+  },
+  "keyboard": {
+    "marks": [
+      {
+        "name": "up",
+        "stage": "up",
+        "phaseTick": 2,
+        "strikes": 0,
+        "at": 0.10000002384185791
+      },
+      {
+        "name": "descending",
+        "stage": "descending",
+        "phaseTick": 33,
+        "strikes": 0,
+        "at": 1639.2000000476837
+      },
+      {
+        "name": "landed-end",
+        "stage": "landed",
+        "phaseTick": 38,
+        "strikes": 0,
+        "at": 1900
+      }
+    ],
+    "held": {
+      "holding": true,
+      "handVisible": true,
+      "stage": "up"
+    },
+    "withdrawn": {
+      "holding": false,
+      "handVisible": false,
+      "turnTicks": 6
+    },
+    "afterStrike": {
+      "globalTick": 78,
+      "strikeIndex": 2,
+      "phaseTick": 0,
+      "stage": "landed",
+      "holding": false,
+      "handVisible": false,
+      "turnTicks": 6,
+      "turnSinceStrike": 0,
+      "smoothness": 23,
+      "shape": 103,
+      "emptyStrikes": 0,
+      "strikes": 2,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "frames": 0,
+      "material": "grainy",
+      "status": "杵が着地。次の上げ間を待ちます",
+      "proof": {
+        "safeSequence": [
+          {
+            "strikeIndex": 0,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 33,
+            "marginTicks": 21
+          },
+          {
+            "strikeIndex": 1,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 31,
+            "marginTicks": 19
+          },
+          {
+            "strikeIndex": 2,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 29,
+            "marginTicks": 17
+          },
+          {
+            "strikeIndex": 3,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 27,
+            "marginTicks": 15
+          },
+          {
+            "strikeIndex": 4,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 25,
+            "marginTicks": 13
+          },
+          {
+            "strikeIndex": 5,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 23,
+            "marginTicks": 11
+          },
+          {
+            "strikeIndex": 6,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 22,
+            "marginTicks": 10
+          },
+          {
+            "strikeIndex": 7,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 21,
+            "marginTicks": 9
+          },
+          {
+            "strikeIndex": 8,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 20,
+            "marginTicks": 8
+          },
+          {
+            "strikeIndex": 9,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 19,
+            "marginTicks": 7
+          },
+          {
+            "strikeIndex": 10,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 18,
+            "marginTicks": 6
+          },
+          {
+            "strikeIndex": 11,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 17,
+            "marginTicks": 5
+          }
+        ],
+        "boundaries": {
+          "beforeSafeTick": 3,
+          "firstSafeTick": 4,
+          "lastSafeTicks": [
+            32,
+            30,
+            28,
+            26,
+            24,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17,
+            16
+          ],
+          "lateTicks": [
+            33,
+            31,
+            29,
+            27,
+            25,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17
+          ],
+          "releaseBeforeLastSafeAdvanceIsSafe": true,
+          "heldThroughLastSafeTickStopsAtDescent": true
+        },
+        "success": {
+          "turnTicks": 72,
+          "strikes": 12,
+          "finishCalls": 1
+        },
+        "failures": [
+          {
+            "reason": "safety-stop",
+            "strikeIndex": 0,
+            "holdFromTick": 6,
+            "heldAtTick": 33
+          },
+          {
+            "reason": "under",
+            "dwellTicksPerStrike": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "turnTicks": 60
+          },
+          {
+            "reason": "over",
+            "dwellTicksPerStrike": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ],
+            "turnTicks": 84,
+            "tearAtTurnTick": 85
+          },
+          {
+            "reason": "stick",
+            "emptyStrikeIndices": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "reason": "timeout",
+            "atGlobalTick": 100,
+            "retains": [
+              "strikes",
+              "turnTicks",
+              "smoothness",
+              "shape",
+              "emptyStrikes",
+              "material"
+            ]
+          }
+        ],
+        "finishPolicy": "single-commit",
+        "resumePolicy": "plain-json"
+      },
+      "canvas": {
+        "cssWidth": 392,
+        "cssHeight": 329,
+        "pixelWidth": 1176,
+        "pixelHeight": 987,
+        "dpr": 3
+      },
+      "reduced": true
+    },
+    "dispose": {
+      "gameUnchanged": true,
+      "after": {
+        "globalTick": 78,
+        "strikeIndex": 2,
+        "phaseTick": 0,
+        "stage": "landed",
+        "holding": false,
+        "handVisible": false,
+        "turnTicks": 6,
+        "turnSinceStrike": 0,
+        "smoothness": 23,
+        "shape": 103,
+        "emptyStrikes": 0,
+        "strikes": 2,
+        "done": false,
+        "disposed": true,
+        "result": null,
+        "finishCalls": 0,
+        "frames": 0,
+        "material": "grainy",
+        "status": "杵が着地。次の上げ間を待ちます",
+        "proof": {
+          "safeSequence": [
+            {
+              "strikeIndex": 0,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 33,
+              "marginTicks": 21
+            },
+            {
+              "strikeIndex": 1,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 31,
+              "marginTicks": 19
+            },
+            {
+              "strikeIndex": 2,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 29,
+              "marginTicks": 17
+            },
+            {
+              "strikeIndex": 3,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 27,
+              "marginTicks": 15
+            },
+            {
+              "strikeIndex": 4,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 25,
+              "marginTicks": 13
+            },
+            {
+              "strikeIndex": 5,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 23,
+              "marginTicks": 11
+            },
+            {
+              "strikeIndex": 6,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 22,
+              "marginTicks": 10
+            },
+            {
+              "strikeIndex": 7,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 21,
+              "marginTicks": 9
+            },
+            {
+              "strikeIndex": 8,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 20,
+              "marginTicks": 8
+            },
+            {
+              "strikeIndex": 9,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 19,
+              "marginTicks": 7
+            },
+            {
+              "strikeIndex": 10,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 18,
+              "marginTicks": 6
+            },
+            {
+              "strikeIndex": 11,
+              "holdFromTick": 6,
+              "releaseAtTick": 12,
+              "dwellTicks": 6,
+              "safeEndTick": 17,
+              "marginTicks": 5
+            }
+          ],
+          "boundaries": {
+            "beforeSafeTick": 3,
+            "firstSafeTick": 4,
+            "lastSafeTicks": [
+              32,
+              30,
+              28,
+              26,
+              24,
+              22,
+              21,
+              20,
+              19,
+              18,
+              17,
+              16
+            ],
+            "lateTicks": [
+              33,
+              31,
+              29,
+              27,
+              25,
+              23,
+              22,
+              21,
+              20,
+              19,
+              18,
+              17
+            ],
+            "releaseBeforeLastSafeAdvanceIsSafe": true,
+            "heldThroughLastSafeTickStopsAtDescent": true
+          },
+          "success": {
+            "turnTicks": 72,
+            "strikes": 12,
+            "finishCalls": 1
+          },
+          "failures": [
+            {
+              "reason": "safety-stop",
+              "strikeIndex": 0,
+              "holdFromTick": 6,
+              "heldAtTick": 33
+            },
+            {
+              "reason": "under",
+              "dwellTicksPerStrike": [
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+              ],
+              "turnTicks": 60
+            },
+            {
+              "reason": "over",
+              "dwellTicksPerStrike": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ],
+              "turnTicks": 84,
+              "tearAtTurnTick": 85
+            },
+            {
+              "reason": "stick",
+              "emptyStrikeIndices": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "reason": "timeout",
+              "atGlobalTick": 100,
+              "retains": [
+                "strikes",
+                "turnTicks",
+                "smoothness",
+                "shape",
+                "emptyStrikes",
+                "material"
+              ]
+            }
+          ],
+          "finishPolicy": "single-commit",
+          "resumePolicy": "plain-json"
+        },
+        "canvas": {
+          "cssWidth": 392,
+          "cssHeight": 329,
+          "pixelWidth": 1176,
+          "pixelHeight": 987,
+          "dpr": 3
+        },
+        "reduced": true
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": false,
+        "finishCalls": 0,
+        "commits": 0,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "qaRemoved": true
+    },
+    "layout": {
+      "overflow": 0,
+      "boardBottom": 473.3125,
+      "dpr": 3,
+      "focused": true,
+      "resourcesAdded": 0,
+      "external": [],
+      "errors": []
+    }
+  },
+  "deadline": {
+    "before": {
+      "globalTick": 100,
+      "strikeIndex": 2,
+      "phaseTick": 22,
+      "stage": "up",
+      "holding": false,
+      "handVisible": false,
+      "turnTicks": 12,
+      "turnSinceStrike": 0,
+      "smoothness": 44,
+      "shape": 108,
+      "emptyStrikes": 0,
+      "strikes": 2,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "finishCalls": 0,
+      "frames": 0,
+      "material": "grainy",
+      "status": "安全な上げ間。長押しで返せます",
+      "proof": {
+        "safeSequence": [
+          {
+            "strikeIndex": 0,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 33,
+            "marginTicks": 21
+          },
+          {
+            "strikeIndex": 1,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 31,
+            "marginTicks": 19
+          },
+          {
+            "strikeIndex": 2,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 29,
+            "marginTicks": 17
+          },
+          {
+            "strikeIndex": 3,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 27,
+            "marginTicks": 15
+          },
+          {
+            "strikeIndex": 4,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 25,
+            "marginTicks": 13
+          },
+          {
+            "strikeIndex": 5,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 23,
+            "marginTicks": 11
+          },
+          {
+            "strikeIndex": 6,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 22,
+            "marginTicks": 10
+          },
+          {
+            "strikeIndex": 7,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 21,
+            "marginTicks": 9
+          },
+          {
+            "strikeIndex": 8,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 20,
+            "marginTicks": 8
+          },
+          {
+            "strikeIndex": 9,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 19,
+            "marginTicks": 7
+          },
+          {
+            "strikeIndex": 10,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 18,
+            "marginTicks": 6
+          },
+          {
+            "strikeIndex": 11,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 17,
+            "marginTicks": 5
+          }
+        ],
+        "boundaries": {
+          "beforeSafeTick": 3,
+          "firstSafeTick": 4,
+          "lastSafeTicks": [
+            32,
+            30,
+            28,
+            26,
+            24,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17,
+            16
+          ],
+          "lateTicks": [
+            33,
+            31,
+            29,
+            27,
+            25,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17
+          ],
+          "releaseBeforeLastSafeAdvanceIsSafe": true,
+          "heldThroughLastSafeTickStopsAtDescent": true
+        },
+        "success": {
+          "turnTicks": 72,
+          "strikes": 12,
+          "finishCalls": 1
+        },
+        "failures": [
+          {
+            "reason": "safety-stop",
+            "strikeIndex": 0,
+            "holdFromTick": 6,
+            "heldAtTick": 33
+          },
+          {
+            "reason": "under",
+            "dwellTicksPerStrike": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "turnTicks": 60
+          },
+          {
+            "reason": "over",
+            "dwellTicksPerStrike": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ],
+            "turnTicks": 84,
+            "tearAtTurnTick": 85
+          },
+          {
+            "reason": "stick",
+            "emptyStrikeIndices": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "reason": "timeout",
+            "atGlobalTick": 100,
+            "retains": [
+              "strikes",
+              "turnTicks",
+              "smoothness",
+              "shape",
+              "emptyStrikes",
+              "material"
+            ]
+          }
+        ],
+        "finishPolicy": "single-commit",
+        "resumePolicy": "plain-json"
+      },
+      "canvas": {
+        "cssWidth": 355,
+        "cssHeight": 298,
+        "pixelWidth": 1065,
+        "pixelHeight": 894,
+        "dpr": 3
+      },
+      "reduced": true
+    },
+    "after": {
+      "globalTick": 137,
+      "strikeIndex": 3,
+      "phaseTick": 23,
+      "stage": "up",
+      "holding": false,
+      "handVisible": false,
+      "turnTicks": 12,
+      "turnSinceStrike": 0,
+      "smoothness": 45,
+      "shape": 107,
+      "emptyStrikes": 1,
+      "strikes": 3,
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "finishCalls": 1,
+      "frames": 0,
+      "material": "grainy",
+      "status": "時間切れ。3回、形107、なめらかさ45を保持",
+      "proof": {
+        "safeSequence": [
+          {
+            "strikeIndex": 0,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 33,
+            "marginTicks": 21
+          },
+          {
+            "strikeIndex": 1,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 31,
+            "marginTicks": 19
+          },
+          {
+            "strikeIndex": 2,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 29,
+            "marginTicks": 17
+          },
+          {
+            "strikeIndex": 3,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 27,
+            "marginTicks": 15
+          },
+          {
+            "strikeIndex": 4,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 25,
+            "marginTicks": 13
+          },
+          {
+            "strikeIndex": 5,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 23,
+            "marginTicks": 11
+          },
+          {
+            "strikeIndex": 6,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 22,
+            "marginTicks": 10
+          },
+          {
+            "strikeIndex": 7,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 21,
+            "marginTicks": 9
+          },
+          {
+            "strikeIndex": 8,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 20,
+            "marginTicks": 8
+          },
+          {
+            "strikeIndex": 9,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 19,
+            "marginTicks": 7
+          },
+          {
+            "strikeIndex": 10,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 18,
+            "marginTicks": 6
+          },
+          {
+            "strikeIndex": 11,
+            "holdFromTick": 6,
+            "releaseAtTick": 12,
+            "dwellTicks": 6,
+            "safeEndTick": 17,
+            "marginTicks": 5
+          }
+        ],
+        "boundaries": {
+          "beforeSafeTick": 3,
+          "firstSafeTick": 4,
+          "lastSafeTicks": [
+            32,
+            30,
+            28,
+            26,
+            24,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17,
+            16
+          ],
+          "lateTicks": [
+            33,
+            31,
+            29,
+            27,
+            25,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17
+          ],
+          "releaseBeforeLastSafeAdvanceIsSafe": true,
+          "heldThroughLastSafeTickStopsAtDescent": true
+        },
+        "success": {
+          "turnTicks": 72,
+          "strikes": 12,
+          "finishCalls": 1
+        },
+        "failures": [
+          {
+            "reason": "safety-stop",
+            "strikeIndex": 0,
+            "holdFromTick": 6,
+            "heldAtTick": 33
+          },
+          {
+            "reason": "under",
+            "dwellTicksPerStrike": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "turnTicks": 60
+          },
+          {
+            "reason": "over",
+            "dwellTicksPerStrike": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ],
+            "turnTicks": 84,
+            "tearAtTurnTick": 85
+          },
+          {
+            "reason": "stick",
+            "emptyStrikeIndices": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "reason": "timeout",
+            "atGlobalTick": 100,
+            "retains": [
+              "strikes",
+              "turnTicks",
+              "smoothness",
+              "shape",
+              "emptyStrikes",
+              "material"
+            ]
+          }
+        ],
+        "finishPolicy": "single-commit",
+        "resumePolicy": "plain-json"
+      },
+      "canvas": {
+        "cssWidth": 355,
+        "cssHeight": 298,
+        "pixelWidth": 1065,
+        "pixelHeight": 894,
+        "dpr": 3
+      },
+      "reduced": true
+    },
+    "outcome": {
+      "correct": false,
+      "detail": {
+        "reason": "timeout",
+        "strikes": 3,
+        "turnTicks": 12,
+        "smoothness": 45,
+        "shape": 107,
+        "emptyStrikes": 1,
+        "material": "grainy"
+      }
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "layout": {
+      "overflow": 0,
+      "boardBottom": 441,
+      "dpr": 3,
+      "resourcesAdded": 0,
+      "external": [],
+      "errors": []
+    }
+  },
+  "focus": [
+    {
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "image": "test/timing-mochi-pound-v1.focus/focus-390-normal.png",
+      "computed": {
+        "active": true,
+        "focusVisible": true,
+        "boxShadow": "rgb(107, 70, 123) 0px 0px 0px 4px inset, rgba(55, 35, 47, 0.22) 0px 11px 26px 0px",
+        "overflowStyle": "hidden",
+        "rect": {
+          "left": 19,
+          "top": 142.828125,
+          "right": 371,
+          "bottom": 438.828125,
+          "width": 352,
+          "height": 296
+        },
+        "label": {
+          "text": "架空の安全連動ゲーム",
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "left": 19,
+          "top": 482.125,
+          "right": 371,
+          "bottom": 497.65625,
+          "width": 352,
+          "height": 15.53125
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 3
+        },
+        "overflow": 0
+      },
+      "capture": {
+        "path": "/home/laurentia/Projects/AgeTest/test/timing-mochi-pound-v1.focus/focus-390-normal.png",
+        "pixelWidth": 1170,
+        "pixelHeight": 2532,
+        "width": 390,
+        "height": 844,
+        "dpr": 3
+      },
+      "visibleInsetFocus": true,
+      "fictionLabelVisible": true,
+      "realInput": "CDP Input.dispatchKeyEvent Tab"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "motion": "reduced",
+      "image": "test/timing-mochi-pound-v1.focus/focus-390-reduced.png",
+      "computed": {
+        "active": true,
+        "focusVisible": true,
+        "boxShadow": "rgb(107, 70, 123) 0px 0px 0px 4px inset, rgba(55, 35, 47, 0.22) 0px 11px 26px 0px",
+        "overflowStyle": "hidden",
+        "rect": {
+          "left": 19,
+          "top": 142.828125,
+          "right": 371,
+          "bottom": 438.828125,
+          "width": 352,
+          "height": 296
+        },
+        "label": {
+          "text": "架空の安全連動ゲーム",
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "left": 19,
+          "top": 482.125,
+          "right": 371,
+          "bottom": 497.65625,
+          "width": 352,
+          "height": 15.53125
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 3
+        },
+        "overflow": 0
+      },
+      "capture": {
+        "path": "/home/laurentia/Projects/AgeTest/test/timing-mochi-pound-v1.focus/focus-390-reduced.png",
+        "pixelWidth": 1170,
+        "pixelHeight": 2532,
+        "width": 390,
+        "height": 844,
+        "dpr": 3
+      },
+      "visibleInsetFocus": true,
+      "fictionLabelVisible": true,
+      "realInput": "CDP Input.dispatchKeyEvent Tab"
+    },
+    {
+      "width": 430,
+      "height": 900,
+      "motion": "normal",
+      "image": "test/timing-mochi-pound-v1.focus/focus-430-normal.png",
+      "computed": {
+        "active": true,
+        "focusVisible": true,
+        "boxShadow": "rgb(107, 70, 123) 0px 0px 0px 4px inset, rgba(55, 35, 47, 0.22) 0px 11px 26px 0px",
+        "overflowStyle": "hidden",
+        "rect": {
+          "left": 19,
+          "top": 144.3125,
+          "right": 411,
+          "bottom": 473.3125,
+          "width": 392,
+          "height": 329
+        },
+        "label": {
+          "text": "架空の安全連動ゲーム",
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "left": 19,
+          "top": 516.609375,
+          "right": 411,
+          "bottom": 532.140625,
+          "width": 392,
+          "height": 15.53125
+        },
+        "viewport": {
+          "width": 430,
+          "height": 900,
+          "dpr": 3
+        },
+        "overflow": 0
+      },
+      "capture": {
+        "path": "/home/laurentia/Projects/AgeTest/test/timing-mochi-pound-v1.focus/focus-430-normal.png",
+        "pixelWidth": 1290,
+        "pixelHeight": 2700,
+        "width": 430,
+        "height": 900,
+        "dpr": 3
+      },
+      "visibleInsetFocus": true,
+      "fictionLabelVisible": true,
+      "realInput": "CDP Input.dispatchKeyEvent Tab"
+    },
+    {
+      "width": 430,
+      "height": 900,
+      "motion": "reduced",
+      "image": "test/timing-mochi-pound-v1.focus/focus-430-reduced.png",
+      "computed": {
+        "active": true,
+        "focusVisible": true,
+        "boxShadow": "rgb(107, 70, 123) 0px 0px 0px 4px inset, rgba(55, 35, 47, 0.22) 0px 11px 26px 0px",
+        "overflowStyle": "hidden",
+        "rect": {
+          "left": 19,
+          "top": 144.3125,
+          "right": 411,
+          "bottom": 473.3125,
+          "width": 392,
+          "height": 329
+        },
+        "label": {
+          "text": "架空の安全連動ゲーム",
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "left": 19,
+          "top": 516.609375,
+          "right": 411,
+          "bottom": 532.140625,
+          "width": 392,
+          "height": 15.53125
+        },
+        "viewport": {
+          "width": 430,
+          "height": 900,
+          "dpr": 3
+        },
+        "overflow": 0
+      },
+      "capture": {
+        "path": "/home/laurentia/Projects/AgeTest/test/timing-mochi-pound-v1.focus/focus-430-reduced.png",
+        "pixelWidth": 1290,
+        "pixelHeight": 2700,
+        "width": 430,
+        "height": 900,
+        "dpr": 3
+      },
+      "visibleInsetFocus": true,
+      "fictionLabelVisible": true,
+      "realInput": "CDP Input.dispatchKeyEvent Tab"
+    }
+  ]
+}
