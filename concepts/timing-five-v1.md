@@ -35,7 +35,7 @@ There is no generated random field, countdown field, elapsed field, answer, or r
 - At begin:
   - `started = performance.now()`;
   - the button becomes enabled;
-  - its enabled CTA becomes the exact single-line `ストップ！`;
+  - its enabled CTA remains the exact current-renderer copy `5秒だと思ったら、タップ！` (the module may fit this exact text on one line through typography only);
   - the orb enters its published running state;
   - visible help becomes `数字は出ません。己を信じて。`;
   - the stop button receives focus;
