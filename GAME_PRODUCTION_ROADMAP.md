@@ -94,13 +94,13 @@ P04 takes the next three owner slots that become free after their current owners
 ### P05 — active ports
 
 - `spatial-golf-putt-v1` — accepted and integrated
-- `attention-author-boss-v1` — flow lane
+- `attention-author-boss-v1` — accepted and integrated
 - `social-date-v1` — waits for audit lane
 
 ### P06 — active ports
 
 - `reaction-target-v1` — accepted and integrated
-- `memory-path-v1` — waits for flow lane
+- `memory-path-v1` — flow lane
 - `spatial-cube-v1` — waits for screw lane
 
 ### N02 — completed daily-ritual original series
@@ -135,9 +135,10 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `spatial-sand-channel-v1` — accepted and integrated
 - `prediction-ricochet-knockback-v1` — accepted and integrated
 
-### P07 — active pre-browser port
+### P07 — active pre-browser ports
 
 - `timing-five-v1` — waits for screw lane
+- `attention-search-v1` — waits for flow lane
 
 ### N07 — active browser production
 
