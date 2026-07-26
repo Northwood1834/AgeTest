@@ -12,7 +12,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 |---|---|---|---|
 | `attention-kana-count-v1` | former Attention Odd owner | P09 port; flow lane | Faithfully port the published 18-glyph kana count task without visual clues |
 | `social-greeting-v1` | former Social Date owner | P09 port; audit lane | Faithfully port all three published greeting scenarios and exact etiquette choices |
-| `inhibition-opposite-v1` | former Parity owner | P10 port; screw lane | Faithfully port both published opposite-direction prompts without directional cues |
+| `inhibition-rule-switch-v1` | former Opposite owner | P10 port; screw lane | Faithfully port the published reversed parity rule without odd/even visual cues |
 
 ## Waiting queue
 
@@ -60,6 +60,60 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Outcomes: correct ticket and route; wrong destination branch; omitted transfer leg; fare shortfall; overpayment with correct change but wrong ticket selection; invalid transfer; and timeout retaining map/money state.
 - Required distinction: not a standalone arithmetic multiple choice or another Change Smart game. Route reading produces the amount; the objective is the correct ticket, not minimizing returned coin count.
 - Proof: finite authored networks, exhaustive simple-route enumeration, unique accepted route/fare per task, exact denomination/change accounting, plain resume, single finish, and no real railway map, logo, or live fare claim.
+
+### Q15 — `attention-lint-shaver-v1`
+
+- Category/tier/flavor: attention / tier 3 / satisfying
+- Core: drag a lint shaver across a finite knit surface, removing pills without touching beads, embroidery, labels, or loose threads; speed and dwell time irreversibly change each crossed cell.
+- Required causality: fast passes leave pills, overlong dwell thins or holes the knit, protected details retain snag marks at contact coordinates, and a visible dust cup must be emptied once before it overflows and redeposits lint.
+- Outcomes: fully restored knit; retained pills; damaged decoration; local hole; cup overflow; and timeout retaining every processed cell, mark, and cup level.
+- Proof: at most 12×16 quantized cells, authored solvable layouts, deterministic sampled-path integration, exact speed/dwell boundaries, reachable failures, plain resume, and identical geometry under reduced motion.
+- Art brief: original rib/stockinette textures in three processing states, separated shaver/cup, protected-detail parts, damage overlays, and one folded finished-knit still; no real fashion branding.
+
+### Q16 — `timing-mochi-pound-v1`
+
+- Category/tier/flavor: timing / tier 3 / wild
+- Core: hold to turn the mochi only while an autonomous mallet is raised, then fully withdraw through increasingly short but visible safe windows over twelve strikes.
+- Required causality: safe in-bowl hold accumulates turning progress, each strike changes the mochi, insufficient or excessive turning changes the retained final texture, and a late withdrawal triggers a harmless partner safety-stop rather than injury.
+- Outcomes: glossy finished mochi; safety-stop; under-turned grainy result; overstretched tear; three empty strikes and sticking; and timeout retaining strike count, shape, and smoothness.
+- Proof: finite integer period tables enumerate safe hold intervals with at least three ticks of final-stage margin and prove all boundaries/failures, one finish, plain resume, and equivalent three-stage reduced-motion timing.
+- Art brief: original mortar/mallet, partner and hand pose stages, six mochi material states, and a finished tray; no real organization branding and no injury depiction.
+
+### Q17 — `prediction-domino-relay-v1`
+
+- Category/tier/flavor: prediction / tier 3 / wild
+- Core: place a limited inventory of three domino heights into empty slots, then make one irreversible push whose deterministic reach must cross steps, gaps, turntables, and light obstacles to reach a bell.
+- Required causality: domino height is literal forward reach; elevation and obstacles consume reach; an authored turntable redirects propagation; failed chains stop and remain at the exact unresolved gap.
+- Outcomes: bell reached; insufficient reach; wrong branch; high-piece resource exhaustion; blocked obstacle; and timeout retaining placement or exact stopped chain.
+- Proof: maximum fourteen slots, heights `{2,3,5}`, finite exhaustive placement search, one or two successful allocations, exact-reach/one-short boundaries, reachable failure branches, and segment-equivalent reduced motion.
+- Art brief: original wooden dominoes in three heights and three fall states, steps/gap/turntable/obstacles, tabletop guide, and endpoint bell; no copied product design.
+
+### Q18 — `memory-recipe-order-v1`
+
+- Category/tier/flavor: memory / tier 3 / quirky
+- Core: memorize one fictional four-step recipe card, then perform the hidden order through direct pours, drags, and tool actions that irreversibly change the pan.
+- Required causality: wrong order visibly creates sticking, separation, premature sealing, missing ingredients, or exhausted materials and changes which later actions remain possible; real-world cooking knowledge is never an answer source.
+- Outcomes: finished fictional dish; adjacent-order failure; early lid lockout; omitted step; duplicated step; and timeout retaining the actual pan and completed-step state.
+- Proof: finite approved action permutations, neutral randomized execution layout, no order leak after encoding, reachable failures, strict physical-state transition table, plain resume, and static reduced-motion material swaps.
+- Art brief: original fictional street-stall pan, folding recipe card, four separated tools, all intermediate/error material states, and one plated-success still; no real recipe or shop branding.
+
+### Q19 — `calculation-balance-scale-v1`
+
+- Category/tier/flavor: calculation / tier 2 / satisfying
+- Core: design at most three physical balance-scale weighings to identify one visually identical counterfeit coin whose weight may be either heavier or lighter, then eject exactly one numbered coin.
+- Required causality: players freely load both pans before each commit; deterministic left/right/balanced results persist in a visible log and update the explicit candidate set. The scale is the only information source.
+- Outcomes: exact identification; wrong genuine coin; two-or-more candidates after three weighings; information-poor or empty weighing; and timeout retaining pans, log, candidates, and remaining uses.
+- Proof: finite `{8,9,12}` coin tasks with heavy/light hypotheses, exhaustive adaptive-strategy verification within three weighings, nontrivial third-weigh boundary, reachable failures, cloneable logs, and zero visual counterfeit cue.
+- Art brief: original tabletop balance with three result poses, one identical coin design plus UI number overlays, log frame, eject box, and wooden bench; no real currency imagery.
+
+### Q20 — `inhibition-quiet-tidy-v1`
+
+- Category/tier/flavor: inhibition / tier 3 / quirky
+- Core: tidy five objects before time expires, but completely stop an in-progress drag whenever a sleeping cat gives the visible stop signal.
+- Required causality: object-specific drag speed and floor material produce visible noise that depletes five-stage sleep depth; scheduled ear-twitch signals require zero pointer velocity through a finite stop window while the held object may remain suspended.
+- Outcomes: correctly tidied room with sleeping cat; cumulative wake; repeated stop-window violation; harmless dropped cup; wrong placement; and timeout retaining every object, held state, sleep depth, and violation.
+- Proof: finite 10×14 floor tiles and integer ticks exhaustively prove a route that requires at least one true stop, excludes uninterrupted success, uses rug/noise causally, covers stop-window boundaries and all failures, and supports plain resume/single finish.
+- Reduced motion/art: discrete cat/sleep/noise states and proportionally extended stop windows; original overhead room, gentle five-pose cat, object/placement states, cable hazard, meters, and tidy success still with no animal distress or real brands.
 
 ## Dispatched brief archive
 

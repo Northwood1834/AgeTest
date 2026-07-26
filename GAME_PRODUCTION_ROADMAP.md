@@ -156,7 +156,8 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `reaction-emoji-match-v1` — accepted and integrated
 - `attention-kana-count-v1` — flow lane
 - `inhibition-parity-v1` — accepted and integrated
-- `inhibition-opposite-v1` — screw lane
+- `inhibition-opposite-v1` — accepted and integrated
+- `inhibition-rule-switch-v1` — screw lane
 
 ### N07 — completed original
 
