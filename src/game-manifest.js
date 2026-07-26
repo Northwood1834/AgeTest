@@ -144,6 +144,17 @@ export const gameManifest=Object.freeze([
     "hash": "9205eddeb9225623"
   },
   {
+    "id": "prediction-lane3d-v1",
+    "introducedIn": "1.0",
+    "tier": 3,
+    "flavor": "wild",
+    "step": 1,
+    "family": "prediction-lane3d",
+    "category": "prediction",
+    "module": "./games/prediction-lane3d-v1.js",
+    "hash": "5d7eb2efc577334b"
+  },
+  {
     "id": "prediction-pin-pull-v1",
     "introducedIn": "1.4",
     "tier": 2,

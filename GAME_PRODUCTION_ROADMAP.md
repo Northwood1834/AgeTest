@@ -87,15 +87,19 @@ A failed game stays isolated and is revised or withheld. It never blocks accepte
 
 - `reaction-emoji-runner-v1` — accepted and integrated
 - `spatial-emoji-fps-v1` — accepted and integrated
-- `prediction-lane3d-v1` — screw lane
+- `prediction-lane3d-v1` — accepted and integrated
 
 P04 takes the next three owner slots that become free after their current ownership contracts. It precedes further waiting original-game ideas. Each port requires same-task legacy/module source captures at both canonical viewports and removes only its own accepted legacy factory after integration.
 
-### P05 — active pre-browser ports
+### P05 — active ports
 
-- `spatial-golf-putt-v1` — waits for screw lane
+- `spatial-golf-putt-v1` — screw lane
 - `attention-author-boss-v1` — waits for flow lane
 - `social-date-v1` — waits for audit lane
+
+### P06 — active pre-browser port
+
+- `reaction-target-v1` — waits for screw lane
 
 ### N02 — completed daily-ritual original series
 

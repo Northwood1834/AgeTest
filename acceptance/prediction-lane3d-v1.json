@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "prediction-lane3d-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "066d5c58a10138fbb0e39af8b27c933f29efe49d",
+  "test": "test/prediction-lane3d-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
