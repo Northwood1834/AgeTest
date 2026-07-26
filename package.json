@@ -1,0 +1,10 @@
+{
+  "name": "agetest-static-rebuild",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:games": "node tools/build-game-manifest.mjs",
+    "check:games": "node tools/build-game-manifest.mjs --check",
+    "test": "node --test test/*.test.mjs && npm run check:games"
+  }
+}
