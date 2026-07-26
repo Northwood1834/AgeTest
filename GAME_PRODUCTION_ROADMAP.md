@@ -74,7 +74,7 @@ A failed game stays isolated and is revised or withheld. It never blocks accepte
 ### N01 originals — active
 
 - `timing-fish-grill-v1` — accepted
-- `prediction-desk-ruler-duel-v1` — acceptance revision
+- `prediction-desk-ruler-duel-v1` — accepted
 - `prediction-card-combo-v1` — acceptance revision
 
 ### P03 — assign one-by-one after N01 acceptance

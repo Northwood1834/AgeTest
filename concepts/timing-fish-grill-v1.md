@@ -1,6 +1,6 @@
 # 焼き目、いま。
 
-Status: user-directed concept accepted; refinement and implementation are assigned only after the current migration wave integrates.
+Status: implemented and independently accepted (`88fb13c`, reduced-motion correction `a50015f`).
 
 - Provisional stable ID: `timing-fish-grill-v1`
 - Category: `timing`

@@ -1,6 +1,6 @@
 # 机上定規バトル
 
-Status: accepted concept; implementation waits for the current migration wave to integrate.
+Status: implemented and independently accepted (`df905a4`).
 
 - Provisional stable ID: `prediction-desk-ruler-duel-v1`
 - Category: `prediction`
