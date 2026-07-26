@@ -146,12 +146,12 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `timing-two-v1` — accepted and integrated
 - `reaction-shape-v1` — accepted and integrated
 - `timing-three-v1` — accepted and integrated
-- `attention-odd-v1` — flow lane; terminal-overlap fix required
+- `attention-odd-v1` — accepted and integrated
 - `social-partner-mood-v1` — accepted and integrated
 - `inhibition-flanker-v1` — accepted and integrated
 - `memory-reverse-v1` — accepted and integrated
 - `social-greeting-v1` — audit lane
-- `reaction-emoji-match-v1` — pre-browser; waits for flow lane
+- `reaction-emoji-match-v1` — flow lane
 - `inhibition-parity-v1` — screw lane
 
 ### N07 — completed original

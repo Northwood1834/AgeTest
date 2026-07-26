@@ -56,6 +56,17 @@ export const gameManifest=Object.freeze([
     "hash": "d65a38aa4d5f22d0"
   },
   {
+    "id": "attention-odd-v1",
+    "introducedIn": "1.0",
+    "tier": 1,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "attention-odd",
+    "category": "attention",
+    "module": "./games/attention-odd-v1.js",
+    "hash": "c92121af53ca1470"
+  },
+  {
     "id": "attention-screw-out-v1",
     "introducedIn": "1.11",
     "tier": 2,

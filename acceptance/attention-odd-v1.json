@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "attention-odd-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "04b6c5364f2bc4b6a37bf6d73024c061222418b3",
+  "test": "test/attention-odd-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
