@@ -1,0 +1,326 @@
+{
+  "canonicalViewports": [
+    {
+      "width": 393,
+      "height": 852,
+      "dpr": 3
+    },
+    {
+      "width": 402,
+      "height": 874,
+      "dpr": 3
+    }
+  ],
+  "states": [
+    "initial",
+    "draw",
+    "load",
+    "sag",
+    "unanchored",
+    "overbudget",
+    "bottomOut",
+    "jointSnap",
+    "wheelLoss",
+    "stalledSpan",
+    "success",
+    "timeout"
+  ],
+  "comparisons": 24,
+  "screenshots": 48,
+  "allDpr3": true,
+  "allFullResolution": true,
+  "meanMAE": 0.013,
+  "maxMAE": 0.154,
+  "maxNormalizedRMSE": 0.018656,
+  "meanChanged": 0.0001,
+  "rows": [
+    {
+      "key": "393x852-initial",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-draw",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-load",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-sag",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-unanchored",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-overbudget",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-bottomOut",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-jointSnap",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-wheelLoss",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-stalledSpan",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-success",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "393x852-timeout",
+      "size": [
+        1179,
+        2556
+      ],
+      "mae": 0.154,
+      "rmse": 4.757,
+      "normalizedRMSE": 0.018656,
+      "changed": 0.0012
+    },
+    {
+      "key": "402x874-initial",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-draw",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-load",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-sag",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-unanchored",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-overbudget",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-bottomOut",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-jointSnap",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-wheelLoss",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-stalledSpan",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-success",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.0,
+      "rmse": 0.0,
+      "normalizedRMSE": 0.0,
+      "changed": 0.0
+    },
+    {
+      "key": "402x874-timeout",
+      "size": [
+        1206,
+        2622
+      ],
+      "mae": 0.147,
+      "rmse": 4.648,
+      "normalizedRMSE": 0.018228,
+      "changed": 0.0012
+    }
+  ],
+  "visualQc": {
+    "status": "pass",
+    "method": "canonical 402 DPR3 normal/reduced contact sheets plus targeted 390/430 success review",
+    "checks": {
+      "continuousStrokeGraphAndAnchors": true,
+      "materialBudgetVisible": true,
+      "loadSagStressProgression": true,
+      "independentWheelContactsAndSuspension": true,
+      "vehicleTiltVisible": true,
+      "structuralFailuresDistinct": true,
+      "vehicleBeyondRightAnchorOnSuccess": true,
+      "originalTabletopIdentity": true,
+      "clippingOrOverflow": false,
+      "timeoutPartialStrokeRetained": true
+    }
+  },
+  "timeoutRetention": {
+    "status": "pass",
+    "canonicalGroups": 4,
+    "actualDeadlineGroups": 2,
+    "partialNodes": 4,
+    "materialLength": 318.186854,
+    "identicalBeforeAfter": true
+  }
+}
