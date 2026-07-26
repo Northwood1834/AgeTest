@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "spatial-commuter-seat-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "81206d37a1c7a9918ff786c007084d0beb145f0c",
+  "test": "test/spatial-commuter-seat-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "attention-farm-close-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "59492fb765e295f5a8e2efca63e29787935b94c0",
+  "test": "test/attention-farm-close-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}
