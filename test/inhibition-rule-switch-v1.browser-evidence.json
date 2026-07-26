@@ -1,0 +1,2146 @@
+{
+  "game": "inhibition-rule-switch-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "checks": {
+    "representativeBoundsAndParitiesLive": true,
+    "exactPromptsRulesAnswers": true,
+    "fixedOptions": true,
+    "identicalOddEvenMaterial": true,
+    "equalRuleClauseTreatment": true,
+    "noParityCue": true,
+    "noAnswerMarker": true,
+    "realTouch": true,
+    "immediateResult": true,
+    "inputLock": true,
+    "keyboardEnter": true,
+    "keyboardSpace": true,
+    "focusVisibleAndInViewport": true,
+    "width390And430": true,
+    "reducedFeedback": true,
+    "reducedNoRaf": true,
+    "actualDeadline5000": true,
+    "timeoutPayload": true,
+    "dispose": true,
+    "singleFinish": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "noErrorsOrExternal": true,
+    "performance": true
+  },
+  "samples": [
+    {
+      "sample": 0,
+      "task": {
+        "kind": "choice",
+        "prompt": "10：奇数なら押す、偶数なら押さない",
+        "help": "いつもの偶数問題とルールが逆です。",
+        "options": [
+          "押す",
+          "押さない"
+        ],
+        "answer": "押さない",
+        "duration": 5000
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "number": 10,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "10：奇数なら押す、偶数なら押さない",
+        "answer": "押さない",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "押さない",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "ルールどおりに選んでください"
+      },
+      "focused": true,
+      "numberText": "10",
+      "ruleText": "奇数なら押す、偶数なら押さない",
+      "numberClass": "irs-number",
+      "ruleClass": "irs-rule",
+      "numberChildren": 0,
+      "ruleChildren": 0,
+      "numberRect": {
+        "left": 30,
+        "right": 363,
+        "top": 119.5625,
+        "bottom": 243.5625
+      },
+      "ruleRect": {
+        "left": 41.1875,
+        "right": 351.8125,
+        "top": 245.046875,
+        "bottom": 260.375
+      },
+      "numberStyle": {
+        "color": "rgb(75, 61, 81)",
+        "fontSize": "62.88px",
+        "fontWeight": "950",
+        "opacity": "1"
+      },
+      "ruleStyle": {
+        "color": "rgb(98, 85, 104)",
+        "fontSize": "11.79px",
+        "fontWeight": "850",
+        "opacity": "1",
+        "textAlign": "center"
+      },
+      "sceneStyle": {
+        "backgroundColor": "rgb(244, 238, 247)",
+        "borderColor": "rgb(216, 204, 223)",
+        "borderRadius": "16.8px"
+      },
+      "buttonTexts": [
+        "押す",
+        "押さない"
+      ],
+      "buttonColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "buttonBackgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "canvasLabel": "10",
+      "status": "ルールどおりに選んでください",
+      "cueClasses": [],
+      "cueData": [],
+      "evidence": {
+        "variant": "module",
+        "sample": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "10：奇数なら押す、偶数なら押さない",
+          "help": "いつもの偶数問題とルールが逆です。",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "answer": "押さない",
+          "duration": 5000
+        },
+        "constants": {
+          "min": 10,
+          "max": 29,
+          "samples": [
+            10,
+            11,
+            28,
+            29
+          ],
+          "rule": "奇数なら押す、偶数なら押さない",
+          "duration": 5000
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "number": 10,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "10：奇数なら押す、偶数なら押さない",
+          "answer": "押さない",
+          "buttons": [
+            {
+              "text": "押す",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "押さない",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "ルールどおりに選んでください"
+        },
+        "computed": {
+          "number": 10,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "10：奇数なら押す、偶数なら押さない",
+          "answer": "押さない",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0,
+          "numberClass": "irs-number",
+          "ruleClass": "irs-rule",
+          "numberChildCount": 0,
+          "ruleChildCount": 0,
+          "numberStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "62.88px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1"
+          },
+          "ruleStyle": {
+            "color": "rgb(98, 85, 104)",
+            "fontSize": "11.79px",
+            "fontWeight": "850",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "textAlign": "center"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-rule-switch-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-rule-switch-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "sample": 1,
+      "task": {
+        "kind": "choice",
+        "prompt": "11：奇数なら押す、偶数なら押さない",
+        "help": "いつもの偶数問題とルールが逆です。",
+        "options": [
+          "押す",
+          "押さない"
+        ],
+        "answer": "押す",
+        "duration": 5000
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "number": 11,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "11：奇数なら押す、偶数なら押さない",
+        "answer": "押す",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "押さない",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "ルールどおりに選んでください"
+      },
+      "focused": true,
+      "numberText": "11",
+      "ruleText": "奇数なら押す、偶数なら押さない",
+      "numberClass": "irs-number",
+      "ruleClass": "irs-rule",
+      "numberChildren": 0,
+      "ruleChildren": 0,
+      "numberRect": {
+        "left": 30,
+        "right": 363,
+        "top": 119.5625,
+        "bottom": 243.5625
+      },
+      "ruleRect": {
+        "left": 41.1875,
+        "right": 351.8125,
+        "top": 245.046875,
+        "bottom": 260.375
+      },
+      "numberStyle": {
+        "color": "rgb(75, 61, 81)",
+        "fontSize": "62.88px",
+        "fontWeight": "950",
+        "opacity": "1"
+      },
+      "ruleStyle": {
+        "color": "rgb(98, 85, 104)",
+        "fontSize": "11.79px",
+        "fontWeight": "850",
+        "opacity": "1",
+        "textAlign": "center"
+      },
+      "sceneStyle": {
+        "backgroundColor": "rgb(244, 238, 247)",
+        "borderColor": "rgb(216, 204, 223)",
+        "borderRadius": "16.8px"
+      },
+      "buttonTexts": [
+        "押す",
+        "押さない"
+      ],
+      "buttonColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "buttonBackgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "canvasLabel": "11",
+      "status": "ルールどおりに選んでください",
+      "cueClasses": [],
+      "cueData": [],
+      "evidence": {
+        "variant": "module",
+        "sample": 1,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "11：奇数なら押す、偶数なら押さない",
+          "help": "いつもの偶数問題とルールが逆です。",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "answer": "押す",
+          "duration": 5000
+        },
+        "constants": {
+          "min": 10,
+          "max": 29,
+          "samples": [
+            10,
+            11,
+            28,
+            29
+          ],
+          "rule": "奇数なら押す、偶数なら押さない",
+          "duration": 5000
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "number": 11,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "11：奇数なら押す、偶数なら押さない",
+          "answer": "押す",
+          "buttons": [
+            {
+              "text": "押す",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "押さない",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "ルールどおりに選んでください"
+        },
+        "computed": {
+          "number": 11,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "11：奇数なら押す、偶数なら押さない",
+          "answer": "押す",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0,
+          "numberClass": "irs-number",
+          "ruleClass": "irs-rule",
+          "numberChildCount": 0,
+          "ruleChildCount": 0,
+          "numberStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "62.88px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1"
+          },
+          "ruleStyle": {
+            "color": "rgb(98, 85, 104)",
+            "fontSize": "11.79px",
+            "fontWeight": "850",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "textAlign": "center"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-rule-switch-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-rule-switch-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "sample": 2,
+      "task": {
+        "kind": "choice",
+        "prompt": "28：奇数なら押す、偶数なら押さない",
+        "help": "いつもの偶数問題とルールが逆です。",
+        "options": [
+          "押す",
+          "押さない"
+        ],
+        "answer": "押さない",
+        "duration": 5000
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "number": 28,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "28：奇数なら押す、偶数なら押さない",
+        "answer": "押さない",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "押さない",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "ルールどおりに選んでください"
+      },
+      "focused": true,
+      "numberText": "28",
+      "ruleText": "奇数なら押す、偶数なら押さない",
+      "numberClass": "irs-number",
+      "ruleClass": "irs-rule",
+      "numberChildren": 0,
+      "ruleChildren": 0,
+      "numberRect": {
+        "left": 30,
+        "right": 363,
+        "top": 119.5625,
+        "bottom": 243.5625
+      },
+      "ruleRect": {
+        "left": 41.1875,
+        "right": 351.8125,
+        "top": 245.046875,
+        "bottom": 260.375
+      },
+      "numberStyle": {
+        "color": "rgb(75, 61, 81)",
+        "fontSize": "62.88px",
+        "fontWeight": "950",
+        "opacity": "1"
+      },
+      "ruleStyle": {
+        "color": "rgb(98, 85, 104)",
+        "fontSize": "11.79px",
+        "fontWeight": "850",
+        "opacity": "1",
+        "textAlign": "center"
+      },
+      "sceneStyle": {
+        "backgroundColor": "rgb(244, 238, 247)",
+        "borderColor": "rgb(216, 204, 223)",
+        "borderRadius": "16.8px"
+      },
+      "buttonTexts": [
+        "押す",
+        "押さない"
+      ],
+      "buttonColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "buttonBackgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "canvasLabel": "28",
+      "status": "ルールどおりに選んでください",
+      "cueClasses": [],
+      "cueData": [],
+      "evidence": {
+        "variant": "module",
+        "sample": 2,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "28：奇数なら押す、偶数なら押さない",
+          "help": "いつもの偶数問題とルールが逆です。",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "answer": "押さない",
+          "duration": 5000
+        },
+        "constants": {
+          "min": 10,
+          "max": 29,
+          "samples": [
+            10,
+            11,
+            28,
+            29
+          ],
+          "rule": "奇数なら押す、偶数なら押さない",
+          "duration": 5000
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "number": 28,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "28：奇数なら押す、偶数なら押さない",
+          "answer": "押さない",
+          "buttons": [
+            {
+              "text": "押す",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "押さない",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "ルールどおりに選んでください"
+        },
+        "computed": {
+          "number": 28,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "28：奇数なら押す、偶数なら押さない",
+          "answer": "押さない",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0,
+          "numberClass": "irs-number",
+          "ruleClass": "irs-rule",
+          "numberChildCount": 0,
+          "ruleChildCount": 0,
+          "numberStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "62.88px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1"
+          },
+          "ruleStyle": {
+            "color": "rgb(98, 85, 104)",
+            "fontSize": "11.79px",
+            "fontWeight": "850",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "textAlign": "center"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-rule-switch-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-rule-switch-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "sample": 3,
+      "task": {
+        "kind": "choice",
+        "prompt": "29：奇数なら押す、偶数なら押さない",
+        "help": "いつもの偶数問題とルールが逆です。",
+        "options": [
+          "押す",
+          "押さない"
+        ],
+        "answer": "押す",
+        "duration": 5000
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "number": 29,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "29：奇数なら押す、偶数なら押さない",
+        "answer": "押す",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "押さない",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "ルールどおりに選んでください"
+      },
+      "focused": true,
+      "numberText": "29",
+      "ruleText": "奇数なら押す、偶数なら押さない",
+      "numberClass": "irs-number",
+      "ruleClass": "irs-rule",
+      "numberChildren": 0,
+      "ruleChildren": 0,
+      "numberRect": {
+        "left": 30,
+        "right": 363,
+        "top": 119.5625,
+        "bottom": 243.5625
+      },
+      "ruleRect": {
+        "left": 41.1875,
+        "right": 351.8125,
+        "top": 245.046875,
+        "bottom": 260.375
+      },
+      "numberStyle": {
+        "color": "rgb(75, 61, 81)",
+        "fontSize": "62.88px",
+        "fontWeight": "950",
+        "opacity": "1"
+      },
+      "ruleStyle": {
+        "color": "rgb(98, 85, 104)",
+        "fontSize": "11.79px",
+        "fontWeight": "850",
+        "opacity": "1",
+        "textAlign": "center"
+      },
+      "sceneStyle": {
+        "backgroundColor": "rgb(244, 238, 247)",
+        "borderColor": "rgb(216, 204, 223)",
+        "borderRadius": "16.8px"
+      },
+      "buttonTexts": [
+        "押す",
+        "押さない"
+      ],
+      "buttonColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "buttonBackgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "canvasLabel": "29",
+      "status": "ルールどおりに選んでください",
+      "cueClasses": [],
+      "cueData": [],
+      "evidence": {
+        "variant": "module",
+        "sample": 3,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "29：奇数なら押す、偶数なら押さない",
+          "help": "いつもの偶数問題とルールが逆です。",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "answer": "押す",
+          "duration": 5000
+        },
+        "constants": {
+          "min": 10,
+          "max": 29,
+          "samples": [
+            10,
+            11,
+            28,
+            29
+          ],
+          "rule": "奇数なら押す、偶数なら押さない",
+          "duration": 5000
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "number": 29,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "29：奇数なら押す、偶数なら押さない",
+          "answer": "押す",
+          "buttons": [
+            {
+              "text": "押す",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "押さない",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "ルールどおりに選んでください"
+        },
+        "computed": {
+          "number": 29,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "29：奇数なら押す、偶数なら押さない",
+          "answer": "押す",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0,
+          "numberClass": "irs-number",
+          "ruleClass": "irs-rule",
+          "numberChildCount": 0,
+          "ruleChildCount": 0,
+          "numberStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "62.88px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1"
+          },
+          "ruleStyle": {
+            "color": "rgb(98, 85, 104)",
+            "fontSize": "11.79px",
+            "fontWeight": "850",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "textAlign": "center"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-rule-switch-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-rule-switch-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    }
+  ],
+  "touch": {
+    "touchStart": {
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "number": 10,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "10：奇数なら押す、偶数なら押さない",
+        "answer": "押さない",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "押さない",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 161,
+          "pixelWidth": 996,
+          "pixelHeight": 483,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "ルールどおりに選んでください"
+      },
+      "focused": true,
+      "rect": {
+        "left": 29,
+        "right": 191.3125,
+        "top": 339.1875,
+        "bottom": 390.375
+      },
+      "scrollY": 0
+    },
+    "point": {
+      "x": 279.8359375,
+      "y": 364.78125,
+      "width": 162.328125,
+      "height": 51.1875,
+      "disabled": false
+    },
+    "touchFinal": {
+      "before": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "押さない",
+        "detail": "正解は「押さない」",
+        "payload": {
+          "answerLabel": "押さない"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "number": 10,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "10：奇数なら押す、偶数なら押さない",
+        "answer": "押さない",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "押さない",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 161,
+          "pixelWidth": 996,
+          "pixelHeight": 483,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解は「押さない」"
+      },
+      "after": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "押さない",
+        "detail": "正解は「押さない」",
+        "payload": {
+          "answerLabel": "押さない"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "number": 10,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "10：奇数なら押す、偶数なら押さない",
+        "answer": "押さない",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "押さない",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 161,
+          "pixelWidth": 996,
+          "pixelHeight": 483,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解は「押さない」"
+      },
+      "finishes": [
+        {
+          "correct": true,
+          "result": {
+            "answerLabel": "押さない"
+          }
+        }
+      ],
+      "e": {
+        "variant": "module",
+        "sample": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 390,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "10：奇数なら押す、偶数なら押さない",
+          "help": "いつもの偶数問題とルールが逆です。",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "answer": "押さない",
+          "duration": 5000
+        },
+        "constants": {
+          "min": 10,
+          "max": 29,
+          "samples": [
+            10,
+            11,
+            28,
+            29
+          ],
+          "rule": "奇数なら押す、偶数なら押さない",
+          "duration": 5000
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "selected": "押さない",
+          "detail": "正解は「押さない」",
+          "payload": {
+            "answerLabel": "押さない"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "number": 10,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "10：奇数なら押す、偶数なら押さない",
+          "answer": "押さない",
+          "buttons": [
+            {
+              "text": "押す",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "押さない",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 161,
+            "pixelWidth": 996,
+            "pixelHeight": 483,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "正解は「押さない」"
+        },
+        "computed": {
+          "number": 10,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "10：奇数なら押す、偶数なら押さない",
+          "answer": "押さない",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "choicesEnabled": false,
+          "result": "success",
+          "selected": "押さない",
+          "payload": {
+            "correct": true,
+            "result": {
+              "answerLabel": "押さない"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1,
+          "numberClass": "irs-number",
+          "ruleClass": "irs-rule",
+          "numberChildCount": 0,
+          "ruleChildCount": 0,
+          "numberStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "62.4px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1"
+          },
+          "ruleStyle": {
+            "color": "rgb(98, 85, 104)",
+            "fontSize": "11.7px",
+            "fontWeight": "850",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "textAlign": "center"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "answerLabel": "押さない"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 161,
+            "pixelWidth": 996,
+            "pixelHeight": 483,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-rule-switch-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/game-kernel.js",
+          "http://127.0.0.1:8863/src/games/inhibition-rule-switch-v1.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0,
+      "navigationMs": 63.89999997615814,
+      "longTasks": [],
+      "nodeCount": 25
+    }
+  },
+  "enter": {
+    "enterReady": {
+      "focused": true,
+      "active": "押す",
+      "rect": {
+        "left": 29,
+        "right": 211.3125
+      },
+      "scrollY": 0
+    },
+    "enter": {
+      "state": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "押す",
+        "detail": "正解は「押す」",
+        "payload": {
+          "answerLabel": "押す"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "number": 29,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "29：奇数なら押す、偶数なら押さない",
+        "answer": "押す",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "押さない",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 180,
+          "pixelWidth": 1116,
+          "pixelHeight": 540,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解は「押す」"
+      },
+      "e": {
+        "variant": "module",
+        "sample": 3,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 430,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "29：奇数なら押す、偶数なら押さない",
+          "help": "いつもの偶数問題とルールが逆です。",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "answer": "押す",
+          "duration": 5000
+        },
+        "constants": {
+          "min": 10,
+          "max": 29,
+          "samples": [
+            10,
+            11,
+            28,
+            29
+          ],
+          "rule": "奇数なら押す、偶数なら押さない",
+          "duration": 5000
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "selected": "押す",
+          "detail": "正解は「押す」",
+          "payload": {
+            "answerLabel": "押す"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "number": 29,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "29：奇数なら押す、偶数なら押さない",
+          "answer": "押す",
+          "buttons": [
+            {
+              "text": "押す",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            },
+            {
+              "text": "押さない",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 180,
+            "pixelWidth": 1116,
+            "pixelHeight": 540,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "正解は「押す」"
+        },
+        "computed": {
+          "number": 29,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "29：奇数なら押す、偶数なら押さない",
+          "answer": "押す",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "choicesEnabled": false,
+          "result": "success",
+          "selected": "押す",
+          "payload": {
+            "correct": true,
+            "result": {
+              "answerLabel": "押す"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1,
+          "numberClass": "irs-number",
+          "ruleClass": "irs-rule",
+          "numberChildCount": 0,
+          "ruleChildCount": 0,
+          "numberStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "68.8px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1"
+          },
+          "ruleStyle": {
+            "color": "rgb(98, 85, 104)",
+            "fontSize": "12.9px",
+            "fontWeight": "850",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "textAlign": "center"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "answerLabel": "押す"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 430,
+          "innerWidth": 430,
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 180,
+            "pixelWidth": 1116,
+            "pixelHeight": 540,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-rule-switch-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-rule-switch-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0
+    }
+  },
+  "space": {
+    "spaceReady": {
+      "focused": true,
+      "scrollY": 0
+    },
+    "space": {
+      "state": {
+        "phase": "WRONG",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "wrong",
+        "selected": "押す",
+        "detail": "残念。正解は「押さない」",
+        "payload": {
+          "answerLabel": "押さない"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "number": 10,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "10：奇数なら押す、偶数なら押さない",
+        "answer": "押さない",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "押さない",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "残念。正解は「押さない」"
+      },
+      "e": {
+        "variant": "module",
+        "sample": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "choice",
+          "prompt": "10：奇数なら押す、偶数なら押さない",
+          "help": "いつもの偶数問題とルールが逆です。",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "answer": "押さない",
+          "duration": 5000
+        },
+        "constants": {
+          "min": 10,
+          "max": 29,
+          "samples": [
+            10,
+            11,
+            28,
+            29
+          ],
+          "rule": "奇数なら押す、偶数なら押さない",
+          "duration": 5000
+        },
+        "state": {
+          "phase": "WRONG",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "wrong",
+          "selected": "押す",
+          "detail": "残念。正解は「押さない」",
+          "payload": {
+            "answerLabel": "押さない"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "number": 10,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "10：奇数なら押す、偶数なら押さない",
+          "answer": "押さない",
+          "buttons": [
+            {
+              "text": "押す",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            },
+            {
+              "text": "押さない",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "残念。正解は「押さない」"
+        },
+        "computed": {
+          "number": 10,
+          "rule": "奇数なら押す、偶数なら押さない",
+          "prompt": "10：奇数なら押す、偶数なら押さない",
+          "answer": "押さない",
+          "options": [
+            "押す",
+            "押さない"
+          ],
+          "choicesEnabled": false,
+          "result": "wrong",
+          "selected": "押す",
+          "payload": {
+            "correct": false,
+            "result": {
+              "answerLabel": "押さない"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1,
+          "numberClass": "irs-number",
+          "ruleClass": "irs-rule",
+          "numberChildCount": 0,
+          "ruleChildCount": 0,
+          "numberStyle": {
+            "color": "rgb(75, 61, 81)",
+            "fontSize": "62.88px",
+            "fontWeight": "950",
+            "letterSpacing": "normal",
+            "opacity": "1"
+          },
+          "ruleStyle": {
+            "color": "rgb(98, 85, 104)",
+            "fontSize": "11.79px",
+            "fontWeight": "850",
+            "letterSpacing": "normal",
+            "opacity": "1",
+            "textAlign": "center"
+          },
+          "sceneStyle": {
+            "backgroundColor": "rgb(244, 238, 247)",
+            "borderColor": "rgb(216, 204, 223)",
+            "borderRadius": "16.8px"
+          }
+        },
+        "finishes": [
+          {
+            "correct": false,
+            "result": {
+              "answerLabel": "押さない"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-rule-switch-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-rule-switch-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0
+    }
+  },
+  "deadline": {
+    "elapsed": 5016.100000023842,
+    "state": {
+      "phase": "TIMEOUT",
+      "choicesEnabled": false,
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "selected": null,
+      "detail": "時間切れです。脳は定時退社しました。",
+      "payload": {
+        "detail": "時間切れです。脳は定時退社しました。",
+        "answerLabel": "押さない"
+      },
+      "finishCalls": 1,
+      "feedbackStages": 1,
+      "number": 28,
+      "rule": "奇数なら押す、偶数なら押さない",
+      "prompt": "28：奇数なら押す、偶数なら押さない",
+      "answer": "押さない",
+      "buttons": [
+        {
+          "text": "押す",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "押さない",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 335,
+        "cssHeight": 162,
+        "pixelWidth": 1005,
+        "pixelHeight": 486,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "時間切れ。正解は「押さない」"
+    },
+    "e": {
+      "variant": "module",
+      "sample": 2,
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 393,
+      "dpr": 3,
+      "task": {
+        "kind": "choice",
+        "prompt": "28：奇数なら押す、偶数なら押さない",
+        "help": "いつもの偶数問題とルールが逆です。",
+        "options": [
+          "押す",
+          "押さない"
+        ],
+        "answer": "押さない",
+        "duration": 5000
+      },
+      "constants": {
+        "min": 10,
+        "max": 29,
+        "samples": [
+          10,
+          11,
+          28,
+          29
+        ],
+        "rule": "奇数なら押す、偶数なら押さない",
+        "duration": 5000
+      },
+      "state": {
+        "phase": "TIMEOUT",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "timeout",
+        "selected": null,
+        "detail": "時間切れです。脳は定時退社しました。",
+        "payload": {
+          "detail": "時間切れです。脳は定時退社しました。",
+          "answerLabel": "押さない"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "number": 28,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "28：奇数なら押す、偶数なら押さない",
+        "answer": "押さない",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "押さない",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "時間切れ。正解は「押さない」"
+      },
+      "computed": {
+        "number": 28,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "28：奇数なら押す、偶数なら押さない",
+        "answer": "押さない",
+        "options": [
+          "押す",
+          "押さない"
+        ],
+        "choicesEnabled": false,
+        "result": "timeout",
+        "selected": null,
+        "payload": {
+          "correct": false,
+          "result": {
+            "detail": "時間切れです。脳は定時退社しました。",
+            "answerLabel": "押さない"
+          }
+        },
+        "feedbackStages": 1,
+        "focused": -1,
+        "numberClass": "irs-number",
+        "ruleClass": "irs-rule",
+        "numberChildCount": 0,
+        "ruleChildCount": 0,
+        "numberStyle": {
+          "color": "rgb(75, 61, 81)",
+          "fontSize": "62.88px",
+          "fontWeight": "950",
+          "letterSpacing": "normal",
+          "opacity": "1"
+        },
+        "ruleStyle": {
+          "color": "rgb(98, 85, 104)",
+          "fontSize": "11.79px",
+          "fontWeight": "850",
+          "letterSpacing": "normal",
+          "opacity": "1",
+          "textAlign": "center"
+        },
+        "sceneStyle": {
+          "backgroundColor": "rgb(244, 238, 247)",
+          "borderColor": "rgb(216, 204, 223)",
+          "borderRadius": "16.8px"
+        }
+      },
+      "finishes": [
+        {
+          "correct": false,
+          "result": {
+            "detail": "時間切れです。脳は定時退社しました。",
+            "answerLabel": "押さない"
+          }
+        }
+      ],
+      "layout": {
+        "scrollWidth": 393,
+        "innerWidth": 393,
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/inhibition-rule-switch-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/inhibition-rule-switch-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    }
+  },
+  "disposed": {
+    "before": {
+      "phase": "CHOOSING",
+      "choicesEnabled": true,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "selected": null,
+      "detail": "",
+      "payload": null,
+      "finishCalls": 0,
+      "feedbackStages": 0,
+      "number": 29,
+      "rule": "奇数なら押す、偶数なら押さない",
+      "prompt": "29：奇数なら押す、偶数なら押さない",
+      "answer": "押す",
+      "buttons": [
+        {
+          "text": "押す",
+          "disabled": false,
+          "selected": false,
+          "focused": true
+        },
+        {
+          "text": "押さない",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 167,
+        "pixelWidth": 1032,
+        "pixelHeight": 501,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "ルールどおりに選んでください"
+    },
+    "after": {
+      "phase": "CHOOSING",
+      "choicesEnabled": true,
+      "done": false,
+      "disposed": true,
+      "result": null,
+      "selected": null,
+      "detail": "",
+      "payload": null,
+      "finishCalls": 0,
+      "feedbackStages": 0,
+      "number": 29,
+      "rule": "奇数なら押す、偶数なら押さない",
+      "prompt": "29：奇数なら押す、偶数なら押さない",
+      "answer": "押す",
+      "buttons": [
+        {
+          "text": "押す",
+          "disabled": false,
+          "selected": false,
+          "focused": true
+        },
+        {
+          "text": "押さない",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 167,
+        "pixelWidth": 1032,
+        "pixelHeight": 501,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "ルールどおりに選んでください"
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": false,
+      "finishCalls": 0,
+      "commits": 0,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "qaRemoved": true,
+    "e": {
+      "variant": "module",
+      "sample": 3,
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 402,
+      "dpr": 3,
+      "task": {
+        "kind": "choice",
+        "prompt": "29：奇数なら押す、偶数なら押さない",
+        "help": "いつもの偶数問題とルールが逆です。",
+        "options": [
+          "押す",
+          "押さない"
+        ],
+        "answer": "押す",
+        "duration": 5000
+      },
+      "constants": {
+        "min": 10,
+        "max": 29,
+        "samples": [
+          10,
+          11,
+          28,
+          29
+        ],
+        "rule": "奇数なら押す、偶数なら押さない",
+        "duration": 5000
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": true,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "number": 29,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "29：奇数なら押す、偶数なら押さない",
+        "answer": "押す",
+        "buttons": [
+          {
+            "text": "押す",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "押さない",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 167,
+          "pixelWidth": 1032,
+          "pixelHeight": 501,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "ルールどおりに選んでください"
+      },
+      "computed": {
+        "number": 29,
+        "rule": "奇数なら押す、偶数なら押さない",
+        "prompt": "29：奇数なら押す、偶数なら押さない",
+        "answer": "押す",
+        "options": [
+          "押す",
+          "押さない"
+        ],
+        "choicesEnabled": true,
+        "result": null,
+        "selected": null,
+        "payload": null,
+        "feedbackStages": 0,
+        "focused": 0,
+        "numberClass": "irs-number",
+        "ruleClass": "irs-rule",
+        "numberChildCount": 0,
+        "ruleChildCount": 0,
+        "numberStyle": {
+          "color": "rgb(75, 61, 81)",
+          "fontSize": "64.32px",
+          "fontWeight": "950",
+          "letterSpacing": "normal",
+          "opacity": "1"
+        },
+        "ruleStyle": {
+          "color": "rgb(98, 85, 104)",
+          "fontSize": "12.06px",
+          "fontWeight": "850",
+          "letterSpacing": "normal",
+          "opacity": "1",
+          "textAlign": "center"
+        },
+        "sceneStyle": {
+          "backgroundColor": "rgb(244, 238, 247)",
+          "borderColor": "rgb(216, 204, 223)",
+          "borderRadius": "16.8px"
+        }
+      },
+      "finishes": [],
+      "layout": {
+        "scrollWidth": 402,
+        "innerWidth": 402,
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 167,
+          "pixelWidth": 1032,
+          "pixelHeight": 501,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/inhibition-rule-switch-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/inhibition-rule-switch-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    }
+  }
+}
