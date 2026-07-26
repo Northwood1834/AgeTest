@@ -1,0 +1,4104 @@
+{
+  "game": "inhibition-stroop-v1",
+  "lane": {
+    "name": "screw",
+    "cdp": 9343,
+    "http": 8863,
+    "browser": "Chrome/150.0.7871.46"
+  },
+  "checks": {
+    "all12OrderedCombinationsLive": true,
+    "exactWordInkOptions": true,
+    "wordInkUnequal": true,
+    "exactCssClassColor": true,
+    "wordOnlyColored": true,
+    "neutralChoices": true,
+    "noExtraAnswerClue": true,
+    "realTouch": true,
+    "immediateResult": true,
+    "successPayload": true,
+    "inputLock": true,
+    "keyboardEnter": true,
+    "keyboardSpace": true,
+    "focus2x2": true,
+    "width390And430": true,
+    "reducedFeedback": true,
+    "reducedNoRaf": true,
+    "wrongPayload": true,
+    "actualDeadline6500": true,
+    "timeoutPayload": true,
+    "dispose": true,
+    "singleFinish": true,
+    "dpr3": true,
+    "noOverflow": true,
+    "noErrorsOrExternal": true,
+    "performance": true
+  },
+  "twelve": [
+    {
+      "combo": 0,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "むらさき",
+        "ink": "みどり",
+        "options": [
+          "むらさき",
+          "みどり",
+          "オレンジ",
+          "あお"
+        ],
+        "answer": "みどり",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "むらさき",
+        "ink": "みどり",
+        "answer": "みどり",
+        "wordClass": "ink-green",
+        "mappedColor": "#408B68",
+        "buttons": [
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "むらさき",
+      "wordClass": "st-word ink-green",
+      "cssColor": "rgb(64, 139, 104)",
+      "coloredNodes": [
+        "st-word ink-green"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "むらさき",
+          "ink": "みどり",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "answer": "みどり",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "むらさき",
+          "ink": "みどり",
+          "answer": "みどり",
+          "wordClass": "ink-green",
+          "mappedColor": "#408B68",
+          "buttons": [
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "むらさき",
+          "ink": "みどり",
+          "answer": "みどり",
+          "wordClass": "ink-green",
+          "mappedColor": "#408B68",
+          "cssColor": "rgb(64, 139, 104)",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 1,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "むらさき",
+        "ink": "オレンジ",
+        "options": [
+          "みどり",
+          "オレンジ",
+          "あお",
+          "むらさき"
+        ],
+        "answer": "オレンジ",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "むらさき",
+        "ink": "オレンジ",
+        "answer": "オレンジ",
+        "wordClass": "ink-orange",
+        "mappedColor": "#D77A32",
+        "buttons": [
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "むらさき",
+      "wordClass": "st-word ink-orange",
+      "cssColor": "rgb(215, 122, 50)",
+      "coloredNodes": [
+        "st-word ink-orange"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 1,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "むらさき",
+          "ink": "オレンジ",
+          "options": [
+            "みどり",
+            "オレンジ",
+            "あお",
+            "むらさき"
+          ],
+          "answer": "オレンジ",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "むらさき",
+          "ink": "オレンジ",
+          "answer": "オレンジ",
+          "wordClass": "ink-orange",
+          "mappedColor": "#D77A32",
+          "buttons": [
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "むらさき",
+          "ink": "オレンジ",
+          "answer": "オレンジ",
+          "wordClass": "ink-orange",
+          "mappedColor": "#D77A32",
+          "cssColor": "rgb(215, 122, 50)",
+          "options": [
+            "みどり",
+            "オレンジ",
+            "あお",
+            "むらさき"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 2,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "むらさき",
+        "ink": "あお",
+        "options": [
+          "オレンジ",
+          "あお",
+          "むらさき",
+          "みどり"
+        ],
+        "answer": "あお",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "むらさき",
+        "ink": "あお",
+        "answer": "あお",
+        "wordClass": "ink-blue",
+        "mappedColor": "#3E79B7",
+        "buttons": [
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "むらさき",
+      "wordClass": "st-word ink-blue",
+      "cssColor": "rgb(62, 121, 183)",
+      "coloredNodes": [
+        "st-word ink-blue"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 2,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "むらさき",
+          "ink": "あお",
+          "options": [
+            "オレンジ",
+            "あお",
+            "むらさき",
+            "みどり"
+          ],
+          "answer": "あお",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "むらさき",
+          "ink": "あお",
+          "answer": "あお",
+          "wordClass": "ink-blue",
+          "mappedColor": "#3E79B7",
+          "buttons": [
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "むらさき",
+          "ink": "あお",
+          "answer": "あお",
+          "wordClass": "ink-blue",
+          "mappedColor": "#3E79B7",
+          "cssColor": "rgb(62, 121, 183)",
+          "options": [
+            "オレンジ",
+            "あお",
+            "むらさき",
+            "みどり"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/game-kernel.js",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 3,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "みどり",
+        "ink": "むらさき",
+        "options": [
+          "あお",
+          "むらさき",
+          "みどり",
+          "オレンジ"
+        ],
+        "answer": "むらさき",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "みどり",
+        "ink": "むらさき",
+        "answer": "むらさき",
+        "wordClass": "ink-purple",
+        "mappedColor": "#8B52B0",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "みどり",
+      "wordClass": "st-word ink-purple",
+      "cssColor": "rgb(139, 82, 176)",
+      "coloredNodes": [
+        "st-word ink-purple"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 3,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "みどり",
+          "ink": "むらさき",
+          "options": [
+            "あお",
+            "むらさき",
+            "みどり",
+            "オレンジ"
+          ],
+          "answer": "むらさき",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "みどり",
+          "ink": "むらさき",
+          "answer": "むらさき",
+          "wordClass": "ink-purple",
+          "mappedColor": "#8B52B0",
+          "buttons": [
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "みどり",
+          "ink": "むらさき",
+          "answer": "むらさき",
+          "wordClass": "ink-purple",
+          "mappedColor": "#8B52B0",
+          "cssColor": "rgb(139, 82, 176)",
+          "options": [
+            "あお",
+            "むらさき",
+            "みどり",
+            "オレンジ"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 4,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "みどり",
+        "ink": "オレンジ",
+        "options": [
+          "むらさき",
+          "みどり",
+          "オレンジ",
+          "あお"
+        ],
+        "answer": "オレンジ",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "みどり",
+        "ink": "オレンジ",
+        "answer": "オレンジ",
+        "wordClass": "ink-orange",
+        "mappedColor": "#D77A32",
+        "buttons": [
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "みどり",
+      "wordClass": "st-word ink-orange",
+      "cssColor": "rgb(215, 122, 50)",
+      "coloredNodes": [
+        "st-word ink-orange"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 4,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "みどり",
+          "ink": "オレンジ",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "answer": "オレンジ",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "みどり",
+          "ink": "オレンジ",
+          "answer": "オレンジ",
+          "wordClass": "ink-orange",
+          "mappedColor": "#D77A32",
+          "buttons": [
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "みどり",
+          "ink": "オレンジ",
+          "answer": "オレンジ",
+          "wordClass": "ink-orange",
+          "mappedColor": "#D77A32",
+          "cssColor": "rgb(215, 122, 50)",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 5,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "みどり",
+        "ink": "あお",
+        "options": [
+          "みどり",
+          "オレンジ",
+          "あお",
+          "むらさき"
+        ],
+        "answer": "あお",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "みどり",
+        "ink": "あお",
+        "answer": "あお",
+        "wordClass": "ink-blue",
+        "mappedColor": "#3E79B7",
+        "buttons": [
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "みどり",
+      "wordClass": "st-word ink-blue",
+      "cssColor": "rgb(62, 121, 183)",
+      "coloredNodes": [
+        "st-word ink-blue"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 5,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "みどり",
+          "ink": "あお",
+          "options": [
+            "みどり",
+            "オレンジ",
+            "あお",
+            "むらさき"
+          ],
+          "answer": "あお",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "みどり",
+          "ink": "あお",
+          "answer": "あお",
+          "wordClass": "ink-blue",
+          "mappedColor": "#3E79B7",
+          "buttons": [
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "みどり",
+          "ink": "あお",
+          "answer": "あお",
+          "wordClass": "ink-blue",
+          "mappedColor": "#3E79B7",
+          "cssColor": "rgb(62, 121, 183)",
+          "options": [
+            "みどり",
+            "オレンジ",
+            "あお",
+            "むらさき"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 6,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "オレンジ",
+        "ink": "むらさき",
+        "options": [
+          "オレンジ",
+          "あお",
+          "むらさき",
+          "みどり"
+        ],
+        "answer": "むらさき",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "オレンジ",
+        "ink": "むらさき",
+        "answer": "むらさき",
+        "wordClass": "ink-purple",
+        "mappedColor": "#8B52B0",
+        "buttons": [
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "オレンジ",
+      "wordClass": "st-word ink-purple",
+      "cssColor": "rgb(139, 82, 176)",
+      "coloredNodes": [
+        "st-word ink-purple"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 6,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "オレンジ",
+          "ink": "むらさき",
+          "options": [
+            "オレンジ",
+            "あお",
+            "むらさき",
+            "みどり"
+          ],
+          "answer": "むらさき",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "オレンジ",
+          "ink": "むらさき",
+          "answer": "むらさき",
+          "wordClass": "ink-purple",
+          "mappedColor": "#8B52B0",
+          "buttons": [
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "オレンジ",
+          "ink": "むらさき",
+          "answer": "むらさき",
+          "wordClass": "ink-purple",
+          "mappedColor": "#8B52B0",
+          "cssColor": "rgb(139, 82, 176)",
+          "options": [
+            "オレンジ",
+            "あお",
+            "むらさき",
+            "みどり"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 7,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "オレンジ",
+        "ink": "みどり",
+        "options": [
+          "あお",
+          "むらさき",
+          "みどり",
+          "オレンジ"
+        ],
+        "answer": "みどり",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "オレンジ",
+        "ink": "みどり",
+        "answer": "みどり",
+        "wordClass": "ink-green",
+        "mappedColor": "#408B68",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "オレンジ",
+      "wordClass": "st-word ink-green",
+      "cssColor": "rgb(64, 139, 104)",
+      "coloredNodes": [
+        "st-word ink-green"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 7,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "オレンジ",
+          "ink": "みどり",
+          "options": [
+            "あお",
+            "むらさき",
+            "みどり",
+            "オレンジ"
+          ],
+          "answer": "みどり",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "オレンジ",
+          "ink": "みどり",
+          "answer": "みどり",
+          "wordClass": "ink-green",
+          "mappedColor": "#408B68",
+          "buttons": [
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "オレンジ",
+          "ink": "みどり",
+          "answer": "みどり",
+          "wordClass": "ink-green",
+          "mappedColor": "#408B68",
+          "cssColor": "rgb(64, 139, 104)",
+          "options": [
+            "あお",
+            "むらさき",
+            "みどり",
+            "オレンジ"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 8,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "オレンジ",
+        "ink": "あお",
+        "options": [
+          "むらさき",
+          "みどり",
+          "オレンジ",
+          "あお"
+        ],
+        "answer": "あお",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "オレンジ",
+        "ink": "あお",
+        "answer": "あお",
+        "wordClass": "ink-blue",
+        "mappedColor": "#3E79B7",
+        "buttons": [
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "オレンジ",
+      "wordClass": "st-word ink-blue",
+      "cssColor": "rgb(62, 121, 183)",
+      "coloredNodes": [
+        "st-word ink-blue"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 8,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "オレンジ",
+          "ink": "あお",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "answer": "あお",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "オレンジ",
+          "ink": "あお",
+          "answer": "あお",
+          "wordClass": "ink-blue",
+          "mappedColor": "#3E79B7",
+          "buttons": [
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "オレンジ",
+          "ink": "あお",
+          "answer": "あお",
+          "wordClass": "ink-blue",
+          "mappedColor": "#3E79B7",
+          "cssColor": "rgb(62, 121, 183)",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 9,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "あお",
+        "ink": "むらさき",
+        "options": [
+          "みどり",
+          "オレンジ",
+          "あお",
+          "むらさき"
+        ],
+        "answer": "むらさき",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "あお",
+        "ink": "むらさき",
+        "answer": "むらさき",
+        "wordClass": "ink-purple",
+        "mappedColor": "#8B52B0",
+        "buttons": [
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "あお",
+      "wordClass": "st-word ink-purple",
+      "cssColor": "rgb(139, 82, 176)",
+      "coloredNodes": [
+        "st-word ink-purple"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 9,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "あお",
+          "ink": "むらさき",
+          "options": [
+            "みどり",
+            "オレンジ",
+            "あお",
+            "むらさき"
+          ],
+          "answer": "むらさき",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "あお",
+          "ink": "むらさき",
+          "answer": "むらさき",
+          "wordClass": "ink-purple",
+          "mappedColor": "#8B52B0",
+          "buttons": [
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "あお",
+          "ink": "むらさき",
+          "answer": "むらさき",
+          "wordClass": "ink-purple",
+          "mappedColor": "#8B52B0",
+          "cssColor": "rgb(139, 82, 176)",
+          "options": [
+            "みどり",
+            "オレンジ",
+            "あお",
+            "むらさき"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/game-kernel.js",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 10,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "あお",
+        "ink": "みどり",
+        "options": [
+          "オレンジ",
+          "あお",
+          "むらさき",
+          "みどり"
+        ],
+        "answer": "みどり",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "あお",
+        "ink": "みどり",
+        "answer": "みどり",
+        "wordClass": "ink-green",
+        "mappedColor": "#408B68",
+        "buttons": [
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "あお",
+      "wordClass": "st-word ink-green",
+      "cssColor": "rgb(64, 139, 104)",
+      "coloredNodes": [
+        "st-word ink-green"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 10,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "あお",
+          "ink": "みどり",
+          "options": [
+            "オレンジ",
+            "あお",
+            "むらさき",
+            "みどり"
+          ],
+          "answer": "みどり",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "あお",
+          "ink": "みどり",
+          "answer": "みどり",
+          "wordClass": "ink-green",
+          "mappedColor": "#408B68",
+          "buttons": [
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "あお",
+          "ink": "みどり",
+          "answer": "みどり",
+          "wordClass": "ink-green",
+          "mappedColor": "#408B68",
+          "cssColor": "rgb(64, 139, 104)",
+          "options": [
+            "オレンジ",
+            "あお",
+            "むらさき",
+            "みどり"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    },
+    {
+      "combo": 11,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "あお",
+        "ink": "オレンジ",
+        "options": [
+          "あお",
+          "むらさき",
+          "みどり",
+          "オレンジ"
+        ],
+        "answer": "オレンジ",
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "あお",
+        "ink": "オレンジ",
+        "answer": "オレンジ",
+        "wordClass": "ink-orange",
+        "mappedColor": "#D77A32",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "wordText": "あお",
+      "wordClass": "st-word ink-orange",
+      "cssColor": "rgb(215, 122, 50)",
+      "coloredNodes": [
+        "st-word ink-orange"
+      ],
+      "choiceColors": [
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)",
+        "rgb(73, 51, 82)"
+      ],
+      "canvasLabel": "中立色の紙に色付きで印刷された文字",
+      "status": "インクの色を選んでください",
+      "evidence": {
+        "variant": "module",
+        "combo": 11,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "あお",
+          "ink": "オレンジ",
+          "options": [
+            "あお",
+            "むらさき",
+            "みどり",
+            "オレンジ"
+          ],
+          "answer": "オレンジ",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "CHOOSING",
+          "choicesEnabled": true,
+          "done": false,
+          "disposed": false,
+          "result": null,
+          "selected": null,
+          "detail": "",
+          "payload": null,
+          "finishCalls": 0,
+          "feedbackStages": 0,
+          "word": "あお",
+          "ink": "オレンジ",
+          "answer": "オレンジ",
+          "wordClass": "ink-orange",
+          "mappedColor": "#D77A32",
+          "buttons": [
+            {
+              "text": "あお",
+              "disabled": false,
+              "selected": false,
+              "focused": true
+            },
+            {
+              "text": "むらさき",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "みどり",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "オレンジ",
+              "disabled": false,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "インクの色を選んでください"
+        },
+        "computed": {
+          "word": "あお",
+          "ink": "オレンジ",
+          "answer": "オレンジ",
+          "wordClass": "ink-orange",
+          "mappedColor": "#D77A32",
+          "cssColor": "rgb(215, 122, 50)",
+          "options": [
+            "あお",
+            "むらさき",
+            "みどり",
+            "オレンジ"
+          ],
+          "choicesEnabled": true,
+          "result": null,
+          "selected": null,
+          "payload": null,
+          "feedbackStages": 0,
+          "focused": 0
+        },
+        "finishes": [],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      }
+    }
+  ],
+  "touch": {
+    "start": {
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "むらさき",
+        "ink": "みどり",
+        "answer": "みどり",
+        "wordClass": "ink-green",
+        "mappedColor": "#408B68",
+        "buttons": [
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 161,
+          "pixelWidth": 996,
+          "pixelHeight": 483,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "scrollY": 0
+    },
+    "touchPoint": {
+      "x": 279.8359375,
+      "y": 366.359375,
+      "width": 162.328125,
+      "height": 51.1875,
+      "disabled": false
+    },
+    "final": {
+      "before": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "みどり",
+        "detail": "正解。インクの色は「みどり」",
+        "payload": {
+          "answerLabel": "みどり"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "word": "むらさき",
+        "ink": "みどり",
+        "answer": "みどり",
+        "wordClass": "ink-green",
+        "mappedColor": "#408B68",
+        "buttons": [
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 161,
+          "pixelWidth": 996,
+          "pixelHeight": 483,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解。インクの色は「みどり」"
+      },
+      "after": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "みどり",
+        "detail": "正解。インクの色は「みどり」",
+        "payload": {
+          "answerLabel": "みどり"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "word": "むらさき",
+        "ink": "みどり",
+        "answer": "みどり",
+        "wordClass": "ink-green",
+        "mappedColor": "#408B68",
+        "buttons": [
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 332,
+          "cssHeight": 161,
+          "pixelWidth": 996,
+          "pixelHeight": 483,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解。インクの色は「みどり」"
+      },
+      "finishesBefore": [
+        {
+          "correct": true,
+          "result": {
+            "answerLabel": "みどり"
+          }
+        }
+      ],
+      "evidence": {
+        "variant": "module",
+        "combo": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 390,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "むらさき",
+          "ink": "みどり",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "answer": "みどり",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "selected": "みどり",
+          "detail": "正解。インクの色は「みどり」",
+          "payload": {
+            "answerLabel": "みどり"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "word": "むらさき",
+          "ink": "みどり",
+          "answer": "みどり",
+          "wordClass": "ink-green",
+          "mappedColor": "#408B68",
+          "buttons": [
+            {
+              "text": "むらさき",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "みどり",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            },
+            {
+              "text": "オレンジ",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "あお",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 161,
+            "pixelWidth": 996,
+            "pixelHeight": 483,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "正解。インクの色は「みどり」"
+        },
+        "computed": {
+          "word": "むらさき",
+          "ink": "みどり",
+          "answer": "みどり",
+          "wordClass": "ink-green",
+          "mappedColor": "#408B68",
+          "cssColor": "rgb(64, 139, 104)",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "choicesEnabled": false,
+          "result": "success",
+          "selected": "みどり",
+          "payload": {
+            "correct": true,
+            "result": {
+              "answerLabel": "みどり"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "answerLabel": "みどり"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "canvas": {
+            "cssWidth": 332,
+            "cssHeight": 161,
+            "pixelWidth": 996,
+            "pixelHeight": 483,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0,
+      "navigationMs": 53.39999997615814,
+      "longTasks": [],
+      "nodeCount": 26
+    }
+  },
+  "enter": {
+    "ready": {
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "オレンジ",
+        "ink": "あお",
+        "answer": "あお",
+        "wordClass": "ink-blue",
+        "mappedColor": "#3E79B7",
+        "buttons": [
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          }
+        ],
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 180,
+          "pixelWidth": 1116,
+          "pixelHeight": 540,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "automatic": true,
+      "focused": true,
+      "active": "あお",
+      "scrollY": 0
+    },
+    "final": {
+      "state": {
+        "phase": "SUCCESS",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "success",
+        "selected": "あお",
+        "detail": "正解。インクの色は「あお」",
+        "payload": {
+          "answerLabel": "あお"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "word": "オレンジ",
+        "ink": "あお",
+        "answer": "あお",
+        "wordClass": "ink-blue",
+        "mappedColor": "#3E79B7",
+        "buttons": [
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 372,
+          "cssHeight": 180,
+          "pixelWidth": 1116,
+          "pixelHeight": 540,
+          "dpr": 3
+        },
+        "reduced": false,
+        "frames": 0,
+        "status": "正解。インクの色は「あお」"
+      },
+      "evidence": {
+        "variant": "module",
+        "combo": 8,
+        "scene": "initial",
+        "live": true,
+        "motion": "normal",
+        "width": 430,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "オレンジ",
+          "ink": "あお",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "answer": "あお",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "SUCCESS",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "success",
+          "selected": "あお",
+          "detail": "正解。インクの色は「あお」",
+          "payload": {
+            "answerLabel": "あお"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "word": "オレンジ",
+          "ink": "あお",
+          "answer": "あお",
+          "wordClass": "ink-blue",
+          "mappedColor": "#3E79B7",
+          "buttons": [
+            {
+              "text": "むらさき",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "みどり",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "オレンジ",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "あお",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 180,
+            "pixelWidth": 1116,
+            "pixelHeight": 540,
+            "dpr": 3
+          },
+          "reduced": false,
+          "frames": 0,
+          "status": "正解。インクの色は「あお」"
+        },
+        "computed": {
+          "word": "オレンジ",
+          "ink": "あお",
+          "answer": "あお",
+          "wordClass": "ink-blue",
+          "mappedColor": "#3E79B7",
+          "cssColor": "rgb(62, 121, 183)",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "choicesEnabled": false,
+          "result": "success",
+          "selected": "あお",
+          "payload": {
+            "correct": true,
+            "result": {
+              "answerLabel": "あお"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1
+        },
+        "finishes": [
+          {
+            "correct": true,
+            "result": {
+              "answerLabel": "あお"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 430,
+          "innerWidth": 430,
+          "canvas": {
+            "cssWidth": 372,
+            "cssHeight": 180,
+            "pixelWidth": 1116,
+            "pixelHeight": 540,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0
+    }
+  },
+  "space": {
+    "ready": {
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": false,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "むらさき",
+        "ink": "みどり",
+        "answer": "みどり",
+        "wordClass": "ink-green",
+        "mappedColor": "#408B68",
+        "buttons": [
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "focused": true,
+      "active": "むらさき",
+      "scrollY": 0
+    },
+    "final": {
+      "state": {
+        "phase": "WRONG",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "wrong",
+        "selected": "むらさき",
+        "detail": "残念。正解は「みどり」",
+        "payload": {
+          "answerLabel": "みどり"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "word": "むらさき",
+        "ink": "みどり",
+        "answer": "みどり",
+        "wordClass": "ink-green",
+        "mappedColor": "#408B68",
+        "buttons": [
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": true,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "残念。正解は「みどり」"
+      },
+      "evidence": {
+        "variant": "module",
+        "combo": 0,
+        "scene": "initial",
+        "live": true,
+        "motion": "reduced",
+        "width": 393,
+        "dpr": 3,
+        "task": {
+          "kind": "stroop",
+          "prompt": "文字ではなく、インクの色は？",
+          "help": "読んだら負け。見てください。",
+          "word": "むらさき",
+          "ink": "みどり",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "answer": "みどり",
+          "duration": 6500
+        },
+        "constants": {
+          "names": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "classes": {
+            "むらさき": "ink-purple",
+            "みどり": "ink-green",
+            "オレンジ": "ink-orange",
+            "あお": "ink-blue"
+          },
+          "colors": {
+            "むらさき": "#8B52B0",
+            "みどり": "#408B68",
+            "オレンジ": "#D77A32",
+            "あお": "#3E79B7"
+          },
+          "duration": 6500
+        },
+        "state": {
+          "phase": "WRONG",
+          "choicesEnabled": false,
+          "done": true,
+          "disposed": true,
+          "result": "wrong",
+          "selected": "むらさき",
+          "detail": "残念。正解は「みどり」",
+          "payload": {
+            "answerLabel": "みどり"
+          },
+          "finishCalls": 1,
+          "feedbackStages": 1,
+          "word": "むらさき",
+          "ink": "みどり",
+          "answer": "みどり",
+          "wordClass": "ink-green",
+          "mappedColor": "#408B68",
+          "buttons": [
+            {
+              "text": "むらさき",
+              "disabled": true,
+              "selected": true,
+              "focused": false
+            },
+            {
+              "text": "みどり",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "オレンジ",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            },
+            {
+              "text": "あお",
+              "disabled": true,
+              "selected": false,
+              "focused": false
+            }
+          ],
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          },
+          "reduced": true,
+          "frames": 0,
+          "status": "残念。正解は「みどり」"
+        },
+        "computed": {
+          "word": "むらさき",
+          "ink": "みどり",
+          "answer": "みどり",
+          "wordClass": "ink-green",
+          "mappedColor": "#408B68",
+          "cssColor": "rgb(64, 139, 104)",
+          "options": [
+            "むらさき",
+            "みどり",
+            "オレンジ",
+            "あお"
+          ],
+          "choicesEnabled": false,
+          "result": "wrong",
+          "selected": "むらさき",
+          "payload": {
+            "correct": false,
+            "result": {
+              "answerLabel": "みどり"
+            }
+          },
+          "feedbackStages": 1,
+          "focused": -1
+        },
+        "finishes": [
+          {
+            "correct": false,
+            "result": {
+              "answerLabel": "みどり"
+            }
+          }
+        ],
+        "layout": {
+          "scrollWidth": 393,
+          "innerWidth": 393,
+          "canvas": {
+            "cssWidth": 335,
+            "cssHeight": 162,
+            "pixelWidth": 1005,
+            "pixelHeight": 486,
+            "dpr": 3
+          }
+        },
+        "resources": [
+          "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+          "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+          "http://127.0.0.1:8863/src/game-kernel.js"
+        ],
+        "external": [],
+        "errors": []
+      },
+      "runtime": {
+        "disposed": true,
+        "finished": true,
+        "finishCalls": 1,
+        "commits": 1,
+        "timeouts": 0,
+        "frames": 0,
+        "listeners": 0,
+        "aborted": true
+      },
+      "scrollY": 0
+    }
+  },
+  "deadline": {
+    "elapsed": 6516,
+    "state": {
+      "phase": "TIMEOUT",
+      "choicesEnabled": false,
+      "done": true,
+      "disposed": true,
+      "result": "timeout",
+      "selected": null,
+      "detail": "時間切れです。脳は定時退社しました。",
+      "payload": {
+        "detail": "時間切れです。脳は定時退社しました。",
+        "answerLabel": "オレンジ"
+      },
+      "finishCalls": 1,
+      "feedbackStages": 1,
+      "word": "あお",
+      "ink": "オレンジ",
+      "answer": "オレンジ",
+      "wordClass": "ink-orange",
+      "mappedColor": "#D77A32",
+      "buttons": [
+        {
+          "text": "あお",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "むらさき",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "みどり",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "オレンジ",
+          "disabled": true,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 335,
+        "cssHeight": 162,
+        "pixelWidth": 1005,
+        "pixelHeight": 486,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "時間切れ。正解は「オレンジ」"
+    },
+    "evidence": {
+      "variant": "module",
+      "combo": 11,
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 393,
+      "dpr": 3,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "あお",
+        "ink": "オレンジ",
+        "options": [
+          "あお",
+          "むらさき",
+          "みどり",
+          "オレンジ"
+        ],
+        "answer": "オレンジ",
+        "duration": 6500
+      },
+      "constants": {
+        "names": [
+          "むらさき",
+          "みどり",
+          "オレンジ",
+          "あお"
+        ],
+        "classes": {
+          "むらさき": "ink-purple",
+          "みどり": "ink-green",
+          "オレンジ": "ink-orange",
+          "あお": "ink-blue"
+        },
+        "colors": {
+          "むらさき": "#8B52B0",
+          "みどり": "#408B68",
+          "オレンジ": "#D77A32",
+          "あお": "#3E79B7"
+        },
+        "duration": 6500
+      },
+      "state": {
+        "phase": "TIMEOUT",
+        "choicesEnabled": false,
+        "done": true,
+        "disposed": true,
+        "result": "timeout",
+        "selected": null,
+        "detail": "時間切れです。脳は定時退社しました。",
+        "payload": {
+          "detail": "時間切れです。脳は定時退社しました。",
+          "answerLabel": "オレンジ"
+        },
+        "finishCalls": 1,
+        "feedbackStages": 1,
+        "word": "あお",
+        "ink": "オレンジ",
+        "answer": "オレンジ",
+        "wordClass": "ink-orange",
+        "mappedColor": "#D77A32",
+        "buttons": [
+          {
+            "text": "あお",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "オレンジ",
+            "disabled": true,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "時間切れ。正解は「オレンジ」"
+      },
+      "computed": {
+        "word": "あお",
+        "ink": "オレンジ",
+        "answer": "オレンジ",
+        "wordClass": "ink-orange",
+        "mappedColor": "#D77A32",
+        "cssColor": "rgb(215, 122, 50)",
+        "options": [
+          "あお",
+          "むらさき",
+          "みどり",
+          "オレンジ"
+        ],
+        "choicesEnabled": false,
+        "result": "timeout",
+        "selected": null,
+        "payload": {
+          "correct": false,
+          "result": {
+            "detail": "時間切れです。脳は定時退社しました。",
+            "answerLabel": "オレンジ"
+          }
+        },
+        "feedbackStages": 1,
+        "focused": -1
+      },
+      "finishes": [
+        {
+          "correct": false,
+          "result": {
+            "detail": "時間切れです。脳は定時退社しました。",
+            "answerLabel": "オレンジ"
+          }
+        }
+      ],
+      "layout": {
+        "scrollWidth": 393,
+        "innerWidth": 393,
+        "canvas": {
+          "cssWidth": 335,
+          "cssHeight": 162,
+          "pixelWidth": 1005,
+          "pixelHeight": 486,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": true,
+      "finishCalls": 1,
+      "commits": 1,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    }
+  },
+  "disposed": {
+    "before": {
+      "phase": "CHOOSING",
+      "choicesEnabled": true,
+      "done": false,
+      "disposed": false,
+      "result": null,
+      "selected": null,
+      "detail": "",
+      "payload": null,
+      "finishCalls": 0,
+      "feedbackStages": 0,
+      "word": "あお",
+      "ink": "みどり",
+      "answer": "みどり",
+      "wordClass": "ink-green",
+      "mappedColor": "#408B68",
+      "buttons": [
+        {
+          "text": "オレンジ",
+          "disabled": false,
+          "selected": false,
+          "focused": true
+        },
+        {
+          "text": "あお",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "むらさき",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "みどり",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 167,
+        "pixelWidth": 1032,
+        "pixelHeight": 501,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "インクの色を選んでください"
+    },
+    "after": {
+      "phase": "CHOOSING",
+      "choicesEnabled": true,
+      "done": false,
+      "disposed": true,
+      "result": null,
+      "selected": null,
+      "detail": "",
+      "payload": null,
+      "finishCalls": 0,
+      "feedbackStages": 0,
+      "word": "あお",
+      "ink": "みどり",
+      "answer": "みどり",
+      "wordClass": "ink-green",
+      "mappedColor": "#408B68",
+      "buttons": [
+        {
+          "text": "オレンジ",
+          "disabled": false,
+          "selected": false,
+          "focused": true
+        },
+        {
+          "text": "あお",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "むらさき",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        },
+        {
+          "text": "みどり",
+          "disabled": false,
+          "selected": false,
+          "focused": false
+        }
+      ],
+      "canvas": {
+        "cssWidth": 344,
+        "cssHeight": 167,
+        "pixelWidth": 1032,
+        "pixelHeight": 501,
+        "dpr": 3
+      },
+      "reduced": true,
+      "frames": 0,
+      "status": "インクの色を選んでください"
+    },
+    "runtime": {
+      "disposed": true,
+      "finished": false,
+      "finishCalls": 0,
+      "commits": 0,
+      "timeouts": 0,
+      "frames": 0,
+      "listeners": 0,
+      "aborted": true
+    },
+    "qaRemoved": true,
+    "evidence": {
+      "variant": "module",
+      "combo": 10,
+      "scene": "initial",
+      "live": true,
+      "motion": "reduced",
+      "width": 402,
+      "dpr": 3,
+      "task": {
+        "kind": "stroop",
+        "prompt": "文字ではなく、インクの色は？",
+        "help": "読んだら負け。見てください。",
+        "word": "あお",
+        "ink": "みどり",
+        "options": [
+          "オレンジ",
+          "あお",
+          "むらさき",
+          "みどり"
+        ],
+        "answer": "みどり",
+        "duration": 6500
+      },
+      "constants": {
+        "names": [
+          "むらさき",
+          "みどり",
+          "オレンジ",
+          "あお"
+        ],
+        "classes": {
+          "むらさき": "ink-purple",
+          "みどり": "ink-green",
+          "オレンジ": "ink-orange",
+          "あお": "ink-blue"
+        },
+        "colors": {
+          "むらさき": "#8B52B0",
+          "みどり": "#408B68",
+          "オレンジ": "#D77A32",
+          "あお": "#3E79B7"
+        },
+        "duration": 6500
+      },
+      "state": {
+        "phase": "CHOOSING",
+        "choicesEnabled": true,
+        "done": false,
+        "disposed": true,
+        "result": null,
+        "selected": null,
+        "detail": "",
+        "payload": null,
+        "finishCalls": 0,
+        "feedbackStages": 0,
+        "word": "あお",
+        "ink": "みどり",
+        "answer": "みどり",
+        "wordClass": "ink-green",
+        "mappedColor": "#408B68",
+        "buttons": [
+          {
+            "text": "オレンジ",
+            "disabled": false,
+            "selected": false,
+            "focused": true
+          },
+          {
+            "text": "あお",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "むらさき",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          },
+          {
+            "text": "みどり",
+            "disabled": false,
+            "selected": false,
+            "focused": false
+          }
+        ],
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 167,
+          "pixelWidth": 1032,
+          "pixelHeight": 501,
+          "dpr": 3
+        },
+        "reduced": true,
+        "frames": 0,
+        "status": "インクの色を選んでください"
+      },
+      "computed": {
+        "word": "あお",
+        "ink": "みどり",
+        "answer": "みどり",
+        "wordClass": "ink-green",
+        "mappedColor": "#408B68",
+        "cssColor": "rgb(64, 139, 104)",
+        "options": [
+          "オレンジ",
+          "あお",
+          "むらさき",
+          "みどり"
+        ],
+        "choicesEnabled": true,
+        "result": null,
+        "selected": null,
+        "payload": null,
+        "feedbackStages": 0,
+        "focused": 0
+      },
+      "finishes": [],
+      "layout": {
+        "scrollWidth": 402,
+        "innerWidth": 402,
+        "canvas": {
+          "cssWidth": 344,
+          "cssHeight": 167,
+          "pixelWidth": 1032,
+          "pixelHeight": 501,
+          "dpr": 3
+        }
+      },
+      "resources": [
+        "http://127.0.0.1:8863/test/inhibition-stroop-v1.fixture.mjs",
+        "http://127.0.0.1:8863/src/games/inhibition-stroop-v1.js",
+        "http://127.0.0.1:8863/src/game-kernel.js"
+      ],
+      "external": [],
+      "errors": []
+    }
+  }
+}
