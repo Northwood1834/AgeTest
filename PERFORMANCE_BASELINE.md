@@ -1,5 +1,25 @@
 # Modular runtime performance baseline
 
+## Post-P06/N06 integration check
+
+Rechecked at `b7c0f60` on the owned `director` lane (393×852, DPR 3, cache disabled). The catalogue contained 97 IDs and the generated manifest contained 36 accepted modules: 18 published ports and 18 originals.
+
+| Metric | Result |
+|---|---:|
+| Cold requests | 10 |
+| Cold transfer / response bodies | 328,312 / 325,312 B |
+| Cold JavaScript transfer | 201,638 B |
+| `app.js` transfer / body | 184,474 / 184,174 B |
+| DOMContentLoaded / load | 19.5 / 20.1 ms |
+| Cold game-module fetches | 0 |
+| External requests / horizontal overflow | 0 / 0 |
+| Level 1 session build / first frame | 3.2 / 15.8 ms |
+| Level 1 modular fetches | 1, 8,957 B |
+| Level 5 session build / first frame | 133.8 / 133.9 ms |
+| Level 5 modular fetches | 5, 206,325 B |
+
+Both random samples contained exactly 12 tasks and fetched only selected modular games. The Level 1 sample fetched `reaction-target-v1`. The Level 5 sample fetched `timing-tower-stack-v1`, `calculation-rpg-battle-v1`, `prediction-desk-ruler-duel-v1`, `spatial-sheep-home-v1`, and `attention-farm-close-v1`; the larger uncached startup reflects importing and generating those five production modules, not cold-home cost. Cold home still fetched zero game modules, had zero long tasks, and remained entirely same-origin. Clean integration at this point completed with 564 tests passing and 36 acceptance records verified.
+
 ## Post-N03 integration check
 
 Rechecked at `81a4022` on the owned `director` lane (393×852, DPR 3, cache disabled). The catalogue contained 88 IDs and the generated manifest contained 22 accepted modules.
