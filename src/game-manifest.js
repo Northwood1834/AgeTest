@@ -12,6 +12,17 @@ export const gameManifest=Object.freeze([
     "hash": "0ef39e8837565160"
   },
   {
+    "id": "calculation-gate-run-v1",
+    "introducedIn": "1.6",
+    "tier": 2,
+    "flavor": "wild",
+    "step": 1,
+    "family": "calculation-gate-run",
+    "category": "calculation",
+    "module": "./games/calculation-gate-run-v1.js",
+    "hash": "7a2ca22474468fae"
+  },
+  {
     "id": "prediction-pin-pull-v1",
     "introducedIn": "1.4",
     "tier": 2,
@@ -20,7 +31,7 @@ export const gameManifest=Object.freeze([
     "family": "prediction-pin-pull",
     "category": "prediction",
     "module": "./games/prediction-pin-pull-v1.js",
-    "hash": "727152079a20d4ed"
+    "hash": "a915e45858682113"
   },
   {
     "id": "reaction-signal-v1",
@@ -32,5 +43,38 @@ export const gameManifest=Object.freeze([
     "category": "reaction",
     "module": "./games/reaction-signal-v1.js",
     "hash": "0a96503ee559c499"
+  },
+  {
+    "id": "spatial-park-jam-v1",
+    "introducedIn": "1.7",
+    "tier": 3,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "spatial-park-jam",
+    "category": "spatial",
+    "module": "./games/spatial-park-jam-v1.js",
+    "hash": "2eb4949a25764695"
+  },
+  {
+    "id": "spatial-pipe-flow-v1",
+    "introducedIn": "1.10",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "spatial-pipe-flow",
+    "category": "spatial",
+    "module": "./games/spatial-pipe-flow-v1.js",
+    "hash": "31d15fe98e5d6947"
+  },
+  {
+    "id": "spatial-rope-untangle-v1",
+    "introducedIn": "1.8",
+    "tier": 2,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "spatial-rope-untangle",
+    "category": "spatial",
+    "module": "./games/spatial-rope-untangle-v1.js",
+    "hash": "ac2ae41e76a1864f"
   }
 ].map(Object.freeze));
