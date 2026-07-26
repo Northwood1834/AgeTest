@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'">
+<title>attention-water-sort-v1 fixture</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#f8f4fa;font-family:system-ui,sans-serif}body{padding:max(.6rem,env(safe-area-inset-top)) max(.5rem,env(safe-area-inset-right)) max(.6rem,env(safe-area-inset-bottom)) max(.5rem,env(safe-area-inset-left))}main{width:100%;max-width:430px;margin:auto}.fixture-head{margin:.2rem 0 .5rem;text-align:center}.fixture-head h1{margin:0;font-size:1.15rem}.fixture-head p{margin:.25rem 0;color:#65596b;font-weight:700}.fixture-result{font-size:.72rem;white-space:pre-wrap;overflow-wrap:anywhere;color:#443849}
+</style>
+</head>
+<body>
+<main><header class="fixture-head"><h1>水ソート</h1><p>色と模様をそろえよう</p></header><div id="host"></div><pre id="fixture-result" class="fixture-result" hidden></pre></main>
+<script type="module">
+import game from "../src/games/attention-water-sort-v1.js";
+const result={scenario:new URL(location.href).searchParams.get("scenario")||"view",errors:[]};
+addEventListener("error",event=>result.errors.push(String(event.error||event.message)));
+addEventListener("unhandledrejection",event=>result.errors.push(String(event.reason)));
+let seed=0x9233abcd;
+const random=()=>((seed=(Math.imul(seed,1664525)+1013904223)>>>0)/0x100000000);
+const randomInt=(min,max)=>min+Math.floor(random()*(max-min+1));
+const shuffle=values=>{const copy=[...values];for(let i=copy.length-1;i>0;i--){const j=randomInt(0,i);[copy[i],copy[j]]=[copy[j],copy[i]]}return copy};
+const task=game.generate({random,randomInt,pick:values=>values[randomInt(0,values.length-1)],shuffle});
+const host=document.querySelector("#host"),qa={},controller=new AbortController(),jobs=new Set(),listeners=new Set(),finishes=[];
+let deadline=null,disposed=false,frameCount=0;
+const clearJob=job=>{if(job.kind==="timeout")clearTimeout(job.id);else cancelAnimationFrame(job.id);jobs.delete(job)};
+const dispose=()=>{if(disposed)return;controller.abort();disposed=true;[...jobs].forEach(clearJob);if(deadline)clearTimeout(deadline.id);listeners.forEach(({target,type,fn,options})=>target.removeEventListener(type,fn,options));listeners.clear()};
+const viewportWidth=()=>innerWidth||document.documentElement.clientWidth||outerWidth||screen.width||0;
+const viewportHeight=()=>innerHeight||document.documentElement.clientHeight||outerHeight||screen.height||0;
+const context={host,signal:controller.signal,reducedMotion:result.scenario==="reduced",viewport:{width:viewportWidth(),height:viewportHeight(),dpr:devicePixelRatio},qa,
+ finish(correct,detail){if(disposed||finishes.length)return;finishes.push({correct,detail})},
+ later(fn,ms){const job={kind:"timeout",id:0};job.id=setTimeout(()=>{jobs.delete(job);if(!disposed)fn()},ms);jobs.add(job);return job},
+ frame(fn){const job={kind:"frame",id:0};job.id=requestAnimationFrame(time=>{jobs.delete(job);if(!disposed)fn(time)});jobs.add(job);frameCount++;return job},
+ listen(target,type,fn,options){target.addEventListener(type,fn,options);listeners.add({target,type,fn,options})},
+ setDeadline(ms,fn){const record={id:0,fn};record.id=setTimeout(()=>{deadline=null;if(!disposed)fn()},ms);deadline=record}
+};
+game.render(task,context);
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const buttons=()=>[...document.querySelectorAll(".aws-bottle")];
+const move=async(from,to)=>{qa[game.metadata.id].choose(from);qa[game.metadata.id].choose(to);await sleep(context.reducedMotion?10:390)};
+try{
+ if(result.scenario==="correct")for(const[from,to]of task.solution)await move(from,to);
+ else if(result.scenario==="invalid"){buttons()[0].dispatchEvent(new PointerEvent("pointerdown",{bubbles:true,pointerType:"mouse"}));buttons()[1].dispatchEvent(new PointerEvent("pointerdown",{bubbles:true,pointerType:"mouse"}));await sleep(330)}
+ else if(result.scenario==="touch"){buttons()[0].dispatchEvent(new PointerEvent("pointerdown",{bubbles:true,pointerType:"touch"}));buttons()[3].dispatchEvent(new PointerEvent("pointerdown",{bubbles:true,pointerType:"touch"}));await sleep(390)}
+ else if(result.scenario==="keyboard"){buttons()[0].dispatchEvent(new KeyboardEvent("keydown",{bubbles:true,key:"ArrowRight"}));result.arrowFocus=buttons()[1]===document.activeElement;buttons()[0].dispatchEvent(new MouseEvent("click",{bubbles:true,detail:0}));buttons()[3].dispatchEvent(new MouseEvent("click",{bubbles:true,detail:0}));await sleep(390)}
+ else if(result.scenario==="limit"){await move(0,3);for(let i=1;i<task.moveLimit;i++)await move(i%2?3:4,i%2?4:3)}
+ else if(result.scenario==="timeout"){clearTimeout(deadline.id);const expire=deadline.fn;deadline=null;expire()}
+ else if(result.scenario==="dispose"){qa[game.metadata.id].choose(task.solution[0][0]);qa[game.metadata.id].choose(task.solution[0][1]);dispose();await sleep(400)}
+ else if(result.scenario==="reduced")await move(task.solution[0][0],task.solution[0][1]);
+ const api=qa[game.metadata.id];
+ result.state=api?api.inspect():null;result.finishes=finishes;result.focusClass=document.activeElement?.className||"";result.reduced=document.querySelector(".aws-stage")?.dataset.reduced;
+ result.lifecycle={pendingJobs:jobs.size,listeners:listeners.size,frameCount,disposed};
+ result.viewport={width:viewportWidth(),height:viewportHeight(),innerWidth,innerHeight,outerWidth,outerHeight,dpr:devicePixelRatio,scrollWidth:document.documentElement.scrollWidth,overflow:document.documentElement.scrollWidth>viewportWidth()};
+ const resources=performance.getEntriesByType("resource").map(entry=>entry.name);result.resources=resources;result.externalResources=resources.filter(url=>new URL(url).origin!==location.origin);
+}catch(error){result.errors.push(String(error?.stack||error))}
+document.querySelector("#fixture-result").textContent=JSON.stringify(result);
+document.documentElement.dataset.fixtureDone="true";
+</script>
+</body>
+</html>
