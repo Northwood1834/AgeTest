@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "timing-fish-grill-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "fb65536938a56f8360f87c8b725387c4964955fc",
+  "test": "test/timing-fish-grill-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

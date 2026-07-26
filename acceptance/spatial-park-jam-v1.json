@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "spatial-park-jam-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "cc5e42993671ef2416ffd4cd260b570612dbcc8e",
+  "test": "test/spatial-park-jam-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

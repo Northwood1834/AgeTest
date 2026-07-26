@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "reaction-signal-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "5928856bb1336a10bc92529de9d7de68d00542f9",
+  "test": "test/reaction-signal-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

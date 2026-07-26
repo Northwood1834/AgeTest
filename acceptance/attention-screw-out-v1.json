@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "attention-screw-out-v1",
+  "status": "accepted",
+  "compatibility": "published-port",
+  "acceptedCommit": "4ab9fb4fe0d3433d7bcf40864117b921a345ff81",
+  "test": "test/attention-screw-out-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

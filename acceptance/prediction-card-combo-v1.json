@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "prediction-card-combo-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "e348f4d474d8a40e48502d5c844b2567315f89bd",
+  "test": "test/prediction-card-combo-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

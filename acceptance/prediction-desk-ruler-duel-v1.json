@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "prediction-desk-ruler-duel-v1",
+  "status": "accepted",
+  "compatibility": "original",
+  "acceptedCommit": "df905a4564ed7afc84de22a8779ade0c35a6375c",
+  "test": "test/prediction-desk-ruler-duel-v1.test.mjs",
+  "visualReview": {"status": "passed", "viewports": ["393x852@3", "402x874@3"]}
+}

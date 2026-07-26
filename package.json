@@ -5,6 +5,7 @@
   "scripts": {
     "build:games": "node tools/build-game-manifest.mjs",
     "check:games": "node tools/build-game-manifest.mjs --check",
-    "test": "node --test test/*.test.mjs && npm run check:games"
+    "check:acceptance": "node tools/check-game-acceptance.mjs",
+    "test": "node --test test/*.test.mjs && npm run check:games && npm run check:acceptance"
   }
 }
