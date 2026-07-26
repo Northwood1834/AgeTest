@@ -277,6 +277,11 @@ function render(task,context){
     if(state.done||state.disposed)return false;const visible=state.visible,hidden=1-visible;state.heat[visible]+=task.heatRates[visible];state.heat[hidden]+=task.carryoverHeat;state.steps++;state.lastSeen[visible]=describe(visible);const burnt=state.heat.findIndex((value,side)=>value>=task.burnThresholds[side]);if(burnt>=0){failBurn(burnt);return false}return true;
   };
   const advanceSteps=count=>{let advanced=0;for(let index=0;index<Math.max(0,Math.floor(count));index++){if(!advanceOne())break;advanced++}if(!state.done){setStatus(`${state.visible===0?"表":"裏"}面は「${describe(state.visible)}」`);paint()}return advanced};
+  const reducedCookStep=()=>{
+    if(state.done||state.disposed)return;const before=[material(0),material(1)];advanceOne();if(state.done||state.disposed)return;const after=[material(0),material(1)],changed=before.some((value,side)=>value!==after[side]);
+    if(changed&&!state.busy)setStatus(`${state.visible===0?"表":"裏"}面は「${describe(state.visible)}」`);else if(changed||state.steps%4===0){updateMemory();paint()}
+    context.later(reducedCookStep,task.quantumMs);
+  };
   const completeFlip=record=>{if(state.disposed||state.done||state.flipping!==record)return false;record.progress=1;state.flipping=null;state.busy=false;state.lastSeen[state.visible]=describe(state.visible);state.steam=1;setStatus(`${state.visible===0?"表":"裏"}面を上にしました。${describe(state.visible)}`);paint();return true};
   const flip=()=>{
     if(state.done||state.disposed||state.busy)return false;const from=state.visible,to=1-from,duration=context.reducedMotion?120:620,record={from,to,started:now(),duration,progress:0};state.visible=to;state.seen[to]=true;state.flips++;state.busy=true;state.flipping=record;setStatus("トングで持ち上げて返しています…");paint();context.later(()=>{if(state.flipping===record){record.progress=.42;paint()}},duration/3);context.later(()=>{if(state.flipping===record){record.progress=.72;paint()}},duration*2/3);context.later(()=>completeFlip(record),duration);return"flipping";
@@ -298,6 +303,7 @@ function render(task,context){
   if(view)context.listen(view,"resize",resize,{passive:true});
   setStatus(`${state.visible===0?"表":"裏"}面は、まだ生っぽく光っています`);resize();canvas.focus({preventScroll:true});if(!context.reducedMotion)context.frame(tick);
   context.setDeadline(task.duration,()=>{if(state.done||state.disposed)return;state.done=true;state.result="timeout";board.classList.add("afg-timeout");terminal.textContent="時間切れ";const current=outcome();setStatus(current==="undercooked"?"時間切れ。まだ生の面があります":"時間切れ。焼き上がりを逃しました");paint();context.finish(false,{reason:"timeout",detail:current==="undercooked"?"時間切れで、まだ生の面が残りました。":"時間切れになりました。"})});
+  if(context.reducedMotion)context.later(reducedCookStep,task.quantumMs);
   const qaApi={flip,serve,advanceSteps,outcomes:()=>({current:outcome(),good:inGood(task,state.heat),materials:[material(0),material(1)]}),paint,inspect:()=>({heat:[...state.heat],visible:state.visible,seen:[...state.seen],lastSeen:[...state.lastSeen],steps:state.steps,flips:state.flips,flipping:state.flipping?{from:state.flipping.from,to:state.flipping.to,progress:state.flipping.progress}:null,busy:state.busy,done:state.done,disposed:state.disposed,result:state.result,frames:state.frames,plated:state.plated,materials:[material(0),material(1)],descriptions:[describe(0),describe(1)],status:status.textContent,proof:{...task.proof},canvas:{width:canvas.width,height:canvas.height,cssWidth:width,cssHeight:height,dpr},viewport:{...context.viewport}})};
   if(context.qa&&typeof context.qa==="object")context.qa[metadata.id]=qaApi;
   context.listen(context.signal,"abort",()=>{state.disposed=true;state.done=true;if(context.qa?.[metadata.id]===qaApi)delete context.qa[metadata.id]},{once:true});

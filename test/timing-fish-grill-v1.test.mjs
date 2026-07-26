@@ -44,20 +44,22 @@ function installFakeDocument(){const previous=globalThis.document;globalThis.doc
 
 function createHarness({reducedMotion=false,viewport={width:393,height:852,dpr:3},ownerDocument=globalThis.document}={}){
   const controller=new AbortController(),host=ownerDocument.createElement("div"),qa={},pending=[],listeners=new Set(),frames=new Set(),finishes=[];
-  let deadline=null,disposed=false,finishCalls=0,frameTime=performance.now();ownerDocument.viewportWidth=viewport.width;host.getBoundingClientRect=()=>({left:0,top:0,width:viewport.width,height:viewport.height,right:viewport.width,bottom:viewport.height});
+  let deadline=null,disposed=false,finishCalls=0,frameTime=performance.now(),timerClock=0;ownerDocument.viewportWidth=viewport.width;host.getBoundingClientRect=()=>({left:0,top:0,width:viewport.width,height:viewport.height,right:viewport.width,bottom:viewport.height});
   const context={host,signal:controller.signal,reducedMotion,viewport,qa,
     finish(correct,result){finishCalls++;if(disposed||finishes.length)return false;finishes.push({correct,result});return true},
     setDeadline(ms,fn){deadline={ms,fn,active:true};return deadline},
-    later(fn,ms){const job={fn,ms,active:true};pending.push(job);return job},
+    later(fn,ms){const job={fn,ms,at:timerClock+Math.max(0,Number(ms)||0),active:true};pending.push(job);return job},
     frame(fn){const loop={fn,active:true};frames.add(loop);return()=>{loop.active=false;frames.delete(loop)}},
     listen(target,type,fn,options){target.addEventListener(type,fn,options);const record={target,type,fn,options};listeners.add(record);return()=>{target.removeEventListener(type,fn,options);listeners.delete(record)}}
   };
-  const runNext=()=>{const job=pending.find(item=>item.active);if(!job||disposed)return false;job.active=false;job.fn();return true};
-  const runAll=()=>{let guard=0;while(pending.some(job=>job.active)&&guard++<100){const jobs=pending.filter(job=>job.active);jobs.forEach(job=>{job.active=false;if(!disposed)job.fn()})}if(guard>=100)throw new Error("pending work did not settle")};
+  const nextPending=()=>pending.filter(item=>item.active).sort((a,b)=>a.at-b.at)[0]||null;
+  const runNext=()=>{const job=nextPending();if(!job||disposed)return false;timerClock=job.at;job.active=false;job.fn();return true};
+  const runFor=ms=>{const target=timerClock+Math.max(0,Number(ms)||0);let guard=0,job=nextPending();while(job&&job.at<=target&&!disposed&&guard++<1000){timerClock=job.at;job.active=false;job.fn();job=nextPending()}if(guard>=1000)throw new Error("timed work did not settle");timerClock=target};
+  const runAll=()=>{let guard=0,job=nextPending();while(job&&!disposed&&guard++<100){timerClock=job.at;job.active=false;job.fn();job=nextPending()}if(guard>=100)throw new Error("pending work did not settle")};
   const stepFrames=(count=1,step=1000/60)=>{for(let index=0;index<count;index++){frameTime+=step;for(const loop of[...frames])if(loop.active&&loop.fn(frameTime)===false){loop.active=false;frames.delete(loop)}}};
   const triggerDeadline=()=>{if(deadline?.active&&!disposed){deadline.active=false;deadline.fn();return true}return false};
   const dispose=()=>{if(disposed)return;disposed=true;if(deadline)deadline.active=false;pending.forEach(job=>job.active=false);frames.clear();controller.abort();listeners.forEach(({target,type,fn,options})=>target.removeEventListener(type,fn,options));listeners.clear()};
-  return{context,host,qa,finishes,runNext,runAll,stepFrames,triggerDeadline,dispose,get pendingCount(){return pending.filter(job=>job.active).length},get listenerCount(){return listeners.size},get frameCount(){return frames.size},get finishCalls(){return finishCalls}};
+  return{context,host,qa,finishes,runNext,runFor,runAll,stepFrames,triggerDeadline,dispose,get timerClock(){return timerClock},get pendingCount(){return pending.filter(job=>job.active).length},get listenerCount(){return listeners.size},get frameCount(){return frames.size},get finishCalls(){return finishCalls}};
 }
 const eventWith=(type,properties={})=>{const event=new Event(type,{bubbles:true,cancelable:true});Object.entries(properties).forEach(([key,value])=>Object.defineProperty(event,key,{value}));return event};
 const stageFrom=host=>host.children[1],boardFrom=host=>stageFrom(host).children[1],canvasFrom=host=>boardFrom(host).children[0],controlsFrom=host=>stageFrom(host).children[3];
@@ -124,6 +126,16 @@ test("dispose during flip removes pending stages, deadline, frame, listeners, QA
   const restore=installFakeDocument();try{const task=game.generate(randomHelpers(61)),harness=createHarness();game.render(task,harness.context);harness.qa[ID].flip();assert.ok(harness.pendingCount>=3);assert.equal(harness.frameCount,1);harness.dispose();harness.runAll();harness.stepFrames(3);harness.triggerDeadline();assert.equal(harness.finishes.length,0);assert.equal(harness.pendingCount,0);assert.equal(harness.listenerCount,0);assert.equal(harness.frameCount,0);assert.equal(harness.qa[ID],undefined)}finally{restore()}
 });
 
+test("controlled reduced-motion clock cooks without QA heat mutation and reaches the timed proof",()=>{
+  const restore=installFakeDocument();
+  try{const task=game.generate(randomHelpers(64)),harness=createHarness({reducedMotion:true}),apiTask=structuredClone(task);game.render(apiTask,harness.context);const api=harness.qa[ID];assert.equal(api.inspect().steps,0);assert.equal(harness.frameCount,0);harness.runFor(task.proof.flipAtStep*task.quantumMs);assert.equal(api.inspect().steps,task.proof.flipAtStep);assert.ok(api.inspect().heat.some(value=>value>0));assert.equal(api.flip(),"flipping");harness.runFor(120);assert.equal(api.inspect().flipping,null);const remaining=task.proof.serveFromStep-api.inspect().steps;harness.runFor(remaining*task.quantumMs);assert.equal(api.inspect().steps,task.proof.serveFromStep);assert.equal(api.outcomes().current,"ready");assert.equal(api.serve(),"success");harness.runFor(120);assert.deepEqual(harness.finishes.map(entry=>entry.correct),[true]);harness.dispose();assert.equal(harness.pendingCount,0);assert.equal(harness.listenerCount,0);assert.equal(harness.frameCount,0)}finally{restore()}
+});
+
+test("real reduced-motion runtime advances heat on its tracked scheduler and disposes it",async()=>{
+  const restore=installFakeDocument(),previousCancel=globalThis.cancelAnimationFrame;globalThis.cancelAnimationFrame=()=>{};
+  try{const task=game.generate(randomHelpers(65)),qa={},finishes=[],host=document.createElement("div");host.getBoundingClientRect=()=>({width:393,height:852});const runtime=createGameRuntime({host,qa,reducedMotion:true,viewport:{width:393,height:852,dpr:3},onFinish:(correct,result)=>finishes.push({correct,result})});game.render(task,runtime.context);assert.equal(qa[ID].inspect().steps,0);assert.equal(runtime.inspect().frames,0);assert.ok(runtime.inspect().timeouts>=2);await delay(285);assert.ok(qa[ID].inspect().steps>=1);assert.ok(qa[ID].inspect().heat.some(value=>value>0));runtime.dispose();assert.equal(qa[ID],undefined);await delay(300);assert.deepEqual(finishes,[]);assert.deepEqual(runtime.inspect(),{disposed:true,finished:false,finishCalls:0,commits:0,timeouts:0,frames:0,listeners:0,aborted:true})}finally{restore();if(previousCancel===undefined)delete globalThis.cancelAnimationFrame;else globalThis.cancelAnimationFrame=previousCancel}
+});
+
 test("real createGameRuntime disposal leaves no surviving owned work",async()=>{
   const restore=installFakeDocument(),previousRaf=globalThis.requestAnimationFrame,previousCancel=globalThis.cancelAnimationFrame;let nextId=0;const timers=new Map();globalThis.requestAnimationFrame=callback=>{const id=++nextId,timer=setTimeout(()=>{timers.delete(id);callback(performance.now())},1);timers.set(id,timer);return id};globalThis.cancelAnimationFrame=id=>{clearTimeout(timers.get(id));timers.delete(id)};
   try{const task=game.generate(randomHelpers(66)),qa={},finishes=[],host=document.createElement("div");host.getBoundingClientRect=()=>({width:393,height:852});const runtime=createGameRuntime({host,qa,reducedMotion:false,viewport:{width:393,height:852,dpr:3},onFinish:(correct,result)=>finishes.push({correct,result})});game.render(task,runtime.context);qa[ID].flip();assert.ok(runtime.inspect().timeouts>=4);assert.ok(runtime.inspect().frames>=1);runtime.dispose();assert.equal(qa[ID],undefined);await delay(700);assert.deepEqual(finishes,[]);assert.deepEqual(runtime.inspect(),{disposed:true,finished:false,finishCalls:0,commits:0,timeouts:0,frames:0,listeners:0,aborted:true})}
@@ -132,7 +144,7 @@ test("real createGameRuntime disposal leaves no surviving owned work",async()=>{
 
 test("touch flip, keyboard serve, visible focus, reduced stages, and DPR backing remain usable",()=>{
   const restore=installFakeDocument();
-  try{const task=game.generate(randomHelpers(71)),harness=createHarness({reducedMotion:true,viewport:{width:402,height:874,dpr:3}});game.render(task,harness.context);const api=harness.qa[ID],canvas=canvasFrom(harness.host);assert.equal(document.activeElement,canvas);api.advanceSteps(task.proof.flipAtStep);flipButtonFrom(harness.host).dispatchEvent(eventWith("pointerdown",{pointerType:"touch"}));assert.ok(harness.pendingCount>=3);harness.runAll();api.advanceSteps(task.proof.serveFromStep-api.inspect().steps);canvas.dispatchEvent(eventWith("keydown",{key:"s"}));harness.runAll();assert.deepEqual(harness.finishes.map(entry=>entry.correct),[true]);const view=api.inspect().canvas;assert.equal(view.dpr,3);assert.equal(view.width,view.cssWidth*3);assert.equal(view.height,view.cssHeight*3);assert.equal(stageFrom(harness.host).dataset.reduced,"true");assert.equal(harness.frameCount,0)}finally{restore()}
+  try{const task=game.generate(randomHelpers(71)),harness=createHarness({reducedMotion:true,viewport:{width:402,height:874,dpr:3}});game.render(task,harness.context);const api=harness.qa[ID],canvas=canvasFrom(harness.host);assert.equal(document.activeElement,canvas);api.advanceSteps(task.proof.flipAtStep);flipButtonFrom(harness.host).dispatchEvent(eventWith("pointerdown",{pointerType:"touch"}));assert.ok(harness.pendingCount>=4);harness.runFor(120);api.advanceSteps(task.proof.serveFromStep-api.inspect().steps);canvas.dispatchEvent(eventWith("keydown",{key:"s"}));harness.runFor(120);assert.deepEqual(harness.finishes.map(entry=>entry.correct),[true]);const view=api.inspect().canvas;assert.equal(view.dpr,3);assert.equal(view.width,view.cssWidth*3);assert.equal(view.height,view.cssHeight*3);assert.equal(stageFrom(harness.host).dataset.reduced,"true");assert.equal(harness.frameCount,0)}finally{restore()}
 });
 
 test("tracked high-resolution painting sustains a 60fps-equivalent workload",()=>{
