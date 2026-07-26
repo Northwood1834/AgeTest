@@ -453,6 +453,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Interdependence/proof: deliberation can forfeit the choice, while each quick choice reduces later combinatorial freedom. Exhaustive 2^12 outcomes constrain to ≤2 solutions and prove an observation-equivalent policy: every hidden suffix sharing visible history/next-three/total has the same correct current decision.
 - Art/reduced motion: original abstract terminal/tokens/capacity/waiting row; discrete updates, no currency, trade, gambling, or real allocation system.
 
+### Q69 — `prediction-calibration-launch-v1`
+
+- Category/tier/flavor: prediction / tier 3 / satisfying
+- Core: use exactly the first two of five abstract launches at distinct integer settings to identify one run-fixed hidden linear slope/intercept from retained landing pairs, then hit three narrow target bands with the remaining launches.
+- Interdependence/proof: launches are the only parameter observations and finite achievement opportunities. Exhaustive candidate relations prove no <2-observation guaranteed hit, exact identification after two, unique three-target completion, and all retained errors.
+- Art/reduced motion: original non-weapon tabletop launcher/scale/targets/history; three-stage stills, no real experiment, measurement procedure, or device.
+
+### Q70 — `calculation-approach-dial-v1`
+
+- Category/tier/flavor: calculation / tier 3 / satisfying
+- Core: reach three exact increasing targets using finite stocks of three positive integer steps with differing visible lockout delays; overshooting irreversibly resets that stage and costs time.
+- Interdependence/proof: residual arithmetic defines when to inhibit the tempting fast large step, while failure invalidates that residual. Exhaustive sequences require step switching, reject always-large/small, and prove inventory/reachability boundaries.
+- Art/reduced motion: original abstract numeric panel/buttons/stocks; discrete values and lockout states, no currency, score, gambling, or real instrument.
+
+### Q71 — `memory-blueprint-switch-v1`
+
+- Category/tier/flavor: memory / tier 3 / satisfying
+- Core: switch at a fixed time cost between mutually exclusive abstract reference and assembly views, choosing how many of twelve shape/position/orientation instructions to retain per trip; correctness appears only on returning to reference.
+- Interdependence/proof: larger memory batches reduce switches but create costly corrections that require more switches. Exhaustive strategies place optimum batch at 2–4 and reject one-at-a-time/all-at-once with confusion/orientation boundaries.
+- Art/reduced motion: original abstract board/pieces/reference list; instant view swap and snapped pieces, no real blueprint, drafting notation, product, or assembly procedure.
+
+### Q72 — `inhibition-release-lag-v1`
+
+- Category/tier/flavor: inhibition / tier 3 / satisfying
+- Core: hold one abstract lever to increase an integer value and release before a truthful target indicator, compensating for an always-visible release-lag table whose lag grows with release value across three targets.
+- Interdependence/proof: calculation defines how long the salient but truthful indicator response must be inhibited; late response increases lag and overshoot. Enumerate release ticks with ≥3-tick bands, distinct leads and exact edges.
+- Art/reduced motion: original abstract lever/value/band/table; tick states, no industrial/measurement equipment or operation instruction.
+
+### Q73 — `attention-window-schedule-v1`
+
+- Category/tier/flavor: attention / tier 3 / wild
+- Core: schedule one viewpoint among nine abstract windows whose full opening timetable is always visible; movement and marking cost time, concurrent openings force choices, and discovered symbols persist while three sample matches must be marked.
+- Interdependence/proof: current observation choice changes later reachable opportunities, while accumulated records narrow future needs. Exhaustive schedules prohibit observing all nine, require ≥3 conflicts and prove exact move-window boundaries.
+- Art/reduced motion: original abstract nine-window panel/symbols/timetable/marker; instant windows and two-state travel, no surveillance, real timetable, or public display.
+
+### Q74 — `spatial-clearance-run-v1`
+
+- Category/tier/flavor: spatial / tier 3 / satisfying
+- Core: move six abstract tokens across three scheduled clearance sections in 2–3 trips; vertical versus horizontal loading changes carrier height/width, and rest areas alone permit costly reshaping.
+- Interdependence/proof: load shape changes passage windows while smaller loads increase trips; exhaustive plans require ≥1 reshape, defeat max-load/single-token strategies and prove clearance/timing edges.
+- Art/reduced motion: original abstract route/carrier/tokens/clearance schedule; stepped movement and two-state reshape, no warehouse, railway, equipment, or loading procedure.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
