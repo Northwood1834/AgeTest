@@ -45,6 +45,17 @@ export const gameManifest=Object.freeze([
     "hash": "a976a17987a8fab3"
   },
   {
+    "id": "attention-kana-count-v1",
+    "introducedIn": "1.0",
+    "tier": 3,
+    "flavor": "quirky",
+    "step": 1,
+    "family": "attention-kana-count",
+    "category": "attention",
+    "module": "./games/attention-kana-count-v1.js",
+    "hash": "1dfac13e3ad44af7"
+  },
+  {
     "id": "attention-laundry-rescue-v1",
     "introducedIn": "2.0",
     "tier": 2,

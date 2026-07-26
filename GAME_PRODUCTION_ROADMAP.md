@@ -154,7 +154,8 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `memory-reverse-v1` — accepted and integrated
 - `social-greeting-v1` — audit lane
 - `reaction-emoji-match-v1` — accepted and integrated
-- `attention-kana-count-v1` — flow lane
+- `attention-kana-count-v1` — accepted and integrated
+- `attention-animal-count-v1` — pre-browser; waits for flow lane
 - `inhibition-parity-v1` — accepted and integrated
 - `inhibition-opposite-v1` — accepted and integrated
 - `inhibition-rule-switch-v1` — screw lane
