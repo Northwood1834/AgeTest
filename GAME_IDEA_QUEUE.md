@@ -10,9 +10,8 @@ Queue order follows user intake unless a category/lane dependency makes the next
 
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
-| `language-particle-scene-v1` | former Social Greeting owner | N08; audit lane | Particle and phrase edits deterministically rebuild an always-visible target scene |
 | `prediction-domino-relay-v1` | former Memory Reverse owner | N08; screw lane | Limited-height placement drives one deterministic retained domino cascade |
-| `calculation-balance-scale-v1` | former Lint Shaver owner | N09 pre-browser; waits for audit | Up to three composed weighings narrow exact heavy/light token hypotheses |
+| `calculation-balance-scale-v1` | former Lint Shaver owner | N09; audit lane | Up to three composed weighings narrow exact heavy/light token hypotheses |
 | `inhibition-quiet-tidy-v1` | former Animal Count owner | N09; flow lane | Stop an active drag on visible signals while floor-dependent noise remains causal |
 
 ## Waiting queue

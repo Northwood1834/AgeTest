@@ -243,6 +243,17 @@ export const gameManifest=Object.freeze([
     "hash": "19bca45fc6adc357"
   },
   {
+    "id": "language-particle-scene-v1",
+    "introducedIn": "1.16",
+    "tier": 3,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "language-particle-scene",
+    "category": "language",
+    "module": "./games/language-particle-scene-v1.js",
+    "hash": "743339d486f94d66"
+  },
+  {
     "id": "memory-missing-v1",
     "introducedIn": "1.0",
     "tier": 1,
