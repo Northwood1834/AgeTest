@@ -419,6 +419,17 @@ export const gameManifest=Object.freeze([
     "hash": "7e7151f4716e9d64"
   },
   {
+    "id": "prediction-cookie-cut-v1",
+    "introducedIn": "2.0",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "prediction-cookie-cut",
+    "category": "prediction",
+    "module": "./games/prediction-cookie-cut-v1.js",
+    "hash": "2f00a2ce1786847f"
+  },
+  {
     "id": "prediction-desk-ruler-duel-v1",
     "introducedIn": "2.0",
     "tier": 3,
