@@ -285,6 +285,48 @@ Queue order follows user intake unless a category/lane dependency makes the next
 - Outcomes/proof: intact delivery; over-pressure collapse; low-pressure wooden-plate drop; angle slide; over-cautious timeout; timeout retaining all continuous state. Quantized exhaustive control proves warning-response substitution and exact pressure/angle boundaries without unsupported touch-force APIs.
 - Art/reduced motion: original safe corridor, wooden plate/block/hands and pressure/angle UI; stepped slide/deformation, no heat, blade, broken crockery, brand, or food instruction.
 
+### Q45 — `language-connective-machine-v1`
+
+- Category/tier/flavor: language / tier 3 / quirky
+- Core: insert and rearrange finite, always-explained connective chips between event chips; a fictional tabletop automaton immediately executes the resulting sequence toward an always-visible target state within five edits.
+- Outcomes/proof: exact machine state; wrong condition; reversed dependency; excessive exception; move exhaustion; timeout. Enumerate all finite-automaton chip layouts, guarantee a unique/nontrivial 3–5 move solution and termination, and use only in-task fictional connector rules—not external grammar knowledge.
+- Art/reduced motion: original abstract lever/lid/ball/light machine and UI text; stepwise stills, no real product, programming notation, or brand.
+
+### Q46 — `attention-gate-count-v1`
+
+- Category/tier/flavor: attention / tier 3 / wild
+- Core: increment and decrement an unverified counter for simultaneous bidirectional abstract arrivals, then open/close a visible rope so a fictional exhibit stays at its displayed capacity without excessive queueing.
+- Outcomes/proof: exact final count and bounded queue; over-capacity; premature closure; undo exhaustion; final mismatch; timeout. Exhaustively verify authored integer events with opposite-direction simultaneity, crossings, and exact capacity boundaries.
+- Art/reduced motion: wholly fictional entrance, identical abstract silhouettes, arrows/counter/rope; three-stage lanes, not real crowd-management or admission guidance.
+
+### Q47 — `prediction-cart-tip-v1`
+
+- Category/tier/flavor: prediction / tier 3 / satisfying
+- Core: arrange four soft miniature loads across six slots on an unmanned tabletop trolley, watching exact center-of-mass markers before one committed run over three known miniature bumps whose losses alter later balance.
+- Outcomes/proof: all models delivered; high center; fore/aft bias; cascading loss; omitted load; timeout. Exhaustively enumerate stacks, constrain to 1–2 solutions, expose every parameter and prove exact tilt boundaries.
+- Art/reduced motion: original tabletop diorama, toy trolley and soft model loads with static tilt/fall stages; no people, real warehouse, cargo procedure, injury, or safety instruction.
+
+### Q48 — `reaction-leak-pad-v1`
+
+- Category/tier/flavor: reaction / tier 2 / wild
+- Core: allocate four fictional robotic suction pads among forecast leaks of three visible rates; releasing a pad restarts that leak, while two finite seal tokens permanently free pads before later openings.
+- Outcomes/proof: water retained; threshold loss; major leak neglected; seal waste; all pads trapped on minor leaks; timeout. Integer-tick search requires at least one deliberate pad reassignment and proves warning/rate/level boundaries.
+- Art/reduced motion: creature-free fictional tank, cracks/openings, four clearly robotic pads and abstract seals; static flow/level stages, never fingers or real repair/emergency guidance.
+
+### Q49 — `timing-firework-shutter-v1`
+
+- Category/tier/flavor: timing / tier 3 / satisfying
+- Core: anticipate several distant fictional light-bloom peaks by pressing a camera shutter before each event, compensating for a constantly displayed capture delay and differing visible rise/tail profiles.
+- Outcomes/proof: all peak photos; early trail; late afterglow; wrong profile lead; missed frame; timeout retaining album/schedule. Enumerate integer press times with ≥3-tick windows, mixed lead times, and exact edge failures.
+- Art/reduced motion: original distant night-light display, non-branded camera rear and staged photo frames; discrete rise/bloom/fade, no fireworks handling, pyrotechnics, or real event.
+
+### Q50 — `inhibition-trace-guide-v1`
+
+- Category/tier/flavor: inhibition / tier 3 / satisfying
+- Core: trace a thin solid target guide while suppressing attraction to a visually dominant dashed decoy that repeatedly crosses and swaps sides; speed trades completion time against accumulated integer deviation.
+- Outcomes/proof: complete bounded trace; decoy transfer; cumulative drift; incomplete slow trace; excessive lifts; timeout retaining path. Quantized exhaustive profiles reject fastest/slowest strategies, require ≥4 crossings and prove deviation thresholds.
+- Art/reduced motion: original abstract craft paper, solid/dashed lines, chalk marker and hatching; stepped samples, no blade, cutting, real pattern, brand, or sewing procedure.
+
 ## Dispatched brief archive
 
 ### Q9 — `spatial-draw-bridge-v1`
