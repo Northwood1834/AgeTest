@@ -101,7 +101,7 @@ P04 takes the next three owner slots that become free after their current owners
 
 - `reaction-target-v1` — accepted and integrated
 - `memory-path-v1` — flow lane
-- `spatial-cube-v1` — waits for screw lane
+- `spatial-cube-v1` — accepted and integrated
 
 ### N02 — completed daily-ritual original series
 
@@ -137,7 +137,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
 ### P07 — active pre-browser ports
 
-- `timing-five-v1` — waits for screw lane
+- `timing-five-v1` — screw lane
 - `attention-search-v1` — waits for flow lane
 
 ### N07 — active browser production

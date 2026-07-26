@@ -265,6 +265,17 @@ export const gameManifest=Object.freeze([
     "hash": "eec74779cdce8384"
   },
   {
+    "id": "spatial-cube-v1",
+    "introducedIn": "1.0",
+    "tier": 2,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "spatial-cube",
+    "category": "spatial",
+    "module": "./games/spatial-cube-v1.js",
+    "hash": "a60b1cf68260ce02"
+  },
+  {
     "id": "spatial-draw-shelter-v1",
     "introducedIn": "2.0",
     "tier": 3,
