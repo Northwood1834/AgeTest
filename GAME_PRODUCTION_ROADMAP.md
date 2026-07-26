@@ -169,7 +169,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `timing-milk-pour-v1` — audit lane
 - `inhibition-quiet-tidy-v1` — accepted and integrated
 - `social-shared-umbrella-v1` — accepted and integrated
-- `attention-leaf-trim-v1` — flow lane
+- `attention-leaf-trim-v1` — accepted and integrated
 - `spatial-suitcase-pack-v1` — accepted and integrated
 - `spatial-shelf-balance-v1` — screw lane
 

@@ -17,7 +17,6 @@ Queue order follows user intake unless a category/lane dependency makes the next
 | ID | Owner slot | State | Defining interaction |
 |---|---|---|---|
 | `timing-milk-pour-v1` | former Notice Trim owner | N11; audit lane | Hold to pour and release before the foam rim, allowing for one gentle after-flow |
-| `attention-leaf-trim-v1` | former Shared Umbrella owner | N11; flow lane | Tap dry-edged leaves on a warm houseplant with two recoverable healthy-leaf mistakes |
 | `spatial-shelf-balance-v1` | former Suitcase Pack owner | N11; screw lane | Drag six warm decorative objects into balanced, unobscured shelf positions |
 
 ## Waiting queue

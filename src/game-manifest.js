@@ -78,6 +78,17 @@ export const gameManifest=Object.freeze([
     "hash": "d65a38aa4d5f22d0"
   },
   {
+    "id": "attention-leaf-trim-v1",
+    "introducedIn": "2.0",
+    "tier": 1,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "attention-leaf-trim",
+    "category": "attention",
+    "module": "./games/attention-leaf-trim-v1.js",
+    "hash": "b6aeffe5d6716936"
+  },
+  {
     "id": "attention-lint-shaver-v1",
     "introducedIn": "2.0",
     "tier": 3,
