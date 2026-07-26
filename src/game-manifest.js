@@ -856,7 +856,7 @@ export const gameManifest=Object.freeze([
     "family": "spatial-shelf-balance",
     "category": "spatial",
     "module": "./games/spatial-shelf-balance-v1.js",
-    "hash": "5b8a0ef20897334d"
+    "hash": "a52afec8b4af5506"
   },
   {
     "id": "spatial-suitcase-pack-v1",
