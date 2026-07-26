@@ -18,6 +18,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 |---|---|---|---|
 | `timing-milk-pour-v1` | former Notice Trim owner | N11; audit lane | Hold to pour and release before the foam rim, allowing for one gentle after-flow |
 | `spatial-shelf-balance-v1` | former Suitcase Pack owner | N11; screw lane | Drag six warm decorative objects into balanced, unobscured shelf positions |
+| `memory-table-restore-v1` | former Leaf Trim owner | N12; flow lane | Drag each of three changed tabletop objects back to its remembered silhouette/socket |
 
 ## Waiting queue
 

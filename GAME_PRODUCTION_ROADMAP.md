@@ -170,6 +170,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 - `inhibition-quiet-tidy-v1` — accepted and integrated
 - `social-shared-umbrella-v1` — accepted and integrated
 - `attention-leaf-trim-v1` — accepted and integrated
+- `memory-table-restore-v1` — flow lane
 - `spatial-suitcase-pack-v1` — accepted and integrated
 - `spatial-shelf-balance-v1` — screw lane
 
