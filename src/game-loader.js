@@ -1,7 +1,7 @@
 import {gameManifest} from "./game-manifest.js";
 
 export const RETIRED_GAME_IDS=new Set([
-  // Add one stable ID per retired game. Modules remain loadable for saved sessions.
+  "prediction-card-combo-v1",
 ]);
 export const gameCatalog=Object.freeze(gameManifest.map(entry=>Object.freeze({...entry})));
 export const selectableGameCatalog=Object.freeze(gameCatalog.filter(entry=>!RETIRED_GAME_IDS.has(entry.id)));

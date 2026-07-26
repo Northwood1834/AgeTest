@@ -77,7 +77,7 @@ A failed game stays isolated and is revised or withheld. It never blocks accepte
 
 - `timing-fish-grill-v1` — accepted
 - `prediction-desk-ruler-duel-v1` — accepted
-- `prediction-card-combo-v1` — accepted
+- `prediction-card-combo-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (too complex on sight; needs a simpler picture-led redesign)
 
 ### P03 — completed
 

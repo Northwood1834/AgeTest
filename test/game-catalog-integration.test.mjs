@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
 import {gameManifest} from "../src/game-manifest.js";
-import {gameCatalog,selectableGameCatalog,generateGameTask,loadGame,stripGameTaskEnvelope} from "../src/game-loader.js";
+import {gameCatalog,selectableGameCatalog,RETIRED_GAME_IDS,generateGameTask,loadGame,stripGameTaskEnvelope} from "../src/game-loader.js";
 
 const appSource=await readFile(new URL("../app.js",import.meta.url),"utf8");
 const publishedIds=JSON.parse(await readFile(new URL("./published-game-ids.json",import.meta.url),"utf8"));
@@ -34,6 +34,14 @@ test("every accepted manifest entry loads its own matching game module",async()=
       assert.equal(game.metadata[field],entry[field],`${entry.id} ${field}`);
     }
   }
+});
+
+test("withheld games leave new selection but remain loadable for saved sessions",async()=>{
+  const id="prediction-card-combo-v1";
+  assert.equal(RETIRED_GAME_IDS.has(id),true);
+  assert.equal(gameCatalog.some(entry=>entry.id===id),true);
+  assert.equal(selectableGameCatalog.some(entry=>entry.id===id),false);
+  assert.equal((await loadGame(id)).metadata.id,id);
 });
 
 test("production envelopes strip to exact valid game data for every manifest module",async()=>{
