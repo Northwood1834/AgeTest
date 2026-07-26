@@ -12,8 +12,7 @@ Queue order follows user intake unless a category/lane dependency makes the next
 |---|---|---|---|
 | `memory-recipe-order-v1` | former Memory Missing owner | N09; flow lane | Hidden fictional four-action order causes irreversible visible pan-state changes |
 | `timing-mochi-pound-v1` | former Rule Switch owner | N08 original; screw lane | Accumulated safe-window turning against a finite accelerating mallet schedule |
-| `attention-lint-shaver-v1` | original implementation owner | N08 audit lane | Quantized continuous lint removal with speed, dwell, hazards, and dust-cup causality |
-| `language-particle-scene-v1` | former Social Greeting owner | N08 pre-browser; waits for audit | Particle and phrase edits deterministically rebuild an always-visible target scene |
+| `language-particle-scene-v1` | former Social Greeting owner | N08; audit lane | Particle and phrase edits deterministically rebuild an always-visible target scene |
 | `prediction-domino-relay-v1` | former Memory Reverse owner | N08 pre-browser; waits for screw | Limited-height placement drives one deterministic retained domino cascade |
 
 ## Waiting queue

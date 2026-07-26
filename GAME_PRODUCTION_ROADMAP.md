@@ -164,9 +164,9 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
 ### N08 — active original
 
-- `attention-lint-shaver-v1` — audit lane
+- `attention-lint-shaver-v1` — accepted and integrated
 - `timing-mochi-pound-v1` — screw lane
-- `language-particle-scene-v1` — pre-browser; waits for audit lane
+- `language-particle-scene-v1` — audit lane
 - `prediction-domino-relay-v1` — pre-browser; waits for screw lane
 
 ### N07 — completed original

@@ -78,6 +78,17 @@ export const gameManifest=Object.freeze([
     "hash": "d65a38aa4d5f22d0"
   },
   {
+    "id": "attention-lint-shaver-v1",
+    "introducedIn": "2.0",
+    "tier": 3,
+    "flavor": "satisfying",
+    "step": 1,
+    "family": "attention-lint-shaver",
+    "category": "attention",
+    "module": "./games/attention-lint-shaver-v1.js",
+    "hash": "3b190a690f27bdcd"
+  },
+  {
     "id": "attention-odd-v1",
     "introducedIn": "1.0",
     "tier": 1,
