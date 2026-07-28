@@ -165,7 +165,7 @@ Series direction: [`DAILY_RITUAL_SERIES.md`](./DAILY_RITUAL_SERIES.md).
 
 - `memory-recipe-order-v1` — accepted and integrated
 - `calculation-balance-scale-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (16 hypotheses, three weighings, and heavy/light declaration are too complex and unclear)
-- `language-notice-trim-v1` — accepted and integrated
+- `language-notice-trim-v1` — accepted module retained; temporarily withheld from new sessions after first-play review (the invented vocabulary, width accounting, tone requirement, and remove/restore operation are not understandable on first sight)
 - `timing-milk-pour-v1` — accepted and integrated
 - `social-share-cookies-v1` — accepted and integrated
 - `inhibition-bubble-keep-v1` — accepted and integrated
